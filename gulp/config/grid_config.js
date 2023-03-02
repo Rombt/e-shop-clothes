@@ -4,7 +4,7 @@ export const settings = {
     offset: "30px",
     //mobileFirst: true,
     container: {
-        maxWidth: "1170",
+        maxWidth: "1170px",
         fields: "30px"
     },
     breakPoints: {

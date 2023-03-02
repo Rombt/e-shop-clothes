@@ -429,3 +429,58 @@ template {
   font-weight: 700;
   font-style: normal;
 }
+.conteiner {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-height: 200px;
+}
+@media screen and (max-width: 920px) {
+  .conteiner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.header {
+  height: 90px;
+  background-color: #fff;
+}
+#dish {
+  height: 570px;
+  background-color: #7d8587;
+}
+#about {
+  background-color: #fff;
+}
+#today {
+  background-color: #4c5659;
+}
+#menu {
+  background-color: #ffffff;
+}
+#clients {
+  background-color: #fa4889;
+}
+#reserve {
+  background-color: #fff;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #9a9a9b;
+}
+.item {
+  height: 100px;
+  width: 100px;
+  background-color: #0690ec;
+}
+.footer {
+  height: 510px;
+  background-color: #373844;
+}

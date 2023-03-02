@@ -1,6 +1,6 @@
-# gulp-assembly-1.0
+# e-shop-clothes
 
-алгоритм 
-1. Скачать шрифты в папку fonts
-2. Сгенерировать шрифты:  npm run createFonts
-3. Сгенерировать сетку:   npm run grid
+
+   иконки
+      FontAwesome
+      Simple-Line-Icons
