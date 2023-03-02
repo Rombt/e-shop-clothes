@@ -58,6 +58,7 @@
   "dependencies": {
     "del": "^6.1.1",
     "esm": "^3.2.25",
+    "normalize.css": "^8.0.1",
     "path": "^0.12.7"
   }
 }

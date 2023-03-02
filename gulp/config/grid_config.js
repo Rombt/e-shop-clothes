@@ -1,9 +1,10 @@
 export const settings = {
+    outputStyle: 'less',
     columns: 12,
     offset: "30px",
     //mobileFirst: true,
     container: {
-        maxWidth: "950px",
+        maxWidth: "1170",
         fields: "30px"
     },
     breakPoints: {
