@@ -429,12 +429,14 @@ template {
   font-weight: 700;
   font-style: normal;
 }
+a {
+  text-decoration: none;
+}
 .conteiner {
   max-width: 1170px;
   margin: 0 auto;
   padding-left: 30px;
   padding-right: 30px;
-  min-height: 200px;
 }
 @media screen and (max-width: 920px) {
   .conteiner {
@@ -443,24 +445,72 @@ template {
   }
 }
 .background {
-  background-image: url("../img/dish.jpg");
+  max-width: 1970px;
+  margin: 0 auto;
 }
 .header {
   height: 90px;
-  background-color: #e6e6e6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: calc(100% / 12 * 2 - 30px);
+}
+.heder-menu {
+  height: inherit;
+  width: calc(100% / 12 * 7 - 30px);
+  display: flex;
+  align-items: center;
+}
+.heder-menu ul {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Sintony";
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heder-menu ul li a {
+  color: #647786;
+}
+.heder-menu__button {
+  height: 47px;
+  width: calc(100% / 12 * 2 - 30px);
+  border: 1px solid #000;
+}
+.background__dish {
+  background-image: url("../img/dish.jpg");
 }
 #dish {
   height: 570px;
   display: flex;
+  color: #ffffff;
+  position: relative;
+}
+.img-text {
+  font-size: 24px;
+  font-family: "Sintony";
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 111px;
 }
 .dish-title {
-  color: #ffffff;
   align-self: center;
+  width: 480px;
 }
 .dish-title__title {
   font-size: 56px;
   font-family: "PlayfairDisplay";
-  margin: 0 0 30px 0;
+  margin: 0px 0 -5px 0;
 }
 .dish-title__subtitle-title {
   font-family: "PlayfairDisplay";
@@ -469,6 +519,29 @@ template {
 }
 .dish-title__subtitle-title span {
   color: #fea100;
+}
+.exlore-food-menu {
+  width: 200px;
+  height: 210px;
+  font-size: 22px;
+  font-family: PlayfairDisplay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+  position: absolute;
+  bottom: -80px;
+}
+.exlore-food-menu img {
+  height: 84px;
+  width: 84px;
+  position: absolute;
+  top: -40px;
+  z-index: 10;
+}
+.exlore-food-menu p {
+  width: 110px;
+  text-align: center;
 }
 #about {
   background-color: #fff;

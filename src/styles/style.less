@@ -2,23 +2,85 @@
  @import (less) '../../node_modules/normalize.css/normalize.css';
  @import "fonts";
 
+ a {
+    text-decoration: none
+ }
+
  .conteiner {
     .wrapper();
 
-    //  background-color: rgba(13, 216, 243, 0.1);
-
-    min-height: 200px;
  }
 
  .background {
-    background-image: url("../img/dish.jpg");
+    max-width: 1970px;
+    margin: 0 auto;
  }
+
+
 
 
  .header {
     height: 90px;
-    //  background-color: #fff;
-    background-color: rgb(230, 230, 230);
+    .row-flex();
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+
+
+ .logo {
+    .size(2);
+
+
+ }
+
+ .heder-menu {
+    height: inherit;
+    .size(7);
+    display: flex;
+    align-items: center;
+
+    ul {
+       width: 100%;
+       padding: 0;
+       list-style-type: none;
+       font-family: "Sintony";
+       font-size: 14px;
+       font-weight: 700;
+       text-transform: uppercase;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+
+       li {
+          a {
+             color: #647786;
+          }
+       }
+    }
+
+ }
+
+ .heder-menu__button {
+    height: 47px;
+    .size(2);
+
+
+
+
+
+
+    border: 1px solid #000;
+ }
+
+
+
+
+
+
+ .background__dish {
+    background-image: url("../img/dish.jpg");
  }
 
 
@@ -26,30 +88,70 @@
  #dish {
     height: 570px;
     display: flex;
+    color: #ffffff;
+
+    position: relative;
+ }
+
+ .img-text {
+    font-size: 24px;
+    font-family: "Sintony";
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 111px;
  }
 
  .dish-title {
-
-    color: #ffffff;
     align-self: center;
+    width: 480px;
+
+    &__title {
+       font-size: 56px;
+       font-family: "PlayfairDisplay";
+       margin: 0px 0 -5px 0;
+    }
+
+    &__subtitle-title {
+       font-family: "PlayfairDisplay";
+       font-size: 40px;
+       margin: 0px;
+    }
+
+    &__subtitle-title span {
+       color: #fea100;
+    }
+
  }
 
- .dish-title__title {
-    font-size: 56px;
-    font-family: "PlayfairDisplay";
-    margin: 0 0 30px 0;
 
- }
 
- .dish-title__subtitle-title {
-    font-family: "PlayfairDisplay";
-    font-size: 40px;
-    margin: 0px;
 
- }
+ .exlore-food-menu {
+    width: 200px;
+    height: 210px;
+    font-size: 22px;
+    font-family: PlayfairDisplay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
- .dish-title__subtitle-title span {
-    color: #fea100;
+    background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+    position: absolute;
+    bottom: -80px;
+
+    img {
+       height: 84px;
+       width: 84px;
+       position: absolute;
+       top: -40px;
+       z-index: 10;
+    }
+
+    p {
+       width: 110px;
+       text-align: center;
+    }
  }
 
 
