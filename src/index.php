@@ -26,7 +26,7 @@
                <li><a href="#">blog</a></li>
                <li><a href="#">pages</a></li>
                <li><a href="#">contact</a></li>
-               <li><a href="#">cart</a></li>
+               <li><a href="#">cart=</a></li>
             </ul>
          </nav>
          <div class="heder-menu__button"><a href="#">call back</a></div>
