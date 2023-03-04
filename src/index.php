@@ -29,7 +29,11 @@
                <li><a href="#">cart=</a></li>
             </ul>
          </nav>
-         <div class="heder-menu__button"><a href="#">call back</a></div>
+         <div class="heder-menu__button">
+            <div class="heder-menu__button-border">
+               <a href="#" class="icon_plate">BOOK YOU TABLE</a>
+            </div>
+         </div>
 
 
 

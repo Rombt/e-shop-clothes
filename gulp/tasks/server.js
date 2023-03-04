@@ -3,16 +3,16 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 
-//   for home laptop
-// const __filename = fileURLToPath(
-//     import.meta.url);
-// const __dirname = dirname(__filename);
+//   for home laptop and computer
+const __filename = fileURLToPath(
+    import.meta.url);
+const __dirname = dirname(__filename);
 
 // rootFolder = nodePath.basename(nodePath.resolve());      //  может пригодится для нахождения путей 
 
 let proxyPath = '';
 if (__dirname.includes('OSPanel')) {
-    proxyPath = "http://twily/gulp/prod/"; // домашний комп
+    proxyPath = "http://rombt/e-shop-clothes/dist/"; // домашний комп
 } else {
     proxyPath = "http://web/rombt/e-shop-clothes/dist"; // рабочий комп и домашний ноут
 }

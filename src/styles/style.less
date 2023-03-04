@@ -2,6 +2,7 @@
  @import (less) '../../node_modules/normalize.css/normalize.css';
  @import "fonts";
 
+
  a {
     text-decoration: none
  }
@@ -16,23 +17,15 @@
     margin: 0 auto;
  }
 
-
-
-
  .header {
     height: 90px;
     .row-flex();
     align-items: center;
     justify-content: space-between;
-
  }
-
-
 
  .logo {
     .size(2);
-
-
  }
 
  .heder-menu {
@@ -64,14 +57,31 @@
 
  .heder-menu__button {
     height: 47px;
-    .size(2);
+    width: 199px;
+    background-color: rgb(254, 161, 0);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .heder-menu__button-border {
+       width: 190px;
+       height: 40px;
+       border: 1px solid #fff;
+       border-radius: 4px;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+
+       a {
+          font-family: "Sintony";
+          font-size: 14px;
+          font-weight: bold;
+          color: #fff
+       }
+    }
 
 
-
-
-
-
-    border: 1px solid #000;
  }
 
 
