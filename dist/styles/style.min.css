@@ -429,6 +429,9 @@ template {
   font-weight: 700;
   font-style: normal;
 }
+* {
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
 }
@@ -458,16 +461,20 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: calc(100% / 12 * 2 - 30px);
+  width: calc(100% / 12 * 3 - 30px);
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .heder-menu {
   height: inherit;
-  width: calc(100% / 12 * 7 - 30px);
+  width: calc(100% / 12 * 6 - 30px);
   display: flex;
   align-items: center;
+  justify-content: space-around;
 }
 .heder-menu ul {
-  width: 100%;
   padding: 0;
   list-style-type: none;
   font-family: "Sintony";
@@ -477,13 +484,57 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .heder-menu ul li a {
   color: #647786;
 }
+.cart-book {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 3 - 30px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart {
+  width: 42px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 2px;
+}
+.cart a {
+  display: flex;
+  align-items: center;
+}
+.cart a img {
+  width: 21px;
+  height: 17px;
+}
+.cart__cercle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fe4c8d;
+  position: absolute;
+  left: 15px;
+  top: -6px;
+  color: #fff;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sintony";
+}
 .heder-menu__button {
   height: 47px;
   width: 199px;
+  margin-left: 0;
   background-color: #fea100;
   border-radius: 4px;
   display: flex;
@@ -498,12 +549,19 @@ a {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 0 2px;
+}
+.heder-menu__button .heder-menu__button-border img {
+  width: 21px;
+  height: 17px;
 }
 .heder-menu__button .heder-menu__button-border a {
   font-family: "Sintony";
   font-size: 14px;
   font-weight: bold;
   color: #fff;
+  line-height: 2.143;
+  letter-spacing: 1.5px;
 }
 .background__dish {
   background-image: url("../img/dish.jpg");

@@ -3,6 +3,10 @@
  @import "fonts";
 
 
+ * {
+    box-sizing: border-box;
+ }
+
  a {
     text-decoration: none
  }
@@ -22,20 +26,25 @@
     .row-flex();
     align-items: center;
     justify-content: space-between;
+
  }
 
  .logo {
-    .size(2);
+    .size(3);
+    .col();
+
  }
 
  .heder-menu {
     height: inherit;
-    .size(7);
+    .size(6);
     display: flex;
     align-items: center;
+    justify-content: space-around;
+
 
     ul {
-       width: 100%;
+
        padding: 0;
        list-style-type: none;
        font-family: "Sintony";
@@ -46,6 +55,9 @@
        justify-content: space-between;
        align-items: center;
 
+
+       width: 100%;
+
        li {
           a {
              color: #647786;
@@ -55,14 +67,72 @@
 
  }
 
+ .cart-book {
+
+    .col();
+    .size(3);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+ }
+
+ .cart {
+
+    width: 42px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    margin: 2px;
+
+    a {
+       display: flex;
+       align-items: center;
+
+       img {
+          width: 21px;
+          height: 17px;
+
+       }
+    }
+
+    &__cercle {
+       width: 15px;
+       height: 15px;
+       border-radius: 50%;
+       background-color: #fe4c8d;
+       position: absolute;
+       left: 15px;
+       top: -6px;
+
+       color: #fff;
+       font-size: 11px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       font-family: "Sintony";
+    }
+
+ }
+
+
  .heder-menu__button {
+    //  .col();
     height: 47px;
     width: 199px;
+
+    margin-left: 0;
     background-color: rgb(254, 161, 0);
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 
     .heder-menu__button-border {
        width: 190px;
@@ -73,11 +143,23 @@
        justify-content: space-around;
        align-items: center;
 
+
+       padding: 0 2px;
+
+
+       img {
+          width: 21px;
+          height: 17px;
+
+       }
+
        a {
           font-family: "Sintony";
           font-size: 14px;
           font-weight: bold;
-          color: #fff
+          color: #fff;
+          line-height: 2.143;
+          letter-spacing: 1.5px;
        }
     }
 

@@ -4,9 +4,9 @@ import { dirname } from 'path';
 
 
 //   for home laptop and computer
-const __filename = fileURLToPath(
-    import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(
+//     import.meta.url);
+// const __dirname = dirname(__filename);
 
 // rootFolder = nodePath.basename(nodePath.resolve());      //  может пригодится для нахождения путей 
 

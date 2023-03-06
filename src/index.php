@@ -13,7 +13,7 @@
 </head>
 
 <body>
-   <nav class="conteiner">
+   <div class="conteiner">
       <div class="header ">
          <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
 
@@ -26,20 +26,30 @@
                <li><a href="#">blog</a></li>
                <li><a href="#">pages</a></li>
                <li><a href="#">contact</a></li>
-               <li><a href="#">cart=</a></li>
             </ul>
+
          </nav>
-         <div class="heder-menu__button">
-            <div class="heder-menu__button-border">
-               <a href="#" class="icon_plate">BOOK YOU TABLE</a>
+
+         <div class="cart-book">
+            <div class="cart">
+               <div class="cart__cercle">3</div>
+               <a href="#">
+                  <img src="./img/icon_cart.png" alt="">
+               </a>
+               <img src="./img/arrow-cart.png" alt="">
+            </div>
+            <div class="heder-menu__button">
+               <div class="heder-menu__button-border">
+                  <img src="./img/icon_plate.png" alt="">
+                  <a href="#">BOOK YOU TABLE</a>
+               </div>
             </div>
          </div>
 
 
-
       </div>
 
-   </nav>
+   </div>
    <div class="background background__dish">
       <div class="conteiner" id="dish">
          <div class="dish-title">
