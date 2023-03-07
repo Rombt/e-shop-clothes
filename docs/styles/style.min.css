@@ -435,6 +435,41 @@ template {
 a {
   text-decoration: none;
 }
+.debug-grid {
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+.debug-grid > div {
+  height: inherit;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+@media screen and (max-width: 920px) {
+  .debug-grid > div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.debug-grid > div > div {
+  height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.debug-grid > div > div > div {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 1 - 30px);
+  height: inherit;
+  outline: 1px rgba(234, 255, 115, 0.5) solid;
+  background: rgba(7, 218, 255, 0.1);
+}
 .conteiner {
   max-width: 1170px;
   margin: 0 auto;
@@ -461,11 +496,11 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: calc(100% / 12 * 3 - 30px);
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
+  width: calc(100% / 12 * 3 - 30px);
 }
 .heder-menu {
   height: inherit;

@@ -13,6 +13,31 @@
 </head>
 
 <body>
+
+
+   <div class="debug-grid">
+      <div>
+         <div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+
    <div class="conteiner">
       <div class="header ">
          <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
