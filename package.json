@@ -1,7 +1,7 @@
 {
-  "name": "e-shop-clothes",
+  "name": "restaurant-site",
   "version": "1.0.0",
-  "description": "Another one e-shop clothes",
+  "description": "Another one tamplate restaurant site",
   "main": "gulp.js",
   "type": "module",
   "scripts": {
@@ -16,7 +16,7 @@
   "repository": {
     "dev": "gulp",
     "type": "git",
-    "url": "git@Rombt.github.com:Rombt/e-shop-clothes.git"
+    "url": "git@Rombt.github.com:Rombt/restaurant-site.git"
   },
   "keywords": [],
   "author": "",
