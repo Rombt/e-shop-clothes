@@ -7,54 +7,29 @@
 
 <body>
 
-   @@if(isProd == false){
-   @@include('html/debug-grid.html',{})
-   }
-
-   <div class="conteiner">
+   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
 
 
-   </div>
-   <div class="background background__dish">
-      <div class="conteiner" id="dish">
-         <div class="dish-title">
-            <p class="dish-title__title">Teast your fav dish</p>
-            <p class="dish-title__subtitle-title">from <span>luxury restaurent.</span></p>
-         </div>
-         <div class="img-text"> Your Background Image <br> 1970 x 570</div>
-         <div class="exlore-food-menu">
-            <img src="./img/exlore-food-menu.png" alt="exlore-food-menu.jpg">
-            <p>Exlore food Menu</p>
-         </div>
-      </div>
-   </div>
-   <div class="conteiner" id="about">
-      <div class="row">
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-         <div class="item"></div>
-      </div>
-   </div>
-   <div class="conteiner" id="today">
-      <!-- <div class="row"></div> -->
-   </div>
-   <div class="conteiner" id="menu">
-      <!-- <div class="row"></div> -->
-   </div>
-   <div class="conteiner" id="clients">
-      <!-- <div class="row"></div> -->
-   </div>
-   <div class="conteiner" id="reserve">
-      <!-- <div class="row"></div> -->
-   </div>
-   <!-- <div class="row"></div> -->
-   <div class="footer conteiner"></div>
-   <!-- <div class="row"></div> -->
-   <script src="js/app.min.js"></script>
+   @@include('html/header.html',{})
+
+   @@include('html/dish.html',{})
+
+   @@include('html/about.html',{})
+
+   @@include('html/today.html',{})
+
+   @@include('html/restaurant-menu.html',{})
+
+   @@include('html/clients.html',{})
+
+   @@include('html/reserve.html',{})
+
+
+
+
    @@include('html/footer.html',{})
+
+   <script src="js/app.min.js"></script>
 </body>
 
 
