@@ -1,0 +1,83 @@
+ @import './smart-grid.less';
+ @import (less) '../../node_modules/normalize.css/normalize.css';
+ @import "fonts";
+
+
+
+
+ * {
+    box-sizing: border-box;
+ }
+
+ a {
+    text-decoration: none
+ }
+
+ .debug-grid {
+    .debug(rgba(7, 218, 255, 0.1), 1px rgba(234, 255, 115, 0.5) solid)
+ }
+
+ .conteiner {
+    .wrapper();
+ }
+
+ .background {
+    max-width: 1970px;
+    margin: 0 auto;
+ }
+
+
+ @import 'sections/header.less';
+ @import 'sections/dish.less';
+ @import 'sections/about.less';
+
+
+
+
+
+
+
+ #today {
+    background-color: #4c5659;
+ }
+
+ #menu {
+    background-color: #ffffff;
+ }
+
+ #clients {
+    background-color: #fa4889;
+ }
+
+ #reserve {
+    background-color: #fff;
+ }
+
+ .row {
+
+    .row-flex();
+
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+
+    background-color: #9a9a9b;
+ }
+
+ .item {
+    .col();
+
+    .size(4);
+
+    height: 150px;
+    min-width: 100px;
+    background-color: #0690ec;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+ .footer {
+    height: 510px;
+    background-color: #373844;
+
+ }
