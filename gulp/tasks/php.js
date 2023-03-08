@@ -10,7 +10,6 @@ export const php = () => {
                 title: "PHP",
                 message: "Error: <%= error.message %>"
             })))
-        // .pipe(fileInclude())
         .pipe(app.plugins.if(app.isProd, fileInclude({
             context: {
                 'isProd': app.isProd
