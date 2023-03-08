@@ -5,6 +5,8 @@ import browsersync from "browser-sync";
 import newer from "gulp-newer";
 import ifPugin from "gulp-if";
 
+import * as nodePath from 'path';
+
 
 export const plugins = {
     replace: replace,
