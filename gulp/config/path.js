@@ -16,18 +16,18 @@ export const path = {
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
+        less: `${srcFolder}/styles/main-style.less`,
+        scss: `${srcFolder}/styles/main-style.scss`,
         js: `${srcFolder}/js/app.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`, // добавить форматы при необходимости
         svg: `${srcFolder}/img/**/*.svg`,
-        scss: `${srcFolder}/styles/style.scss`,
-        less: `${srcFolder}/styles/style.less`,
         files: `${srcFolder}/files/**/*.*`,
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
-        js: `${srcFolder}/js/**/*.js`,
-        styles: `${srcFolder}/styles/**/*.{scss,less}`,
         php: `${srcFolder}/**/*.{php,html}`, // слежу за всеми 
+        styles: `${srcFolder}/styles/**/*.{scss,less}`,
+        js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`
     },
