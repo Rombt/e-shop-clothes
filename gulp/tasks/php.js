@@ -19,6 +19,7 @@ export const php = () => {
                 'isProd': false
             }
         })))
+        .pipe(app.plugins.replace(/@img\//g, 'img/'))
         .pipe(app.plugins.if(app.isProd, webpHtmlNosvg())) // оборачивает тег img в тег <picture> 
         .pipe(app.plugins.if(app.isProd, versionNumber({
             'value': '%DT%',
