@@ -1,33 +1,7 @@
-// для старых версий node.js
-// import process from 'process';
-
-// const __filename = {};
-// const __dirname = {};
-
-// let vNode = +process.version.slice(1, 3);
-// if (vNode < 12) {
-
-//     // let obj_url = await import('url');
-//     // let fileURLToPath = obj_url.fileURLToPath;
-
-//     let { fileURLToPath } = await import('url');
-//     let { dirname } = await import('path');
-
-
-//     __filename = fileURLToPath(import.meta.url);
-//     __dirname = dirname(__filename);
-
-
-// }
-
-// import { fileURLToPath } from 'url';
-// import { dirname } from 'path';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
-
-
-
-
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename)
 
 
 export const server = (done) => {

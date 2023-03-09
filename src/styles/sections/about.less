@@ -7,12 +7,10 @@
    font-family: 'Sintony';
    font-weight: 700;
    background-color: #edf1f3;
-   width: 100%;
-   min-height: 100px;
-
+   height: 100px;
    display: flex;
-   flex-wrap: wrap;
    justify-content: end;
+   flex-wrap: wrap;
 
    .read {
       .col();
@@ -21,7 +19,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      padding-left: 40px;
+      padding-left: 15px;
 
       div {
          width: 75px;
@@ -36,6 +34,7 @@
       .read__icon {
          width: 44px;
          height: 33px;
+
       }
 
       read__cercle {
@@ -45,13 +44,12 @@
    }
 
    .call-us {
-      height: inherit;
       .col();
       .size(5);
+      margin-right: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-left: 15px;
 
       div {
          p {
@@ -60,7 +58,6 @@
          }
       }
    }
-
 
    .phone-number {
       font-family: "PlayfairDisplay";
@@ -79,11 +76,10 @@
    &__text {
       .col();
       .size(5);
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 285px;
+      min-height: 285px;
 
       h2 {
          font-family: "PlayfairDisplay";
@@ -99,17 +95,14 @@
          color: #878d91;
       }
 
-      // border: 1px solid rgb(8, 250, 8);
-
       &-buttons {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-
          font-family: "Sintony";
          font-size: 14px;
          color: #fff;
          font-weight: 700;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
 
          button {
             color: #fff;
@@ -118,9 +111,6 @@
             border-radius: 4px;
             height: 51px;
             width: 160px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             cursor: pointer;
          }
 
@@ -129,14 +119,10 @@
             height: 71px;
             overflow: hidden;
             background-color: rgb(125, 133, 135);
-            position: relative;
 
             img {
-               width: 100%;
+               max-width: 100%;
                height: 100%;
-               position: absolute;
-               top: 0;
-               left: 0;
                object-fit: cover;
                /* или более подходящее значение*/
                object-position: center;
@@ -151,31 +137,34 @@
 
    &__img {
       .col();
-      .size(6);
+
+      width: 550px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
 
-      background-color: rgb(33, 9, 248);
-
       .wrap-img {
-         position: relative;
-         width: 260px;
+         width: 270px;
          height: 150px;
-
-
+         overflow: hidden;
 
          img {
             width: 100%;
             height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
             object-fit: cover;
             /* или более подходящее значение*/
             object-position: center;
          }
       }
+   }
+
+   .wrap-img:nth-child(1) {
+      margin-top: 50px;
+      margin-bottom: 10px;
+   }
+
+   .wrap-img:nth-child(4) {
+      margin-top: -50px;
    }
 
 

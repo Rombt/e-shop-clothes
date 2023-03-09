@@ -574,11 +574,13 @@ a {
   height: 47px;
   width: 199px;
   margin-left: 0;
+  border: 1px solid #fea100;
   background-color: #fea100;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .heder-menu__button .heder-menu__button-border {
   width: 190px;
@@ -678,11 +680,10 @@ a {
   font-family: 'Sintony';
   font-weight: 700;
   background-color: #edf1f3;
-  width: 100%;
-  min-height: 100px;
+  height: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: end;
+  flex-wrap: wrap;
 }
 .about-row__top-menu .read {
   box-sizing: border-box;
@@ -694,7 +695,7 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  padding-left: 40px;
+  padding-left: 15px;
 }
 .about-row__top-menu .read div {
   width: 75px;
@@ -713,16 +714,15 @@ a {
   height: 45px;
 }
 .about-row__top-menu .call-us {
-  height: inherit;
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
   width: calc(100% / 12 * 5 - 30px);
+  margin-right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 15px;
 }
 .about-row__top-menu .call-us div p {
   color: #fea100;
@@ -752,7 +752,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 285px;
+  min-height: 285px;
 }
 .about-row__text h2 {
   font-family: "PlayfairDisplay";
@@ -767,13 +767,13 @@ a {
   color: #878d91;
 }
 .about-row__text-buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font-family: "Sintony";
   font-size: 14px;
   color: #fff;
   font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .about-row__text-buttons button {
   color: #fff;
@@ -782,9 +782,6 @@ a {
   border-radius: 4px;
   height: 51px;
   width: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
 .about-row__text-buttons .wrap-img {
@@ -792,14 +789,10 @@ a {
   height: 71px;
   overflow: hidden;
   background-color: #7d8587;
-  position: relative;
 }
 .about-row__text-buttons .wrap-img img {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   object-fit: cover;
   /* или более подходящее значение*/
   object-position: center;
@@ -809,26 +802,29 @@ a {
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
-  width: calc(100% / 12 * 6 - 30px);
+  width: 550px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #2109f8;
 }
 .about-row__img .wrap-img {
-  position: relative;
-  width: 260px;
+  width: 270px;
   height: 150px;
+  overflow: hidden;
 }
 .about-row__img .wrap-img img {
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   object-fit: cover;
   /* или более подходящее значение*/
   object-position: center;
+}
+.about-row .wrap-img:nth-child(1) {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.about-row .wrap-img:nth-child(4) {
+  margin-top: -50px;
 }
 #today {
   background-color: #4c5659;
