@@ -578,7 +578,6 @@ a {
   }
 }
 .heder-menu {
-  height: inherit;
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
@@ -595,12 +594,7 @@ a {
 }
 @media screen and (max-width: 720px) {
   .heder-menu {
-    display: block;
-    width: calc(100% / 12 * 2 - 30px);
-    position: absolute;
-    left: 80px;
-    top: 80px;
-    background-color: #fff;
+    display: none;
   }
 }
 .heder-menu ul {
@@ -616,8 +610,35 @@ a {
   flex-wrap: wrap;
   width: 100%;
 }
+@media screen and (max-width: 720px) {
+  .heder-menu ul {
+    /*          display: flex;
+          flex-direction: column;
+          align-items: start;
+
+          margin: 5px;*/
+  }
+}
 .heder-menu ul li a {
   color: #647786;
+}
+@media screen and (max-width: 720px) {
+  .heder-menu ul li {
+    margin: 5px 0;
+  }
+}
+.hidden {
+  display: none;
+}
+.menu__burger-active {
+  /*    .sm-block( {*/
+  display: block;
+  position: absolute;
+  width: auto;
+  z-index: 10;
+  left: 80px;
+  top: 100px;
+  background-color: #fff;
 }
 .cart-book {
   box-sizing: border-box;
