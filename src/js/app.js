@@ -14,7 +14,8 @@ let hederMenu = document.querySelector('.heder-menu');
 burgerMenu.addEventListener("click", () => {
 
     // hederMenu.style.display = 'block';
-    hederMenu.classList.toggle('menu__burger-active');
+    hederMenu.classList.toggle('menu__sm');
+    burgerMenu.classList.toggle('menu__burger-close');
 
 
 });;
