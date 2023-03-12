@@ -1,146 +1,304 @@
+@bootton_width: 200px;
+@menu_height: 90px;
+
+
+
 .header {
-   min-height: 90px;
-   .row-flex();
-   align-items: center;
-   justify-content: space-between;
+    position: relative;
+    min-height: @menu_height;
+    padding-top: 10px;
+    .row-flex();
+    align-items: center;
+    justify-content: space-between;
 
-}
+    .md_2-block( {
+        justify-content: center;
 
-.logo {
-   .col();
-   .size(3);
+        transition: all 0.3s ease 0s;
+    }
 
-}
+    );
 
-.heder-menu {
-   height: inherit;
-   .col();
-   .size(6);
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-
-
-   ul {
-
-      padding: 0;
-      list-style-type: none;
-      font-family: "Sintony";
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .logo {
+        .col();
+        .size(3);
+        .size-md_1(12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 
-      width: 100%;
+    .menu__burger {
+        display: none;
 
-      li {
-         a {
-            color: #647786;
-         }
-      }
-   }
+        .sm-block( {
+            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
 
-}
+            position: absolute;
+            top: @offset_one_side;
+            left: @offset_one_side;
 
-.cart-book {
+            width: 40px;
+            height: 25px;
 
-   .col();
-   .size(3);
+            transition: all 0.9s ease 0s;
 
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+            &::before {
+                content: '';
+                background-color: #647786;
+                width: 100%;
+                height: 3px;
+            }
 
-}
+            &::after {
+                content: '';
+                background-color: #647786;
+                width: 100%;
+                height: 3px;
+            }
 
-.cart {
+            span {
+                background-color: #647786;
+                width: 100%;
+                height: 3px;
 
-   width: 42px;
-   height: 25px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+            }
 
-   position: relative;
-   margin: 2px;
+        }
 
-   a {
-      display: flex;
-      align-items: center;
+        );
+    }
 
-      img {
-         width: 21px;
-         height: 17px;
+    .menu__burger-close {
 
-      }
-   }
+        height: 40px;
+        width: 40px;
+        overflow: hidden;
+        background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
 
-   &__cercle {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: #fe4c8d;
-      position: absolute;
-      left: 15px;
-      top: -6px;
+        transition: all 0.9s ease 0s;
 
-      color: #fff;
-      font-size: 11px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Sintony";
-   }
+        &::before {
+            display: none;
+        }
 
-}
+        &::after {
+            display: none;
+        }
 
-
-.heder-menu__button {
-   //  .col();
-   height: 47px;
-   width: 199px;
-
-   margin-left: 0;
-   border: 1px solid rgb(254, 161, 0);
-   background-color: rgb(254, 161, 0);
-   border-radius: 4px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
+        span {
+            display: none;
+        }
+    }
 
 
-   .heder-menu__button-border {
-      width: 190px;
-      height: 40px;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
 
 
-      padding: 0 2px;
+    .heder-menu {
+        .col();
+        .size(6);
+        .size-md_1(8);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
 
 
-      img {
-         width: 21px;
-         height: 17px;
+        .sm-block( {
+            display: none;
+        }
 
-      }
+        );
 
-      a {
-         font-family: "Sintony";
-         font-size: 14px;
-         font-weight: bold;
-         color: #fff;
-         line-height: 2.143;
-         letter-spacing: 1.5px;
-      }
-   }
+        ul {
+
+            padding: 0;
+            list-style-type: none;
+            font-family: "Sintony";
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+
+            li {
+                a {
+                    color: #647786;
+                }
+
+                .sm-block( {
+                    margin: 5px 0;
+                }
+
+                );
+            }
+        }
+
+    }
 
 
+    .sm-block( {
+        .menu__sm {
+            display: block;
+            position: absolute;
+            top: @offset_one_side + 25px;
+            z-index: 10;
+            width: 100%;
+
+            ul {
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: centr;
+                background-color: #fff;
+                height: @menu_height;
+
+                li {
+
+                    font-size: 13px;
+                    font-weight: 700;
+                    padding: 4px;
+                }
+            }
+        }
+
+    }
+
+    );
+
+
+    .cart-book {
+        .col();
+        .size(3);
+        .size-md_1(4);
+        .size-md_2(8);
+        .size-sm(10);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .md_1-block( {
+            justify-content: space-evenly;
+        }
+
+        );
+
+        .md_2-block( {
+            justify-content: center;
+        }
+
+        );
+
+        .cart {
+
+            width: 42px;
+            height: 25px;
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            position: relative;
+            margin: 2px;
+            padding: 2px;
+
+            a {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 21px;
+                    height: 17px;
+
+                }
+            }
+
+            &__cercle {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background-color: #fe4c8d;
+                position: absolute;
+                left: 15px;
+                top: -6px;
+
+                color: #fff;
+                font-size: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Sintony";
+            }
+
+        }
+
+        .heder-menu__button {
+            height: 47px;
+            width: @bootton_width;
+
+            .md_2-block( {
+                width: @bootton_width + @offset*1.7;
+                margin: 15px 0 15px 10px;
+            }
+
+            );
+
+            margin-left: 0;
+            border: 1px solid rgb(254,
+            161,
+            0);
+            background-color: rgb(254,
+            161,
+            0);
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .heder-menu__button-border {
+                width: 190px;
+                height: 40px;
+                border: 1px solid #fff;
+                border-radius: 4px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 0 2px;
+
+                .md_2-block( {
+                    width: 291px;
+
+                }
+
+                );
+
+                img {
+                    width: 21px;
+                    height: 17px;
+
+                }
+
+                a {
+                    font-family: "Sintony";
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: #fff;
+                    line-height: 2.143;
+                    letter-spacing: 1.5px;
+                }
+            }
+
+        }
+    }
 }
