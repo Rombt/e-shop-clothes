@@ -510,6 +510,21 @@ a {
   max-width: 1970px;
   margin: 0 auto;
 }
+.wrap-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 10px;
+}
+.wrap-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* или более подходящее значение*/
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .header {
   position: relative;
   min-height: 90px;
@@ -1061,37 +1076,29 @@ a {
     justify-content: center;
   }
 }
-.about-row__img .wrap-img {
+.about-row__img .about-row__wrap-img {
   width: 270px;
   height: 150px;
-  overflow: hidden;
 }
 @media screen and (max-width: 576px) {
-  .about-row__img .wrap-img {
+  .about-row__img .about-row__wrap-img {
     margin: 10px 0;
   }
 }
-.about-row__img .wrap-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* или более подходящее значение*/
-  object-position: center;
-}
-.about-row .wrap-img:nth-child(1) {
+.about-row .about-row__wrap-img:nth-child(1) {
   margin-top: 50px;
   margin-bottom: 10px;
 }
 @media screen and (max-width: 576px) {
-  .about-row .wrap-img:nth-child(1) {
+  .about-row .about-row__wrap-img:nth-child(1) {
     margin: 10px 0;
   }
 }
-.about-row .wrap-img:nth-child(4) {
+.about-row .about-row__wrap-img:nth-child(4) {
   margin-top: -50px;
 }
 @media screen and (max-width: 576px) {
-  .about-row .wrap-img:nth-child(4) {
+  .about-row .about-row__wrap-img:nth-child(4) {
     margin: 10px 0;
   }
 }
@@ -1110,15 +1117,124 @@ a {
   object-fit: cover;
   /* или более подходящее значение*/
   object-position: center;
+  z-index: -1;
 }
-#menu {
-  background-color: #ffffff;
+.background__today .conteiner {
+  height: inherit;
+  text-align: center;
+}
+.background__today .conteiner h2 {
+  color: #fff;
+  font-size: 35px;
+  position: relative;
+  top: 100px;
+}
+.today-row {
+  display: flex;
+  margin-left: -15px;
+  margin-right: -15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+.today-row__food-card {
+  margin-top: 90px;
+}
+.food-card {
+  height: 730px;
+  min-width: 470px;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 6 - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+}
+.food-card__wrap-img {
+  width: 100%;
+  height: 420px;
+}
+.food-card__food-name {
+  height: 225px;
+  width: 380px;
+}
+.food-card__food-name h3 {
+  margin: 0;
+  margin-top: 50px;
+  font-family: "PlayfairDisplay";
+  font-size: 26px;
+  color: #14141d;
+  font-weight: 700;
+}
+.food-card__food-name p {
+  font-family: "Sintony";
+  font-size: 14px;
+  color: #5c6369;
+  font-weight: regular;
+  line-height: 26px;
+}
+.food-card__order-block {
+  width: 85%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid #e1e1e1;
+}
+.food-card__title {
+  font-family: "Sintony";
+  font-size: 13px;
+  color: #14141d;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.308;
+  padding-right: 20px;
+  border-right: 2px solid #e1e1e1;
+}
+.food-card__title p {
+  color: #fe4c8d;
+  margin: 0;
+}
+.food-card__phone-namber {
+  font-size: 26px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.846;
+}
+.food-card__price {
+  font-size: 25px;
+  font-family: "PlayfairDisplay";
+  color: #fea100;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: super;
+  line-height: 0.733;
+}
+.food-card__price p {
+  margin: 0;
+  margin-right: 2px;
+  display: inline;
+  font-size: 12px;
+  vertical-align: super;
+}
+#restaurant-menu {
+  min-height: 1235px;
+}
+.background__clients {
+  background-color: #fe4c8d;
 }
 #clients {
-  background-color: #fa4889;
+  min-height: 460px;
 }
 #reserve {
-  background-color: #fff;
+  min-height: 600px;
+  border: 1px solid #000;
 }
 .footer {
   height: 510px;

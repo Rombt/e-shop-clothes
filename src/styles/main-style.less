@@ -26,42 +26,30 @@
     margin: 0 auto;
  }
 
+ .wrap-img {
+    position: relative;
+    overflow: hidden;
+    min-height: 10px;
+
+    img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       /* или более подходящее значение*/
+       object-position: center;
+       position: absolute;
+       top: 0;
+       left: 0;
+
+    }
+ }
+
 
  @import 'sections/header.less';
  @import 'sections/dish.less';
  @import 'sections/about.less';
  @import 'sections/today.less';
-
-
-
-
-
-
- #menu {
-    background-color: #ffffff;
- }
-
- #clients {
-    background-color: #fa4889;
- }
-
- #reserve {
-    background-color: #fff;
- }
-
- //  .row {
-
- //     .row-flex();
-
- //     align-items: center;
- //     justify-content: space-around;
- //     height: 100%;
-
- //     background-color: #9a9a9b;
- //  }
-
- .footer {
-    height: 510px;
-    background-color: #373844;
-
- }
+ @import 'sections/restaurant-menu.less';
+ @import 'sections/clients.less';
+ @import 'sections/reserve.less';
+ @import 'sections/footer.less';
