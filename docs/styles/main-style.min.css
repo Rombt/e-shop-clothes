@@ -844,7 +844,7 @@ a {
   text-align: center;
 }
 #about {
-  height: 630px;
+  min-height: 630px;
   background-color: #fff;
 }
 .about-row__top-menu {
@@ -964,6 +964,13 @@ a {
   align-items: center;
   height: 525px;
 }
+@media screen and (max-width: 1112px) {
+  .about-row {
+    justify-content: center;
+    height: auto;
+    padding: 40px 0;
+  }
+}
 .about-row__text {
   box-sizing: border-box;
   word-wrap: break-word;
@@ -974,6 +981,12 @@ a {
   flex-direction: column;
   justify-content: space-between;
   min-height: 285px;
+}
+@media screen and (max-width: 1112px) {
+  .about-row__text {
+    padding: 40px 0;
+    width: calc(100% / 12 * 10 - 30px);
+  }
 }
 .about-row__text h2 {
   font-family: "PlayfairDisplay";
@@ -996,6 +1009,16 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 1112px) {
+  .about-row__text-buttons {
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 720px) {
+  .about-row__text-buttons {
+    flex-direction: column;
+  }
+}
 .about-row__text-buttons button {
   color: #fff;
   border: 1px solid #fea100;
@@ -1004,6 +1027,11 @@ a {
   height: 51px;
   width: 160px;
   cursor: pointer;
+}
+@media screen and (max-width: 720px) {
+  .about-row__text-buttons button {
+    margin-bottom: 20px;
+  }
 }
 .about-row__text-buttons .wrap-img {
   width: 255px;
@@ -1028,10 +1056,20 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media screen and (max-width: 576px) {
+  .about-row__img {
+    justify-content: center;
+  }
+}
 .about-row__img .wrap-img {
   width: 270px;
   height: 150px;
   overflow: hidden;
+}
+@media screen and (max-width: 576px) {
+  .about-row__img .wrap-img {
+    margin: 10px 0;
+  }
 }
 .about-row__img .wrap-img img {
   width: 100%;
@@ -1044,8 +1082,18 @@ a {
   margin-top: 50px;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 576px) {
+  .about-row .wrap-img:nth-child(1) {
+    margin: 10px 0;
+  }
+}
 .about-row .wrap-img:nth-child(4) {
   margin-top: -50px;
+}
+@media screen and (max-width: 576px) {
+  .about-row .wrap-img:nth-child(4) {
+    margin: 10px 0;
+  }
 }
 .background__today {
   background-color: #4c5659;
