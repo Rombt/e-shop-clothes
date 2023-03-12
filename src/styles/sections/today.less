@@ -18,22 +18,122 @@
 
    .conteiner {
       height: inherit;
+      text-align: center;
+
+      h2 {
+         color: #fff;
+         font-size: 35px;
+         position: relative;
+         top: 100px;
+      }
+
    }
 }
 
 .today-row {
    .row-flex();
-
    justify-content: center;
-   height: inherit;
+   flex-wrap: wrap;
+   height: auto;
+}
 
+.today-row__food-card {
+   margin-top: 90px;
+}
 
+.food-card {
+   height: 730px;
+   min-width: 470px;
+   .col();
+   .size(6);
 
-   border: 1px solid #a5fd03;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
 
-   h2 {
-      color: #fff;
-      font-size: 35px;
-      margin-top: 100px;
+   &__wrap-img {
+      width: 100%;
+      height: 420px;
    }
+
+   &__food-name {
+      height: 225px;
+      width: 380px;
+
+      h3 {
+         margin: 0;
+         margin-top: 50px;
+         font-family: "PlayfairDisplay";
+         font-size: 26px;
+         color: #14141d;
+         font-weight: 700;
+      }
+
+      p {
+         font-family: "Sintony";
+         font-size: 14px;
+         color: #5c6369;
+         font-weight: regular;
+         line-height: 26px;
+      }
+   }
+
+   &__order-block {
+      width: 85%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 2px solid #e1e1e1;
+   }
+
+   &__title {
+      font-family: "Sintony";
+      font-size: 13px;
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.308;
+      padding-right: 20px;
+      border-right: 2px solid #e1e1e1;
+
+      p {
+         color: #fe4c8d;
+         margin: 0;
+
+      }
+
+   }
+
+   &__phone-namber {
+      font-size: 26px;
+      font-family: "PlayfairDisplay";
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 0.846;
+   }
+
+   &__price {
+      font-size: 25px;
+      font-family: "PlayfairDisplay";
+      color: rgb(254, 161, 0);
+      font-weight: bold;
+      text-transform: uppercase;
+      vertical-align: super;
+      line-height: 0.733;
+
+      p {
+         margin: 0;
+         margin-right: 2px;
+         display: inline;
+         font-size: 12px;
+         vertical-align: super;
+      }
+   }
+
+
+
 }
