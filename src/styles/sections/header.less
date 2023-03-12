@@ -11,6 +11,7 @@
    align-items: center;
    justify-content: space-between;
 
+
    .md_2-block({
       justify-content: center;
 
@@ -70,30 +71,31 @@
    });
 }
 
-.menu__burger-close {
+.sm-block({
 
-   height: 40px;
-   width: 40px;
-   overflow: hidden;
-   background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
+   .menu__burger-close {
 
-   transition: all 0.9s ease 0s;
+      height: 40px;
+      width: 40px;
+      overflow: hidden;
+      background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
 
-   &::before {
-      display: none;
+      transition: all 0.9s ease 0s;
+
+      &::before {
+         display: none;
+      }
+
+      &::after {
+         display: none;
+      }
+
+      span {
+         display: none;
+      }
    }
 
-   &::after {
-      display: none;
-   }
-
-   span {
-      display: none;
-   }
-}
-
-
-
+});
 
 .heder-menu {
    .col();
@@ -124,6 +126,8 @@ ul {
    width: 100%;
 
    li {
+      cursor: pointer;
+
       a {
          color: #647786;
       }
