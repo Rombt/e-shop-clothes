@@ -793,16 +793,23 @@ a {
   height: 570px;
   position: relative;
 }
-.background__dish img {
-  width: 100%;
+.dish__wrap-img {
+  height: 570px;
+}
+.swiper {
   height: 100%;
-  position: absolute;
+  width: 100%;
+  position: absolute !important;
   top: 0;
   left: 0;
-  object-fit: cover;
-  /* или более подходящее значение*/
-  object-position: center;
-  z-index: -1;
+}
+.swiper-pagination {
+  left: 15px !important;
+}
+.swiper-pagination span {
+  margin-top: 10px !important;
+  width: 10px;
+  height: 10px;
 }
 #dish {
   height: 570px;
@@ -821,6 +828,7 @@ a {
 .dish-title {
   align-self: center;
   width: 480px;
+  z-index: 5;
 }
 .dish-title__title {
   font-size: 56px;
@@ -846,6 +854,7 @@ a {
   background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
   position: absolute;
   bottom: -80px;
+  z-index: 5;
 }
 .exlore-food-menu img {
   height: 84px;

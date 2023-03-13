@@ -1,42 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-
-   <title>restaurant site</title>
-
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>restaurant site</title>
 </head>
 
 <body>
-
-   <div class="debug-grid">
-   <div>
-      <div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-         <div></div>
-      </div>
-   </div>
-</div>
-
-
-  <div class="conteiner">
+    
+    <div class="conteiner">
     <div class="header ">
         <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
         <div class="menu__burger">
@@ -70,11 +45,30 @@
         </div>
     </div>
 </div>
-
-  <div class="background background__dish">
-    <!-- <div class="wrap-img"> -->
-    <img src="img/dish-bg.jpg" alt="">
-    <!-- </div> -->
+    <div class="background background__dish">
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-1.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-2.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-3.jpg" alt=""></div>
+            </div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <!-- <div class="swiper-button-prev"></div> -->
+        <!-- <div class="swiper-button-next"></div> -->
+    </div>
     <div class="conteiner" id="dish">
         <div class="dish-title">
             <p class="dish-title__title">Teast your fav dish</p>
@@ -86,8 +80,7 @@
         </div>
     </div>
 </div>
-
-  <div class="conteiner" id="about">
+    <div class="conteiner" id="about">
     <div class="about-row__top-menu">
         <div class="read">
             <img src="img/icon_reviews.png" class="read__icon" alt="reviews">
@@ -134,8 +127,7 @@
     </div>
 </div>
 </div>
-
-  <section>
+    <section>
    <div class="background background__today">
       <img src="img/today-row-bg.jpg" alt="">
       <div class="conteiner" id="today">
@@ -181,12 +173,10 @@
       </div>
    </div>
 </section>
-
-  <div class="conteiner" id="restaurant-menu">
+    <div class="conteiner" id="restaurant-menu">
    <!-- <div class="row"></div> -->
 </div>
-
-  <div class="background background__clients">
+    <div class="background background__clients">
 
    <div class="conteiner" id="clients">
       <!-- <div class="row"></div> -->
@@ -194,31 +184,21 @@
 
 
 </div>
-
-  <div class="conteiner" id="reserve">
+    <div class="conteiner" id="reserve">
    <!-- <div class="row"></div> -->
 </div>
-
-
-
-  https://youtu.be/HJZP5QsrpXs
-  адаптивный шрифт
-  SCSS Миксин:
-  $maxWidth: 1280;
-  @mixin adaptiv-font($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $maxWidth: $maxWidth - 320;
-  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-  }
-
-
-
-
-  <div class="footer conteiner"></div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="js/app.min.js"></script>
+    https://youtu.be/HJZP5QsrpXs
+    адаптивный шрифт
+    SCSS Миксин:
+    $maxWidth: 1280;
+    @mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+    }
+    <div class="footer conteiner"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
-
 
 </html>
