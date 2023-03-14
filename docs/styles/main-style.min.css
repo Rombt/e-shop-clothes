@@ -793,16 +793,44 @@ a {
   height: 570px;
   position: relative;
 }
-.background__dish img {
-  width: 100%;
+.dish__wrap-img {
+  height: 570px;
+}
+.swiper-dish {
   height: 100%;
-  position: absolute;
+  width: 100%;
+  position: absolute !important;
   top: 0;
   left: 0;
-  object-fit: cover;
-  /* или более подходящее значение*/
-  object-position: center;
-  z-index: -1;
+}
+.swiper-pagination-dish {
+  left: 30px !important;
+}
+.swiper-pagination-dish .swiper-pagination-bullet {
+  border: 3px solid #fff;
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+  background-color: #7d8587;
+}
+.swiper-pagination-dish .swiper-pagination-bullet .swiper-pagination__center {
+  display: none;
+}
+.swiper-pagination-dish .swiper-pagination-bullet-active {
+  border-color: #fea100;
+}
+.swiper-pagination-dish .swiper-pagination-bullet-active .swiper-pagination__center {
+  display: block;
+  background-color: #fea100;
+  border-color: #fea100;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: relative;
+  left: 0;
+  margin: 0px auto;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 #dish {
   height: 570px;
@@ -821,6 +849,7 @@ a {
 .dish-title {
   align-self: center;
   width: 480px;
+  z-index: 5;
 }
 .dish-title__title {
   font-size: 56px;
@@ -846,6 +875,7 @@ a {
   background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
   position: absolute;
   bottom: -80px;
+  z-index: 5;
 }
 .exlore-food-menu img {
   height: 84px;
