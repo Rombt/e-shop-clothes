@@ -1,74 +1,119 @@
 .background__dish {
-   background-image: url("../img/dish.jpg");
+    height: 570px;
+    position: relative;
 }
 
+.dish__wrap-img {
+    height: 570px;
+}
 
+.swiper-dish {
+    height: 100%;
+    width: 100%;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+
+.swiper-pagination-dish {
+    left: 30px !important;
+
+    .swiper-pagination-bullet {
+        border: 3px solid #fff;
+        width: 14px;
+        height: 14px;
+        opacity: .8;
+        background-color: #7d8587;
+
+        .swiper-pagination__center {
+            display: none;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        border-color: rgb(254, 161, 0);
+
+        .swiper-pagination__center {
+            display: block;
+            background-color: rgb(254, 161, 0);
+            border-color: rgb(254, 161, 0);
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+            position: relative;
+            left: 0;
+            margin: 0px auto;
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+    }
+}
 
 #dish {
-   height: 570px;
-   display: flex;
-   color: #ffffff;
-
-   position: relative;
+    height: 570px;
+    display: flex;
+    color: #ffffff;
+    position: relative;
 }
 
 .img-text {
-   font-size: 24px;
-   font-family: "Sintony";
-   font-weight: 400;
-   text-align: center;
-   text-transform: uppercase;
-   padding-top: 111px;
+    font-size: 24px;
+    font-family: "Sintony";
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 111px;
 }
 
 .dish-title {
-   align-self: center;
-   width: 480px;
+    align-self: center;
+    width: 480px;
 
-   &__title {
-      font-size: 56px;
-      font-family: "PlayfairDisplay";
-      margin: 0px 0 -5px 0;
-   }
+    z-index: 5;
 
-   &__subtitle-title {
-      font-family: "PlayfairDisplay";
-      font-size: 40px;
-      margin: 0px;
-   }
+    &__title {
+        font-size: 56px;
+        font-family: "PlayfairDisplay";
+        margin: 0px 0 -5px 0;
+    }
 
-   &__subtitle-title span {
-      color: #fea100;
-   }
+    &__subtitle-title {
+        font-family: "PlayfairDisplay";
+        font-size: 40px;
+        margin: 0px;
+    }
+
+    &__subtitle-title span {
+        color: #fea100;
+    }
 
 }
 
-
-
-
 .exlore-food-menu {
-   width: 200px;
-   height: 210px;
-   font-size: 22px;
-   font-family: PlayfairDisplay;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    width: 200px;
+    height: 210px;
+    font-size: 22px;
+    font-family: PlayfairDisplay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-   background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
-   position: absolute;
-   bottom: -80px;
+    background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+    position: absolute;
+    bottom: -80px;
 
-   img {
-      height: 84px;
-      width: 84px;
-      position: absolute;
-      top: -40px;
-      z-index: 10;
-   }
+    z-index: 5;
 
-   p {
-      width: 110px;
-      text-align: center;
-   }
+    img {
+        height: 84px;
+        width: 84px;
+        position: absolute;
+        top: -40px;
+        z-index: 10;
+    }
+
+    p {
+        width: 110px;
+        text-align: center;
+    }
 }

@@ -12,6 +12,14 @@ export const settings = {
             width: "920px",
             fields: "15px"
         },
+        md_1: {
+            width: "1112px",
+            fields: "15px"
+        },
+        md_2: {
+            width: "850px",
+            fields: "15px"
+        },
         sm: {
             width: "720px"
         },
