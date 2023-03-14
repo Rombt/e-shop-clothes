@@ -46,13 +46,8 @@
     </div>
 </div>
     <div class="background background__dish">
-    <div class="swiper">
-        <!-- Additional required wrapper -->
+    <div class="swiper-dish swiper">
         <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg.jpg" alt=""></div>
-            </div>
             <div class="swiper-slide">
                 <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-1.jpg" alt=""></div>
             </div>
@@ -63,11 +58,7 @@
                 <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-3.jpg" alt=""></div>
             </div>
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- If we need navigation buttons -->
-        <!-- <div class="swiper-button-prev"></div> -->
-        <!-- <div class="swiper-button-next"></div> -->
+        <div class="swiper-pagination-dish swiper-pagination"></div>
     </div>
     <div class="conteiner" id="dish">
         <div class="dish-title">
@@ -187,15 +178,7 @@
     <div class="conteiner" id="reserve">
    <!-- <div class="row"></div> -->
 </div>
-    https://youtu.be/HJZP5QsrpXs
-    адаптивный шрифт
-    SCSS Миксин:
-    $maxWidth: 1280;
-    @mixin adaptiv-font($pcSize, $mobSize) {
-    $addSize: $pcSize - $mobSize;
-    $maxWidth: $maxWidth - 320;
-    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
-    }
+
     <div class="footer conteiner"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="js/app.min.js"></script>
