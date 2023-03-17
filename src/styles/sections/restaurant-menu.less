@@ -1,5 +1,122 @@
-#restaurant-menu {
-   min-height: 1235px;
+ @import './parts/button-orange.less';
 
 
-}
+ #restaurant-menu {
+    min-height: 1235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding: 555px 0px 100px 0px;
+
+    background-color: #e7ecf1;
+
+    h1 {
+       font-size: 35px;
+       font-family: "PlayfairDisplay";
+       color: rgb(20, 20, 29);
+       font-weight: bold;
+       line-height: 0.629;
+       text-transform: capitalize;
+       margin: 0;
+    }
+ }
+
+
+ .wrap-nenu {}
+
+ .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    width: 30px;
+
+    display: none;
+
+    span {
+       width: inherit;
+       height: 2px;
+       background-color: #000;
+    }
+ }
+
+ .menu-body {}
+
+ .menu {
+
+    /* .menu__list */
+
+    &__list {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       align-items: center;
+       height: 170px;
+    }
+
+    /* .menu__item */
+
+    &__item {
+
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+
+
+       &:not(:last-child) {
+          margin-right: 50px;
+       }
+
+       img {
+          width: 25px;
+          height: 25px;
+          margin-bottom: 15px;
+       }
+    }
+
+    /* .menu__link */
+
+    &__link {
+       font-size: 20px;
+       font-family: "PlayfairDisplay";
+       text-transform: capitalize;
+       color: rgb(20, 20, 29);
+       font-weight: bold;
+       line-height: 1.1;
+    }
+
+    /* .menu__sub-menu-list */
+
+    &__sub-menu-list {
+       display: none;
+    }
+
+    /* .menu__sub-item */
+
+    &__sub-item {}
+
+    /* .menu__sub-link */
+
+    &__sub-link {}
+ }
+
+ .row {
+
+    .row-flex();
+
+    width: 100%;
+    border: 1px solid #000;
+ }
+
+ .col {
+    .col();
+    .size(6);
+    border: 1px solid #000;
+ }
+
+ .dish {}
+
+ .title-dish {}
+
+ .prise {}
