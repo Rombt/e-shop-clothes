@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-
-   <title>restaurant site</title>
-
-
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <title>restaurant site</title>
 </head>
 
 <body>
-
-   <div class="debug-grid">
+     <div class="debug-grid">
    <div>
       <div>
          <div></div>
@@ -36,7 +30,7 @@
 </div>
 
 
-  <div class="conteiner">
+    <div class="conteiner">
     <div class="header ">
         <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
         <div class="menu__burger">
@@ -70,11 +64,21 @@
         </div>
     </div>
 </div>
-
-  <div class="background background__dish">
-    <!-- <div class="wrap-img"> -->
-    <img src="img/dish-bg.jpg" alt="">
-    <!-- </div> -->
+    <div class="background background__dish">
+    <div class="swiper-dish swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-1.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-2.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-3.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="swiper-pagination-dish swiper-pagination"></div>
+    </div>
     <div class="conteiner" id="dish">
         <div class="dish-title">
             <p class="dish-title__title">Teast your fav dish</p>
@@ -86,8 +90,7 @@
         </div>
     </div>
 </div>
-
-  <div class="conteiner" id="about">
+    <div class="conteiner" id="about">
     <div class="about-row__top-menu">
         <div class="read">
             <img src="img/icon_reviews.png" class="read__icon" alt="reviews">
@@ -134,10 +137,26 @@
     </div>
 </div>
 </div>
-
-  <section>
+    <section>
    <div class="background background__today">
-      <img src="img/today-row-bg.jpg" alt="">
+      <!-- <img src="img/today-row-bg.jpg" alt=""> -->
+
+      <div class="swiper-today swiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide">
+               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-1.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-2.jpg" alt=""></div>
+            </div>
+            <div class="swiper-slide">
+               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-3.jpg" alt=""></div>
+            </div>
+         </div>
+         <div class="swiper-pagination-today swiper-pagination"></div>
+      </div>
+
+
       <div class="conteiner" id="today">
          <h2> Today Special </h2>
          <div class="today-row">
@@ -153,9 +172,9 @@
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
                   <div class="food-card__phone-namber">1-008 005 006</div>
-                  <div class="food-card__price">
-                     <p>$</p>89.00
-                  </div>
+                  <div class="price">
+   <p>$</p>89.00
+</div>
                </div>
             </div>
             <div class="food-card today-row__food-card">
@@ -170,9 +189,9 @@
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
                   <div class="food-card__phone-namber">1-008 005 006</div>
-                  <div class="food-card__price">
-                     <p>$</p>99.00
-                  </div>
+                  <div class="price">
+   <p>$</p>99.00
+</div>
                </div>
             </div>
 
@@ -181,12 +200,182 @@
       </div>
    </div>
 </section>
-
-  <div class="conteiner" id="restaurant-menu">
-   <!-- <div class="row"></div> -->
+    <div class="conteiner" id="restaurant-menu">
+   <h1>food menu</h1>
+   <div class="wrap-nenu">
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+      <nav class="menu">
+         <ul class="menu__list">
+            <li class="menu__item">
+               <img src="img/icon_all.png" alt="">
+               <a class="menu__link" href="#">All</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_breakfast.png" alt="">
+               <a class="menu__link" href="#">Breakfast</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_lunch.png" alt="">
+               <a class="menu__link" href="#">Lunch</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_snacks.png" alt="">
+               <a class="menu__link" href="#">Snacks</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_pizza.png" alt="">
+               <a class="menu__link" href="#">Pizza</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_soups.png" alt="">
+               <a class="menu__link" href="#">Soups</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="menu__item">
+               <img src="img/icon_binner.png" alt="">
+               <a class="menu__link" href="#">Dinner</a>
+               <ul class="menu__sub-menu-list">
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+   </div>
+   <div class="wrap-nenu__border"></div>
+   <div class="row-dish dish__row">
+      <div class="col-dish">
+         <div class="dish">
+            <div class="dish__title">
+               Ultimate organic fruit salad
+               <p>survived not only five centuries but the leap</p>
+            </div>
+            <div class="price">
+   <p>$</p>50.00
 </div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Toasted jam
+               <p>Phasellus a ex accumsan, sollicitudin</p>
+            </div>
+            <div class="price">
+   <p>$</p>68.00
+</div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Toasted jam copy
+               <p>Phasellus a ex accumsan, sollicitudin copy</p>
+            </div>
+            <div class="price">
+   <p>$</p>22.00
+</div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Plain pancakes
+               <p>Donec eget augue at diam euismod viverra</p>
+            </div>
+            <div class="price">
+   <p>$</p>39.00
+</div>
+         </div>
+      </div>
+      <div class="col-dish">
+         <div class="dish">
+            <div class="dish__title">
+               Ultimate organic fruit salad
+               <p>survived not only five centuries but the leap</p>
+            </div>
+            <div class="price">
+   <p>$</p>50.00
+</div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Toasted jam
+               <p>Phasellus a ex accumsan, sollicitudin</p>
+            </div>
+            <div class="price">
+   <p>$</p>68.00
+</div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Toasted jam copy
+               <p>Phasellus a ex accumsan, sollicitudin copy</p>
+            </div>
+            <div class="price">
+   <p>$</p>22.00
+</div>
+         </div>
+         <div class="dish">
+            <div class="dish__title">
+               Plain pancakes
+               <p>Donec eget augue at diam euismod viverra</p>
+            </div>
+            <div class="price">
+   <p>$</p>39.00
+</div>
+         </div>
+      </div>
+   </div>
+   <button type="button" class="button-orange">Explor food menu</button>
 
-  <div class="background background__clients">
+   <div class="wrap-img wrap-img__311x311"><img src="img/Image_311x311.jpg" alt=""></div>
+   <div class="wrap-img wrap-img__267x414"><img src="img/Image_267x414.jpg" alt=""></div>
+   <div class="wrap-img wrap-img__241x241"><img src="img/Image_241x241.jpg" alt=""></div>
+
+</div>
+    <div class="background background__clients">
 
    <div class="conteiner" id="clients">
       <!-- <div class="row"></div> -->
@@ -194,19 +383,13 @@
 
 
 </div>
-
-  <div class="conteiner" id="reserve">
+    <div class="conteiner" id="reserve">
    <!-- <div class="row"></div> -->
 </div>
 
-
-
-
-  <div class="footer conteiner"></div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="js/app.min.js"></script>
+    <div class="footer conteiner"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
-
 
 </html>

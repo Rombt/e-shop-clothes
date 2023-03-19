@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 @@include('html/head.html',{
 "title":"restaurant site"
 })
 
 <body>
-
-  @@if(isProd == false){ @@include('html/debug-grid.html',{})}
-
-
-  @@include('html/header.html',{})
-
-  @@include('html/dish.html',{})
-
-  @@include('html/about.html',{})
-
-  @@include('html/today.html',{})
-
-  @@include('html/restaurant-menu.html',{})
-
-  @@include('html/clients.html',{})
-
-  @@include('html/reserve.html',{})
+    @@if(isProd == false){ @@include('html/debug-grid.html',{})}
 
 
+    @@include('html/header.html',{})
+    @@include('html/dish.html',{})
+    @@include('html/about.html',{})
+    @@include('html/today.html',{})
+    @@include('html/restaurant-menu.html',{})
+    @@include('html/clients.html',{})
+    @@include('html/reserve.html',{})
 
-
-  @@include('html/footer.html',{})
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="js/app.min.js"></script>
+    @@include('html/footer.html',{})
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
-
 
 </html>

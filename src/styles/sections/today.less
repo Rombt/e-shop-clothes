@@ -2,32 +2,72 @@
    background-color: #4c5659;
    height: 440px;
    position: relative;
-   z-index: -1;
 
-   img {
-      width: 100%;
+   .today__wrap-img {
+      height: 440px;
+   }
+
+   .swiper-today {
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      /* или более подходящее значение*/
-      object-position: center;
-      z-index: -1;
+      width: 100%;
+      position: absolute !important;
+      top: 0px;
+      left: 0px;
    }
 
-   .conteiner {
-      height: inherit;
-      text-align: center;
+   .swiper-pagination-today {
 
-      h2 {
-         color: #fff;
-         font-size: 35px;
-         position: relative;
-         top: 100px;
+      top: 115px !important;
+      left: 525px !important;
+
+      .md_1-block ({
+         left: 200px !important;
+
+      });
+
+   .swiper-pagination-bullet {
+      border: 3px solid #fff;
+      width: 14px;
+      height: 14px;
+      opacity: .8;
+      background-color: #7d8587;
+
+      .swiper-pagination__center {
+         display: none;
       }
-
    }
+
+   .swiper-pagination-bullet-active {
+      border-color: rgb(254, 161, 0);
+
+      .swiper-pagination__center {
+         display: block;
+         background-color: rgb(254, 161, 0);
+         border-color: rgb(254, 161, 0);
+         border-radius: 50%;
+         width: 4px;
+         height: 4px;
+         position: relative;
+         left: 0;
+         margin: 0px auto;
+         top: 50%;
+         transform: translate(0, -50%);
+      }
+   }
+}
+
+.conteiner {
+   height: inherit;
+   text-align: center;
+
+   h2 {
+      color: #fff;
+      font-size: 35px;
+      position: relative;
+      top: 100px;
+      z-index: 2;
+   }
+}
 }
 
 .today-row {
@@ -38,7 +78,7 @@
 }
 
 .today-row__food-card {
-   margin-top: 90px;
+   margin-top: 125px;
 }
 
 .food-card {
@@ -46,12 +86,15 @@
    min-width: 470px;
    .col();
    .size(6);
+   position: relative;
+   z-index: 2;
 
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    align-items: center;
    box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+   background-color: #fff;
 
    &__wrap-img {
       width: 100%;
@@ -114,24 +157,6 @@
       font-weight: bold;
       text-transform: uppercase;
       line-height: 0.846;
-   }
-
-   &__price {
-      font-size: 25px;
-      font-family: "PlayfairDisplay";
-      color: rgb(254, 161, 0);
-      font-weight: bold;
-      text-transform: uppercase;
-      vertical-align: super;
-      line-height: 0.733;
-
-      p {
-         margin: 0;
-         margin-right: 2px;
-         display: inline;
-         font-size: 12px;
-         vertical-align: super;
-      }
    }
 
 
