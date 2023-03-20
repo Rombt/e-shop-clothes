@@ -35,9 +35,9 @@ export const swiperToday = new Swiper('.swiper.swiper-today', {
    loop: true,
    speed: 1000,
 
-   autoplay: {
-      delay: 5000,
-   },
+   // autoplay: {
+   //    delay: 5000,
+   // },
    effect: 'fade',
    fadeEffect: {
       crossFade: true,
@@ -59,19 +59,19 @@ export const swiperClients = new Swiper('.swiper.swiper-clients', {
 
    // slidesPerView: 3,
    // spaceBetween: 10,
-   loop: true,
+   // loop: true,
    // speed: 1000,
 
-   // direction: 'horizontal',
+   direction: 'horizontal',
 
 
    // // autoplay: {
    // //    delay: 5000,
    // // },
-   effect: 'fade',
-   fadeEffect: {
-      crossFade: true,
-   },
+   // effect: 'fade',
+   // fadeEffect: {
+   //    crossFade: true,
+   // },
 
 
    // navigation: {
