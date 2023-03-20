@@ -7,13 +7,28 @@ window.onload = function () {
     isWebp(); // проверяет поддерживает ли браузер формат webp
 
 
-    // burger_menu 
-    let burgerMenu = document.querySelector('.menu__burger');
-    let hederMenu = document.querySelector('.heder-menu');
-    burgerMenu.addEventListener("click", () => {
-        hederMenu.classList.toggle('menu__sm');
-        burgerMenu.classList.toggle('menu__burger-close');
-    });;
+    burgerMenu('heder-menu__burger', 'heder-menu', 'heder-menu__burger-close', 'menu__sm');       // burger_menu header
+    burgerMenu('food-menu-burger', 'food-menu', 'heder-menu__burger-close', 'active');       // burger_menu food-menu
+
+
+    function burgerMenu(menuBurger, menu, menuBurgerClose, active) {
+
+        menuBurger = '.' + menuBurger;
+        menu = '.' + menu;
+
+        let burgerMenu = document.querySelector(menuBurger);
+        let hederMenu = document.querySelector(menu);
+
+        console.log("burgerMenu = ", burgerMenu);
+        // console.log("hederMenu = ", hederMenu);
+
+        burgerMenu.addEventListener("click", () => {
+
+            hederMenu.classList.toggle(active);
+            burgerMenu.classList.toggle(menuBurgerClose);
+        });;
+
+    }
 
 
 

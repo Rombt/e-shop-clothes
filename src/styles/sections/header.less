@@ -12,6 +12,7 @@
    justify-content: space-between;
 
 
+
    .md_2-block({
       justify-content: center;
 
@@ -28,7 +29,7 @@
 }
 
 
-.menu__burger {
+.heder-menu__burger {
    display: none;
 
    .sm-block({
@@ -73,13 +74,14 @@
 
 .sm-block({
 
-   .menu__burger-close {
+   .heder-menu__burger-close {
 
       height: 40px !important;
       width: 40px;
       overflow: hidden;
       background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
 
+      z-index: 50;
       transition: all 0.9s ease 0s;
 
       &::before {
@@ -109,6 +111,9 @@
 
    .sm-block({
       display: none;
+
+      // top: -@offset_one_side - 25px;
+
    });
 
 ul {
@@ -124,6 +129,7 @@ ul {
    align-items: center;
    flex-wrap: wrap;
    width: 100%;
+
 
    li {
       cursor: pointer;
@@ -157,6 +163,7 @@ ul {
          align-items: centr;
          background-color: #fff;
          height: @menu_height;
+
 
          li {
 
@@ -242,12 +249,8 @@ ul {
    });
 
 margin-left: 0;
-border: 1px solid rgb(254,
-   161,
-   0);
-background-color: rgb(254,
-   161,
-   0);
+border: 1px solid rgb(254, 161, 0);
+background-color: rgb(254, 161, 0);
 border-radius: 4px;
 display: flex;
 justify-content: center;
