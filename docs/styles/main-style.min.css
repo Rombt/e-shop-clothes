@@ -1620,6 +1620,7 @@ a {
   position: relative;
   top: 100px;
   z-index: 2;
+  pointer-events: none;
 }
 .today-row {
   display: flex;

@@ -35,9 +35,9 @@ export const swiperToday = new Swiper('.swiper.swiper-today', {
    loop: true,
    speed: 1000,
 
-   // autoplay: {
-   //    delay: 5000,
-   // },
+   autoplay: {
+      delay: 5000,
+   },
    effect: 'fade',
    fadeEffect: {
       crossFade: true,
@@ -49,43 +49,23 @@ export const swiperToday = new Swiper('.swiper.swiper-today', {
          return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
       },
    },
-   mousewheel: {
-      invert: true,
-   },
+   // mousewheel: {
+   //    invert: true,
+   // },
 });
 
 
 export const swiperClients = new Swiper('.swiper.swiper-clients', {
+   loop: true,
+   speed: 500,
 
-   // slidesPerView: 3,
-   // spaceBetween: 10,
-   // loop: true,
-   // speed: 1000,
-
-   direction: 'horizontal',
-
-
-   // // autoplay: {
-   // //    delay: 5000,
-   // // },
-   // effect: 'fade',
-   // fadeEffect: {
-   //    crossFade: true,
-   // },
-
-
-   // navigation: {
-   //    nextEl: '.swiper-clients__button-prev',
-   //    prevEl: '.swiper-clients__button-next',
-   // },
-
-   navigation: {
-      nextEl: '.swiper-button-next .swiper-clients__button-prev',
-      prevEl: '.swiper-button-prev .swiper-clients__button-next',
+   autoplay: {
+      delay: 5000,
    },
 
+   navigation: {
+      nextEl: '.swiper-clients__button-prev',
+      prevEl: '.swiper-clients__button-next',
+   },
 
-   // mousewheel: {
-   //    invert: true,
-   // },
 });
