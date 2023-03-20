@@ -74,9 +74,14 @@ export const swiperClients = new Swiper('.swiper.swiper-clients', {
    },
 
 
+   // navigation: {
+   //    nextEl: '.swiper-clients__button-prev',
+   //    prevEl: '.swiper-clients__button-next',
+   // },
+
    navigation: {
-      nextEl: '.swiper-clients__button-prev',
-      prevEl: '.swiper-clients__button-next',
+      nextEl: '.swiper-button-next .swiper-clients__button-prev',
+      prevEl: '.swiper-button-prev .swiper-clients__button-next',
    },
 
 
