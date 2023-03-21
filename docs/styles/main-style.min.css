@@ -1880,8 +1880,6 @@ a {
   /* .menu__item */
   /* .menu__link */
   /* .menu__sub-menu-list */
-  /* .menu__sub-item */
-  /* .menu__sub-link */
 }
 .food-menu__list {
   display: flex;
@@ -2163,6 +2161,105 @@ a {
 #reserve {
   min-height: 600px;
   border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#reserve h2 {
+  font-size: 35px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 0.629;
+  align-self: center;
+  margin-bottom: 35px;
+}
+.reserve-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  /* .reserve-row__img */
+  /* .reserve-row__form */
+}
+.reserve-row__img {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 6 - 30px);
+  height: 334px;
+}
+.reserve-row__form {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 6 - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reserve-form {
+  columns: 2;
+  margin-bottom: 45px;
+  gap: 30px;
+  /* .reserve-form__input */
+}
+.reserve-form__input {
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #363d43;
+  line-height: 1.857;
+  text-align: left;
+  border-bottom: 3px solid #c7d1d6;
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.reserve-form__input img {
+  height: 20px;
+  width: 20px;
+  margin-bottom: 10px;
+  margin-left: 3px;
+}
+.reserve-form__input p {
+  display: block;
+  margin-right: 3px;
+}
+.reserve-form__input input {
+  height: 50%;
+  flex-grow: 1;
+  border: none;
+}
+.reserve-form__input:nth-last-child(-n+2) input {
+  width: 30px;
+}
+.call-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.call-us span:nth-of-type(1) {
+  font-size: 13px;
+  font-family: "Sintony";
+  color: #14141d;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.308;
+}
+.call-us span:nth-of-type(1) p {
+  color: #fc629b;
+}
+.call-us span:nth-of-type(2) {
+  font-size: 24px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.917;
 }
 .footer {
   height: 510px;
