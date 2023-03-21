@@ -24,8 +24,8 @@ window.onload = function () {
         conteiner: 'food-menu',
         menuList: 'food-menu__list',
         classActive: 'active',
-        burgerOpen: 'food-menu-burger',
-        burgerClose: 'burger__close',
+        burgerOpen: 'burger-open',
+        burgerClose: 'burger-close',
 
     }
 

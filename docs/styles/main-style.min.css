@@ -1833,7 +1833,7 @@ a {
   }
 }
 @media screen and (max-width: 720px) {
-  .food-menu-burger {
+  .food-menu__burger {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1843,10 +1843,36 @@ a {
     position: relative;
     z-index: 2;
   }
-  .food-menu-burger span {
+  .burger-open span {
     width: inherit;
     height: 2px;
     background-color: #000;
+    opacity: 1;
+    transition: opacity 5s ease-in-out;
+  }
+  .burger-open::before,
+  .burger-open::after {
+    content: '';
+    width: inherit;
+    height: 2px;
+    background-color: #000;
+    opacity: 1;
+    transition: opacity 5s ease-in-out;
+  }
+  .burger-close span {
+    display: none;
+  }
+  .burger-close::before {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 25%;
+    transition: all 0.5s ease-in-out;
+  }
+  .burger-close::after {
+    transform: rotate(45deg);
+    position: relative;
+    top: -25%;
+    transition: all 0.5s ease-in-out;
   }
 }
 .food-menu {
@@ -1883,7 +1909,10 @@ a {
 }
 @media screen and (max-width: 720px) {
   .food-menu__item {
-    display: none;
+    height: 0px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
   }
 }
 .food-menu__item:not(:last-child) {
@@ -1933,6 +1962,8 @@ a {
     margin-top: 10px;
     position: relative;
     border-radius: 4px;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
   }
   .active .food-menu__item ::after {
     content: '';
@@ -1942,6 +1973,8 @@ a {
     border: 1px solid #fff;
     left: 2px;
     top: 2px;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
   }
 }
 .wrap-nenu__border {
