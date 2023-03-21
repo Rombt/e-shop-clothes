@@ -2160,10 +2160,15 @@ a {
 }
 #reserve {
   min-height: 600px;
-  border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media screen and (max-width: 1120px) {
+  #reserve {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
 }
 #reserve h2 {
   font-size: 35px;
@@ -2182,6 +2187,12 @@ a {
   /* .reserve-row__img */
   /* .reserve-row__form */
 }
+@media screen and (max-width: 1120px) {
+  .reserve-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .reserve-row__img {
   box-sizing: border-box;
   word-wrap: break-word;
@@ -2189,6 +2200,13 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 6 - 30px);
   height: 334px;
+  min-width: 510px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 576px) {
+  .reserve-row__img {
+    min-width: 490px;
+  }
 }
 .reserve-row__form {
   box-sizing: border-box;
@@ -2199,12 +2217,25 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 510px;
+}
+@media screen and (max-width: 576px) {
+  .reserve-row__form {
+    min-width: 490px;
+  }
 }
 .reserve-form {
   columns: 2;
   margin-bottom: 45px;
   gap: 30px;
   /* .reserve-form__input */
+}
+@media screen and (max-width: 576px) {
+  .reserve-form {
+    columns: 1;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 .reserve-form__input {
   font-size: 14px;
@@ -2241,6 +2272,14 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 576px) {
+  .call-us {
+    flex-direction: column;
+  }
+  .call-us .button-orange {
+    margin-bottom: 50px;
+  }
 }
 .call-us span:nth-of-type(1) {
   font-size: 13px;
