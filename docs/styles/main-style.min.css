@@ -981,10 +981,16 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 1120px) {
+  .header {
+    margin-bottom: 10px;
+  }
+}
 @media screen and (max-width: 850px) {
   .header {
     justify-content: center;
     transition: all 0.3s ease 0s;
+    margin-bottom: 0px;
   }
 }
 .header .logo {
@@ -1737,6 +1743,10 @@ a {
   border: 1px solid #fea100;
   background-color: #ffb12b;
 }
+.button-orange:active {
+  box-shadow: 0 2px #ca8102;
+  transform: translateY(2px);
+}
 #restaurant-menu {
   min-height: 790px;
   padding-bottom: 100px;
@@ -1797,6 +1807,7 @@ a {
   #restaurant-menu .wrap-img__241x241 {
     bottom: -30px;
     right: 0px;
+    z-index: -1;
   }
 }
 #restaurant-menu .button-orange {

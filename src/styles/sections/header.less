@@ -11,13 +11,15 @@
    align-items: center;
    justify-content: space-between;
 
-
-
-   .md_2-block({
-      justify-content: center;
-
-      transition: all 0.3s ease 0s;
+   .md_1-block({
+      margin-bottom: 10px;
    });
+
+.md_2-block({
+   justify-content: center;
+   transition: all 0.3s ease 0s;
+   margin-bottom: 0px;
+});
 
 .logo {
    .col();
@@ -42,7 +44,6 @@
       position: absolute;
       top: @offset_one_side;
       left: @offset_one_side;
-
       width: 40px;
       height: 25px;
 
@@ -188,8 +189,11 @@ ul {
    align-items: center;
    justify-content: space-between;
 
+
+
    .md_1-block({
       justify-content: space-evenly;
+
    });
 
 .md_2-block({
