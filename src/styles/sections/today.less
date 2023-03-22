@@ -1,7 +1,7 @@
 .background__today {
-   background-color: #4c5659;
-   height: 440px;
+   // background-color: #4c5659;
    position: relative;
+   min-height: 440px;
 
    .today__wrap-img {
       height: 440px;
@@ -60,14 +60,15 @@
    height: inherit;
    text-align: center;
 
+
    h2 {
       color: #fff;
       font-size: 35px;
       position: relative;
       top: 100px;
       z-index: 2;
+      pointer-events: none;
    }
-
 }
 }
 
@@ -79,7 +80,7 @@
 }
 
 .today-row__food-card {
-   margin-top: 90px;
+   margin-top: 125px;
 }
 
 .food-card {
@@ -87,7 +88,6 @@
    min-width: 470px;
    .col();
    .size(6);
-
    position: relative;
    z-index: 2;
 
@@ -96,6 +96,7 @@
    justify-content: space-between;
    align-items: center;
    box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+   background-color: #fff;
 
    &__wrap-img {
       width: 100%;
@@ -158,24 +159,6 @@
       font-weight: bold;
       text-transform: uppercase;
       line-height: 0.846;
-   }
-
-   &__price {
-      font-size: 25px;
-      font-family: "PlayfairDisplay";
-      color: rgb(254, 161, 0);
-      font-weight: bold;
-      text-transform: uppercase;
-      vertical-align: super;
-      line-height: 0.733;
-
-      p {
-         margin: 0;
-         margin-right: 2px;
-         display: inline;
-         font-size: 12px;
-         vertical-align: super;
-      }
    }
 
 

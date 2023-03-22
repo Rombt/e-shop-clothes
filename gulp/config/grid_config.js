@@ -8,14 +8,22 @@ export const settings = {
         fields: "30px"
     },
     breakPoints: {
-        md: {
-            width: "920px",
-            fields: "15px"
-        },
         md_1: {
             width: "1120px",
             fields: "15px"
         },
+
+        // md_3: {
+        //     width: "1000px",
+        //     fields: "15px"
+        // },
+
+
+        md: {
+            width: "920px",
+            fields: "15px"
+        },
+
         md_2: {
             width: "850px",
             fields: "15px"
