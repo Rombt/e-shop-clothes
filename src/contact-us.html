@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Contact Us"
+})
+
+<body>
+    <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+    @@include('html/header.html',{})
+    @@include('html/title-page-block.html',{'title':'Contact Us'})
+    <div class="background">
+        <div class="wrap-img"><img src="@img/contact-us__background.jpg" alt=""></div>
+        <section class="address">
+            <div class="touch-wrap">
+                <h2>Get in touch</h2>
+                <form action="#">
+                    <div class="input">
+                        <img src="@img/form_icon_name.png" alt="icon name">
+                        <p></p>
+                        <input type="text">
+                    </div>
+                    <div class="input">
+                        <img src="@img/form_icon_email_1.png" alt="icon email">
+                        <p></p>
+                        <input type="text">
+                    </div>
+                    <div class="input">
+                        <img src="@img/form_icon_message.png" alt="icon message">
+                        <p></p>
+                        <input type="text">
+                    </div>
+                </form>
+                @@include('html/parts/button-orange.html',{'title':'Send now'})
+            </div>
+            <div class="address">
+                <h2>Our Address</h2>
+                <h3>address</h3>
+                <p>Address Luxury Restaurent California Second Street 2nd floor</p>
+                <h3>Phone </h3>
+                <a href="tel:+91855955856559">+91 8559 5585 6559 </a>
+                <h3>Email</h3>
+                <p>info@luxuryrestaurent.com </p>
+            </div>
+        </section>
+    </div>
+    @@include('html/footer.html',{})
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
