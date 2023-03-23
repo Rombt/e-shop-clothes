@@ -823,13 +823,6 @@ template {
   font-style: normal;
 }
 @font-face {
-  font-family: "Sintony";
-  font-display: swap;
-  src: url("../fonts/Sintony.woff2") format("woff2"), url("../fonts/Sintony.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
   font-family: "PlayfairDisplay";
   font-display: swap;
   src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
@@ -1433,6 +1426,7 @@ a {
   font-weight: 700;
   margin-right: 0px;
   margin-bottom: 15px;
+  color: inherit;
 }
 @media screen and (max-width: 920px) {
   .about-row__top-menu .read {
@@ -1468,6 +1462,7 @@ a {
   flex-wrap: wrap;
   width: auto;
   margin-left: 0px;
+  color: inherit;
 }
 @media screen and (max-width: 1120px) {
   .about-row__top-menu .call-us {
@@ -1939,7 +1934,7 @@ a {
     width: 100%;
     min-height: 100px;
     left: 0px;
-    top: 70px;
+    z-index: -1;
     flex-direction: column;
     background-color: #fff;
   }
@@ -2012,11 +2007,15 @@ a {
     position: absolute;
     width: 98.5%;
     height: 90%;
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     left: 2px;
     top: 2px;
     opacity: 1;
     transition: all 0.5s ease-in-out;
+  }
+  .active .food-menu__list {
+    top: 70px;
+    z-index: 5;
   }
 }
 .wrap-nenu__border {
@@ -2364,7 +2363,7 @@ a {
   background-color: #373844;
 }
 .footer {
-  min-height: 510px;
+  min-height: 430px;
   padding-top: 100px;
   display: flex;
   flex-direction: column;
