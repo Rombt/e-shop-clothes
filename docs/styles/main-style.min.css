@@ -1017,6 +1017,41 @@ a {
   box-shadow: 0 2px #3f424e;
   transform: translateY(2px);
 }
+.background-title-page-block {
+  height: 245px;
+  position: relative;
+}
+.background-title-page-block .wrap-img {
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+.background-title-page-block h1 {
+  font-size: 56px;
+  font-family: "PlayfairDisplay";
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 0.536;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.background-title-page-block h1::after {
+  content: url("../img/title-page-block__left_right.png");
+  margin-left: 9px;
+  position: relative;
+  top: -7px;
+}
+.background-title-page-block h1::before {
+  content: url("../img/title-page-block__left_left.png");
+  margin-right: 9px;
+  position: relative;
+  top: -7px;
+}
 .header {
   position: relative;
   min-height: 90px;
