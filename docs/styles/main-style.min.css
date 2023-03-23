@@ -2395,6 +2395,11 @@ a {
   align-items: start;
   min-height: 250px;
 }
+@media screen and (max-width: 1120px) {
+  .footer__row {
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 920px) {
   .footer__row {
     justify-content: center;
@@ -2407,7 +2412,11 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 2 - 30px);
   min-width: 170px;
-  order: 2;
+}
+@media screen and (max-width: 1120px) {
+  .footer__navigation {
+    order: 2;
+  }
 }
 .footer__navigation a {
   color: inherit;
@@ -2420,12 +2429,18 @@ a {
   width: calc(100% / 12 * 5 - 30px);
   min-width: 470px;
 }
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1120px) {
   .footer__news {
-    order: 1;
     width: calc(100% / 12 * 10 - 30px);
-    border: 1px solid #f7f4f4;
+    order: 1;
+    margin-bottom: 30px;
   }
+  .footer__news span,
+  .footer__news h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 850px) {
 }
 .footer__news span {
   display: block;
@@ -2438,7 +2453,11 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 3 - 30px);
   min-width: 170px;
-  order: 3;
+}
+@media screen and (max-width: 1120px) {
+  .footer__app {
+    order: 3;
+  }
 }
 .footer__app button:not(:last-child) {
   margin-bottom: 12px;
@@ -2451,12 +2470,19 @@ a {
   margin-bottom: 40px;
   /* .form-footer__input */
 }
+@media screen and (max-width: 1120px) {
+  .form-footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .form-footer .button-orange {
   width: 140px;
 }
 .form-footer__input {
   flex-grow: 1;
   height: 50px;
+  max-width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2465,6 +2491,11 @@ a {
   border-style: solid;
   border-radius: 4px;
   margin-right: 8px;
+}
+@media screen and (max-width: 1120px) {
+  .form-footer__input {
+    margin-bottom: 20px;
+  }
 }
 .form-footer__input img {
   margin: 0 15px;
@@ -2478,6 +2509,7 @@ a {
   color: #e6e9eb;
   line-height: 1.857;
   text-align: left;
+  white-space: nowrap;
   margin-right: 5px;
 }
 .form-footer__input input {
@@ -2485,8 +2517,14 @@ a {
   border: none;
   background: #41414d;
   color: inherit;
-  width: 170px;
+  min-width: 150px;
   display: inline-block;
+}
+@media screen and (max-width: 1120px) {
+  .icons-block {
+    display: flex;
+    justify-content: center;
+  }
 }
 .copyright-block {
   flex-wrap: wrap;
@@ -2520,4 +2558,9 @@ a {
   text-transform: uppercase;
   line-height: 2;
   z-index: 7;
+}
+@media screen and (max-width: 1120px) {
+  .copyright-block p {
+    text-align: center;
+  }
 }
