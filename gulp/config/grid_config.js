@@ -13,12 +13,6 @@ export const settings = {
             fields: "15px"
         },
 
-        // md_3: {
-        //     width: "1000px",
-        //     fields: "15px"
-        // },
-
-
         md: {
             width: "920px",
             fields: "15px"
