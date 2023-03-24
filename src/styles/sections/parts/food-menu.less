@@ -1,0 +1,252 @@
+ .top-menu-wrap {
+    text-align: center;
+    width: 100%;
+    position: relative;
+
+    h1 {
+       font-size: 35px;
+       font-family: "PlayfairDisplay";
+       color: rgb(20, 20, 29);
+       font-weight: bold;
+       line-height: 0.629;
+       text-transform: capitalize;
+
+       .sm-block({
+          color: #fff;
+       });
+
+ }
+
+
+
+ .sm-block({
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border: 1px solid rgb(254, 161, 0);
+    background-color: rgb(254, 161, 0);
+    border-radius: 4px;
+    position: relative;
+    font-size: 14px;
+    font-family: "Sintony";
+
+    &::after {
+       content: '';
+       position: absolute;
+       width: 98.5%;
+       height: 90%;
+       border: 1px solid #fff;
+    }
+
+    &:hover {
+       border: 1px solid #fea100;
+       background-color: #ffb12b;
+    }
+
+
+ });
+
+ }
+
+ .sm-block({
+    .food-menu__burger {
+       display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       height: 20px;
+       width: 30px;
+       cursor: pointer;
+       position: relative;
+       z-index: 2;
+
+    }
+
+    .burger-open {
+
+       span {
+          width: inherit;
+          height: 2px;
+          background-color: #000;
+          opacity: 1;
+          transition: opacity 5s ease-in-out;
+
+       }
+
+       &::before,
+       &::after {
+          content: '';
+          width: inherit;
+          height: 2px;
+          background-color: #000;
+          opacity: 1;
+          transition: opacity 5s ease-in-out;
+       }
+
+
+    }
+
+    .burger-close {
+       span {
+          display: none;
+       }
+
+
+       &::before {
+          transform: rotate(-45deg);
+          position: relative;
+          top: 25%;
+          transition: all 0.5s ease-in-out;
+       }
+
+       &::after {
+          transform: rotate(45deg);
+          position: relative;
+          top: -25%;
+          transition: all 0.5s ease-in-out;
+       }
+
+
+    }
+ });
+
+ .food-menu {
+
+    /* .menu__list */
+
+    &__list {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       align-items: center;
+       min-height: 50px;
+
+       .sm-block({
+          position: absolute;
+          z-index: 10;
+          width: 100%;
+          min-height: 100px;
+          left: 0px;
+          z-index: -1;
+          flex-direction: column;
+          background-color: #fff;
+       });
+
+
+ }
+
+ /* .menu__item */
+
+ &__item {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .sm-block({
+       height: 0px;
+       width: 100%;
+       opacity: 0;
+       transition: all 0.3s ease-in-out;
+    });
+
+
+ &:not(:last-child) {
+    margin-right: 50px;
+
+    .sm-block({
+       margin-right:0px;
+    })
+ }
+
+ img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 12px;
+
+    .sm-block({
+       margin: 0px;
+       margin-right: 20px;
+    });
+ }
+ }
+
+
+ /* .menu__link */
+
+ &__link {
+    font-size: 15px;
+    font-family: "PlayfairDisplay";
+    text-transform: capitalize;
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    line-height: 1.1;
+
+    .sm-block({
+       color: #fff;
+
+    })
+ }
+
+ /* .menu__sub-menu-list */
+
+ &__sub-menu-list {
+    display: none;
+ }
+
+ }
+
+
+ .active {
+    .sm-block({
+       .food-menu__item {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          width: 80%;
+          height: 50px;
+          background-color: #7d8587;
+          margin-top: 10px;
+          position: relative;
+          border-radius: 4px;
+          opacity:1;
+          transition: all 0.3s ease-in-out;
+
+          ::after {
+             content: '';
+             position: absolute;
+             width: 98.5%;
+             height: 90%;
+             border: 1px solid rgb(255, 255, 255);
+
+             left: 2px;
+             top: 2px;
+
+             opacity: 1;
+             transition: all 0.5s ease-in-out;
+
+          }
+       }
+
+       .food-menu__list {
+          top: 70px;
+          z-index: 5;
+       }
+
+    });
+ }
+
+
+
+ .wrap-nenu__border {
+
+    border-bottom: 1px dotted #a3b0ba;
+    width: @width_wraper;
+    height: 25px;
+    margin-bottom: 55px;
+
+    .sm-block({
+       display: none;
+    });
+ }
