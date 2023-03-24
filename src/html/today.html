@@ -17,11 +17,10 @@
          <div class="swiper-pagination-today swiper-pagination"></div>
       </div>
 
-
       <div class="conteiner" id="today">
          <h2> Today Special </h2>
          <div class="today-row">
-            <div class="food-card today-row__food-card">
+            <article class="food-card today-row__food-card">
                <div class="wrap-img food-card__wrap-img"><img src="@img/food-menu-card-img.jpg" alt=""></div>
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
@@ -29,14 +28,14 @@
                      explicabo reiciendis fuga veniam laudantium maiores
                   </p>
                </div>
-               <div class="food-card__order-block">
+               <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <div class="food-card__phone-namber">1-008 005 006</div>
+                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
                   @@include('./parts/price.html',{"price":'89.00'})
-               </div>
-            </div>
-            <div class="food-card today-row__food-card">
+                  </foot>
+            </article>
+            <article class="food-card today-row__food-card">
                <div class="wrap-img food-card__wrap-img"><img src="@img/food-menu-card-img.jpg" alt=""></div>
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
@@ -44,13 +43,13 @@
                      explicabo reiciendis fuga veniam laudantium maiores
                   </p>
                </div>
-               <div class="food-card__order-block">
+               <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <div class="food-card__phone-namber">1-008 005 006</div>
-                  @@include('./parts/price.html',{'price':'99.00'})
-               </div>
-            </div>
+                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
+                  @@include('./parts/price.html',{"price":'99.00'})
+                  </foot>
+            </article>
 
          </div>
 

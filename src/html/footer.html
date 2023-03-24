@@ -1,6 +1,6 @@
 <div class="background background__footer">
    <div class="footer conteiner">
-      <div class="footer__row">
+      <section class="footer__row">
          <div class="footer__navigation">
             <h2>Navigation</h2>
             <ul>
@@ -25,22 +25,18 @@
                </div>
                @@include('parts/button-orange.html',{'title':'Subscribe'})
             </div>
-            <div class="icons-block">
-               <img src="@img/icon_twitter.png" alt="icon_facebook">
-               <img src="@img/icon_twitter.png" alt="icon_twitter">
-               <img src="@img/icon_google.png" alt="icon_google+">
-            </div>
+            @@include('parts/icons-block.html',{})
          </div>
          <div class="footer__app">
             <h2>Our app avilable</h2>
             @@include('parts/button-app.html',{'title':'App&nbspStore','text':'Avilable&nbspon&nbspthe','icon':'@img/icon_apple.png'})
             @@include('parts/button-app.html',{'title':'Google&nbspPlay','text':'Get&nbspit&nbspon','icon':'@img/icon_google-play.png'})
          </div>
-      </div>
-      <div class="copyright-block">
-         <span></span>
-         <p>2016 © Luxury RestaurAnt, All rights reserved</p>
-         <span></span>
-      </div>
    </div>
+   <div class="copyright-block">
+      <span></span>
+      <p>2016 © Luxury RestaurAnt, All rights reserved</p>
+      <span></span>
+   </div>
+</div>
 </div>
