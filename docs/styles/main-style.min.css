@@ -2906,3 +2906,55 @@ a {
   line-height: 1.857;
   text-align: left;
 }
+.opening-hours-conteiner {
+  position: relative;
+  height: 245px;
+  /* .opening-hours-conteiner__wrap-img */
+}
+.opening-hours-conteiner__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  align-items: center;
+  height: 100%;
+  justify-content: start;
+  background-color: #b5f7f7;
+}
+.opening-hours-conteiner__title {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 3 - 30px);
+  background-color: #ecc7fa;
+}
+.opening-hours-conteiner__title h2 {
+  display: block;
+  font-size: 35px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 0.629;
+}
+.opening-hours-conteiner span {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 2 - 30px);
+  font-size: 20px;
+  font-family: "PlayfairDisplay";
+  color: #373844;
+  font-style: italic;
+  line-height: 1.2;
+  text-align: left;
+  border: 1px solid #000;
+}
+.opening-hours-conteiner__wrap-img {
+  height: 210px;
+  width: 210px;
+  position: absolute;
+  top: -50px;
+  right: 0px;
+}
