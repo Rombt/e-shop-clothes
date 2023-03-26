@@ -5,11 +5,25 @@
 })
 
 <body>
-    @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+    <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+
     @@include('html/header.html',{})
+
     @@include('html/title-page-block.html',{'title':'Menu'})
-    <main class="conteiner menu-page-conteiner">
+
+
+
+
+    <!-- <div class="background menu-page-background">
         @@include('html/parts/food-menu.html',{'title':'Menu Grid View'})
+    </div> -->
+
+    <main class="conteiner menu-page-conteiner">
+
+        @@include('html/parts/food-menu.html',{'title':'Menu Grid View'})
+
+
+
         <div class="menu-page-conteiner__row">
             <div class="prod-card">
                 <figure class="wrap-img"><img src="@img/prod-card-img.jpg" alt="prod card img"></figure>

@@ -3,6 +3,13 @@
     width: 100%;
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 87px;
+
+
     h1 {
        font-size: 35px;
        font-family: "PlayfairDisplay";
@@ -10,6 +17,7 @@
        font-weight: bold;
        line-height: 0.629;
        text-transform: capitalize;
+       margin-bottom: 30px;
 
        .sm-block({
           color: #fff;
@@ -17,10 +25,9 @@
 
  }
 
-
-
  .sm-block({
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
 
@@ -30,6 +37,11 @@
     position: relative;
     font-size: 14px;
     font-family: "Sintony";
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+
 
     &::after {
        content: '';
@@ -48,6 +60,26 @@
  });
 
  }
+
+ .wrap-nenu {
+
+    margin: 0 auto;
+    .size(8);
+
+    .to(1000px, {
+       .size(12);
+    });
+
+ .sm-block({
+    margin: 0;
+    .size(1);
+
+ });
+ }
+
+
+
+
 
  .sm-block({
     .food-menu__burger {
@@ -196,7 +228,6 @@
 
  }
 
-
  .active {
     .sm-block({
        .food-menu__item {
@@ -236,8 +267,6 @@
 
     });
  }
-
-
 
  .wrap-nenu__border {
 
