@@ -2,6 +2,16 @@ export class Burger {
 
     /*
 
+      <div class="conteiner-menu-burger burger-open">
+         <span></span>
+      </div>
+    <nav class="menu conteiner-menu _active">
+        <ul class="conteiner-menu__list">
+            <li class="food-menu__item"><a class="conteiner-menu__link" href="#">samething</a></li>
+        </ul>
+    </nav>
+
+
     burgerMenu={
 
             conteiner: '',
@@ -32,7 +42,9 @@ export class Burger {
 
         let burgerOpen = document.querySelector(this.burgerOpen);
 
+
         burgerOpen.addEventListener("click", () => {
+
             conteinerMenu.classList.toggle(this.classActive);
             burgerOpen.classList.toggle(this.burgerClose);
         });

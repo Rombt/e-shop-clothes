@@ -4,7 +4,7 @@ import { Burger } from "./modules/burger.js";
 
 
 
-window.onload = function () {
+window.onload = function() {
 
 
     isWebp(); // проверяет поддерживает ли браузер формат webp
@@ -37,10 +37,10 @@ window.onload = function () {
 
     let params_recipiesTitleNavBurger = {
 
-        conteiner: 'recipies-title-nav',
-        menuList: 'recipies-title-nav__list',
-        classActive: 'recipies-title-nav__brows-recipes-active',
-        // burgerOpen: 'heder-menu__burger',
+        conteiner: 'menu-recipies',
+        menuList: 'menu-recipies__list',
+        classActive: 'menu-recipies-active',
+        burgerOpen: 'menu-recipies-burger',
         // burgerClose: 'heder-menu__burger-close',
 
     }
