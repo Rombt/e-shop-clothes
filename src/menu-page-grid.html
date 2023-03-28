@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Menu"
+})
+
+<body>
+   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+
+   @@include('html/header.html',{})
+
+   @@include('html/title-page-block.html',{'title':'Menu'})
+
+
+   <main class="conteiner menu-page-conteiner">
+
+      @@include('html/parts/food-menu.html',{'title':'Menu Grid View'})
+
+      <div class="menu-page-conteiner__row">
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+         @@include('html/parts/prod-card__grid.html',{
+         'title':'jumbo carb thanroor',
+         'img_src':'@img/prod-card-img.jpg',
+         'description':'survived not only five centuries but the leap',
+         'price':'50.00',
+         })
+
+
+
+         @@include('html/parts/button-orange.html',{'title':'Explor food menu'})
+      </div>
+
+   </main>
+   <section class="background speciality-block">
+      <figure class="wrap-img speciality-block__img"><img src="@img/speciality-block.jpg" alt=""></figure>
+      <div class="speciality-block__text-wrap">
+         <h2>Speciality</h2>
+         <div class="speciality-block__text">
+            <h3>EXCELLENT SERVICE</h3>
+            <p>Survived not only five centuries, but also the leap into electr</p>
+         </div>
+         <div class="speciality-block__text">
+            <h3>FREE Home DELIVERY</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesettin</p>
+         </div>
+         <div class="speciality-block__text">
+            <h3>Cool atmosphere</h3>
+            <p>Letraset sheets containing Lorem Ipsum passages, and more recen</p>
+         </div>
+      </div>
+   </section>
+
+   <section class="conteiner opening-hours-conteiner">
+
+      <div class="opening-hours-conteiner__row">
+         <div class="opening-hours-conteiner__title">
+            <h2>Opening Hours</h2>
+         </div>
+
+         <span>
+            Monday to Friday
+            <p>10am - 10pm</p>
+         </span>
+         <span>
+            Saturday to Sunday
+            <p>09am - 11pm</p>
+         </span>
+         <div class="wrap-img opening-hours-conteiner__wrap-img">
+            <img src="@img/Image_210x210.jpg" alt="">
+         </div>
+      </div>
+
+   </section>
+
+   @@include('html/footer.html',{})
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="js/app.min.js"></script>
+</body>
+
+</html>
