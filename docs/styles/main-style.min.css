@@ -1057,16 +1057,9 @@ a {
     position: relative;
     font-size: 14px;
     font-family: "Sintony";
-<<<<<<< HEAD
-    margin-top: 30px;
-    margin-bottom: 30px;
-    max-width: 450px;
-    min-width: 380px;
-=======
     margin: 30px auto;
     min-width: 380px;
     max-width: 450px;
->>>>>>> HTML-coding
   }
   .top-menu-wrap::after {
     content: '';
