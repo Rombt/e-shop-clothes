@@ -18,6 +18,10 @@ window.onload = function () {
         burgerClose: 'heder-menu__burger-close',
 
     }
+    const headerMenuBurger = new Burger(params_headerMenuBurger);
+    headerMenuBurger.init();
+
+
 
     let params_foodMenuBurger = {
 
@@ -28,16 +32,20 @@ window.onload = function () {
         burgerClose: 'burger-close',
 
     }
-
-
-    const headerMenuBurger = new Burger(params_headerMenuBurger);
-    headerMenuBurger.init();
-
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
 
+    let params_recipiesTitleNavBurger = {
 
+        conteiner: 'recipies-title-nav',
+        menuList: 'recipies-title-nav__list',
+        classActive: 'recipies-title-nav__brows-recipes-active',
+        // burgerOpen: 'heder-menu__burger',
+        // burgerClose: 'heder-menu__burger-close',
 
+    }
+    const recipiesTitleNavBurger = new Burger(params_recipiesTitleNavBurger);
+    recipiesTitleNavBurger.init();
 
 
 
