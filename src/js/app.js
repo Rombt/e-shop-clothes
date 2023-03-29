@@ -18,6 +18,10 @@ window.onload = function () {
         burgerClose: 'heder-menu__burger-close',
 
     }
+    const headerMenuBurger = new Burger(params_headerMenuBurger);
+    headerMenuBurger.init();
+
+
 
     let params_foodMenuBurger = {
 
@@ -28,16 +32,21 @@ window.onload = function () {
         burgerClose: 'burger-close',
 
     }
-
-
-    const headerMenuBurger = new Burger(params_headerMenuBurger);
-    headerMenuBurger.init();
-
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
 
 
+    let params_recipiesTitleNavBurger = {
 
+        conteiner: 'menu-recipies',
+        menuList: 'menu-recipies__list',
+        classActive: 'menu-recipies-active',
+        burgerOpen: 'menu-recipies-burger',
+        burgerClose: 'burger-close',
+
+    }
+    const recipiesTitleNavBurger = new Burger(params_recipiesTitleNavBurger);
+    recipiesTitleNavBurger.init();
 
 
 
