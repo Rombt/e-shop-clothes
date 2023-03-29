@@ -39,15 +39,33 @@ export class Burger {
     init() {
 
         let conteinerMenu = document.querySelector(this.conteiner);
-
         let burgerOpen = document.querySelector(this.burgerOpen);
 
+        if (conteinerMenu === null || burgerOpen === null) {
 
-        burgerOpen.addEventListener("click", () => {
+            // console.log("меню отсутствует");
+            // console.log("this = ", this);
+            return false;
+        } else {
+            burgerOpen.addEventListener("click", () => {
+                try {
+                    conteinerMenu.classList.toggle(this.classActive);
+                    burgerOpen.classList.toggle(this.burgerClose);
 
-            conteinerMenu.classList.toggle(this.classActive);
-            burgerOpen.classList.toggle(this.burgerClose);
-        });
+                } catch (error) {
+                    return error;
+                }
+            })
+        }
+
+
+
+
+
+
+
+
+
 
     }
 

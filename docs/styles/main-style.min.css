@@ -1091,45 +1091,11 @@ a {
 }
 @media screen and (max-width: 720px) {
   .food-menu__burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     height: 20px;
     width: 30px;
+    z-index: 2;
     cursor: pointer;
     position: relative;
-    z-index: 2;
-  }
-  .burger-open span {
-    width: inherit;
-    height: 2px;
-    background-color: #000;
-    opacity: 1;
-    transition: opacity 5s ease-in-out;
-  }
-  .burger-open::before,
-  .burger-open::after {
-    content: '';
-    width: inherit;
-    height: 2px;
-    background-color: #000;
-    opacity: 1;
-    transition: opacity 5s ease-in-out;
-  }
-  .burger-close span {
-    display: none;
-  }
-  .burger-close::before {
-    transform: rotate(-45deg);
-    position: relative;
-    top: 25%;
-    transition: all 0.5s ease-in-out;
-  }
-  .burger-close::after {
-    transform: rotate(45deg);
-    position: relative;
-    top: -25%;
-    transition: all 0.5s ease-in-out;
   }
 }
 .food-menu {
@@ -1450,7 +1416,7 @@ a {
   height: 210px;
   width: 210px;
   position: absolute;
-  top: -50px;
+  top: -40px;
   right: 0px;
 }
 @media screen and (max-width: 992px) {
@@ -1458,6 +1424,101 @@ a {
     position: relative;
     top: 0;
   }
+}
+.burger-open {
+  position: relative;
+  cursor: pointer;
+}
+.burger-open::after,
+.burger-open::before,
+.burger-open span {
+  content: '';
+  width: inherit;
+  height: 2px;
+  background-color: #000;
+  opacity: 1;
+  transition: opacity 5s ease-in-out;
+  position: absolute;
+  right: 0;
+}
+.burger-open::after {
+  bottom: 0;
+}
+.burger-open::before {
+  top: 0;
+}
+.burger-open span {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.burger-close {
+  transform: translate(0, 50%);
+}
+.burger-close span {
+  display: none;
+}
+.burger-close::before {
+  transform: rotate(-45deg);
+  top: 0;
+  transition: all 0.5s ease-in-out;
+}
+.burger-close::after {
+  transform: rotate(45deg);
+  top: 0;
+  transition: all 0.5s ease-in-out;
+}
+.recipe-card-grid {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 6 - 30px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* .recipe-card-grid__body */
+}
+.recipe-card-grid__title {
+  font-size: 26px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 0.846;
+}
+.recipe-card-grid__title h3 {
+  margin-bottom: 10px;
+}
+.recipe-card-grid__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 259px;
+  width: 47%;
+  padding: 40px 0;
+  margin-left: 15px;
+}
+@media screen and (max-width: 576px) {
+  .recipe-card-grid__body {
+    align-items: center;
+  }
+}
+.recipe-card-grid__body .button-orange {
+  width: 160px;
+}
+.recipe-card-grid__body p {
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #5c6369;
+  line-height: 1.857;
+  text-align: left;
+  max-height: 120px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.recipe-card-grid .wrap-img {
+  min-width: 259px;
+  height: 301px;
+  width: 46%;
 }
 .background-title-page-block {
   height: 245px;
@@ -3061,8 +3122,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
-  margin-bottom: 60px;
   /* .recipies-title__subtitle */
   /* .recipies-title__row */
   /* .recipies-title-conteiner__nav */
@@ -3103,7 +3162,17 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 270px;
-  /* .recipies-title-nav__brows-recipes */
+}
+@media screen and (max-width: 576px) {
+  .recipies-title-nav {
+    justify-content: end;
+    width: auto;
+  }
+}
+@media screen and (max-width: 920px) {
+  .recipies-title-nav {
+    transform: translate(0, -100%);
+  }
 }
 .recipies-title-nav__brows-recipes {
   display: flex;
@@ -3171,22 +3240,16 @@ a {
 .menu-recipies-burger {
   height: 15px;
   width: 20px;
-  position: relative;
-  cursor: pointer;
 }
 .menu-recipies-burger span {
   width: 100%;
   top: 50%;
-  transform: translate(0, -50%);
 }
 .menu-recipies-burger::after,
 .menu-recipies-burger::before,
 .menu-recipies-burger span {
-  content: '';
   height: 3px;
   background-color: #fea100;
-  position: absolute;
-  right: 0;
 }
 .menu-recipies-burger::after {
   bottom: 0;
@@ -3207,13 +3270,26 @@ a {
   justify-content: space-between;
   cursor: pointer;
   width: 105px;
-  /* .select-view__colomns */
   /* .select-view__grid */
+}
+@media screen and (max-width: 576px) {
+  .select-view {
+    display: none;
+  }
 }
 .select-view__grid {
   border: 1px solid #dae0e3;
 }
-.recipies-conteiner {
-  height: 1000px;
-  background-color: #e4fcff;
+.recipies-conteiner__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  row-gap: 30px;
+}
+@media screen and (max-width: 576px) {
+  .recipies-conteiner__row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
