@@ -1521,10 +1521,6 @@ a {
   width: 46%;
 }
 .recipe-card-grid {
-  box-sizing: border-box;
-  word-wrap: break-word;
-  margin-left: 15px;
-  margin-right: 15px;
   width: calc(100% / 12 * 4 - 30px);
   display: flex;
   flex-wrap: wrap;
@@ -3337,4 +3333,12 @@ a {
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
+  columns: 2;
+  column-gap: 30px;
+}
+@media screen and (max-width: 576px) {
+  .recipies-conteiner__row {
+    flex-direction: column;
+    align-items: center;
+  }
 }
