@@ -3333,7 +3333,6 @@ a {
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  columns: 2;
   column-gap: 30px;
 }
 @media screen and (max-width: 576px) {
