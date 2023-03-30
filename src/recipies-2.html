@@ -5,7 +5,7 @@
 })
 
 <body>
-   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
    @@include('html/header.html',{})
    @@include('html/title-page-block.html',{'title':'Recipies'})
@@ -67,7 +67,7 @@
    </div>
    <main class="conteiner recipies-conteiner">
 
-      <div class="recipies-conteiner__row">
+      <div class="recipies-conteiner__row row-card-2 ">
 
          @@include('html/parts/recipe-card-2.html',{
          'title':'Prawns tikka',
