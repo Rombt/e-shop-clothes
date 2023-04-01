@@ -69,3 +69,21 @@ export const swiperClients = new Swiper('.swiper.swiper-clients', {
    },
 
 });
+
+
+export const swiperFoodStep = new Swiper('.swiper-food-step', {
+
+   direction: "vertical",
+   slidesPerView: "auto",
+   freeMode: true,
+   scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+   },
+   mousewheel: true,
+   speed: 500,
+   autoplay: {
+      delay: 5000,
+   },
+
+});
