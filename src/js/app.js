@@ -1,68 +1,62 @@
 import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
+import { swiperDish, swiperToday, swiperClients } from "./modules/sliders.js";
+import { Burger } from "./modules/burger.js";
 
 
 
-isWebp(); // проверяет поддерживает ли браузер формат webp
+window.onload = function () {
 
 
-// burger_menu 
-let burgerMenu = document.querySelector('.menu__burger');
-let hederMenu = document.querySelector('.heder-menu');
-burgerMenu.addEventListener("click", () => {
-    hederMenu.classList.toggle('menu__sm');
-    burgerMenu.classList.toggle('menu__burger-close');
-});;
+    isWebp(); // проверяет поддерживает ли браузер формат webp
+
+    let params_headerMenuBurger = {
+
+        conteiner: 'heder-menu',
+        menuList: 'menu__list',
+        classActive: 'menu__sm',
+        burgerOpen: 'heder-menu__burger',
+        burgerClose: 'heder-menu__burger-close',
+
+    }
+    const headerMenuBurger = new Burger(params_headerMenuBurger);
+    headerMenuBurger.init();
 
 
 
-const swiperDish = new Swiper('.swiper.swiper-dish', {
-    direction: 'horizontal',
+    let params_foodMenuBurger = {
 
-    breakpoints: {
-        1250: {
-            direction: 'vertical',
-        }
-    },
+        conteiner: 'food-menu',
+        menuList: 'food-menu__list',
+        classActive: 'active',
+        burgerOpen: 'burger-open',
+        burgerClose: 'burger-close',
 
-    loop: true,
-    autoplay: {
-        delay: 5000,
-    },
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
-        },
-    },
-    mousewheel: {
-        invert: true,
-    },
-});
+    }
+    const foodMenuBurger = new Burger(params_foodMenuBurger);
+    foodMenuBurger.init();
 
-const swiperToday = new Swiper('.swiper.swiper-today', {
-    direction: 'horizontal',
-    loop: true,
 
-    autoplay: {
-        delay: 5000,
-    },
-    effect: 'fade',
-    fadeEffect: {
-        crossFade: true,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        renderBullet: function (index, className) {
-            return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
-        },
-    },
-    mousewheel: {
-        invert: true,
-    },
-});
+    let params_recipiesTitleNavBurger = {
+
+        conteiner: 'menu-recipies',
+        menuList: 'menu-recipies__list',
+        classActive: 'menu-recipies-active',
+        burgerOpen: 'menu-recipies-burger',
+        burgerClose: 'burger-close',
+
+    }
+    const recipiesTitleNavBurger = new Burger(params_recipiesTitleNavBurger);
+    recipiesTitleNavBurger.init();
+
+
+
+
+
+
+
+
+
+
+
+
+}

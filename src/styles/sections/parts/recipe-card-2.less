@@ -1,0 +1,71 @@
+.recipe-card-grid-2 {
+   .col();
+   .size(4);
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   min-width: 340px;
+
+   /* .recipe-card-grid__body */
+
+   &__title {
+      font-size: 26px;
+      font-family: "PlayfairDisplay";
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      line-height: 0.846;
+
+      h3 {
+         margin-bottom: 10px;
+
+
+      }
+   }
+
+
+   &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      min-width: 259px;
+      width: 47%;
+      padding: 25px 0;
+      margin-left: 15px;
+
+      .xs-block({
+         align-items: center;
+
+      });
+
+   .button-orange {
+      width: 160px;
+   }
+
+   p {
+      font-size: 14px;
+      font-family: "Sintony";
+      color: rgb(92, 99, 105);
+      line-height: 1.857;
+      text-align: left;
+
+      max-height: 100px;
+      margin: 30px 0;
+
+      overflow: hidden;
+
+      // border: 1px solid #000;
+   }
+
+}
+
+.wrap-img {
+   min-width: 350px;
+   height: 201px;
+
+   z-index: -1;
+
+}
+}
+
+
+.rating {}

@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link href="./styles/main-style.min.css?_v=20230319112400" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230319112400" />
+=======
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
+>>>>>>> HTML-coding
     <title>restaurant site</title>
 </head>
 
@@ -14,20 +19,27 @@
 
 
     <div class="conteiner">
+<<<<<<< HEAD
     <div class="header ">
         <a href="#" class="logo"><picture><source srcset="./img/logo.webp" type="image/webp"><img src="./img/logo.png" alt="logo"></picture></a>
         <div class="menu__burger">
+=======
+    <header class="header ">
+        <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
+        <div class="heder-menu__burger">
+>>>>>>> HTML-coding
             <span></span>
         </div>
-        <nav class="heder-menu ">
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">menu</a></li>
+        <nav class="heder-menu">
+            <ul class="menu__list">
+                <li><a href="index.html">home</a></li>
+                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
+                <li><a href="menu-page-list.html">menu</a></li>
                 <li><a href="#">reservation</a></li>
-                <li><a href="#">recipe</a></li>
+                <li><a href="recipies.html">recipe</a></li>
                 <li><a href="#">blog</a></li>
                 <li><a href="#">pages</a></li>
-                <li><a href="#">contact</a></li>
+                <li><a href="contacts.html">contact</a></li>
             </ul>
         </nav>
         <div class="cart-book">
@@ -45,9 +57,10 @@
                 </div>
             </button>
         </div>
-    </div>
+    </header>
 </div>
-    <div class="background background__dish">
+    <main>
+        <div class="background background__dish">
     <div class="swiper-dish swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -73,6 +86,7 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
     <div class="conteiner" id="about">
     <div class="about-row__top-menu">
         <div class="read">
@@ -83,6 +97,18 @@
         </div>
         <div class="call-us">
             <picture><source srcset="img/icon_phone.webp" type="image/webp"><img src="img/icon_phone.png" class="read__cercle" alt=""></picture>
+=======
+        <div class="conteiner" id="about">
+    <nav class="about-row__top-menu">
+        <a href="#" class="read">
+            <img src="img/icon_reviews.png" class="read__icon" alt="reviews">
+            <div>READ <p>REVIEWS</p>
+            </div>
+            <img src="img/orang-sercle.png" class="read__cercle" alt="">
+        </a>
+        <a href="tel:1008005006" class="call-us">
+            <img src="img/icon_phone.png" class="read__cercle" alt="">
+>>>>>>> HTML-coding
             <div class="call-us__text">
                 CALL US NOW FOR
                 <p>HOME DELIVERY</p>
@@ -90,9 +116,9 @@
             <div class="phone-number">
                 1-008 005 006
             </div>
-        </div>
-    </div>
-    <div class="about-row">
+        </a>
+    </nav>
+    <section class="about-row">
         <div class="about-row__text">
             <h2>
                 About Restaurant
@@ -105,7 +131,11 @@
                 Fuga doloribus nisi placeat, amet facere rem deserunt vitae ad tenetur dicta error omnis
             </p>
             <div class="about-row__text-buttons">
-                <button type="button" name="read_more">READ MORE</button>
+                <!-- <button type="button" name="read_more">READ MORE</button> -->
+                <!-- <button type="button" class="button-orange">READ MORE</button> -->
+
+
+<a href="#" class="button-orange">READ MORE</a>
                 <div class="wrap-img">
                     <picture><source srcset="img/about-button-bg.webp" type="image/webp"><img src="img/about-button-bg.jpg" alt=""></picture>
                 </div>
@@ -117,10 +147,10 @@
             <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
             <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
         </div>
-    </div>
+    </section>
 </div>
 </div>
-    <section>
+        <section>
    <div class="background background__today">
       <!-- <picture><source srcset="img/today-row-bg.webp" type="image/webp"><img src="img/today-row-bg.jpg" alt=""></picture> -->
 
@@ -139,58 +169,71 @@
          <div class="swiper-pagination-today swiper-pagination"></div>
       </div>
 
-
       <div class="conteiner" id="today">
          <h2> Today Special </h2>
          <div class="today-row">
+<<<<<<< HEAD
             <div class="food-card today-row__food-card">
                <div class="wrap-img food-card__wrap-img"><picture><source srcset="img/food-menu-card-img.webp" type="image/webp"><img src="img/food-menu-card-img.jpg" alt=""></picture></div>
+=======
+            <article class="food-card today-row__food-card">
+               <div class="wrap-img food-card__wrap-img"><img src="img/food-menu-card-img.jpg" alt=""></div>
+>>>>>>> HTML-coding
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet obcaecati sed numquam
                      explicabo reiciendis fuga veniam laudantium maiores
                   </p>
                </div>
-               <div class="food-card__order-block">
+               <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <div class="food-card__phone-namber">1-008 005 006</div>
+                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
                   <div class="price">
    <p>$</p>89.00
 </div>
+<<<<<<< HEAD
                </div>
             </div>
             <div class="food-card today-row__food-card">
                <div class="wrap-img food-card__wrap-img"><picture><source srcset="img/food-menu-card-img.webp" type="image/webp"><img src="img/food-menu-card-img.jpg" alt=""></picture></div>
+=======
+                  </foot>
+            </article>
+            <article class="food-card today-row__food-card">
+               <div class="wrap-img food-card__wrap-img"><img src="img/food-menu-card-img.jpg" alt=""></div>
+>>>>>>> HTML-coding
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet obcaecati sed numquam
                      explicabo reiciendis fuga veniam laudantium maiores
                   </p>
                </div>
-               <div class="food-card__order-block">
+               <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <div class="food-card__phone-namber">1-008 005 006</div>
+                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
                   <div class="price">
    <p>$</p>99.00
 </div>
-               </div>
-            </div>
+                  </foot>
+            </article>
 
          </div>
 
       </div>
    </div>
 </section>
-    <div class="conteiner" id="restaurant-menu">
+        <div class="conteiner" id="restaurant-menu">
+   <!-- <div class="top-menu-wrap">
+      <h1>food menu</h1> -->
+   <div class="top-menu-wrap">
    <h1>food menu</h1>
    <div class="wrap-nenu">
-      <div class="burger-menu">
-         <span></span>
-         <span></span>
+      <div class="food-menu__burger burger-open">
          <span></span>
       </div>
+<<<<<<< HEAD
       <nav class="menu">
          <ul class="menu__list">
             <li class="menu__item">
@@ -267,13 +310,95 @@
                   <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
                   <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
                   <li class="menu__sub-item"><a class="menu__sub-link" href="#">sub menu item</a></li>
+=======
+      <nav class="menu food-menu">
+         <ul class="food-menu__list">
+            <li class="food-menu__item">
+               <img src="img/icon_all.png" alt="">
+               <a class="food-menu__link" href="#">All</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_breakfast.png" alt="">
+               <a class="food-menu__link" href="#">Breakfast</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_lunch.png" alt="">
+               <a class="food-menu__link" href="#">Lunch</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_snacks.png" alt="">
+               <a class="food-menu__link" href="#">Snacks</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_pizza.png" alt="">
+               <a class="food-menu__link" href="#">Pizza</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_soups.png" alt="">
+               <a class="food-menu__link" href="#">Soups</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+               </ul>
+            </li>
+            <li class="food-menu__item">
+               <img src="img/icon_binner.png" alt="">
+               <a class="food-menu__link" href="#">Dinner</a>
+               <ul class="food-menu__sub-menu-list">
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
+>>>>>>> HTML-coding
                </ul>
             </li>
          </ul>
       </nav>
    </div>
    <div class="wrap-nenu__border"></div>
-   <div class="row-dish dish__row">
+</div>
+
+   <!-- </div> -->
+   <!-- <div class="wrap-nenu__border"></div> -->
+   <section class="row-dish dish__row">
       <div class="col-dish">
          <div class="dish">
             <div class="dish__title">
@@ -350,29 +475,247 @@
 </div>
          </div>
       </div>
-   </div>
-   <button type="button" class="button-orange">Explor food menu</button>
+   </section>
+   <!-- <button type="button" class="button-orange">Explor food menu</button> -->
+
+
+<a href="#" class="button-orange">Explor food menu</a>
 
    <div class="wrap-img wrap-img__311x311"><picture><source srcset="img/Image_311x311.webp" type="image/webp"><img src="img/Image_311x311.jpg" alt=""></picture></div>
    <div class="wrap-img wrap-img__267x414"><picture><source srcset="img/Image_267x414.webp" type="image/webp"><img src="img/Image_267x414.jpg" alt=""></picture></div>
    <div class="wrap-img wrap-img__241x241"><picture><source srcset="img/Image_241x241.webp" type="image/webp"><img src="img/Image_241x241.jpg" alt=""></picture></div>
 
 </div>
-    <div class="background background__clients">
-
-   <div class="conteiner" id="clients">
-      <!-- <div class="row"></div> -->
+        <div class="background background__clients">
+   <div class="wrap-img background-clients__wrap-img">
+      <img src="img/background-clients-block.jpg" alt="">
    </div>
 
-
+   <section class="conteiner" id="clients">
+      <div class="swiper swiper-clients">
+         <div class="swiper-wrapper  clients__swiper-wrapper">
+            <div class="swiper-slide">
+               <article class="slide-body">
+                  <h2 class="slide-body__title">Happy Clients</h2>
+                  <div class="slide-body__text">
+                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                     text,
+                     and a search for
+                     'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+                     over
+                     the years,
+                     sometimes by accident, sometimes on purpose.
+                  </div>
+                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="name">Dr. Prabakaran John</div>
+                  <div class="rating">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                  </div>
+               </article>
+            </div>
+            <div class="swiper-slide">
+               <div class="slide-body">
+                  <div class="slide-body__title">Happy Clients</div>
+                  <div class="slide-body__text">
+                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                     text,
+                     and a search for
+                     'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+                     over
+                     the years,
+                     sometimes by accident, sometimes on purpose.
+                  </div>
+                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="name">Dr. Prabakaran John</div>
+                  <div class="rating">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                  </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slide-body">
+                  <div class="slide-body__title">Happy Clients</div>
+                  <div class="slide-body__text">
+                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                     text,
+                     and a search for
+                     'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+                     over
+                     the years,
+                     sometimes by accident, sometimes on purpose.
+                  </div>
+                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="name">Dr. Prabakaran John</div>
+                  <div class="rating">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                  </div>
+               </div>
+            </div>
+            <div class="swiper-slide">
+               <div class="slide-body">
+                  <div class="slide-body__title">Happy Clients</div>
+                  <div class="slide-body__text">
+                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model
+                     text,
+                     and a search for
+                     'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+                     over
+                     the years,
+                     sometimes by accident, sometimes on purpose.
+                  </div>
+                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="name">Dr. Prabakaran John</div>
+                  <div class="rating">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                     <img src="img/star-rating-icon.png" alt="rating star">
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="swiper-button-next swiper-clients__button-next"></div>
+         <div class="swiper-button-prev swiper-clients__button-prev"></div>
+      </div>
+   </section>
 </div>
-    <div class="conteiner" id="reserve">
-   <!-- <div class="row"></div> -->
-</div>
 
+<<<<<<< HEAD
     <div class="footer conteiner"></div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230319112400"></script>
     <script src="js/app.min.js?_v=20230319112400"></script>
+=======
+
+</div>
+        <div class="conteiner" id="reserve">
+
+   <h2>Reserve your table</h2>
+   <section class="reserve-row">
+      <div class="wrap-img reserve-row__img"><img src="img/Image_559x334.jpg" alt=""></div>
+      <div class="reserve-row__form">
+         <form action="#" name="reserve-form" class="reserve-form">
+            <div class="reserve-form__input">
+               <p>Name*</p>
+               <input type="text" tabindex="1" name="name" value="">
+               <img src="img/form_icon_name.png" alt="">
+            </div>
+            <div class="reserve-form__input">
+               <p>Time*</p><input type="text" tabindex="2" name="time" value="">
+               <img src="img/form_icon_time.png" alt="">
+            </div>
+            <div class="reserve-form__input">
+               <p>Guests*</p><input type="text" tabindex="3" name="guests" value="">
+               <img src="img/form_icon_guest.png" alt="">
+            </div>
+            <div class="reserve-form__input">
+               <p>Date*</p><input type="text" tabindex="4" name="date" value="">
+               <img src="img/form_icon_calander.png" alt="">
+            </div>
+            <div class="reserve-form__input">
+               <p>Email Address*</p><input type="email" tabindex="5" name="email-address" value="">
+               <img src="img/form_icon_email.png" alt="">
+            </div>
+            <div class="reserve-form__input">
+               <p>Phone Number*</p><input type="tel" tabindex="6" name="phone-number" value="">
+               <img src="img/form_icon_phone.png" alt="">
+            </div>
+         </form>
+         <div class="call-us">
+            <!-- <button type="button" class="button-orange">Make reservation</button> -->
+
+
+<a href="#" class="button-orange">Make reservation</a>
+            <span>
+               You can also call <p>for a reservation</p>
+            </span>
+            <span>
+               1-007 000 005
+            </span>
+         </div>
+      </div>
+   </section>
+
+
+</div>
+    </main>
+
+    <div class="background background__footer">
+   <div class="footer conteiner">
+      <section class="footer__row">
+         <div class="footer__navigation">
+            <h2>Navigation</h2>
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Menu</a></li>
+               <li><a href="#">Reservation</a></li>
+               <li><a href="#">Recipe</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Contact Us</a></li>
+            </ul>
+         </div>
+         <div class="footer__news">
+            <h2>News letter</h2>
+            <span>Enter your email address and subscribe daily newsletter</span>
+            <div class="form-footer">
+               <div class="form-footer__input">
+                  <img src="img/form-icon_email.png" alt="">
+                  <p>Email Address</p>
+                  <input type="email">
+                  </img>
+               </div>
+               <!-- <button type="button" class="button-orange">Subscribe</button> -->
+
+
+<a href="#" class="button-orange">Subscribe</a>
+            </div>
+            <div class="icons-block">
+   <img src="img/icon_facebook.png" alt="icon_facebook">
+   <img src="img/icon_twitter.png" alt="icon_twitter">
+   <img src="img/icon_google.png" alt="icon_google+">
+</div>
+         </div>
+         <div class="footer__app">
+            <h2>Our app avilable</h2>
+            <button type="button" class="button-app">
+   <img src="img/icon_apple.png" alt="">
+   <span>
+      <p>Avilable&nbspon&nbspthe</p>
+      App&nbspStore
+   </span>
+</button>
+            <button type="button" class="button-app">
+   <img src="img/icon_google-play.png" alt="">
+   <span>
+      <p>Get&nbspit&nbspon</p>
+      Google&nbspPlay
+   </span>
+</button>
+         </div>
+   </div>
+   <div class="copyright-block">
+      <span></span>
+      <p>2016 © Luxury RestaurAnt, All rights reserved</p>
+      <span></span>
+   </div>
+</div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
+>>>>>>> HTML-coding
 </body>
 
 </html>

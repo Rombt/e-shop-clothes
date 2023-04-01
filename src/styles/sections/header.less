@@ -11,12 +11,15 @@
    align-items: center;
    justify-content: space-between;
 
-
-   .md_2-block({
-      justify-content: center;
-
-      transition: all 0.3s ease 0s;
+   .md_1-block({
+      margin-bottom: 10px;
    });
+
+.md_2-block({
+   justify-content: center;
+   transition: all 0.3s ease 0s;
+   margin-bottom: 0px;
+});
 
 .logo {
    .col();
@@ -28,7 +31,7 @@
 }
 
 
-.menu__burger {
+.heder-menu__burger {
    display: none;
 
    .sm-block({
@@ -41,7 +44,6 @@
       position: absolute;
       top: @offset_one_side;
       left: @offset_one_side;
-
       width: 40px;
       height: 25px;
 
@@ -73,13 +75,14 @@
 
 .sm-block({
 
-   .menu__burger-close {
+   .heder-menu__burger-close {
 
       height: 40px !important;
       width: 40px;
       overflow: hidden;
       background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
 
+      z-index: 50;
       transition: all 0.9s ease 0s;
 
       &::before {
@@ -109,6 +112,9 @@
 
    .sm-block({
       display: none;
+
+      // top: -@offset_one_side - 25px;
+
    });
 
 ul {
@@ -124,6 +130,7 @@ ul {
    align-items: center;
    flex-wrap: wrap;
    width: 100%;
+
 
    li {
       cursor: pointer;
@@ -158,6 +165,7 @@ ul {
          background-color: #fff;
          height: @menu_height;
 
+
          li {
 
             font-size: 13px;
@@ -181,8 +189,11 @@ ul {
    align-items: center;
    justify-content: space-between;
 
+
+
    .md_1-block({
       justify-content: space-evenly;
+
    });
 
 .md_2-block({
@@ -242,12 +253,8 @@ ul {
    });
 
 margin-left: 0;
-border: 1px solid rgb(254,
-   161,
-   0);
-background-color: rgb(254,
-   161,
-   0);
+border: 1px solid rgb(254, 161, 0);
+background-color: rgb(254, 161, 0);
 border-radius: 4px;
 display: flex;
 justify-content: center;

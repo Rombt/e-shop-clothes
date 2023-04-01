@@ -1,0 +1,75 @@
+.prod-card-list {
+
+   .col();
+   .size(6);
+   min-width: 350px;
+   height: 50px;
+
+   margin-bottom: 50px;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+
+   .md_2-block({
+
+      flex-direction: column;
+      flex-wrap: nowrap;
+      height: 70px;
+   });
+
+
+/* .prod-card__body */
+&__body {
+
+   h3 {
+      font-size: 16px;
+      font-family: "Sintony";
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.063;
+
+      .md_2-block({
+         text-align: center;
+
+      });
+}
+
+p {
+   font-size: 13px;
+   font-family: "Sintony";
+   color: rgb(92, 99, 105);
+   line-height: 1.857;
+}
+}
+
+/* .prod-card__footer */
+
+&__footer {
+
+   span {
+
+      font-size: 26px;
+      font-family: "PlayfairDisplay";
+      color: rgb(254, 161, 0);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 0.846;
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      p {
+         display: inline-block;
+         font-size: 14px;
+         margin-right: 2px;
+         position: relative;
+         top: -5px;
+
+      }
+
+   }
+}
+}
