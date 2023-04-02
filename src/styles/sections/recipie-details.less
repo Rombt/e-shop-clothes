@@ -349,74 +349,81 @@ p {
    flex-direction: column;
    justify-content: center;
 
-   // padding-top: 100px;
-   // padding-bottom: 100px;
+   .to(1200px, {
+      margin-left: 20px;
+   });
 
 
-   h2 {
-      font-size: 35px;
-      font-family: "PlayfairDisplay";
-      color: rgb(255, 255, 255);
-      font-weight: bold;
-      line-height: 0.629;
-      margin-bottom: 30px;
-   }
+h2 {
+   font-size: 35px;
+   font-family: "PlayfairDisplay";
+   color: rgb(255, 255, 255);
+   font-weight: bold;
+   line-height: 0.629;
+   margin-bottom: 30px;
+}
 
-   /* .food-step-background__row */
+/* .food-step-background__row */
 
-   &__row {
-      .row-flex();
-   }
+&__row {
+   .row-flex();
+}
 
-   &__scrollbar {
-      width: 6px !important;
-   }
+&__scrollbar {
+   width: 6px !important;
+}
 
 }
 
 .swiper-food-step {
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+
    margin-left: 0;
    height: 340px;
+   width: 915px;
 
    .swiper-wrapper {
+      width: 98%;
+      margin: 0px;
 
-      width: 900px;
    }
 
 }
 
 .step-row {
 
-   .col();
-   max-width: 800px;
    height: 90px;
-
    display: flex;
    align-items: center;
-   justify-content: space-between;
-
-   padding: 3px 0;
    margin-bottom: 40px;
 
-   // min-height: 90px;
+   .to(545px, {
+      margin-bottom: 70px;
 
-   /* .food-step-background__text */
+   });
 
-   &__text {
+.to(445px, {
+   margin-bottom: 90px;
 
-      font-size: 14px;
-      font-family: "Sintony";
-      color: rgb(255, 255, 255);
-      line-height: 1.857;
-      text-align: left;
-      margin-left: calc(30/800 * 100%);
+});
 
-      // min-height: 90px;
+/* .food-step-background__text */
 
-   }
+&__text {
+
+   font-size: 14px;
+   font-family: "Sintony";
+   color: rgb(255, 255, 255);
+   line-height: 1.857;
+   text-align: left;
+   margin-left: calc(30/800 * 100%);
+   min-height: 90px;
+
+   overflow: hidden;
+   word-wrap: break-word;
+
+   // border: 1px solid #000;
+
+}
 }
 
 .step-square {
@@ -442,15 +449,16 @@ p {
    }
 
    p:nth-of-type(1) {
-      font-size: 35px;
-      margin-top: -8px;
+      font-size: 30px;
+      margin-top: -6px;
       font-weight: 700;
       font-family: "PlayfairDisplay";
+      margin-bottom: 2px;
 
    }
 
    p {
-      font-size: 18px;
+      font-size: 16px;
       font-family: "Sintony";
       color: rgb(255, 255, 255);
       font-weight: 500;

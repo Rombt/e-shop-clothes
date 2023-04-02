@@ -3,9 +3,13 @@
 @@include('html/head.html',{"title":"Recipie details"})
 
 <body>
+
    <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+
    @@include('html/header.html',{})
+
    @@include('html/title-page-block.html',{'title':'Recipies'})
+
    <div class="conteiner recipe-details-title">
       <div class="recipe-details-title__row">
          <h2>Pakoda Chatny</h2>
@@ -136,7 +140,6 @@
       </div>
    </main>
 
-
    <div class="food-step-background background ">
       <div class="wrap-img food-step-background__img">
          <img src="@img/food-step-background.jpg" alt="food step background">
@@ -146,18 +149,6 @@
          <div class="food-step__row">
             <div class="swiper swiper-food-step">
                <div class="swiper-wrapper">
-                  <div class="swiper-slide step-row">
-                     <div class="step-square">
-                        <p>1</p>
-                        <p>Step</p>
-                     </div>
-                     <div class="step-row__text">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-                        voluptatem
-                        ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-                        doloribus culpa cum eaque? Laborum.
-                     </div>
-                  </div>
                   <div class="swiper-slide step-row">
                      <div class="step-square">
                         <p>1</p>
@@ -242,15 +233,24 @@
                         doloribus culpa cum eaque? Laborum.
                      </div>
                   </div>
+                  <div class="swiper-slide step-row">
+                     <div class="step-square">
+                        <p>8</p>
+                        <p>Step</p>
+                     </div>
+                     <div class="step-row__text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
+                        voluptatem
+                        ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
+                        doloribus culpa cum eaque? Laborum.
+                     </div>
+                  </div>
                </div>
                <div class="swiper-scrollbar food-step__scrollbar"></div>
             </div>
          </div>
       </div>
    </div>
-
-
-
 
    <div class="conteiner featured-recipies">
       <div class="featured-recipies__title">Featured Recipies</div>
@@ -274,9 +274,12 @@
       </div>
    </div>
    @@include('html/parts/opening-hours.html',{})
+
+
    @@include('html/footer.html',{})
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/app.min.js"></script>
+
 </body>
 
 </html>

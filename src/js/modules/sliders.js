@@ -83,7 +83,7 @@ export const swiperFoodStep = new Swiper('.swiper-food-step', {
    mousewheel: true,
    speed: 500,
    autoplay: {
-      delay: 5000,
+      delay: 6000,
    },
 
 });
