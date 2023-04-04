@@ -3,91 +3,77 @@
 @@include('html/head.html',{"title":"About Us"})
 
 <body>
-   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
-   @@include('html/header.html',{})
-   @@include('html/title-page-block.html',{'title':'About Us'})
-
-
-   <main>
-
-      <section class="conteiner history-blok">
-         <div class="history-blok__row">
-            <div class="history-blok__title">
-               <h2>Our History</h2>
+    @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+    @@include('html/header.html',{})
+    @@include('html/title-page-block.html',{'title':'About Us'})
+    <main>
+        <section class="conteiner history-blok">
+            <div class="history-blok__row">
+                <div class="history-blok__title">
+                    <h2>Our History</h2>
+                </div>
+                <div class="history-blok__text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quam! Dolor dolores veniam natus
+                    doloribus
+                    ducimus doloremque iure odio dolore a quod! Qui aliquam cumque voluptatum accusamus ipsam numquam
+                    repudiandae dicta, ad est iste sit tempore debitis laboriosam exercitationem porro perspiciatis adipisci
+                </div>
+                <div class="video-blok-history">
+                    <figure class="wrap-video wrap-img">
+                        <!-- Вставляем видео при помощи тега video -->
+                        <!-- <video src="video.mp4" controls></video> -->
+                        <img src="@img/video-blok-history-img.jpg" alt="video blok history">
+                    </figure>
+                    <div class="video-blok-history__description">
+                        Our hotel video
+                    </div>
+                </div>
             </div>
-            <div class="history-blok__text">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quam! Dolor dolores veniam natus
-               doloribus
-               ducimus doloremque iure odio dolore a quod! Qui aliquam cumque voluptatum accusamus ipsam numquam
-               repudiandae dicta, ad est iste sit tempore debitis laboriosam exercitationem porro perspiciatis adipisci
-
+        </section>
+        <section class="background background-coocs">
+            <div class="conteiner coocs">
+                <!-- <div class="coocs__row"> -->
+                <div class="coocs__title">
+                    Our Cooks
+                </div>
+                <div class="swiper swiper-coocs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                        <div class="swiper-slide swiper-coocs__card">
+                            <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-coocs__pagination"></div>
+                </div>
+                <!-- </div> -->
             </div>
-            <div class="video-blok-history">
-               <figure class="wrap-video wrap-img">
-                  <!-- Вставляем видео при помощи тега video -->
-                  <!-- <video src="video.mp4" controls></video> -->
-                  <img src="@img/video-blok-history-img.jpg" alt="video blok history">
-               </figure>
-               <div class="video-blok-history__description">
-                  Our hotel video
-               </div>
-            </div>
-         </div>
-      </section>
-
-      <section class="background background-coocs">
-         <div class="conteiner coocs">
-            <!-- <div class="coocs__row"> -->
-            <div class="coocs__title">
-               Our Cooks
-            </div>
-            <div class="swiper swiper-coocs">
-               <div class="swiper-wrapper">
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-slide swiper-coocs__card">
-                     <div class="wrap-img swiper-coocs__img"><img src="@img/Image_270x263.jpg" alt=""></div>
-                  </div>
-                  <div class="swiper-pagination swiper-coocs__pagination"></div>
-               </div>
-            </div>
-            <!-- </div> -->
-         </div>
-      </section>
-
-
-
-
-
-   </main>
-
-
-
-
-   @@include('html/speciality-block.html',{})
-   @@include('html/parts/opening-hours.html',{})
-   @@include('html/footer.html',{})
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script src="js/app.min.js"></script>
+        </section>
+    </main>
+    @@include('html/speciality-block.html',{})
+    @@include('html/parts/opening-hours.html',{})
+    @@include('html/footer.html',{})
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
 
 </html>
