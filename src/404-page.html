@@ -5,7 +5,7 @@
 })
 
 <body>
-   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
    @@include('html/header.html',{})
 
@@ -15,9 +15,9 @@
       <div class="conteiner e404-page">
          <div class="e404-page__title">
 
-            <!-- <div class="wrap-img e404-page__img-404">
+            <div class="wrap-img e404-page__img-404">
                <img src="@img/404.jpg" alt="404">
-            </div> -->
+            </div>
 
             <span>
                4
@@ -31,7 +31,7 @@
             </span>
 
          </div>
-         <!-- <div class="e404-page__body">
+         <div class="e404-page__body">
             <h2>oops!!</h2>
             <p>the page you are looking for doesn't exit</p>
          </div>
@@ -39,7 +39,7 @@
          @@include('html/parts/button-with-border.html',{
          'title':'back to home page',
          'href':'index.html',
-         }) -->
+         })
 
       </div>
 
@@ -56,5 +56,6 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/app.min.js"></script>
 </body>
+
 
 </html>
