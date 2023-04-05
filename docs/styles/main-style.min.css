@@ -1897,6 +1897,7 @@ a {
   color: #ffffff;
   font-weight: bold;
   line-height: 0.536;
+  text-transform: capitalize;
   position: relative;
   text-align: center;
   top: 50%;
