@@ -1,80 +1,40 @@
+
+
+
 export const swiperCoocs = new Swiper('.swiper-coocs', {
 
     direction: "horizontal",
+    loop: true,
     // freeMode: true,
 
     pagination: {
-        // el: '.swiper-pagination',
-        el: '.swiper-coocs__pagination',
+        el: '.swiper-pagination',
+        // el: '.swiper-coocs__pagination',
         type: 'bullets',
-
         clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
+        },
 
     },
 
+    mousewheel: true,
+    speed: 700,
+    autoplay: {
+        delay: 5000,
+    },
 
-    // mousewheel: true,
-    // speed: 500,
-    // autoplay: {
-    //    delay: 5000,
-    // },
-
-
-    slidesPerView: 1,
+    slidesPerView: 4,
     spaceBetween: 23,
-    // pagination: {
-    //     clickable: true,
+
+    // breakpoints: {
+    // 
+    // 
     // },
+
+
 
 });
-
-
-
-
-
-
-
-// export const _swiperCoocs = document.querySelector('swiper-coocs')
-// Object.assign(swiperCoocs, {
-//    slidesPerView: 1,
-//    spaceBetween: 10,
-//    pagination: {
-//       clickable: true,
-//    },
-// breakpoints: {
-//    "@0.00": {
-//       slidesPerView: 1,
-//       spaceBetween: 10,
-//    },
-//    "@0.75": {
-//       slidesPerView: 2,
-//       spaceBetween: 20,
-//    },
-//    "@1.00": {
-//       slidesPerView: 3,
-//       spaceBetween: 40,
-//    },
-//    "@1.50": {
-//       slidesPerView: 4,
-//       spaceBetween: 50,
-//    },
-// },
-// });
-
-// swiperCoocs.initialize();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -116,7 +76,7 @@ export const swiperDish = new Swiper('.swiper.swiper-dish', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        renderBullet: function(index, className) {
+        renderBullet: function (index, className) {
             return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
         },
     },
@@ -140,7 +100,7 @@ export const swiperToday = new Swiper('.swiper.swiper-today', {
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        renderBullet: function(index, className) {
+        renderBullet: function (index, className) {
             return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
         },
     },
