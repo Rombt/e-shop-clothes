@@ -1,0 +1,74 @@
+.e404-page-background {
+   background-color: rgb(237, 241, 243);
+}
+
+.e404-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   height: 840px;
+
+   /* .404-page__title */
+
+   &__title {
+      min-height: 301px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      span {
+
+         font-size: 400px;
+         font-family: "PlayfairDisplay";
+         color: rgb(254, 131, 0);
+         font-weight: bold;
+         position: relative;
+         top: -80px;
+      }
+
+      span:first-of-type {
+         left: 20px;
+         z-index: 5;
+      }
+
+      span:last-of-type {
+         left: -20px;
+         z-index: 5;
+      }
+
+   }
+
+
+   &__wrap-img {
+      width: 301px;
+      height: 301px;
+
+   }
+
+
+
+   /* .404-page__body */
+
+   &__body {
+
+      font-size: 30px;
+      font-family: "PlayfairDisplay";
+      color: rgb(44, 70, 90);
+      font-weight: bold;
+      line-height: 0.5;
+      text-align: center;
+
+      margin-bottom: 45px;
+
+      h2 {
+
+         font-size: 72px;
+         margin-bottom: 35px;
+
+      }
+
+   }
+}
