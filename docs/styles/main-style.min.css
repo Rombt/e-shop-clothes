@@ -4026,3 +4026,58 @@ a {
 .speciality-block-coocs-page {
   background-color: #fff;
 }
+.articles-conteiner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.article-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.article-blog {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: 845px;
+  border: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* .article-blog__img */
+  /* .article-blog__body */
+  /* .article-blog__text */
+}
+.article-blog__img {
+  width: inherit;
+  height: 400px;
+}
+.article-blog__body {
+  display: flex;
+  border: 1px solid #000;
+}
+.article-blog-footer {
+  display: flex;
+  max-width: calc(670/1120*100%);
+  border: 1px solid #000;
+}
+.articles-pagination {
+  /* .articles-pagination__prev */
+  /* .articles-pagination__next */
+}
+.blog-sidebar {
+  width: calc(100% / 12 * 2.6 - 30px);
+  border: 1px solid #000;
+}
+.recent-post {
+  /* .recent-post__row */
+  /* .recent-post__img */
+  /* .recent-post__body */
+}
