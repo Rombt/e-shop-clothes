@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('html/head.html',{"title":"Blog"})
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
+    <title>About Us</title>
+</head>
 
 <body>
-   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
-   @@include('html/header.html',{})
-   @@include('html/title-page-block.html',{'title':'blog'})
+    <div class="debug-grid">
+   <div>
+      <div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+   </div>
+</div>
+   <div class="conteiner">
+    <header class="header ">
+        <a href="#" class="logo"><img src="./img/logo.png" alt="logo"></a>
+        <div class="heder-menu__burger">
+            <span></span>
+        </div>
+        <nav class="heder-menu">
+            <ul class="menu__list">
+                <li><a href="index.html">home</a></li>
+                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
+                <li><a href="menu-page-list.html">menu</a></li>
+                <li><a href="#" style="color:#f7d6d4;">Shop with side bar</a></li>
+                <li><a href="recipies.html">recipe</a></li>
+                <li><a href="blog-page.html">blog</a></li>
+                <li><a href="about-us.html">about</a></li>
+                <li><a href="contacts.html">contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-book">
+            <div class="cart">
+                <div class="cart__cercle">3</div>
+                <a href="#">
+                    <img src="./img/icon_cart.png" alt="">
+                </a>
+                <img src="./img/arrow-cart.png" alt="">
+            </div>
+            <button type="button" name="read_more" class="heder-menu__button">
+                <div class="heder-menu__button-border">
+                    <img src="./img/icon_plate.png" alt="">
+                    <a href="#">BOOK YOU TABLE</a>
+                </div>
+            </button>
+        </div>
+    </header>
+</div>
+   <div class="background background-title-page-block">
+   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
+   <h1>blog</h1>
+
+</div>
 
    <div class="conteiner articles-conteiner">
 
@@ -14,7 +76,7 @@
          <div class="article-row">
             <article class="article-blog">
                <figure class="wrap-img article-blog__img">
-                  <img src="@img/articles-img.jpg" alt="">
+                  <img src="img/articles-img.jpg" alt="">
                </figure>
                <div class="article-blog__body">
                   <div class="square-date">
@@ -30,27 +92,30 @@
                   </div>
                </div>
                <footer class="article-blog-footer">
-                  @@include('html/parts/button-orange.html',{'title':'read more', 'href':'blog-details.html'})
+                  <!-- <button type="button" class="button-orange">read more</button> -->
+
+
+<a href="#" class="button-orange">read more</a>
                   <div class="icons-block">
                      <div class="icons-block__likes">
-                        <img src="@img/article-blog-heart.png" alt="heart">
+                        <img src="img/article-blog-heart.png" alt="heart">
                         <div class="icons-block__likes-amounth">
                            <p>65</p>
                         </div>
                      </div>
                      <div class="icons-block__icons">
-                        <a href="#"><img src="@img/article-blog-share.png " alt="icon share"
+                        <a href="#"><img src="img/article-blog-share.png " alt="icon share"
                               style="width: 25px; height: 25px;"></a>
-                        <a href="#"><img src="@img/article-blog-facebook.png" alt="icon facebook"></a>
-                        <a href="#"><img src="@img/article-blog-twitter.png" alt="icon twitter"></a>
-                        <a href="#"><img src="@img/article-blog-google.png" alt="icon google"></a>
+                        <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
+                        <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
+                        <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
                      </div>
                   </div>
                </footer>
             </article>
             <article class="article-blog">
                <figure class="wrap-img article-blog__img">
-                  <img src="@img/articles-img-video.jpg" alt="">
+                  <img src="img/articles-img-video.jpg" alt="">
                </figure>
                <div class="article-blog__body">
                   <div class="square-date">
@@ -66,27 +131,30 @@
                   </div>
                </div>
                <footer class="article-blog-footer">
-                  @@include('html/parts/button-orange.html',{'title':'read more', 'href':'blog-details.html'})
+                  <!-- <button type="button" class="button-orange">read more</button> -->
+
+
+<a href="#" class="button-orange">read more</a>
                   <div class="icons-block">
                      <div class="icons-block__likes">
-                        <img src="@img/article-blog-heart.png" alt="heart">
+                        <img src="img/article-blog-heart.png" alt="heart">
                         <div class="icons-block__likes-amounth">
                            <p>65</p>
                         </div>
                      </div>
                      <div class="icons-block__icons">
-                        <a href="#"><img src="@img/article-blog-share.png " alt="icon share"
+                        <a href="#"><img src="img/article-blog-share.png " alt="icon share"
                               style="width: 25px; height: 25px;"></a>
-                        <a href="#"><img src="@img/article-blog-facebook.png" alt="icon facebook"></a>
-                        <a href="#"><img src="@img/article-blog-twitter.png" alt="icon twitter"></a>
-                        <a href="#"><img src="@img/article-blog-google.png" alt="icon google"></a>
+                        <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
+                        <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
+                        <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
                      </div>
                   </div>
                </footer>
             </article>
             <article class="article-blog">
                <figure class="wrap-img article-blog__img">
-                  <img src="@img/articles-img.jpg" alt="">
+                  <img src="img/articles-img.jpg" alt="">
                </figure>
                <div class="article-blog__body">
                   <div class="square-date">
@@ -102,27 +170,30 @@
                   </div>
                </div>
                <footer class="article-blog-footer">
-                  @@include('html/parts/button-orange.html',{'title':'read more', 'href':'blog-details.html'})
+                  <!-- <button type="button" class="button-orange">read more</button> -->
+
+
+<a href="#" class="button-orange">read more</a>
                   <div class="icons-block">
                      <div class="icons-block__likes">
-                        <img src="@img/article-blog-heart.png" alt="heart">
+                        <img src="img/article-blog-heart.png" alt="heart">
                         <div class="icons-block__likes-amounth">
                            <p>65</p>
                         </div>
                      </div>
                      <div class="icons-block__icons">
-                        <a href="#"><img src="@img/article-blog-share.png " alt="icon share"
+                        <a href="#"><img src="img/article-blog-share.png " alt="icon share"
                               style="width: 25px; height: 25px;"></a>
-                        <a href="#"><img src="@img/article-blog-facebook.png" alt="icon facebook"></a>
-                        <a href="#"><img src="@img/article-blog-twitter.png" alt="icon twitter"></a>
-                        <a href="#"><img src="@img/article-blog-google.png" alt="icon google"></a>
+                        <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
+                        <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
+                        <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
                      </div>
                   </div>
                </footer>
             </article>
             <div class="articles-pagination">
                <a href="#" class="articles-pagination__prev">
-                  <img src="@img/articles-pagination-left-arrow.png" alt="arrow left">
+                  <img src="img/articles-pagination-left-arrow.png" alt="arrow left">
                   <p>prev</p>
                </a>
                <div class="articles-pagination__ather-numbers">
@@ -136,7 +207,7 @@
                </div>
                <a href="#" class="articles-pagination__next">
                   <p>next</p>
-                  <img src="@img/articles-pagination-right-arrow.png" alt="arrow right">
+                  <img src="img/articles-pagination-right-arrow.png" alt="arrow right">
                </a>
             </div>
          </div>
@@ -149,23 +220,23 @@
             <h2>category</h2>
             <ul>
                <li>
-                  <img src="@img/category-icon-arrow.png" alt="arrow category">
+                  <img src="img/category-icon-arrow.png" alt="arrow category">
                   <a href="#">All foods</a>
                </li>
                <li>
-                  <img src="@img/category-icon-arrow.png" alt="arrow category">
+                  <img src="img/category-icon-arrow.png" alt="arrow category">
                   <a href="#">vegitabales</a>
                </li>
                <li>
-                  <img src="@img/category-icon-arrow.png" alt="arrow category">
+                  <img src="img/category-icon-arrow.png" alt="arrow category">
                   <a href="#">delicious food</a>
                </li>
                <li>
-                  <img src="@img/category-icon-arrow.png" alt="arrow category">
+                  <img src="img/category-icon-arrow.png" alt="arrow category">
                   <a href="#">Special dishes</a>
                </li>
                <li>
-                  <img src="@img/category-icon-arrow.png" alt="arrow category">
+                  <img src="img/category-icon-arrow.png" alt="arrow category">
                   <a href="#">juices</a>
                </li>
             </ul>
@@ -176,7 +247,7 @@
             <div class="recent-post-slider">
                <a href="#" class="recent-post__row">
                   <div class="wrap-img recent-post__img">
-                     <img src="@img/Image_70x70.jpg" alt="thimb recent post">
+                     <img src="img/Image_70x70.jpg" alt="thimb recent post">
                   </div>
                   <div class="recent-post__body">
                      <p>08-nov-2016</p>
@@ -185,7 +256,7 @@
                </a>
                <a href="#" class="recent-post__row">
                   <div class="wrap-img recent-post__img">
-                     <img src="@img/Image_70x70.jpg" alt="thimb recent post">
+                     <img src="img/Image_70x70.jpg" alt="thimb recent post">
                   </div>
                   <div class="recent-post__body">
                      <p>13-nov-2016</p>
@@ -194,7 +265,7 @@
                </a>
                <a href="#" class="recent-post__row">
                   <div class="wrap-img recent-post__img">
-                     <img src="@img/Image_70x70.jpg" alt="thimb recent post">
+                     <img src="img/Image_70x70.jpg" alt="thimb recent post">
                   </div>
                   <div class="recent-post__body">
                      <p>20-nov-2016</p>
@@ -242,7 +313,67 @@
       </aside>
 
    </div>
-   @@include('html/footer.html',{})
+   <div class="background background__footer">
+   <div class="footer conteiner">
+      <section class="footer__row">
+         <div class="footer__navigation">
+            <h2>Navigation</h2>
+            <ul>
+               <li><a href="#">Home</a></li>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Menu</a></li>
+               <li><a href="#">Reservation</a></li>
+               <li><a href="#">Recipe</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Contact Us</a></li>
+            </ul>
+         </div>
+         <div class="footer__news">
+            <h2>News letter</h2>
+            <span>Enter your email address and subscribe daily newsletter</span>
+            <div class="form-footer">
+               <div class="form-footer__input">
+                  <img src="img/form-icon_email.png" alt="">
+                  <p>Email Address</p>
+                  <input type="email">
+                  </img>
+               </div>
+               <!-- <button type="button" class="button-orange">Subscribe</button> -->
+
+
+<a href="#" class="button-orange">Subscribe</a>
+            </div>
+            <div class="icons-block">
+   <img src="img/icon_facebook.png" alt="icon_facebook">
+   <img src="img/icon_twitter.png" alt="icon_twitter">
+   <img src="img/icon_google.png" alt="icon_google+">
+</div>
+         </div>
+         <div class="footer__app">
+            <h2>Our app avilable</h2>
+            <button type="button" class="button-app">
+   <img src="img/icon_apple.png" alt="">
+   <span>
+      <p>Avilable&nbspon&nbspthe</p>
+      App&nbspStore
+   </span>
+</button>
+            <button type="button" class="button-app">
+   <img src="img/icon_google-play.png" alt="">
+   <span>
+      <p>Get&nbspit&nbspon</p>
+      Google&nbspPlay
+   </span>
+</button>
+         </div>
+   </div>
+   <div class="copyright-block">
+      <span></span>
+      <p>2016 © Luxury RestaurAnt, All rights reserved</p>
+      <span></span>
+   </div>
+</div>
+</div>
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/app.min.js"></script>
 </body>
