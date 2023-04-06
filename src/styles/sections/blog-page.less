@@ -11,18 +11,21 @@
      margin-bottom: 100px;
 
 
-     .md_1-block({
+     .to(1180px, {
+        /*перевод в выпадающее меню*/
         justify-content: center;
-
-
      });
+
+
+
+
 
   }
 
   .article-row {
      .row-flex();
      flex-direction: column;
-     align-items: center;
+     align-items: flex-start;
      justify-content: space-between;
      row-gap: 100px;
 
@@ -31,10 +34,12 @@
   .article-blog {
 
      .col();
-     max-width: @width-article;
+     .size(10.7);
+     //   max-width: @width-article;
      display: flex;
      flex-direction: column;
      align-items: center;
+
 
      /* .article-blog__img */
 
@@ -317,9 +322,11 @@
   }
 
   .blog-sidebar {
-     width: (250 / 1170) * 100%;
+     width: (300 / 1230) * 100%;
 
-     .md_1-block({
+     border: 1px solid #000;
+
+     .to(1180px, {
         /*перевод в выпадающее меню*/
         display: none;
      });
