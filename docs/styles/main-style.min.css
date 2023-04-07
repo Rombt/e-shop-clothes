@@ -1609,6 +1609,11 @@ a {
   border-top: 1px solid #d4dade;
   border-bottom: 1px solid #d4dade;
 }
+@media screen and (max-width: 753px) {
+  .article-blog-footer {
+    row-gap: 15px;
+  }
+}
 @media screen and (max-width: 870px) {
   .article-blog-footer {
     justify-content: center;
@@ -1631,6 +1636,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 753px) {
+  .icons-block {
+    height: 30%;
+    row-gap: 50px;
+  }
 }
 .icons-block__likes {
   display: flex;
@@ -1665,6 +1676,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  min-width: 235px;
 }
 .icons-block__icons img {
   width: 40px;
