@@ -16,25 +16,38 @@
         justify-content: center;
      });
 
+  }
 
-
-
+  .articles-page-row {
+     .row-flex();
+     justify-content: center;
 
   }
 
   .article-row {
-     .row-flex();
+     .col();
+     .size(8.7);
+
+     display: flex;
      flex-direction: column;
      align-items: flex-start;
      justify-content: space-between;
      row-gap: 100px;
 
+     .to(1040px, {
+        /*перевод в выпадающее меню*/
+        .size(10);
+        // align-items: center;
+     });
+
+
+
   }
 
   .article-blog {
 
-     .col();
-     .size(10.7);
+     //   .col();
+     //   .size(10.7);
      //   max-width: @width-article;
      display: flex;
      flex-direction: column;
@@ -322,11 +335,15 @@
   }
 
   .blog-sidebar {
-     width: (300 / 1230) * 100%;
+     //   width: (300 / 1230) * 100%;
 
      border: 1px solid #000;
+     .col();
+     .size(3);
+     .shift-left(0.3);
+     min-width: 230px;
 
-     .to(1180px, {
+     .to(1040px, {
         /*перевод в выпадающее меню*/
         display: none;
      });
