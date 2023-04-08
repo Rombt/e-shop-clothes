@@ -3,7 +3,7 @@
 @@include('html/head.html',{"title":"Blog Post"})
 
 <body>
-   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
    @@include('html/header.html',{})
    @@include('html/title-page-block.html',{'title':'Blog Post'})
 
@@ -37,8 +37,11 @@
             </div>
 
             <footer class="blog-details-block__footer">
-               @@include('html/parts/button-pagination__prev.html',{})
-               @@include('html/parts/button-pagination__next.html',{})
+               <div class="blog-details-block__button-block">
+                  @@include('html/parts/button-pagination__prev.html',{})
+                  @@include('html/parts/button-pagination__next.html',{})
+               </div>
+               @@include('html/parts/article-icons-block.html',{'likes-amounth':'65'})
             </footer>
 
          </section>
