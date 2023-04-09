@@ -1,0 +1,94 @@
+.leave-comment-form {
+   .col();
+   .size(8.5);
+
+   min-height: 200px;
+
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+   h2 {
+      font-size: 35px;
+      font-family: "PlayfairDisplay";
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      line-height: 1.629;
+
+      // margin-bottom: 45px;
+   }
+
+   .xs-block({
+      columns: 1;
+      margin-left: auto;
+      margin-right: auto;
+   });
+
+/* .reserve-form__input */
+
+&__input,
+&__textarea {
+   font-size: 14px;
+   font-family: "Sintony";
+   color: rgb(54, 61, 67);
+   line-height: 1.857;
+   text-align: left;
+   border-bottom: 3px solid #c7d1d6;
+   min-height: 67px;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: end;
+
+   column-gap: 20px;
+
+   img {
+
+      height: 20px;
+      width: 20px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+   }
+
+   p {
+      display: block;
+      margin-right: 3px;
+   }
+
+   input,
+   textarea {
+      height: 50%;
+      flex-grow: 1;
+      border: none;
+
+   }
+
+
+
+   &:nth-last-child(-n+2) input {
+      width: 30px;
+   }
+}
+
+&__textarea {
+
+   align-items: flex-start;
+   padding-top: 30px;
+
+   textarea {
+      height: 170px;
+      resize: vertical;
+
+      appearance: none;
+      /* отключает стандартный внешний вид элемента в некоторых браузерах */
+      resize: none;
+
+   }
+}
+
+
+.button-with-border {
+   margin-top: 30px;
+}
+
+
+}

@@ -43,14 +43,15 @@
                </div>
                @@include('html/parts/article-icons-block.html',{'likes-amounth':'65'})
             </footer>
-
          </section>
-
       </main>
 
       @@include('html/parts/blog-sidebar.html',{})
    </div>
 
+   @@include('html/comments-block.html',{
+   'amount-comments':'3',
+   })
 
    @@include('html/footer.html',{})
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>

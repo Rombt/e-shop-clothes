@@ -1,0 +1,61 @@
+.background {}
+
+.comments-background {
+   background-color: rgb(237, 241, 243);
+
+
+}
+
+.comments {
+   min-height: 760px;
+   padding-top: 100px;
+   padding-bottom: 100px;
+
+   .button-with-border {
+      width: 170px;
+   }
+
+   /* .comments__row */
+
+   &__row {
+
+      .to(1200px, {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      });
+
+
+   .comment:not(:last-child) {
+      border-bottom: 1px solid #d4dade;
+   }
+
+   h2 {
+      font-size: 35px;
+      font-family: "PlayfairDisplay";
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      line-height: 0.629;
+
+      .to(1200px, {
+         margin-bottom: 50px;
+      });
+}
+}
+}
+
+
+
+
+.leave-comment-form-background {}
+
+
+.leave-comment {
+
+   /* .leave-comment-form__row */
+
+   &__row {
+      .row-flex();
+
+   }
+}

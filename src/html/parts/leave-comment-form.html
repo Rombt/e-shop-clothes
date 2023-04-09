@@ -1,0 +1,18 @@
+<form action="#" class="leave-comment-form">
+   <h2>Leave a Comment</h2>
+   <div class="leave-comment-form__input">
+      <img src="@img/form_icon_name.png" alt="">
+      <p>Name*</p>
+      <input type="text" tabindex="1" name="name" value="">
+   </div>
+   <div class="leave-comment-form__input">
+      <img src="@img/form_icon_email.png" alt="">
+      <p>Email*</p><input type="email" tabindex="5" name="email-address" value="">
+   </div>
+   <div class="leave-comment-form__textarea">
+      <img src="@img/form_icon_masage.png" alt="">
+      <p>Masage*</p>
+      <textarea name="masage"></textarea>
+   </div>
+   @@include('button-with-border.html',{'title':'Comment now', 'href':'#'})
+</form>
