@@ -2,8 +2,24 @@
    position: relative;
    min-height: 460px;
 
+
    // z-index: -1;
 }
+
+
+#clients {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   h2 {
+      text-align: center;
+      margin-bottom: 40px;
+   }
+
+}
+
 
 .background-clients__wrap-img {
    position: absolute;
@@ -15,9 +31,11 @@
 }
 
 .swiper-wrapper {
-   height: 460px;
+   // height: 460px;
+
 
 }
+
 
 
 .swiper-clients {
@@ -52,11 +70,9 @@
 
 .slide-body {
    position: relative;
-   left: 0px;
-   right: 0px;
-   margin: 0px auto;
-   top: 50%;
-   transform: translate(0, -50%);
+   left: 50%;
+   transform: translate(-50%, 0);
+
    .size(8);
 
    display: flex;
@@ -75,7 +91,7 @@
    &::before {
       content: url('../img/quote-left_icon.png');
       left: -@offset*2;
-      top: 45px;
+      top: 25px;
    }
 
    &::after {
@@ -107,6 +123,8 @@
       font-weight: 200;
       margin-top: 30px;
       margin-bottom: 30px;
+
+      // border: 5px solid rgb(8, 216, 231);
    }
 
    /* .slide-body__client-avatar */

@@ -114,9 +114,9 @@ export const swiperClients = new Swiper('.swiper.swiper-clients', {
     loop: true,
     speed: 500,
 
-    autoplay: {
-        delay: 5000,
-    },
+    // autoplay: {
+    //     delay: 5000,
+    // },
 
     navigation: {
         nextEl: '.swiper-clients__button-prev',
