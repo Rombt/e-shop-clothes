@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "gulp dev",
     "prod": "gulp prod --prod",
+    "valid": "gulp prod --valid",
     "createFonts": "gulp createFonts",
     "createSvgSprite": "gulp createSvgSprite",
     "zip": "gulp deployZIP --prod",

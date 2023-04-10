@@ -17,7 +17,9 @@ import { grid } from "./gulp/tasks/grid.js";
 
 global.app = {
     isProd: process.argv.includes('--prod'),
+    toCleanCss: process.argv.includes('--prod'),
     isDev: !process.argv.includes('--prod'),
+    isValid: process.argv.includes('--valid'),  // проэкт собирается как для prod но без минификации стилей и скриптов
     isSASS: false, // false == LESS; true == SASS
     path: path,
     gulp: gulp,

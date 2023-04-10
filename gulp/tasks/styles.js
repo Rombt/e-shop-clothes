@@ -26,7 +26,8 @@ export const styles = () => {
             cascad: true,
         })))
 
-        .pipe(app.plugins.if(app.isProd, cleanCss()))
+        // .pipe(app.plugins.if(app.isProd, cleanCss()))        // 
+        .pipe(app.plugins.if(app.toCleanCss, cleanCss()))       // для флага --valid
         .pipe(rename({ extname: ".min.css" }))
         .pipe(app.gulp.dest(app.path.prod.styles))
         .pipe(app.plugins.browsersync.stream());
