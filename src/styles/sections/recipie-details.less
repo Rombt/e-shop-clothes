@@ -23,7 +23,6 @@
 
    /* .recipe-details-title__rating */
 
-   &__rating {}
 }
 
 .recipe-details {
@@ -283,11 +282,15 @@ tbody {
    justify-content: space-around;
    min-width: 200px;
 
-   span {
+
+   p {
       padding: 5px;
       overflow: hidden;
-      width: 100px;
-      max-height: 50px;
+      max-width: 100px;
+      max-height: 70px;
+
+      display: flex;
+      flex-direction: column;
 
       .xs-block({
          flex-direction: column;
@@ -300,7 +303,7 @@ tbody {
 
 }
 
-p {
+span {
    font-size: 16px;
    color: #5c6369;
    font-weight: 400;
@@ -321,6 +324,7 @@ p {
       color: rgb(20, 20, 29);
       font-weight: bold;
       line-height: 0.917;
+
       min-width: 270px;
       max-width: 350px;
       padding: 5px;
@@ -329,18 +333,21 @@ p {
       display: flex;
       justify-content: flex-start;
 
-
       .sm-block({
          margin: 10px 0;
          justify-content: center;
       });
 
    p {
-      font-size: 16px;
-      color: #5c6369;
-      font-weight: 400;
-      text-transform: capitalize;
-      margin-top: 6px;
+
+      span {
+         font-size: 16px;
+         color: #5c6369;
+         font-weight: 400;
+         text-transform: capitalize;
+         margin-top: 6px;
+         display: block;
+      }
 
    }
 
