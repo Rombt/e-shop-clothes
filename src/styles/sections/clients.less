@@ -2,16 +2,16 @@
    position: relative;
    min-height: 460px;
 
+   display: flex;
+   align-items: center;
 
    // z-index: -1;
 }
 
 
 #clients {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+   position: relative;
+   width: 100%;
 
    h2 {
       text-align: center;
@@ -39,6 +39,9 @@
 
 
 .swiper-clients {
+
+
+   .size(12);
 
    /* .swiper-clients__button-prev */
 
@@ -72,33 +75,30 @@
    position: relative;
    left: 50%;
    transform: translate(-50%, 0);
-
-   .size(8);
-
+   width: (770/1230) *100%;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
 
+   // &::after,
+   // &::before {
+   //    position: absolute;
+   //    height: 20px;
+   //    width: 25px;
+   // }
 
-   &::after,
-   &::before {
-      position: absolute;
-      height: 20px;
-      width: 25px;
-   }
+   // &::before {
+   //    content: url('../img/quote-left_icon.png');
+   //    left: -@offset*2;
+   //    top: 25px;
+   // }
 
-   &::before {
-      content: url('../img/quote-left_icon.png');
-      left: -@offset*2;
-      top: 25px;
-   }
-
-   &::after {
-      content: url('../img/quote-right_icon.png');
-      right: -@offset*2;
-      top: 120px;
-   }
+   // &::after {
+   //    content: url('../img/quote-right_icon.png');
+   //    right: -@offset*2;
+   //    bottom: 0px;
+   // }
 
 
    /* .slide-body__title */
@@ -124,7 +124,26 @@
       margin-top: 30px;
       margin-bottom: 30px;
 
-      // border: 5px solid rgb(8, 216, 231);
+      &::after,
+      &::before {
+         position: absolute;
+         height: 20px;
+         width: 25px;
+      }
+
+      &::before {
+         content: url('../img/quote-left_icon.png');
+         left: -@offset*2;
+         top: 25px;
+      }
+
+      &::after {
+         content: url('../img/quote-right_icon.png');
+         right: -@offset*2;
+      }
+
+
+
    }
 
    /* .slide-body__client-avatar */
