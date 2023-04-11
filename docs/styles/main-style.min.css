@@ -3537,7 +3537,7 @@ a {
     order: 3;
   }
 }
-.footer__app button:not(:last-child) {
+.footer__app .button-app:not(:last-child) {
   margin-bottom: 12px;
 }
 .form-footer {
