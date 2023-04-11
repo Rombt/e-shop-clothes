@@ -969,16 +969,17 @@ a {
   align-items: center;
   justify-content: start;
 }
-.button-app span {
+.button-app p {
   font-size: 15px;
   font-family: "Sintony";
   color: #edf1f3;
   line-height: 1.818;
   text-align: left;
 }
-.button-app p {
+.button-app p span {
   font-size: 9px;
   margin-bottom: -7px;
+  display: block;
 }
 .button-app img {
   margin-left: 15px;
