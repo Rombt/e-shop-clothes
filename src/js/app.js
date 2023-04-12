@@ -1,7 +1,7 @@
 import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
-import { swiperDish, swiperToday, swiperClients } from "./modules/sliders.js";
+// import { swiperDish, swiperToday, swiperClients } from "./modules/sliders.js";
+import * as  sliders from "./modules/sliders.js";
 import { Burger } from "./modules/burger.js";
-
 
 
 window.onload = function () {
