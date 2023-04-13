@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"Shop Listing"
+})
+
+<body>
+   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
+
+   @@include('html/header.html',{})
+
+   @@include('html/title-page-block.html',{'title':'Shop Listing'})
+
+
+   <div class="conteiner shop-listing-conteiner">
+      <div class="shop-listing-row">
+         @@include('html/parts/_shop-sidebar.html',{})
+         <main class="shop-listing">
+         </main>
+      </div>
+
+   </div>
+
+
+
+   @@include('html/footer.html',{})
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+   <script src="js/app.min.js"></script>
+</body>
+
+</html>
