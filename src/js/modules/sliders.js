@@ -12,7 +12,8 @@ if (document.querySelector('.swiper-coocs')) {
     swiperCoocs = new Swiper('.swiper-coocs', {
 
         direction: "horizontal",
-        // loop: true,
+        // loop: true,      //  в режиме петли не работает!
+        // freeMode: true,
 
         pagination: {
             // el: '.swiper-pagination',
