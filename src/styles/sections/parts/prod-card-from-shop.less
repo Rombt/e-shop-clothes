@@ -7,6 +7,9 @@
    height: 395px;
    position: relative;
 
+   border: 1px solid #e4e4e4;
+
+
    @media (any-hover: hover) {
       &:hover {
          .active {
@@ -15,10 +18,6 @@
 
       }
    }
-
-
-
-
 
    .active {
 
@@ -51,7 +50,34 @@
 
    /* .prod-card-from-shop__rating-box */
 
-   &__rating-box {}
+   &__rating-box {
+      font-size: 14px;
+      font-family: "Sintony";
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.214;
+
+      background-color: rgb(142, 146, 152);
+      width: 39px;
+      height: 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      align-self: start;
+
+      margin: 5px;
+
+
+      img {
+         height: 15px;
+         width: 15px;
+
+
+      }
+
+   }
 
    /* .prod-card-from-shop__img */
 
@@ -62,17 +88,73 @@
 
    /* .prod-card-from-shop__text */
 
-   &__text {}
+   &__text {
+      text-align: center;
+      margin-top: 40px;
 
-   /* .prod-card-from-shop__price-new */
+      h3 {
 
-   &__price-new {}
 
-   /* .prod-card-from-shop__price-old */
+         font-size: 17px;
+         font-family: "Sintony";
+         color: rgb(20, 20, 29);
+         font-weight: bold;
+         text-transform: uppercase;
+         line-height: 2;
+      }
 
-   &__price-old {}
+      p {
+         display: inline-block;
+         font-size: 16px;
+         font-family: "Sintony";
+         color: rgb(92, 99, 105);
+         line-height: 1.375;
+
+
+
+         &:first-of-type {
+            text-decoration: line-through;
+         }
+
+         &:last-of-type {
+            font-weight: bold;
+         }
+      }
+
+
+   }
 }
 
-.wrap-img {}
 
-.add-block {}
+.add-block {
+   height: 45px;
+   width: 45px;
+   border-radius: 50%;
+   background-color: #fea100;
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translate(-50%, 50%);
+
+
+   &:after,
+   &:before {
+      content: '';
+      position: absolute;
+      height: 22px;
+      width: 3px;
+      background-color: #fff;
+
+      top: 49%;
+      left: 49%;
+
+      transform: translate(-50%; -50%);
+   }
+
+   &:before {
+      transform: rotate(90deg);
+      top: 24%;
+      left: 47%;
+   }
+
+}
