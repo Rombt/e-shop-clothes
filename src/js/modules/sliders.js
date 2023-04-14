@@ -4,7 +4,7 @@
 export const swiperCoocs = new Swiper('.swiper-coocs', {
 
     direction: "horizontal",
-    loop: true,
+    //loop: true,
     // freeMode: true,
 
     pagination: {
