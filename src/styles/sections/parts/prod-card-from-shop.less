@@ -1,36 +1,30 @@
 .prod-card-from-shop {
-
    width: 270px;
    display: flex;
    flex-direction: column;
    align-items: center;
    height: 395px;
    position: relative;
-
    border: 1px solid #e4e4e4;
-
 
    @media (any-hover: hover) {
       &:hover {
          .active {
             display: block;
          }
-
       }
    }
 
    .active {
-
       display: none;
-
       position: absolute;
       left: 0px;
       top: 0px;
       width: 100%;
       height: 100%;
 
-      border: 1px solid #e4e4e4;
-      background-color: rgb(254, 76, 141);
+      border: 1px solid #fe4c8d;
+      background-color: #fe4c8d;
       opacity: 0.8;
       z-index: 10;
 
@@ -43,6 +37,7 @@
          z-index: 11;
 
          :not(:last-child) {
+            display: block;
             margin-bottom: 10px;
          }
       }
@@ -57,29 +52,20 @@
       font-weight: bold;
       text-transform: uppercase;
       line-height: 1.214;
-
       background-color: rgb(142, 146, 152);
       width: 39px;
       height: 25px;
-
       display: flex;
       align-items: center;
       justify-content: space-evenly;
       align-self: start;
-
       margin: 5px;
-
 
       img {
          height: 15px;
          width: 15px;
-
-
       }
-
    }
-
-   /* .prod-card-from-shop__img */
 
    &__img {
       width: 226px;
@@ -93,8 +79,6 @@
       margin-top: 40px;
 
       h3 {
-
-
          font-size: 17px;
          font-family: "Sintony";
          color: rgb(20, 20, 29);
@@ -109,8 +93,6 @@
          font-family: "Sintony";
          color: rgb(92, 99, 105);
          line-height: 1.375;
-
-
 
          &:first-of-type {
             text-decoration: line-through;
@@ -136,25 +118,26 @@
    left: 50%;
    transform: translate(-50%, 50%);
 
-
-   &:after,
    &:before {
       content: '';
       position: absolute;
-      height: 22px;
-      width: 3px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 2px;
       background-color: #fff;
-
-      top: 49%;
-      left: 49%;
-
-      transform: translate(-50%; -50%);
    }
 
-   &:before {
-      transform: rotate(90deg);
-      top: 24%;
-      left: 47%;
+   &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 50%;
+      background-color: #fff;
    }
 
 }
