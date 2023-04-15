@@ -955,6 +955,7 @@ a {
 .button-orange:hover {
   border: 1px solid #fea100;
   background-color: #ffb12b;
+  scale: 1.02;
 }
 .button-orange:active {
   box-shadow: 0 2px #ca8102;
@@ -964,7 +965,7 @@ a {
   border-radius: 4px;
   border: 1px solid #52535e;
   background-color: #52535e;
-  width: 219px;
+  max-width: 219px;
   height: 61px;
   display: flex;
   align-items: center;
@@ -2215,9 +2216,24 @@ a {
   flex-direction: column;
   row-gap: 100px;
 }
+@media screen and (max-width: 920px) {
+  .shop-sidebar {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 40px;
+    min-height: 80%;
+    border: 1px solid #0515fd;
+  }
+}
 .widget-food-category {
   max-width: 300px;
   width: 100%;
+}
+@media screen and (max-width: 920px) {
+  .widget-food-category {
+    display: none;
+  }
 }
 .widget-food-category h2 {
   font-size: 24px;
@@ -2252,6 +2268,11 @@ a {
 .widget-filter-by-price {
   max-width: 300px;
   width: 100%;
+}
+@media screen and (max-width: 920px) {
+  .widget-filter-by-price {
+    display: none;
+  }
 }
 .widget-filter-by-price h2 {
   font-size: 24px;
@@ -2313,11 +2334,29 @@ a {
   color: #fff;
   max-width: 300px;
   width: 100%;
-  height: 325px;
+  min-height: 325px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 45px 10px 45px 10px;
+  position: relative;
+}
+@media screen and (max-width: 920px) {
+  .widget-newsletter {
+    display: none;
+  }
+}
+.widget-newsletter::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  border: 1px solid #5f6069;
+  pointer-events: none;
 }
 .widget-newsletter h2 {
   font-size: 24px;
@@ -2332,6 +2371,40 @@ a {
   color: #bcbdc1;
   line-height: 1.857;
   text-align: center;
+  width: 190px;
+  margin: 20px 0px 20px 0px;
+}
+.widget-newsletter__email-address {
+  display: block;
+  color: inherit;
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #e6e9eb;
+  line-height: 1.857;
+  text-align: left;
+  border: 1px solid #fff;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  width: 210px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7px;
+}
+@media (any-hover: hover) {
+  .widget-newsletter__email-address:hover {
+    background-color: #4b4c5c;
+    scale: 1.02;
+  }
+}
+.widget-newsletter__email-address:active {
+  box-shadow: 0 2px #fff;
+  transform: translateY(2px);
+}
+.widget-newsletter .button-orange {
+  width: 210px;
 }
 .prod-card-from-shop {
   width: 270px;
@@ -3742,6 +3815,7 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 2 - 30px);
   min-width: 170px;
+  text-align: center;
 }
 @media screen and (max-width: 1120px) {
   .footer__navigation {
@@ -3757,7 +3831,7 @@ a {
   margin-left: 15px;
   margin-right: 15px;
   width: calc(100% / 12 * 5 - 30px);
-  min-width: 470px;
+  min-width: 300px;
 }
 @media screen and (max-width: 1120px) {
   .footer__news {
@@ -3783,6 +3857,10 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 3 - 30px);
   min-width: 170px;
+  text-align: center;
+}
+.footer__app h2 {
+  line-height: 1.5;
 }
 @media screen and (max-width: 1120px) {
   .footer__app {
@@ -3864,7 +3942,7 @@ a {
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
-  width: calc(100% / 12 * 4 - 30px);
+  width: calc(100% / 12 * 2 - 30px);
   border-width: 2px;
   border-color: #52535e;
   border-style: solid;
@@ -3875,8 +3953,8 @@ a {
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
-  width: calc(100% / 12 * 4 - 30px);
-  font-size: 13px;
+  width: calc(180px + (400 - 180) * ((100vw - 320px)/(1230 - 320)));
+  font-size: calc(10px + 3 * ((100vw - 320px) / 910));
   font-family: "Sintony";
   color: #adb2b7;
   text-transform: uppercase;
@@ -5038,6 +5116,12 @@ a {
   margin-left: -15px;
   margin-right: -15px;
   padding: 90px 0px 90px 0px;
+  position: relative;
+}
+@media screen and (max-width: 920px) {
+  .shop-listing-row {
+    justify-content: center;
+  }
 }
 .shop-listing {
   box-sizing: border-box;
@@ -5053,8 +5137,12 @@ a {
 }
 @media screen and (max-width: 920px) {
   .shop-listing {
-    width: calc(100% / 12 * 12 - 30px);
-    justify-content: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: space-evenly;
+    margin-left: 70px;
   }
 }
 @media screen and (max-width: 770px) {
@@ -5070,8 +5158,9 @@ a {
   width: 100%;
   gap: calc(20px + (30 - 20) * ((100vw - 320px)/(1230 - 320)));
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 920px) {
   .shop-listing__title-row {
+    width: 90%;
     justify-content: space-around;
   }
 }
@@ -5087,7 +5176,7 @@ a {
   font-weight: bold;
   line-height: 0.629;
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 920px) {
   .shop-listing__title-row h2 {
     width: 100%;
     text-align: center;
@@ -5139,7 +5228,4 @@ a {
   text-align: left;
 }
 @media screen and (max-width: 920px) {
-  .shop-sidebar {
-    display: none;
-  }
 }

@@ -1,6 +1,11 @@
 .shop-listing-row {
    .row-flex();
    padding: 90px 0px 90px 0px;
+   position: relative;
+
+   .md-block({
+      justify-content: center
+   });
 }
 
 .shop-listing {
@@ -14,8 +19,15 @@
    column-gap: @offset;
 
    .md-block({
-      .size(12);
-      justify-content: center;
+      // .size(11);
+      .col();
+      // justify-content: center;
+      justify-content: space-evenly;
+
+      margin-left: 70px;
+
+      // border: 1px solid #22fd05;
+
    });
 
 
@@ -32,9 +44,16 @@
    width: 100%;
    .adaptiv-prop(gap, 30, 20);
 
-   .sm-block({
+
+   .md-block({
+
+      width: 90%;
+
+
       justify-content: space-around;
    });
+
+.sm-block({});
 
 .to(330px, {
    flex-direction: column;
@@ -48,7 +67,7 @@ h2 {
    font-weight: bold;
    line-height: 0.629;
 
-   .sm-block({
+   .md-block({
       width: 100%;
       text-align: center;
    });
@@ -114,7 +133,7 @@ h2 {
 
 .shop-sidebar {
    .md-block({
-      display: none;
+      // display: none;
    });
 
 }
