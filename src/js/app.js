@@ -2,60 +2,49 @@ import { isWebp } from "./modules/isWebp.js"; // проверяет поддер
 // import { swiperDish, swiperToday, swiperClients } from "./modules/sliders.js";
 import * as  sliders from "./modules/sliders.js";
 import { Burger } from "./modules/burger.js";
+import { Swipe } from "./modules/Swipe.js";
 
 
 window.onload = function () {
 
-
     isWebp(); // проверяет поддерживает ли браузер формат webp
 
     let params_headerMenuBurger = {
-
         conteiner: 'heder-menu',
         menuList: 'menu__list',
         classActive: 'menu__sm',
         burgerOpen: 'heder-menu__burger',
         burgerClose: 'heder-menu__burger-close',
-
     }
     const headerMenuBurger = new Burger(params_headerMenuBurger);
     headerMenuBurger.init();
 
-
-
     let params_foodMenuBurger = {
-
         conteiner: 'food-menu',
         menuList: 'food-menu__list',
         classActive: 'active',
         burgerOpen: 'burger-open',
         burgerClose: 'burger-close',
-
     }
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
 
-
     let params_recipiesTitleNavBurger = {
-
         conteiner: 'menu-recipies',
         menuList: 'menu-recipies__list',
         classActive: 'menu-recipies-active',
         burgerOpen: 'menu-recipies-burger',
         burgerClose: 'burger-close',
-
     }
     const recipiesTitleNavBurger = new Burger(params_recipiesTitleNavBurger);
     recipiesTitleNavBurger.init();
 
 
-
-
-
-
-
-
-
+    // Use class to get element by string.
+    // var swiper = new Swipe('.shop-sidebar');
+    var swiper = new Swipe('.widget-food-category');
+    swiper.onLeft(function () { alert('You swiped left.') });
+    swiper.run();
 
 
 

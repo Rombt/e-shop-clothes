@@ -2220,10 +2220,12 @@ a {
   .shop-sidebar {
     position: absolute;
     top: 90px;
-    left: 0;
-    width: 40px;
-    min-height: 80%;
-    border: 1px solid #0515fd;
+    left: -20px;
+    width: 15px;
+    min-height: 90%;
+    border-radius: 4px;
+    border: 1px solid #fea100;
+    background-color: #fea100;
   }
 }
 .widget-food-category {
@@ -2249,8 +2251,11 @@ a {
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 2.714;
   position: relative;
+  overflow: hidden;
+}
+.widget-food-category li:not(:last-child) {
+  margin-bottom: 12px;
 }
 .widget-food-category li::before {
   content: url('../img/category-icon-arrow.png');
@@ -2263,7 +2268,9 @@ a {
 }
 .widget-food-category li a {
   color: inherit;
-  margin-left: 40px;
+  display: block;
+  padding-left: 40px;
+  line-height: 1.5;
 }
 .widget-filter-by-price {
   max-width: 300px;

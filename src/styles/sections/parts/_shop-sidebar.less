@@ -12,11 +12,13 @@
    .md-block({
       position: absolute;
       top: 90px;
-      left: 0;
-      width: 40px;
-      min-height: 80%;
+      left: -20px;
+      width: 15px;
+      min-height: 90%;
 
-      border: 1px solid #0515fd;
+      border-radius: 4px;
+      border: 1px solid #fea100;
+      background-color: #fea100;
    });
 
 }
@@ -49,9 +51,13 @@ li {
    color: rgb(20, 20, 29);
    font-weight: bold;
    text-transform: uppercase;
-   line-height: 2.714;
-
+   // line-height: 2.714;
    position: relative;
+   overflow: hidden;
+
+   &:not(:last-child) {
+      margin-bottom: 12px;
+   }
 
    &::before {
       content: url('../img/category-icon-arrow.png');
@@ -65,7 +71,9 @@ li {
 
    a {
       color: inherit;
-      margin-left: 40px;
+      display: block;
+      padding-left: 40px;
+      line-height: 1.5;
    }
 }
 
@@ -148,7 +156,6 @@ p:last-of-type::after {
 }
 
 }
-
 
 .widget-newsletter {
 
