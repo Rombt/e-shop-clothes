@@ -2211,7 +2211,7 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 3 - 30px);
   min-height: 400px;
-  padding: 15px 0px 15px 0px;
+  padding: 15px 0px 0px 0px;
   display: flex;
   flex-direction: column;
   row-gap: 100px;
@@ -2221,27 +2221,37 @@ a {
     position: absolute;
     top: 90px;
     left: -300px;
+    background-color: transparent;
+    transition-duration: 1s;
   }
 }
-.swipe {
-  background-color: #fff;
-  z-index: 10;
-  width: auto;
-  transform: translate(140%, 0);
-  transition: translate 1s ease-in-out;
-}
 @media screen and (max-width: 920px) {
-}
-.toggle-on {
-  display: block;
-  position: absolute;
-  top: 90px;
-  left: 300px;
-  width: 15px;
-  min-height: 90%;
-  border-radius: 4px;
-  border: 1px solid #fea100;
-  background-color: #fea100;
+  .swipe {
+    z-index: 10;
+    width: auto;
+    transform: translate(125%, 0);
+    transition: all 1s ease-in-out;
+    background-color: #fff;
+    box-shadow: 7px 7px 7px 7px #F2F6FC;
+  }
+  .touch-toggle {
+    position: absolute;
+    top: 0px;
+    width: 8px;
+    left: 240px;
+    border-radius: 4px;
+    border: 1px solid #fea100;
+    background-color: rgba(254, 161, 0, 0.2);
+    transition-duration: 3s;
+    min-height: 100%;
+  }
+  .toggle-on {
+    transform: translate(50px, 0);
+    transition-duration: 1s;
+    width: 10px;
+    background-color: #8e9298;
+    border: 3px solid #8e9298;
+  }
 }
 .widget-food-category {
   max-width: 300px;

@@ -45,9 +45,6 @@ window.onload = function() {
     let touchToggle = document.querySelector('.touch-toggle')
     let sideBar = document.querySelector('.shop-sidebar')
 
-
-    swiper.onUp(function() { console.log('You swiped Up.') });
-    swiper.onDown(function() { console.log('You swiped Down.') });
     swiper.onLeft(function() {
         sideBar.classList.remove('swipe');
         touchToggle.classList.add('toggle-on');
