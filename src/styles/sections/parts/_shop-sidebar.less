@@ -9,28 +9,78 @@
    flex-direction: column;
    row-gap: 100px;
 
+
    .md-block({
       position: absolute;
       top: 90px;
-      left: -20px;
-      width: 15px;
-      min-height: 90%;
+      left: -300px;
 
-      border-radius: 4px;
-      border: 1px solid #fea100;
-      background-color: #fea100;
+
+
+
+
    });
 
+
+
 }
+
+
+.swipe {
+
+   background-color: #fff;
+   // left: 10px;
+   z-index: 10;
+   width: auto;
+
+   transform: translate(140%, 0);
+   transition: translate 1s ease-in-out;
+}
+
+
+
+.touch-toggle {
+
+
+   .md-block({
+
+
+      &-on {
+
+         display: block;
+         position: absolute;
+         top: 90px;
+         left: 300px;
+         width: 15px;
+         min-height: 90%;
+
+         border-radius: 4px;
+         border: 1px solid #fea100;
+         background-color: #fea100;
+      }
+
+
+
+      // &-ofF {
+
+      //    display: none;
+      // }
+   });
+
+
+
+
+}
+
+
+
 
 .widget-food-category {
    max-width: 300px;
    width: 100%;
 
    .md-block({
-      display: none;
-
-
+      // display: none;
 
 
 
@@ -84,7 +134,7 @@ li {
    width: 100%;
 
    .md-block({
-      display: none;
+      // display: none;
    });
 
 h2 {
@@ -174,7 +224,7 @@ p:last-of-type::after {
    position: relative;
 
    .md-block({
-      display: none;
+      // display: none;
    });
 
 &::before {

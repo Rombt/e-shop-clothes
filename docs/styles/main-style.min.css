@@ -2220,7 +2220,22 @@ a {
   .shop-sidebar {
     position: absolute;
     top: 90px;
-    left: -20px;
+    left: -300px;
+  }
+}
+.swipe {
+  background-color: #fff;
+  z-index: 10;
+  width: auto;
+  transform: translate(140%, 0);
+  transition: translate 1s ease-in-out;
+}
+@media screen and (max-width: 920px) {
+  .touch-toggle-on {
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 300px;
     width: 15px;
     min-height: 90%;
     border-radius: 4px;
@@ -2233,9 +2248,6 @@ a {
   width: 100%;
 }
 @media screen and (max-width: 920px) {
-  .widget-food-category {
-    display: none;
-  }
 }
 .widget-food-category h2 {
   font-size: 24px;
@@ -2277,9 +2289,6 @@ a {
   width: 100%;
 }
 @media screen and (max-width: 920px) {
-  .widget-filter-by-price {
-    display: none;
-  }
 }
 .widget-filter-by-price h2 {
   font-size: 24px;
@@ -2350,9 +2359,6 @@ a {
   position: relative;
 }
 @media screen and (max-width: 920px) {
-  .widget-newsletter {
-    display: none;
-  }
 }
 .widget-newsletter::before {
   content: '';

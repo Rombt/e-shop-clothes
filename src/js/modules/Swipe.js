@@ -2,6 +2,7 @@ export class Swipe {
    constructor(element) {
       this.xDown = null;
       this.yDown = null;
+
       this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
 
       this.element.addEventListener('touchstart', function (evt) {
@@ -12,7 +13,7 @@ export class Swipe {
    }
 
    onLeft(callback) {
-      this.oёnLeft = callback;
+      this.onLeft = callback;
 
       return this;
    }
@@ -36,7 +37,9 @@ export class Swipe {
    }
 
    handleTouchMove(evt) {
+
       if (!this.xDown || !this.yDown) {
+
          return;
       }
 
@@ -61,13 +64,19 @@ export class Swipe {
       }
 
       // Reset values.
-      this.xDown = null;
-      this.yDown = null;
+      // this.xDown = null;
+      // this.yDown = null;
+
+      this.xDown = evt.touches[0].clientX;
+      this.yDown = evt.touches[0].clientY;
    }
 
    run() {
+
+
       this.element.addEventListener('touchmove', function (evt) {
-         this.handleTouchMove(evt).bind(this);
+
+         this.handleTouchMove(evt);
       }.bind(this), false);
    }
 }

@@ -41,9 +41,12 @@ window.onload = function () {
 
 
     // Use class to get element by string.
-    // var swiper = new Swipe('.shop-sidebar');
-    var swiper = new Swipe('.widget-food-category');
-    swiper.onLeft(function () { alert('You swiped left.') });
+    var swiper = new Swipe('.shop-sidebar');
+    // var swiper = new Swipe('.widget-food-category');
+    swiper.onUp(function () { console.log('111111111  You swiped Up.') });
+    swiper.onDown(function () { console.log('0000000  You swiped Down.') });
+    swiper.onLeft(function () { console.log('-------  You swiped left.') });
+    swiper.onRight(function () { console.log('++++++  You swiped right.'); });
     swiper.run();
 
 
