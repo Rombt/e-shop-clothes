@@ -2231,17 +2231,17 @@ a {
   transition: translate 1s ease-in-out;
 }
 @media screen and (max-width: 920px) {
-  .touch-toggle-on {
-    display: block;
-    position: absolute;
-    top: 90px;
-    left: 300px;
-    width: 15px;
-    min-height: 90%;
-    border-radius: 4px;
-    border: 1px solid #fea100;
-    background-color: #fea100;
-  }
+}
+.toggle-on {
+  display: block;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  width: 15px;
+  min-height: 90%;
+  border-radius: 4px;
+  border: 1px solid #fea100;
+  background-color: #fea100;
 }
 .widget-food-category {
   max-width: 300px;

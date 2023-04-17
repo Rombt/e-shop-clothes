@@ -1,11 +1,11 @@
 import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
 // import { swiperDish, swiperToday, swiperClients } from "./modules/sliders.js";
-import * as  sliders from "./modules/sliders.js";
+import * as sliders from "./modules/sliders.js";
 import { Burger } from "./modules/burger.js";
 import { Swipe } from "./modules/Swipe.js";
 
 
-window.onload = function () {
+window.onload = function() {
 
     isWebp(); // проверяет поддерживает ли браузер формат webp
 
@@ -40,13 +40,24 @@ window.onload = function () {
     recipiesTitleNavBurger.init();
 
 
-    // Use class to get element by string.
+    // var swiper = new Swipe('.toggle-on');
     var swiper = new Swipe('.shop-sidebar');
-    // var swiper = new Swipe('.widget-food-category');
-    swiper.onUp(function () { console.log('111111111  You swiped Up.') });
-    swiper.onDown(function () { console.log('0000000  You swiped Down.') });
-    swiper.onLeft(function () { console.log('-------  You swiped left.') });
-    swiper.onRight(function () { console.log('++++++  You swiped right.'); });
+    let touchToggle = document.querySelector('.touch-toggle')
+    let sideBar = document.querySelector('.shop-sidebar')
+
+
+    swiper.onUp(function() { console.log('You swiped Up.') });
+    swiper.onDown(function() { console.log('You swiped Down.') });
+    swiper.onLeft(function() {
+        sideBar.classList.remove('swipe');
+        touchToggle.classList.add('toggle-on');
+
+    });
+    swiper.onRight(function() {;
+        sideBar.classList.add('swipe');
+        touchToggle.classList.remove('toggle-on');
+
+    });
     swiper.run();
 
 
