@@ -1,6 +1,4 @@
 .blog-sidebar {
-   //   width: (300 / 1230) * 100%;
-
    .col();
    .size(3);
    .shift-left(0.3);
@@ -8,9 +6,81 @@
 
    .to(1040px, {
       /*перевод в выпадающее меню*/
-      display: none;
+      // display: none;
+      // .md-block({
+
+      position: absolute;
+      transition-duration: 1s;
+      height: 90%;
+      min-width: 250px;
+      right: 0;
+      transform: translate(100%, 0);
+      margin: 0px 0px 0px 0px;
+
+
+      border: 1px solid #0515fd;
+
+
+
+   });
+
+
+&__body {
+   display: flex;
+   flex-direction: column;
+   row-gap: 100px;
+   width: 100%;
+   min-height: 400px;
+   padding: 15px 0px 0px 0px;
+
+   .md-block({
+      position: sticky;
+      background-color: #fff;
+      box-shadow: 0px 0px 0px 0px #a8acb3;
+      transition: all 0.5s ease-in-out;
    });
 }
+
+
+}
+
+
+.touch-toggle {
+   display: none;
+}
+
+.md-block({
+
+   .swipe {
+      z-index: 10;
+      transform: translate(20px, 0);
+      transition: all 1s ease-in-out;
+
+      .shop-sidebar__body {
+         box-shadow: 7px 7px 7px 0px #a8acb3;
+         transition: all 1s ease-in-out;
+      }
+   }
+
+   .touch-toggle {
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      transition-duration: 1s;
+      transform: translate(60px, 0px) rotate(180deg);
+   }
+
+   .toggle-on {
+      transform: translate(60px, 0);
+      transition-duration: 1s;
+   }
+});
+
+
+
+
+
 
 .category {
    min-height: 100px;
@@ -118,8 +188,6 @@
    row-gap: 40px;
    padding-bottom: 80px;
 }
-
-.pagination {}
 
 .archive {
    min-height: 100px;
