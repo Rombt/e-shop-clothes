@@ -58,5 +58,20 @@ window.onload = function() {
     swiper.run();
 
 
+    var blogSwiper = new Swipe('.blog-sidebar');
+    let blogTouchToggle = document.querySelector('.blog-touch-toggle')
+    let blogSideBar = document.querySelector('.blog-sidebar')
+
+    blogSwiper.onLeft(function() {
+        blogSideBar.classList.remove('blog-swipe');
+        blogTouchToggle.classList.add('blog-toggle-on');
+
+    });
+    blogSwiper.onRight(function() {;
+        blogSideBar.classList.add('blog-swipe');
+        blogTouchToggle.classList.remove('blog-toggle-on');
+
+    });
+    blogSwiper.run();
 
 }
