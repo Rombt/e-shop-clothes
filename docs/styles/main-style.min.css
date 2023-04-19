@@ -2267,7 +2267,7 @@ a {
     min-width: 250px;
     left: 0;
     transform: translate(-100%, 0);
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 10px;
   }
 }
 .shop-sidebar__body {
@@ -2294,7 +2294,7 @@ a {
 @media screen and (max-width: 920px) {
   .swipe {
     z-index: 10;
-    transform: translate(20px, 0);
+    transform: translate(0px, 0);
     transition: all 1s ease-in-out;
   }
   .swipe .shop-sidebar__body {
