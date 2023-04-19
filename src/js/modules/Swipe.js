@@ -3,36 +3,43 @@ export class Swipe {
       this.xDown = null;
       this.yDown = null;
 
+
+
       this.element = typeof (element) === 'string' ? document.querySelector(element) : element;
 
-      this.element.addEventListener('touchstart', function (evt) {
-         this.xDown = evt.touches[0].clientX;
-         this.yDown = evt.touches[0].clientY;
-      }.bind(this), false);
-
+      if (this.element) {
+         this.element.addEventListener('touchstart', function (evt) {
+            this.xDown = evt.touches[0].clientX;
+            this.yDown = evt.touches[0].clientY;
+         }.bind(this), false);
+      }
    }
 
    onLeft(callback) {
-      this.onLeft = callback;
-
+      if (callback) {
+         this.onLeft = callback;
+      }
       return this;
    }
 
    onRight(callback) {
-      this.onRight = callback;
-
+      if (callback) {
+         this.onRight = callback;
+      }
       return this;
    }
 
    onUp(callback) {
-      this.onUp = callback;
-
+      if (callback) {
+         this.onUp = callback;
+      }
       return this;
    }
 
    onDown(callback) {
-      this.onDown = callback;
-
+      if (callback) {
+         this.onDown = callback;
+      }
       return this;
    }
 
@@ -73,11 +80,12 @@ export class Swipe {
 
    run() {
 
+      if (this.element) {
+         this.element.addEventListener('touchmove', function (evt) {
 
-      this.element.addEventListener('touchmove', function (evt) {
-
-         this.handleTouchMove(evt);
-      }.bind(this), false);
+            this.handleTouchMove(evt);
+         }.bind(this), false);
+      }
    }
 }
 

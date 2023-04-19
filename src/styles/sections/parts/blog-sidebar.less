@@ -4,14 +4,11 @@
     .shift-left(0.3);
     min-width: 230px;
 
-
-
     .to(1040px, {
         position: absolute;
         height: 90%;
         min-width: 250px;
         right: 0;
-        margin: 0px 0px 0px 0px;
         transform: translate(100%, 0);
         transition-duration: 1s;
 
@@ -24,13 +21,7 @@
     row-gap: 80px;
     width: 100%;
     min-height: 400px;
-    padding: 15px 0px 0px 0px;
-
-    position: sticky;
-    top: 15%;
-
-    border: 1px solid #0515fd;
-
+    padding: 15px 5px 5px 15px;
 
 
     .to(1040px, {
@@ -45,33 +36,18 @@
 
 
 .blog-touch-toggle {
-    // display: none;
+    display: none;
 }
-
-
-
-// .blog-toggle-on {
-
-//     transform: translate(-160px, 0px);
-
-//     img {
-
-//         transform: rotate(180deg);
-//         transition-duration: 1s;
-//     }
-// }
-
-
 
 .to(1040px, {
 
-    .swipe {
+    .blog-swipe {
         z-index: 10;
-        transform: translate(20px, 0);
+        transform: translate(0px, 0);
         transition: all 1s ease-in-out;
 
-        .shop-sidebar__body {
-            box-shadow: 7px 7px 7px 0px #a8acb3;
+        .blog-sidebar__body {
+            box-shadow: 0px 7px 7px 7px #a8acb3;
             transition: all 1s ease-in-out;
         }
     }
@@ -80,14 +56,14 @@
         display: block;
         position: absolute;
         top: 0px;
-        right: 0px;
+        left: 0px;
         transition-duration: 1s;
-        transform: translate(60px, 0px);
+        transform: translate(-50px, 0px);
     }
 
     .blog-toggle-on {
 
-        transform: translate(-160px, 0px);
+        transform: translate(-50px, 0px);
 
         img {
 

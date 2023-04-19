@@ -5,7 +5,7 @@ import { Burger } from "./modules/burger.js";
 import { Swipe } from "./modules/Swipe.js";
 
 
-window.onload = function() {
+window.onload = function () {
 
     isWebp(); // проверяет поддерживает ли браузер формат webp
 
@@ -45,31 +45,30 @@ window.onload = function() {
     let touchToggle = document.querySelector('.touch-toggle')
     let sideBar = document.querySelector('.shop-sidebar')
 
-    swiper.onLeft(function() {
+    swiper.onLeft(function () {
         sideBar.classList.remove('swipe');
         touchToggle.classList.add('toggle-on');
 
     });
-    swiper.onRight(function() {;
+    swiper.onRight(function () {
+        ;
         sideBar.classList.add('swipe');
         touchToggle.classList.remove('toggle-on');
 
     });
     swiper.run();
 
-
     var blogSwiper = new Swipe('.blog-sidebar');
     let blogTouchToggle = document.querySelector('.blog-touch-toggle')
     let blogSideBar = document.querySelector('.blog-sidebar')
 
-    blogSwiper.onLeft(function() {
-        blogSideBar.classList.remove('blog-swipe');
-        blogTouchToggle.classList.add('blog-toggle-on');
-
-    });
-    blogSwiper.onRight(function() {;
+    blogSwiper.onLeft(function () {
         blogSideBar.classList.add('blog-swipe');
         blogTouchToggle.classList.remove('blog-toggle-on');
+    });
+    blogSwiper.onRight(function () {
+        blogSideBar.classList.remove('blog-swipe');
+        blogTouchToggle.classList.add('blog-toggle-on');
 
     });
     blogSwiper.run();
