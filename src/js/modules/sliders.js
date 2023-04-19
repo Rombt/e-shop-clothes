@@ -23,7 +23,6 @@ if (document.querySelector('.swiper-coocs')) {
             renderBullet: function (index, className) {
                 return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
             },
->>>>>>> HTML-coding
 
         },
 
