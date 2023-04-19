@@ -1884,25 +1884,27 @@ a {
 @media screen and (max-width: 1040px) {
   .blog-sidebar {
     position: absolute;
-    transition-duration: 1s;
     height: 90%;
     min-width: 250px;
     right: 0;
-    transform: translate(100%, 0);
     margin: 0px 0px 0px 0px;
+    transform: translate(100%, 0);
+    transition-duration: 1s;
   }
 }
 .blog-sidebar__body {
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+  row-gap: 80px;
   width: 100%;
   min-height: 400px;
   padding: 15px 0px 0px 0px;
+  position: sticky;
+  top: 15%;
+  border: 1px solid #0515fd;
 }
 @media screen and (max-width: 1040px) {
   .blog-sidebar__body {
-    position: sticky;
     background-color: #fff;
     box-shadow: 0px 0px 0px 0px #a8acb3;
     transition: all 0.5s ease-in-out;
@@ -1943,7 +1945,6 @@ a {
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2.714;
-  padding-bottom: 80px;
 }
 .category h2 {
   font-size: 26px;
@@ -2013,7 +2014,6 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
-  padding-bottom: 80px;
 }
 .archive {
   min-height: 100px;
