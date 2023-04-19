@@ -1,0 +1,131 @@
+.shop-listing-row {
+   .row-flex();
+   padding: 90px 0px 90px 0px;
+   position: relative;
+
+   .md-block({
+      justify-content: center
+   });
+}
+
+.shop-listing {
+   .col();
+   .size(9);
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   row-gap: 55px;
+   column-gap: @offset;
+
+   .md-block({
+      // .size(11);
+      .col();
+      // justify-content: center;
+      justify-content: space-evenly;
+
+      margin-left: 70px;
+
+      // border: 1px solid #22fd05;
+
+   });
+
+
+.to(770px, {
+   .adaptiv-prop(column-gap, 100, 20);
+});
+
+
+&__title-row {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   .adaptiv-prop(gap, 30, 20);
+
+
+   .md-block({
+
+      width: 90%;
+
+
+      justify-content: space-around;
+   });
+
+.sm-block({});
+
+.to(330px, {
+   flex-direction: column;
+});
+
+
+h2 {
+   .adaptiv-font(35, 25);
+   font-family: "PlayfairDisplay";
+   color: rgb(20, 20, 29);
+   font-weight: bold;
+   line-height: 0.629;
+
+   .md-block({
+      width: 100%;
+      text-align: center;
+   });
+}
+
+}
+
+
+}
+
+.default-sourting {
+   .adaptiv-font(14, 10);
+   font-family: "Sintony";
+   color: rgb(54, 61, 67);
+   line-height: 1.857;
+   text-align: left;
+   text-transform: capitalize;
+   font-weight: 400;
+   background-color: transparent;
+   border: none;
+   border-bottom: 1px solid #c7d1d6;
+   width: 200px;
+   .adaptiv-prop(height, 45, 30);
+   padding: 0px 5px 0px 5px;
+   appearance: none;
+   background-image: url('../img/dropdown.png');
+   background-repeat: no-repeat;
+   background-position: right;
+
+}
+
+.display-mode {
+   display: flex;
+   justify-content: space-between;
+   width: 70px;
+
+   &__blocks {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      border: 1px solid #c7d1d6;
+
+      img {
+         width: 13px;
+         height: 13px;
+         position: absolute;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+   }
+}
+
+
+.showing-block {
+   font-size: 14px;
+   font-family: "Sintony";
+   color: rgb(54, 61, 67);
+   line-height: 1.857;
+   text-align: left;
+}

@@ -41,11 +41,7 @@
       });
 
    .md-block({
-      // flex-direction: column;
-      // flex-direction: column-reverse;
       justify-content: center;
-      // align-items: center;
-
    });
 
 }
@@ -55,8 +51,8 @@
 &__navigation {
    .col();
    .size(2);
-
    min-width: 170px;
+   text-align: center;
 
    .md_1-block({
       order: 2;
@@ -73,8 +69,7 @@ a {
 &__news {
    .col();
    .size(5);
-   min-width: 470px;
-
+   min-width: 300px;
 
    .md_1-block({
       .size(10);
@@ -106,6 +101,12 @@ span {
    .size(3);
 
    min-width: 170px;
+   text-align: center;
+
+   h2 {
+
+      line-height: 1.5;
+   }
 
    .md_1-block({
 
@@ -179,10 +180,7 @@ p {
    line-height: 1.857;
    text-align: left;
    white-space: nowrap;
-
    margin-right: 5px;
-
-
 }
 
 input {
@@ -198,15 +196,6 @@ input {
 }
 }
 
-// .icons-block {
-
-//    .md_1-block({
-//       display: flex;
-//       justify-content: center;
-//    });
-
-// }
-
 .copyright-block {
    .row-flex();
    height: 160px;
@@ -214,9 +203,12 @@ input {
    justify-content: space-between;
    align-items: center;
 
+
+
+
    span {
       .col();
-      .size(4);
+      .size(2);
       border-width: 2px;
       border-color: rgb(82, 83, 94);
       border-style: solid;
@@ -225,8 +217,8 @@ input {
 
    p {
       .col();
-      .size(4);
-      font-size: 13px;
+      .adaptiv-prop(width, 400, 180);
+      .adaptiv-font(13, 10);
       font-family: "Sintony";
       color: rgb(173, 178, 183);
       text-transform: uppercase;

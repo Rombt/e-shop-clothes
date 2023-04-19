@@ -4,42 +4,60 @@
 
 
   .articles-conteiner {
-     display: flex;
-     justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
 
-     margin-top: 100px;
-     margin-bottom: 100px;
+      margin-top: 100px;
+      margin-bottom: 100px;
 
 
-     .to(1180px, {
-        /*перевод в выпадающее меню*/
-        justify-content: center;
-     });
+
+      .to(1180px, {
+          /*перевод в выпадающее меню*/
+          justify-content: center;
+      }
+
+      );
+
 
   }
 
   .articles-page-row {
-     .row-flex();
-     justify-content: center;
+      .row-flex();
+      justify-content: center;
+      position: relative;
+
+
+      .to(1040px, {
+          width: 1040px;
+
+
+          overflow: hidden;
+
+      }
+
+      );
 
 
   }
 
   .article-row {
-     .col();
-     .size(8.7);
+      .col();
+      .size(8.7);
 
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-     justify-content: space-between;
-     row-gap: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      row-gap: 100px;
 
-     .to(1040px, {
-        /*перевод в выпадающее меню*/
-        .size(10);
-        // align-items: center;
-     });
+      .to(1040px, {
+          /*перевод в выпадающее меню*/
+          .size(10);
+          // align-items: center;
+      }
+
+      );
 
 
 
