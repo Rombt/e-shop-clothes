@@ -2468,7 +2468,7 @@ a {
   border-width: 2px;
   border-style: solid;
   border-radius: 4px;
-  width: 210px;
+  width: 85.18518519%;
   height: 47px;
   display: flex;
   align-items: center;
@@ -2486,7 +2486,7 @@ a {
   transform: translateY(2px);
 }
 .widget-newsletter .button-orange {
-  width: calc(100px + (210 - 100) * ((100vw - 320px)/(1230 - 320)));
+  width: 85.18518519%;
 }
 .prod-card-from-shop {
   width: 270px;
@@ -5315,6 +5315,4 @@ a {
   color: #363d43;
   line-height: 1.857;
   text-align: left;
-}
-@media screen and (max-width: 920px) {
 }
