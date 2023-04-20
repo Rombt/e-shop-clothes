@@ -9,7 +9,6 @@ let swiperFoodStep = {};
 
 if (document.querySelector('.swiper-coocs')) {
 
-
     swiperCoocs = new Swiper('.swiper-coocs', {
         direction: "horizontal",
         pagination: {
@@ -28,13 +27,6 @@ if (document.querySelector('.swiper-coocs')) {
         slidesPerView: 4,
         spaceBetween: 35,
 
-        breakpoints: {
-            600: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                loop: true,
-            },
-        },
 
     });
 }
