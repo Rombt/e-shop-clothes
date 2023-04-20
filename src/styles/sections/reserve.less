@@ -1,18 +1,13 @@
 #reserve {
    min-height: 600px;
-
    display: flex;
    flex-direction: column;
    justify-content: center;
 
-
    .md_1-block({
-
-
       margin-bottom: 30px;
       margin-top: 30px;
    });
-
 
 
 h2 {
@@ -24,20 +19,25 @@ h2 {
    line-height: 0.629;
    align-self: center;
    margin-bottom: 35px;
+
+   .xs-block({
+      text-align: center;
+      line-height: 1.2;
+   });
 }
 }
 
 .reserve-row {
-
    .row-flex();
 
    .md_1-block({
-
       flex-direction: column;
       align-items: center;
    });
 
-
+.xs-block({
+   flex-wrap:nowrap;
+});
 
 /* .reserve-row__img */
 
@@ -45,12 +45,12 @@ h2 {
    .col();
    .size(6);
    height: 334px;
-
    min-width: 510px;
    margin-bottom: 30px;
 
    .xs-block({
-      min-width: 490px;
+      min-width: 100px;
+      width: 80%;
 
    })
 }
@@ -63,22 +63,19 @@ h2 {
    display: flex;
    flex-direction: column;
    justify-content: center;
-
    min-width: 510px;
 
    .xs-block({
-      min-width: 490px;
-   })
-}
-}
+      min-width: 320px;
+   });
 
-.wrap-img {}
+}
+}
 
 .reserve-form {
    columns: 2;
    margin-bottom: 45px;
    gap: @offset;
-
 
    .xs-block({
       columns: 1;
@@ -96,7 +93,6 @@ h2 {
    text-align: left;
    border-bottom: 3px solid #c7d1d6;
    height: 67px;
-
    display: flex;
    justify-content: space-between;
    align-items: end;
@@ -131,7 +127,6 @@ h2 {
    flex-wrap: wrap;
    justify-content: space-between;
    align-items: center;
-
    column-gap: 10px;
 
    .to(1200px, {
@@ -154,9 +149,7 @@ h2 {
    font-weight: bold;
    text-transform: uppercase;
    line-height: 0.917;
-
    margin-left: 10px;
-
 }
 
 
@@ -168,47 +161,19 @@ p {
    text-transform: uppercase;
    line-height: 1.308;
    position: relative;
-
    max-width: 145px;
-
    border-right: 1px solid #c7d1d6;
 
    .to(1200px, {
       text-align: center;
-
       padding-bottom: 10px;
-
       border-right: none;
       border-bottom: 1px solid #c7d1d6;
-
-      // border: 1px solid #000;
    });
-
-// border: 1px solid #000;
 
 span {
    color: #fc629b;
 }
-
-// &:after {
-//    content: '';
-
-//    display: block;
-//    position: absolute;
-//    top: 0;
-//    right: -@offset_one_side;
-//    position: absolute;
-//    width: 1px;
-//    background-color: #c7d1d6;
-//    height: 100%;
-
-// }
-
-// .md_1-block({
-//    &:after {
-//       display: none;
-//    }
-// });
 
 }
 

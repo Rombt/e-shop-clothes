@@ -10,6 +10,7 @@
 
     .top-menu-wrap {
        margin-top: 0px;
+
     }
 
     .wrap-img {
@@ -25,14 +26,18 @@
           z-index: -1;
 
           .to(1300px, {
-
              right: 0px;
-
           });
 
        .sm-block({
           top: -240px;
        });
+
+    .xxs-block({
+       display: none;
+
+    });
+
 
 
  }
@@ -63,6 +68,11 @@
        z-index: -1;
     });
 
+ .xs-block({
+
+    display: none;
+ });
+
 
  }
  }
@@ -70,6 +80,9 @@
  .button-orange {
     position: relative;
     z-index: 3;
+
+
+
  }
 
  }
@@ -105,38 +118,71 @@
     width: calc(50% - @offset_one_side);
     min-width: 445px;
 
+    .xs-block({
+
+       min-width: 210px;
+
+    });
+
+
  }
 
  .dish {
-    width: 100%;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #eeeeee;
 
-    /* .dish__title */
+    .xs-block({
 
-    &__title {
+       height: auto;
+       padding-top: 10px;
+       padding-bottom: 10px;
+    });
 
-       font-size: 16px;
-       font-family: "Sintony";
-       color: rgb(20, 20, 29);
-       font-weight: bold;
-       text-transform: uppercase;
-       line-height: 1.063;
+ .xs-block({
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 5px;
+ });
 
-       p {
-          font-size: 14px;
-          font-family: "Sintony";
-          font-weight: 400;
-          color: rgb(92, 99, 105);
-          line-height: 1.857;
-          text-transform: none;
-       }
-    }
 
-    .price {
-       width: 125px;
-    }
+ /* .dish__title */
+
+ &__title {
+
+    font-size: 16px;
+    font-family: "Sintony";
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.063;
+
+
+    .xs-block({
+       width: 100%;
+       text-align: center;
+    });
+
+ p {
+    font-size: 14px;
+    font-family: "Sintony";
+    font-weight: 400;
+    color: rgb(92, 99, 105);
+    line-height: 1.857;
+    text-transform: none;
+
+    .xs-block({
+       margin-top: 7px;
+       line-height: 1.2;
+
+
+    });
+ }
+ }
+
+ .price {
+    width: 125px;
+ }
  }
