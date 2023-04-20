@@ -15,7 +15,8 @@
    /* .history-blok__title */
 
    &__title {
-      font-size: 35px;
+      // font-size: 35px;
+      .adaptiv-font(35, 25);
       font-family: "PlayfairDisplay";
       color: rgb(20, 20, 29);
       font-weight: bold;
@@ -23,31 +24,27 @@
       text-align: center;
       word-break: break-word;
       .col();
-      .size(4);
+      // .size(4);
+   }
 
-      .to(500px, {
-         font-size: 28px;
-      });
-}
+   /* .history-blok__text */
 
-/* .history-blok__text */
-
-&__text {
-   .col();
-   .size(8);
-   min-height: 95px;
-   font-size: 14px;
-   font-family: "Sintony";
-   color: rgb(92, 99, 105);
-   line-height: 1.857;
-   text-align: center;
-   padding-top: 60px;
-   padding-bottom: 60px;
+   &__text {
+      .col();
+      .size(8);
+      min-height: 95px;
+      font-size: 14px;
+      font-family: "Sintony";
+      color: rgb(92, 99, 105);
+      line-height: 1.857;
+      text-align: center;
+      padding-top: 60px;
+      padding-bottom: 60px;
 
 
-}
+   }
 
-/* .history-blok__video */
+   /* .history-blok__video */
 
 }
 
@@ -92,7 +89,6 @@
    position: relative;
    // background-color: #e4e8ea;
 
-
    &__img {
       position: absolute;
       top: 0;
@@ -113,6 +109,8 @@
    flex-direction: column;
    align-items: center;
    justify-content: space-between;
+
+   min-width: 0;
 
    /* .coocs__row */
 

@@ -1,10 +1,11 @@
-   //  https: //youtu.be/HJZP5QsrpXs
-   //  адаптивный шрифт SCSS Миксин: $maxWidth: 1280;
-   // доработать при необходимости
-   @maxWidth: 1170px;
+   // Адаптивное CSS свойство источник    https: //youtu.be/eaOAY0vIB4U
+   .adaptiv-prop(@selector, @max_val, @min_val) {
+      @{selector}:~"calc(@{min_val}px + (@{max_val} - @{min_val}) * ((100vw - @{_width_min_viewport}px)/(@{_width_container} - @{_width_min_viewport})))";
+   }
 
+   //  Адаптивный шрифт источник: https: //youtu.be/HJZP5QsrpXs
    .adaptiv-font(@pcSize, @mobSize) {
-      @addSize: @pcSize - $mobSize;
-      @maxWidth: @maxWidth - 320;
-      font-size: calc(@mobSize + @addSize * ((100vw - 320px) / @maxWidth));
+      @addSize: @pcSize - @mobSize;
+      @maxWidth: @_width_container - @_width_min_viewport;
+      font-size: calc(~"@{mobSize}px" + @addSize * ((100vw - ~"@{_width_min_viewport}px") / @maxWidth));
    }
