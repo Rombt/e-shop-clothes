@@ -1157,7 +1157,7 @@ a {
   align-items: center;
   margin-top: 87px;
 }
-.top-menu-wrap h1 {
+.top-menu-wrap h2 {
   font-size: 35px;
   font-family: "PlayfairDisplay";
   color: #14141d;
@@ -1165,14 +1165,18 @@ a {
   line-height: 0.629;
   text-transform: capitalize;
   margin-bottom: 30px;
+  display: block;
 }
 @media screen and (max-width: 720px) {
-  .top-menu-wrap h1 {
+  .top-menu-wrap h2 {
     color: #fff;
   }
 }
 @media screen and (max-width: 720px) {
   .top-menu-wrap {
+    font-size: 14px;
+    font-family: "Sintony";
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1180,11 +1184,12 @@ a {
     border: 1px solid #fea100;
     background-color: #fea100;
     border-radius: 4px;
-    position: relative;
-    font-size: 14px;
-    font-family: "Sintony";
     margin: 30px auto;
     max-width: 450px;
+    min-height: 70px;
+  }
+  .top-menu-wrap h2 {
+    margin: 10px 0px 10px 0px;
   }
   .top-menu-wrap::after {
     content: '';
@@ -1587,13 +1592,15 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc(320px + (845 - 320) * ((100vw - 320px)/(1230 - 320)));
+  border: 1px solid #0515fd;
   /* .article-blog__img */
   /* .article-blog__body */
   /* .article-blog__text */
 }
 .article-blog__img {
   width: 100%;
-  height: 400px;
+  padding: 0px 0px 47.33727811% 0px;
 }
 .article-blog__body {
   display: flex;
@@ -2937,9 +2944,8 @@ a {
   min-height: 572px;
 }
 .speciality-block__img {
-  min-width: calc(1230px / 2);
-  width: 50%;
-  height: 572px;
+  width: calc(300px + (930 - 300) * ((100vw - 320px)/(1230 - 320)));
+  padding: 0px 0px 61.50537634% 0px;
 }
 .speciality-block__text-wrap {
   height: 572px;
@@ -2950,8 +2956,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: calc(1230px / 2);
-  width: 50%;
+  width: calc(300px + (930 - 300) * ((100vw - 320px)/(1230 - 320)));
+}
+@media screen and (max-width: 720px) {
+  .speciality-block__text-wrap {
+    padding: 0px 0px 0px 0px;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 .speciality-block h2 {
   font-size: 35px;
@@ -2959,6 +2971,14 @@ a {
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
+}
+@media screen and (max-width: 720px) {
+  .speciality-block h2 {
+    font-size: 50px;
+  }
+}
+.speciality-block__text {
+  width: 80%;
 }
 .speciality-block__text h3 {
   font-size: 15px;
@@ -2968,12 +2988,22 @@ a {
   text-transform: uppercase;
   line-height: 1.133;
 }
+@media screen and (max-width: 720px) {
+  .speciality-block__text h3 {
+    font-size: 20px;
+  }
+}
 .speciality-block__text p {
   font-size: 14px;
   font-family: "Sintony";
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
+}
+@media screen and (max-width: 720px) {
+  .speciality-block__text p {
+    font-size: 18px;
+  }
 }
 .background__dish {
   height: 570px;
@@ -3948,6 +3978,9 @@ a {
   line-height: 0.917;
   margin-left: 10px;
 }
+.reserve-call-us__tel a {
+  color: inherit;
+}
 .reserve-call-us p {
   font-size: 13px;
   font-family: "Sintony";
@@ -4340,6 +4373,13 @@ a {
   justify-content: center;
   margin-bottom: 110px;
 }
+@media screen and (max-width: 576px) {
+  .menu-page-conteiner .top-menu-wrap h2 {
+    display: block;
+    width: 60%;
+    line-height: 1.15;
+  }
+}
 .menu-page-conteiner .button-orange {
   position: absolute;
   bottom: 0;
@@ -4352,16 +4392,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* .recipies-title__subtitle */
-  /* .recipies-title__row */
-  /* .recipies-title-conteiner__nav */
 }
 .recipies-title h1 {
   font-size: 35px;
   font-family: "PlayfairDisplay";
   color: #14141d;
   font-weight: bold;
-  line-height: 0.629;
+  line-height: 1.4;
+  text-align: center;
 }
 .recipies-title__row {
   display: flex;
@@ -4500,7 +4538,6 @@ a {
   justify-content: space-between;
   cursor: pointer;
   width: 105px;
-  /* .select-view__grid */
 }
 @media screen and (max-width: 576px) {
   .select-view {
@@ -5211,10 +5248,10 @@ a {
   justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 100px;
+  border: 1px solid #000;
 }
 @media screen and (max-width: 1180px) {
   .articles-conteiner {
-    /*перевод в выпадающее меню*/
     justify-content: center;
   }
 }
@@ -5246,7 +5283,6 @@ a {
 }
 @media screen and (max-width: 1040px) {
   .article-row {
-    /*перевод в выпадающее меню*/
     width: calc(100% / 12 * 10 - 30px);
   }
 }

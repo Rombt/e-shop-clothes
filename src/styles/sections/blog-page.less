@@ -1,23 +1,17 @@
   @width-article: 845px;
 
-
-
-
   .articles-conteiner {
       display: flex;
       justify-content: space-between;
-
       margin-top: 100px;
       margin-bottom: 100px;
 
-
-
       .to(1180px, {
-          /*перевод в выпадающее меню*/
           justify-content: center;
-      }
+      });
 
-      );
+
+  border: 1px solid #000;
 
 
   }
@@ -27,17 +21,10 @@
       justify-content: center;
       position: relative;
 
-
       .to(1040px, {
           width: 1040px;
-
-
           overflow: hidden;
-
-      }
-
-      );
-
+      });
 
   }
 
@@ -52,12 +39,8 @@
       row-gap: 100px;
 
       .to(1040px, {
-          /*перевод в выпадающее меню*/
           .size(10);
-          // align-items: center;
-      }
-
-      );
+      });
 
 
 

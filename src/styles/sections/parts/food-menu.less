@@ -7,7 +7,8 @@
     align-items: center;
     margin-top: 87px;
 
-    h1 {
+
+    h2 {
        font-size: 35px;
        font-family: "PlayfairDisplay";
        color: rgb(20, 20, 29);
@@ -15,13 +16,18 @@
        line-height: 0.629;
        text-transform: capitalize;
        margin-bottom: 30px;
+       display: block;
 
        .sm-block({
           color: #fff;
        });
+
  }
 
  .sm-block({
+    font-size: 14px;
+    font-family: "Sintony";
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -29,11 +35,14 @@
     border: 1px solid rgb(254, 161, 0);
     background-color: rgb(254, 161, 0);
     border-radius: 4px;
-    position: relative;
-    font-size: 14px;
-    font-family: "Sintony";
     margin: 30px auto;
     max-width: 450px;
+    min-height: 70px;
+
+    h2 {
+       margin: 10px 0px 10px 0px;
+    }
+
 
     &::after {
        content: '';
@@ -58,6 +67,8 @@
     width: 280px;
     justify-content: center;
     column-gap: 15px;
+
+
  });
 
 
