@@ -27,13 +27,6 @@ if (document.querySelector('.swiper-coocs')) {
         slidesPerView: 4,
         spaceBetween: 35,
 
-        breakpoints: {
-            600: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                loop: true,
-            },
-        },
 
     });
 }
