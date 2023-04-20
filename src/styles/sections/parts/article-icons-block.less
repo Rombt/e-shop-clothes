@@ -7,13 +7,19 @@
    align-items: center;
    justify-content: space-between;
 
-
    .to(753px, {
       height: 30%;
       row-gap: 50px;
    });
 
 
+.xxs-block({
+   flex-wrap: wrap;
+   height: auto;
+   justify-content: center;
+
+   row-gap: 20px;
+});
 
 
 &__likes {
@@ -25,6 +31,11 @@
    height: 100%;
    width: 130px;
    border-right: 1px solid #d4dade;
+
+   .xxs-block({
+      border-right: none;
+   });
+
 
 }
 

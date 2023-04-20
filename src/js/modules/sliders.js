@@ -10,20 +10,13 @@ let swiperFoodStep = {};
 if (document.querySelector('.swiper-coocs')) {
 
     swiperCoocs = new Swiper('.swiper-coocs', {
-
         direction: "horizontal",
-        // loop: true,      //  в режиме петли не работает!
-        // freeMode: true,
-
         pagination: {
-            // el: '.swiper-pagination',
             el: '.swiper-coocs__pagination',
-            // type: 'bullets',
             clickable: true,
             renderBullet: function (index, className) {
                 return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
             },
-
         },
 
         speed: 700,
@@ -34,6 +27,13 @@ if (document.querySelector('.swiper-coocs')) {
         slidesPerView: 4,
         spaceBetween: 35,
 
+        breakpoints: {
+            600: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+            },
+        },
 
     });
 }
