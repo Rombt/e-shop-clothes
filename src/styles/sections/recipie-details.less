@@ -43,13 +43,16 @@
       .col();
       .size(10);
 
-      font-size: 14px;
+      // font-size: 14px;
       font-family: "Sintony";
       color: rgb(92, 99, 105);
       line-height: 1.857;
       text-align: left;
       min-height: 93px;
       margin-bottom: 90px;
+
+      .adaptiv-font(14, 11);
+
 
       .to(945px, {
          margin-bottom: 0px;
@@ -96,7 +99,7 @@
 
 .ingredients {
    height: 370px;
-   min-width: 350px;
+   min-width: 300px;
    .size(5);
 
 
@@ -104,25 +107,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 450px;
       margin-bottom: 30px;
    });
 
-
-
 h3 {
-   font-size: 24px;
+   .adaptiv-font(24, 20);
    font-family: "PlayfairDisplay";
    color: rgb(20, 20, 29);
    font-weight: bold;
    line-height: 0.917;
-
    margin-top: 40px;
    margin-bottom: 30px;
 }
 
 li {
-   font-size: 12px;
+   .adaptiv-font(12, 9);
    font-family: "Sintony";
    color: rgb(20, 20, 29);
    font-weight: 400;
@@ -134,13 +133,12 @@ li {
       width: 25px;
       margin-right: 15px;
    }
-
 }
 }
 
 .nutrition {
    height: 370px;
-   min-width: 450px;
+   // min-width: 300px;
    .shift-left(1.4);
    padding: 40px;
    padding-right: 0px;
@@ -174,7 +172,7 @@ h3 {
 /* .nutrition__title */
 
 table {
-   width: 350px;
+   // width: 350px;
 
    .to(945px, {
       margin: 0 auto;
