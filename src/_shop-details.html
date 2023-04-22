@@ -5,19 +5,49 @@
 })
 
 <body>
-   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
 
    @@include('html/header.html',{})
-
    @@include('html/title-page-block.html',{'title':'Shop Listing'})
 
-
    <main class="conteiner shop-details-conteiner">
-
-
+      <div class="shop-details-row">
+         <div class="shop-details-img">
+            <div class="shop-details-img__details-img wrap-img">
+               <img src="@img/Image_370x370.jpg" alt="shop details img">
+            </div>
+            <img src="@img/icon_zoom.png" alt="zoom icon">
+         </div>
+         <!-- <article class="shop-details">
+            <header class="shop-details__header">
+               <h2>Green mung beans</h2>
+               @@include('html/parts/rating-box.html',{'quantity':'3'})
+               <div class="shop-details__reviews">( 03 Reviews )</div>
+            </header>
+            <div class="shop-details__body">
+               <div class="shop-details__price">
+                  <span>$150</span><span>$100</span>
+               </div>
+               <div class="shop-details__text">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil exercitationem quidem quas sequi
+                  dignissimos quaerat modi illum facere ipsa. Enim facere qui eius facilis cupiditate magni consequatur
+                  debitis? Quod, consequuntur?
+                  Voluptatem exercitationem porro eius impedit suscipit, quaerat laboriosam necessitatibus maxime
+                  temporibus voluptatum repellendus,
+               </div>
+            </div>
+            <footer class="shop-details__footer">
+               <div class="quantity-goods">
+                  <div class="quantity-goods__plus">+</div>
+                  <div class="quantity-goods__quantity">01</div>
+                  <div class="quantity-goods__mines">-</div>
+               </div>
+               @@include('html/parts/button-orange.html',{'title':'add to cart'})
+               @@include('html/parts/button-orange.html',{'title':'buy now'})
+            </footer>
+         </article> -->
+      </div>
    </main>
-
-
 
    @@include('html/footer.html',{})
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
