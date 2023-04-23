@@ -2645,12 +2645,17 @@ a {
   text-transform: uppercase;
   line-height: 1.214;
   background-color: #8e9298;
-  width: 39px;
-  height: 25px;
+  min-width: 39px;
+  max-width: 105px;
+  min-height: 25px;
+  overflow: hidden;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   align-self: start;
+  padding: 0px 5px 0px 5px;
+  column-gap: 5px;
   margin: 5px;
 }
 .rating-box img {
@@ -5551,19 +5556,18 @@ a {
   line-height: 1.857;
   text-align: left;
 }
-.conteiner {
-  border: 1px solid #000;
-}
 .shop-details-conteiner {
   min-height: 610px;
-  padding: 100px 0px 100px 0px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .shop-details-row {
-  display: flex;
-  flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  border: 1px solid #0515fd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 20px;
 }
 .shop-details-img {
   box-sizing: border-box;
@@ -5571,28 +5575,259 @@ a {
   margin-left: 15px;
   margin-right: 15px;
   width: calc(100% / 12 * 6 - 30px);
+  max-height: 430px;
+  padding: 5.96491228% 0px 5.96491228% 0px;
   position: relative;
-  border: 1px solid #fd05aa;
-  /* .shop-details-img__details-img */
+  border: 1px solid #e4e4e4;
+}
+@media screen and (max-width: 920px) {
+  .shop-details-img {
+    width: calc(100% / 12 * 10 - 30px);
+  }
 }
 .shop-details-img__details-img {
-  height: 370px;
-  width: 370px;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  height: 370px;
+  width: 370px;
+}
+@media screen and (max-width: 920px) {
+  .shop-details-img__details-img {
+    width: 100%;
+    height: 0;
+    padding: 0px 0px 50% 0px;
+  }
+}
+.shop-details-img__zoom {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 3.50877193%;
+  bottom: 3.85964912%;
+}
+@media screen and (max-width: 1025px) {
+  .shop-details-img__zoom {
+    height: 22px;
+    width: 22px;
+    right: 1.75438596%;
+    bottom: 1.75438596%;
+  }
+}
+@media screen and (max-width: 920px) {
+  .shop-details-img__zoom {
+    right: 1.75438596%;
+    bottom: 0.87719298%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .shop-details-img__zoom {
+    right: 1.75438596%;
+    bottom: 1.75438596%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .shop-details-img__zoom {
+    height: 16px;
+    width: 16px;
+    bottom: 0.87719298%;
+  }
 }
 .shop-details {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 6 - 30px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 55px;
   /* .shop-details__header */
   /* .shop-details__reviews */
-  /* .shop-details__body */
   /* .shop-details__price */
   /* .shop-details__text */
   /* .shop-details__footer */
 }
+@media screen and (max-width: 920px) {
+  .shop-details {
+    width: calc(100% / 12 * 8 - 30px);
+    row-gap: 30px;
+  }
+}
+.shop-details__header {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+@media screen and (max-width: 920px) {
+  .shop-details__header {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.shop-details__header h2 {
+  font-size: 35px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 1.2;
+  width: 100%;
+  font-size: calc(26px + 9 * ((100vw - 320px) / 910));
+}
+@media screen and (max-width: 920px) {
+}
+.shop-details__header .rating-box {
+  background-color: #fea100;
+}
+.shop-details__reviews {
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #363d43;
+  line-height: 1.857;
+  text-align: left;
+  font-weight: 900;
+  display: flex;
+  align-items: flex-end;
+}
+.shop-details__price {
+  font-size: 15px;
+  font-family: "Sintony";
+  color: #5c6369;
+  line-height: 1.222;
+  margin-bottom: 15px;
+}
+.shop-details__price span {
+  display: inline-block;
+  max-width: 120px;
+  height: 22px;
+  overflow: hidden;
+}
+.shop-details__price span:first-of-type {
+  text-decoration: line-through;
+}
+.shop-details__price span:last-of-type {
+  color: #000;
+  font-weight: 900;
+  font-size: 18px;
+  margin-left: 5px;
+}
+.shop-details__text {
+  font-family: "Sintony";
+  color: #5c6369;
+  line-height: 1.857;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 910));
+}
+.shop-details__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 7px;
+  row-gap: 10px;
+}
+@media screen and (max-width: 920px) {
+  .shop-details__footer {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 720px) {
+  .shop-details__footer {
+    flex-direction: column;
+  }
+}
+.shop-details__footer .button-orange {
+  width: 150px;
+}
 .quantity-goods {
+  font-size: 21px;
+  font-family: "Sintony";
+  color: #000000;
+  line-height: 1.222;
+  width: 110px;
+  height: 50px;
+  border: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   /* .quantity-goods__plus */
   /* .quantity-goods__quantity */
   /* .quantity-goods__mines */
+}
+.quantity-goods__plus {
+  font-size: 30px;
+}
+.quantity-goods__quantity {
+  font-weight: 900;
+}
+.quantity-goods__mines {
+  font-size: 30px;
+}
+.description-background {
+  background-color: #edf1f3;
+}
+.description {
+  /* .description__row */
+  /* .description__title */
+  /* .description__text */
+  /* .description__footer */
+}
+.description__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  row-gap: 45px;
+}
+@media screen and (max-width: 1120px) {
+  .description__row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .description__row {
+    justify-content: center;
+  }
+}
+.description__title {
+  font-family: "PlayfairDisplay";
+  font-weight: bold;
+  line-height: 0.917;
+  font-size: calc(20px + 4 * ((100vw - 320px) / 910));
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 45px;
+}
+.description__title span:first-of-type {
+  color: #fe4c8d;
+}
+.description__text {
+  font-family: "Sintony";
+  color: #5c6369;
+  line-height: 1.857;
+  text-align: left;
+  font-size: calc(10px + 4 * ((100vw - 320px) / 910));
+}
+.description__footer {
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 2.357;
+}
+.related-products {
+  height: 480px;
+  border: 1px solid #0515fd;
+}
+.related-products h2 {
+  font-size: 35px;
+  font-family: "PlayfairDisplay";
+  color: #14141d;
+  font-weight: bold;
+  line-height: 0.629;
 }
