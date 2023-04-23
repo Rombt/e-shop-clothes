@@ -2578,6 +2578,10 @@ a {
   display: block;
   margin-bottom: 10px;
 }
+.prod-card-from-shop .active__icon-block img {
+  height: 50px;
+  width: 50px;
+}
 .prod-card-from-shop__img {
   width: 226px;
   height: 226px;
@@ -5821,8 +5825,8 @@ a {
   line-height: 2.357;
 }
 .related-products {
-  height: 480px;
-  border: 1px solid #0515fd;
+  padding-top: 90px;
+  padding-bottom: 90px;
 }
 .related-products h2 {
   font-size: 35px;
@@ -5830,4 +5834,29 @@ a {
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
+  margin-bottom: 40px;
+}
+.related-products__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.related-products__col {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  width: calc(100% / 12 * 12 - 30px);
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+@media screen and (max-width: 1230px) {
+  .related-products__col {
+    justify-content: center;
+  }
 }

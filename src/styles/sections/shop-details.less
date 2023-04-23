@@ -309,11 +309,8 @@ h2 {
 }
 
 .related-products {
-
-
-   height: 480px;
-   border: 1px solid #0515fd;
-
+   padding-top: 90px;
+   padding-bottom: 90px;
 
    h2 {
       font-size: 35px;
@@ -321,6 +318,30 @@ h2 {
       color: rgb(20, 20, 29);
       font-weight: bold;
       line-height: 0.629;
+      margin-bottom: 40px;
    }
+
+   &__row {
+      .row-flex();
+
+   }
+
+   &__col {
+      .col();
+      .size(12);
+      min-height: 200px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      column-gap: @offset;
+      row-gap: @offset;
+
+      .to(1230px, {
+
+         justify-content: center;
+      })
+}
 
 }
