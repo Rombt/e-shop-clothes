@@ -5744,6 +5744,15 @@ a {
 .shop-details__footer .button-orange {
   width: 150px;
 }
+.shop-details__footer .button-orange_light {
+  background-color: #ffeac5;
+  border: 1px solid #ffeac5;
+  color: #d38a0c;
+}
+.shop-details__footer .button-orange_light:hover {
+  border: 1px solid #ffe8aa;
+  background-color: #ffe8aa;
+}
 .quantity-goods {
   font-size: 21px;
   font-family: "Sintony";
