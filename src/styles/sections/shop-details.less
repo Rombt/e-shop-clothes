@@ -209,7 +209,6 @@ h2 {
 }
 
 
-
 }
 }
 
@@ -321,42 +320,4 @@ h2 {
    font-weight: bold;
    line-height: 2.357;
 }
-}
-
-.related-products {
-   padding-top: 90px;
-   padding-bottom: 90px;
-
-   h2 {
-      font-size: 35px;
-      font-family: "PlayfairDisplay";
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      line-height: 0.629;
-      margin-bottom: 40px;
-   }
-
-   &__row {
-      .row-flex();
-
-   }
-
-   &__col {
-      .col();
-      .size(12);
-      min-height: 200px;
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-      column-gap: @offset;
-      row-gap: @offset;
-
-      .to(1230px, {
-
-         justify-content: center;
-      })
-}
-
 }

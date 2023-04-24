@@ -5,7 +5,7 @@
 })
 
 <body>
-   <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
+   @@if(isProd == false){ @@include('html/debug-grid.html',{})}
 
    @@include('html/header.html',{})
 
@@ -13,12 +13,87 @@
 
 
    <main class="conteiner shopping-cart-conteiner">
-
-
+      <h2>Product Cart</h2>
+      <div class="shopping-cart__row">
+         <div class="product-cart">
+            <table>
+               <tr>
+                  <th>Item</th>
+                  <th>Price</th>
+                  <th>Qty</th>
+                  <th>Subtotal</th>
+               </tr>
+               <tr>
+                  <td>
+                     <div class="produkt-img-block">
+                        <img class="produkt-img-block__icon-close" src="@img/icon_close-button.png"
+                           alt="icon close button">
+                        <div class="produkt-img-block__img wrap-img"><img src="@img/Image_115x115.jpg"
+                              alt="produkt img"></div>
+                     </div>
+                     green mung beas
+                  </td>
+                  <td>$ 100</td>
+                  <td>1</td>
+                  <td>$ 100</td>
+               </tr>
+               <tr>
+                  <td>
+                     <div class="produkt-img-block">
+                        <img class="produkt-img-block__icon-close" src="@img/icon_close-button.png"
+                           alt="icon close button">
+                        <div class="produkt-img-block__img wrap-img"><img src="@img/Image_115x115.jpg"
+                              alt="produkt img"></div>
+                     </div>
+                     laird green ientils
+                  </td>
+                  <td>$ 100</td>
+                  <td>1</td>
+                  <td>$ 100</td>
+               </tr>
+               <tr>
+                  <td>
+                     <div class="produkt-img-block">
+                        <img class="produkt-img-block__icon-close" src="@img/icon_close-button.png"
+                           alt="icon close button">
+                        <div class="produkt-img-block__img wrap-img"><img src="@img/Image_115x115.jpg"
+                              alt="produkt img"></div>
+                     </div>
+                     Fava bean
+                  </td>
+                  <td>$ 100</td>
+                  <td>1</td>
+                  <td>$ 100</td>
+               </tr>
+            </table>
+         </div>
+         <div class="summary">
+            <h3>Summary</h3>
+            <table>
+               <tr>
+                  <th>Subtotal</th>
+                  <td>: $300</td>
+               </tr>
+               <tr>
+                  <th>Shipping cost</th>
+                  <td>: $0</td>
+               </tr>
+               <tr>
+                  <th>Tax</th>
+                  <td>: $10</td>
+               </tr>
+               <tr>
+                  <th>Order Total</th>
+                  <td>: $ 310</td>
+               </tr>
+            </table>
+            @@include('html/parts/button-orange.html',{'mod':'','title':'go to checkout'})
+         </div>
+      </div>
    </main>
 
 
-
+   @@include('html/parts/related-products.html',{'background':'background-related-products'})
    @@include('html/footer.html',{})
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/app.min.js"></script>
