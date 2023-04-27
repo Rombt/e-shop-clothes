@@ -31,21 +31,8 @@ export const styles = () => {
         .pipe(rename({ extname: ".min.css" }))
 
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
-
-            let p = app.plugins.nodePath.resolve(file.path);
-
-            // console.log("file.path = ", file.path);
-            // console.log("file.path = ", p);
-
-            // app.path.wp.processedFiles.push(file.path);
-            app.path.wp.processedFiles.push(p);
-
-            // console.log("-----app.path.wp.processedFiles = ", app.path.wp.processedFiles);
-            console.log("-----app.path.wp.processedFiles = ", p);
-
+            app.path.wp.processedFiles.push(file.path);
         })))
-
-
 
         .pipe(app.gulp.dest(app.path.prod.styles))
         .pipe(app.plugins.browsersync.stream());

@@ -36,7 +36,9 @@ export const php = () => {
             }
         })))
 
-
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            app.path.wp.processedFiles.push(file.path);
+        })))
         .pipe(app.gulp.dest(app.path.prod.php))
         .pipe(app.plugins.browsersync.stream());
 }
