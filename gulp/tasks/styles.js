@@ -10,6 +10,12 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries'
 const sass = gulpSasss(dartSasss);
 
 export const styles = () => {
+
+
+    console.log("****app.path.wp.themePath", app.path.wp.themePath);
+
+
+
     return app.gulp.src(app.plugins.if(global.app.isSASS, app.path.src.scss, app.path.src.less), { sourcemaps: app.isDev, "allowEmpty": true }) // "allowEmpty": true для того что бы  не было ошибок из-за отсутствия файлов .sass
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "SCSS", message: "Error: <%= error.message %>" })))
 
@@ -27,13 +33,17 @@ export const styles = () => {
         })))
 
         // .pipe(app.plugins.if(app.isProd, cleanCss()))        // 
-        .pipe(app.plugins.if(app.toCleanCss, cleanCss()))       // для флага --valid
+        .pipe(app.plugins.if(app.toCleanCss, cleanCss())) // для флага --valid
         .pipe(rename({ extname: ".min.css" }))
 
-        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+        // .pipe(app.gulp.dest(app.path.prod.styles))
+        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.themePath, app.path.prod.styles)))
+
+
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function(file) {
             app.path.wp.processedFiles.push(file.path);
         })))
 
-        .pipe(app.gulp.dest(app.path.prod.styles))
+
         .pipe(app.plugins.browsersync.stream());
 }

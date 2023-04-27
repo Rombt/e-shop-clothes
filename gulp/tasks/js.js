@@ -13,9 +13,9 @@ export const js = () => {
                 filename: 'app.min.js',
             }
         }))
-        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+        .pipe(app.gulp.dest(app.path.prod.js))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function(file) {
             app.path.wp.processedFiles.push(file.path);
         })))
-        .pipe(app.gulp.dest(app.path.prod.js))
         .pipe(app.plugins.browsersync.stream());
 }
