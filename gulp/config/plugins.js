@@ -4,6 +4,9 @@ import notify from "gulp-notify"; // вывод соообщений об оши
 import browsersync from "browser-sync";
 import newer from "gulp-newer";
 import ifPugin from "gulp-if";
+import filelist from "gulp-filelist";
+import tap from "gulp-tap";
+
 
 import * as nodePath from 'path';
 
@@ -15,4 +18,8 @@ export const plugins = {
     browsersync: browsersync,
     newer: newer,
     if: ifPugin,
+
+    tap: tap,
+    filelist: filelist,
+    nodePath: nodePath,
 }

@@ -5,6 +5,12 @@ const prodFolder = './docs';        //  dist заменил не docs для git
 const srcFolder = './src';
 
 export const path = {
+    wp: {
+        // themePath: '../..',
+
+        processedFiles: [],
+    },
+
     prod: {
         js: `${prodFolder}/js/`,
         styles: `${prodFolder}/styles/`,

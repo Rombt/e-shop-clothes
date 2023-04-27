@@ -14,8 +14,10 @@ import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 import { grid } from "./gulp/tasks/grid.js";
 
+import { listProcFiles } from "./gulp/tasks/listProcFiles.js";
 
 global.app = {
+    isWP: process.argv.includes('--wp'),
     isProd: process.argv.includes('--prod'),
     toCleanCss: process.argv.includes('--prod'),
     isDev: !process.argv.includes('--prod'),
@@ -37,7 +39,8 @@ function watcher() {
 
 
 const mainTasks = gulp.parallel(copyFonts, copy, php, styles, js, images);
-export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+// export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+export const dev = gulp.series(reset, mainTasks, listProcFiles, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
 
 export const createFonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);

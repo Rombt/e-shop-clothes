@@ -35,6 +35,8 @@ export const php = () => {
                 'file': 'gulp/version.json'
             }
         })))
+
+
         .pipe(app.gulp.dest(app.path.prod.php))
         .pipe(app.plugins.browsersync.stream());
 }
