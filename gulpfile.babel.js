@@ -27,6 +27,9 @@ global.app = {
 }
 
 function watcher() {
+
+    console.log("********** wpTheme = ", path.wpTheme);
+
     gulp.watch(path.watch.files, copy)
     gulp.watch(path.watch.php, php) // для отправки файлов по ftp при каждом обновлении добавить вместо php gulp.series(php,ftp)
     gulp.watch(path.watch.styles, styles)
