@@ -21,6 +21,9 @@ export const images = () => {
 
         .pipe(app.gulp.dest(app.path.prod.images))
         .pipe(app.gulp.src(app.path.src.svg))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            app.path.wp.processedFiles.push(file.path);
+        })))
         .pipe(app.gulp.dest(app.path.prod.images))
         .pipe(app.plugins.browsersync.stream());
 }

@@ -29,6 +29,11 @@ export const styles = () => {
         // .pipe(app.plugins.if(app.isProd, cleanCss()))        // 
         .pipe(app.plugins.if(app.toCleanCss, cleanCss()))       // для флага --valid
         .pipe(rename({ extname: ".min.css" }))
+
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            app.path.wp.processedFiles.push(file.path);
+        })))
+
         .pipe(app.gulp.dest(app.path.prod.styles))
         .pipe(app.plugins.browsersync.stream());
 }
