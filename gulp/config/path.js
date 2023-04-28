@@ -3,11 +3,19 @@ import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 const prodFolder = './docs'; //  dist заменил не docs для git pages
 const srcFolder = './src';
+const themePath = `..`;
 
 export const path = {
     wp: {
-        themePath: `..`,
+        arr_processedFiles: [],
         processedFiles: [],
+        js: `${themePath}/assets/js/`,
+        styles: `${themePath}/assets/styles/`,
+        php: `${themePath}/`,
+        images: `${themePath}/assets/img/`,
+        fonts: `${themePath}/assets/fonts/`,
+        files: `${themePath}/files/`,
+        svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
 
     prod: {
@@ -36,9 +44,10 @@ export const path = {
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`
     },
-    clean: prodFolder,
+    rootFolder: rootFolder,
     prodFolder: prodFolder,
     srcFolder: srcFolder,
-    rootFolder: rootFolder,
+    themePath: themePath,
+    clean: prodFolder,
     ftp: 'htdocs', // указать целевую папку на сервере, есле её нет то она будет создана автоматически, пусто -- корневая папка сервера
 }

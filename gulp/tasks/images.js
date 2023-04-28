@@ -9,7 +9,14 @@ export const images = () => {
         .pipe(app.plugins.newer(app.path.prod.images))
 
         .pipe(app.plugins.if(app.isProd, webp()))
-        .pipe(app.plugins.if(app.isProd, app.gulp.dest(app.path.prod.images)))
+
+
+
+        .pipe(app.plugins.if(app.isProd, app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.images, app.path.prod.images))))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
+        })))
+
         .pipe(app.plugins.if(app.isProd, app.gulp.src(app.path.src.images)))
         .pipe(app.plugins.if(app.isProd, app.plugins.newer(app.path.prod.images)))
         .pipe(app.plugins.if(app.isProd, imageMin({
@@ -19,11 +26,17 @@ export const images = () => {
             optimizationLevel: 3 // 0 to 7
         })))
 
-        .pipe(app.gulp.dest(app.path.prod.images))
-        .pipe(app.gulp.src(app.path.src.svg))
-        .pipe(app.gulp.dest(app.path.prod.images))
-        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function(file) {
-            app.path.wp.processedFiles.push(file.path);
+        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.images, app.path.prod.images)))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
         })))
+
+        .pipe(app.gulp.src(app.path.src.svg))
+
+        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.images, app.path.prod.images)))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
+        })))
+
         .pipe(app.plugins.browsersync.stream());
 }
