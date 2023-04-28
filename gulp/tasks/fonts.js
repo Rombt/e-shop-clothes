@@ -36,17 +36,18 @@ export const ttfToWoff = () => {
 
 export const copyFonts = () => {
     return app.gulp.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`)
-        .pipe(app.gulp.dest(app.path.prod.fonts))
 
-        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function(file) {
-            app.path.wp.processedFiles.push(file.path);
+
+        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.fonts, app.path.prod.fonts)))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
         })))
 }
 
 
 export const fontStyle = () => {
     let fontsFile = `${app.path.srcFolder}/styles/fonts.${global.app.isSASS ? 'sass' : 'less'}`; // нужно создавать файл шрифтов заново при каждой смене препроцессора
-    fs.readdir(`${app.path.srcFolder}/fonts/`, function(err, fontsFiles) {
+    fs.readdir(`${app.path.srcFolder}/fonts/`, function (err, fontsFiles) {
         if (fontsFile) {
             if (!fs.existsSync(fontStyle)) {
                 fs.writeFile(fontsFile, '', cd);
@@ -92,5 +93,5 @@ export const fontStyle = () => {
     });
     return app.gulp.src(`${app.path.srcFolder}`);
 
-    function cd() {};
+    function cd() { };
 }
