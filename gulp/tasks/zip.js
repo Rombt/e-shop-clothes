@@ -2,9 +2,12 @@ import del from "del";
 import zipPlugin from "gulp-zip";
 
 export const zip = () => {
-   del(`./${app.path.rootFolder}.zip`);
-   return app.gulp.src(`${app.path.prodFolder}/**/*.*`, {})
-      .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "ZIP", message: "Error: <%= error.message %>" })))
-      .pipe(zipPlugin(`${app.path.rootFolder}.zip`))
-      .pipe(app.gulp.dest('./'));
+
+
+    del(`./${app.path.wp.themeName}.zip`);
+    return app.gulp.src(app.plugins.if(app.isWP, [`${app.path.themePath}/**/*.*`, `!${app.path.themePath}/gulp/**/*.*`], `${app.path.prodFolder}/**/*.*`), {})
+        .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "ZIP", message: "Error: <%= error.message %>" })))
+
+        .pipe(zipPlugin(`${app.path.wp.themeName}.zip`))
+        .pipe(app.gulp.dest('./'));
 }

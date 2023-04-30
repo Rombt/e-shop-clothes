@@ -1,14 +1,19 @@
 import * as nodePath from 'path';
 
+
 const rootFolder = nodePath.basename(nodePath.resolve());
 const prodFolder = './docs'; //  dist заменил не docs для git pages
 const srcFolder = './src';
+
 const themePath = `..`;
+const themeName = nodePath.basename(nodePath.dirname(nodePath.resolve()));
+
+
 
 export const path = {
     wp: {
+        themeName: `${themeName}`,
         arr_processedFiles: [],
-        processedFiles: [],
         js: `${themePath}/assets/js/`,
         styles: `${themePath}/assets/styles/`,
         php: `${themePath}/`,
