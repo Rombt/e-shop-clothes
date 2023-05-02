@@ -1,59 +1,47 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package simple_restaurant_site
- */
-
-?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'simple-restaurant-site' ); ?></a>
+    <?php wp_body_open(); ?>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$simple_restaurant_site_description = get_bloginfo( 'description', 'display' );
-			if ( $simple_restaurant_site_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $simple_restaurant_site_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'simple-restaurant-site' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <div class="conteiner">
+        <header class="header ">
+            <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
+            <div class="heder-menu__burger">
+                <span></span>
+            </div>
+            <nav class="heder-menu">
+                <ul class="menu__list">
+                    <li><a href="index.html">home</a></li>
+                    <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
+                    <li><a href="menu-page-list.html">menu</a></li>
+                    <li><a href="recipies.html">recipe</a></li>
+                    <li><a href="blog-page.html">blog</a></li>
+                    <li><a href="about-us.html">about</a></li>
+                    <li><a href="contacts.html">contact</a></li>
+                    <li><a href="shop-listing.html">Shop</a></li>
+                </ul>
+            </nav>
+            <div class="cart-book">
+                <div class="cart">
+                    <div class="cart__cercle">3</div>
+                    <a href="shopping-cart.html">
+                        <img src="./img/icon_cart.png" alt="">
+                    </a>
+                    <img src="./img/arrow-cart.png" alt="">
+                </div>
+                <a href="#" class="heder-menu-button">
+                    <img src="./img/icon_plate.png" alt="">
+                    BOOK YOU TABLE
+                </a>
+            </div>
+        </header>
+    </div>

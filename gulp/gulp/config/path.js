@@ -47,7 +47,8 @@ export const path = {
         styles: `${srcFolder}/styles/**/*.{scss,less}`,
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
-        files: `${srcFolder}/files/**/*.*`
+        files: `${srcFolder}/files/**/*.*`,
+        wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
     rootFolder: rootFolder,
     prodFolder: prodFolder,

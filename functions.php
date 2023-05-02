@@ -14,8 +14,11 @@
 function simple_restaurant_site_scripts()
 {
 
-	wp_enqueue_style('simple_restaurant_site-general', get_template_directory_uri() . '/assets/css/general.css', array(), '1.0', 'all');
-	wp_enqueue_script('simple_restaurant_site-app.min', get_template_directory_uri() . '/assets/js/app.min.js', array(), '1.0', true);
+	wp_enqueue_style('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all');
+	wp_enqueue_style('simple_restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all');
+	wp_enqueue_script('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '1.0', true);
+	wp_enqueue_script('simple_restaurant_site-app', get_template_directory_uri() . '/assets/js/app.min.js', array(), '1.0', true);
+
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');

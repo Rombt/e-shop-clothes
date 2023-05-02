@@ -37,11 +37,11 @@ if (document.querySelector('.swiper.swiper-dish')) {
         speed: 1000,
 
 
-        breakpoints: {
-            1250: {
-                direction: 'vertical',
-            }
-        },
+        // breakpoints: {       // c этой опцией вся сотраница дёргается в WP особенно без стилей
+        //     1250: {
+        //         direction: 'vertical',
+        //     }
+        // },
 
         loop: true,
         autoplay: {
