@@ -35,7 +35,7 @@ function watcher() {
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    gulp.watch(path.watch.wp, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
+    gulp.watch(path.wp_watch, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
 }
 
 
