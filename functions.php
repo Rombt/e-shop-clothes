@@ -11,7 +11,14 @@
 /**
  * Enqueue scripts and styles.
  */
-function simple_restaurant_site_scripts()
+
+
+
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+
+
+function restaurant_site_scripts()
 {
 
 	wp_enqueue_style('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all');
@@ -24,9 +31,78 @@ function simple_restaurant_site_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 }
-add_action('wp_enqueue_scripts', 'simple_restaurant_site_scripts');
+add_action('wp_enqueue_scripts', 'restaurant_site_scripts');
 
 
+
+
+
+
+add_action('tgmpa_register', 'restaurant_site_register_required_plugins');
+
+/**
+ * Register the required plugins for this theme.
+ *
+ * In this example, we register five plugins:
+ * - one included with the TGMPA library
+ * - two from an external source, one from an arbitrary source, one from a GitHub repository
+ * - two from the .org repo, where one demonstrates the use of the `is_callable` argument
+ *
+ * The variables passed to the `tgmpa()` function should be:
+ * - an array of plugin arrays;
+ * - optionally a configuration array.
+ * If you are not changing anything in the configuration array, you can remove the array and remove the
+ * variable from the function call: `tgmpa( $plugins );`.
+ * In that case, the TGMPA default settings will be used.
+ *
+ * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
+ */
+function restaurant_site_register_required_plugins()
+{
+	/*
+	 * Array of plugin arrays. Required keys are name and slug.
+	 * If the source is NOT from the .org repo, then source is also required.
+	 */
+	$plugins = array(
+
+		array(
+			'name'               => 'Restaurant site', // The plugin name.
+			'slug'               => 'restaurant-site', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'version'            => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+
+		array(
+			'name'      => 'Advanced Custom Fields',
+			'slug'      => 'advanced-custom-fields',
+			'required'  => true,
+		),
+
+		array(
+			'name'      => 'Redux Framework',
+			'slug'      => 'redux-framework',
+			'required'  => true,
+		),
+
+	);
+
+	$config = array(
+		'id'           => 'restaurant-site',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+
+	);
+
+	tgmpa($plugins, $config);
+}
 
 
 
