@@ -18,34 +18,18 @@
 				<span>Enter your email address and subscribe daily newsletter</span>
 				<div class="form-footer">
 					<div class="form-footer__input">
-						<img src="img/form-icon_email.png" alt="">
+						<img src="@img/form-icon_email.png" alt="">
 						<p>Email Address</p>
 						<input type="email">
 					</div>
-					<a href="#" class="button-orange ">Subscribe</a>
+					@@include('html/parts/button-orange.html',{'mod':'','title':'Subscribe', 'href':'#'})
 				</div>
-				<div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
-</div>
+				@@include('html/parts/icons-block.html',{})
 			</div>
 			<div class="footer__app">
 				<h2>Our app avilable</h2>
-				<a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
-   <p>
-      <span>Avilable&nbspon&nbspthe</span>
-      App&nbspStore
-   </p>
-</a>
-				<a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
-   <p>
-      <span>Get&nbspit&nbspon</span>
-      Google&nbspPlay
-   </p>
-</a>
+				@@include('html/parts/button-app.html',{'title':'App&nbspStore','text':'Avilable&nbspon&nbspthe','icon':'@img/icon_apple.png'})
+				@@include('html/parts/button-app.html',{'title':'Google&nbspPlay','text':'Get&nbspit&nbspon','icon':'@img/icon_google-play.png'})
 			</div>
 		</section>
 	</div>

@@ -14,8 +14,5 @@
     @@include('html/reserve.html',{})
 </main>
 
-@@include('html/footer.html',{})
 
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/app.min.js"></script> -->
+<?php get_footer();
