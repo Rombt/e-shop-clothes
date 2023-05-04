@@ -29,7 +29,14 @@
                <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
+                  <?php if ( $restaurant_site_options['home_delivery'] ){ ?>
+                  <a href="<?php echo esc_html( $restaurant_site_options['home_delivery'] );?>"
+                     class="food-card__phone-namber">
+                     <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
+                  </a>
+                  <?php }?>
+
+
                   @@include('./parts/price.html',{"price":'89.00'})
                </footer>
             </article>

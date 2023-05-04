@@ -21,6 +21,24 @@
       <div class="food-menu__burger burger-open">
          <span></span>
       </div>
+
+
+      <?php 
+      // wp_nav_menu(      // неработает добавление классов li
+      //       array(
+      //          'theme_location' => 'food-menu',
+      //          'container' => 'nav',
+      //          'container_class' => 'menu food-menu',
+      //          'menu_class' => 'food-menu__list',
+      //          'add_li_class'=>'food-menu__sub-item',
+      //       )
+      // ); 
+      ?>
+
+
+
+
+
       <nav class="menu food-menu">
          <ul class="food-menu__list">
             <li class="food-menu__item">
@@ -299,9 +317,35 @@
                <a href="#" class="button-orange ">Subscribe</a>
             </div>
             <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
          </div>
          <div class="footer__app">

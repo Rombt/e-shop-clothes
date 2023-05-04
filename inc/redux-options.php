@@ -14,7 +14,7 @@ if (!class_exists('Redux')) {
 }
 
 // This is your option name where all the Redux data is stored.
-$opt_name = 'restaurant-site_options';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
+$opt_name = 'restaurant_site_options';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
 
 // Uncomment to disable demo mode.
 /* Redux::disable_demo(); */  // phpcs:ignore Squiz.PHP.CommentedOutCode
@@ -316,6 +316,31 @@ Redux::set_section(
 Redux::set_section(
    $opt_name,
    array(
+      'title'            => esc_html__('Phone numbers', 'restaurant-site'),
+      'id'               => 'phone_numbers',
+      'customizer_width' => '400px',
+      // 'icon'             => 'el el-network',
+      'fields'           => array(
+         array(
+            'id'       => 'home_delivery',
+            'type'     => 'text',
+            'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
+            'default'  => '',
+         ),
+         array(
+            'id'       => 'reservation',
+            'type'     => 'text',
+            'title'    => esc_html__('Number phone for block a reservation', 'restaurant-site'),
+            'default'  => '',
+         ),
+      ),
+   )
+);
+
+
+Redux::set_section(
+   $opt_name,
+   array(
       'title'            => esc_html__('Footer settings', 'restaurant-site'),
       'id'               => 'setings_footer',
       'customizer_width' => '400px',
@@ -328,16 +353,42 @@ Redux::set_section(
             'default'  => '',
          ),
          array(
+            'id'           => 'fb-link_icon',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Facebook icon', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+         ),
+
+         array(
+            'id'       => 'social_networks_instagram-link',
+            'type'     => 'text',
+            'title'    => esc_html__('Instagram link', 'restaurant-site'),
+            'default'  => '',
+         ),
+         array(
+            'id'           => 'social_networks_instagram_icon',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Instagram icon', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+         ),
+
+         array(
             'id'       => 'social_networks_twitt-link',
             'type'     => 'text',
             'title'    => esc_html__('Twitter link', 'restaurant-site'),
             'default'  => '',
          ),
          array(
-            'id'       => 'social_networks_google-link',
-            'type'     => 'text',
-            'title'    => esc_html__('Google link', 'restaurant-site'),
-            'default'  => '',
+            'id'           => 'social_networks_twitt_icon',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Twitter icon', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
          ),
 
          array(
@@ -375,32 +426,6 @@ Redux::set_section(
 
 );
 
-Redux::set_section(
-   $opt_name,
-   array(
-      'title'            => esc_html__('Phone numbers', 'restaurant-site'),
-      'id'               => 'phone_numbers',
-      'customizer_width' => '400px',
-      // 'icon'             => 'el el-network',
-      'fields'           => array(
-         array(
-            'id'       => 'home_delivery',
-            'type'     => 'text',
-            'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
-            'default'  => '',
-         ),
-         array(
-            'id'       => 'reservation',
-            'type'     => 'text',
-            'title'    => esc_html__('Number phone for block a reservation', 'restaurant-site'),
-            'default'  => '',
-         ),
-      ),
-   )
-);
-
-
-
 
 
 
@@ -425,16 +450,16 @@ Redux::set_section(
 //===============================================================================
 //===============================================================================
 // -> START Basic Fields
-Redux::set_section(
-   $opt_name,
-   array(
-      'title'            => esc_html__('Basic Fields', 'your-textdomain-here'),
-      'id'               => 'basic',
-      'desc'             => esc_html__('These are really basic fields!', 'your-textdomain-here'),
-      'customizer_width' => '400px',
-      'icon'             => 'el el-home',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title'            => esc_html__('Basic Fields', 'your-textdomain-here'),
+//       'id'               => 'basic',
+//       'desc'             => esc_html__('These are really basic fields!', 'your-textdomain-here'),
+//       'customizer_width' => '400px',
+//       'icon'             => 'el el-home',
+//    )
+// );
 
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
@@ -445,15 +470,15 @@ Redux::set_section(
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/textarea.php';
 
 // -> START Editors.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title'            => esc_html__('Editors', 'your-textdomain-here'),
-      'id'               => 'editor',
-      'customizer_width' => '500px',
-      'icon'             => 'el el-edit',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title'            => esc_html__('Editors', 'your-textdomain-here'),
+//       'id'               => 'editor',
+//       'customizer_width' => '500px',
+//       'icon'             => 'el el-edit',
+//    )
+// );
 
 // require_once Redux_Core::$dir . '../sample/sections/editors/wordpress-editor.php';
 // require_once Redux_Core::$dir . '../sample/sections/editors/ace-editor.php';
@@ -476,14 +501,14 @@ Redux::set_section(
 // require_once Redux_Core::$dir . '../sample/sections/color-selection/color-palette.php';
 
 // -> START Design Fields.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Design Fields', 'your-textdomain-here'),
-      'id'    => 'design',
-      'icon'  => 'el el-wrench',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Design Fields', 'your-textdomain-here'),
+//       'id'    => 'design',
+//       'icon'  => 'el el-wrench',
+//    )
+// );
 
 // require_once Redux_Core::$dir . '../sample/sections/design-fields/background.php';
 // require_once Redux_Core::$dir . '../sample/sections/design-fields/box-shadow.php';
@@ -492,14 +517,14 @@ Redux::set_section(
 // require_once Redux_Core::$dir . '../sample/sections/design-fields/spacing.php';
 
 // -> START Media Uploads.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Media Uploads', 'your-textdomain-here'),
-      'id'    => 'media',
-      'icon'  => 'el el-picture',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Media Uploads', 'your-textdomain-here'),
+//       'id'    => 'media',
+//       'icon'  => 'el el-picture',
+//    )
+// );
 
 // require_once Redux_Core::$dir . '../sample/sections/media-uploads/gallery.php';
 // require_once Redux_Core::$dir . '../sample/sections/media-uploads/media.php';
@@ -507,14 +532,14 @@ Redux::set_section(
 // require_once Redux_Core::$dir . '../sample/sections/media-uploads/slides.php';
 
 // -> START Presentation Fields.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Presentation Fields', 'your-textdomain-here'),
-      'id'    => 'presentation',
-      'icon'  => 'el el-screen',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Presentation Fields', 'your-textdomain-here'),
+//       'id'    => 'presentation',
+//       'icon'  => 'el el-screen',
+//    )
+// );
 
 // require_once Redux_Core::$dir . '../sample/sections/presentation-fields/divide.php';
 // require_once Redux_Core::$dir . '../sample/sections/presentation-fields/info.php';
@@ -523,70 +548,70 @@ Redux::set_section(
 
 
 // -> START Switch & Button Set.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Switch / Button Set', 'your-textdomain-here'),
-      'id'    => 'switch_buttonset',
-      'icon'  => 'el el-cogs',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Switch / Button Set', 'your-textdomain-here'),
+//       'id'    => 'switch_buttonset',
+//       'icon'  => 'el el-cogs',
+//    )
+// );
 
-require_once Redux_Core::$dir . '../sample/sections/switch-button/button-set.php';
-require_once Redux_Core::$dir . '../sample/sections/switch-button/switch.php';
+// require_once Redux_Core::$dir . '../sample/sections/switch-button/button-set.php';
+// require_once Redux_Core::$dir . '../sample/sections/switch-button/switch.php';
 
 // -> START Select Fields.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Select Fields', 'your-textdomain-here'),
-      'id'    => 'select',
-      'icon'  => 'el el-list-alt',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Select Fields', 'your-textdomain-here'),
+//       'id'    => 'select',
+//       'icon'  => 'el el-list-alt',
+//    )
+// );
 
-require_once Redux_Core::$dir . '../sample/sections/select-fields/select.php';
-require_once Redux_Core::$dir . '../sample/sections/select-fields/image-select.php';
-require_once Redux_Core::$dir . '../sample/sections/select-fields/select-image.php';
+// require_once Redux_Core::$dir . '../sample/sections/select-fields/select.php';
+// require_once Redux_Core::$dir . '../sample/sections/select-fields/image-select.php';
+// require_once Redux_Core::$dir . '../sample/sections/select-fields/select-image.php';
 
 // -> START Slider / Spinner.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Slider / Spinner', 'your-textdomain-here'),
-      'id'    => 'slider_spinner',
-      'icon'  => 'el el-adjust-alt',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Slider / Spinner', 'your-textdomain-here'),
+//       'id'    => 'slider_spinner',
+//       'icon'  => 'el el-adjust-alt',
+//    )
+// );
 
-require_once Redux_Core::$dir . '../sample/sections/slider-spinner/slider.php';
-require_once Redux_Core::$dir . '../sample/sections/slider-spinner/spinner.php';
+// require_once Redux_Core::$dir . '../sample/sections/slider-spinner/slider.php';
+// require_once Redux_Core::$dir . '../sample/sections/slider-spinner/spinner.php';
 
 // -> START Typography.
 // require_once Redux_Core::$dir . '../sample/sections/typography/typography.php';
 
 // -> START Additional Types.
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Additional Types', 'your-textdomain-here'),
-      'id'    => 'additional',
-      'icon'  => 'el el-magic',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Additional Types', 'your-textdomain-here'),
+//       'id'    => 'additional',
+//       'icon'  => 'el el-magic',
+//    )
+// );
 
-require_once Redux_Core::$dir . '../sample/sections/additional-types/date.php';
-require_once Redux_Core::$dir . '../sample/sections/additional-types/date-time-picker.php';
-require_once Redux_Core::$dir . '../sample/sections/additional-types/sorter.php';
-require_once Redux_Core::$dir . '../sample/sections/additional-types/raw.php';
+// require_once Redux_Core::$dir . '../sample/sections/additional-types/date.php';
+// require_once Redux_Core::$dir . '../sample/sections/additional-types/date-time-picker.php';
+// require_once Redux_Core::$dir . '../sample/sections/additional-types/sorter.php';
+// require_once Redux_Core::$dir . '../sample/sections/additional-types/raw.php';
 
-Redux::set_section(
-   $opt_name,
-   array(
-      'title' => esc_html__('Advanced Features', 'your-textdomain-here'),
-      'icon'  => 'el el-thumbs-up',
-   )
-);
+// Redux::set_section(
+//    $opt_name,
+//    array(
+//       'title' => esc_html__('Advanced Features', 'your-textdomain-here'),
+//       'icon'  => 'el el-thumbs-up',
+//    )
+// );
 
 require_once Redux_Core::$dir . '../sample/sections/advanced-features/callback.php';
 
