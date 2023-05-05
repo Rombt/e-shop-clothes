@@ -1,9 +1,13 @@
+<?php
+/* Template Name: About us */
+?>
+
+
 <?php get_header(); ?>
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
-@@include('html/title-page-block.html',{'title':'About Us'})
 <main>
    <section class="conteiner history-blok">
       <div class="history-blok__row">

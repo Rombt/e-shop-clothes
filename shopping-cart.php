@@ -1,15 +1,10 @@
+<?php
+/* Template Name: Shop cart */
+?>
 <?php get_header(); ?>
 
 
 
-
-
-
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Shopping Cart</h1>
-
-</div>
 
 
 <main class="conteiner shopping-cart-conteiner">
@@ -26,8 +21,7 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png"
-                        alt="icon close button">
+                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
                      <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
                      </div>
                   </div>
@@ -40,8 +34,7 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png"
-                        alt="icon close button">
+                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
                      <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
                      </div>
                   </div>
@@ -54,8 +47,7 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png"
-                        alt="icon close button">
+                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
                      <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
                      </div>
                   </div>

@@ -1,9 +1,12 @@
+<?php
+/* Template Name: Contact */
+?>
+
+
 <?php get_header(); ?>
 
 <body>
    <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-
-   @@include('html/title-page-block.html',{'title':'Contact Us'})
 
    <div class="background background-contact-us">
       <div class="wrap-img"><img src="@img/background-contact-us.jpg" alt=""></div>

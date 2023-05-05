@@ -11,7 +11,6 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-
     <?php global $restaurant_site_options; ?>
 
     <div class="conteiner">
@@ -53,3 +52,10 @@
             </div>
         </header>
     </div>
+
+    <?php if (!is_front_page()) {  ?>
+        <div class="background background-title-page-block">
+            <div class="wrap-img"><img src="@img/background-title-page-block.jpg" alt=""></div>
+            <h1> <?php wp_title("") ?> </h1>
+        </div>
+    <?php } ?>

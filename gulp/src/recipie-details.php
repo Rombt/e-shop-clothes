@@ -1,10 +1,13 @@
+<?php
+/* Template Name: Recipie details */
+?>
+
+
 <?php get_header(); ?>
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
 
-
-@@include('html/title-page-block.html',{'title':'Recipies'})
 
 <div class="conteiner recipe-details-title">
    <div class="recipe-details-title__row">

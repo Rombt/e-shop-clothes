@@ -1,14 +1,12 @@
+<?php
+/* Template Name: shop-details */
+?>
+
+
 <?php get_header(); ?>
 
 
 
-
-
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Shop Listing</h1>
-
-</div>
 
 <main class="conteiner shop-details-conteiner">
    <div class="shop-details-row">

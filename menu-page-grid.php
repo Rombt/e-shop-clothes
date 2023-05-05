@@ -1,16 +1,14 @@
+<?php
+/* Template Name: Menu page grid */
+?>
+
+
 <?php get_header(); ?>
 
 
 
 
 
-
-
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Menu</h1>
-
-</div>
 
 
 <main class="conteiner menu-page-conteiner">

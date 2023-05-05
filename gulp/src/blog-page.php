@@ -1,8 +1,12 @@
+<?php
+/* Template Name: Blog page */
+?>
+
+
 <?php get_header(); ?>
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-@@include('html/title-page-block.html',{'title':'blog'})
 
 <div class="conteiner articles-conteiner">
 

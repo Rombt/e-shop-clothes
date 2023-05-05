@@ -1,13 +1,12 @@
+<?php
+/* Template Name: Contact */
+?>
+
+
 <?php get_header(); ?>
 
 <body>
    
-
-   <div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Contact Us</h1>
-
-</div>
 
    <div class="background background-contact-us">
       <div class="wrap-img"><img src="img/background-contact-us.jpg" alt=""></div>

@@ -1,13 +1,13 @@
+<?php
+/* Template Name: About us */
+?>
+
+
 <?php get_header(); ?>
 
 
 
 
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>About Us</h1>
-
-</div>
 <main>
    <section class="conteiner history-blok">
       <div class="history-blok__row">

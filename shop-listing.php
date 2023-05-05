@@ -1,15 +1,13 @@
+<?php
+/* Template Name: Shop listing */
+?>
+
+
 <?php get_header(); ?>
 
 
 
 
-
-
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Shop Listing</h1>
-
-</div>
 
 
 <div class="conteiner shop-listing-conteiner">
@@ -63,11 +61,9 @@
                <option value="option_4">option_4</option>
             </select>
             <div class="display-mode">
-               <a href="#" class="wrap-img display-mode__blocks"><img src="img/grid-view.png"
-                     alt="display mode grid view">
+               <a href="#" class="wrap-img display-mode__blocks"><img src="img/grid-view.png" alt="display mode grid view">
                </a>
-               <a href="#" class="wrap-img display-mode__blocks"><img src="img/list-view.png"
-                     alt="display mode list view">
+               <a href="#" class="wrap-img display-mode__blocks"><img src="img/list-view.png" alt="display mode list view">
                </a>
             </div>
             <div class="showing-block"> Showing 9 of 68 products </div>

@@ -1,14 +1,13 @@
+<?php
+/* Template Name: Recipie details */
+?>
+
+
 <?php get_header(); ?>
 
 
 
 
-
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Recipies</h1>
-
-</div>
 
 <div class="conteiner recipe-details-title">
    <div class="recipe-details-title__row">

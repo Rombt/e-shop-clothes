@@ -1,12 +1,13 @@
+<?php
+/* Template Name: Recipies 2 */
+?>
+
+
 <?php get_header(); ?>
 
 
 
-<div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Recipies</h1>
 
-</div>
 <div class="conteiner recipies-title">
     <div class="recipies-title__row">
         <h1>Our Spescial Recipies</h1>
@@ -64,11 +65,11 @@
     </div>
 </div>
 <main class="conteiner recipies-conteiner">
-    <div class="recipies-conteiner__row">
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+    <div class="recipies-conteiner__row row-card-2 ">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -78,14 +79,14 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -95,14 +96,14 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -112,14 +113,14 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -129,14 +130,14 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -146,14 +147,14 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
-   <div class="recipe-card-grid__body">
-      <div class="recipe-card-grid__title">
+        <div class="recipe-card-grid-2">
+   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <div class="recipe-card-grid-2__body">
+      <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
             <img src="img/rating-star.png" alt="rating star">
@@ -163,7 +164,7 @@
             <img src="img/rating-star.png" alt="rating star">
          </div>
       </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
+      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>

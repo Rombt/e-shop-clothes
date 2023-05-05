@@ -1,10 +1,13 @@
+<?php
+/* Template Name: Blog details */
+?>
+
+
 <?php get_header(); ?>
 
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-@@include('html/title-page-block.html',{'title':'Blog Post'})
-
 
 <div class="conteiner blog-details-conteiner">
    <main class="blog-details-row">

@@ -1,10 +1,12 @@
+<?php
+/* Template Name: shop-details */
+?>
+
+
 <?php get_header(); ?>
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-
-
-@@include('html/title-page-block.html',{'title':'Shop Listing'})
 
 <main class="conteiner shop-details-conteiner">
    <div class="shop-details-row">

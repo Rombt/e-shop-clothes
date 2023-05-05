@@ -2977,6 +2977,7 @@ a {
 .background-title-page-block {
   position: relative;
   height: calc(100px + (245 - 100) * ((100vw - 320px)/(1230 - 320)));
+  background-color: #7d8587;
 }
 .background-title-page-block .wrap-img {
   position: absolute;
