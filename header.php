@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -11,37 +11,51 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <?php global $restaurant_site_options; ?>
 
     <div class="conteiner">
         <header class="header ">
-            <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
+            <a href="<?php echo get_home_url(); ?>">
+                <?php if ($restaurant_site_options['logo_site']['url']) { ?>
+                    <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
+                <?php } ?>
+            </a>
+
             <div class="heder-menu__burger">
                 <span></span>
             </div>
-            <nav class="heder-menu">
-                <ul class="menu__list">
-                    <li><a href="index.html">home</a></li>
-                    <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
-                    <li><a href="menu-page-list.html">menu</a></li>
-                    <li><a href="recipies.html">recipe</a></li>
-                    <li><a href="blog-page.html">blog</a></li>
-                    <li><a href="about-us.html">about</a></li>
-                    <li><a href="contacts.html">contact</a></li>
-                    <li><a href="shop-listing.html">Shop</a></li>
-                </ul>
-            </nav>
+
+            <?php wp_nav_menu(
+                array(
+                    'theme_location' => 'header_nav',
+                    'container' => 'nav',
+                    'container_class' => 'heder-menu',
+                )
+            ); ?>
+
             <div class="cart-book">
                 <div class="cart">
                     <div class="cart__cercle">3</div>
-                    <a href="shopping-cart.html">
-                        <img src="./img/icon_cart.png" alt="">
-                    </a>
+                    <?php if ($restaurant_site_options['icon_cart']['url']) { ?>
+                        <a href="shopping-cart.html">
+                            <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
+                        </a>
+                    <?php } ?>
                     <img src="./img/arrow-cart.png" alt="">
                 </div>
                 <a href="#" class="heder-menu-button">
-                    <img src="./img/icon_plate.png" alt="">
+                    <?php if ($restaurant_site_options['icon_botton_book']['url']) { ?>
+                        <img src="<?php echo esc_url($restaurant_site_options['icon_botton_book']['url']) ?>" alt="icon botton book">
+                    <?php } ?>
                     BOOK YOU TABLE
                 </a>
             </div>
         </header>
     </div>
+
+    <?php if (!is_front_page()) {  ?>
+        <div class="background background-title-page-block">
+            <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
+            <h1> <?php wp_title("") ?> </h1>
+        </div>
+    <?php } ?>

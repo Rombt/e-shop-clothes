@@ -33,23 +33,33 @@
     </div>
 </div>
     <div class="conteiner" id="about">
+    <?php global $restaurant_site_options; ?>
+
     <nav class="about-row__top-menu">
         <a href="#" class="read">
             <img src="img/icon_reviews.png" class="read__icon" alt="reviews">
             <div>READ <p>REVIEWS</p>
             </div>
-            <img src="img/orang-sercle.png" class="read__cercle" alt="orang sercle">
+            <img src="img/orang-sercle.png" class="read__cercle" alt="">
         </a>
-        <a href="tel:1008005006" class="about-call-us">
-            <img src="img/icon_phone.png" class="read__cercle" alt="icon phone">
+
+        <?php if ($restaurant_site_options['home_delivery']){   ?>
+        <a href="tel: <?php echo esc_html( $restaurant_site_options['home_delivery'] ) ?> " class="about-call-us">
+
+
+            <img src="img/icon_phone.png" class="read__cercle" alt="">
             <div class="about-call-us__text">
                 CALL US NOW FOR
                 <p>HOME DELIVERY</p>
             </div>
             <div class="phone-number">
-                1-008 005 006
+                <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
             </div>
         </a>
+        <?php }?>
+
+
+
     </nav>
     <section class="about-row">
         <div class="about-row__text">
@@ -109,7 +119,14 @@
                <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <a href="tel:1008005006" class="food-card__phone-namber">1-008 005 006</a>
+                  <?php if ( $restaurant_site_options['home_delivery'] ){ ?>
+                  <a href="<?php echo esc_html( $restaurant_site_options['home_delivery'] );?>"
+                     class="food-card__phone-namber">
+                     <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
+                  </a>
+                  <?php }?>
+
+
                   <div class="price">
    <p>$</p>89.00
 </div>
@@ -145,6 +162,24 @@
       <div class="food-menu__burger burger-open">
          <span></span>
       </div>
+
+
+      <?php 
+      // wp_nav_menu(      // неработает добавление классов li
+      //       array(
+      //          'theme_location' => 'food-menu',
+      //          'container' => 'nav',
+      //          'container_class' => 'menu food-menu',
+      //          'menu_class' => 'food-menu__list',
+      //          'add_li_class'=>'food-menu__sub-item',
+      //       )
+      // ); 
+      ?>
+
+
+
+
+
       <nav class="menu food-menu">
          <ul class="food-menu__list">
             <li class="food-menu__item">
@@ -456,12 +491,20 @@
          </form>
          <div class="reserve-call-us">
             <a href="#" class="button-orange ">Make reservation</a>
+
+            <?php if ($restaurant_site_options['reservation']){ ?>
+
             <p>
                You can also call <span>for a reservation</span>
             </p>
             <span class="reserve-call-us__tel">
-               <a href="tel:1007000005">1-007 000 005</a>
+               <a href="tel:<?php echo esc_html( $restaurant_site_options['reservation'] )?>">
+                  <?php echo esc_html( $restaurant_site_options['reservation'] )?>
+               </a>
+
             </span>
+
+            <?php }?>
          </div>
       </div>
    </section>
@@ -470,71 +513,5 @@
 </div>
 </main>
 
-<div class="background background__footer">
-   <div class="footer conteiner">
-      <section class="footer__row">
-         <div class="footer__navigation">
-            <h2>Navigation</h2>
-            <ul>
-               <li><a href="#">Home</a></li>
-               <li><a href="#">About us</a></li>
-               <li><a href="#">Menu</a></li>
-               <li><a href="#">Reservation</a></li>
-               <li><a href="#">Recipe</a></li>
-               <li><a href="#">Blog</a></li>
-               <li><a href="#">Contact Us</a></li>
-            </ul>
-         </div>
-         <div class="footer__news">
-            <h2>News letter</h2>
-            <span>Enter your email address and subscribe daily newsletter</span>
-            <div class="form-footer">
-               <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
-                  <p>Email Address</p>
-                  <input type="email">
-               </div>
-               <a href="#" class="button-orange ">Subscribe</a>
-            </div>
-            <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
-</div>
-         </div>
-         <div class="footer__app">
-            <h2>Our app avilable</h2>
-            <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
-   <p>
-      <span>Avilable&nbspon&nbspthe</span>
-      App&nbspStore
-   </p>
-</a>
-            <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
-   <p>
-      <span>Get&nbspit&nbspon</span>
-      Google&nbspPlay
-   </p>
-</a>
-         </div>
-      </section>
-   </div>
-   <div class="copyright-block">
-      <span></span>
-      <p>2016 © Luxury RestaurAnt, All rights reserved</p>
-      <span></span>
-   </div>
-</div>
 
-
-
-<?php get_footer(); ?>
-</body>
-
-</html>
-
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/app.min.js"></script> -->
+<?php get_footer();

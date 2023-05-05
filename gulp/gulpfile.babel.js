@@ -35,13 +35,11 @@ function watcher() {
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    gulp.watch(path.watch.wp, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
+    gulp.watch(path.wp_watch, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
 }
 
-
-
-const mainTasks = gulp.parallel(copyFonts, copy, php, styles, js, images);
-export const dev = gulp.series(reset, mainTasks, listProcFiles, gulp.parallel(watcher, server));
+const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
+export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
 
 export const createFonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);

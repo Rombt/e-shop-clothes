@@ -22,7 +22,6 @@ export const path = {
         files: `${themePath}/files/`,
         svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
-
     prod: {
         js: `${prodFolder}/js/`,
         styles: `${prodFolder}/styles/`,
@@ -50,6 +49,10 @@ export const path = {
         files: `${srcFolder}/files/**/*.*`,
         wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
+    wp_watch: [             // добавдять файлы для отслеживания
+        `${themePath}/functions.php`,
+        `${themePath}/inc/redux-options.php`,
+    ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,
     srcFolder: srcFolder,

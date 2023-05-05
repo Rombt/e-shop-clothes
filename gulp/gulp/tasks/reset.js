@@ -14,13 +14,11 @@ export const reset = () => {
                 JSON.parse(jsonData).forEach(pathToFile => {
                     arr_filesForDell.push(pathToFile.replace("gulp\\docs\\", ""));
                 });
-
-                // return del(arr_filesForDell, { force: true });
-
             } catch (error) {
                 console.error('Фаил содержит не правильный JSON:', error.message);
             }
         }
+
         return del(arr_filesForDell, { force: true });
 
     } else {

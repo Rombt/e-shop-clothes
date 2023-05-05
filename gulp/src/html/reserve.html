@@ -33,12 +33,20 @@
          </form>
          <div class="reserve-call-us">
             @@include('parts/button-orange.html',{'mod':'','title':'Make reservation', 'href':'#'})
+
+            <?php if ($restaurant_site_options['reservation']){ ?>
+
             <p>
                You can also call <span>for a reservation</span>
             </p>
             <span class="reserve-call-us__tel">
-               <a href="tel:1007000005">1-007 000 005</a>
+               <a href="tel:<?php echo esc_html( $restaurant_site_options['reservation'] )?>">
+                  <?php echo esc_html( $restaurant_site_options['reservation'] )?>
+               </a>
+
             </span>
+
+            <?php }?>
          </div>
       </div>
    </section>
