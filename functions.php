@@ -19,6 +19,17 @@ require_once get_template_directory() . '/inc/redux-options.php';
 
 
 
+
+//===================	TODO	====================================
+/*
+		добавить возможность делать логотип сайта текстом или кортинкой
+			esc_html(bloginfo('name'))
+
+
+
+
+*/
+
 function restaurant_site_scripts()
 {
 	wp_enqueue_style('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all');
