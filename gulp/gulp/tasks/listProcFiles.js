@@ -5,9 +5,6 @@ export const listProcFiles = (done) => {
    
    */
 
-   console.log("app.path.wp.arr_processedFiles = ", app.path.wp.arr_processedFiles);
-
-
    if (Array.isArray(app.path.wp.arr_processedFiles)) {
       app.plugins.fs.writeFile('gulp/filelist.json', JSON.stringify(app.path.wp.arr_processedFiles), (err) => {
          if (err) throw err;

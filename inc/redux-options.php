@@ -427,7 +427,28 @@ Redux::set_section(
 );
 
 
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('404 page settings', 'restaurant-site'),
+      'id'               => 'settings_404-pag',
+      'desc'             => esc_html__('404 page settings', 'restaurant-site'),
+      'customizer_width' => '450',
+      'subsections' => true,
+      // 'icon'             => 'el el-home',
+      'fields'           => array(
+         array(
+            'id'           => '404_img',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('404 image', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+         ),
 
+      ),
+   )
+);
 
 
 

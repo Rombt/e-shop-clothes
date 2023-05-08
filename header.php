@@ -53,7 +53,7 @@
         </header>
     </div>
 
-    <?php if (!is_front_page()) {  ?>
+    <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
             <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
             <h1> <?php wp_title("") ?> </h1>
