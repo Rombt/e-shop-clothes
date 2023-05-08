@@ -9,6 +9,7 @@
    justify-content: center;
    height: 840px;
 
+
    /* .404-page__title */
 
    &__title {
@@ -21,7 +22,7 @@
 
       span {
 
-         font-size: 400px;
+         .adaptiv-font(400, 100);
          font-family: "PlayfairDisplay";
          color: rgb(254, 131, 0);
          font-weight: bold;
@@ -43,8 +44,8 @@
 
 
    &__wrap-img {
-      width: 301px;
-      height: 301px;
+      .adaptiv-prop(width, 300, 150);
+      .adaptiv-prop(height, 300, 150);
 
    }
 
@@ -54,7 +55,7 @@
 
    &__body {
 
-      font-size: 30px;
+      .adaptiv-font(30, 20);
       font-family: "PlayfairDisplay";
       color: rgb(44, 70, 90);
       font-weight: bold;
@@ -66,8 +67,14 @@
       h2 {
 
          font-size: 72px;
+         .adaptiv-font(72, 42);
+
          margin-bottom: 35px;
 
+      }
+
+      p {
+         line-height: 1.2;
       }
 
    }
