@@ -2,7 +2,7 @@ import gulp from "gulp";
 import { path } from "./gulp/config/path.js";
 import { plugins } from "./gulp/config/plugins.js";
 import { reset } from "./gulp/tasks/reset.js";
-import { copy } from "./gulp/tasks/copy.js";
+// import { copy } from "./gulp/tasks/wpPlugin.js";     copy убрал за ненадобностью вместо неё wpPlugins
 import { php } from "./gulp/tasks/php.js";
 import { server } from "./gulp/tasks/server.js";
 import { styles } from "./gulp/tasks/styles.js";
@@ -29,7 +29,7 @@ global.app = {
 }
 
 function watcher() {
-    gulp.watch(path.watch.files, copy)
+    // gulp.watch(path.watch.files, copy)
     gulp.watch(path.watch.php, php) // для отправки файлов по ftp при каждом обновлении добавить вместо php gulp.series(php,ftp)
     gulp.watch(path.watch.styles, styles)
     gulp.watch(path.watch.js, js)
@@ -38,7 +38,8 @@ function watcher() {
     gulp.watch(path.wp_watch, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
 }
 
-const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
+// const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
+const mainTasks = gulp.series(gulp.parallel(copyFonts, php, styles, js, images), listProcFiles);
 export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
 
@@ -47,3 +48,6 @@ export { createSvgSprite };
 export { grid };
 export const deployZIP = gulp.series(reset, mainTasks, zip);
 export const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+
+

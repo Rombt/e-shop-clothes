@@ -7,6 +7,7 @@ const srcFolder = './src';
 
 const themePath = `..`;
 const themeName = nodePath.basename(nodePath.dirname(nodePath.resolve()));
+const pluginsPath = nodePath.join(themePath, '..', '..', 'plugins');
 
 
 
@@ -33,6 +34,7 @@ export const path = {
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
+        wpPlugins: `${srcFolder}/plugins/*.php`,
         less: `${srcFolder}/styles/main-style.less`,
         scss: `${srcFolder}/styles/main-style.scss`,
         js: `${srcFolder}/js/app.js`,
@@ -57,6 +59,7 @@ export const path = {
     prodFolder: prodFolder,
     srcFolder: srcFolder,
     themePath: themePath,
+    pluginsPath: pluginsPath,
     clean: prodFolder,
     ftp: 'htdocs', // указать целевую папку на сервере, есле её нет то она будет создана автоматически, пусто -- корневая папка сервера
 }
