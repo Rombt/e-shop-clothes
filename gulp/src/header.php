@@ -56,6 +56,12 @@
     <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
             <div class="wrap-img"><img src="@img/background-title-page-block.jpg" alt=""></div>
+            
+            <?php if (is_search()) { ?>
+               <h1> Результаты поиска </h1>
+            <?php } else { ?>
             <h1> <?php wp_title("") ?> </h1>
+            <?php } ?>
+            
         </div>
     <?php } ?>

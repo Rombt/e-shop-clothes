@@ -17,6 +17,8 @@
 	<?php simple_restaurant_site_post_thumbnail(); ?>
 
 	<div class="entry-content">
+
+
 		<?php
 		the_content();
 
