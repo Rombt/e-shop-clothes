@@ -1,17 +1,5 @@
 <?php
 
-/**
- * simple restaurant site functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package simple_restaurant_site
- */
-
-/**
- * Enqueue scripts and styles.
- */
-
 
 
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
@@ -23,7 +11,7 @@ require_once get_template_directory() . '/inc/redux-options.php';
 //===================	TODO	====================================
 /*
 		добавить возможность делать логотип сайта текстом или кортинкой
-			esc_html(bloginfo('name'))
+			esc_html(bloginfo('name')) 
 
 
 
@@ -39,8 +27,6 @@ function restaurant_site_scripts()
 
 
 
-
-
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
@@ -49,19 +35,6 @@ add_action('wp_enqueue_scripts', 'restaurant_site_scripts');
 
 
 
-
-if (!defined('_S_VERSION')) {
-	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.0');
-}
-
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
 function simple_restaurant_site_setup()
 {
 	add_theme_support('title-tag');
@@ -79,8 +52,6 @@ function simple_restaurant_site_setup()
 		)
 	);
 
-
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
 			'header_nav' => esc_html__('Header Navigation', 'restaurant-site'),
@@ -89,63 +60,17 @@ function simple_restaurant_site_setup()
 		)
 	);
 
-
-
-
-
-
-
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on simple restaurant site, use a find and replace
-		* to change 'restaurant-site' to the name of your theme in all the template files.
-		*/
 	load_theme_textdomain('restaurant-site', get_template_directory() . '/languages');
+	add_theme_support('automatic-feed-links'); 
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support('automatic-feed-links');
-
-	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
-
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'simple_restaurant_site_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support('customize-selective-refresh-widgets');
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);
 }
 add_action('after_setup_theme', 'simple_restaurant_site_setup');
 
+function simple_restaurant_site_content_width()
+{
+	$GLOBALS['content_width'] = apply_filters('simple_restaurant_site_content_width', 640);
+}
+add_action('after_setup_theme', 'simple_restaurant_site_content_width', 0);
 
 
 
@@ -163,15 +88,9 @@ add_filter('nav_menu_css_class', 'rs_add_class_on_li', 1, 3);
 
 
 
-
-
 add_action('tgmpa_register', 'restaurant_site_register_required_plugins');
 function restaurant_site_register_required_plugins()
 {
-	/*
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
 	$plugins = array(
 
 		array(
@@ -215,36 +134,6 @@ function restaurant_site_register_required_plugins()
 
 
 
-
-
-
-
-
-
-
-
-
-//===============================================================================================================================================================================
-//===============================================================================================================================================================================
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function simple_restaurant_site_content_width()
-{
-	$GLOBALS['content_width'] = apply_filters('simple_restaurant_site_content_width', 640);
-}
-add_action('after_setup_theme', 'simple_restaurant_site_content_width', 0);
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 function simple_restaurant_site_widgets_init()
 {
 	register_sidebar(
@@ -262,29 +151,3 @@ function simple_restaurant_site_widgets_init()
 add_action('widgets_init', 'simple_restaurant_site_widgets_init');
 
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-if (defined('JETPACK__VERSION')) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
