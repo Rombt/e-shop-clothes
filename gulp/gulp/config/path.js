@@ -7,13 +7,15 @@ const srcFolder = './src';
 
 const themePath = `..`;
 const themeName = nodePath.basename(nodePath.dirname(nodePath.resolve()));
-const pluginsPath = nodePath.join(themePath, '..', '..', 'plugins');
-
+const wpPluginName = `${themeName}-core`;
+const pluginsPath = nodePath.join(themePath, '..', '..', `plugins/${wpPluginName}`);
 
 
 export const path = {
     wp: {
         themeName: `${themeName}`,
+        wpPluginName: `${wpPluginName}`,
+        // wpPlugins: `${pluginsPath}/${wpPluginName}/`,      // для dev версии плагин перемещается в папку плагинов WP 
         arr_processedFiles: [],
         js: `${themePath}/assets/js/`,
         styles: `${themePath}/assets/styles/`,
@@ -22,7 +24,6 @@ export const path = {
         fonts: `${themePath}/assets/fonts/`,
         files: `${themePath}/files/`,
         svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
-        wpPlugins: `${pluginsPath}/${themeName}/`,      // для dev версии плагин перемещается в папку плагинов WP 
     },
     prod: {
         js: `${prodFolder}/js/`,

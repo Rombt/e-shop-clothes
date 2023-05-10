@@ -57,8 +57,8 @@ export const deployFTP = gulp.series(reset, mainTasks, ftp);
 // export const tests = gulp.series(app.plugins.if(app.isWP, forTest));
 // const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
 
-// export const wpPlugins = gulp.series(app.plugins.if(app.isProd, wpPlugin));
-export const wpPlugins = gulp.series(wpPlugin);
+// export const wpPlugins = app.plugins.if(app.isProd, gulp.series(wpPlugin, zip), gulp.series(reset, wpPlugin, listProcFiles));
+export const wpPlugins = gulp.series(reset, wpPlugin, listProcFiles, app.plugins.if(app.isProd, zip));
 
 
 
