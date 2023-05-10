@@ -10,13 +10,13 @@
     <div class="swiper-dish swiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-1.jpg" alt=""></div>
+                <div class="wrap-img dish__wrap-img"> <picture><source srcset="img/dish-bg-1.webp" type="image/webp"><img src="img/dish-bg-1.jpg" alt=""></picture></div>
             </div>
             <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-2.jpg" alt=""></div>
+                <div class="wrap-img dish__wrap-img"> <picture><source srcset="img/dish-bg-2.webp" type="image/webp"><img src="img/dish-bg-2.jpg" alt=""></picture></div>
             </div>
             <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-3.jpg" alt=""></div>
+                <div class="wrap-img dish__wrap-img"> <picture><source srcset="img/dish-bg-3.webp" type="image/webp"><img src="img/dish-bg-3.jpg" alt=""></picture></div>
             </div>
         </div>
         <div class="swiper-pagination-dish swiper-pagination"></div>
@@ -27,7 +27,7 @@
             <p class="dish-title__subtitle-title">from <span>luxury restaurent.</span></p>
         </div>
         <div class="exlore-food-menu">
-            <img src="./img/exlore-food-menu.png" alt="exlore-food-menu.jpg">
+            <picture><source srcset="./img/exlore-food-menu.webp" type="image/webp"><img src="./img/exlore-food-menu.png" alt="exlore-food-menu.jpg"></picture>
             <p>Explore food Menu</p>
         </div>
     </div>
@@ -37,17 +37,17 @@
 
     <nav class="about-row__top-menu">
         <a href="#" class="read">
-            <img src="img/icon_reviews.png" class="read__icon" alt="reviews">
+            <picture><source srcset="img/icon_reviews.webp" type="image/webp"><img src="img/icon_reviews.png" class="read__icon" alt="reviews"></picture>
             <div>READ <p>REVIEWS</p>
             </div>
-            <img src="img/orang-sercle.png" class="read__cercle" alt="">
+            <picture><source srcset="img/orang-sercle.webp" type="image/webp"><img src="img/orang-sercle.png" class="read__cercle" alt=""></picture>
         </a>
 
         <?php if ($restaurant_site_options['home_delivery']){   ?>
         <a href="tel: <?php echo esc_html( $restaurant_site_options['home_delivery'] ) ?> " class="about-call-us">
 
 
-            <img src="img/icon_phone.png" class="read__cercle" alt="">
+            <picture><source srcset="img/icon_phone.webp" type="image/webp"><img src="img/icon_phone.png" class="read__cercle" alt=""></picture>
             <div class="about-call-us__text">
                 CALL US NOW FOR
                 <p>HOME DELIVERY</p>
@@ -76,15 +76,15 @@
             <div class="about-row__text-buttons">
                 <a href="#" class="button-orange ">READ MORE</a>
                 <div class="wrap-img">
-                    <img src="img/about-button-bg.jpg" alt="">
+                    <picture><source srcset="img/about-button-bg.webp" type="image/webp"><img src="img/about-button-bg.jpg" alt=""></picture>
                 </div>
             </div>
         </div>
         <div class="about-row__img">
-            <div class="wrap-img about-row__wrap-img"><img src="img/about-row-bg.jpg" alt=""></div>
-            <div class="wrap-img about-row__wrap-img"><img src="img/about-row-bg.jpg" alt=""></div>
-            <div class="wrap-img about-row__wrap-img"><img src="img/about-row-bg.jpg" alt=""></div>
-            <div class="wrap-img about-row__wrap-img"><img src="img/about-row-bg.jpg" alt=""></div>
+            <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
+            <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
+            <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
+            <div class="wrap-img about-row__wrap-img"><picture><source srcset="img/about-row-bg.webp" type="image/webp"><img src="img/about-row-bg.jpg" alt=""></picture></div>
         </div>
     </section>
 </div>
@@ -93,13 +93,13 @@
       <div class="swiper-today swiper">
          <div class="swiper-wrapper">
             <div class="swiper-slide">
-               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-1.jpg" alt=""></div>
+               <div class="wrap-img today__wrap-img"> <picture><source srcset="img/today-bg-1.webp" type="image/webp"><img src="img/today-bg-1.jpg" alt=""></picture></div>
             </div>
             <div class="swiper-slide">
-               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-2.jpg" alt=""></div>
+               <div class="wrap-img today__wrap-img"> <picture><source srcset="img/today-bg-2.webp" type="image/webp"><img src="img/today-bg-2.jpg" alt=""></picture></div>
             </div>
             <div class="swiper-slide">
-               <div class="wrap-img today__wrap-img"> <img src="img/today-bg-3.jpg" alt=""></div>
+               <div class="wrap-img today__wrap-img"> <picture><source srcset="img/today-bg-3.webp" type="image/webp"><img src="img/today-bg-3.jpg" alt=""></picture></div>
             </div>
          </div>
          <div class="swiper-pagination-today swiper-pagination"></div>
@@ -109,7 +109,7 @@
          <h2> Today Special </h2>
          <div class="today-row">
             <article class="food-card today-row__food-card">
-               <div class="wrap-img food-card__wrap-img"><img src="img/food-menu-card-img.jpg" alt=""></div>
+               <div class="wrap-img food-card__wrap-img"><picture><source srcset="img/food-menu-card-img.webp" type="image/webp"><img src="img/food-menu-card-img.jpg" alt=""></picture></div>
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet obcaecati sed numquam
@@ -133,7 +133,7 @@
                </footer>
             </article>
             <article class="food-card today-row__food-card">
-               <div class="wrap-img food-card__wrap-img"><img src="img/food-menu-card-img.jpg" alt=""></div>
+               <div class="wrap-img food-card__wrap-img"><picture><source srcset="img/food-menu-card-img.webp" type="image/webp"><img src="img/food-menu-card-img.jpg" alt=""></picture></div>
                <div class="food-card__food-name">
                   <h3>Food Name one</h3>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro eveniet obcaecati sed numquam
@@ -183,14 +183,14 @@
       <nav class="menu food-menu">
          <ul class="food-menu__list">
             <li class="food-menu__item">
-               <img src="img/icon_all.png" alt="">
+               <picture><source srcset="img/icon_all.webp" type="image/webp"><img src="img/icon_all.png" alt=""></picture>
                <a class="food-menu__link" href="#">All</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_breakfast.png" alt="">
+               <picture><source srcset="img/icon_breakfast.webp" type="image/webp"><img src="img/icon_breakfast.png" alt=""></picture>
                <a class="food-menu__link" href="#">Breakfast</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -199,7 +199,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_lunch.png" alt="">
+               <picture><source srcset="img/icon_lunch.webp" type="image/webp"><img src="img/icon_lunch.png" alt=""></picture>
                <a class="food-menu__link" href="#">Lunch</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -210,7 +210,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_snacks.png" alt="">
+               <picture><source srcset="img/icon_snacks.webp" type="image/webp"><img src="img/icon_snacks.png" alt=""></picture>
                <a class="food-menu__link" href="#">Snacks</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -222,7 +222,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_pizza.png" alt="">
+               <picture><source srcset="img/icon_pizza.webp" type="image/webp"><img src="img/icon_pizza.png" alt=""></picture>
                <a class="food-menu__link" href="#">Pizza</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -238,7 +238,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_soups.png" alt="">
+               <picture><source srcset="img/icon_soups.webp" type="image/webp"><img src="img/icon_soups.png" alt=""></picture>
                <a class="food-menu__link" href="#">Soups</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -249,7 +249,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_binner.png" alt="">
+               <picture><source srcset="img/icon_binner.webp" type="image/webp"><img src="img/icon_binner.png" alt=""></picture>
                <a class="food-menu__link" href="#">Dinner</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -343,14 +343,14 @@
    </section>
    <a href="#" class="button-orange ">Explor food menu</a>
 
-   <div class="wrap-img wrap-img__311x311"><img src="img/Image_311x311.jpg" alt=""></div>
-   <div class="wrap-img wrap-img__267x414"><img src="img/Image_267x414.jpg" alt=""></div>
-   <div class="wrap-img wrap-img__241x241"><img src="img/Image_241x241.jpg" alt=""></div>
+   <div class="wrap-img wrap-img__311x311"><picture><source srcset="img/Image_311x311.webp" type="image/webp"><img src="img/Image_311x311.jpg" alt=""></picture></div>
+   <div class="wrap-img wrap-img__267x414"><picture><source srcset="img/Image_267x414.webp" type="image/webp"><img src="img/Image_267x414.jpg" alt=""></picture></div>
+   <div class="wrap-img wrap-img__241x241"><picture><source srcset="img/Image_241x241.webp" type="image/webp"><img src="img/Image_241x241.jpg" alt=""></picture></div>
 
 </div>
     <div class="background background__clients">
    <div class="wrap-img background-clients__wrap-img">
-      <img src="img/background-clients-block.jpg" alt="">
+      <picture><source srcset="img/background-clients-block.webp" type="image/webp"><img src="img/background-clients-block.jpg" alt=""></picture>
    </div>
 
    <section class="conteiner" id="clients">
@@ -369,14 +369,14 @@
                      the years,
                      sometimes by accident, sometimes on purpose.
                   </div>
-                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="wrap-img slide-body__client-avatar"><picture><source srcset="img/icon-clients.webp" type="image/webp"><img src="img/icon-clients.jpg" alt=""></picture></div>
                   <div class="name">Dr. Prabakaran John</div>
                   <div class="rating">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
                   </div>
                </div>
             </div>
@@ -392,14 +392,14 @@
                      the years,
                      sometimes by accident, sometimes on purpose.
                   </div>
-                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="wrap-img slide-body__client-avatar"><picture><source srcset="img/icon-clients.webp" type="image/webp"><img src="img/icon-clients.jpg" alt=""></picture></div>
                   <div class="name">Dr. Prabakaran John</div>
                   <div class="rating">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
                   </div>
                </div>
             </div>
@@ -415,14 +415,14 @@
                      the years,
                      sometimes by accident, sometimes on purpose.
                   </div>
-                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="wrap-img slide-body__client-avatar"><picture><source srcset="img/icon-clients.webp" type="image/webp"><img src="img/icon-clients.jpg" alt=""></picture></div>
                   <div class="name">Dr. Prabakaran John</div>
                   <div class="rating">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
                   </div>
                </div>
             </div>
@@ -438,14 +438,14 @@
                      the years,
                      sometimes by accident, sometimes on purpose.
                   </div>
-                  <div class="wrap-img slide-body__client-avatar"><img src="img/icon-clients.jpg" alt=""></div>
+                  <div class="wrap-img slide-body__client-avatar"><picture><source srcset="img/icon-clients.webp" type="image/webp"><img src="img/icon-clients.jpg" alt=""></picture></div>
                   <div class="name">Dr. Prabakaran John</div>
                   <div class="rating">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
-                     <img src="img/star-rating-icon.png" alt="">
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
+                     <picture><source srcset="img/star-rating-icon.webp" type="image/webp"><img src="img/star-rating-icon.png" alt=""></picture>
                   </div>
                </div>
             </div>
@@ -460,33 +460,33 @@
 
    <h2>Reserve your table</h2>
    <section class="reserve-row">
-      <div class="wrap-img reserve-row__img"><img src="img/Image_559x334.jpg" alt=""></div>
+      <div class="wrap-img reserve-row__img"><picture><source srcset="img/Image_559x334.webp" type="image/webp"><img src="img/Image_559x334.jpg" alt=""></picture></div>
       <div class="reserve-row__form">
          <form action="#" name="reserve-form" class="reserve-form">
             <div class="reserve-form__input">
                <p>Name*</p>
                <input type="text" tabindex="1" name="name" value="">
-               <img src="img/form_icon_name.png" alt="">
+               <picture><source srcset="img/form_icon_name.webp" type="image/webp"><img src="img/form_icon_name.png" alt=""></picture>
             </div>
             <div class="reserve-form__input">
                <p>Time*</p><input type="text" tabindex="2" name="time" value="">
-               <img src="img/form_icon_time.png" alt="">
+               <picture><source srcset="img/form_icon_time.webp" type="image/webp"><img src="img/form_icon_time.png" alt=""></picture>
             </div>
             <div class="reserve-form__input">
                <p>Guests*</p><input type="text" tabindex="3" name="guests" value="">
-               <img src="img/form_icon_guest.png" alt="">
+               <picture><source srcset="img/form_icon_guest.webp" type="image/webp"><img src="img/form_icon_guest.png" alt=""></picture>
             </div>
             <div class="reserve-form__input">
                <p>Date*</p><input type="text" tabindex="4" name="date" value="">
-               <img src="img/form_icon_calander.png" alt="">
+               <picture><source srcset="img/form_icon_calander.webp" type="image/webp"><img src="img/form_icon_calander.png" alt=""></picture>
             </div>
             <div class="reserve-form__input">
                <p>Email Address*</p><input type="email" tabindex="5" name="email-address" value="">
-               <img src="img/form_icon_email.png" alt="">
+               <picture><source srcset="img/form_icon_email.webp" type="image/webp"><img src="img/form_icon_email.png" alt=""></picture>
             </div>
             <div class="reserve-form__input">
                <p>Phone Number*</p><input type="tel" tabindex="6" name="phone-number" value="">
-               <img src="img/form_icon_phone.png" alt="">
+               <picture><source srcset="img/form_icon_phone.webp" type="image/webp"><img src="img/form_icon_phone.png" alt=""></picture>
             </div>
          </form>
          <div class="reserve-call-us">

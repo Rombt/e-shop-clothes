@@ -13,18 +13,18 @@
    <div class="recipe-details-title__row">
       <h2>Pakoda Chatny</h2>
       <div class="recipe-details-title__rating">
-         <img src="img/rating-star.png" alt="rating star">
-         <img src="img/rating-star.png" alt="rating star">
-         <img src="img/rating-star.png" alt="rating star">
-         <img src="img/rating-star.png" alt="rating star">
-         <img src="img/rating-star.png" alt="rating star">
+         <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+         <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+         <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+         <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+         <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
       </div>
    </div>
 </div>
 <main class="conteiner recipe-details">
    <div class="recipe-details__row">
       <div class="wrap-img recipe-details__wrap-img">
-         <img src="img/recipe-details-main.jpg" alt="">
+         <picture><source srcset="img/recipe-details-main.webp" type="image/webp"><img src="img/recipe-details-main.jpg" alt=""></picture>
       </div>
       <div class="white-box">
          <div class="white-box__items">
@@ -45,7 +45,7 @@
          </div>
          <div class="white-box__download">
             <a href="#">
-               <img src="img/icon-pdf.png" alt="">
+               <picture><source srcset="img/icon-pdf.webp" type="image/webp"><img src="img/icon-pdf.png" alt=""></picture>
                <p>
                   Download
                   <span> Food RecipieFood </span>
@@ -64,31 +64,31 @@
             <h3>Ingredients</h3>
             <ul>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   1/2 cup chopped red onions
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   2 ounce lemon drops chupas chups bear
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   3 pound seasme snaps powder gingerbread
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   1/4 cup jujubes jelly chupa
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   1/2 cup sour cream (optional)
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   1 ounce suger plum pastry fruitcake
                </li>
                <li>
-                  <img src="img/arrow_bg.png" alt="arrow">
+                  <picture><source srcset="img/arrow_bg.webp" type="image/webp"><img src="img/arrow_bg.png" alt="arrow"></picture>
                   1/4 cup jujubes jelly chupa
                </li>
             </ul>
@@ -133,7 +133,7 @@
             </table>
          </div>
          <div class="wrap-img recipe-details__blocks-img">
-            <img src="img/Image_228x228.jpg" alt="">
+            <picture><source srcset="img/Image_228x228.webp" type="image/webp"><img src="img/Image_228x228.jpg" alt=""></picture>
          </div>
       </div>
    </div>
@@ -141,7 +141,7 @@
 
 <div class="food-step-background background ">
    <div class="wrap-img food-step-background__img">
-      <img src="img/food-step-background.jpg" alt="food step background">
+      <picture><source srcset="img/food-step-background.webp" type="image/webp"><img src="img/food-step-background.jpg" alt="food step background"></picture>
    </div>
    <div class="conteiner food-step">
       <h2>Food Step</h2>
@@ -255,16 +255,16 @@
    <div class="featured-recipies__title">Featured Recipies</div>
    <div class="featured-recipies__row">
       <div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><picture><source srcset="img/recipe-card-img-2.webp" type="image/webp"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></picture></figure>
    <div class="recipe-card-grid-2__body">
       <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
@@ -272,16 +272,16 @@
    </div>
 </div>
       <div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><picture><source srcset="img/recipe-card-img-2.webp" type="image/webp"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></picture></figure>
    <div class="recipe-card-grid-2__body">
       <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
@@ -289,16 +289,16 @@
    </div>
 </div>
       <div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><picture><source srcset="img/recipe-card-img-2.webp" type="image/webp"><img src="img/recipe-card-img-2.jpg" alt="recipe card img"></picture></figure>
    <div class="recipe-card-grid-2__body">
       <div class="recipe-card-grid-2__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
+            <picture><source srcset="img/rating-star.webp" type="image/webp"><img src="img/rating-star.png" alt="rating star"></picture>
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
@@ -324,7 +324,7 @@
          <span>09am - 11pm</span>
       </p>
       <div class="wrap-img opening-hours-conteiner__wrap-img">
-         <img src="img/Image_210x210.jpg" alt="">
+         <picture><source srcset="img/Image_210x210.webp" type="image/webp"><img src="img/Image_210x210.jpg" alt=""></picture>
       </div>
    </div>
 
@@ -351,7 +351,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -392,14 +392,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -421,8 +421,8 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+<script src="js/app.min.js?_v=20230510123753"></script>
 
 </body>
 

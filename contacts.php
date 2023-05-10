@@ -9,24 +9,24 @@
    
 
    <div class="background background-contact-us">
-      <div class="wrap-img"><img src="img/background-contact-us.jpg" alt=""></div>
+      <div class="wrap-img"><picture><source srcset="img/background-contact-us.webp" type="image/webp"><img src="img/background-contact-us.jpg" alt=""></picture></div>
       <div class="conteiner">
          <div class="contact-us">
             <div class="contact-us__touch">
                <h2>Get in touch</h2>
                <form action="#" class="contact-us__form form">
                   <div class="form__input">
-                     <img src="img/form_icon_name.png" alt="">
+                     <picture><source srcset="img/form_icon_name.webp" type="image/webp"><img src="img/form_icon_name.png" alt=""></picture>
                      <p>Name*</p>
                      <input type="text">
                   </div>
                   <div class="form__input">
-                     <img src="img/form_icon_email.png" alt="">
+                     <picture><source srcset="img/form_icon_email.webp" type="image/webp"><img src="img/form_icon_email.png" alt=""></picture>
                      <p>Email*</p>
                      <input type="text">
                   </div>
                   <div class="form__input">
-                     <img src="img/form_icon_message.png" alt="icon message">
+                     <picture><source srcset="img/form_icon_message.webp" type="image/webp"><img src="img/form_icon_message.png" alt="icon message"></picture>
                      <p>Message*</p>
                      <textarea name="mesage" id="mesage"></textarea>
                   </div>
@@ -113,7 +113,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -154,14 +154,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -183,8 +183,8 @@
 </body>
 
 </html>
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script src="js/app.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+   <script src="js/app.min.js?_v=20230510123753"></script>
 </body>
 
 </html>

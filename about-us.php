@@ -24,7 +24,7 @@
             <figure class="wrap-video wrap-img">
                <!-- Вставляем видео при помощи тега video -->
                <!-- <video src="video.mp4" controls></video> -->
-               <img src="img/video-blok-history-img.jpg" alt="video blok history">
+               <picture><source srcset="img/video-blok-history-img.webp" type="image/webp"><img src="img/video-blok-history-img.jpg" alt="video blok history"></picture>
             </figure>
             <div class="video-blok-history__description">
                Our hotel video
@@ -34,7 +34,7 @@
    </section>
    <div class="background background-coocs">
       <div class="wrap-img background-coocs__img">
-         <img src="img/background-coocs.jpg" alt="background coocs">
+         <picture><source srcset="img/background-coocs.webp" type="image/webp"><img src="img/background-coocs.jpg" alt="background coocs"></picture>
       </div>
       <section class="conteiner coocs">
          <h2 class="coocs__title"> Our Cooks </h2>
@@ -44,43 +44,43 @@
                <!-- Additional required wrapper -->
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. John cliff</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. peter vasko</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. Mariya thomas</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. james dico</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. james dico</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. james dico</span>
                </div>
                <div class="swiper-slide swiper-coocs__card">
                   <div class="wrap-img swiper-coocs__img">
-                     <img src="img/Image_270x263.jpg" alt="">
+                     <picture><source srcset="img/Image_270x263.webp" type="image/webp"><img src="img/Image_270x263.jpg" alt=""></picture>
                   </div>
                   <span>Cheff. james dico</span>
                </div>
@@ -91,7 +91,7 @@
    </div>
 </main>
 <section class="background speciality-block">
-   <figure class="wrap-img speciality-block__img"><img src="img/speciality-block.jpg" alt=""></figure>
+   <figure class="wrap-img speciality-block__img"><picture><source srcset="img/speciality-block.webp" type="image/webp"><img src="img/speciality-block.jpg" alt=""></picture></figure>
    <div class="speciality-block__text-wrap speciality-block-coocs-page">
       <h2>Speciality</h2>
       <div class="speciality-block__text">
@@ -124,7 +124,7 @@
          <span>09am - 11pm</span>
       </p>
       <div class="wrap-img opening-hours-conteiner__wrap-img">
-         <img src="img/Image_210x210.jpg" alt="">
+         <picture><source srcset="img/Image_210x210.webp" type="image/webp"><img src="img/Image_210x210.jpg" alt=""></picture>
       </div>
    </div>
 
@@ -149,7 +149,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -190,14 +190,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -219,8 +219,8 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+<script src="js/app.min.js?_v=20230510123753"></script>
 </body>
 
 </html>

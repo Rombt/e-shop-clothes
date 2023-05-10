@@ -16,7 +16,7 @@
 				<span>Enter your email address and subscribe daily newsletter</span>
 				<div class="form-footer">
 					<div class="form-footer__input">
-						<img src="img/form-icon_email.png" alt="">
+						<picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
 						<p>Email Address</p>
 						<input type="email">
 					</div>
@@ -57,14 +57,14 @@
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>
 				<a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
 				<a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay

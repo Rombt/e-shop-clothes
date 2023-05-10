@@ -41,7 +41,7 @@
                             <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
                         </a>
                     <?php } ?>
-                    <img src="./img/arrow-cart.png" alt="">
+                    <picture><source srcset="./img/arrow-cart.webp" type="image/webp"><img src="./img/arrow-cart.png" alt=""></picture>
                 </div>
                 <a href="#" class="heder-menu-button">
                     <?php if ($restaurant_site_options['icon_botton_book']['url']) { ?>
@@ -55,7 +55,7 @@
 
     <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
-            <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
+            <div class="wrap-img"><picture><source srcset="img/background-title-page-block.webp" type="image/webp"><img src="img/background-title-page-block.jpg" alt=""></picture></div>
             
             <?php if (is_search()) { ?>
                <h1> Результаты поиска </h1>

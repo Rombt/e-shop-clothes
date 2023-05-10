@@ -13,7 +13,7 @@
       <div class="e404-page__title">
 
          <div class="wrap-img e404-page__img-404">
-            <img src="img/404.jpg" alt="404">
+            <picture><source srcset="img/404.webp" type="image/webp"><img src="img/404.jpg" alt="404"></picture>
          </div>
 
          <span>
@@ -21,7 +21,7 @@
          </span>
          <!-- <div class="wrap-img e404-page__img-301x301"> -->
          <div class="wrap-img e404-page__wrap-img">
-            <img src="img/Image_301x301.jpg" alt="e404 page">
+            <picture><source srcset="img/Image_301x301.webp" type="image/webp"><img src="img/Image_301x301.jpg" alt="e404 page"></picture>
          </div>
          <span>
             4
@@ -68,7 +68,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -109,14 +109,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -138,8 +138,8 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+<script src="js/app.min.js?_v=20230510123753"></script>
 </body>
 
 

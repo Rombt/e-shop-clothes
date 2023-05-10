@@ -14,7 +14,7 @@
 
       <article class="article-blog">
    <figure class="wrap-img article-blog__img">
-      <img src="img/articles-img.jpg" alt="">
+      <picture><source srcset="img/articles-img.webp" type="image/webp"><img src="img/articles-img.jpg" alt=""></picture>
    </figure>
    <div class="article-blog__body">
       <div class="square-date">
@@ -32,16 +32,16 @@
 
       <div class="article-icons-block">
    <div class="article-icons-block__likes">
-      <img src="img/article-blog-heart.png" alt="heart">
+      <picture><source srcset="img/article-blog-heart.webp" type="image/webp"><img src="img/article-blog-heart.png" alt="heart"></picture>
       <div class="article-icons-block__likes-amounth">
          <p>65</p>
       </div>
    </div>
    <div class="article-icons-block__icons">
       <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
-      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
-      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
-      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
+      <a href="#"><picture><source srcset="img/article-blog-facebook.webp" type="image/webp"><img src="img/article-blog-facebook.png" alt="icon facebook"></picture></a>
+      <a href="#"><picture><source srcset="img/article-blog-twitter.webp" type="image/webp"><img src="img/article-blog-twitter.png" alt="icon twitter"></picture></a>
+      <a href="#"><picture><source srcset="img/article-blog-google.webp" type="image/webp"><img src="img/article-blog-google.png" alt="icon google"></picture></a>
    </div>
 </div>
    </footer>
@@ -49,7 +49,7 @@
 
    <footer class="blog-details-footer" >
       <div class="blog-details-footer__quotes quotes-left">
-         <img src="img/quotes-article__left.png" alt="">
+         <picture><source srcset="img/quotes-article__left.webp" type="image/webp"><img src="img/quotes-article__left.png" alt=""></picture>
       </div>
 
       <div class="blog-details-footer__text">
@@ -61,7 +61,7 @@
       </div>
 
       <div class="blog-details-footer__quotes quotes-right">
-         <img src="img/quotes-article__right.png" alt="">
+         <picture><source srcset="img/quotes-article__right.webp" type="image/webp"><img src="img/quotes-article__right.png" alt=""></picture>
       </div>
 
    </footer>
@@ -70,8 +70,8 @@
 </article>
 
       <section class="blog-details-block">
-         <div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
-         <div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
+         <div class="wrap-img blog-details-block__img"><picture><source srcset="img/Image_412x270.webp" type="image/webp"><img src="img/Image_412x270.jpg" alt=""></picture></div>
+         <div class="wrap-img blog-details-block__img"><picture><source srcset="img/Image_412x270.webp" type="image/webp"><img src="img/Image_412x270.jpg" alt=""></picture></div>
 
          <div class="blog-details-block__text">
             <h4>
@@ -87,26 +87,26 @@
          <footer class="blog-details-block__footer">
             <div class="blog-details-block__button-block">
                <a href="#" class="pagination-prev">
-   <img src="img/pagination-left-arrow.png" alt="arrow left">
+   <picture><source srcset="img/pagination-left-arrow.webp" type="image/webp"><img src="img/pagination-left-arrow.png" alt="arrow left"></picture>
    <p>prev</p>
 </a>
                <a href="#" class="pagination-next">
    <p>next</p>
-   <img src="img/pagination-right-arrow.png" alt="arrow right">
+   <picture><source srcset="img/pagination-right-arrow.webp" type="image/webp"><img src="img/pagination-right-arrow.png" alt="arrow right"></picture>
 </a>
             </div>
             <div class="article-icons-block">
    <div class="article-icons-block__likes">
-      <img src="img/article-blog-heart.png" alt="heart">
+      <picture><source srcset="img/article-blog-heart.webp" type="image/webp"><img src="img/article-blog-heart.png" alt="heart"></picture>
       <div class="article-icons-block__likes-amounth">
          <p>65</p>
       </div>
    </div>
    <div class="article-icons-block__icons">
       <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
-      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
-      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
-      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
+      <a href="#"><picture><source srcset="img/article-blog-facebook.webp" type="image/webp"><img src="img/article-blog-facebook.png" alt="icon facebook"></picture></a>
+      <a href="#"><picture><source srcset="img/article-blog-twitter.webp" type="image/webp"><img src="img/article-blog-twitter.png" alt="icon twitter"></picture></a>
+      <a href="#"><picture><source srcset="img/article-blog-google.webp" type="image/webp"><img src="img/article-blog-google.png" alt="icon google"></picture></a>
    </div>
 </div>
          </footer>
@@ -119,23 +119,23 @@
             <h2>category</h2>
             <ul>
                 <li>
-                    <img src="img/category-icon-arrow.png" alt="arrow category">
+                    <picture><source srcset="img/category-icon-arrow.webp" type="image/webp"><img src="img/category-icon-arrow.png" alt="arrow category"></picture>
                     <a href="#">All foods</a>
                 </li>
                 <li>
-                    <img src="img/category-icon-arrow.png" alt="arrow category">
+                    <picture><source srcset="img/category-icon-arrow.webp" type="image/webp"><img src="img/category-icon-arrow.png" alt="arrow category"></picture>
                     <a href="#">vegitabales</a>
                 </li>
                 <li>
-                    <img src="img/category-icon-arrow.png" alt="arrow category">
+                    <picture><source srcset="img/category-icon-arrow.webp" type="image/webp"><img src="img/category-icon-arrow.png" alt="arrow category"></picture>
                     <a href="#">delicious food</a>
                 </li>
                 <li>
-                    <img src="img/category-icon-arrow.png" alt="arrow category">
+                    <picture><source srcset="img/category-icon-arrow.webp" type="image/webp"><img src="img/category-icon-arrow.png" alt="arrow category"></picture>
                     <a href="#">Special dishes</a>
                 </li>
                 <li>
-                    <img src="img/category-icon-arrow.png" alt="arrow category">
+                    <picture><source srcset="img/category-icon-arrow.webp" type="image/webp"><img src="img/category-icon-arrow.png" alt="arrow category"></picture>
                     <a href="#">juices</a>
                 </li>
             </ul>
@@ -145,7 +145,7 @@
             <div class="recent-post-slider">
                 <a href="#" class="recent-post__row">
                     <div class="wrap-img recent-post__img">
-                        <img src="img/Image_70x70.jpg" alt="thimb recent post">
+                        <picture><source srcset="img/Image_70x70.webp" type="image/webp"><img src="img/Image_70x70.jpg" alt="thimb recent post"></picture>
                     </div>
                     <div class="recent-post__body">
                         <p>08-nov-2016</p>
@@ -154,7 +154,7 @@
                 </a>
                 <a href="#" class="recent-post__row">
                     <div class="wrap-img recent-post__img">
-                        <img src="img/Image_70x70.jpg" alt="thimb recent post">
+                        <picture><source srcset="img/Image_70x70.webp" type="image/webp"><img src="img/Image_70x70.jpg" alt="thimb recent post"></picture>
                     </div>
                     <div class="recent-post__body">
                         <p>13-nov-2016</p>
@@ -163,7 +163,7 @@
                 </a>
                 <a href="#" class="recent-post__row">
                     <div class="wrap-img recent-post__img">
-                        <img src="img/Image_70x70.jpg" alt="thimb recent post">
+                        <picture><source srcset="img/Image_70x70.webp" type="image/webp"><img src="img/Image_70x70.jpg" alt="thimb recent post"></picture>
                     </div>
                     <div class="recent-post__body">
                         <p>20-nov-2016</p>
@@ -206,7 +206,7 @@
             <a href="#">lunch</a>
         </section>
         <div class="blog-touch-toggle blog-toggle-on">
-            <img src="img/orang-sercle.png" class="read__cercle" alt="orang sercle">
+            <picture><source srcset="img/orang-sercle.webp" type="image/webp"><img src="img/orang-sercle.png" class="read__cercle" alt="orang sercle"></picture>
         </div>
     </div>
 </aside>
@@ -219,14 +219,14 @@
 
          <div class="comment">
    <div class="wrap-img comment__img">
-      <img src="img/avatar-user.png" alt="comment img">
+      <picture><source srcset="img/avatar-user.webp" type="image/webp"><img src="img/avatar-user.png" alt="comment img"></picture>
    </div>
    <div class="comment__text">
       <div class="comment__title">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
       <a href="#" class="comment__reply">
-         <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
+         <div class="wrap-img comment__reply-icon"><picture><source srcset="img/icon_reply.webp" type="image/webp"><img src="img/icon_reply.png" alt="reply icon"></picture></div>
          <p>Reply</p>
       </a>
    </div>
@@ -234,14 +234,14 @@
 
          <div class="comment">
    <div class="wrap-img comment__img">
-      <img src="img/avatar-user.png" alt="comment img">
+      <picture><source srcset="img/avatar-user.webp" type="image/webp"><img src="img/avatar-user.png" alt="comment img"></picture>
    </div>
    <div class="comment__text">
       <div class="comment__title">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
       <a href="#" class="comment__reply">
-         <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
+         <div class="wrap-img comment__reply-icon"><picture><source srcset="img/icon_reply.webp" type="image/webp"><img src="img/icon_reply.png" alt="reply icon"></picture></div>
          <p>Reply</p>
       </a>
    </div>
@@ -249,14 +249,14 @@
 
          <div class="comment">
    <div class="wrap-img comment__img">
-      <img src="img/avatar-user.png" alt="comment img">
+      <picture><source srcset="img/avatar-user.webp" type="image/webp"><img src="img/avatar-user.png" alt="comment img"></picture>
    </div>
    <div class="comment__text">
       <div class="comment__title">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
       <a href="#" class="comment__reply">
-         <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
+         <div class="wrap-img comment__reply-icon"><picture><source srcset="img/icon_reply.webp" type="image/webp"><img src="img/icon_reply.png" alt="reply icon"></picture></div>
          <p>Reply</p>
       </a>
    </div>
@@ -275,16 +275,16 @@
          <form action="#" class="leave-comment-form">
    <h2>Leave a Comment</h2>
    <div class="leave-comment-form__input">
-      <img src="img/form_icon_name.png" alt="">
+      <picture><source srcset="img/form_icon_name.webp" type="image/webp"><img src="img/form_icon_name.png" alt=""></picture>
       <p>Name*</p>
       <input type="text" tabindex="1" name="name" value="">
    </div>
    <div class="leave-comment-form__input">
-      <img src="img/form_icon_email.png" alt="">
+      <picture><source srcset="img/form_icon_email.webp" type="image/webp"><img src="img/form_icon_email.png" alt=""></picture>
       <p>Email*</p><input type="email" tabindex="5" name="email-address" value="">
    </div>
    <div class="leave-comment-form__textarea">
-      <img src="img/form_icon_masage.png" alt="">
+      <picture><source srcset="img/form_icon_masage.webp" type="image/webp"><img src="img/form_icon_masage.png" alt=""></picture>
       <p>Masage*</p>
       <textarea name="masage"></textarea>
    </div>
@@ -318,7 +318,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -359,14 +359,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -388,8 +388,8 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+<script src="js/app.min.js?_v=20230510123753"></script>
 </body>
 
 </html>

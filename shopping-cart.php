@@ -21,8 +21,8 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
-                     <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
+                     <picture><source srcset="img/icon_close-button.webp" type="image/webp"><img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button"></picture>
+                     <div class="produkt-img-block__img wrap-img"><picture><source srcset="img/Image_115x115.webp" type="image/webp"><img src="img/Image_115x115.jpg" alt="produkt img"></picture>
                      </div>
                   </div>
                   <p>green mung beas</p>
@@ -34,8 +34,8 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
-                     <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
+                     <picture><source srcset="img/icon_close-button.webp" type="image/webp"><img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button"></picture>
+                     <div class="produkt-img-block__img wrap-img"><picture><source srcset="img/Image_115x115.webp" type="image/webp"><img src="img/Image_115x115.jpg" alt="produkt img"></picture>
                      </div>
                   </div>
                   laird green ientils
@@ -47,8 +47,8 @@
             <tr>
                <td>
                   <div class="produkt-img-block">
-                     <img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button">
-                     <div class="produkt-img-block__img wrap-img"><img src="img/Image_115x115.jpg" alt="produkt img">
+                     <picture><source srcset="img/icon_close-button.webp" type="image/webp"><img class="produkt-img-block__icon-close" src="img/icon_close-button.png" alt="icon close button"></picture>
+                     <div class="produkt-img-block__img wrap-img"><picture><source srcset="img/Image_115x115.webp" type="image/webp"><img src="img/Image_115x115.jpg" alt="produkt img"></picture>
                      </div>
                   </div>
                   Fava bean
@@ -101,17 +101,17 @@
             <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
-         <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
-         <a href="#"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></a>
-         <a href="shop-details.html"><img src="img/more-icon.png" alt="icon more about goods"></a>
+         <a href="shopping-cart.html"><picture><source srcset="img/icon_cart-shope.webp" type="image/webp"><img src="img/icon_cart-shope.png" alt="icon cart shope"></picture></a>
+         <a href="#"><picture><source srcset="img/icon_wishlist-shope.webp" type="image/webp"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></picture></a>
+         <a href="shop-details.html"><picture><source srcset="img/more-icon.webp" type="image/webp"><img src="img/more-icon.png" alt="icon more about goods"></picture></a>
       </div>
    </div>
    <div class="rating-box">
    3
-   <img src="img/star-white-rating-icon.png" alt="">
+   <picture><source srcset="img/star-white-rating-icon.webp" type="image/webp"><img src="img/star-white-rating-icon.png" alt=""></picture>
 </div>
    <div class="prod-card-from-shop__img wrap-img">
-      <img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img">
+      <picture><source srcset="img/prod-card-from-shop__img.webp" type="image/webp"><img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img"></picture>
    </div>
    <div class="prod-card-from-shop__text">
       <h3>laird green ientils</h3>
@@ -125,17 +125,17 @@
             <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
-         <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
-         <a href="#"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></a>
-         <a href="shop-details.html"><img src="img/more-icon.png" alt="icon more about goods"></a>
+         <a href="shopping-cart.html"><picture><source srcset="img/icon_cart-shope.webp" type="image/webp"><img src="img/icon_cart-shope.png" alt="icon cart shope"></picture></a>
+         <a href="#"><picture><source srcset="img/icon_wishlist-shope.webp" type="image/webp"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></picture></a>
+         <a href="shop-details.html"><picture><source srcset="img/more-icon.webp" type="image/webp"><img src="img/more-icon.png" alt="icon more about goods"></picture></a>
       </div>
    </div>
    <div class="rating-box">
    3
-   <img src="img/star-white-rating-icon.png" alt="">
+   <picture><source srcset="img/star-white-rating-icon.webp" type="image/webp"><img src="img/star-white-rating-icon.png" alt=""></picture>
 </div>
    <div class="prod-card-from-shop__img wrap-img">
-      <img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img">
+      <picture><source srcset="img/prod-card-from-shop__img.webp" type="image/webp"><img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img"></picture>
    </div>
    <div class="prod-card-from-shop__text">
       <h3>laird green ientils</h3>
@@ -149,17 +149,17 @@
             <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
-         <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
-         <a href="#"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></a>
-         <a href="shop-details.html"><img src="img/more-icon.png" alt="icon more about goods"></a>
+         <a href="shopping-cart.html"><picture><source srcset="img/icon_cart-shope.webp" type="image/webp"><img src="img/icon_cart-shope.png" alt="icon cart shope"></picture></a>
+         <a href="#"><picture><source srcset="img/icon_wishlist-shope.webp" type="image/webp"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></picture></a>
+         <a href="shop-details.html"><picture><source srcset="img/more-icon.webp" type="image/webp"><img src="img/more-icon.png" alt="icon more about goods"></picture></a>
       </div>
    </div>
    <div class="rating-box">
    3
-   <img src="img/star-white-rating-icon.png" alt="">
+   <picture><source srcset="img/star-white-rating-icon.webp" type="image/webp"><img src="img/star-white-rating-icon.png" alt=""></picture>
 </div>
    <div class="prod-card-from-shop__img wrap-img">
-      <img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img">
+      <picture><source srcset="img/prod-card-from-shop__img.webp" type="image/webp"><img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img"></picture>
    </div>
    <div class="prod-card-from-shop__text">
       <h3>laird green ientils</h3>
@@ -173,17 +173,17 @@
             <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
-         <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
-         <a href="#"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></a>
-         <a href="shop-details.html"><img src="img/more-icon.png" alt="icon more about goods"></a>
+         <a href="shopping-cart.html"><picture><source srcset="img/icon_cart-shope.webp" type="image/webp"><img src="img/icon_cart-shope.png" alt="icon cart shope"></picture></a>
+         <a href="#"><picture><source srcset="img/icon_wishlist-shope.webp" type="image/webp"><img src="img/icon_wishlist-shope.png" alt="icon like shope"></picture></a>
+         <a href="shop-details.html"><picture><source srcset="img/more-icon.webp" type="image/webp"><img src="img/more-icon.png" alt="icon more about goods"></picture></a>
       </div>
    </div>
    <div class="rating-box">
    3
-   <img src="img/star-white-rating-icon.png" alt="">
+   <picture><source srcset="img/star-white-rating-icon.webp" type="image/webp"><img src="img/star-white-rating-icon.png" alt=""></picture>
 </div>
    <div class="prod-card-from-shop__img wrap-img">
-      <img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img">
+      <picture><source srcset="img/prod-card-from-shop__img.webp" type="image/webp"><img src="img/prod-card-from-shop__img.jpg" alt="prod card from shop img"></picture>
    </div>
    <div class="prod-card-from-shop__text">
       <h3>laird green ientils</h3>
@@ -218,7 +218,7 @@
             <span>Enter your email address and subscribe daily newsletter</span>
             <div class="form-footer">
                <div class="form-footer__input">
-                  <img src="img/form-icon_email.png" alt="">
+                  <picture><source srcset="img/form-icon_email.webp" type="image/webp"><img src="img/form-icon_email.png" alt=""></picture>
                   <p>Email Address</p>
                   <input type="email">
                </div>
@@ -259,14 +259,14 @@
          <div class="footer__app">
             <h2>Our app avilable</h2>
             <a href="#" class="button-app">
-   <img src="img/icon_apple.png" alt="">
+   <picture><source srcset="img/icon_apple.webp" type="image/webp"><img src="img/icon_apple.png" alt=""></picture>
    <p>
       <span>Avilable&nbspon&nbspthe</span>
       App&nbspStore
    </p>
 </a>
             <a href="#" class="button-app">
-   <img src="img/icon_google-play.png" alt="">
+   <picture><source srcset="img/icon_google-play.webp" type="image/webp"><img src="img/icon_google-play.png" alt=""></picture>
    <p>
       <span>Get&nbspit&nbspon</span>
       Google&nbspPlay
@@ -288,8 +288,8 @@
 </body>
 
 </html>
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230510123753"></script>
+<script src="js/app.min.js?_v=20230510123753"></script>
 </body>
 
 </html>
