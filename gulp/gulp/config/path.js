@@ -22,6 +22,7 @@ export const path = {
         fonts: `${themePath}/assets/fonts/`,
         files: `${themePath}/files/`,
         svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
+        wpPlugins: `${pluginsPath}/${themeName}/`,      // для dev версии плагин перемещается в папку плагинов WP 
     },
     prod: {
         js: `${prodFolder}/js/`,
@@ -31,10 +32,11 @@ export const path = {
         fonts: `${prodFolder}/fonts/`,
         files: `${prodFolder}/files/`,
         svgicons: `${srcFolder}/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой
+        wpPlugins: `${themePath}`,  // для prod версии архив с плагином должна быть в корне темы
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
-        wpPlugins: `${srcFolder}/plugins/*.php`,
+        wpPlugins: `${srcFolder}/plugins/**/*.*`,
         less: `${srcFolder}/styles/main-style.less`,
         scss: `${srcFolder}/styles/main-style.scss`,
         js: `${srcFolder}/js/app.js`,

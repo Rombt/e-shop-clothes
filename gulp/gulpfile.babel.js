@@ -15,8 +15,12 @@ import { ftp } from "./gulp/tasks/ftp.js";
 import { grid } from "./gulp/tasks/grid.js";
 
 import { listProcFiles } from "./gulp/tasks/listProcFiles.js";
+import { wpPlugin } from "./gulp/tasks/wpPlugin.js";
+
+import { forTest } from "./gulp/tasks/forTest.js";
 
 global.app = {
+    wpPlugins: false,
     isWP: process.argv.includes('--wp'),
     isProd: process.argv.includes('--prod'),
     toCleanCss: process.argv.includes('--prod'),
@@ -38,7 +42,6 @@ function watcher() {
     gulp.watch(path.wp_watch, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
 }
 
-// const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
 const mainTasks = gulp.series(gulp.parallel(copyFonts, php, styles, js, images), listProcFiles);
 export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
@@ -48,6 +51,14 @@ export { createSvgSprite };
 export { grid };
 export const deployZIP = gulp.series(reset, mainTasks, zip);
 export const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+
+//----------------------------- черновик --------------------------------------------------
+// export const tests = gulp.series(app.plugins.if(app.isWP, forTest));
+// const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
+
+// export const wpPlugins = gulp.series(app.plugins.if(app.isProd, wpPlugin));
+export const wpPlugins = gulp.series(wpPlugin);
 
 
 
