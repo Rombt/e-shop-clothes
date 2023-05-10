@@ -10,6 +10,11 @@ export const php = () => {
                 title: "PHP",
                 message: "Error: <%= error.message %>"
             })))
+
+
+        .pipe(app.plugins.newer(app.plugins.if(app.isWP, app.path.wp.php, app.path.prod.php)))      // обрабатывать только обновлённые  файлы     протестить!!
+
+
         .pipe(app.plugins.if(app.isProd, fileInclude({
             context: {
                 'isProd': app.isProd
