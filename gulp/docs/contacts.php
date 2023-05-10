@@ -1,55 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-    <title>Contact Us</title>
-</head>
+<?php
+/* Template Name: Contact */
+?>
+
+
+<?php get_header(); ?>
 
 <body>
    
-
-   <div class="conteiner">
-    <header class="header ">
-        <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
-        <div class="heder-menu__burger">
-            <span></span>
-        </div>
-        <nav class="heder-menu">
-            <ul class="menu__list">
-                <li><a href="index.html">home</a></li>
-                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
-                <li><a href="menu-page-list.html">menu</a></li>
-                <li><a href="recipies.html">recipe</a></li>
-                <li><a href="blog-page.html">blog</a></li>
-                <li><a href="about-us.html">about</a></li>
-                <li><a href="contacts.html">contact</a></li>
-                <li><a href="shop-listing.html">Shop</a></li>
-            </ul>
-        </nav>
-        <div class="cart-book">
-            <div class="cart">
-                <div class="cart__cercle">3</div>
-                <a href="shopping-cart.html">
-                    <img src="./img/icon_cart.png" alt="">
-                </a>
-                <img src="./img/arrow-cart.png" alt="">
-            </div>
-            <a href="#" class="heder-menu-button">
-                <img src="./img/icon_plate.png" alt="">
-                BOOK YOU TABLE
-            </a>
-        </div>
-    </header>
-</div>
-   <div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Contact Us</h1>
-
-</div>
 
    <div class="background background-contact-us">
       <div class="wrap-img"><img src="img/background-contact-us.jpg" alt=""></div>
@@ -95,9 +52,35 @@
                <div>
                   <h3>Follow us</h3>
                   <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
                </div>
             </div>
@@ -137,9 +120,35 @@
                <a href="#" class="button-orange ">Subscribe</a>
             </div>
             <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
          </div>
          <div class="footer__app">
@@ -167,6 +176,13 @@
       <span></span>
    </div>
 </div>
+
+
+
+<?php get_footer(); ?>
+</body>
+
+</html>
    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/app.min.js"></script>
 </body>

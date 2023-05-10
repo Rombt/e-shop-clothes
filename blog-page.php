@@ -266,7 +266,7 @@
             </div>
             <div class="pagination"></div>
         </section>
-        <section class="archive">
+        <section class="archive-sidebar">
             <h2>Archive</h2>
             <ul>
                 <li>

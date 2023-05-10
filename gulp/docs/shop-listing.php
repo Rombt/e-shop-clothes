@@ -1,61 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-    <title>Shop Listing</title>
-</head>
-
-<body>
-   
-
-   <div class="conteiner">
-    <header class="header ">
-        <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
-        <div class="heder-menu__burger">
-            <span></span>
-        </div>
-        <nav class="heder-menu">
-            <ul class="menu__list">
-                <li><a href="index.html">home</a></li>
-                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
-                <li><a href="menu-page-list.html">menu</a></li>
-                <li><a href="recipies.html">recipe</a></li>
-                <li><a href="blog-page.html">blog</a></li>
-                <li><a href="about-us.html">about</a></li>
-                <li><a href="contacts.html">contact</a></li>
-                <li><a href="shop-listing.html">Shop</a></li>
-            </ul>
-        </nav>
-        <div class="cart-book">
-            <div class="cart">
-                <div class="cart__cercle">3</div>
-                <a href="shopping-cart.html">
-                    <img src="./img/icon_cart.png" alt="">
-                </a>
-                <img src="./img/arrow-cart.png" alt="">
-            </div>
-            <a href="#" class="heder-menu-button">
-                <img src="./img/icon_plate.png" alt="">
-                BOOK YOU TABLE
-            </a>
-        </div>
-    </header>
-</div>
-
-   <div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Shop Listing</h1>
-
-</div>
+<?php
+/* Template Name: Shop listing */
+?>
 
 
-   <div class="conteiner shop-listing-conteiner">
-      <div class="shop-listing-row">
-         <aside class="shop-sidebar">
+<?php get_header(); ?>
+
+
+
+
+
+
+<div class="conteiner shop-listing-conteiner">
+   <div class="shop-listing-row">
+      <aside class="shop-sidebar">
    <div class="shop-sidebar__body">
 
       <section class="widget-food-category">
@@ -94,27 +51,25 @@
 
    </div>
 </aside>
-         <main class="shop-listing">
-            <div class="shop-listing__title-row">
-               <h2>Our Products</h2>
-               <select class="default-sourting">
-                  <option value="option_1">option_1</option>
-                  <option selected value="option_2">option_2</option>
-                  <option value="option_3">option_3</option>
-                  <option value="option_4">option_4</option>
-               </select>
-               <div class="display-mode">
-                  <a href="#" class="wrap-img display-mode__blocks"><img src="img/grid-view.png"
-                        alt="display mode grid view">
-                  </a>
-                  <a href="#" class="wrap-img display-mode__blocks"><img src="img/list-view.png"
-                        alt="display mode list view">
-                  </a>
-               </div>
-               <div class="showing-block"> Showing 9 of 68 products </div>
+      <main class="shop-listing">
+         <div class="shop-listing__title-row">
+            <h2>Our Products</h2>
+            <select class="default-sourting">
+               <option value="option_1">option_1</option>
+               <option selected value="option_2">option_2</option>
+               <option value="option_3">option_3</option>
+               <option value="option_4">option_4</option>
+            </select>
+            <div class="display-mode">
+               <a href="#" class="wrap-img display-mode__blocks"><img src="img/grid-view.png" alt="display mode grid view">
+               </a>
+               <a href="#" class="wrap-img display-mode__blocks"><img src="img/list-view.png" alt="display mode list view">
+               </a>
             </div>
+            <div class="showing-block"> Showing 9 of 68 products </div>
+         </div>
 
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -138,7 +93,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -162,7 +117,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -186,7 +141,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -210,7 +165,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -234,7 +189,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -258,7 +213,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -282,7 +237,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -306,7 +261,7 @@
    <a href="#" class="add-block"></a>
 
 </div>
-            <div class="prod-card-from-shop">
+         <div class="prod-card-from-shop">
    <div class="active">
       <div class="active__icon-block">
          <a href="shopping-cart.html"><img src="img/icon_cart-shope.png" alt="icon cart shope"></a>
@@ -331,7 +286,7 @@
 
 </div>
 
-            <div class="pagination">
+         <div class="pagination">
    <a href="#" class="pagination-prev">
    <img src="img/pagination-left-arrow.png" alt="arrow left">
    <p>prev</p>
@@ -351,13 +306,13 @@
 </a>
 
 </div>
-         </main>
-      </div>
+      </main>
    </div>
+</div>
 
 
 
-   <div class="background background__footer">
+<div class="background background__footer">
    <div class="footer conteiner">
       <section class="footer__row">
          <div class="footer__navigation">
@@ -384,9 +339,35 @@
                <a href="#" class="button-orange ">Subscribe</a>
             </div>
             <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
          </div>
          <div class="footer__app">
@@ -414,8 +395,15 @@
       <span></span>
    </div>
 </div>
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script src="js/app.min.js"></script>
+
+
+
+<?php get_footer(); ?>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js/app.min.js"></script>
 </body>
 
 </html>

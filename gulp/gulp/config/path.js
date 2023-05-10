@@ -7,12 +7,15 @@ const srcFolder = './src';
 
 const themePath = `..`;
 const themeName = nodePath.basename(nodePath.dirname(nodePath.resolve()));
-
+const wpPluginName = `${themeName}-core`;
+const pluginsPath = nodePath.join(themePath, '..', '..', `plugins/${wpPluginName}`);
 
 
 export const path = {
     wp: {
         themeName: `${themeName}`,
+        wpPluginName: `${wpPluginName}`,
+        // wpPlugins: `${pluginsPath}/${wpPluginName}/`,      // для dev версии плагин перемещается в папку плагинов WP 
         arr_processedFiles: [],
         js: `${themePath}/assets/js/`,
         styles: `${themePath}/assets/styles/`,
@@ -33,6 +36,7 @@ export const path = {
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
+        wpPlugins: `${srcFolder}/plugins/**/*.*`,
         less: `${srcFolder}/styles/main-style.less`,
         scss: `${srcFolder}/styles/main-style.scss`,
         js: `${srcFolder}/js/app.js`,
@@ -47,16 +51,18 @@ export const path = {
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`,
-        wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
+        // wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
-    wp_watch: [             // добавдять файлы для отслеживания
+    wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,
         `${themePath}/inc/redux-options.php`,
+        `${srcFolder}/plugins/**/*.*`,
     ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,
     srcFolder: srcFolder,
     themePath: themePath,
+    pluginsPath: pluginsPath,
     clean: prodFolder,
     ftp: 'htdocs', // указать целевую папку на сервере, есле её нет то она будет создана автоматически, пусто -- корневая папка сервера
 }

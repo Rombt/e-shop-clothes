@@ -1,113 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-    <title>Recipies</title>
-</head>
+<?php
+/* Template Name: Recipies */
+?>
 
-<body>
-    
-    <div class="conteiner">
-    <header class="header ">
-        <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
-        <div class="heder-menu__burger">
-            <span></span>
-        </div>
-        <nav class="heder-menu">
-            <ul class="menu__list">
-                <li><a href="index.html">home</a></li>
-                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
-                <li><a href="menu-page-list.html">menu</a></li>
-                <li><a href="recipies.html">recipe</a></li>
-                <li><a href="blog-page.html">blog</a></li>
-                <li><a href="about-us.html">about</a></li>
-                <li><a href="contacts.html">contact</a></li>
-                <li><a href="shop-listing.html">Shop</a></li>
-            </ul>
-        </nav>
-        <div class="cart-book">
-            <div class="cart">
-                <div class="cart__cercle">3</div>
-                <a href="shopping-cart.html">
-                    <img src="./img/icon_cart.png" alt="">
-                </a>
-                <img src="./img/arrow-cart.png" alt="">
-            </div>
-            <a href="#" class="heder-menu-button">
-                <img src="./img/icon_plate.png" alt="">
-                BOOK YOU TABLE
-            </a>
-        </div>
-    </header>
-</div>
-    <div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Recipies</h1>
 
-</div>
-    <div class="conteiner recipies-title">
-        <div class="recipies-title__row">
-            <h1>Our Spescial Recipies</h1>
-            <div class="recipies-title__subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in,
-                veniam
-                tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia.
+<?php get_header(); ?>
+
+
+
+<div class="conteiner recipies-title">
+    <div class="recipies-title__row">
+        <h1>Our Spescial Recipies</h1>
+        <div class="recipies-title__subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in,
+            veniam
+            tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia.
+        </div>
+        <div class="recipies-title-nav recipies-title__nav">
+            <div class="select-view">
+                <div class="select-view__colomns">2 column</div>
+                <div class="select-view__grid"><img src="img/title-nav__icon_two-grid.png" alt=""></div>
             </div>
-            <div class="recipies-title-nav recipies-title__nav">
-                <div class="select-view">
-                    <div class="select-view__colomns">2 column</div>
-                    <div class="select-view__grid"><img src="img/title-nav__icon_two-grid.png" alt=""></div>
+            <div class="recipies-title-nav__brows-recipes">
+                <h3>Brows Recipes</h3>
+                <div class="menu-recipies-burger burger-open">
+                    <span></span>
                 </div>
-                <div class="recipies-title-nav__brows-recipes">
-                    <h3>Brows Recipes</h3>
-                    <div class="menu-recipies-burger burger-open">
-                        <span></span>
-                    </div>
-                    <nav class="menu-recipies">
-                        <ul class="menu-recipies__list">
-                            <li>
-                                <a href="#">
-                                    <img src="img/title-nav__icon_breakfast.png" alt="">
-                                    <p>Breakfast</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/title-nav__icon_starter.png" alt="">
-                                    <p>Starter</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/title-nav__icon_lunch.png" alt="">
-                                    <p>Lunch</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/title-nav__icon_icon_dinner.png" alt="">
-                                    <p>Dinner</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="img/title-nav__icon_icon_dessert.png" alt="">
-                                    <p>Dessert</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav class="menu-recipies">
+                    <ul class="menu-recipies__list">
+                        <li>
+                            <a href="#">
+                                <img src="img/title-nav__icon_breakfast.png" alt="">
+                                <p>Breakfast</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/title-nav__icon_starter.png" alt="">
+                                <p>Starter</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/title-nav__icon_lunch.png" alt="">
+                                <p>Lunch</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/title-nav__icon_icon_dinner.png" alt="">
+                                <p>Dinner</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/title-nav__icon_icon_dessert.png" alt="">
+                                <p>Dessert</p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-    <main class="conteiner recipies-conteiner">
-        <div class="recipies-conteiner__row">
-            <div class="recipe-card-grid">
+</div>
+<main class="conteiner recipies-conteiner">
+    <div class="recipies-conteiner__row">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -124,7 +82,7 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-            <div class="recipe-card-grid">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -141,7 +99,7 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-            <div class="recipe-card-grid">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -158,7 +116,7 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-            <div class="recipe-card-grid">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -175,7 +133,7 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-            <div class="recipe-card-grid">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -192,7 +150,7 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-            <div class="recipe-card-grid">
+        <div class="recipe-card-grid">
    <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
@@ -209,9 +167,9 @@
       <a href="recipie-details.html" class="button-orange ">recipe details</a>
    </div>
 </div>
-        </div>
-    </main>
-    <section class="conteiner opening-hours-conteiner">
+    </div>
+</main>
+<section class="conteiner opening-hours-conteiner">
 
    <div class="opening-hours-conteiner__row">
       <div class="opening-hours-conteiner__title">
@@ -232,7 +190,7 @@
    </div>
 
 </section>
-    <div class="background background__footer">
+<div class="background background__footer">
    <div class="footer conteiner">
       <section class="footer__row">
          <div class="footer__navigation">
@@ -259,9 +217,35 @@
                <a href="#" class="button-orange ">Subscribe</a>
             </div>
             <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
          </div>
          <div class="footer__app">
@@ -289,8 +273,15 @@
       <span></span>
    </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="js/app.min.js"></script>
+
+
+
+<?php get_footer(); ?>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js/app.min.js"></script>
 </body>
 
 </html>

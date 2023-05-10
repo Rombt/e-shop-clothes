@@ -11,7 +11,9 @@
     "valid": "gulp prod --valid",
     "createFonts": "gulp createFonts",
     "createSvgSprite": "gulp createSvgSprite",
-    "zip": "gulp deployZIP --prod",
+    "zip-html": "gulp deployZIP --prod",
+    "zip-theme": "gulp deployZIP --prod --wp",
+    "zip-plugin": "gulp deployZIP --prod --plugin",
     "ftp": "gulp deployFTP --prod",
     "grid": "gulp grid"
   },

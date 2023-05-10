@@ -1,66 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-    <link href="./styles/main-style.min.css" rel="stylesheet" type="text/css">
-    <title>Menu</title>
-</head>
-
-<body>
-   
-
-   <div class="conteiner">
-    <header class="header ">
-        <a href="index.html" class="logo"><img src="./img/logo.png" alt="logo"></a>
-        <div class="heder-menu__burger">
-            <span></span>
-        </div>
-        <nav class="heder-menu">
-            <ul class="menu__list">
-                <li><a href="index.html">home</a></li>
-                <!-- <li><a href="menu-page-grid.html">menu</a></li> -->
-                <li><a href="menu-page-list.html">menu</a></li>
-                <li><a href="recipies.html">recipe</a></li>
-                <li><a href="blog-page.html">blog</a></li>
-                <li><a href="about-us.html">about</a></li>
-                <li><a href="contacts.html">contact</a></li>
-                <li><a href="shop-listing.html">Shop</a></li>
-            </ul>
-        </nav>
-        <div class="cart-book">
-            <div class="cart">
-                <div class="cart__cercle">3</div>
-                <a href="shopping-cart.html">
-                    <img src="./img/icon_cart.png" alt="">
-                </a>
-                <img src="./img/arrow-cart.png" alt="">
-            </div>
-            <a href="#" class="heder-menu-button">
-                <img src="./img/icon_plate.png" alt="">
-                BOOK YOU TABLE
-            </a>
-        </div>
-    </header>
-</div>
-
-   <div class="background background-title-page-block">
-   <div class="wrap-img"><img src="img/background-title-page-block.jpg" alt=""></div>
-   <h1>Menu</h1>
-
-</div>
+<?php
+/* Template Name: Menu page list */
+?>
 
 
-   <main class="conteiner menu-page-conteiner">
+<?php get_header(); ?>
 
-      <div class="top-menu-wrap">
+
+
+
+
+
+<main class="conteiner menu-page-conteiner">
+
+   <div class="top-menu-wrap">
    <h2>Menu Grid View</h2>
    <div class="wrap-nenu">
       <div class="food-menu__burger burger-open">
          <span></span>
       </div>
+
+
+      <?php 
+      // wp_nav_menu(      // неработает добавление классов li
+      //       array(
+      //          'theme_location' => 'food-menu',
+      //          'container' => 'nav',
+      //          'container_class' => 'menu food-menu',
+      //          'menu_class' => 'food-menu__list',
+      //          'add_li_class'=>'food-menu__sub-item',
+      //       )
+      // ); 
+      ?>
+
+
+
+
+
       <nav class="menu food-menu">
          <ul class="food-menu__list">
             <li class="food-menu__item">
@@ -145,9 +120,9 @@
    <div class="wrap-nenu__border"></div>
 </div>
 
-      <div class="menu-page-conteiner__row">
+   <div class="menu-page-conteiner__row">
 
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -160,7 +135,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -173,7 +148,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -186,7 +161,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -199,7 +174,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -212,7 +187,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -225,7 +200,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -238,7 +213,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -251,7 +226,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -264,7 +239,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -277,7 +252,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -290,7 +265,7 @@
       </p>
    </div>
 </div>
-         <div class="prod-card-list">
+      <div class="prod-card-list">
    <div class="prod-card-list__body">
       <a href="#">
          <h3>jumbo carb thanroor</h3>
@@ -304,12 +279,12 @@
    </div>
 </div>
 
-         <a href="#" class="button-orange ">Explor food menu</a>
-      </div>
+      <a href="#" class="button-orange ">Explor food menu</a>
+   </div>
 
-   </main>
+</main>
 
-   <section class="background speciality-block">
+<section class="background speciality-block">
    <figure class="wrap-img speciality-block__img"><img src="img/speciality-block.jpg" alt=""></figure>
    <div class="speciality-block__text-wrap ">
       <h2>Speciality</h2>
@@ -327,7 +302,7 @@
       </div>
    </div>
 </section>
-   <section class="conteiner opening-hours-conteiner">
+<section class="conteiner opening-hours-conteiner">
 
    <div class="opening-hours-conteiner__row">
       <div class="opening-hours-conteiner__title">
@@ -348,7 +323,7 @@
    </div>
 
 </section>
-   <div class="background background__footer">
+<div class="background background__footer">
    <div class="footer conteiner">
       <section class="footer__row">
          <div class="footer__navigation">
@@ -375,9 +350,35 @@
                <a href="#" class="button-orange ">Subscribe</a>
             </div>
             <div class="icons-block">
-   <img src="img/icon_facebook.png" alt="icon_facebook">
-   <img src="img/icon_twitter.png" alt="icon_twitter">
-   <img src="img/icon_google.png" alt="icon_google+">
+   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
+      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
+         alt="icon_twitter">
+      <?php }?>
+   </a>
+   <?php }?>
+
+   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
+   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
+      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
+      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
+         alt="icon_instagram">
+      <?php }?>
+   </a>
+   <?php }?>
+
+
+
+
 </div>
          </div>
          <div class="footer__app">
@@ -405,8 +406,15 @@
       <span></span>
    </div>
 </div>
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-   <script src="js/app.min.js"></script>
+
+
+
+<?php get_footer(); ?>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="js/app.min.js"></script>
 </body>
 
 </html>
