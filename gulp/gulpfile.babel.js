@@ -20,7 +20,7 @@ import { wpPlugin } from "./gulp/tasks/wpPlugin.js";
 import { forTest } from "./gulp/tasks/forTest.js";
 
 global.app = {
-    wpPlugins: false,
+    wpPlugins: process.argv.includes('--plugin'),
     isWP: process.argv.includes('--wp'),
     isProd: process.argv.includes('--prod'),
     toCleanCss: process.argv.includes('--prod'),
@@ -39,26 +39,25 @@ function watcher() {
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    gulp.watch(path.wp_watch, gulp.parallel(php, styles, js))   // эти задачи здесь не есть обязательными
+    gulp.watch(path.wp_watch, gulp.parallel(php, styles, js, wpPlugin))   // эти задачи здесь не есть обязательными
 }
 
 const mainTasks = gulp.series(gulp.parallel(copyFonts, php, styles, js, images), listProcFiles);
-export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+export const dev = gulp.series(reset, mainTasks, wpPlugin, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
 
 export const createFonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 export { createSvgSprite };
 export { grid };
-export const deployZIP = gulp.series(reset, mainTasks, zip);
+export const deployZIP = gulp.series(reset, mainTasks, wpPlugin, zip);
 export const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+
+
 
 
 //----------------------------- черновик --------------------------------------------------
 // export const tests = gulp.series(app.plugins.if(app.isWP, forTest));
-// const mainTasks = gulp.series(gulp.parallel(copyFonts, copy, php, styles, js, images), listProcFiles);
 
-// export const wpPlugins = app.plugins.if(app.isProd, gulp.series(wpPlugin, zip), gulp.series(reset, wpPlugin, listProcFiles));
-export const wpPlugins = gulp.series(reset, wpPlugin, listProcFiles, app.plugins.if(app.isProd, zip));
-
-
+// export const wpPlugins = gulp.series(app.plugins.if(app.isProd, [reset, wpPlugin, listProcFiles, zip], [reset, wpPlugin, listProcFiles]));
 

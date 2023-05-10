@@ -33,7 +33,6 @@ export const path = {
         fonts: `${prodFolder}/fonts/`,
         files: `${prodFolder}/files/`,
         svgicons: `${srcFolder}/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой
-        wpPlugins: `${themePath}`,  // для prod версии архив с плагином должна быть в корне темы
     },
     src: {
         php: `${srcFolder}/*.{php,html}`, // копирую только итоговые файлы которые будут собираться гампом из частей предназначено для HTML!
@@ -52,11 +51,12 @@ export const path = {
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`,
-        wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
+        // wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
-    wp_watch: [             // добавдять файлы для отслеживания
+    wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,
         `${themePath}/inc/redux-options.php`,
+        `${srcFolder}/plugins/**/*.*`,
     ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,

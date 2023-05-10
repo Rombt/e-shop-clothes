@@ -6,6 +6,7 @@ let files = '';
 
 export const zip = () => {
 
+
     if (app.wpPlugins) {
         files = `${app.path.pluginsPath}/**/*.*`;
     } else {
@@ -23,5 +24,5 @@ export const zip = () => {
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "ZIP", message: "Error: <%= error.message %>" })))
 
         .pipe(zipPlugin(app.plugins.if(app.wpPlugins, `${app.path.wp.wpPluginName}.zip`, `${app.path.wp.themeName}.zip`)))
-        .pipe(app.gulp.dest('./'));
+        .pipe(app.gulp.dest(app.plugins.if(app.wpPlugins, app.path.themePath, './')));
 }
