@@ -1,5 +1,5 @@
-import del from "del";
-// import fetch from "node-fetch";
+
+
 
 export const reset = () => {
 
@@ -14,16 +14,17 @@ export const reset = () => {
                 JSON.parse(jsonData).forEach(pathToFile => {
                     arr_filesForDell.push(pathToFile.replace("gulp\\docs\\", ""));
                 });
+
             } catch (error) {
                 console.error('Фаил содержит не правильный JSON:', error.message);
             }
         }
 
-        return del(arr_filesForDell, { force: true });
+        return app.plugins.del(arr_filesForDell, { force: true });
 
     } else {
 
-        return del(app.path.clean);
+        return app.plugins.del(app.path.clean);
     }
 
 

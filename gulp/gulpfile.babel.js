@@ -16,6 +16,7 @@ import { grid } from "./gulp/tasks/grid.js";
 
 import { listProcFiles } from "./gulp/tasks/listProcFiles.js";
 import { wpPlugin } from "./gulp/tasks/wpPlugin.js";
+import { resetWpPlugin } from "./gulp/tasks/reset_wpPlugin.js";
 
 import { forTest } from "./gulp/tasks/forTest.js";
 
@@ -39,18 +40,19 @@ function watcher() {
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    gulp.watch(path.wp_watch, gulp.parallel(php, styles, js, wpPlugin))   // эти задачи здесь не есть обязательными
+    // gulp.watch(path.wp_watch, gulp.parallel(php, wpPlugin))
+    gulp.watch(path.wp_watch, gulp.series(resetWpPlugin, wpPlugin))
 }
 
 const mainTasks = gulp.series(gulp.parallel(copyFonts, php, wpPlugin, styles, js, images), listProcFiles);
-export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-export const prod = gulp.series(reset, mainTasks);
+export const dev = gulp.series(reset, resetWpPlugin, mainTasks, gulp.parallel(watcher, server));
+export const prod = gulp.series(reset, resetWpPlugin, mainTasks);
 
 export const createFonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 export { createSvgSprite };
 export { grid };
-export const deployZIP = gulp.series(reset, mainTasks, wpPlugin, zip);
-export const deployFTP = gulp.series(reset, mainTasks, ftp);
+export const deployZIP = gulp.series(reset, resetWpPlugin, mainTasks, wpPlugin, zip);
+export const deployFTP = gulp.series(reset, resetWpPlugin, mainTasks, ftp);
 
 
 

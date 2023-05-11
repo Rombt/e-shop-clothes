@@ -8,7 +8,6 @@ export const listProcFiles = (done) => {
    if (Array.isArray(app.path.wp.arr_processedFiles)) {
       app.plugins.fs.writeFile('gulp/filelist.json', JSON.stringify(app.path.wp.arr_processedFiles), (err) => {
          if (err) throw err;
-         console.log('Массив успешно записан в файл!');
       });
    }
 
