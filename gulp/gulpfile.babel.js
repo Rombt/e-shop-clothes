@@ -42,8 +42,8 @@ function watcher() {
     gulp.watch(path.wp_watch, gulp.parallel(php, styles, js, wpPlugin))   // эти задачи здесь не есть обязательными
 }
 
-const mainTasks = gulp.series(gulp.parallel(copyFonts, php, styles, js, images), listProcFiles);
-export const dev = gulp.series(reset, mainTasks, wpPlugin, gulp.parallel(watcher, server));
+const mainTasks = gulp.series(gulp.parallel(copyFonts, php, wpPlugin, styles, js, images), listProcFiles);
+export const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, mainTasks);
 
 export const createFonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
