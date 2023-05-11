@@ -94,8 +94,8 @@ function restaurant_site_register_required_plugins()
 	$plugins = array(
 
 		array(
-			'name'               => 'Restaurant site', // The plugin name.
-			'slug'               => 'restaurant-site', // The plugin slug (typically the folder name).
+			'name'               => 'Restaurant site core', // The plugin name.
+			'slug'               => 'restaurant-site-core', // The plugin slug (typically the folder name).
 			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip', // The plugin source.
 			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			'version'            => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
