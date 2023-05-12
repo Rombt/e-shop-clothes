@@ -16,4 +16,4 @@ if ( !function_exists( 'add_action' ) ) {
 	exit;
 }
 
-require_once (plugin_dir_path(__FILE__ ) . 'inc/elementor/elementor-addon.php') ;
+require_once (plugin_dir_path(__FILE__ ) . 'inc\elementor-addon\elementor-addon.php') ;

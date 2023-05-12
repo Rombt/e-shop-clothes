@@ -10,7 +10,7 @@
 
 function register_hello_world_widget( $widgets_manager ) {
 
-	require_once( __DIR__ . '/widgets/dish-widget.php' );
+	require_once( __DIR__ . '\includes\widgets\dish-widget.php' );
 
 	$widgets_manager->register( new \Elementor_Dish_Widget() );
 
