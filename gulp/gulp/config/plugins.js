@@ -8,6 +8,8 @@ import tap from "gulp-tap";
 import fs from "fs";
 import * as nodePath from 'path';
 
+import del from "del";
+
 
 export const plugins = {
     replace: replace,
@@ -19,4 +21,5 @@ export const plugins = {
     tap: tap,
     nodePath: nodePath,
     fs: fs,
+    del: del,
 }
