@@ -119,7 +119,7 @@ class Elementor_Call_Us_Widget extends \Elementor\Widget_Base {
                 CALL US NOW FOR
                 <p>HOME DELIVERY</p>
             </div>
-            <div class="phone-number">
+            <div class="phone-number"> 
                 <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
             </div>
         </a>
