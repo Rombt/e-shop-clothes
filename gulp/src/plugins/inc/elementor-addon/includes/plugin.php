@@ -100,15 +100,19 @@ final class Plugin {
 	public function init() {
 
 		add_action( 'elementor/widgets/register', [ $this, 'register_widgets' ] );
-		add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
+		// add_action( 'elementor/controls/register', [ $this, 'register_controls' ] );
 
 	}
 
 	public function register_widgets( $widgets_manager ) {
 
 		require_once( __DIR__ . '/widgets/dish-widget.php' );
+		require_once( __DIR__ . '/widgets/about-widget.php' );
+		require_once( __DIR__ . '/widgets/call-us-widget.php' );
 
 		$widgets_manager->register( new Elementor_Dish_Widget() );
+		$widgets_manager->register( new Elementor_About_Widget() );
+		$widgets_manager->register( new Elementor_Call_Us_Widget() );
 
 	}
 

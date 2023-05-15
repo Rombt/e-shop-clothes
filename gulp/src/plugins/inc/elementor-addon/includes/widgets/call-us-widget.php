@@ -3,14 +3,14 @@ namespace Elementor_Restaurant_Site_Addon;
 
 
 
-class Elementor_Dish_Widget extends \Elementor\Widget_Base {
+class Elementor_Call_Us_Widget extends \Elementor\Widget_Base {
 
 	public function get_name() {
-		return 'rs_dish-widget';
+		return 'rs_call_us-widget';
 	}
 
 	public function get_title() {
-		return esc_html__( 'Dish widget', 'restaurant-site-core' );
+		return esc_html__( 'Call Us widget', 'restaurant-site-core' );
 	}
 
 	public function get_icon() {
@@ -25,7 +25,7 @@ class Elementor_Dish_Widget extends \Elementor\Widget_Base {
 	}
 
 	public function get_keywords() {
-		return [ 'Dish', 'widget', 'restaurant site' ];
+		return [ 'Call Us', 'widget', 'restaurant site' ];
 	}
 
 	protected function register_controls() {
@@ -45,7 +45,7 @@ class Elementor_Dish_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label' => esc_html__( 'Title', 'restaurant-site-core' ),
 				'placeholder' => esc_html__( 'Enter your title', 'restaurant-site-core' ),
-				'default' => esc_html__(  'Teast your fav dish', 'restaurant-site-core'),
+				'default' => esc_html__(  '**Teast your fav call_us**', 'restaurant-site-core'),
 			]
 		);
 
@@ -99,31 +99,34 @@ class Elementor_Dish_Widget extends \Elementor\Widget_Base {
 
 		?>
 
-		<div class="background background__dish">
-    <div class="swiper-dish swiper">
-        <div class="swiper-wrapper">
-            
-		 <?php if ( $settings['background-gallery']) { 
-			foreach ( $settings['background-gallery'] as $image ) {	 ?>
-			<div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src=" <?php echo esc_attr( $image['url']) ?> " alt="background dish"></div>
-         </div>
-		<?php }} ?>		 
-		 
-        </div>
-        <div class="swiper-pagination-dish swiper-pagination"></div>
-    </div>
-    <div class="conteiner" id="dish">
-        <div class="dish-title">
-            <p class="dish-title__title"><?php echo $settings['title'] ? esc_html__( $settings['title']) : '' ?> </p>
-            <p class="dish-title__subtitle-title"><?php echo $settings['sub-title'] ? __(wp_kses( $settings['sub-title'],'post')) : '' ?> </p>
-        </div>
-        <div class="exlore-food-menu">
-				<?php echo $settings['exlore-food-menu__img']['url'] ? '<img src="' . esc_url($settings['exlore-food-menu__img']['url']) . '" alt="exlore-food-menu.jpg">' : ''; ?>
-            <p><?php echo $settings['explore-food-menu__title'] ? esc_html__( $settings['explore-food-menu__title']) : '' ?></p> 
-        </div>
-    </div>
-</div>
+<div class="conteiner" id="call_us">
+    <?php global $restaurant_site_options; ?>
+
+    <nav class="call_us-row__top-menu">
+        <a href="#" class="read">
+            <img src="@img/icon_reviews.png" class="read__icon" alt="reviews">
+            <div>READ <p>REVIEWS</p>
+            </div>
+            <img src="@img/orang-sercle.png" class="read__cercle" alt="">
+        </a>
+
+        <?php if ($restaurant_site_options['home_delivery']){   ?>
+        <a href="tel: <?php echo esc_html( $restaurant_site_options['home_delivery'] ) ?> " class="call_us-call-us">
+
+
+            <img src="@img/icon_phone.png" class="read__cercle" alt="">
+            <div class="call_us-call-us__text">
+                CALL US NOW FOR
+                <p>HOME DELIVERY</p>
+            </div>
+            <div class="phone-number">
+                <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
+            </div>
+        </a>
+        <?php }?>
+
+    </nav>
+    
 
 		<?php
 	}

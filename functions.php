@@ -13,7 +13,9 @@ require_once get_template_directory() . '/inc/redux-options.php';
 		добавить возможность делать логотип сайта текстом или кортинкой
 			esc_html(bloginfo('name')) 
 
-
+		доработать адаптив блока dish-widget.php
+			прапорции картинки
+			шрифты
 
 
 */
@@ -31,7 +33,7 @@ function restaurant_site_scripts()
 		wp_enqueue_script('comment-reply');
 	}
 }
-add_action('wp_enqueue_scripts', 'restaurant_site_scripts');
+add_action('wp_enqueue_scripts', 'restaurant_site_scripts', 20);
 
 
 
