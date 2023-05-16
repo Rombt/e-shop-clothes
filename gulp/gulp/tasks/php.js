@@ -4,17 +4,15 @@ import fileInclude from "gulp-file-include";
 
 
 export const php = () => {
-    return app.gulp.src(app.path.src.php)
+
+
+    return app.gulp.src(app.path.src.php, { base: app.path.srcFolder })
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "PHP",
                 message: "Error: <%= error.message %>"
             })))
-
-
-        .pipe(app.plugins.newer(app.plugins.if(app.isWP, app.path.wp.php, app.path.prod.php)))      // обрабатывать только обновлённые  файлы     протестить!!
-
-
+        .pipe(app.plugins.newer(app.plugins.if(app.isWP, app.path.wp.php, app.path.prod.php)))      // обрабатывать только обновлённые  файлы 
         .pipe(app.plugins.if(app.isProd, fileInclude({
             context: {
                 'isProd': app.isProd
