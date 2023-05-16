@@ -47,10 +47,10 @@ if (document.querySelector('.swiper.swiper-dish')) {
         autoplay: {
             delay: 5000,
         },
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true,
-        },
+        // effect: 'fade',
+        // fadeEffect: {
+        //     crossFade: true,
+        // },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

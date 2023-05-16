@@ -71,6 +71,15 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 			]
 		);
 
+		$this->add_control(
+			'button-value',
+			[
+				'type' => \Elementor\Controls_Manager::TEXT,
+				'label' => esc_html__( 'Button Value', 'restaurant-site-core' ),
+				'placeholder' => esc_html__( 'Enter button value', 'restaurant-site-core' ),
+				'default' => esc_html__(  'READ MORE', 'restaurant-site-core'),
+			]
+		);
 
 		$this->add_control(
 			'gallery',
@@ -83,19 +92,6 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 		);
 
 
-
-
-
-		// $this->add_control(			// button-orange 
-		// 	'explore-food-menu__title',
-		// 	[
-		// 		'type' => \Elementor\Controls_Manager::TEXT,
-		// 		'label' => esc_html__( 'Text', 'restaurant-site-core' ),
-		// 		'placeholder' => esc_html__( 'Enter your text', 'restaurant-site-core' ),
-		// 		'default' => esc_html__(  'Explore food Menu', 'restaurant-site-core'),
-		// 	]
-		// );
-
 		$this->end_controls_section();
 	}
 
@@ -105,28 +101,28 @@ class Elementor_About_Widget extends \Elementor\Widget_Base {
 
 		?>
 
-<div class="conteiner" id="about">
-    <?php global $restaurant_site_options; ?>
+		<div class="conteiner" id="about">
+			<?php global $restaurant_site_options; ?>
 
-    <section class="about-row">
-        <div class="about-row__text">
-            <h2><?php echo $settings['title'] ? esc_html__($settings['title']) : '' ?></h2>
-            <p> <?php echo $settings['text'] ? esc_html__($settings['text']) : '' ?></p>
-            <div class="about-row__text-buttons">
-                @@include('./parts/button-orange.html',{'mod':'','title':'READ MORE', 'href':'#'})
-               <div class="wrap-img">
-						  <?php echo $settings['image']['url'] ? '<img src="' . esc_url($settings['image']['url']) . '" alt="image about block">' : ''; ?>
-               </div>
-            </div>
-        </div>
-        <div class="about-row__img">
+			<section class="about-row">
+				<div class="about-row__text">
+						<h2><?php echo $settings['title'] ? esc_html__($settings['title']) : '' ?></h2>
+						<p> <?php echo $settings['text'] ? esc_html__($settings['text']) : '' ?></p>
+						<div class="about-row__text-buttons">
+								<a href="#" class="button-orange"><?php echo $settings['button-value'] ? esc_html__($settings['button-value']) : '' ?></a>
+							<div class="wrap-img">
+								<?php echo $settings['image']['url'] ? '<img src="' . esc_url($settings['image']['url']) . '" alt="image about block">' : ''; ?>
+							</div>
+						</div>
+				</div>
+				<div class="about-row__img">
 
-		  	<?php if ( $settings['gallery']) { 
-				foreach ( $settings['gallery'] as $image ) {	 ?> <div class="wrap-img about-row__wrap-img"> <img src=" <?php echo esc_attr( $image['url']) ?> " alt="about galery"></div> 
-			<?php }} ?>	
-        </div>
-    </section>
-</div>
+					<?php if ( $settings['gallery']) { 
+						foreach ( $settings['gallery'] as $image ) {	 ?> <div class="wrap-img about-row__wrap-img"> <img src=" <?php echo esc_attr( $image['url']) ?> " alt="about galery"></div> 
+					<?php }} ?>	
+				</div>
+			</section>
+		</div>
 
 		<?php
 	}

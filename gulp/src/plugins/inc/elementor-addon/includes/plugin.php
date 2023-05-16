@@ -109,10 +109,12 @@ final class Plugin {
 		require_once( __DIR__ . '/widgets/dish-widget.php' );
 		require_once( __DIR__ . '/widgets/about-widget.php' );
 		require_once( __DIR__ . '/widgets/call-us-widget.php' );
+		require_once( __DIR__ . '/widgets/today-special-widget.php' );
 
 		$widgets_manager->register( new Elementor_Dish_Widget() );
 		$widgets_manager->register( new Elementor_About_Widget() );
 		$widgets_manager->register( new Elementor_Call_Us_Widget() );
+		$widgets_manager->register( new Elementor_Today_Special_Widget() );
 
 	}
 

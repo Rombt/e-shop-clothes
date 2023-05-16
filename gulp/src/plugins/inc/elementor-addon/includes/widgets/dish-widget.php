@@ -55,7 +55,7 @@ class Elementor_Dish_Widget extends \Elementor\Widget_Base {
 				'type' => \Elementor\Controls_Manager::TEXT,
 				'label' => esc_html__( 'Sub-title', 'restaurant-site-core' ),
 				'placeholder' => esc_html__( 'Enter your sub-title', 'restaurant-site-core' ),
-				'default' => 'from <span>luxury restaurent.</span>',
+				'default' => __(wp_kses( 'from <span>luxury restaurent.</span>','post')),
 			]
 		);
 

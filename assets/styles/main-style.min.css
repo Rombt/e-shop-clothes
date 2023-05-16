@@ -3267,7 +3267,7 @@ a {
   width: 75px;
   margin: 0 9px;
 }
-.about-row__top-menu .read p {
+.about-row__top-menu .read span {
   color: #fea100;
   margin: 0;
 }
@@ -3314,7 +3314,7 @@ a {
   margin-left: 15px;
   margin-right: 15px;
 }
-.about-row__top-menu .about-call-us__text p {
+.about-row__top-menu .about-call-us__text span {
   color: #fea100;
   margin: 0px;
 }
