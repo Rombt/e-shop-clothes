@@ -35,7 +35,7 @@ export const path = {
     },
     src: {
         php: [
-            `${srcFolder}/*.{php,html}`,
+            `${srcFolder}/*.{php,html,txt}`,
             `${srcFolder}/template-parts/**/*`,
         ],
         wpPlugins: `${srcFolder}/plugins/**/*.*`,
@@ -48,7 +48,7 @@ export const path = {
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
-        php: `${srcFolder}/**/*.{php,html}`, // слежу за всеми 
+        php: `${srcFolder}/**/*.{php,html,txt}`, // слежу за всеми 
         styles: `${srcFolder}/styles/**/*.{scss,less}`,
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
@@ -58,7 +58,7 @@ export const path = {
     wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,
         `${themePath}/inc/redux-options.php`,
-        `${srcFolder}/plugins/**/*.*`,
+        // `${srcFolder}/plugins/**/*.*`,       // дублирует  watch.php
     ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,
