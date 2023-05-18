@@ -53,12 +53,12 @@ export const path = {
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`,
-        // wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
+        wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
     wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,
         `${themePath}/inc/redux-options.php`,
-        // `${srcFolder}/plugins/**/*.*`,       // дублирует  watch.php
+        `${srcFolder}/plugins/**/*.*`,       // дублирует watch.php  нужно для того что бы запускать task wpPlugin отдельно от task php  
     ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,

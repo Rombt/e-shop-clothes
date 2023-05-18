@@ -34,13 +34,11 @@ global.app = {
 }
 
 function watcher() {
-    // gulp.watch(path.watch.files, copy)
     gulp.watch(path.watch.php, php) // для отправки файлов по ftp при каждом обновлении добавить вместо php gulp.series(php,ftp)
     gulp.watch(path.watch.styles, styles)
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    // gulp.watch(path.wp_watch, gulp.parallel(php, wpPlugin))
     gulp.watch(path.wp_watch, gulp.series(resetWpPlugin, wpPlugin))
 }
 

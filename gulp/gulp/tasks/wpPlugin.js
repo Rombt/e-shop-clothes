@@ -8,4 +8,5 @@ export const wpPlugin = () => {
 
     return app.gulp.src(app.path.src.wpPlugins)
         .pipe(app.gulp.dest(app.path.pluginsPath))
+        .pipe(app.plugins.browsersync.stream());
 }
