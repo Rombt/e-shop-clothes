@@ -15,9 +15,14 @@ if ( !function_exists( 'add_action' ) ) {
 	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
 	exit;
 }
-
 require_once (plugin_dir_path(__FILE__ ) . 'inc\elementor-addon\elementor-addon.php') ;
 
+function rs_rewrite_rules(){
+	rs_register_post_types_dishe();
+
+	flush_rewrite_rules();
+}
+add_action('after_switch_theme','rs_rewrite_rules');
 
 
 
@@ -52,50 +57,53 @@ function rs_create_taxonomy_soup(){
 	] );
 }
 
-add_action( 'init', 'rs_register_post_types_dishe' );
 
-function rs_register_post_types_dishe(){
-	
-	register_post_type( 'dishe', [
-		'label'  => esc_html__('Dishes','restaurant-site'),
-		'labels' => [
-			'name'               => esc_html__('Dishes','restaurant-site'),
-			'singular_name'      => esc_html__('Dishe','restaurant-site'),
-			'add_new'            => esc_html__('Add Dishe','restaurant-site'),
-			'add_new_item'       => esc_html__('Add Dishe','restaurant-site'),
-			'edit_item'          => esc_html__('Редактирование Dishe','restaurant-site'),
-			'new_item'           => esc_html__('New Dishe','restaurant-site'),
-			'view_item'          => esc_html__('View Dishe','restaurant-site'),
-			'search_items'       => esc_html__('Found Dishe','restaurant-site'),
-			'not_found'          => esc_html__('Dishe не найдено','restaurant-site'),
-			'not_found_in_trash' => esc_html__('Dishe не найдено в корзине','restaurant-site'),
-			'menu_name'          => esc_html__('Dishes','restaurant-site'),
-		],
-		'description'           => esc_html__('Dishes our restaurant','restaurant-site'),
-		'suports' => array('title','editor','author','thumbnail'),
-		'public'                => true,
-		'publicly_queryable'  	=> true, 
-		'show_ui'  		         => true, // зависит от public
-		'show_in_menu'          => true, // показывать ли в меню админки
-		'has_archive'           => true,
-		
-		
-		
-		// // 'exclude_from_search' => null, // зависит от public
-		// // 'show_in_nav_menus'   => null, // зависит от public
-		// // 'show_in_admin_bar'   => null, // зависит от show_in_menu
-		// 'show_in_rest'        => null, // добавить в REST API. C WP 4.7
-		// 'rest_base'           => null, // $post_type. C WP 4.7
-		// 'menu_position'       => null,
-		// 'menu_icon'           => null,
-		// //'capability_type'   => 'post',
-		// //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
-		// //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
-		// 'hierarchical'        => false,
-		// 'supports'            => [ 'title', 'editor' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-		// 'taxonomies'          => [],
-		// // 'rewrite'             => true,
-		// 'query_var'           => true,
-	] );
 
+function rs_register_post_types_dishe() {
+	$labels = array(
+		'name'                  => esc_html_x( 'Dishes', 'Post type general name', 'restaurant-site' ),
+		'singular_name'         => esc_html_x( 'Dishe', 'Post type singular name', 'restaurant-site' ),
+		'menu_name'             => esc_html_x( 'Dishes', 'Admin Menu text', 'restaurant-site' ),
+		'name_admin_bar'        => esc_html_x( 'Dishe', 'Add New on Toolbar', 'restaurant-site' ),
+		'add_new'               => esc_html__( 'Add New', 'restaurant-site' ),
+		'add_new_item'          => esc_html__( 'Add New Dishe', 'restaurant-site' ),
+		'new_item'              => esc_html__( 'New Dishe', 'restaurant-site' ),
+		'edit_item'             => esc_html__( 'Edit Dishe', 'restaurant-site' ),
+		'view_item'             => esc_html__( 'View Dishe', 'restaurant-site' ),
+		'all_items'             => esc_html__( 'All Dishes', 'restaurant-site' ),
+		'search_items'          => esc_html__( 'Search Dishes', 'restaurant-site' ),
+		'parent_item_colon'     => esc_html__( 'Parent Dishes:', 'restaurant-site' ),
+		'not_found'             => esc_html__( 'No Dishes found.', 'restaurant-site' ),
+		'not_found_in_trash'    => esc_html__( 'No Dishes found in Trash.', 'restaurant-site' ),
+		'featured_image'        => esc_html_x( 'Dishe Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'set_featured_image'    => esc_html_x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'remove_featured_image' => esc_html_x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'use_featured_image'    => esc_html_x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'archives'              => esc_html_x( 'Dishe archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'restaurant-site' ),
+		'insert_into_item'      => esc_html_x( 'Insert into Dishe', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'restaurant-site' ),
+		'uploaded_to_this_item' => esc_html_x( 'Uploaded to this Dishe', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'restaurant-site' ),
+		'filter_items_list'     => esc_html_x( 'Filter Dishes list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'restaurant-site' ),
+		'items_list_navigation' => esc_html_x( 'Dishes list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'restaurant-site' ),
+		'items_list'            => esc_html_x( 'Dishes list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'restaurant-site' ),
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'show_in_rest'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'dishesss' ),
+		'has_archive'        => true,
+		'hierarchical'       => true,
+		'menu_position'      => 4,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+		'menu_icon'				=> 'dashicons-image-filter',
+	);
+
+	register_post_type( 'dishe', $args );
 }
+
+add_action( 'init', 'rs_register_post_types_dishe' );

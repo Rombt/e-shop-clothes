@@ -1,6 +1,6 @@
 === simple restaurant site ===
 
-Contributors: automattic
+Contributors:  
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
@@ -10,11 +10,14 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called simple restaurant site.
+// A starter theme called simple restaurant site.
 
 == Description ==
+   Supported post type:
+      Dishes
+   Supported taxonomies
+      Recipies
 
-Description
 
 == Installation ==
 
@@ -26,11 +29,11 @@ Description
 
 = Does this theme support any plugins? =
 
-simple restaurant site includes support for WooCommerce and for Infinite Scroll in Jetpack.
+// simple restaurant site includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - May 16 2023 =
 * Initial release
 
 == Credits ==

@@ -74,22 +74,6 @@ function simple_restaurant_site_content_width()
 }
 add_action('after_setup_theme', 'simple_restaurant_site_content_width', 0);
 
-
-
-// добавить классы элементам меню		не работает, разобраться!
-function rs_add_class_on_li($classes, $item, $args)
-{
-	if (isset($args->add_li_class)) {
-		$classes[] = $args->add_li_class;
-	}
-
-	return $classes;
-}
-add_filter('nav_menu_css_class', 'rs_add_class_on_li', 1, 3);
-
-
-
-
 add_action('tgmpa_register', 'restaurant_site_register_required_plugins');
 function restaurant_site_register_required_plugins()
 {
@@ -153,3 +137,18 @@ function simple_restaurant_site_widgets_init()
 add_action('widgets_init', 'simple_restaurant_site_widgets_init');
 
 
+//===========================================================================
+//===========================================================================
+
+
+
+// добавить классы элементам меню		не работает, разобраться!
+function rs_add_class_on_li($classes, $item, $args)
+{
+	if (isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'rs_add_class_on_li', 1, 3);
