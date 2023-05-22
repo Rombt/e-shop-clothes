@@ -16,7 +16,7 @@
     <div class="conteiner">
         <header class="header ">
             <a href="<?php echo get_home_url(); ?>">
-                <?php if ($restaurant_site_options['logo_site']['url']) { ?>
+                <?php if ( isset($restaurant_site_options['logo_site']['url'])) { ?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
                 <?php } ?>
             </a>
@@ -36,7 +36,7 @@
             <div class="cart-book">
                 <div class="cart">
                     <div class="cart__cercle">3</div>
-                    <?php if ($restaurant_site_options['icon_cart']['url']) { ?>
+                    <?php if ( isset($restaurant_site_options['icon_cart']['url'])) { ?>
                         <a href="shopping-cart.html">
                             <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
                         </a>
@@ -44,7 +44,7 @@
                     <img src="./img/arrow-cart.png" alt="">
                 </div>
                 <a href="#" class="heder-menu-button">
-                    <?php if ($restaurant_site_options['icon_botton_book']['url']) { ?>
+                    <?php if ( isset($restaurant_site_options['icon_botton_book']['url'])) { ?>
                         <img src="<?php echo esc_url($restaurant_site_options['icon_botton_book']['url']) ?>" alt="icon botton book">
                     <?php } ?>
                     BOOK YOU TABLE
