@@ -693,7 +693,7 @@ if (class_exists('Redux_Pro')) {
 /**
  * Metaboxes
  */
-require_once Redux_Core::$dir . '../sample/metaboxes.php';
+// require_once Redux_Core::$dir . '../sample/metaboxes.php';
 
 /**
  * Raw README
