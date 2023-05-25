@@ -302,10 +302,10 @@ Redux::set_section(
             'preview_size' => 'full',
          ),
          array(
-            'id'           => 'icon_botton_book',
+            'id'           => 'icon_button_book',
             'type'         => 'media',
             'url'          => true,
-            'title'        => esc_html__('Icon botton book', 'restaurant-site'),
+            'title'        => esc_html__('Icon button book', 'restaurant-site'),
             'compiler'     => 'true',
             'preview_size' => 'full',
          ),
@@ -412,8 +412,14 @@ Redux::set_section(
             'desc'     => esc_html__('Our app avilable', 'restaurant-site'),
             'default'  => 'Our app avilable',
          ),
-
-
+         array(
+            'id'           => 'icon-app-1',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('APP icon', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+         ),
 
          array(
             'id'       => 'copyright',

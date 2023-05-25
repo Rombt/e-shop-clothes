@@ -48,17 +48,11 @@
                             <img src="<?php echo bloginfo('template_url')?> /assets/img/icon_cart.png" alt="">
                         <?php }?>
                     </a>
-                    <!-- <img src="./img/arrow-cart.png" alt=""> -->
                 </div>
-                <a href="#" class="heder-menu-button">
-                    <?php if ( $restaurant_site_options['icon_botton_book']['url']) { ?>
-                        <img src="<?php echo esc_url($restaurant_site_options['icon_botton_book']['url']) ?>" alt="icon botton book">
-                    <?php } else {?>
-                        <!-- demo_content -->
-                        <img src="<?php echo bloginfo('template_url')?> /assets/img/icon_botton-book.png" alt="">
-                    <?php }?>
-                    BOOK YOU TABLE
-                </a>
+
+                <?php get_template_part( 'template-parts/components/button', 'book', ['href'=>'#','title'=>'BOOK YOU TABLE']); ?>
+
+
             </div>
         </header>
     </div>

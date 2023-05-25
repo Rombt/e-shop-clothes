@@ -7,7 +7,7 @@
 
 <main>
     @@include('html/dish.html',{})
-    @@include('html/about.html',{})
+    <?php get_template_part( 'template-parts/parts/about'); ?>
     @@include('html/today.html',{})
     @@include('html/restaurant-menu.html',{})
     @@include('html/clients.html',{})
