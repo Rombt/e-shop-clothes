@@ -1,5 +1,5 @@
 <?php
-/* Template Name: 404-page */
+/* Template Name: __404-page */
 ?>
 
 

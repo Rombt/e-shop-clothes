@@ -325,13 +325,13 @@ Redux::set_section(
             'id'       => 'home_delivery',
             'type'     => 'text',
             'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
-            'default'  => '',
+            'default'  => '1-008 005 006',
          ),
          array(
             'id'       => 'reservation',
             'type'     => 'text',
             'title'    => esc_html__('Number phone for block a reservation', 'restaurant-site'),
-            'default'  => '',
+            'default'  => '1-007 000 005',
          ),
       ),
    )
@@ -350,7 +350,7 @@ Redux::set_section(
             'id'       => 'social_networks_fb-link',
             'type'     => 'text',
             'title'    => esc_html__('Facebook link', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'https://www.facebook.com/',
          ),
          array(
             'id'           => 'fb-link_icon',
@@ -365,7 +365,7 @@ Redux::set_section(
             'id'       => 'social_networks_instagram-link',
             'type'     => 'text',
             'title'    => esc_html__('Instagram link', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'https://www.instagram.com/',
          ),
          array(
             'id'           => 'social_networks_instagram_icon',
@@ -380,7 +380,7 @@ Redux::set_section(
             'id'       => 'social_networks_twitt-link',
             'type'     => 'text',
             'title'    => esc_html__('Twitter link', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'https://twitter.com/',
          ),
          array(
             'id'           => 'social_networks_twitt_icon',
@@ -396,21 +396,21 @@ Redux::set_section(
             'type'     => 'text',
             'title'    => esc_html__('Navigation', 'restaurant-site'),
             'desc'     => esc_html__('Navigation', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'Navigation',
          ),
          array(
             'id'       => 'title_two',
             'type'     => 'text',
             'title'    => esc_html__('News letter', 'restaurant-site'),
             'desc'     => esc_html__('News letter', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'News letter',
          ),
          array(
             'id'       => 'title_three',
             'type'     => 'text',
             'title'    => esc_html__('Our app avilable', 'restaurant-site'),
             'desc'     => esc_html__('Our app avilable', 'restaurant-site'),
-            'default'  => '',
+            'default'  => 'Our app avilable',
          ),
 
 
@@ -419,7 +419,7 @@ Redux::set_section(
             'id'       => 'copyright',
             'type'     => 'editor',
             'title'    => esc_html__('Copyright', 'restaurant-site'),
-            'default'  => '',
+            'default'  => '2016 © Luxury RestaurAnt, All rights reserved',
          ),
       ),
    )

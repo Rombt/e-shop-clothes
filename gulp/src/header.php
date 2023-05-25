@@ -5,7 +5,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <!-- <title></title> -->
+    <!-- <title>только для главной страницы</title> -->
 
     <?php wp_head(); ?>
 </head>
@@ -16,10 +16,13 @@
 
     <div class="conteiner">
         <header class="header ">
-            <a href="<?php echo get_home_url(); ?>">
-                <?php if ( isset($restaurant_site_options['logo_site']['url'])) { ?>
+            <a href="<?php echo get_home_url(); ?>" class="logo">
+                <?php if ( $restaurant_site_options['logo_site']['url']) { ?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
-                <?php } ?>
+                <?php } else {?>
+                    <!-- demo_content -->
+                    <img src="<?php echo bloginfo('template_url')?> /assets/img/logo.png" alt="">
+                <?php }?>
             </a>
 
             <div class="heder-menu__burger">
@@ -37,17 +40,23 @@
             <div class="cart-book">
                 <div class="cart">
                     <div class="cart__cercle">3</div>
-                    <?php if ( isset($restaurant_site_options['icon_cart']['url'])) { ?>
-                        <a href="shopping-cart.html">
+                    <a href="shopping-cart.html">
+                        <?php if ( $restaurant_site_options['icon_cart']['url']) { ?>
                             <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
-                        </a>
-                    <?php } ?>
-                    <img src="./img/arrow-cart.png" alt="">
+                        <?php } else {?>
+                                <!-- demo_content -->
+                            <img src="<?php echo bloginfo('template_url')?> /assets/img/icon_cart.png" alt="">
+                        <?php }?>
+                    </a>
+                    <!-- <img src="./img/arrow-cart.png" alt=""> -->
                 </div>
                 <a href="#" class="heder-menu-button">
-                    <?php if ( isset($restaurant_site_options['icon_botton_book']['url'])) { ?>
+                    <?php if ( $restaurant_site_options['icon_botton_book']['url']) { ?>
                         <img src="<?php echo esc_url($restaurant_site_options['icon_botton_book']['url']) ?>" alt="icon botton book">
-                    <?php } ?>
+                    <?php } else {?>
+                        <!-- demo_content -->
+                        <img src="<?php echo bloginfo('template_url')?> /assets/img/icon_botton-book.png" alt="">
+                    <?php }?>
                     BOOK YOU TABLE
                 </a>
             </div>

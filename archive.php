@@ -11,6 +11,8 @@
 				?>
 			</header><!-- .page-header -->
 
+
+			<h1>***** archive.php **********</h1>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
