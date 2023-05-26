@@ -1,12 +1,14 @@
 <?php 
     global $restaurant_site_options; 
-    $arr_dish_gallery = explode(",", $restaurant_site_options['dish-gallery']);
+   if ($restaurant_site_options['dish-gallery']) {
+       $arr_dish_gallery = explode(",", $restaurant_site_options['dish-gallery']);
+    }
 ?>
 
 <div class="background background__dish">
     <div class="swiper-dish swiper">
         <div class="swiper-wrapper">
-            <?php if ($arr_dish_gallery) :
+            <?php if ( isset($arr_dish_gallery)) :
             foreach ($arr_dish_gallery as $image_id) :
                 $image_data = wp_get_attachment_image_src($image_id, 'full');
                 $image_url = $image_data[0];
