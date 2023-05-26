@@ -9,8 +9,8 @@
             <img src="@img/orang-sercle.png" class="read__cercle" alt="">
         </a>
 
-        <?php if ($restaurant_site_options['home_delivery']){   ?>
-        <a href="tel: <?php echo esc_html( $restaurant_site_options['home_delivery'] ) ?> " class="about-call-us">
+        <?php if ($restaurant_site_options['home_delivery_number']){   ?>
+        <a href="tel: <?php echo esc_html( $restaurant_site_options['home_delivery_number'] ) ?> " class="about-call-us">
 
 
             <img src="@img/icon_phone.png" class="read__cercle" alt="">
@@ -19,7 +19,7 @@
                 <p>HOME DELIVERY</p>
             </div>
             <div class="phone-number">
-                <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
+                <?php echo esc_html( $restaurant_site_options['home_delivery_number'] ); ?>
             </div>
         </a>
         <?php }?>

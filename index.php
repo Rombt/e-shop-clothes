@@ -6,32 +6,7 @@
 
 
 <main>
-    <div class="background background__dish">
-    <div class="swiper-dish swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-1.jpg" alt=""></div>
-            </div>
-            <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-2.jpg" alt=""></div>
-            </div>
-            <div class="swiper-slide">
-                <div class="wrap-img dish__wrap-img"> <img src="img/dish-bg-3.jpg" alt=""></div>
-            </div>
-        </div>
-        <div class="swiper-pagination-dish swiper-pagination"></div>
-    </div>
-    <div class="conteiner" id="dish">
-        <div class="dish-title">
-            <p class="dish-title__title">Teast your fav dish</p>
-            <p class="dish-title__subtitle-title">from <span>luxury restaurent.</span></p>
-        </div>
-        <div class="exlore-food-menu">
-            <img src="./img/exlore-food-menu.png" alt="exlore-food-menu.jpg">
-            <p>Explore food Menu</p>
-        </div>
-    </div>
-</div>
+    <?php get_template_part( 'template-parts/parts/dish'); ?>
     <?php get_template_part( 'template-parts/parts/about'); ?>
     <section>
    <div class="background background__today">

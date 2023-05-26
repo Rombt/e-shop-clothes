@@ -19,9 +19,6 @@
             <a href="<?php echo get_home_url(); ?>" class="logo">
                 <?php if ( $restaurant_site_options['logo_site']['url']) { ?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
-                <?php } else {?>
-                    <!-- demo_content -->
-                    <img src="<?php echo bloginfo('template_url')?> /assets/img/logo.png" alt="">
                 <?php }?>
             </a>
 
@@ -43,9 +40,6 @@
                     <a href="shopping-cart.html">
                         <?php if ( $restaurant_site_options['icon_cart']['url']) { ?>
                             <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
-                        <?php } else {?>
-                                <!-- demo_content -->
-                            <img src="<?php echo bloginfo('template_url')?> /assets/img/icon_cart.png" alt="">
                         <?php }?>
                     </a>
                 </div>
@@ -69,3 +63,6 @@
             
         </div>
     <?php } ?>
+
+    <?php 		    echo '******' . rs_PATH_THEME .'<br>';
+					echo '******' . rs_URL_THEME;?>

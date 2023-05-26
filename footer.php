@@ -26,25 +26,20 @@
 			</div>
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>
-				
-				
-
-				<?php if ($restaurant_site_options['icon-app-1']['url']) {
-					$icon_app_1 = esc_url($restaurant_site_options['icon-app-1']['url']); 
-				} else {
-					// <!-- demo_content -->
-					$icon_app_1 =  esc_url(bloginfo('template_url') . '/assets/img/icon_apple.png');
-				}?>
-
-
  				<?php get_template_part( 'template-parts/components/button', 'app', [
 						'href'=>'#',
-						'icon'=> $icon_app_1,
+						'icon'=> $restaurant_site_options['icon-app-apple']['url'],
 						'text'=>'Avilable on the',
 						'title'=>'App Store',
 						]); 
 				?>
-
+ 				<?php get_template_part( 'template-parts/components/button', 'app', [
+						'href'=>'#',
+						'icon'=> $restaurant_site_options['icon-app-google']['url'],
+						'text'=>'Get it on',
+						'title'=>' Google Play',
+						]); 
+				?>
 			</div>
 		</section>
 	</div>

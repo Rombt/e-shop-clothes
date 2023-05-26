@@ -1009,6 +1009,8 @@ a {
   display: block;
 }
 .button-app img {
+  height: 35px;
+  width: 35px;
   margin-left: 15px;
   margin-right: 15px;
 }

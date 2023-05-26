@@ -17,9 +17,6 @@
 
 				<?php if ($restaurant_site_options['404_img']['url']) { ?>
 					<img src="<?php echo esc_url($restaurant_site_options['404_img']['url']) ?>" alt="404 img">
-				<?php } else {?>
-					<!-- demo_content -->
-					<img src="<?php echo bloginfo('template_url')?> /assets/img/Image_301x301.jpg" alt="">
 				<?php }?>
 
 			</div>
