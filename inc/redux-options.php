@@ -256,7 +256,6 @@ Redux::set_section(
 				'type'   => 'section',
 				'indent' => false, // Indent all options below until the next 'section' option is set.
 			),
-
          array(
 				'id'       => 'about-section-start',
 				'type'     => 'section',
@@ -387,13 +386,39 @@ Redux::set_section(
                'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
                'default'  => '1-008 005 006',
             ),
-         
+         array(
+				'id'     => 'about-section-end',
+				'type'   => 'section',
+				'indent' => false, // Indent all options below until the next 'section' option is set.
+			),
 
-
+         array(
+				'id'       => 'today-section-start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Today Section', 'restaurant-site' ),
+				'indent'   => true, // Indent all options below until the next 'section' option is set.
+			),
+            array(
+               'id'       => 'today_section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('Home page title', 'restaurant-site'),
+               'default'  => esc_html__('Today Special', 'restaurant-site'),
+            ),              
+            array(
+                  'id'       => 'today-gallery',
+                  'type'     => 'gallery',
+                  'title'    => esc_html__( 'Add/Edit Today Gallery', 'restaurant-site' ),
+               ),
+            array(
+               'id'       => 'today_section_footer_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Footer Text', 'restaurant-site'),
+               'default'  => __(wp_kses('home <p> delivery </p>',array('p'=>array())), 'restaurant-site'),
+            ),   
 
 
          array(
-				'id'     => 'about-section-end',
+				'id'     => 'today-section-end',
 				'type'   => 'section',
 				'indent' => false, // Indent all options below until the next 'section' option is set.
 			),

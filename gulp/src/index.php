@@ -8,6 +8,7 @@
 <main>
     <?php get_template_part( 'template-parts/parts/dish'); ?>
     <?php get_template_part( 'template-parts/parts/about'); ?>
+    <?php get_template_part( 'template-parts/parts/today'); ?>
     @@include('html/today.html',{})
     @@include('html/restaurant-menu.html',{})
     @@include('html/clients.html',{})

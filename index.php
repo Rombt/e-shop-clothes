@@ -8,6 +8,7 @@
 <main>
     <?php get_template_part( 'template-parts/parts/dish'); ?>
     <?php get_template_part( 'template-parts/parts/about'); ?>
+    <?php get_template_part( 'template-parts/parts/today'); ?>
     <section>
    <div class="background background__today">
       <div class="swiper-today swiper">
