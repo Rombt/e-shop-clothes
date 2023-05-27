@@ -10,10 +10,8 @@ export const server = (done) => {
 
 
     if (absPath.includes('OSPanel')) {
-        proxyPath = `http://rombt/${app.path.rootFolder}/${rootFolder}`; // домашний комп
+        proxyPath = `http://ms/`;
     } else {        // рабочий комп и домашний ноут
-        // proxyPath = `http://web/rombt/${app.path.rootFolder}/${rootFolder}`; 
-        // proxyPath = `http://web/ms/${app.path.rootFolder}/${rootFolder}`; 
         proxyPath = `http://web/ms/`;
     }
 
