@@ -362,7 +362,7 @@ Redux::set_section(
                'id'       => 'read_revie_text',
                'type'     => 'text',
                'title'    => esc_html__('Read Revie Text', 'restaurant-site'),
-               'default'  => esc_html__(wp_kses('READ <p>REVIEWS</p>', array('p'))),
+               'default'  => __(wp_kses('READ <p>REVIEWS</p>', array('p'=>array()))),
             ),  
             array(
                'id'           => 'home_delivery_icon',
@@ -379,7 +379,7 @@ Redux::set_section(
                'id'       => 'home_delivery_text',
                'type'     => 'text',
                'title'    => esc_html__('Home Delivery Text', 'restaurant-site'),
-               'default'  => esc_html__(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'))),
+               'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array()))),
             ),           
             array(
                'id'       => 'home_delivery_number',
