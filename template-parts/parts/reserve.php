@@ -1,17 +1,4 @@
-<?php get_header(); ?>
-
-
-
-
-
-
-<main>
-    <?php get_template_part( 'template-parts/parts/dish'); ?>
-    <?php get_template_part( 'template-parts/parts/about'); ?>
-    <?php get_template_part( 'template-parts/parts/today'); ?>
-    <?php get_template_part( 'template-parts/parts/restaurant-menu'); ?>
-    <?php get_template_part( 'template-parts/parts/clients'); ?>
-    <div class="conteiner" id="reserve">
+<div class="conteiner" id="reserve">
 
    <h2>Reserve your table</h2>
    <section class="reserve-row">
@@ -45,7 +32,8 @@
             </div>
          </form>
          <div class="reserve-call-us">
-            <a href="#" class="button-orange ">Make reservation</a>
+            
+            <?php get_template_part( 'template-parts/components/button','orange',['href'=>'', 'mod'=>'', 'title'=>'']); ?>
 
             <?php if ($restaurant_site_options['reservation']){ ?>
 
@@ -66,7 +54,3 @@
 
 
 </div>
-</main>
-
-
-<?php get_footer();

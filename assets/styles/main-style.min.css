@@ -3696,6 +3696,7 @@ a {
   top: 550px;
   left: -400px;
   position: absolute;
+  z-index: 2;
 }
 #restaurant-menu .wrap-img__241x241 {
   height: 241px;

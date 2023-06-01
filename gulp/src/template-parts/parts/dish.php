@@ -1,6 +1,6 @@
 <?php 
     global $restaurant_site_options; 
-   if ($restaurant_site_options['dish-gallery']) {
+   if (isset($restaurant_site_options['dish-gallery'])) {
        $arr_dish_gallery = explode(",", $restaurant_site_options['dish-gallery']);
     }
 ?>

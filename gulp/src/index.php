@@ -9,9 +9,8 @@
     <?php get_template_part( 'template-parts/parts/dish'); ?>
     <?php get_template_part( 'template-parts/parts/about'); ?>
     <?php get_template_part( 'template-parts/parts/today'); ?>
-    @@include('html/today.html',{})
-    @@include('html/restaurant-menu.html',{})
-    @@include('html/clients.html',{})
+    <?php get_template_part( 'template-parts/parts/restaurant-menu'); ?>
+    <?php get_template_part( 'template-parts/parts/clients'); ?>
     @@include('html/reserve.html',{})
 </main>
 

@@ -211,12 +211,14 @@ Redux::set_section(
       'subsection' => true,
       // 'icon'             => 'el el-home',
       'fields'           => array(
+
          array(
-				'id'       => 'title-section-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Title Section', 'restaurant-site' ),
-				'indent'   => true, // Indent all options below until the next 'section' option is set.
-			),
+            'id'        => 'title-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Title Section', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'Title\'',
+            'position'  => 'start',    
+            ),
             array(
                'id'       => 'home_page_title',
                'type'     => 'text',
@@ -251,17 +253,20 @@ Redux::set_section(
                   'url' => esc_url(get_template_directory_uri()) . '/assets/img/exlore-food-menu.png'
                ),            
             ),
-			array(
-				'id'     => 'title-section-end',
-				'type'   => 'section',
-				'indent' => false, // Indent all options below until the next 'section' option is set.
-			),
+
          array(
-				'id'       => 'about-section-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'About Section', 'restaurant-site' ),
-				'indent'   => true, // Indent all options below until the next 'section' option is set.
-			), 
+            'id'        => 'title-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
+
+         array(
+            'id'        => 'about-section-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'About Section', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'About\'',
+            'position'  => 'start',    
+            ),
             array(
                'id'       => 'about_section_title',
                'type'     => 'text',
@@ -279,7 +284,6 @@ Redux::set_section(
                'title'    => esc_html__('About Button Title', 'restaurant-site'),
                'default'  => esc_html__('READ MORE','restaurant-site'),
             ), 
-
             array(
                'id'           => 'about_section_img_small',
                'type'         => 'media',
@@ -387,17 +391,19 @@ Redux::set_section(
                'default'  => '1-008 005 006',
             ),
          array(
-				'id'     => 'about-section-end',
-				'type'   => 'section',
-				'indent' => false, // Indent all options below until the next 'section' option is set.
-			),
+            'id'        => 'about-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
 
          array(
-				'id'       => 'today-section-start',
-				'type'     => 'section',
-				'title'    => esc_html__( 'Today Section', 'restaurant-site' ),
-				'indent'   => true, // Indent all options below until the next 'section' option is set.
-			),
+            'id'        => 'today-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Today Section', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'Today\'',
+            'position'  => 'start',    
+            ),
+
             array(
                'id'       => 'today_section_title',
                'type'     => 'text',
@@ -416,12 +422,136 @@ Redux::set_section(
                'default'  => __(wp_kses('home <p> delivery </p>',array('p'=>array())), 'restaurant-site'),
             ),   
 
+         array(
+            'id'        => 'today-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
 
          array(
-				'id'     => 'today-section-end',
-				'type'   => 'section',
-				'indent' => false, // Indent all options below until the next 'section' option is set.
-			),
+            'id'        => 'restaurant_menu-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Restaurant Menu', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'Restaurant Menu\'',
+            'position'  => 'start',    
+            ),
+
+            array(
+               'id'       => 'restaurant_menu-section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('Restaurant menu section title', 'restaurant-site'),
+               'default'  => esc_html__('Food Menu', 'restaurant-site'),
+            ),
+            array(
+               'id'           => 'restaurant_menu-section_img_1',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag right', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/Image_311x311.jpg'
+               ), 
+            ),
+            array(
+               'id'           => 'restaurant_menu-section_img_2',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag left', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/Image_267x414.jpg'
+               ), 
+            ), 
+            array(
+               'id'           => 'restaurant_menu-section_img_3',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag down', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/Image_241x241.jpg'
+               ), 
+            ),                          
+
+         array(
+            'id'        => 'restaurant_menu-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
+
+
+         array(
+            'id'        => 'clients-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Clients section', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'Clients Menu\'',
+            'position'  => 'start',    
+            ),
+
+            array(
+               'id'       => 'clients-section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('Clients menu section title', 'restaurant-site'),
+               'default'  => esc_html__('Happy Clients', 'restaurant-site'),
+            ),
+            array(
+               'id'           => 'clients-section_background_img',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Background Img', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/background-clients-block.jpg'
+               ), 
+            ),
+
+         array(
+            'id'        => 'clients-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
+
+
+         array(
+            'id'        => 'reserve-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Reserve section', 'restaurant-site' ),
+            'subtitle'  => 'Add your content to the section \'Reserve Menu\'',
+            'position'  => 'start',    
+            ),
+
+
+            // array(
+            //    'id'       => 'clients-section_title',
+            //    'type'     => 'text',
+            //    'title'    => esc_html__('Clients menu section title', 'restaurant-site'),
+            //    'default'  => esc_html__('Happy Clients', 'restaurant-site'),
+            // ),
+            // array(
+            //    'id'           => 'clients-section_background_img',
+            //    'type'         => 'media',
+            //    'url'          => true,
+            //    'title'        => esc_html__('Background Img', 'restaurant-site'),
+            //    'compiler'     => 'true',
+            //    'preview_size' => 'full',
+            //    'default' =>   array(
+            //       'url' => esc_url(get_template_directory_uri()) . '/assets/img/background-clients-block.jpg'
+            //    ), 
+            // ),
+
+
+         array(
+            'id'        => 'reserve-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),
+
+
+
 
 
       ),

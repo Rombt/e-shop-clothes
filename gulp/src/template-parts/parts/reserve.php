@@ -1,51 +1,39 @@
-<?php get_header(); ?>
-
-
-
-
-
-
-<main>
-    <?php get_template_part( 'template-parts/parts/dish'); ?>
-    <?php get_template_part( 'template-parts/parts/about'); ?>
-    <?php get_template_part( 'template-parts/parts/today'); ?>
-    <?php get_template_part( 'template-parts/parts/restaurant-menu'); ?>
-    <?php get_template_part( 'template-parts/parts/clients'); ?>
-    <div class="conteiner" id="reserve">
+<div class="conteiner" id="reserve">
 
    <h2>Reserve your table</h2>
    <section class="reserve-row">
-      <div class="wrap-img reserve-row__img"><img src="img/Image_559x334.jpg" alt=""></div>
+      <div class="wrap-img reserve-row__img"><img src="@img/Image_559x334.jpg" alt=""></div>
       <div class="reserve-row__form">
          <form action="#" name="reserve-form" class="reserve-form">
             <div class="reserve-form__input">
                <p>Name*</p>
                <input type="text" tabindex="1" name="name" value="">
-               <img src="img/form_icon_name.png" alt="">
+               <img src="@img/form_icon_name.png" alt="">
             </div>
             <div class="reserve-form__input">
                <p>Time*</p><input type="text" tabindex="2" name="time" value="">
-               <img src="img/form_icon_time.png" alt="">
+               <img src="@img/form_icon_time.png" alt="">
             </div>
             <div class="reserve-form__input">
                <p>Guests*</p><input type="text" tabindex="3" name="guests" value="">
-               <img src="img/form_icon_guest.png" alt="">
+               <img src="@img/form_icon_guest.png" alt="">
             </div>
             <div class="reserve-form__input">
                <p>Date*</p><input type="text" tabindex="4" name="date" value="">
-               <img src="img/form_icon_calander.png" alt="">
+               <img src="@img/form_icon_calander.png" alt="">
             </div>
             <div class="reserve-form__input">
                <p>Email Address*</p><input type="email" tabindex="5" name="email-address" value="">
-               <img src="img/form_icon_email.png" alt="">
+               <img src="@img/form_icon_email.png" alt="">
             </div>
             <div class="reserve-form__input">
                <p>Phone Number*</p><input type="tel" tabindex="6" name="phone-number" value="">
-               <img src="img/form_icon_phone.png" alt="">
+               <img src="@img/form_icon_phone.png" alt="">
             </div>
          </form>
          <div class="reserve-call-us">
-            <a href="#" class="button-orange ">Make reservation</a>
+            <!-- @@include('parts/button-orange.html',{'mod':'','title':'Make reservation', 'href':'#'}) -->
+            <?php get_template_part( 'template-parts/components/button','orange',['href'=>'', 'mod'=>'', 'title'=>'']); ?>
 
             <?php if ($restaurant_site_options['reservation']){ ?>
 
@@ -66,7 +54,3 @@
 
 
 </div>
-</main>
-
-
-<?php get_footer();
