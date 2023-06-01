@@ -189,22 +189,34 @@ Redux::set_args($opt_name, $args);
  * ---> START SECTIONS
  */
 
- 
-Redux_Metaboxes::set_box(
-	$opt_name,
-	array(
-		'id'       => 'title-section',
-		'title'    => esc_html__( 'Page Options', 'restaurant-site' ),
-		'post_types' => array( 'page', 'Home' ),
-		'position'   => 'normal', // normal, advanced, side.
-		'priority'   => 'high', // high, core, default, low.
-		'sections'   => array(
-			array(
-            'title'            => esc_html__('Title Section', 'restaurant-site'),
-            'id'               => 'settings_title-home-page',
-            // 'desc'             => esc_html__('++Title section settings', 'restaurant-site'),
-				// 'icon'   => 'el-icon-cogs',
-				'fields' => array(
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('Pages settings', 'restaurant-site'),
+      'id'               => 'section_of_pages',
+      'desc'             => esc_html__('Settings header site', 'restaurant-site'),
+      'customizer_width' => '450',
+      // 'icon'             => 'el el-home',
+   )
+);
+
+
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('Home page', 'restaurant-site'),
+      'id'               => 'settings_home-page',
+      'desc'             => esc_html__('Home page settings', 'restaurant-site'),
+      'customizer_width' => '450',
+      'subsection' => true,
+      // 'icon'             => 'el el-home',
+      'fields'           => array(
+         array(
+				'id'       => 'title-section-start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Title Section', 'restaurant-site' ),
+				'indent'   => true, // Indent all options below until the next 'section' option is set.
+			),
             array(
                'id'       => 'home_page_title',
                'type'     => 'text',
@@ -239,184 +251,182 @@ Redux_Metaboxes::set_box(
                   'url' => esc_url(get_template_directory_uri()) . '/assets/img/exlore-food-menu.png'
                ),            
             ),
-				),
+			array(
+				'id'     => 'title-section-end',
+				'type'   => 'section',
+				'indent' => false, // Indent all options below until the next 'section' option is set.
 			),
-			array(
-            'title'            => esc_html__('About Section', 'restaurant-site'),
-            'id'               => 'settings_about-home-page',
-            // 'desc'             => esc_html__('++Title section settings', 'restaurant-site'),
-				// 'icon'   => 'el-icon-cogs',
-				'fields' => array(
-               array(
-                  'id'       => 'about_section_title',
-                  'type'     => 'text',
-                  'title'    => esc_html__('About Section Title', 'restaurant-site'),
-                  'default'  => esc_html__('About Restaurant ','restaurant-site'),
-               ), 
-               array(
-                  'id'       => 'about_section_text',
-                  'type'     => 'textarea',
-                  'title'    => esc_html__('About Section Text', 'restaurant-site'),
-               ), 
-               array(
-                  'id'       => 'about_section_button_title',
-                  'type'     => 'text',
-                  'title'    => esc_html__('About Button Title', 'restaurant-site'),
-                  'default'  => esc_html__('READ MORE','restaurant-site'),
-               ), 
+         array(
+				'id'       => 'about-section-start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'About Section', 'restaurant-site' ),
+				'indent'   => true, // Indent all options below until the next 'section' option is set.
+			), 
+            array(
+               'id'       => 'about_section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('About Section Title', 'restaurant-site'),
+               'default'  => esc_html__('About Restaurant ','restaurant-site'),
+            ), 
+            array(
+               'id'       => 'about_section_text',
+               'type'     => 'textarea',
+               'title'    => esc_html__('About Section Text', 'restaurant-site'),
+            ), 
+            array(
+               'id'       => 'about_section_button_title',
+               'type'     => 'text',
+               'title'    => esc_html__('About Button Title', 'restaurant-site'),
+               'default'  => esc_html__('READ MORE','restaurant-site'),
+            ), 
 
-               array(
-                  'id'           => 'about_section_img_small',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Imag small', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-button-bg.jpg'
-                  ), 
-               ),
-               array(
-                  'id'           => 'about_section_img_1',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Imag 1', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
-                  ),
+            array(
+               'id'           => 'about_section_img_small',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag small', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-button-bg.jpg'
                ), 
-               array(
-                  'id'           => 'about_section_img_2',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Imag 2', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
-                  ), 
-               ),
-               array(
-                  'id'           => 'about_section_img_3',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Imag 3', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
-                  ), 
-               ),
-               array(
-                  'id'           => 'about_section_img_4',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Imag 4', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
-                  ), 
-               ),
-               array(
-                  'id'           => 'read_revie_button',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Read Revie Button', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/orang-sercle.png'
-                  ), 
-               ),
-               array(
-                  'id'           => 'read_revie_icon',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Read Revie Icon', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_reviews.png'
-                  ), 
-               ),
-               array(
-                  'id'       => 'read_revie_text',
-                  'type'     => 'text',
-                  'title'    => esc_html__('Read Revie Text', 'restaurant-site'),
-                  'default'  => __(wp_kses('READ <p>REVIEWS</p>', array('p'=>array()))),
-               ),  
-               array(
-                  'id'           => 'home_delivery_icon',
-                  'type'         => 'media',
-                  'url'          => true,
-                  'title'        => esc_html__('Home Delivery Icon', 'restaurant-site'),
-                  'compiler'     => 'true',
-                  'preview_size' => 'full',
-                  'default' =>   array(
-                     'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_phone.png'
-                  ), 
-               ),
-               array(
-                  'id'       => 'home_delivery_text',
-                  'type'     => 'text',
-                  'title'    => esc_html__('Home Delivery Text', 'restaurant-site'),
-                  'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array()))),
-               ),           
-               array(
-                  'id'       => 'home_delivery_number',
-                  'type'     => 'text',
-                  'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
-                  'default'  => '1-008 005 006',
-               ),
-            )
             ),
-			array(
-            'title'            => esc_html__('Today Section', 'restaurant-site'),
-            'id'               => 'settings_today-home-page',
-            // 'desc'             => esc_html__('++Title section settings', 'restaurant-site'),
-				// 'icon'   => 'el-icon-cogs',
-				'fields' => array(
-               array(
-                  'id'       => 'today_section_title',
-                  'type'     => 'text',
-                  'title'    => esc_html__('Home page title', 'restaurant-site'),
-                  'default'  => esc_html__('Today Special', 'restaurant-site'),
-               ),              
-               array(
-                     'id'       => 'today-gallery',
-                     'type'     => 'gallery',
-                     'title'    => esc_html__( 'Add/Edit Today Gallery', 'restaurant-site' ),
-                  ),
-               array(
-                  'id'       => 'today_section_footer_text',
-                  'type'     => 'text',
-                  'title'    => esc_html__('Footer Text', 'restaurant-site'),
-                  'default'  => __(wp_kses('home <p> delivery </p>',array('p'=>array())), 'restaurant-site'),
+            array(
+               'id'           => 'about_section_img_1',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag 1', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
+               ),
+            ), 
+            array(
+               'id'           => 'about_section_img_2',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag 2', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
                ), 
-            )
-         )
-		),
-	)
-);
+            ),
+            array(
+               'id'           => 'about_section_img_3',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag 3', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
+               ), 
+            ),
+            array(
+               'id'           => 'about_section_img_4',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Imag 4', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/about-row-bg.jpg'
+               ), 
+            ),
+            array(
+               'id'           => 'read_revie_button',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Read Revie Button', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/orang-sercle.png'
+               ), 
+            ),
+            array(
+               'id'           => 'read_revie_icon',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Read Revie Icon', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_reviews.png'
+               ), 
+            ),
+             array(
+               'id'       => 'read_revie_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Read Revie Text', 'restaurant-site'),
+               'default'  => __(wp_kses('READ <p>REVIEWS</p>', array('p'=>array()))),
+            ),  
+            array(
+               'id'           => 'home_delivery_icon',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Home Delivery Icon', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_phone.png'
+               ), 
+            ),
+             array(
+               'id'       => 'home_delivery_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Home Delivery Text', 'restaurant-site'),
+               'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array()))),
+            ),           
+            array(
+               'id'       => 'home_delivery_number',
+               'type'     => 'text',
+               'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
+               'default'  => '1-008 005 006',
+            ),
+         array(
+				'id'     => 'about-section-end',
+				'type'   => 'section',
+				'indent' => false, // Indent all options below until the next 'section' option is set.
+			),
+
+         array(
+				'id'       => 'today-section-start',
+				'type'     => 'section',
+				'title'    => esc_html__( 'Today Section', 'restaurant-site' ),
+				'indent'   => true, // Indent all options below until the next 'section' option is set.
+			),
+            array(
+               'id'       => 'today_section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('Home page title', 'restaurant-site'),
+               'default'  => esc_html__('Today Special', 'restaurant-site'),
+            ),              
+            array(
+                  'id'       => 'today-gallery',
+                  'type'     => 'gallery',
+                  'title'    => esc_html__( 'Add/Edit Today Gallery', 'restaurant-site' ),
+               ),
+            array(
+               'id'       => 'today_section_footer_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Footer Text', 'restaurant-site'),
+               'default'  => __(wp_kses('home <p> delivery </p>',array('p'=>array())), 'restaurant-site'),
+            ),   
 
 
+         array(
+				'id'     => 'today-section-end',
+				'type'   => 'section',
+				'indent' => false, // Indent all options below until the next 'section' option is set.
+			),
 
 
-Redux::set_section(
-   $opt_name,
-   array(
-      'title'            => esc_html__('Pages settings', 'restaurant-site'),
-      'id'               => 'section_of_pages',
-      'desc'             => esc_html__('Settings header site', 'restaurant-site'),
-      'customizer_width' => '450',
-      // 'icon'             => 'el el-home',
+      ),
    )
 );
-
-
 Redux::set_section(
    $opt_name,
    array(
@@ -659,29 +669,6 @@ Redux::set_section(
 
 //===============================================================================
 //===============================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // -> START Basic Fields
 // Redux::set_section(
