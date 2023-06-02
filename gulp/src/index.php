@@ -2,8 +2,6 @@
 
 
 
-<!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-
 
 <main>
     <?php get_template_part( 'template-parts/parts/dish'); ?>
@@ -11,7 +9,7 @@
     <?php get_template_part( 'template-parts/parts/today'); ?>
     <?php get_template_part( 'template-parts/parts/restaurant-menu'); ?>
     <?php get_template_part( 'template-parts/parts/clients'); ?>
-    @@include('html/reserve.html',{})
+    <?php get_template_part( 'template-parts/parts/reserve'); ?>
 </main>
 
 

@@ -15,8 +15,8 @@
             <?php }?>
         </a>
 
-        <?php if ($restaurant_site_options['home_delivery_number']){   ?>
-        <a href="tel: <?php esc_html_e( $restaurant_site_options['home_delivery_number'] ) ?> " class="about-call-us">
+        <?php if ($restaurant_site_options['phone-numbers_home-delivery']){   ?>
+        <a href="tel: <?php esc_html_e( $restaurant_site_options['phone-numbers_home-delivery'] ) ?> " class="about-call-us">
             <?php if ($restaurant_site_options['home_delivery_icon']['url']) { ?>
                 <img class='read__cercle' src="<?php echo esc_url($restaurant_site_options['home_delivery_icon']['url']) ?>" alt="404 img">
             <?php }?>
@@ -25,7 +25,7 @@
                 <?php _e( $restaurant_site_options['home_delivery_text'] ) ?>
             </div>
             <div class="phone-number">
-                <?php esc_html_e( $restaurant_site_options['home_delivery_number'] ); ?>
+                <?php esc_html_e( $restaurant_site_options['phone-numbers_home-delivery'] ); ?>
             </div>
         </a>
         <?php }?>

@@ -42,9 +42,9 @@
                   <div class="food-card__title">
                      <?php _e( $restaurant_site_options['today_section_footer_text'] );?>
                   </div>
-                  <?php if ( $restaurant_site_options['home_delivery_number'] ){ ?>
-                  <a href="tel:<?php echo esc_html( $restaurant_site_options['home_delivery_number'] );?>" class="food-card__phone-namber">
-                     <?php echo esc_html( $restaurant_site_options['home_delivery_number'] ); ?>
+                  <?php if ( $restaurant_site_options['phone-numbers_home-delivery'] ){ ?>
+                  <a href="tel:<?php echo esc_html( $restaurant_site_options['phone-numbers_home-delivery'] );?>" class="food-card__phone-namber">
+                     <?php echo esc_html( $restaurant_site_options['phone-numbers_home-delivery'] ); ?>
                   </a>
                   <?php }?>
                   <?php get_template_part( 'template-parts/components/price', null, ['price'=>'89,00']); ?>
@@ -62,9 +62,9 @@
                   <div class="food-card__title">
                      <?php _e( $restaurant_site_options['today_section_footer_text'] );?>
                   </div>
-                  <?php if ( $restaurant_site_options['home_delivery_number'] ){ ?>
-                  <a href="tel:<?php echo esc_html( $restaurant_site_options['home_delivery_number'] );?>" class="food-card__phone-namber">
-                     <?php echo esc_html( $restaurant_site_options['home_delivery_number'] ); ?>
+                  <?php if ( $restaurant_site_options['phone-numbers_home-delivery'] ){ ?>
+                  <a href="tel:<?php echo esc_html( $restaurant_site_options['phone-numbers_home-delivery'] );?>" class="food-card__phone-namber">
+                     <?php echo esc_html( $restaurant_site_options['phone-numbers_home-delivery'] ); ?>
                   </a>
                   <?php }?>
                   <?php get_template_part( 'template-parts/components/price', null, ['price'=>'99,00']); ?>

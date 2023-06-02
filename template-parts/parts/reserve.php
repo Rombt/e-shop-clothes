@@ -1,8 +1,13 @@
-<div class="conteiner" id="reserve">
+<?php global $restaurant_site_options; ?>
 
-   <h2>Reserve your table</h2>
+<div class="conteiner" id="reserve">
+   <h2><?php _e( $restaurant_site_options['reserve-section_title'] ) ?></h2>
    <section class="reserve-row">
-      <div class="wrap-img reserve-row__img"><img src="img/Image_559x334.jpg" alt=""></div>
+      <div class="wrap-img reserve-row__img">
+         <?php if ($restaurant_site_options['reserve-section_background_img']['url']) { ?>
+               <img src="<?php echo esc_url($restaurant_site_options['reserve-section_background_img']['url']) ?>" alt="">
+         <?php }?>         
+      </div>
       <div class="reserve-row__form">
          <form action="#" name="reserve-form" class="reserve-form">
             <div class="reserve-form__input">
@@ -32,25 +37,22 @@
             </div>
          </form>
          <div class="reserve-call-us">
-            
-            <?php get_template_part( 'template-parts/components/button','orange',['href'=>'', 'mod'=>'', 'title'=>'']); ?>
-
-            <?php if ($restaurant_site_options['reservation']){ ?>
-
+            <?php get_template_part( 'template-parts/components/button','orange',
+               [
+                  'href'=>esc_html( $restaurant_site_options['reserve-section_button-href'] ), 
+                  'title'=>esc_html( $restaurant_site_options['reserve-section_button-title'] )
+               ]); ?>
             <p>
-               You can also call <span>for a reservation</span>
+               <?php _e( $restaurant_site_options['reserve-section_text'] ) ?>
             </p>
+            <?php if ($restaurant_site_options['phone-numbers_reservation']){ ?>
             <span class="reserve-call-us__tel">
-               <a href="tel:<?php echo esc_html( $restaurant_site_options['reservation'] )?>">
-                  <?php echo esc_html( $restaurant_site_options['reservation'] )?>
+               <a href="tel:<?php echo esc_html( $restaurant_site_options['phone-numbers_reservation'] )?>">
+                  <?php echo esc_html( $restaurant_site_options['phone-numbers_reservation'] )?>
                </a>
-
             </span>
-
             <?php }?>
          </div>
       </div>
    </section>
-
-
 </div>

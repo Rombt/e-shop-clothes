@@ -185,6 +185,8 @@ Redux::set_args($opt_name, $args);
  * <--- END HELP TABS
  */
 
+
+ 
 /*
  * ---> START SECTIONS
  */
@@ -200,7 +202,7 @@ Redux::set_section(
    )
 );
 
-
+// Home page sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -211,7 +213,6 @@ Redux::set_section(
       'subsection' => true,
       // 'icon'             => 'el el-home',
       'fields'           => array(
-
          array(
             'id'        => 'title-accordion-start',
             'type'      => 'accordion',
@@ -384,12 +385,6 @@ Redux::set_section(
                'title'    => esc_html__('Home Delivery Text', 'restaurant-site'),
                'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array()))),
             ),           
-            array(
-               'id'       => 'home_delivery_number',
-               'type'     => 'text',
-               'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
-               'default'  => '1-008 005 006',
-            ),
          array(
             'id'        => 'about-accordion-end',
             'type'      => 'accordion',
@@ -515,7 +510,6 @@ Redux::set_section(
             'position'  => 'end'
          ),
 
-
          array(
             'id'        => 'reserve-accordion-start',
             'type'      => 'accordion',
@@ -524,39 +518,58 @@ Redux::set_section(
             'position'  => 'start',    
             ),
 
+            array(
+               'id'       => 'reserve-section_title',
+               'type'     => 'text',
+               'title'    => esc_html__('Reserve section title', 'restaurant-site'),
+               'default'  => esc_html__('Reserve your table', 'restaurant-site'),
+            ),
 
-            // array(
-            //    'id'       => 'clients-section_title',
-            //    'type'     => 'text',
-            //    'title'    => esc_html__('Clients menu section title', 'restaurant-site'),
-            //    'default'  => esc_html__('Happy Clients', 'restaurant-site'),
-            // ),
-            // array(
-            //    'id'           => 'clients-section_background_img',
-            //    'type'         => 'media',
-            //    'url'          => true,
-            //    'title'        => esc_html__('Background Img', 'restaurant-site'),
-            //    'compiler'     => 'true',
-            //    'preview_size' => 'full',
-            //    'default' =>   array(
-            //       'url' => esc_url(get_template_directory_uri()) . '/assets/img/background-clients-block.jpg'
-            //    ), 
-            // ),
-
+            array(
+               'id'           => 'reserve-section_background_img',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Reserve Section Img', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/Image_559x334.jpg'
+               ), 
+            ),
+            array(
+               'id'       => 'reserve-section_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Reserve section title', 'restaurant-site'),
+               'default'  => esc_html__(wp_kses('<span>for a reservation</span>', 'restaurant-site')),
+            ),
+            array(
+               'id'       => 'reserve-section_text',
+               'type'     => 'text',
+               'title'    => esc_html__('Reserve section text', 'restaurant-site'),
+               'default'  => esc_html__(wp_kses('You can also call <span>for a reservation</span>', 'restaurant-site')),
+            ),
+            array(
+               'id'       => 'reserve-section_button-title',
+               'type'     => 'text',
+               'title'    => esc_html__('Reserve section button title', 'restaurant-site'),
+               'default'  => esc_html__('Make reservation', 'restaurant-site'),
+            ),
+            array(
+               'id'       => 'reserve-section_button-href',
+               'type'     => 'text',
+               'title'    => esc_html__('Reserve section button href', 'restaurant-site'),
+               'default'  => esc_html__('#', 'restaurant-site'),
+            ),
 
          array(
             'id'        => 'reserve-accordion-end',
             'type'      => 'accordion',
             'position'  => 'end'
          ),
-
-
-
-
-
       ),
    )
 );
+// 404 page sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -582,7 +595,7 @@ Redux::set_section(
       ),
    )
 );
-
+// Header sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -629,7 +642,7 @@ Redux::set_section(
       ),
    )
 );
-
+//Footer sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -725,17 +738,23 @@ Redux::set_section(
    )
 
 );
-
+//  Phone-numbers sections start
 Redux::set_section(
    $opt_name,
    array(
-      'title'            => esc_html__('Phone numbers', 'restaurant-site'),
+      'title'            => esc_html__('Phone-numbers', 'restaurant-site'),
       'id'               => 'phone_numbers',
       'customizer_width' => '400px',
       // 'icon'             => 'el el-network',
       'fields'           => array(
          array(
-            'id'       => 'reservation',
+            'id'       => 'phone-numbers_home-delivery',
+            'type'     => 'text',
+            'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
+            'default'  => '1-008 005 006',
+         ),         
+         array(
+            'id'       => 'phone-numbers_reservation',
             'type'     => 'text',
             'title'    => esc_html__('Number phone for block a reservation', 'restaurant-site'),
             'default'  => '1-007 000 005',
@@ -744,7 +763,7 @@ Redux::set_section(
    )
 );
 
-
+// APP buttons sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -799,6 +818,31 @@ Redux::set_section(
 
 //===============================================================================
 //===============================================================================
+
+if (!function_exists('change_defaults')) {
+   /**
+    * Filter hook for filtering the default value of any given field. Very useful in development mode.
+    *
+    * @param array $defaults Default value array.
+    *
+    * @return array
+    */
+   function change_defaults(array $defaults): array
+   {
+      $defaults['str_replace'] = esc_html__('Testing filter hook!', 'your-textdomain-here');
+
+      return $defaults;
+   }
+}
+
+
+
+
+
+
+
+
+
 
 // // -> START Basic Fields
 // Redux::set_section(
@@ -1089,141 +1133,127 @@ Redux::set_section(
  * --> Action hook examples.
  */
 
-// Function to test the compiler hook and demo CSS output.
-// Above 10 is a priority, but 2 in necessary to include the dynamically generated CSS to be sent to the function.
-// add_filter('redux/options/' . $opt_name . '/compiler', 'compiler_action', 10, 3);
-//
-// Change the arguments after they've been declared, but before the panel is created.
-// add_filter('redux/options/' . $opt_name . '/args', 'change_arguments' );
-//
-// Change the default value of a field after it's been set, but before it's been used.
-// add_filter('redux/options/' . $opt_name . '/defaults', 'change_defaults' );
-//
-// Dynamically add a section. Can be also used to modify sections/fields.
-// add_filter('redux/options/' . $opt_name . '/sections', 'dynamic_section');
-// .
-if (!function_exists('compiler_action')) {
-   /**
-    * This is a test function that will let you see when the compiler hook occurs.
-    * It only runs if a field's value has changed and compiler=>true is set.
-    *
-    * @param array  $options        Options values.
-    * @param string $css            Compiler selector CSS values  compiler => array( CSS SELECTORS ).
-    * @param array  $changed_values Any values changed since last save.
-    */
-   function compiler_action(array $options, string $css, array $changed_values)
-   {
-      echo '<h1>The compiler hook has run!</h1>';
-      echo '<pre>';
-      // phpcs:ignore WordPress.PHP.DevelopmentFunctions
-      print_r($changed_values); // Values that have changed since the last save.
-      // echo '<br/>';
-      // print_r($options); //Option values.
-      // echo '<br/>';
-      // print_r($css); // Compiler selector CSS values  compiler => array( CSS SELECTORS ).
-      echo '</pre>';
-   }
-}
+// // Function to test the compiler hook and demo CSS output.
+// // Above 10 is a priority, but 2 in necessary to include the dynamically generated CSS to be sent to the function.
+// // add_filter('redux/options/' . $opt_name . '/compiler', 'compiler_action', 10, 3);
+// //
+// // Change the arguments after they've been declared, but before the panel is created.
+// // add_filter('redux/options/' . $opt_name . '/args', 'change_arguments' );
+// //
+// // Change the default value of a field after it's been set, but before it's been used.
+// // add_filter('redux/options/' . $opt_name . '/defaults', 'change_defaults' );
+// //
+// // Dynamically add a section. Can be also used to modify sections/fields.
+// // add_filter('redux/options/' . $opt_name . '/sections', 'dynamic_section');
+// // .
+// if (!function_exists('compiler_action')) {
+//    /**
+//     * This is a test function that will let you see when the compiler hook occurs.
+//     * It only runs if a field's value has changed and compiler=>true is set.
+//     *
+//     * @param array  $options        Options values.
+//     * @param string $css            Compiler selector CSS values  compiler => array( CSS SELECTORS ).
+//     * @param array  $changed_values Any values changed since last save.
+//     */
+//    function compiler_action(array $options, string $css, array $changed_values)
+//    {
+//       echo '<h1>The compiler hook has run!</h1>';
+//       echo '<pre>';
+//       // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+//       print_r($changed_values); // Values that have changed since the last save.
+//       // echo '<br/>';
+//       // print_r($options); //Option values.
+//       // echo '<br/>';
+//       // print_r($css); // Compiler selector CSS values  compiler => array( CSS SELECTORS ).
+//       echo '</pre>';
+//    }
+// }
 
-if (!function_exists('redux_validate_callback_function')) {
-   /**
-    * Custom function for the callback validation referenced above
-    *
-    * @param array $field          Field array.
-    * @param mixed $value          New value.
-    * @param mixed $existing_value Existing value.
-    *
-    * @return array
-    */
-   function redux_validate_callback_function(array $field, $value, $existing_value): array
-   {
-      $error   = false;
-      $warning = false;
+// if (!function_exists('redux_validate_callback_function')) {
+//    /**
+//     * Custom function for the callback validation referenced above
+//     *
+//     * @param array $field          Field array.
+//     * @param mixed $value          New value.
+//     * @param mixed $existing_value Existing value.
+//     *
+//     * @return array
+//     */
+//    function redux_validate_callback_function(array $field, $value, $existing_value): array
+//    {
+//       $error   = false;
+//       $warning = false;
 
-      // Do your validation.
-      if (1 === (int) $value) {
-         $error = true;
-         $value = $existing_value;
-      } elseif (2 === (int) $value) {
-         $warning = true;
-         $value   = $existing_value;
-      }
+//       // Do your validation.
+//       if (1 === (int) $value) {
+//          $error = true;
+//          $value = $existing_value;
+//       } elseif (2 === (int) $value) {
+//          $warning = true;
+//          $value   = $existing_value;
+//       }
 
-      $return['value'] = $value;
+//       $return['value'] = $value;
 
-      if (true === $error) {
-         $field['msg']    = 'your custom error message';
-         $return['error'] = $field;
-      }
+//       if (true === $error) {
+//          $field['msg']    = 'your custom error message';
+//          $return['error'] = $field;
+//       }
 
-      if (true === $warning) {
-         $field['msg']      = 'your custom warning message';
-         $return['warning'] = $field;
-      }
+//       if (true === $warning) {
+//          $field['msg']      = 'your custom warning message';
+//          $return['warning'] = $field;
+//       }
 
-      return $return;
-   }
-}
+//       return $return;
+//    }
+// }
 
 
-if (!function_exists('dynamic_section')) {
-   /**
-    * Custom function for filtering the sections array. Good for child themes to override or add to the sections.
-    * Simply include this function in the child themes functions.php file.
-    * NOTE: the defined constants for URLs, and directories will NOT be available at this point in a child theme,
-    * so you must use get_template_directory_uri() if you want to use any of the built-in icons.
-    *
-    * @param array $sections Section array.
-    *
-    * @return array
-    */
-   function dynamic_section(array $sections): array
-   {
-      $sections[] = array(
-         'title'  => esc_html__('Section via hook', 'your-textdomain-here'),
-         'desc'   => '<p class="description">' . esc_html__('This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.', 'your-textdomain-here') . '</p>',
-         'icon'   => 'el el-paper-clip',
+// // if (!function_exists('dynamic_section')) {
+// //    /**
+// //     * Custom function for filtering the sections array. Good for child themes to override or add to the sections.
+// //     * Simply include this function in the child themes functions.php file.
+// //     * NOTE: the defined constants for URLs, and directories will NOT be available at this point in a child theme,
+// //     * so you must use get_template_directory_uri() if you want to use any of the built-in icons.
+// //     *
+// //     * @param array $sections Section array.
+// //     *
+// //     * @return array
+// //     */
+// //    function dynamic_section(array $sections): array
+// //    {
+// //       $sections[] = array(
+// //          'title'  => esc_html__('Section via hook', 'your-textdomain-here'),
+// //          'desc'   => '<p class="description">' . esc_html__('This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.', 'your-textdomain-here') . '</p>',
+// //          'icon'   => 'el el-paper-clip',
 
-         // Leave this as a blank section, no options just some intro text set above.
-         'fields' => array(),
-      );
+// //          // Leave this as a blank section, no options just some intro text set above.
+// //          'fields' => array(),
+// //       );
 
-      return $sections;
-   }
-}
+// //       return $sections;
+// //    }
+// // }
 
-if (!function_exists('change_arguments')) {
-   /**
-    * Filter hook for filtering the args.
-    * Good for child themes to override or add to the args array. Can also be used in other functions.
-    *
-    * @param array $args Global arguments array.
-    *
-    * @return array
-    */
-   function change_arguments(array $args): array
-   {
-      $args['dev_mode'] = true;
+// // if (!function_exists('change_arguments')) {
+// //    /**
+// //     * Filter hook for filtering the args.
+// //     * Good for child themes to override or add to the args array. Can also be used in other functions.
+// //     *
+// //     * @param array $args Global arguments array.
+// //     *
+// //     * @return array
+// //     */
+// //    function change_arguments(array $args): array
+// //    {
+// //       $args['dev_mode'] = true;
 
-      return $args;
-   }
-}
+// //       return $args;
+// //    }
+// // }
 
-if (!function_exists('change_defaults')) {
-   /**
-    * Filter hook for filtering the default value of any given field. Very useful in development mode.
-    *
-    * @param array $defaults Default value array.
-    *
-    * @return array
-    */
-   function change_defaults(array $defaults): array
-   {
-      $defaults['str_replace'] = esc_html__('Testing filter hook!', 'your-textdomain-here');
 
-      return $defaults;
-   }
-}
 
 if (!function_exists('redux_custom_sanitize')) {
    /**
