@@ -26,15 +26,15 @@
 			</div>
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>
- 				<?php get_template_part( 'template-parts/components/button', 'app', [
-						'href'=>'#',
+				<?php get_template_part( 'template-parts/components/button', 'app', [
+						'href'=> esc_html__($restaurant_site_options['linck-app-apple'],'restaurant-site'),
 						'icon'=> $restaurant_site_options['icon-app-apple']['url'],
 						'text'=>'Avilable on the',
 						'title'=>'App Store',
 						]); 
 				?>
  				<?php get_template_part( 'template-parts/components/button', 'app', [
-						'href'=>'#',
+						'href'=> esc_html__($restaurant_site_options['linck-app-google'],'restaurant-site'),
 						'icon'=> $restaurant_site_options['icon-app-google']['url'],
 						'text'=>'Get it on',
 						'title'=>' Google Play',

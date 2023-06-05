@@ -220,6 +220,7 @@ Redux::set_section(
             'subtitle'  => 'Add your content to the section \'Title\'',
             'position'  => 'start',    
             ),
+
             array(
                'id'       => 'home_page_title',
                'type'     => 'text',
@@ -642,103 +643,125 @@ Redux::set_section(
       ),
    )
 );
-//Footer sections start
+// Footer sections start
 Redux::set_section(
    $opt_name,
    array(
       'title'            => esc_html__('Footer settings', 'restaurant-site'),
-      'id'               => 'setings_footer',
+      'id'               => 'settings_footer',
       'customizer_width' => '400px',
       // 'icon'             => 'el el-network',
       'fields'           => array(
          array(
-            'id'       => 'social_networks_fb-link',
-            'type'     => 'text',
-            'title'    => esc_html__('Facebook link', 'restaurant-site'),
-            'default'  => 'https://www.facebook.com/',
-         ),
-         array(
-            'id'           => 'fb-link_icon',
-            'type'         => 'media',
-            'url'          => true,
-            'title'        => esc_html__('Facebook icon', 'restaurant-site'),
-            'compiler'     => 'true',
-            'preview_size' => 'full',
-            'default' =>   array(
-               'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_facebook.png'
-            ),            
-         ),
-
-         array(
-            'id'       => 'social_networks_instagram-link',
-            'type'     => 'text',
-            'title'    => esc_html__('Instagram link', 'restaurant-site'),
-            'default'  => 'https://www.instagram.com/',
-         ),
-         array(
-            'id'           => 'social_networks_instagram_icon',
-            'type'         => 'media',
-            'url'          => true,
-            'title'        => esc_html__('Instagram icon', 'restaurant-site'),
-            'compiler'     => 'true',
-            'preview_size' => 'full',
-            'default' =>   array(
-               'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_instagram.png'
-            ),            
-         ),
-
-         array(
-            'id'       => 'social_networks_twitt-link',
-            'type'     => 'text',
-            'title'    => esc_html__('Twitter link', 'restaurant-site'),
-            'default'  => 'https://twitter.com/',
-         ),
-         array(
-            'id'           => 'social_networks_twitt_icon',
-            'type'         => 'media',
-            'url'          => true,
-            'title'        => esc_html__('Twitter icon', 'restaurant-site'),
-            'compiler'     => 'true',
-            'preview_size' => 'full',
-            'default' =>   array(
-               'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_twitter.png'
+            'id'        => 'social_networks-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Social Networks Section', 'restaurant-site' ),
+            'subtitle'  => 'Add your social networks in this section ',
+            'position'  => 'start',    
+            ),         
+         
+            array(
+               'id'       => 'social_networks_fb-link',
+               'type'     => 'text',
+               'title'    => esc_html__('Facebook link', 'restaurant-site'),
+               'default'  => 'https://www.facebook.com/',
             ),
-         ),
+            array(
+               'id'           => 'fb-link_icon',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Facebook icon', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_facebook.png'
+               ),            
+            ),
+
+            array(
+               'id'       => 'social_networks_instagram-link',
+               'type'     => 'text',
+               'title'    => esc_html__('Instagram link', 'restaurant-site'),
+               'default'  => 'https://www.instagram.com/',
+            ),
+            array(
+               'id'           => 'social_networks_instagram_icon',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Instagram icon', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_instagram.png'
+               ),            
+            ),
+
+            array(
+               'id'       => 'social_networks_twitt-link',
+               'type'     => 'text',
+               'title'    => esc_html__('Twitter link', 'restaurant-site'),
+               'default'  => 'https://twitter.com/',
+            ),
+            array(
+               'id'           => 'social_networks_twitt_icon',
+               'type'         => 'media',
+               'url'          => true,
+               'title'        => esc_html__('Twitter icon', 'restaurant-site'),
+               'compiler'     => 'true',
+               'preview_size' => 'full',
+               'default' =>   array(
+                  'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_twitter.png'
+               ),
+            ),
 
          array(
-            'id'       => 'title_one',
-            'type'     => 'text',
-            'title'    => esc_html__('Navigation', 'restaurant-site'),
-            'desc'     => esc_html__('Navigation', 'restaurant-site'),
-            'default'  => 'Navigation',
-         ),
-         array(
-            'id'       => 'title_two',
-            'type'     => 'text',
-            'title'    => esc_html__('News letter', 'restaurant-site'),
-            'desc'     => esc_html__('News letter', 'restaurant-site'),
-            'default'  => 'News letter',
-         ),
-         array(
-            'id'       => 'title_three',
-            'type'     => 'text',
-            'title'    => esc_html__('Our app avilable', 'restaurant-site'),
-            'desc'     => esc_html__('Our app avilable', 'restaurant-site'),
-            'default'  => 'Our app avilable',
-         ),
-
+            'id'        => 'social_networks-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),            
 
          array(
-            'id'       => 'copyright',
-            'type'     => 'editor',
-            'title'    => esc_html__('Copyright', 'restaurant-site'),
-            'default'  => '2016 © Luxury RestaurAnt, All rights reserved',
-         ),
+            'id'        => 'footer_title_section-accordion-start',
+            'type'      => 'accordion',
+            'title'    => esc_html__( 'Footer Title Section', 'restaurant-site' ),
+            'subtitle'  => 'All titles of footer in this section ',
+            'position'  => 'start',    
+         ), 
+
+            array(
+               'id'       => 'title_one',
+               'type'     => 'text',
+               'title'    => esc_html__('Navigation', 'restaurant-site'),
+               'desc'     => esc_html__('Navigation', 'restaurant-site'),
+               'default'  => 'Navigation',
+            ),
+            array(
+               'id'       => 'title_two',
+               'type'     => 'text',
+               'title'    => esc_html__('News letter', 'restaurant-site'),
+               'desc'     => esc_html__('News letter', 'restaurant-site'),
+               'default'  => 'News letter',
+            ),
+            array(
+               'id'       => 'title_three',
+               'type'     => 'text',
+               'title'    => esc_html__('Our app avilable', 'restaurant-site'),
+               'desc'     => esc_html__('Our app avilable', 'restaurant-site'),
+               'default'  => 'Our app avilable',
+            ),
+
+         array(
+            'id'        => 'footer_title_section-accordion-end',
+            'type'      => 'accordion',
+            'position'  => 'end'
+         ),    
+
+
       ),
    )
 
 );
-//  Phone-numbers sections start
+// Phone-numbers sections start
 Redux::set_section(
    $opt_name,
    array(
@@ -762,7 +785,6 @@ Redux::set_section(
       ),
    )
 );
-
 // APP buttons sections start
 Redux::set_section(
    $opt_name,
@@ -778,33 +800,66 @@ Redux::set_section(
             'id'           => 'icon-app-apple',
             'type'         => 'media',
             'url'          => true,
-            'title'        => esc_html__('APP icon', 'restaurant-site'),
+            'title'        => esc_html__('Apple APP Icon', 'restaurant-site'),
             'compiler'     => 'true',
             'preview_size' => 'full',
             'default' =>   array(
                'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_apple.png'
-            ),            
-         ),
+               ),            
+            ),
+         array(
+            'id'       => 'linck-app-apple',
+            'type'     => 'text',
+            'title'    => esc_html__('Linck APP Apple', 'restaurant-site'),
+            'default'  => '#',
+         ), 
+
          array(
             'id'           => 'icon-app-google',
             'type'         => 'media',
             'url'          => true,
-            'title'        => esc_html__('APP icon', 'restaurant-site'),
+            'title'        => esc_html__('Google APP icon', 'restaurant-site'),
             'compiler'     => 'true',
             'preview_size' => 'full',
             'default' =>   array(
                'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_google-play.png'
             ),            
          ),
+         array(
+            'id'       => 'linck-app-google',
+            'type'     => 'text',
+            'title'    => esc_html__('Linck APP Google', 'restaurant-site'),
+            'default'  => '#',
+         ), 
 
       ),
    )
 );
+// Copyright settings start
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('Copyright settings', 'restaurant-site'),
+      'desc'             => esc_html__('Add a description of your copyright ownership here', 'restaurant-site'),
+      'id'               => 'settings_copyright',
+      'customizer_width' => '400px',
+      // 'icon'             => 'el el-network',
+      'fields'           => array(
+         array(
+            'id'       => 'copyright',
+            'type'     => 'editor',
+				'args'    => array(
+					'media_buttons' => false,
+					// 'textarea_rows' => 5,
+				),            
+            'title'    => esc_html__('Copyright', 'restaurant-site'),
+            'default'  => '2016 © Luxury RestaurAnt, All rights reserved',
+         ),
 
+      ),
+   )
 
-
-
-
+);
 
 
 Redux::set_section(

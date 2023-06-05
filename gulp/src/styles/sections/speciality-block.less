@@ -1,13 +1,16 @@
 .speciality-block {
    display: flex;
    flex-wrap: wrap;
-   justify-content: center;
+   justify-content: left;
    min-height: 572px;
+
+
 
    &__img {
       .adaptiv-prop(width, 930, 300);
-      padding: 0px 0px (572px/930px)*100% 0px;
-
+      max-width: 930px;
+      .adaptiv-prop(height, 572, 300);
+      max-height: 572px;
    }
 
    &__text-wrap {
@@ -19,8 +22,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      .adaptiv-prop(width, 930, 300);
+      flex-grow: 1;
 
       .sm-block({
          padding: 0px 0px 0px 0px;
