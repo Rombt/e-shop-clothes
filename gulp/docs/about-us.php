@@ -32,67 +32,67 @@
          </div>
       </div>
    </section>
-   <div class="background background-coocs">
-      <div class="wrap-img background-coocs__img">
-         <img src="img/background-coocs.jpg" alt="background coocs">
+   <div class="background background-cooks">
+      <div class="wrap-img background-cooks__img">
+         <img src="img/background-cooks.jpg" alt="background cooks">
       </div>
-      <section class="conteiner coocs">
-         <h2 class="coocs__title"> Our Cooks </h2>
-         <div class="swiper swiper-coocs">
+      <section class="conteiner cooks">
+         <h2 class="cooks__title"> Our Cooks </h2>
+         <div class="swiper swiper-cooks">
             <!-- Slider main container -->
             <div class="swiper-wrapper">
                <!-- Additional required wrapper -->
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. John cliff</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. peter vasko</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. Mariya thomas</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. james dico</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. james dico</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. james dico</span>
                </div>
-               <div class="swiper-slide swiper-coocs__card">
-                  <div class="wrap-img swiper-coocs__img">
+               <div class="swiper-slide swiper-cooks__card">
+                  <div class="wrap-img swiper-cooks__img">
                      <img src="img/Image_270x263.jpg" alt="">
                   </div>
                   <span>Cheff. james dico</span>
                </div>
             </div>
-            <div class="swiper-pagination swiper-coocs__pagination"></div>
+            <div class="swiper-pagination swiper-cooks__pagination"></div>
          </div>
       </section>
    </div>
 </main>
 <section class="background speciality-block">
    <figure class="wrap-img speciality-block__img"><img src="img/speciality-block.jpg" alt=""></figure>
-   <div class="speciality-block__text-wrap speciality-block-coocs-page">
+   <div class="speciality-block__text-wrap speciality-block-cooks-page">
       <h2>Speciality</h2>
       <div class="speciality-block__text">
          <h3>EXCELLENT SERVICE</h3>

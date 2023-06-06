@@ -201,9 +201,10 @@ Redux::set_section(
       // 'icon'             => 'el el-home',
    )
 );
-
 require_once dirname( __FILE__ ).'/sections/home_page.php';
 require_once dirname( __FILE__ ).'/sections/404_page.php';
+
+
 require_once dirname( __FILE__ ).'/sections/header.php';
 require_once dirname( __FILE__ ).'/sections/footer.php';
 require_once dirname( __FILE__ ).'/sections/speciality.php';

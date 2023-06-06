@@ -1,5 +1,5 @@
 
-let swiperCoocs = {};
+let swiperCooks = {};
 let swiperDish = {};
 let swiperToday = {};
 let swiperClients = {};
@@ -7,12 +7,12 @@ let swiperFoodStep = {};
 
 
 
-if (document.querySelector('.swiper-coocs')) {
+if (document.querySelector('.swiper-cooks')) {
 
-    swiperCoocs = new Swiper('.swiper-coocs', {
+    swiperCooks = new Swiper('.swiper-cooks', {
         direction: "horizontal",
         pagination: {
-            el: '.swiper-coocs__pagination',
+            el: '.swiper-cooks__pagination',
             clickable: true,
             renderBullet: function (index, className) {
                 return '<span class="' + className + '">  <span class="swiper-pagination__center"> </span> </span>';
@@ -130,4 +130,4 @@ if (document.querySelector('.swiper-food-step')) {
 
 
 
-export { swiperCoocs, swiperDish, swiperToday, swiperClients, swiperFoodStep };
+export { swiperCooks, swiperDish, swiperToday, swiperClients, swiperFoodStep };

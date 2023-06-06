@@ -88,7 +88,7 @@
 
 </main>
 
-<?php get_template_part( 'template-parts/parts/speciality-block'); ?>
-<?php get_template_part( 'template-parts/components/opening-hours'); ?>
+<?php get_template_part( 'template-parts/parts/speciality_block'); ?>
+<?php get_template_part( 'template-parts/components/opening_hours'); ?>
 
 <?php get_footer();?>

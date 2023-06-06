@@ -25,6 +25,17 @@ Redux::set_section(
             ),            
          ),
          array(
+            'id'           => 'background-title-img',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Background title image', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+            'default' =>   array(
+               'url' => esc_url(get_template_directory_uri()) . '/assets/img/background-title-page-block.jpg'
+            ),            
+         ),
+         array(
             'id'           => 'icon_cart',
             'type'         => 'media',
             'url'          => true,

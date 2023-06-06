@@ -94,9 +94,6 @@
 
 
 @@include('html/parts/related-products.html',{'background':'background-related-products'})
-@@include('html/footer.html',{})
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
-</body>
 
-</html>
+
+<?php get_footer();?>

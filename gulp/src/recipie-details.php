@@ -272,13 +272,8 @@
 
    </div>
 </div>
-@@include('html/parts/opening-hours.html',{})
 
 
-@@include('html/footer.html',{})
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
+<?php get_template_part( 'template-parts/components/opening_hours'); ?>
 
-</body>
-
-</html>
+<?php get_footer();?>

@@ -285,27 +285,6 @@
 </main>
 
 <?php get_template_part( 'template-parts/parts/speciality-block'); ?>
-
-<section class="conteiner opening-hours-conteiner">
-
-   <div class="opening-hours-conteiner__row">
-      <div class="opening-hours-conteiner__title">
-         <h2>Opening Hours</h2>
-      </div>
-
-      <p>
-         Monday to Friday
-         <span>10am - 10pm</span>
-      </p>
-      <p>
-         Saturday to Sunday
-         <span>09am - 11pm</span>
-      </p>
-      <div class="wrap-img opening-hours-conteiner__wrap-img">
-         <img src="img/Image_210x210.jpg" alt="">
-      </div>
-   </div>
-
-</section>
+<?php get_template_part( 'template-parts/components/opening-hours'); ?>
 
 <?php get_footer();?>

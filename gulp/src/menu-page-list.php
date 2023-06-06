@@ -95,7 +95,6 @@
 </main>
 
 <?php get_template_part( 'template-parts/parts/speciality-block'); ?>
-
-@@include('html/parts/opening-hours.html',{})
+<?php get_template_part( 'template-parts/components/opening-hours'); ?>
 
 <?php get_footer();?>

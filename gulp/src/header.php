@@ -53,7 +53,15 @@
 
     <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
-            <div class="wrap-img"><img src="@img/background-title-page-block.jpg" alt=""></div>
+            <div class="wrap-img">
+                <!-- <img src="@img/background-title-page-block.jpg" alt=""> -->
+
+            <?php if ($restaurant_site_options['background-title-img']['url']) { ?>
+                <img src="<?php echo esc_url($restaurant_site_options['background-title-img']['url']) ?>" alt="">
+            <?php }?>
+
+
+            </div>
             
             <?php if (is_search()) { ?>
                <h1> Результаты поиска </h1>
@@ -63,6 +71,3 @@
             
         </div>
     <?php } ?>
-
-    <?php 		    echo '******' . rs_PATH_THEME .'<br>';
-					echo '******' . rs_URL_THEME;?>
