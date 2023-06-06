@@ -34,7 +34,7 @@
             <?php if ($restaurant_site_options['home_page_slogan_label']['url']) { ?>
                 <img src="<?php echo esc_url($restaurant_site_options['home_page_slogan_label']['url']) ?>" alt="404 img">
             <?php }?>
-            <p> <?php esc_html_e($restaurant_site_options['home_page_slogan'],'restaurant-site') ?> </p>
+            <p> <?php echo esc_html($restaurant_site_options['home_page_slogan'],'restaurant-site') ?> </p>
         </div>
     </div>
 </div>

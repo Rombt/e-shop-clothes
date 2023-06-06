@@ -94,11 +94,8 @@
 
 </main>
 
-@@include('html/speciality-block.html',{'specifier':''})
-@@include('html/parts/opening-hours.html',{})
-@@include('html/footer.html',{})
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<script src="js/app.min.js"></script>
-</body>
+<?php get_template_part( 'template-parts/parts/speciality-block'); ?>
 
-</html>
+@@include('html/parts/opening-hours.html',{})
+
+<?php get_footer();?>

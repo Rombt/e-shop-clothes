@@ -248,44 +248,7 @@
 
 </main>
 
-<section class="background speciality-block">
-   <figure class="wrap-img speciality-block__img"><img src="img/speciality-block.jpg" alt=""></figure>
-   <div class="speciality-block__text-wrap ">
-      <h2>Speciality</h2>
-      <div class="speciality-block__text">
-         <h3>EXCELLENT SERVICE</h3>
-         <p>Survived not only five centuries, but also the leap into electr</p>
-      </div>
-      <div class="speciality-block__text">
-         <h3>FREE Home DELIVERY</h3>
-         <p>Lorem Ipsum is simply dummy text of the printing and typesettin</p>
-      </div>
-      <div class="speciality-block__text">
-         <h3>Cool atmosphere</h3>
-         <p>Letraset sheets containing Lorem Ipsum passages, and more recen</p>
-      </div>
-   </div>
-</section>
-<section class="conteiner opening-hours-conteiner">
-
-   <div class="opening-hours-conteiner__row">
-      <div class="opening-hours-conteiner__title">
-         <h2>Opening Hours</h2>
-      </div>
-
-      <p>
-         Monday to Friday
-         <span>10am - 10pm</span>
-      </p>
-      <p>
-         Saturday to Sunday
-         <span>09am - 11pm</span>
-      </p>
-      <div class="wrap-img opening-hours-conteiner__wrap-img">
-         <img src="img/Image_210x210.jpg" alt="">
-      </div>
-   </div>
-
-</section>
+<?php get_template_part( 'template-parts/parts/speciality-block'); ?>
+<?php get_template_part( 'template-parts/components/opening-hours'); ?>
 
 <?php get_footer();?>

@@ -88,7 +88,7 @@
 
 </main>
 
-@@include('html/speciality-block.html',{'specifier':''})
-@@include('html/parts/opening-hours.html',{})
+<?php get_template_part( 'template-parts/parts/speciality-block'); ?>
+<?php get_template_part( 'template-parts/components/opening-hours'); ?>
 
 <?php get_footer();?>

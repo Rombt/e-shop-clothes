@@ -225,13 +225,13 @@ Redux::set_section(
                'id'       => 'home_page_title',
                'type'     => 'text',
                'title'    => esc_html__('Home page title', 'restaurant-site'),
-               'default'  => esc_html__(wp_kses('Teast your fav dish','post')),
+               'default'  => __(wp_kses('Teast your fav dish','post'),'restaurant-site'),
             ),         
             array(
                'id'       => 'home_page_sub_title',
                'type'     => 'text',
                'title'    => esc_html__('Home page subtitle', 'restaurant-site'),
-               'default'  => esc_html__(wp_kses('from <span>luxury restaurent.</span>','post')),
+               'default'  => __(wp_kses('from <span>luxury restaurent.</span>','post'),'restaurant-site'),
             ),
             array(
                'id'       => 'dish-gallery',
@@ -367,7 +367,7 @@ Redux::set_section(
                'id'       => 'read_revie_text',
                'type'     => 'text',
                'title'    => esc_html__('Read Revie Text', 'restaurant-site'),
-               'default'  => __(wp_kses('READ <p>REVIEWS</p>', array('p'=>array()))),
+               'default'  => __(wp_kses('READ <p>REVIEWS</p>', array('p'=>array())),'restaurant-site'),
             ),  
             array(
                'id'           => 'home_delivery_icon',
@@ -384,7 +384,7 @@ Redux::set_section(
                'id'       => 'home_delivery_text',
                'type'     => 'text',
                'title'    => esc_html__('Home Delivery Text', 'restaurant-site'),
-               'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array()))),
+               'default'  => __(wp_kses('CALL US NOW FOR <p>HOME DELIVERY</p>', array('p'=>array())),'restaurant-site'),
             ),           
          array(
             'id'        => 'about-accordion-end',
@@ -559,7 +559,7 @@ Redux::set_section(
                'id'       => 'reserve-section_button-href',
                'type'     => 'text',
                'title'    => esc_html__('Reserve section button href', 'restaurant-site'),
-               'default'  => esc_html__('#', 'restaurant-site'),
+               'default'  => esc_url('#'),
             ),
 
          array(
@@ -664,7 +664,7 @@ Redux::set_section(
                'id'       => 'social_networks_fb-link',
                'type'     => 'text',
                'title'    => esc_html__('Facebook link', 'restaurant-site'),
-               'default'  => 'https://www.facebook.com/',
+               'default'  => esc_url('https://www.facebook.com/'),
             ),
             array(
                'id'           => 'fb-link_icon',
@@ -700,7 +700,7 @@ Redux::set_section(
                'id'       => 'social_networks_twitt-link',
                'type'     => 'text',
                'title'    => esc_html__('Twitter link', 'restaurant-site'),
-               'default'  => 'https://twitter.com/',
+               'default'  => esc_url('https://twitter.com/'),
             ),
             array(
                'id'           => 'social_networks_twitt_icon',
@@ -733,21 +733,21 @@ Redux::set_section(
                'type'     => 'text',
                'title'    => esc_html__('Navigation', 'restaurant-site'),
                'desc'     => esc_html__('Navigation', 'restaurant-site'),
-               'default'  => 'Navigation',
+               'default'  => esc_html__('Navigation'),
             ),
             array(
                'id'       => 'title_two',
                'type'     => 'text',
                'title'    => esc_html__('News letter', 'restaurant-site'),
                'desc'     => esc_html__('News letter', 'restaurant-site'),
-               'default'  => 'News letter',
+               'default'  => esc_html__('News letter'),
             ),
             array(
                'id'       => 'title_three',
                'type'     => 'text',
                'title'    => esc_html__('Our app avilable', 'restaurant-site'),
                'desc'     => esc_html__('Our app avilable', 'restaurant-site'),
-               'default'  => 'Our app avilable',
+               'default'  => esc_html__('Our app avilable'),
             ),
 
          array(
@@ -774,13 +774,13 @@ Redux::set_section(
             'id'       => 'phone-numbers_home-delivery',
             'type'     => 'text',
             'title'    => esc_html__('Number phone for block home delivery', 'restaurant-site'),
-            'default'  => '1-008 005 006',
+            'default'  => esc_html__('1-008 005 006'),
          ),         
          array(
             'id'       => 'phone-numbers_reservation',
             'type'     => 'text',
             'title'    => esc_html__('Number phone for block a reservation', 'restaurant-site'),
-            'default'  => '1-007 000 005',
+            'default'  => esc_html__('1-007 000 005'),
          ),
       ),
    )
@@ -811,7 +811,7 @@ Redux::set_section(
             'id'       => 'linck-app-apple',
             'type'     => 'text',
             'title'    => esc_html__('Linck APP Apple', 'restaurant-site'),
-            'default'  => '#',
+            'default'  => esc_url('#'),
          ), 
 
          array(
@@ -829,7 +829,7 @@ Redux::set_section(
             'id'       => 'linck-app-google',
             'type'     => 'text',
             'title'    => esc_html__('Linck APP Google', 'restaurant-site'),
-            'default'  => '#',
+            'default'  => esc_url('#'),
          ), 
 
       ),
@@ -853,13 +853,132 @@ Redux::set_section(
 					// 'textarea_rows' => 5,
 				),            
             'title'    => esc_html__('Copyright', 'restaurant-site'),
-            'default'  => '2016 © Luxury RestaurAnt, All rights reserved',
+            'default'  => esc_html__('2016 © Luxury RestaurAnt, All rights reserved'),
          ),
 
       ),
    )
 
 );
+// Speciality sections start
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('Speciality section', 'restaurant-site'),
+      'id'               => 'Speciality',
+      'customizer_width' => '400px',
+      // 'icon'             => 'el el-network',
+      'fields'           => array(
+         array(
+            'id'       => 'speciality_maine-title',
+            'type'     => 'text',
+            'title'    => esc_html__('Maine Title number for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('Speciality'),
+         ),           array(
+            'id'       => 'speciality_title-1',
+            'type'     => 'text',
+            'title'    => esc_html__('Title number 1 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('EXCELLENT SERVICE'),
+         ),  
+         array(
+            'id'       => 'speciality_subtitle-1',
+            'type'     => 'text',
+            'title'    => esc_html__('Subtitle number 1 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('Survived not only five centuries, but also the leap into electr'),
+         ),  
+         array(
+            'id'       => 'speciality_title-2',
+            'type'     => 'text',
+            'title'    => esc_html__('Title number 2 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('FREE Home DELIVERY'),
+         ),  
+         array(
+            'id'       => 'speciality_subtitle-2',
+            'type'     => 'text',
+            'title'    => esc_html__('Subtitle number 2 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesettin'),
+         ),  
+         array(
+            'id'       => 'speciality_title-3',
+            'type'     => 'text',
+            'title'    => esc_html__('Title number 3 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('Cool atmosphere'),
+         ),  
+         array(
+            'id'       => 'speciality_subtitle-3',
+            'type'     => 'text',
+            'title'    => esc_html__('Subtitle number 3 for Speciality section', 'restaurant-site'),
+            'default'  => esc_html__('Letraset sheets containing Lorem Ipsum passages, and more recen'),
+         ),  
+         array(
+            'id'           => 'speciality_img',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Specialty section image', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+            'default' =>   array(
+               'url' => esc_url(get_template_directory_uri()) . '/assets/img/speciality-block.jpg'
+               ),            
+            ),
+      ),
+   )
+);
+// Opening Hours sections start
+Redux::set_section(
+   $opt_name,
+   array(
+      'title'            => esc_html__('Opening Hours section', 'restaurant-site'),
+      'id'               => 'opening-hours',
+      'customizer_width' => '400px',
+      // 'icon'             => 'el el-network',
+      'fields'           => array(
+         array(
+            'id'       => 'opening-hours_maine-title',
+            'type'     => 'text',
+            'title'    => esc_html__('Maine Title for Speciality Section', 'restaurant-site'),
+            'default'  => esc_html__('Opening Hours','restaurant-site'),
+         ),           
+         array(
+            'id'       => 'opening-hours_title-1',
+            'type'     => 'text',
+            'title'    => esc_html__('Title number 1 for opening hours section', 'restaurant-site'),
+            'default'  => esc_html__('Monday to Friday','restaurant-site'),
+         ),  
+         array(
+            'id'       => 'opening-hours_subtitle-1',
+            'type'     => 'text',
+            'title'    => esc_html__('Subtitle number 1 for opening hours section', 'restaurant-site'),
+            'default'  => __(wp_kses('<span>10am - 10pm</span>','post'),'restaurant-site'),
+         ),  
+         array(
+            'id'       => 'opening-hours_title-2',
+            'type'     => 'text',
+            'title'    => esc_html__('Title number 2 for opening hours section', 'restaurant-site'),
+            'default'  => esc_html__('Saturday to Sunday','restaurant-site'),
+         ),  
+         array(
+            'id'       => 'opening-hours_subtitle-2',
+            'type'     => 'text',
+            'title'    => esc_html__('Subtitle number 2 for opening hours section', 'restaurant-site'),
+            'default'  => __(wp_kses('<span>09am - 11pm</span>','post'), 'restaurant-site'),
+         ),  
+         array(
+            'id'           => 'opening-hours_img',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Specialty section image', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+            'default' =>   array(
+               'url' => esc_url(get_template_directory_uri()) . '/assets/img/Image_210x210.jpg'
+               ),            
+            ),
+      ),
+   )
+);
+
+// echo '<br>.............................................................' . dirname( __FILE__ ).'/filds/';
 
 
 Redux::set_section(
@@ -900,18 +1019,18 @@ if (!function_exists('change_defaults')) {
 
 
 // // -> START Basic Fields
-// Redux::set_section(
-// 	$opt_name,
-// 	array(
-// 		'title'            => esc_html__( 'Basic Fields', 'your-textdomain-here' ),
-// 		'id'               => 'basic',
-// 		'desc'             => esc_html__( 'These are really basic fields!', 'your-textdomain-here' ),
-// 		'customizer_width' => '400px',
-// 		'icon'             => 'el el-home',
-// 	)
-// );
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Basic Fields', 'your-textdomain-here' ),
+		'id'               => 'basic',
+		'desc'             => esc_html__( 'These are really basic fields!', 'your-textdomain-here' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-home',
+	)
+);
 
-// require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
+require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
 // require_once Redux_Core::$dir . '../sample/sections/basic-fields/text.php';
