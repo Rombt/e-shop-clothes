@@ -6,8 +6,6 @@
 <?php get_header(); ?>
 
 <body>
-   
-
    <div class="background background-contact-us">
       <div class="wrap-img"><img src="img/background-contact-us.jpg" alt=""></div>
       <div class="conteiner">
@@ -31,57 +29,31 @@
                      <textarea name="mesage" id="mesage"></textarea>
                   </div>
                </form>
-               <a href="#" class="button-orange ">send now</a>
+               <?php get_template_part( 'template-parts/components/button', 'orange', [
+                  'href'=> esc_html( $restaurant_site_options['button_href_contact-page']),
+                  'title'=>esc_html( $restaurant_site_options['button_title_contact-page']),
+                  ]); 
+               ?>               
             </div>
             <div class="contact-us__address">
-               <h2>Our Address</h2>
+               <h2> <?php echo esc_html($restaurant_site_options['our-address_title'])?> </h2>
                <div>
-                  <h3>address</h3>
-                  <p>Luxury Restaurent</p>
-                  <p>California Second Street</p>
-                  <p>2nd floor</p>
+                  <h3><?php echo __($restaurant_site_options['our-address'])?></h3>
                </div>
                <div>
                   <h3>Phone</h3>
-                  <a href="tel:+91855955856559">+91 8559 5585 6559</a>
+                  <a href="tel:<?php echo preg_replace('![^0-9]+!', '', $restaurant_site_options['our-phone']) // delete spaces ?>">  
+                     <?php echo preg_replace('![^0-9\s]+!', '', $restaurant_site_options['our-phone'])?>
+                  </a>
                </div>
                <div>
                   <h3> Email</h3>
-                  info@luxuryrestaurent.com
+                  <!-- info@luxuryrestaurent.com -->
+                  <?php echo esc_html($restaurant_site_options['our-email'])?>
                </div>
                <div>
                   <h3>Follow us</h3>
-                  <div class="icons-block">
-   <?php if ($restaurant_site_options['social_networks_fb-link']){ ?>
-   <a href="<?php echo esc_url($restaurant_site_options['social_networks_fb-link']) ?>">
-      <?php if ($restaurant_site_options['fb-link_icon']['url']){ ?>
-      <img src="<?php echo esc_url($restaurant_site_options['fb-link_icon']['url']) ?>" alt="icon_facebook">
-      <?php }?>
-   </a>
-   <?php }?>
-
-   <?php if ($restaurant_site_options['social_networks_instagram-link']){ ?>
-   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
-      <?php if ($restaurant_site_options['social_networks_twitt_icon']['url']){ ?>
-      <img src="<?php echo esc_url($restaurant_site_options['social_networks_twitt_icon']['url']) ?>"
-         alt="icon_twitter">
-      <?php }?>
-   </a>
-   <?php }?>
-
-   <?php if ($restaurant_site_options['social_networks_twitt-link']){ ?>
-   <a href="<?php echo esc_url($restaurant_site_options['social_networks_instagram-link']) ?>">
-      <?php if ($restaurant_site_options['social_networks_instagram_icon']['url']){ ?>
-      <img src="<?php echo esc_url($restaurant_site_options['social_networks_instagram_icon']['url']) ?>"
-         alt="icon_instagram">
-      <?php }?>
-   </a>
-   <?php }?>
-
-
-
-
-</div>
+                  <?php get_template_part( 'template-parts/components/icons_block'); ?>
                </div>
             </div>
          </div>

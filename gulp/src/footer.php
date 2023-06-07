@@ -22,7 +22,7 @@
 					</div>
 					@@include('html/parts/button-orange.html',{'mod':'','title':'Subscribe', 'href':'#'})
 				</div>
-				<?php get_template_part( 'template-parts/components/icons-block'); ?>
+				<?php get_template_part( 'template-parts/components/icons_block'); ?>
 			</div>
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>

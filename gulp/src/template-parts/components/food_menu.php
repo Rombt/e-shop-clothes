@@ -1,7 +1,6 @@
  <?php global $restaurant_site_options; ?>
 <div class="top-menu-wrap">
-   <!-- <h2>@@title</h2> -->
-   <h2><?php echo esc_html( $restaurant_site_options['restaurant_menu-section_title'] ); ?></h2>
+   <h2><?php echo $args['title']; ?></h2>
    <div class="wrap-nenu">
       <div class="food-menu__burger burger-open">
          <span></span>
@@ -27,14 +26,14 @@
       <nav class="menu food-menu">
          <ul class="food-menu__list">
             <li class="food-menu__item">
-               <img src="img/icon_all.png" alt="">
+               <img src="@img/icon_all.png" alt="">
                <a class="food-menu__link" href="#">All</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_breakfast.png" alt="">
+               <img src="@img/icon_breakfast.png" alt="">
                <a class="food-menu__link" href="#">Breakfast</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -43,7 +42,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_lunch.png" alt="">
+               <img src="@img/icon_lunch.png" alt="">
                <a class="food-menu__link" href="#">Lunch</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -54,7 +53,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_snacks.png" alt="">
+               <img src="@img/icon_snacks.png" alt="">
                <a class="food-menu__link" href="#">Snacks</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -66,7 +65,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_pizza.png" alt="">
+               <img src="@img/icon_pizza.png" alt="">
                <a class="food-menu__link" href="#">Pizza</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -82,7 +81,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_soups.png" alt="">
+               <img src="@img/icon_soups.png" alt="">
                <a class="food-menu__link" href="#">Soups</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
@@ -93,7 +92,7 @@
                </ul>
             </li>
             <li class="food-menu__item">
-               <img src="img/icon_binner.png" alt="">
+               <img src="@img/icon_binner.png" alt="">
                <a class="food-menu__link" href="#">Dinner</a>
                <ul class="food-menu__sub-menu-list">
                   <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>

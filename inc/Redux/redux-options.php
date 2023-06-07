@@ -202,6 +202,10 @@ Redux::set_section(
    )
 );
 require_once dirname( __FILE__ ).'/sections/home_page.php';
+require_once dirname( __FILE__ ).'/sections/menu_page.php';
+require_once dirname( __FILE__ ).'/sections/recipies_page.php';
+require_once dirname( __FILE__ ).'/sections/about_us_page.php';
+require_once dirname( __FILE__ ).'/sections/contact_us_page.php';
 require_once dirname( __FILE__ ).'/sections/404_page.php';
 
 

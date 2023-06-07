@@ -10,11 +10,9 @@
 
 <div class="conteiner recipies-title">
     <div class="recipies-title__row">
-        <h1>Our Spescial Recipies</h1>
+        <h1><?php echo esc_html( $restaurant_site_options['recipies_title']); ?> </h1>
         <div class="recipies-title__subtitle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in,
-            veniam
-            tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia.
+            <?php echo wp_kses( $restaurant_site_options['recipies_subtitle'], 'post'); ?>
         </div>
         <div class="recipies-title-nav recipies-title__nav">
             <div class="select-view">

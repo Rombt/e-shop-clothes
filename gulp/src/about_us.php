@@ -12,22 +12,21 @@
    <section class="conteiner history-blok">
       <div class="history-blok__row">
          <div class="history-blok__title">
-            <h2>Our History</h2>
+            <h2>
+               <?php echo esc_html( $restaurant_site_options['about_us_title']); ?>               
+            </h2>
          </div>
          <div class="history-blok__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quam! Dolor dolores veniam natus
-            doloribus
-            ducimus doloremque iure odio dolore a quod! Qui aliquam cumque voluptatum accusamus ipsam numquam
-            repudiandae dicta, ad est iste sit tempore debitis laboriosam exercitationem porro perspiciatis adipisci
+            <?php echo wp_kses( $restaurant_site_options['about_us_subtitle'], 'post'); ?>
          </div>
          <div class="video-blok-history">
-            <figure class="wrap-video wrap-img">
-               <!-- Вставляем видео при помощи тега video -->
-               <!-- <video src="video.mp4" controls></video> -->
-               <img src="@img/video-blok-history-img.jpg" alt="video blok history">
-            </figure>
+            <?php if ($restaurant_site_options['home_page_slogan_label']['url']) { ?>
+               <figure class="wrap-video wrap-img">
+                  <?php echo wp_oembed_get($restaurant_site_options['about_us_video']) ?>
+               </figure>
+            <?php }?>
             <div class="video-blok-history__description">
-               Our hotel video
+               <?php echo wp_kses( $restaurant_site_options['description-about_us_video'], 'post'); ?>
             </div>
          </div>
       </div>
@@ -92,6 +91,6 @@
 </main>
 
 <?php get_template_part( 'template-parts/parts/speciality_block','white'); ?>
-<?php get_template_part( 'template-parts/components/opening-hours'); ?>
+<?php get_template_part( 'template-parts/components/opening_hours'); ?>
 
 <?php get_footer();?>
