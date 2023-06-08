@@ -13,10 +13,21 @@ define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 /*
 		добавить возможность делать логотип сайта текстом или кортинкой
 			esc_html(bloginfo('name')) 
-
 		доработать адаптив блока dish-widget.php
 			прапорции картинки
 			шрифты
+		в разных местах оставляю закладки типа:  // todo
+			по окончанию работы над темой найти все глобальным поиском
+		карту на страницу контактов https://devs.redux.io/core-extensions/google-maps.html
+		заменить стандартные названия в файлах redux 
+		use dynamic_section for redux
+		выбор иконок https://devs.redux.io/core-extensions/icon-select.html
+		изменение размера картинок
+		смену шрифтов в теме через Redux панель опций
+		форму и страницу поиска по сайту
+		отдельные локации меню для мобильных устройств
+
+
 
 
 */

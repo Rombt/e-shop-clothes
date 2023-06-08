@@ -16,23 +16,29 @@
 
     <div class="conteiner">
         <header class="header ">
-            <a href="<?php echo get_home_url(); ?>" class="logo">
+            <a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
                 <?php if ( $restaurant_site_options['logo_site']['url']) { ?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
-                <?php }?>
+                <?php } else {?>
+                    <h1> <?php esc_attr(bloginfo('title')) ?> </h1>
+                <?php }?>     
             </a>
-
+            
+            <?php if (has_nav_menu('header_nav')) { ?>
             <div class="heder-menu__burger">
                 <span></span>
             </div>
 
-            <?php wp_nav_menu(
-                array(
-                    'theme_location' => 'header_nav',
-                    'container' => 'nav',
-                    'container_class' => 'heder-menu',
-                )
-            ); ?>
+            <?php 
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'header_nav',
+                        'container' => 'nav',
+                        'container_class' => 'heder-menu',
+                    )
+                );
+            } 
+            ?>
 
             <div class="cart-book">
                 <div class="cart">
