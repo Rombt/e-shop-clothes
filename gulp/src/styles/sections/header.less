@@ -29,7 +29,7 @@
    display: flex;
    align-items: center;
    justify-content: center;
-   color: #647786; // todo
+   color: #647786; // todo смена цвета фона через redux 
 
    img {
       max-height: 45px;
@@ -108,6 +108,11 @@
 });
 
 .heder-menu {
+   font-size: 14px;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-family: "Sintony";
+
    .col();
    .size(6);
    .size-md_1(8);
@@ -126,10 +131,6 @@ ul {
 
    padding: 0;
    list-style-type: none;
-   font-family: "Sintony";
-   font-size: 14px;
-   font-weight: 700;
-   text-transform: uppercase;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -144,7 +145,8 @@ li {
    cursor: pointer;
 
    a {
-      color: #647786;
+      // color: #647786;
+      color: inherit;
    }
 
    .sm-block({
@@ -196,7 +198,10 @@ li {
    align-items: center;
    justify-content: space-between;
 
-
+   font-family: "Sintony";
+   font-size: 14px;
+   font-weight: bold;
+   color: #fff;
 
    .md_1-block({
       justify-content: space-evenly;
@@ -241,11 +246,11 @@ li {
       top: -6px;
 
       color: #fff;
-      font-size: 11px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: "Sintony";
+      font-size: 11px;
    }
 
 }
@@ -266,10 +271,7 @@ li {
    padding: 0 5px;
 
 
-   font-family: "Sintony";
-   font-size: 14px;
-   font-weight: bold;
-   color: #fff;
+
    line-height: 2.143;
    letter-spacing: 1.5px;
 
@@ -296,38 +298,6 @@ img {
 
 }
 
-
-// .heder-menu__button-border {
-//    width: 190px;
-//    height: 40px;
-//    border: 1px solid #fff;
-//    border-radius: 4px;
-//    display: flex;
-//    justify-content: space-around;
-//    align-items: center;
-//    padding: 0 2px;
-
-//    .md_2-block({
-//       width: 291px;
-//    });
-
-// img {
-//    width: 21px;
-//    height: 17px;
-// }
-
-// a {
-//    font-family: "Sintony";
-//    font-size: 14px;
-//    font-weight: bold;
-//    color: #fff;
-//    line-height: 2.143;
-//    letter-spacing: 1.5px;
-
-//    background-color: #000;
-
-// }
-// }
 
 }
 }

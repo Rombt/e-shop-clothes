@@ -217,6 +217,19 @@ require_once dirname( __FILE__ ).'/sections/phone_numbers.php';
 require_once dirname( __FILE__ ).'/sections/app_buttons.php';
 require_once dirname( __FILE__ ).'/sections/opening_hours.php';
 
+Redux::set_section(
+   $opt_name,
+   array(
+		'title'  => esc_html__( 'Typography', 'restaurant-site' ),
+		'id'     => 'typography',
+		'desc'   => esc_html__( 'Typography settings', 'restaurant-site' ),
+		'icon'   => 'el el-font',
+      'customizer_width' => '450',      
+   )
+);
+
+require_once dirname( __FILE__ ).'/sections/typography.php';
+
 
 
 
@@ -407,7 +420,7 @@ if (!function_exists('change_defaults')) {
 // require_once Redux_Core::$dir . '../sample/sections/slider-spinner/slider.php';
 // require_once Redux_Core::$dir . '../sample/sections/slider-spinner/spinner.php';
 
-// // -> START Typography.
+// -> START Typography.
 // require_once Redux_Core::$dir . '../sample/sections/typography/typography.php';
 
 // // -> START Additional Types.

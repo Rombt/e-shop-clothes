@@ -3008,6 +3008,10 @@ a {
   }
 }
 .header .heder-menu {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Sintony";
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
@@ -3030,10 +3034,6 @@ a {
 .header .heder-menu ul {
   padding: 0;
   list-style-type: none;
-  font-family: "Sintony";
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3049,7 +3049,7 @@ a {
   cursor: pointer;
 }
 .header .heder-menu ul li a {
-  color: #647786;
+  color: inherit;
 }
 @media screen and (max-width: 720px) {
   .header .heder-menu ul li {
@@ -3087,6 +3087,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: "Sintony";
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
 }
 @media screen and (max-width: 1120px) {
   .header .cart-book {
@@ -3140,11 +3144,11 @@ a {
   left: 15px;
   top: -6px;
   color: #fff;
-  font-size: 11px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Sintony";
+  font-size: 11px;
 }
 .header .cart-book .heder-menu-button {
   height: 47px;
@@ -3159,10 +3163,6 @@ a {
   cursor: pointer;
   position: relative;
   padding: 0 5px;
-  font-family: "Sintony";
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
   line-height: 2.143;
   letter-spacing: 1.5px;
 }
