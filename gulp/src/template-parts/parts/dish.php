@@ -26,11 +26,11 @@
         <div class="swiper-pagination-dish swiper-pagination"></div>
     </div>
     <div class="conteiner" id="dish">
-        <div class="dish-title">
+        <div class="dish-title redux_font-dish_title">
             <p class="dish-title__title"> <?php _e($restaurant_site_options['home_page_title'],'restaurant-site') ?> </p>
             <p class="dish-title__subtitle-title"> <?php _e($restaurant_site_options['home_page_sub_title'],'restaurant-site') ?></p>
         </div>
-        <div class="exlore-food-menu">
+        <div class="exlore-food-menu redux_font-explore_food_menu">
             <?php if ($restaurant_site_options['home_page_slogan_label']['url']) { ?>
                 <img src="<?php echo esc_url($restaurant_site_options['home_page_slogan_label']['url']) ?>" alt="404 img">
             <?php }?>

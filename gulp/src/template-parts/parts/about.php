@@ -4,21 +4,21 @@
     <nav class="about-row__top-menu">
         <a href="#" class="read">
             <?php if ($restaurant_site_options['read_revie_button']['url']) { ?>
-                <img class='read__cercle'  src="<?php echo esc_url($restaurant_site_options['read_revie_button']['url']) ?>" alt="404 img">
+                <img class='read__cercle'  src="<?php echo esc_url($restaurant_site_options['read_revie_button']['url']) ?>" alt="">
             <?php }?>
 
             <div>
                 <?php _e( $restaurant_site_options['read_revie_text'] ) ?>
             </div>
             <?php if ($restaurant_site_options['read_revie_icon']['url']) { ?>
-                <img class='read__icon' src="<?php echo esc_url($restaurant_site_options['read_revie_icon']['url']) ?>" alt="404 img">
+                <img class='read__icon' src="<?php echo esc_url($restaurant_site_options['read_revie_icon']['url']) ?>" alt="">
             <?php }?>
         </a>
 
         <?php if ($restaurant_site_options['phone-numbers_home-delivery']){   ?>
         <a href="tel: <?php esc_html_e( $restaurant_site_options['phone-numbers_home-delivery'] ) ?> " class="about-call-us">
             <?php if ($restaurant_site_options['home_delivery_icon']['url']) { ?>
-                <img class='read__cercle' src="<?php echo esc_url($restaurant_site_options['home_delivery_icon']['url']) ?>" alt="404 img">
+                <img class='read__cercle' src="<?php echo esc_url($restaurant_site_options['home_delivery_icon']['url']) ?>" alt="">
             <?php }?>
 
             <div class="about-call-us__text">
