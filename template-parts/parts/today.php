@@ -8,8 +8,7 @@
    <div class="background background__today">
       <div class="swiper-today swiper">
          <div class="swiper-wrapper">
-            <?php 
-            if ( isset($arr_dish_gallery)) :
+            <?php if ( !empty($arr_dish_gallery[0])) :
                foreach ($arr_dish_gallery as $image_id) :
                   $image_data = wp_get_attachment_image_src($image_id, 'full');
                   $image_url = $image_data[0];

@@ -228,14 +228,12 @@ Redux::set_section(
    )
 );
 
-require_once dirname( __FILE__ ).'/sections/typography/header_typography.php';
 require_once dirname( __FILE__ ).'/sections/typography/home_page_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/header_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/footer_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/app_buttons_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/copyright_typography.php';
 
-// require_once dirname( __FILE__ ).'/sections/typography/dish_typography.php';
-// require_once dirname( __FILE__ ).'/sections/typography/about_typography.php';
-// require_once dirname( __FILE__ ).'/sections/typography/today_typography.php';
-// require_once dirname( __FILE__ ).'/sections/typography/restaurant_menu-typography.php';
-// require_once dirname( __FILE__ ).'/sections/typography/clients_typography.php';
 
 
 

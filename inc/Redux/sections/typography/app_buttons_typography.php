@@ -7,23 +7,16 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Today Typography', 'restaurant-site' ),
-		'id'     => 'today-typography',
+		'title'  => esc_html__( 'Buttons app', 'restaurant-site' ),
+		'id'     => 'button-app-typography',
 		'desc'   => esc_html__( 'Typography settings', 'restaurant-site' ),
       'customizer_width' => '450',
       'subsection' => true,      
 		'icon'   => 'el el-font',
 		'fields' => array(
-         // array(
-         //    'id'        => 'today-typography-accordion-start',
-         //    'type'      => 'accordion',
-         //    'title'    => esc_html__( 'Today Section Title', 'restaurant-site' ),
-         //    'subtitle'  => 'Set typography for title site',
-         //    'position'  => 'start',    
-         //    ),
 
             array(
-               'id'                => 'today_title-typography',
+               'id'                => 'button_app_text-typography',
                'type'              => 'typography',
                'google'            => true,
                'font_family_clear' => false,
@@ -34,10 +27,9 @@ Redux::set_section(
                'letter-spacing'     => true,
                'word-spacing'     => true,
                'line-height'     => true,
-
                'text-shadow'       => true,
                'default'           => array(
-                  'color'       => '#ffffff',
+                  'color'       => '#edf1f3',
                   'font-size'   => '',
                   'font-family' => '',
                   'font-weight' => '',
@@ -50,17 +42,9 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '#today h2' ),
+               'output'            => array( '.footer__app > a.button-app > p' ),
             ),
 
-         // array(
-         //    'id'        => 'today-typography-accordion-end',
-         //    'type'      => 'accordion',
-         //    'position'  => 'end'
-         // ),
-         
-         
-         
 
 		),
 	)

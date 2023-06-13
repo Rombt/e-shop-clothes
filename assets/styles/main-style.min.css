@@ -1183,6 +1183,7 @@ a {
   color: #edf1f3;
   line-height: 1.818;
   text-align: left;
+  margin-bottom: 0;
 }
 .button-app p span {
   font-size: 9px;
@@ -4286,6 +4287,7 @@ a {
   position: relative;
   max-width: 145px;
   border-right: 1px solid #c7d1d6;
+  margin: 0;
 }
 @media screen and (max-width: 1200px) {
   .reserve-call-us p {
@@ -4453,6 +4455,7 @@ a {
   text-align: left;
   white-space: nowrap;
   margin-right: 5px;
+  margin-bottom: 0;
 }
 .form-footer__input input {
   height: 100%;
