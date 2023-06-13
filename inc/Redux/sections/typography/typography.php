@@ -34,12 +34,11 @@ Redux::set_section(
                'letter-spacing'     => true,
                'word-spacing'     => true,
                'line-height'     => true,
-
                'text-shadow'       => true,
                'default'           => array(
                   'color'       => '#647786',
                   'font-size'   => '',
-                  'font-family' => 'Playfair Display',
+                  'font-family' => '',
                   'font-weight' => '',
                   'font-style'  => '',
                   'line-height' => '',
@@ -81,7 +80,6 @@ Redux::set_section(
                'letter-spacing'     => true,
                'word-spacing'     => true,
                'line-height'     => true,
-
                'text-shadow'       => true,
                'default'           => array(
                   'color'       => '#647786',
@@ -97,7 +95,7 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '.redux_font-heder_navigation' ),
+               'output'            => array( '' ),
             ),
 
          array(
@@ -105,52 +103,6 @@ Redux::set_section(
             'type'      => 'accordion',
             'position'  => 'end'
          ),
-
-         array(
-            'id'        => 'button_book-typography-accordion-start',
-            'type'      => 'accordion',
-            'title'    => esc_html__( 'Button Book', 'restaurant-site' ),
-            'subtitle'  => 'Set typography for button book',
-            'position'  => 'start',    
-            ),
-
-            array(
-               'id'                => 'button_book-typography',
-               'type'              => 'typography',
-               'google'            => true,
-               'font_family_clear' => false,
-               'color_alpha'       => true,
-               'margin-top'        => true,
-               'margin-bottom'     => true,
-               'text-transform'     => true,
-               'letter-spacing'     => true,
-               'word-spacing'     => true,
-               'line-height'     => true,
-
-               'text-shadow'       => true,
-               'default'           => array(
-                  'color'       => '#ffffff',
-                  'font-size'   => '',
-                  'font-family' => '',
-                  'font-weight' => '',
-                  'font-style'  => '',
-                  'line-height' => '',
-                  'margin-top'    => '',
-                  'margin-bottom' => '',
-                  'shadow-color'       => '',
-                  'shadow-horizontal'  => '0',
-                  'shadow-vertical'  => '0',
-                  'shadow-blur'  => '0',
-               ),
-               'output'            => array( '.redux_font-button_book' ),
-            ),
-
-         array(
-            'id'        => 'button_book-typography-accordion-end',
-            'type'      => 'accordion',
-            'position'  => 'end'
-         ),         
-
 		),
 	)
 );

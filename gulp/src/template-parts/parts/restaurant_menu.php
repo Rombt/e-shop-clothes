@@ -1,6 +1,6 @@
  <?php global $restaurant_site_options; ?>
 <div class="conteiner" id="restaurant-menu">
-   <?php get_template_part( 'template-parts/components/food-menu', null, ['title' => esc_html( $restaurant_site_options['restaurant_menu-section_title'])]); ?>
+   <?php get_template_part( 'template-parts/components/food_menu', null, ['title' => esc_html( $restaurant_site_options['restaurant_menu-section_title'])]); ?>
    <section class="row-dish dish__row">
       <div class="col-dish">
          <div class="dish">

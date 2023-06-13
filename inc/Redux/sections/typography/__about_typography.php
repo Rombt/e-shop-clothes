@@ -175,7 +175,7 @@ Redux::set_section(
             ),
 
          array(
-            'id'        => 'button_book-typography-accordion-end',
+            'id'        => 'home_delivery-typography-accordion-end',
             'type'      => 'accordion',
             'position'  => 'end'
          ),           
