@@ -71,11 +71,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -88,11 +88,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -105,11 +105,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -122,11 +122,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -139,11 +139,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -156,11 +156,11 @@
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>

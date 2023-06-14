@@ -229,11 +229,21 @@ Redux::set_section(
 );
 
 require_once dirname( __FILE__ ).'/sections/typography/home_page_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/menu_page_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/recipe_page_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/blog_page_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/about-us_page_typography.php';
+
 require_once dirname( __FILE__ ).'/sections/typography/header_typography.php';
 require_once dirname( __FILE__ ).'/sections/typography/footer_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/restaurant_menu_typography.php';
 require_once dirname( __FILE__ ).'/sections/typography/app_buttons_typography.php';
-require_once dirname( __FILE__ ).'/sections/typography/copyright_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/speciality_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/opening_hours_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/our_cooks_typography.php';
+require_once dirname( __FILE__ ).'/sections/typography/contact_us_page_typography.php';
 
+require_once dirname( __FILE__ ).'/sections/typography/copyright_typography.php';
 
 
 

@@ -8,74 +8,81 @@
    align-items: center;
    justify-content: center;
    height: 840px;
+   padding-bottom: 80px;
+
+   .to(1250px, {
+      padding-bottom: 0px;
+   });
 
 
-   /* .404-page__title */
+/* .404-page__title */
 
-   &__title {
-      min-height: 301px;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+&__title {
+   min-height: 301px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   pointer-events: none;
 
-      span {
+   span {
 
-         .adaptiv-font(400, 100);
-         font-family: "PlayfairDisplay";
-         color: rgb(254, 131, 0);
-         font-weight: bold;
-         position: relative;
-         top: -80px;
-      }
-
-      span:first-of-type {
-         left: 20px;
-         z-index: 5;
-      }
-
-      span:last-of-type {
-         left: -20px;
-         z-index: 5;
-      }
-
-   }
-
-
-   &__wrap-img {
-      .adaptiv-prop(width, 300, 150);
-      .adaptiv-prop(height, 300, 150);
-
-   }
-
-
-
-   /* .404-page__body */
-
-   &__body {
-
-      .adaptiv-font(30, 20);
+      .adaptiv-font(400, 100);
       font-family: "PlayfairDisplay";
-      color: rgb(44, 70, 90);
+      color: rgb(254, 131, 0);
       font-weight: bold;
-      line-height: 0.5;
-      text-align: center;
+      position: relative;
+      top: -80px;
+   }
 
-      margin-bottom: 45px;
+   span:first-of-type {
+      left: 20px;
+      z-index: 5;
+   }
 
-      h2 {
+   span:last-of-type {
+      left: -20px;
+      z-index: 5;
+   }
 
-         font-size: 72px;
-         .adaptiv-font(72, 42);
+}
 
-         margin-bottom: 35px;
 
-      }
+&__wrap-img {
+   .adaptiv-prop(width, 300, 150);
+   .adaptiv-prop(height, 300, 150);
 
-      p {
-         line-height: 1.2;
-      }
+}
+
+
+
+/* .404-page__body */
+
+&__body {
+
+   .adaptiv-font(30, 20);
+   font-family: "PlayfairDisplay";
+   color: rgb(44, 70, 90);
+   font-weight: bold;
+   line-height: 0.5;
+   text-align: center;
+
+   margin-bottom: 45px;
+
+   h2 {
+
+      font-size: 72px;
+      .adaptiv-font(72, 42);
+
+      margin-bottom: 35px;
 
    }
+
+   p {
+      line-height: 1.2;
+      margin-bottom: 0;
+   }
+
+}
 }

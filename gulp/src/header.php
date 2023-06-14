@@ -28,7 +28,6 @@
             <div class="heder-menu__burger">
                 <span></span>
             </div>
-
             <?php 
                 wp_nav_menu(
                     array(
@@ -39,7 +38,6 @@
                 );
             } 
             ?>
-
             <div class="cart-book">
                 <div class="cart">
                     <div class="cart__cercle">3</div>
@@ -49,10 +47,7 @@
                         <?php }?>
                     </a>
                 </div>
-
                 <?php get_template_part( 'template-parts/components/button', 'book', ['href'=>'#','title'=>'BOOK YOU TABLE']); ?>
-
-
             </div>
         </header>
     </div>
@@ -60,12 +55,9 @@
     <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
             <div class="wrap-img">
-                <!-- <img src="@img/background-title-page-block.jpg" alt=""> -->
-
             <?php if ($restaurant_site_options['background-title-img']['url']) { ?>
                 <img src="<?php echo esc_url($restaurant_site_options['background-title-img']['url']) ?>" alt="">
             <?php }?>
-
 
             </div>
             

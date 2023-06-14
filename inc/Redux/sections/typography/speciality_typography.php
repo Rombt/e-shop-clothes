@@ -7,23 +7,16 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Page', 'restaurant-site' ),
-		'id'     => '_page-typography',
+		'title'  => esc_html__( 'Speciality Section', 'restaurant-site' ),
+		'id'     => 'speciality-typography',
 		'desc'   => esc_html__( 'Typography settings', 'restaurant-site' ),
       'customizer_width' => '450',
       'subsection' => true,      
 		'icon'   => 'el el-font',
 		'fields' => array(
-         array(
-            'id'        => 'title_site-typography-accordion-start',
-            'type'      => 'accordion',
-            'title'    => esc_html__( 'Title Site', 'restaurant-site' ),
-            'subtitle'  => 'Set typography for title site',
-            'position'  => 'start',    
-            ),
-
             array(
-               'id'                => 'title_site-typography',
+               'id'                => 'speciality_title-typography',
+               'title'  => esc_html__( 'Title of Speciality Section', 'restaurant-site' ),
                'type'              => 'typography',
                'google'            => true,
                'font_family_clear' => false,
@@ -36,7 +29,7 @@ Redux::set_section(
                'line-height'     => true,
                'text-shadow'       => true,
                'default'           => array(
-                  'color'       => '#647786',
+                  'color'       => '#14141d',
                   'font-size'   => '',
                   'font-family' => '',
                   'font-weight' => '',
@@ -49,27 +42,11 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '.redux_font-title_site' ),
+               'output'            => array( '.speciality-block__text-wrap > h2' ),
             ),
-
-         array(
-            'id'        => 'title_site-typography-accordion-end',
-            'type'      => 'accordion',
-            'position'  => 'end'
-         ),
-         
-         
-         
-         array(
-            'id'        => 'heder-navigation-typography-accordion-start',
-            'type'      => 'accordion',
-            'title'    => esc_html__( 'Header Navigation', 'restaurant-site' ),
-            'subtitle'  => 'Set typography for header navigation',
-            'position'  => 'start',    
-            ),
-
             array(
-               'id'                => 'heder-navigation-typography',
+               'id'                => 'speciality_subtitle-typography',
+               'title'  => esc_html__( 'Subtitle of Speciality Section', 'restaurant-site' ),
                'type'              => 'typography',
                'google'            => true,
                'font_family_clear' => false,
@@ -82,7 +59,7 @@ Redux::set_section(
                'line-height'     => true,
                'text-shadow'       => true,
                'default'           => array(
-                  'color'       => '#647786',
+                  'color'       => '#14141d',
                   'font-size'   => '',
                   'font-family' => '',
                   'font-weight' => '',
@@ -95,14 +72,38 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '' ),
+               'output'            => array( '.speciality-block__text > h3' ),
             ),
-
-         array(
-            'id'        => 'heder-typography-accordion-end',
-            'type'      => 'accordion',
-            'position'  => 'end'
-         ),
+            array(
+               'id'                => 'speciality_text-typography',
+               'title'  => esc_html__( 'Text of Speciality Section', 'restaurant-site' ),
+               'type'              => 'typography',
+               'google'            => true,
+               'font_family_clear' => false,
+               'color_alpha'       => true,
+               'margin-top'        => true,
+               'margin-bottom'     => true,
+               'text-transform'     => true,
+               'letter-spacing'     => true,
+               'word-spacing'     => true,
+               'line-height'     => true,
+               'text-shadow'       => true,
+               'default'           => array(
+                  'color'       => '#5c6369',
+                  'font-size'   => '',
+                  'font-family' => '',
+                  'font-weight' => '',
+                  'font-style'  => '',
+                  'line-height' => '',
+                  'margin-top'    => '',
+                  'margin-bottom' => '',
+                  'shadow-color'       => '',
+                  'shadow-horizontal'  => '0',
+                  'shadow-vertical'  => '0',
+                  'shadow-blur'  => '0',
+               ),
+               'output'            => array( '.speciality-block__text > p' ),
+            ),
 		),
 	)
 );

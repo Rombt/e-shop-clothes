@@ -31,7 +31,7 @@ Redux::set_section(
             'line-height'     => true,
             'text-shadow'       => true,
             'default'           => array(
-               'color'       => '#edf1f3',
+               'color'       => '#adb2b7',
                'font-size'   => '',
                'font-family' => '',
                'font-weight' => '',

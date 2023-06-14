@@ -7,23 +7,16 @@ defined( 'ABSPATH' ) || exit;
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'  => esc_html__( 'Page', 'restaurant-site' ),
-		'id'     => '_page-typography',
+		'title'  => esc_html__( 'Our Cooks', 'restaurant-site' ),
+		'id'     => 'our-cooks-typography',
 		'desc'   => esc_html__( 'Typography settings', 'restaurant-site' ),
       'customizer_width' => '450',
       'subsection' => true,      
 		'icon'   => 'el el-font',
 		'fields' => array(
-         array(
-            'id'        => 'title_site-typography-accordion-start',
-            'type'      => 'accordion',
-            'title'    => esc_html__( 'Title Site', 'restaurant-site' ),
-            'subtitle'  => 'Set typography for title site',
-            'position'  => 'start',    
-            ),
-
             array(
-               'id'                => 'title_site-typography',
+               'id'                => 'our_cooks_title-typography',
+               'title'  => esc_html__( 'Title of Our Cooks', 'restaurant-site' ),
                'type'              => 'typography',
                'google'            => true,
                'font_family_clear' => false,
@@ -36,7 +29,7 @@ Redux::set_section(
                'line-height'     => true,
                'text-shadow'       => true,
                'default'           => array(
-                  'color'       => '#647786',
+                  'color'       => '#000000',
                   'font-size'   => '',
                   'font-family' => '',
                   'font-weight' => '',
@@ -49,27 +42,11 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '.redux_font-title_site' ),
+               'output'            => array( '.cooks__title' ),
             ),
-
-         array(
-            'id'        => 'title_site-typography-accordion-end',
-            'type'      => 'accordion',
-            'position'  => 'end'
-         ),
-         
-         
-         
-         array(
-            'id'        => 'heder-navigation-typography-accordion-start',
-            'type'      => 'accordion',
-            'title'    => esc_html__( 'Header Navigation', 'restaurant-site' ),
-            'subtitle'  => 'Set typography for header navigation',
-            'position'  => 'start',    
-            ),
-
             array(
-               'id'                => 'heder-navigation-typography',
+               'id'                => 'our_cooks_name-typography',
+               'title'  => esc_html__( 'Names of Our Cooks', 'restaurant-site' ),
                'type'              => 'typography',
                'google'            => true,
                'font_family_clear' => false,
@@ -82,7 +59,7 @@ Redux::set_section(
                'line-height'     => true,
                'text-shadow'       => true,
                'default'           => array(
-                  'color'       => '#647786',
+                  'color'       => '#5c6369',
                   'font-size'   => '',
                   'font-family' => '',
                   'font-weight' => '',
@@ -95,14 +72,8 @@ Redux::set_section(
                   'shadow-vertical'  => '0',
                   'shadow-blur'  => '0',
                ),
-               'output'            => array( '' ),
+               'output'            => array( '.swiper-cooks__card span' ),
             ),
-
-         array(
-            'id'        => 'heder-typography-accordion-end',
-            'type'      => 'accordion',
-            'position'  => 'end'
-         ),
 		),
 	)
 );

@@ -7,7 +7,7 @@
 
 <main class="conteiner menu-page-conteiner">
 
-   <?php get_template_part( 'template-parts/components/food-menu', null, ['title' => esc_html( $restaurant_site_options['menu_title'])]); ?>   
+   <?php get_template_part( 'template-parts/components/food_menu', null, ['title' => esc_html( $restaurant_site_options['menu_title'])]); ?>   
 
    <div class="menu-page-conteiner__row">
 

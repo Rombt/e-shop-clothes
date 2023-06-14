@@ -1618,6 +1618,7 @@ a {
   font-family: "Sintony";
   color: #5c6369;
   line-height: 1.857;
+  margin-bottom: 0;
 }
 .prod-card-grid__footer {
   height: 65px;
@@ -1683,6 +1684,7 @@ a {
   font-family: "Sintony";
   color: #5c6369;
   line-height: 1.857;
+  margin-bottom: 0;
 }
 .prod-card-list__footer p {
   font-size: 26px;
@@ -1695,6 +1697,7 @@ a {
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
+  margin-bottom: 0;
 }
 .prod-card-list__footer p span {
   display: inline-block;
@@ -1869,6 +1872,9 @@ a {
   position: relative;
   width: calc(55px + (85 - 55) * ((100vw - 320px)/(1230 - 320)));
   height: calc(45px + (65 - 45) * ((100vw - 320px)/(1230 - 320)));
+}
+.square-date p {
+  margin-bottom: 0;
 }
 @media screen and (max-width: 750px) {
   .square-date {
@@ -5338,8 +5344,14 @@ a {
   align-items: center;
   justify-content: center;
   height: 840px;
+  padding-bottom: 80px;
   /* .404-page__title */
   /* .404-page__body */
+}
+@media screen and (max-width: 1250px) {
+  .e404-page {
+    padding-bottom: 0px;
+  }
 }
 .e404-page__title {
   min-height: 301px;
@@ -5348,6 +5360,7 @@ a {
   align-items: center;
   justify-content: center;
   position: relative;
+  pointer-events: none;
 }
 .e404-page__title span {
   font-size: calc(100px + 300 * ((100vw - 320px) / 910));
@@ -5385,6 +5398,7 @@ a {
 }
 .e404-page__body p {
   line-height: 1.2;
+  margin-bottom: 0;
 }
 .history-blok {
   /* .history-blok__row */
