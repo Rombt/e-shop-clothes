@@ -21,7 +21,7 @@ export const path = {
         php: `${themePath}`,
         images: `${themePath}/assets/img/`,
         fonts: `${themePath}/assets/fonts/`,
-        files: `${themePath}/files/`,
+        files: `${themePath}/assets/`,
         svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
     prod: {
@@ -30,7 +30,7 @@ export const path = {
         php: `${prodFolder}/`,
         images: `${prodFolder}/img/`,
         fonts: `${prodFolder}/fonts/`,
-        files: `${prodFolder}/files/`,
+        files: `${prodFolder}/`,
         svgicons: `${srcFolder}/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой
     },
     src: {
@@ -44,7 +44,9 @@ export const path = {
         js: `${srcFolder}/js/app.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`, // добавить форматы при необходимости
         svg: `${srcFolder}/img/**/*.svg`,
-        files: `${srcFolder}/files/**/*.*`,
+        files: [
+            `${srcFolder}/js/libs/**/*.*`,      // for simple file transfer
+        ],
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
@@ -52,7 +54,9 @@ export const path = {
         styles: `${srcFolder}/styles/**/*.{scss,less}`,
         js: `${srcFolder}/js/**/*.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
-        files: `${srcFolder}/files/**/*.*`,
+        files: [
+            `${srcFolder}/js/libs/**/*.*`,
+        ],
         wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
     wp_watch: [             // добавдять файлы для отслеживания 
