@@ -11,6 +11,8 @@ define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 
 //===================	TODO	====================================
 /*
+		добавить анимацию по максимуму!!!
+		добавить картинки удвоеного качества для Rétina
 		исправить адаптив шрифтов в части неболее чем указано
 		добавить возможность делать логотип сайта текстом или кортинкой
 			esc_html(bloginfo('name')) 
@@ -37,7 +39,9 @@ function restaurant_site_scripts()
 {
 	wp_enqueue_style('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all');
 	wp_enqueue_style('restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all');
-	wp_enqueue_script('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '1.0', true);
+	
+	wp_enqueue_script('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true);
+	// wp_enqueue_script('swiper-bundle', 'https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js', array(), '', true);
 	wp_enqueue_script('restaurant_site-app', get_template_directory_uri() . '/assets/js/app.min.js', array(), '1.0', true);
 
 

@@ -37,7 +37,6 @@
 
 }
 
-
 .heder-menu__burger {
    display: none;
 
@@ -157,7 +156,6 @@ li {
 
 }
 
-
 .sm-block({
    .menu__sm {
       display: block;
@@ -186,6 +184,20 @@ li {
 
 });
 
+.search-icon {
+   width: 20px;
+   height: 20px;
+   margin-right: 10px;
+
+   img {
+      object-fit: contain;
+   }
+
+   &:hover {
+      transform: scale(1.2);
+      transition: 0.2s;
+   }
+}
 
 .cart-book {
    .col();
@@ -224,6 +236,12 @@ li {
    position: relative;
    margin: 2px;
    padding: 2px;
+
+   &:hover {
+      transform: scale(1.2);
+      transition: 0.2s;
+   }
+
 
    a {
       display: flex;

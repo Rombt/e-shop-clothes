@@ -23,22 +23,30 @@
                     <h1 class='redux_font-title_site'> <?php esc_attr(bloginfo('title')) ?> </h1>
                 <?php }?>     
             </a>
-            
             <?php if (has_nav_menu('header_nav')) { ?>
             <div class="heder-menu__burger">
                 <span></span>
             </div>
-            <?php 
-                wp_nav_menu(
+            <?php wp_nav_menu(
                     array(
                         'theme_location' => 'header_nav',
                         'container' => 'nav',
                         'container_class' => 'heder-menu redux_font-heder_navigation',
                     )
                 );
-            } 
-            ?>
+            } ?>
+            
             <div class="cart-book">
+
+
+            <?php if ( $restaurant_site_options['search_icon']['url']) { ?>
+                <a href="#" class="wrap-img search-icon">
+                    <img src="<?php echo esc_url($restaurant_site_options['search_icon']['url']) ?>" alt="">
+                </a>
+            <?php }?>
+
+
+
                 <div class="cart">
                     <div class="cart__cercle">3</div>
                     <a href="shopping-cart.html">
@@ -50,6 +58,7 @@
                 <?php get_template_part( 'template-parts/components/button', 'book', ['href'=>'#','title'=>'BOOK YOU TABLE']); ?>
             </div>
         </header>
+        <?php get_template_part( 'template-parts/parts/searchform'); ?>
     </div>
 
     <?php if (!is_front_page() && !is_404()) {  ?>
@@ -69,3 +78,4 @@
             
         </div>
     <?php } ?>
+

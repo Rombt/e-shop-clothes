@@ -36,6 +36,17 @@ Redux::set_section(
             ),            
          ),
          array(
+            'id'           => 'search_icon',
+            'type'         => 'media',
+            'url'          => true,
+            'title'        => esc_html__('Search icon', 'restaurant-site'),
+            'compiler'     => 'true',
+            'preview_size' => 'full',
+            'default' =>   array(
+               'url' => esc_url(get_template_directory_uri()) . '/assets/img/search_icon-2.png'
+            ),            
+         ),
+         array(
             'id'           => 'icon_cart',
             'type'         => 'media',
             'url'          => true,

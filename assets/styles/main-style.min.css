@@ -1141,6 +1141,9 @@ a {
   top: 0;
   left: 0;
 }
+.searc-modal {
+  border: 1px solid #0515fd;
+}
 .button-orange {
   border: 1px solid #fea100;
   border-radius: 4px;
@@ -3085,6 +3088,18 @@ a {
     padding: 4px;
   }
 }
+.header .search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.header .search-icon img {
+  object-fit: contain;
+}
+.header .search-icon:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
+}
 .header .cart-book {
   box-sizing: border-box;
   word-wrap: break-word;
@@ -3133,6 +3148,10 @@ a {
   position: relative;
   margin: 2px;
   padding: 2px;
+}
+.header .cart-book .cart:hover {
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 .header .cart-book .cart a {
   display: flex;

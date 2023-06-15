@@ -106,7 +106,6 @@ if (document.querySelector('.swiper.swiper-clients')) {
     });
 }
 
-
 if (document.querySelector('.swiper-food-step')) {
 
     swiperFoodStep = new Swiper('.swiper-food-step', {
