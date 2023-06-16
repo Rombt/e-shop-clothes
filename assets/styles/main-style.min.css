@@ -1142,7 +1142,96 @@ a {
   left: 0;
 }
 .searc-modal {
-  border: 1px solid #0515fd;
+  font-family: "Sintony";
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  right: 0px;
+  margin: auto auto;
+  height: 720px;
+  width: 80%;
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #EEEEEE;
+  border: 2px solid #F0F0F0;
+  box-shadow: 0px 24px 38px 0px #00000017;
+  display: none;
+}
+@media screen and (max-width: 1120px) {
+  .searc-modal {
+    height: 600px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .searc-modal {
+    height: 400px;
+  }
+}
+.searc-modal__search {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 50%;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.searc-modal input[type="text"] {
+  font-size: 18px;
+  height: 40px;
+}
+.searc-modal input[type="submit"] {
+  font-size: 20px;
+  font-weight: 800;
+  color: #647786;
+}
+.searc-modal input[type="submit"]:hover {
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
+.close-window {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+}
+.close-window:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.close-window:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 100%;
+  background-color: black;
+}
+.close-window:hover {
+  transform: scale(1.3) rotate(-135deg);
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.close-window:hover:after {
+  width: 2px;
+}
+.close-window:hover:before {
+  height: 2px;
 }
 .button-orange {
   border: 1px solid #fea100;
@@ -3092,13 +3181,15 @@ a {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-}
-.header .search-icon img {
-  object-fit: contain;
+  overflow: visible;
 }
 .header .search-icon:hover {
   transform: scale(1.2);
   transition: 0.2s;
+  cursor: pointer;
+}
+.header .search-icon img {
+  object-fit: contain;
 }
 .header .cart-book {
   box-sizing: border-box;

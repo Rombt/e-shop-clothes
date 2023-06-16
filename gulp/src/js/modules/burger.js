@@ -43,8 +43,6 @@ export class Burger {
 
         if (conteinerMenu === null || burgerOpen === null) {
 
-            // console.log("меню отсутствует");
-            // console.log("this = ", this);
             return false;
         } else {
             burgerOpen.addEventListener("click", () => {

@@ -37,16 +37,11 @@
             } ?>
             
             <div class="cart-book">
-
-
-            <?php if ( $restaurant_site_options['search_icon']['url']) { ?>
-                <a href="#" class="wrap-img search-icon">
-                    <img src="<?php echo esc_url($restaurant_site_options['search_icon']['url']) ?>" alt="">
-                </a>
-            <?php }?>
-
-
-
+                <?php if ( $restaurant_site_options['search_icon']['url']) { ?>
+                <div href="#" class="wrap-img search-icon">
+                    <img class="wrap-img search-icon" src="<?php echo esc_url($restaurant_site_options['search_icon']['url']) ?>" alt="">
+                </div>
+                <?php }?>
                 <div class="cart">
                     <div class="cart__cercle">3</div>
                     <a href="shopping-cart.html">
@@ -58,8 +53,8 @@
                 <?php get_template_part( 'template-parts/components/button', 'book', ['href'=>'#','title'=>'BOOK YOU TABLE']); ?>
             </div>
         </header>
-        <?php get_template_part( 'template-parts/parts/searchform'); ?>
     </div>
+    <?php get_template_part( 'template-parts/parts/searchform'); ?>
 
     <?php if (!is_front_page() && !is_404()) {  ?>
         <div class="background background-title-page-block">
@@ -71,7 +66,7 @@
             </div>
             
             <?php if (is_search()) { ?>
-               <h1> Результаты поиска </h1>
+               <h1>  <?php echo esc_html( $restaurant_site_options['search-page_title']); ?> </h1>
             <?php } else { ?>
             <h1> <?php wp_title("") ?> </h1>
             <?php } ?>
