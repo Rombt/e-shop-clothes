@@ -56,21 +56,40 @@
     </div>
     <?php get_template_part( 'template-parts/parts/searchform'); ?>
 
-    <?php if (!is_front_page() && !is_404()) {  ?>
+    <?php if (!is_front_page()) {  ?>
         <div class="background background-title-page-block">
             <div class="wrap-img">
-            <?php if ($restaurant_site_options['background-title-img']['url']) { ?>
+                <?php if ($restaurant_site_options['background-title-img']['url']) { ?>
                 <img src="<?php echo esc_url($restaurant_site_options['background-title-img']['url']) ?>" alt="">
-            <?php }?>
-
+                <?php }?>
             </div>
-            
-            <?php if (is_search()) { ?>
-               <h1>  <?php echo esc_html( $restaurant_site_options['search-page_title']); ?> </h1>
-            <?php } else { ?>
-            <h1> <?php wp_title("") ?> </h1>
-            <?php } ?>
-            
+            <h1>  
+                <?php if(is_category()){
+                    echo esc_html__('Category', 'restaurant-site') . single_cat_title("", false);
+                } elseif(is_author()){
+                    echo esc_html__('Author', 'restaurant-site') . get_the_author();
+                } elseif(is_tag()){
+                    echo esc_html__('Tag', 'restaurant-site') . single_tag_title("", false);
+                } elseif(is_search()){
+                    echo esc_html__($restaurant_site_options['search-page_title'], 'restaurant-site');
+                } elseif(is_archive()) {
+                    if ( is_day() ) :
+                        echo sprintf( esc_html__( 'Daily Archive: %s', 'restaurant-site' ), get_the_date() );
+                    elseif ( is_month() ) :
+                        echo  sprintf( esc_html__( 'Monthly Archive: %s', 'restaurant-site' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'restaurant-site' ) ) );
+                    elseif ( is_year() ) :
+                        echo  sprintf( esc_html__( 'Yearly Archive: %s', 'restaurant-site' ), get_the_date( _x( 'Y', 'yearly archives date format', 'restaurant-site' ) ) );
+                    else :
+                        echo  esc_html__( 'Archive', 'restaurant-site' );
+                    endif;
+                } elseif(is_404()){
+                    echo  esc_html__('Page not found','restaurant-site');
+                } else {
+                    echo  wp_title("");
+                } ?>          
+            </h1>
         </div>
     <?php } ?>
+
+    <?php echo rstr_get_breadcrumbs(); ?>
 
