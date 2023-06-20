@@ -3303,6 +3303,26 @@ a {
   transform: translate(-50%, -50%);
   border: 1px solid #fff;
 }
+.breadcrumbs-conteiner__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.breadcrumbs-conteiner .breadcrumbs {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-family: "Sintony";
+  color: #5c6369;
+  line-height: 5;
+  font-weight: 800;
+}
+.breadcrumbs-conteiner .breadcrumbs a {
+  color: inherit;
+}
 .background-title-page-block {
   position: relative;
   height: calc(100px + (245 - 100) * ((100vw - 320px)/(1230 - 320)));

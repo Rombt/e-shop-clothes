@@ -91,5 +91,11 @@
         </div>
     <?php } ?>
 
-    <?php echo rstr_get_breadcrumbs(); ?>
+    <div class="conteiner breadcrumbs-conteiner">
+        <div class="breadcrumbs-conteiner__row">
+            <?php echo rstr_get_breadcrumbs(); ?>
+
+        </div>
+        
+     </div>
 

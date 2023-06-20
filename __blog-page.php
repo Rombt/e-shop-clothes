@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Blog page */
+/* Template__Name: Blog page2 */
 ?>
 
 
@@ -394,7 +394,6 @@
 
 
 
-<?php get_footer(); ?>
 </body>
 
 </html>

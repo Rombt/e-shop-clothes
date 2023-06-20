@@ -15,7 +15,7 @@ function rstr_get_breadcrumbs() {
     $text['404']      = esc_html__('Error 404','restaurant-site');
 
     $show_current   = 1;
-    $show_on_home   = 0;
+    $show_on_home   = 0; 
     $show_home_link = 1;
     $show_title     = 1;
     $delimiter      = ' / ';
@@ -24,19 +24,19 @@ function rstr_get_breadcrumbs() {
 
     global $post;
     $home_link    = esc_url(home_url('/'));
-    $link_before  = '<span typeof="v:Breadcrumb">';
+    $link_before  = '<span>';
     $link_after   = '</span>';
-    $link_attr    = ' rel="v:url" property="v:title"';
+    $link_attr    = '';
     $link         = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
         if(isset($post->post_parent)){$my_post_parent = $post->post_parent;}else{$my_post_parent=1;}
         $parent_id    = $parent_id_2 = $my_post_parent;
     $frontpage_id = get_option('page_on_front');
 
-    if (is_home() || is_front_page()) {
+    if (is_home() || is_front_page()) {  
 
         if ($show_on_home == 1) echo '<div class="breadcrumbs"><a href="' . $home_link . '">' . $text['home'] . '</a></div>';
 
-        if(get_option( 'page_for_posts' )){
+        if(get_option( 'page_for_posts' ) && is_home()){
                 echo '<div class="breadcrumbs"><a href="' . esc_url($home_link) . '">' . esc_attr($text['home']) . '</a>'.rstr_wp_kses($delimiter).' '.__('Blog','restaurant-site').'</div>';
         }
     }
@@ -149,7 +149,7 @@ function rstr_get_breadcrumbs() {
             if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
         }
 
-        echo '</div><!-- .breadcrumbs -->';
+        echo '</div>';
 
     }
 }
