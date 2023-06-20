@@ -9,9 +9,7 @@
 
 <div class="conteiner recipies-title">
     <div class="recipies-title__row">
-        <h1>
-<?php echo esc_html( $restaurant_site_options['recipies_title']); ?>            
-        </h1>
+        <h1><?php echo esc_html( $restaurant_site_options['recipies_title']); ?> </h1>
         <div class="recipies-title__subtitle">
             <?php echo wp_kses( $restaurant_site_options['recipies_subtitle'], 'post'); ?>
         </div>
@@ -66,16 +64,16 @@
 <main class="conteiner recipies-conteiner">
     <div class="recipies-conteiner__row">
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -83,16 +81,16 @@
    </div>
 </div>
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -100,16 +98,16 @@
    </div>
 </div>
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -117,16 +115,16 @@
    </div>
 </div>
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -134,16 +132,16 @@
    </div>
 </div>
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>
@@ -151,16 +149,16 @@
    </div>
 </div>
         <div class="recipe-card-grid">
-   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt="recipe card img"></figure>
+   <figure class="wrap-img"><img src="img/recipe-card-img.jpg" alt=""></figure>
    <div class="recipe-card-grid__body">
       <div class="recipe-card-grid__title">
          <h3>Prawns tikka</h3>
          <div class="rating">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
-            <img src="img/rating-star.png" alt="rating star">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
+            <img src="img/rating-star.png" alt="">
          </div>
       </div>
       <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si</p>

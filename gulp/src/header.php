@@ -14,6 +14,7 @@
     <?php wp_body_open(); ?>
     <?php global $restaurant_site_options; ?>
 
+
     <div class="conteiner">
         <header class="header ">
             <a href="<?php echo esc_url(get_home_url()); ?>" class="logo">

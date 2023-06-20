@@ -1469,7 +1469,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 87px;
 }
 .top-menu-wrap h2 {
   font-size: 35px;
@@ -3323,6 +3322,10 @@ a {
 .breadcrumbs-conteiner .breadcrumbs a {
   color: inherit;
 }
+.breadcrumbs-conteiner .breadcrumbs a:hover {
+  color: #fea100;
+  transition: 0.3s;
+}
 .background-title-page-block {
   position: relative;
   height: calc(100px + (245 - 100) * ((100vw - 320px)/(1230 - 320)));
@@ -4867,7 +4870,6 @@ a {
   width: 100%;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
   margin-bottom: 60px;
 }
 .recipies-title__subtitle {
@@ -5707,7 +5709,6 @@ a {
 .articles-conteiner {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
   margin-bottom: 100px;
 }
 @media screen and (max-width: 1180px) {
