@@ -1551,7 +1551,6 @@ a {
   }
 }
 .food-menu {
-  /* .menu__list */
   /* .menu__item */
   /* .menu__link */
   /* .menu__sub-menu-list */
@@ -3145,14 +3144,28 @@ a {
 }
 .header .heder-menu ul li {
   cursor: pointer;
+  position: relative;
+}
+.header .heder-menu ul li ul.sub-menu {
+  position: absolute;
+  left: -50%;
+  top: 100%;
+  padding: 0 15px;
+  width: max-content;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  z-index: 5;
+  height: 0;
+  overflow: hidden;
+}
+.header .heder-menu ul li ul.sub-menu li:hover {
+  transform: scale(1.07);
+  transition: 0.2s;
 }
 .header .heder-menu ul li a {
   color: inherit;
-}
-@media screen and (max-width: 720px) {
-  .header .heder-menu ul li {
-    margin: 5px 0;
-  }
 }
 @media screen and (max-width: 720px) {
   .header .menu__sm {

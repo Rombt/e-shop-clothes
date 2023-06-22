@@ -7,7 +7,7 @@
       </div>
 
 
-      <?php 
+      <?php  // todo 
       // wp_nav_menu(      // неработает добавление классов li
       //       array(
       //          'theme_location' => 'food-menu',
@@ -18,10 +18,6 @@
       //       )
       // ); 
       ?>
-
-
-
-
 
       <nav class="menu food-menu">
          <ul class="food-menu__list">
