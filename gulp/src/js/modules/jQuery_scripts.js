@@ -20,8 +20,33 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       $(".close-window").on('click', function (e) {
          $('.searc-modal').hide(500);
       });
-
    });
+
+
+
+
+   const $menuHeaderMenu = $('#menu-header-menu');
+   const menuHeight = $menuHeaderMenu.height();
+   const lineHeight = $menuHeaderMenu.css('line-height').replace('px', '');
+   const amountOfLines = Math.floor(menuHeight / lineHeight);
+
+   if (amountOfLines > 1) {
+      const menuElementsHide = $menuHeaderMenu.children()
+         .filter(function (index) {
+            return $(this).position().top >= lineHeight;
+         })
+         .remove();
+
+      const burger = $("<div class='hide-menu-burger'><span></span></div>");
+      $menuHeaderMenu.append(burger);
+
+      burger.one('click', function (e) {
+         const modalMenu = $('<div class="modal-menu"></div>')
+         $menuHeaderMenu.append(modalMenu);
+      })
+   }
+
+
 
 
 
