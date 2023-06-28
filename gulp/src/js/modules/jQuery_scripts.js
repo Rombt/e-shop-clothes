@@ -1,34 +1,52 @@
+
 export const jQuery_scripts = jQuery(document).ready(function ($) {
-   $(".search-icon").on('click', function (e) {
-      e.preventDefault();
-      $('.searc-modal').show(500);
-      $(document).on('keyup', function (e) {
-         if ((e.keyCode == 27) || (e.keyCode == 13)) {
-            $('.searc-modal').hide(500);
-         }
+
+   function modalWindow(iconOnClass, modalWindow, closeWindow) {
+
+
+      console.log("iconOnClass = ", iconOnClass);
+
+      $("." + iconOnClass).on('click', function (e) {
+         e.preventDefault();
+
+         $('.' + modalWindow).show(500);
+         $(document).on('keyup', function (e) {
+            if ((e.keyCode == 27) || (e.keyCode == 13)) {
+               $('.' + modalWindow).hide(500);
+            }
+         });
+
+         $(document).on('click', function (e) {
+
+            let target = $(e.target);
+
+            if (!target.is('.' + iconOnClass)
+               && !target.is('.' + modalWindow + ' *:not([class="' + closeWindow + '"])')
+               && !target.is('.' + modalWindow)
+            ) {
+               $('.' + modalWindow).hide(500);
+            }
+         });
       });
 
-      $(document).on('click', function (e) {
-         if (($('.searc-modal').css('display') === 'block')
-            && (!e.target.className.includes('searc-modal'))
-            && (!e.target.className.includes('search-icon'))
-            && (e.target.id != 's')) {
-            $('.searc-modal').hide(500);
-         }
-      });
 
-      $(".close-window").on('click', function (e) {
-         $('.searc-modal').hide(500);
-      });
-   });
+   }
+
+
+   // search modal window
+   modalWindow('search-icon', 'searc-modal', 'close-window');
 
 
 
 
+
+
+   // multilevel header menu
    const $menuHeaderMenu = $('#menu-header-menu');
    const menuHeight = $menuHeaderMenu.height();
    const lineHeight = $menuHeaderMenu.css('line-height').replace('px', '');
    const amountOfLines = Math.floor(menuHeight / lineHeight);
+
 
    if (amountOfLines > 1) {
       const menuElementsHide = $menuHeaderMenu.children()
@@ -38,18 +56,30 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          .remove();
 
       const burger = $("<div class='hide-menu-burger'><span></span></div>");
+      const modalMenu = $('<div class="modal-menu  modal-menu-hide"><div class="close-window"></div></div>')
       $menuHeaderMenu.append(burger);
+      $menuHeaderMenu.append(modalMenu);
 
-      burger.one('click', function (e) {
-         const modalMenu = $('<div class="modal-menu"></div>')
-         $menuHeaderMenu.append(modalMenu);
-      })
+
+      // menu modal window
+      modalWindow('hide-menu-burger', 'modal-menu  modal-menu-hide', 'close-window');
+
+      // burger.on('click', function (e) {
+
+
+      //    // burger.toggleClass('hide-menu-burger');
+      //    modalMenu.toggle(500);
+
+
+
+      //    console.log("***********");
+      // })
+
+      // $(".close-window").on('click', function (e) {
+      //    modalMenu.hide(500);
+      // });
+
    }
-
-
-
-
-
 
 
    // $(".heder-menu ul li a").mouseover(function () {
