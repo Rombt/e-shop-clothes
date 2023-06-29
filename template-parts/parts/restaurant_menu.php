@@ -1,61 +1,61 @@
  <?php global $restaurant_site_options; ?>
 <div class="conteiner" id="restaurant-menu">
    <?php get_template_part( 'template-parts/components/food_menu', null, ['title' => esc_html( $restaurant_site_options['restaurant_menu-section_title'])]); ?>
-   <section class="row-dish dish__row">
-      <div class="col-dish">
-         <div class="dish">
-            <div class="dish__title">
+   <section class="row-dish-menu dish-menu__row">
+      <div class="col-dish-menu">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Ultimate organic fruit salad
                <p>survived not only five centuries but the leap</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'50,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Toasted jam
                <p>Phasellus a ex accumsan, sollicitudin</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'68,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Toasted jam copy
                <p>Phasellus a ex accumsan, sollicitudin copy</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'22,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Plain pancakes
                <p>Donec eget augue at diam euismod viverra</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'39,00']); ?>
          </div>
       </div>
-      <div class="col-dish">
-         <div class="dish">
-            <div class="dish__title">
+      <div class="col-dish-menu">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Ultimate organic fruit salad
                <p>survived not only five centuries but the leap</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'50,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Toasted jam
                <p>Phasellus a ex accumsan, sollicitudin</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'68,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Toasted jam copy
                <p>Phasellus a ex accumsan, sollicitudin copy</p>
             </div>
              <?php get_template_part( 'template-parts/components/price', null, ['price'=>'22,00']); ?>
          </div>
-         <div class="dish">
-            <div class="dish__title">
+         <div class="dish-menu">
+            <div class="dish-menu__title">
                Plain pancakes
                <p>Donec eget augue at diam euismod viverra</p>
             </div>

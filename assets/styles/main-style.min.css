@@ -4128,7 +4128,7 @@ a {
   position: relative;
   z-index: 3;
 }
-.row-dish {
+.row-dish-menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -4138,53 +4138,53 @@ a {
   z-index: 2;
 }
 @media screen and (max-width: 720px) {
-  .row-dish {
+  .row-dish-menu {
     margin-top: 30px;
   }
 }
-.dish__row {
+.dish-menu__row {
   margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   background-color: #fff;
 }
 @media screen and (max-width: 920px) {
-  .dish__row {
+  .dish-menu__row {
     justify-content: center;
   }
 }
-.col-dish {
+.col-dish-menu {
   width: calc(50% - 15px);
   min-width: 445px;
 }
 @media screen and (max-width: 576px) {
-  .col-dish {
+  .col-dish-menu {
     min-width: 210px;
   }
 }
-.dish {
+.dish-menu {
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #eeeeee;
-  /* .dish__title */
+  /* .dish-menu__title */
 }
 @media screen and (max-width: 576px) {
-  .dish {
+  .dish-menu {
     height: auto;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 }
 @media screen and (max-width: 576px) {
-  .dish {
+  .dish-menu {
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 5px;
   }
 }
-.dish__title {
+.dish-menu__title {
   font-size: 16px;
   font-family: "Sintony";
   color: #14141d;
@@ -4193,12 +4193,12 @@ a {
   line-height: 1.063;
 }
 @media screen and (max-width: 576px) {
-  .dish__title {
+  .dish-menu__title {
     width: 100%;
     text-align: center;
   }
 }
-.dish__title p {
+.dish-menu__title p {
   font-size: 14px;
   font-family: "Sintony";
   font-weight: 400;
@@ -4207,12 +4207,12 @@ a {
   text-transform: none;
 }
 @media screen and (max-width: 576px) {
-  .dish__title p {
+  .dish-menu__title p {
     margin-top: 7px;
     line-height: 1.2;
   }
 }
-.dish .price {
+.dish-menu .price {
   width: 125px;
 }
 .background__clients {
