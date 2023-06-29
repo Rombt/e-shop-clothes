@@ -114,6 +114,8 @@
    position: relative;
    z-index: 3;
 
+   visibility: hidden; // скрываю до момента формирования на странице потом показываю скриптом jQuery
+
    .col();
    .size(6);
    .size-md_1(8);
@@ -132,7 +134,6 @@ ul {
    flex-wrap: wrap;
    width: 100%;
 
-
    .md_2-block({
       margin-top: 15px;
    });
@@ -148,13 +149,12 @@ li {
       top: 110%;
       padding-top: 20px;
       padding-bottom: 20px;
-
       overflow: visible;
    }
 
    ul.sub-menu {
       position: absolute;
-      left: -50%;
+      // left: -50%;
       top: 100%;
       overflow: hidden;
       width: max-content;
@@ -168,6 +168,7 @@ li {
       transition: max-height 0.4s, padding 0.4s linear;
       background-color: #fff;
       box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+      z-index: 10;
 
       ul.sub-menu {
          position: absolute;
@@ -406,102 +407,4 @@ img {
 
    }
 
-}
-
-
-
-.hide-menu-burger {
-   position: relative;
-   height: 20px;
-   width: 25px;
-   cursor: pointer;
-
-   &::after,
-   &::before,
-   span {
-      content: '';
-      position: absolute;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: #647786;
-   }
-
-   span {
-      top: 50%;
-      transform: translate(0, -50%);
-   }
-
-   &::before {
-      bottom: 0;
-   }
-
-
-}
-
-.modal-menu {
-   position: absolute;
-   top: 0;
-   left: 0;
-   height: 200px;
-   width: 200px;
-
-   border: 1px solid #0515fd;
-
-
-
-   .close-window {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 30px;
-      height: 30px;
-      transform: rotate(45deg);
-
-      &:before {
-         content: '';
-         position: absolute;
-         left: 50%;
-         top: 50%;
-         transform: translate(-50%, -50%);
-         width: 100%;
-         height: 1px;
-         background-color: black;
-      }
-
-      &:after {
-         content: '';
-         position: absolute;
-         left: 50%;
-         top: 50%;
-         transform: translate(-50%, -50%);
-         width: 1px;
-         height: 100%;
-         background-color: black;
-      }
-
-      &:hover {
-         transform: scale(1.3) rotate(-135deg);
-         transition: all 0.4s;
-         cursor: pointer;
-
-         &:after {
-            width: 2px;
-         }
-
-         &:before {
-            height: 2px;
-         }
-      }
-
-   }
-
-
-
-
-
-}
-
-.modal-menu-hide {
-   display: none;
 }
