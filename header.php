@@ -58,6 +58,7 @@
     <?php get_template_part( 'template-parts/parts/searchform'); ?>
 
     <?php if (!is_front_page()) {  ?>
+
         <div class="background background-title-page-block">
             <div class="wrap-img">
                 <?php if ($restaurant_site_options['background-title-img']['url']) { ?>
@@ -65,7 +66,11 @@
                 <?php }?>
             </div>
             <h1>  
-                <?php if(is_category()){
+                <?php 
+                if (is_home()) {
+                    echo '++Blog++';
+
+                } elseif(is_category()){
                     echo esc_html__('Category', 'restaurant-site') . single_cat_title("", false);
                 } elseif(is_author()){
                     echo esc_html__('Author', 'restaurant-site') . get_the_author();
