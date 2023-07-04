@@ -32,8 +32,8 @@ add_action('after_switch_theme','rs_rewrite_rules');
 //==============================================================================================
 
 
-add_action( 'init', 'rs_create_taxonomy_soup' );
-function rs_create_taxonomy_soup(){
+add_action( 'init', 'rs_create_taxonomy' );
+function rs_create_taxonomy(){
 
 	register_taxonomy( 'soup', [ 'dishe' ], [
 		'label'                 => '', // определяется параметром $labels->name
@@ -55,9 +55,28 @@ function rs_create_taxonomy_soup(){
 		'description'           => esc_html__('Блюда нашего рестарана'),
 		'rewrite'               => ['slug' => 'dishe'],
 	] );
+
+	register_taxonomy( 'salad', [ 'dishe' ], [
+		'label'                 => '', // определяется параметром $labels->name
+		'labels'                => [
+			'name'              => esc_html__('Salad','restaurant-site'),
+			'singular_name'     => esc_html__('Salad','restaurant-site'),
+			'search_items'      => esc_html__('Search salads','restaurant-site'),
+			'all_items'         => esc_html__('All salads','restaurant-site'),
+			'view_item '        => esc_html__('View salad','restaurant-site'),
+			'parent_item'       => esc_html__('Parent salad','restaurant-site'),
+			'parent_item_colon' => esc_html__('Parent salad:','restaurant-site'),
+			'edit_item'         => esc_html__('Edit salad','restaurant-site'),
+			'update_item'       => esc_html__('Update salad','restaurant-site'),
+			'add_new_item'      => esc_html__('Add New salad','restaurant-site'),
+			'new_item_name'     => esc_html__('New salad Name','restaurant-site'),
+			'menu_name'         => esc_html__('Salad','restaurant-site'),
+			'back_to_items'     => esc_html__('← Back to salad','restaurant-site'),
+		],
+		'description'           => esc_html__('Блюда нашего рестарана'),
+		'rewrite'               => ['slug' => 'salad'],
+	] );
 }
-
-
 
 function rs_register_post_types_dishe() {
 	$labels = array(
