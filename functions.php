@@ -11,7 +11,11 @@ define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 
 
 /*===================	TODO	====================================
+	Манипулировать блоками страницы из редактора страниц(!!)
+		настраивать геометрию блоков страниц
+		добавлять или удалять блоки
 
+	
 	Все меню должны поддерживать второй и третий уровни вложенности
 	демо фотки сделать с помощью
 		плагина для GPT-chat Photorealistic подробнее сдесь: https://youtu.be/gX9z6irImto
@@ -55,10 +59,7 @@ function restaurant_site_scripts()
 	wp_enqueue_style('restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all');
 	
 	wp_enqueue_script('swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true);
-
-	// wp_enqueue_script('restaurant_site-jQuery_scripts', get_template_directory_uri() . '/assets/js/libs/jQuery_scripts.js', array('jquery'), '1.0', true);
 	wp_enqueue_script('restaurant_site-app', get_template_directory_uri() . '/assets/js/app.min.js', array(), '1.0', true);
-
 
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -66,17 +67,6 @@ function restaurant_site_scripts()
 	}
 }
 add_action('wp_enqueue_scripts', 'restaurant_site_scripts', 20);
-
-
-// function restaurant_site_enqueue_script_for_menu() {
-
-// // wp_enqueue_script('your-script', 'path/to/your/script.js', array('jquery'), '1.0', true); // Замените 'path/to/your/script.js' на путь к вашему скрипту
-// 	wp_enqueue_script('restaurant_site-jQuery_scripts', get_template_directory_uri() . '/assets/js/libs/jQuery_scripts.js', array('jquery'), '1.0', );
-// }
-// add_action('wp_nav_menu', 'restaurant_site_enqueue_script_for_menu');
-
-
-
 
 function simple_restaurant_site_setup()
 {
@@ -158,8 +148,6 @@ function restaurant_site_register_required_plugins()
 
 	tgmpa($plugins, $config);
 }
-
-
 
 function simple_restaurant_site_widgets_init()
 {

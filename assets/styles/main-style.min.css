@@ -3382,6 +3382,9 @@ a {
   transform: translate(-50%, -50%);
   border: 1px solid #fff;
 }
+.breadcrumbs-conteiner {
+  min-height: 70px;
+}
 .breadcrumbs-conteiner__row {
   display: flex;
   flex-wrap: wrap;

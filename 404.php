@@ -2,6 +2,7 @@
 /* Template Name: 404-page */
 ?>
 <?php get_header(); ?>
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <main id="primary" class="site-main background e404-page-background">
 	<div class="conteiner e404-page">

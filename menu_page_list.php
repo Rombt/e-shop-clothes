@@ -8,7 +8,7 @@
 
 
 
-
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <main class="conteiner menu-page-conteiner">
 

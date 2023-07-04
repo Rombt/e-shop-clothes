@@ -4,7 +4,6 @@
 
 
 // Breadcrumbs Custom Function
-
 function rstr_get_breadcrumbs() {
 
     $text['home']     = esc_html__('Home','restaurant-site');

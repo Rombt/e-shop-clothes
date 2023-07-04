@@ -8,7 +8,7 @@
 
 
 
-
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <div class="conteiner shop-listing-conteiner">
    <div class="shop-listing-row">

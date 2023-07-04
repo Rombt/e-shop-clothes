@@ -4,6 +4,7 @@
 
 
 <?php get_header(); ?>
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->

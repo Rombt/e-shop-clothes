@@ -8,7 +8,7 @@
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
-
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <main class="conteiner menu-page-conteiner">
 

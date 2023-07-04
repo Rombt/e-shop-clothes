@@ -4,6 +4,7 @@
 
 
 <?php get_header(); ?>
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <body>
    <div class="background background-contact-us">
