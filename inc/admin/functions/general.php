@@ -244,3 +244,31 @@ function rstr_wp_kses($rstr_string){
                 return wp_kses($rstr_string,$allowed_tags);
         }
 }
+
+
+function rstr_trim_excerpt($length) {
+        
+    global $post;
+
+    $explicit_excerpt = $post->post_excerpt;
+
+    if ( '' == $explicit_excerpt ) {
+        $text = get_the_content('');
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+    }
+    else {
+        $text = apply_filters('the_content', $explicit_excerpt);
+    }
+    $text = strip_shortcodes( $text ); // optional
+    $text = strip_tags($text);
+    $excerpt_length = $length;
+    $words = explode(' ', $text, $excerpt_length + 1);
+    if (count($words)> $excerpt_length) {
+        array_pop($words);
+        array_push($words, '[&hellip;]');
+        $text = implode(' ', $words);
+        $text = apply_filters('the_excerpt',$text);
+    }
+    return $text;
+}
