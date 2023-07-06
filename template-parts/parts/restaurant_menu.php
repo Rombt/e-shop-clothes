@@ -5,20 +5,12 @@ $params = [
    'post_type' => 'menu-item',
    'posts_per_page' => 8,
 ];
-
 $query_Menu_items = new WP_Query( $params );
-
 ?>
-
-
-
-
 
 <div class="conteiner" id="restaurant-menu">
    <?php get_template_part( 'template-parts/components/food_menu', null, ['title' => esc_html( $restaurant_site_options['restaurant_menu-section_title'])]); ?>
    <section class="row-dish-menu dish-menu__row">
-      <!-- <div class="col-dish-menu"> -->
-
       <?php if( $query_Menu_items->have_posts() ){ 
          while($query_Menu_items->have_posts()) {
             $query_Menu_items->the_post();
@@ -27,7 +19,7 @@ $query_Menu_items = new WP_Query( $params );
                   <a href="<?php echo esc_url(the_permalink()); ?>">
                      <div class="dish-menu__title">
                         <?php echo the_title()?>
-                        <?php echo rstr_trim_excerpt(12)?>
+                        <p><?php echo rstr_trim_excerpt(12)?></p>
                      </div>
                      <?php get_template_part('template-parts/components/price', null, ['price'=> esc_attr(get_field('dish_price')) ]); ?>
                   </a>
@@ -36,12 +28,9 @@ $query_Menu_items = new WP_Query( $params );
          } 
          wp_reset_postdata();
       } else {
-         echo '**************';
+            // something
       }
       ?>
-
-
-      <!-- </div> -->
 
    </section>
    
