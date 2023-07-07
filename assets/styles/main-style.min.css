@@ -4137,9 +4137,9 @@ a {
   justify-content: space-between;
   align-items: start;
   width: 100%;
-  min-height: 390px;
   z-index: 5;
   margin-bottom: 100px;
+  border: 1px solid #000;
 }
 @media screen and (max-width: 720px) {
   .row-dish-menu {
