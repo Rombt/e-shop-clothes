@@ -15,7 +15,9 @@ if ( !function_exists( 'add_action' ) ) {
 	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
 	exit;
 }
-require_once (plugin_dir_path(__FILE__ ) . 'inc\elementor-addon\elementor-addon.php') ;
+
+require_once (plugin_dir_path(__FILE__ ) . 'inc/elementor-addon/elementor-addon.php') ;
+require_once (plugin_dir_path(__FILE__ ) . 'inc/acf.php') ;
 
 function rs_rewrite_rules(){
 	rs_register_post_types_menu_items();
@@ -24,42 +26,33 @@ function rs_rewrite_rules(){
 }
 add_action('after_switch_theme','rs_rewrite_rules');
 
-
-
-
-
-//==============================================================================================
-//==============================================================================================
-
-
 add_action( 'init', 'rs_create_taxonomy' );
 function rs_create_taxonomy(){
 
 	register_taxonomy( 'food-categories', [ 'food-categories' ], [
 		'label'                 => '', // определяется параметром $labels->name
 		'labels'                => [
-			'name'              => esc_html__('Food-categories','restaurant-site'),
-			'singular_name'     => esc_html__('Food-categories','restaurant-site'),
-			'search_items'      => esc_html__('Search food-categoriess','restaurant-site'),
-			'all_items'         => esc_html__('All food-categoriess','restaurant-site'),
-			'view_item '        => esc_html__('View food-categories','restaurant-site'),
-			'parent_item'       => esc_html__('Parent food-categories','restaurant-site'),
-			'parent_item_colon' => esc_html__('Parent food-categories:','restaurant-site'),
-			'edit_item'         => esc_html__('Edit food-categories','restaurant-site'),
-			'update_item'       => esc_html__('Update food-categories','restaurant-site'),
-			'add_new_item'      => esc_html__('Add New food-categories','restaurant-site'),
-			'new_item_name'     => esc_html__('New food-categories Name','restaurant-site'),
-			'menu_name'         => esc_html__('Food-categories','restaurant-site'),
-			'back_to_items'     => esc_html__('← Back to food-categories','restaurant-site'),
+			'name'              => esc_html__('Food categories','restaurant-site'),
+			'singular_name'     => esc_html__('Food categories','restaurant-site'),
+			'search_items'      => esc_html__('Search food categoriess','restaurant-site'),
+			'all_items'         => esc_html__('All food categoriess','restaurant-site'),
+			'view_item '        => esc_html__('View food categories','restaurant-site'),
+			'parent_item'       => esc_html__('Parent food categories','restaurant-site'),
+			'parent_item_colon' => esc_html__('Parent food categories:','restaurant-site'),
+			'edit_item'         => esc_html__('Edit food categories','restaurant-site'),
+			'update_item'       => esc_html__('Update food categories','restaurant-site'),
+			'add_new_item'      => esc_html__('Add New food categories','restaurant-site'),
+			'new_item_name'     => esc_html__('New food categories Name','restaurant-site'),
+			'menu_name'         => esc_html__('Food categories','restaurant-site'),
+			'back_to_items'     => esc_html__('← Back to food- ategories','restaurant-site'),
 		],
-		'description'           => esc_html__('Food-categoriess our restaurant'),
+		'description'           => esc_html__('Food categoriess our restaurant'),
 		'rewrite'               => ['slug' => 'food-categories'],
 		'show_in_rest' 			=> true,
 		'show_admin_column'     => true,
 		'hierarchical'          => true,
 
 	] );
-
 }
 
 function rs_register_post_types_menu_items() {
@@ -110,3 +103,13 @@ function rs_register_post_types_menu_items() {
 	register_post_type( 'food-menu-items', $args );
 }
 add_action( 'init', 'rs_register_post_types_menu_items' );
+
+
+
+
+//==============================================================================================
+//==============================================================================================
+
+
+
+
