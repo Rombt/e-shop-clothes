@@ -62,7 +62,6 @@ function rs_create_taxonomy(){
 
 }
 
-
 function rs_register_post_types_menu_items() {
 	$labels = array(
 		'name'                  => esc_html_x( 'Menu items', 'Post type general name', 'restaurant-site' ),
@@ -99,7 +98,7 @@ function rs_register_post_types_menu_items() {
 		'show_in_menu'       => true,
 		'show_in_rest'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'menu-item' ),
+		'rewrite'            => array( 'slug' => 'food-menu-items' ),
 		'has_archive'        => true,
 		'hierarchical'       => true,
 		'menu_position'      => 4,
@@ -108,6 +107,6 @@ function rs_register_post_types_menu_items() {
 		'menu_icon'				=> 'dashicons-image-filter',
 	);
 
-	register_post_type( 'menu-item', $args );
+	register_post_type( 'food-menu-items', $args );
 }
 add_action( 'init', 'rs_register_post_types_menu_items' );
