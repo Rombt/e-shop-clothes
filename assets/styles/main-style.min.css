@@ -4139,7 +4139,6 @@ a {
   width: 100%;
   z-index: 5;
   margin-bottom: 100px;
-  border: 1px solid #000;
 }
 @media screen and (max-width: 720px) {
   .row-dish-menu {
@@ -4148,11 +4147,13 @@ a {
   }
 }
 .dish-menu {
-  max-height: 80px;
-  height: 80px;
+  max-height: 90px;
+  min-height: 60px;
   overflow: hidden;
   background-color: #fff;
   border-bottom: 2px solid #dddddd;
+  padding-top: 5px;
+  padding-bottom: 10px;
   /* .dish-menu__title */
 }
 .dish-menu:not(:last-child) {
@@ -4216,6 +4217,7 @@ a {
 }
 .dish-menu .price {
   width: 125px;
+  text-align: right;
 }
 .background__clients {
   position: relative;

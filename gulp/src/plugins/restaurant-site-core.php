@@ -119,30 +119,19 @@ add_action('init', 'rs_register_post_types_menu_items');
 // Добавляем новую колонку в перечень записей
 function add_custom_field_column($columns)
 {
-    // Указываем название вашего поля ACF
     $columns['show-front-page'] = esc_html__('Show front page', 'restaurant-site');
-
     return $columns;
 }
 add_filter('manage_food-menu-items_posts_columns', 'add_custom_field_column');
 
-// Выводим значение поля в новой колонке
 function display_custom_field_column($column, $post_id)
 {
-
-    //  if ($column === 'show-front-page') {
-    $field_name = 'food-menu-items_show-in-front-page';
-    $field_value = get_field($field_name, $post_id)[0];
-    //  echo $field_value;
-
-// Создаем ссылку для редактирования значения поля
-    $edit_url = get_edit_post_link($post_id);
-    $edit_url .= '#acf-' . $field_name;
-
-// Выводим ссылку с редактируемым значением поля
-    //  echo '<a href="' . $edit_url . '">' . $field_value . '</a>';
-    echo '<input type="checkbox" data-post-id="' . $post_id . '" data-field-name="' . $field_name . '" ' . ($field_value ? 'checked' : '') . ' class="custom-field-checkbox">';
-
-    //  }
+    if ($column === 'show-front-page') {
+        $field_name = 'food-menu-items_show-in-front-page';
+        echo '<input type="checkbox" data-post-id="' . $post_id
+            . '" data-field-name="' . $field_name . '" '
+            . (get_field($field_name, $post_id) ? 'checked' : '')
+            . ' class="check-show-in-front-page">';
+    }
 }
 add_action('manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2);

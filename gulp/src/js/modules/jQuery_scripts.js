@@ -1,39 +1,48 @@
 
 export const jQuery_scripts = jQuery(document).ready(function ($) {
-   // search modal window
-   modalWindow('search-icon', 'searc-modal', 'close-window');
 
-   // multilevel header menu
-   const $menuHeaderMenu = $('#menu-header-menu');
-   $('.heder-menu').attr('style', 'visibility: visible;')
-   const menuHeight = $menuHeaderMenu.height();
-   const lineHeight = $menuHeaderMenu.css('line-height').replace('px', '');
-   const amountOfLines = Math.floor(menuHeight / lineHeight);
-
-   if (amountOfLines > 1) {
-      const menuElementsHide = $menuHeaderMenu.children()
-         .filter(function (index) {
-            return $(this).position().top >= lineHeight;
-         })
-         .remove();
-      const burger = $("<div class='hide-menu-burger'><span></span></div>");
-      const modalMenu = $('<div class="modal-menu"><div class="close-window"></div></div>')
-      $menuHeaderMenu.append(burger);
-      $menuHeaderMenu.append(modalMenu);
-      modalMenu.hide();
-      const $modalWindow = modalWindow('hide-menu-burger', 'modal-menu', 'close-window');
-      menuElementsHide.each(function () {
-         $(this).addClass('modal-item');
-         $modalWindow.append($(this));
-      });
+   multilevelHeaderMenu();
 
 
-   }
 
 
 
 
    //---------------------- funktions ---------------------
+
+   function multilevelHeaderMenu() {
+      // search modal window
+      modalWindow('search-icon', 'searc-modal', 'close-window');
+
+      if (!$('#menu-header-menu').length) {
+         return false;
+      }
+
+      const $menuHeaderMenu = $('#menu-header-menu');
+      $('.heder-menu').attr('style', 'visibility: visible;')
+      const menuHeight = $menuHeaderMenu.height();
+      const lineHeight = $menuHeaderMenu.css('line-height').replace('px', '');
+      const amountOfLines = Math.floor(menuHeight / lineHeight);
+
+      if (amountOfLines > 1) {
+         const menuElementsHide = $menuHeaderMenu.children()
+            .filter(function (index) {
+               return $(this).position().top >= lineHeight;
+            })
+            .remove();
+         const burger = $("<div class='hide-menu-burger'><span></span></div>");
+         const modalMenu = $('<div class="modal-menu"><div class="close-window"></div></div>')
+         $menuHeaderMenu.append(burger);
+         $menuHeaderMenu.append(modalMenu);
+         modalMenu.hide();
+         const $modalWindow = modalWindow('hide-menu-burger', 'modal-menu', 'close-window');
+         menuElementsHide.each(function () {
+            $(this).addClass('modal-item');
+            $modalWindow.append($(this));
+         });
+
+      }
+   }
 
    function modalWindow(iconOnClass, modalWindowClass, closeWindow) {
 

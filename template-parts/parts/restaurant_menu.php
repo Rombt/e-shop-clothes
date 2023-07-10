@@ -3,7 +3,7 @@
 
 $params = [
     'post_type' => 'food-menu-items',
-    'posts_per_page' => 8,
+    'posts_per_page' => -1,
 ];
 $query_Menu_items = new WP_Query($params);
 
@@ -15,6 +15,10 @@ $query_Menu_items = new WP_Query($params);
       <?php if ($query_Menu_items->have_posts()) {
     while ($query_Menu_items->have_posts()) {
         $query_Menu_items->the_post();
+
+        if (!get_field('food-menu-items_show-in-front-page')) {
+            continue;
+        }
         ?>
                <article <?php post_class('dish-menu');?> id="post-<?php the_id()?>" data-post-id="<?php the_id()?>">
                   <a href="<?php echo esc_url(the_permalink()); ?>">
@@ -24,12 +28,8 @@ $query_Menu_items = new WP_Query($params);
                      </div>
                      <?php
 
-        echo "<pre>";
-        print_r(get_field('food-menu-items_show-in-front-page'));
-        echo "</pre>";
-
         // !!todo добавить проверку на существования плагина ACF
-        get_template_part('template-parts/components/price', null, ['price' => get_field('food_price')]); ?>
+        get_template_part('template-parts/components/price', null, ['price' => get_field('food_price')]);?>
                   </a>
                </article>
          <?php
