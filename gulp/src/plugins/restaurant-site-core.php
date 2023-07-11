@@ -20,7 +20,7 @@ require_once plugin_dir_path(__FILE__) . 'inc/acf.php';
 
 function restaurant_site_core_scripts()
 {
-    wp_enqueue_script('restaurant_site-core_jq', plugins_url('/', __FILE__) . 'assets/js/jquery.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('restaurant_site-core_jq', plugins_url('/', __FILE__) . 'assets/js/jquery_scripts.js', array('jquery'), '1.0', true);
 
 }
 add_action('admin_enqueue_scripts', 'restaurant_site_core_scripts');

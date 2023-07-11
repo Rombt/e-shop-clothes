@@ -3174,6 +3174,7 @@ a {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
+  column-gap: 5px;
 }
 @media screen and (max-width: 850px) {
   .header .heder-menu ul {

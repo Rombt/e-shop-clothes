@@ -14,11 +14,12 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       // search modal window
       modalWindow('search-icon', 'searc-modal', 'close-window');
 
-      if (!$('#menu-header-menu').length) {
+      if (!$('#heder-menu > ul').length) {
+         console.log($('#menu-header-menu').length);
          return false;
       }
 
-      const $menuHeaderMenu = $('#menu-header-menu');
+      const $menuHeaderMenu = $('#heder-menu > ul');
       $('.heder-menu').attr('style', 'visibility: visible;')
       const menuHeight = $menuHeaderMenu.height();
       const lineHeight = $menuHeaderMenu.css('line-height').replace('px', '');
@@ -32,6 +33,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             .remove();
          const burger = $("<div class='hide-menu-burger'><span></span></div>");
          const modalMenu = $('<div class="modal-menu"><div class="close-window"></div></div>')
+         // $menuHeaderMenu.append(burger);
          $menuHeaderMenu.append(burger);
          $menuHeaderMenu.append(modalMenu);
          modalMenu.hide();

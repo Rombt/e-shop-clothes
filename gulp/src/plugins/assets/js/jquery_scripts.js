@@ -1,5 +1,3 @@
-
-
 jQuery(document).ready(function ($) {
 
    //"food-menu-items_show-in-front-page"   checkbox  change event handler
