@@ -59,7 +59,7 @@ function rs_create_taxonomy()
         'show_in_rest' => true,
         'show_admin_column' => true,
         'hierarchical' => true,
-
+        'show_in_nav_menus' => true,
     ]);
 }
 
@@ -107,14 +107,12 @@ function rs_register_post_types_menu_items()
         'taxonomies' => ['food-categories'],
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields'),
         'menu_icon' => 'dashicons-image-filter',
+        'show_in_nav_menus' => true,
     );
 
     register_post_type('food-menu-items', $args);
 }
 add_action('init', 'rs_register_post_types_menu_items');
-
-//==============================================================================================
-//==============================================================================================
 
 // Добавляем новую колонку в перечень записей
 function add_custom_field_column($columns)
@@ -135,3 +133,6 @@ function display_custom_field_column($column, $post_id)
     }
 }
 add_action('manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2);
+
+//==============================================================================================
+//==============================================================================================
