@@ -26,7 +26,17 @@ function restaurant_site_acf_metaboxes()
                 'label' => 'Show this dish on front page',
                 'type' => 'checkbox',
                 'choices' => array(
-                    'show' => 'show-on',
+                    'show' => 'show on',
+                ),
+                'layout' => 'horizontal',
+            ),
+            array(
+                'key' => 'field_4',
+                'name' => 'food-menu-items_show-in-section-today-specialy',
+                'label' => 'Show this dish in the section "Today Specialy"',
+                'type' => 'checkbox',
+                'choices' => array(
+                    'show' => 'show on',
                 ),
                 'layout' => 'horizontal',
             ),
