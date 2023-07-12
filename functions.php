@@ -1,6 +1,7 @@
 <?php
 
 require_once get_template_directory() . '/inc/admin/functions/general.php';
+// require_once get_template_directory() . '/inc/admin/functions/nav.php';
 require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/Redux/redux-options.php';
 
@@ -8,54 +9,57 @@ define('rs_PATH_THEME', get_template_directory());
 define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 
 /*===================    TODO    ====================================
+для второй версии темы:
+    кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
+
 Добавить таксономии по типам блюд:
-По типу кухни:
-Итальянская кухня
-Французская кухня
-Японская кухня
-Мексиканская кухня
-Индийская кухня
-и т.д.
-По основным ингредиентам:
-Мясные блюда
-Рыбные блюда
-Блюда из птицы
-Вегетарианские блюда
-Блюда с морепродуктами
-и т.д.
-По времени приема пищи:
-Завтраки
-Обеды
-Ужины
-Поздний ужин/ночной меню
-Бранч (завтрак+обед)
-и т.д.
-По типу блюда:
-Супы
-Салаты
-Основные блюда
-Паста и пицца
-Десерты
-Напитки
-и т.д.
-По сезонности:
-Меню осени
-Меню зимы
-Меню весны
-Меню лета
-и т.д.
-По ценовым категориям:
-Бюджетные блюда
-Среднего класса
-Эксклюзивные блюда
-Шеф-поварское меню
-и т.д.
-По диетическим потребностям:
-Безглютеновое меню
-Веганское меню
-Постное меню
-Меню для диабетиков
-и т.д.
+    По типу кухни:
+    Итальянская кухня
+    Французская кухня
+    Японская кухня
+    Мексиканская кухня
+    Индийская кухня
+    и т.д.
+    По основным ингредиентам:
+    Мясные блюда
+    Рыбные блюда
+    Блюда из птицы
+    Вегетарианские блюда
+    Блюда с морепродуктами
+    и т.д.
+    По времени приема пищи:
+    Завтраки
+    Обеды
+    Ужины
+    Поздний ужин/ночной меню
+    Бранч (завтрак+обед)
+    и т.д.
+    По типу блюда:
+    Супы
+    Салаты
+    Основные блюда
+    Паста и пицца
+    Десерты
+    Напитки
+    и т.д.
+    По сезонности:
+    Меню осени
+    Меню зимы
+    Меню весны
+    Меню лета
+    и т.д.
+    По ценовым категориям:
+    Бюджетные блюда
+    Среднего класса
+    Эксклюзивные блюда
+    Шеф-поварское меню
+    и т.д.
+    По диетическим потребностям:
+    Безглютеновое меню
+    Веганское меню
+    Постное меню
+    Меню для диабетиков
+    и т.д.
 Предоставить пользователю возможность манипулировать блоками страницы из редактора страниц(!!)
 настраивать геометрию блоков страниц
 добавлять или удалять блоки
@@ -66,14 +70,14 @@ define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 доработать страницу выдачи поисковых запросов
 добавить анимацию по максимуму!!!
 исправить адаптив шрифтов в части неболее чем указано
-можно использовать условия Less
-Пример:
-.selector {
-@if (@var > 5) {
-color: red;
-} else {
-color: blue;
-}}
+    можно использовать условия Less
+    Пример:
+    .selector {
+    @if (@var > 5) {
+    color: red;
+    } else {
+    color: blue;
+    }}
 + добавить возможность делать логотип сайта текстом или кортинкой
 esc_html(bloginfo('name'))
 доработать адаптив блока dish-widget.php
@@ -87,7 +91,6 @@ esc_html(bloginfo('name'))
 use dynamic_section for redux
 выбор иконок https://devs.redux.io/core-extensions/icon-select.html
 изменение размера картинок
-смену шрифтов в теме через Redux панель опций
 форму и страницу поиска по сайту
 отдельные локации меню для мобильных устройств
 
@@ -146,11 +149,9 @@ function simple_restaurant_site_content_width()
 }
 add_action('after_setup_theme', 'simple_restaurant_site_content_width', 0);
 
-add_action('tgmpa_register', 'restaurant_site_register_required_plugins');
 function restaurant_site_register_required_plugins()
 {
     $plugins = array(
-
         array(
             'name' => 'Restaurant site core', // The plugin name.
             'slug' => 'restaurant-site-core', // The plugin slug (typically the folder name).
@@ -189,6 +190,7 @@ function restaurant_site_register_required_plugins()
 
     tgmpa($plugins, $config);
 }
+add_action('tgmpa_register', 'restaurant_site_register_required_plugins');
 
 function simple_restaurant_site_widgets_init()
 {
@@ -206,11 +208,7 @@ function simple_restaurant_site_widgets_init()
 }
 add_action('widgets_init', 'simple_restaurant_site_widgets_init');
 
-//===========================================================================
-//===========================================================================
-
-// добавить классы элементам меню        не работает, разобраться!
-function rs_add_class_on_li($classes, $item, $args)
+function menu_item_css_classes($classes, $item, $args, $depth)
 {
     if (isset($args->add_li_class)) {
         $classes[] = $args->add_li_class;
@@ -218,4 +216,36 @@ function rs_add_class_on_li($classes, $item, $args)
 
     return $classes;
 }
-add_filter('nav_menu_css_class', 'rs_add_class_on_li', 1, 3);
+add_filter('nav_menu_css_class', 'menu_item_css_classes', 10, 4);
+
+function rstr_add_class_menus_links($atts, $item, $args)
+{
+    if (isset($args->add_link_class)) {
+        $atts['class'] = $args->add_link_class;
+    }
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'rstr_add_class_menus_links', 10, 3);
+
+function rstr_change_menus_items($args, $item)
+{
+    global $restaurant_site_options;
+
+    if ($args->theme_location === 'food_menu') {
+        if (in_array('menu-item-type-post_type_archive', $item->classes)) {
+            $args->before = '<img src="' . $restaurant_site_options['restaurant_menu-section_icon_first_item_menu']['url'] . '" alt="">';
+        } else {
+            $args->before = '<img src="' . get_field('food-categories-icon', 'term_'. $item->object_id) . '" alt="">';
+        }
+    }
+
+    return $args;
+}
+add_filter('nav_menu_item_args', 'rstr_change_menus_items', 10, 2);
+
+
+
+
+//===========================================================================
+//===========================================================================

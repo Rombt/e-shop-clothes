@@ -71,5 +71,4 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       return $modalWindow;
    }
 
-
 })

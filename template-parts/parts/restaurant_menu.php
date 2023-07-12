@@ -13,13 +13,13 @@ $query_Menu_items = new WP_Query($params);
    <?php get_template_part('template-parts/components/food_menu', null, ['title' => esc_html($restaurant_site_options['restaurant_menu-section_title'])]);?>
    <section class="row-dish-menu dish-menu__row">
       <?php if ($query_Menu_items->have_posts()) {
-    while ($query_Menu_items->have_posts()) {
-        $query_Menu_items->the_post();
+          while ($query_Menu_items->have_posts()) {
+              $query_Menu_items->the_post();
 
-        if (class_exists('ACF') && !get_field('food-menu-items_show-in-front-page')) {
-            continue;
-        }
-        ?>
+              if (class_exists('ACF') && !get_field('food-menu-items_show-in-front-page')) {
+                  continue;
+              }
+              ?>
          <article <?php post_class('dish-menu');?> id="post-<?php the_id()?>" data-post-id="<?php the_id()?>">
             <a href="<?php echo esc_url(the_permalink()); ?>">
                <div class="dish-menu__title">
@@ -27,17 +27,17 @@ $query_Menu_items = new WP_Query($params);
                   <p><?php echo rstr_trim_excerpt(12) ?></p>
                </div>
                <?php if (class_exists('ACF')) {
-            get_template_part('template-parts/components/price', null, ['price' => get_field('food_price')]);
-        }
-        ?>
+                   get_template_part('template-parts/components/price', null, ['price' => get_field('food_price')]);
+               }
+              ?>
             </a>
          </article>
          <?php
-}
-    wp_reset_postdata();
-} else {
-    // something
-}
+          }
+          wp_reset_postdata();
+      } else {
+          // something
+      }
 ?>
 
    </section>

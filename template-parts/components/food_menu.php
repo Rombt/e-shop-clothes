@@ -1,104 +1,19 @@
- <?php global $restaurant_site_options; ?>
+ <?php global $restaurant_site_options;?>
 <div class="top-menu-wrap">
    <h2><?php echo $args['title']; ?></h2>
    <div class="wrap-nenu">
       <div class="food-menu__burger burger-open">
          <span></span>
       </div>
-
-
-      <?php  // todo 
-      // wp_nav_menu(      // неработает добавление классов li
-      //       array(
-      //          'theme_location' => 'food-menu',
-      //          'container' => 'nav',
-      //          'container_class' => 'menu food-menu',
-      //          'menu_class' => 'food-menu__list',
-      //          'add_li_class'=>'food-menu__sub-item',
-      //       )
-      // ); 
-      ?>
-
-      <nav class="menu food-menu">
-         <ul class="food-menu__list">
-            <li class="food-menu__item">
-               <img src="img/icon_all.png" alt="">
-               <a class="food-menu__link" href="#">All</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_breakfast.png" alt="">
-               <a class="food-menu__link" href="#">Breakfast</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_lunch.png" alt="">
-               <a class="food-menu__link" href="#">Lunch</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_snacks.png" alt="">
-               <a class="food-menu__link" href="#">Snacks</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_pizza.png" alt="">
-               <a class="food-menu__link" href="#">Pizza</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_soups.png" alt="">
-               <a class="food-menu__link" href="#">Soups</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-            <li class="food-menu__item">
-               <img src="img/icon_binner.png" alt="">
-               <a class="food-menu__link" href="#">Dinner</a>
-               <ul class="food-menu__sub-menu-list">
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-                  <li class="food-menu__sub-item"><a class="food-menu__sub-link" href="#">sub menu item</a></li>
-               </ul>
-            </li>
-         </ul>
-      </nav>
+      <?php wp_nav_menu([
+            'theme_location' => 'food_menu',
+            'fallback_cb' => '__return_empty_string',
+            'container' => 'nav',
+            'container_class' => 'menu food-menu',
+            'menu_class' => 'food-menu__list',
+            'add_li_class' => 'food-menu__item',
+            'add_link_class' => 'food-menu__link',
+         ]);?>
    </div>
    <div class="wrap-nenu__border"></div>
 </div>

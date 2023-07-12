@@ -29,14 +29,14 @@
             </div>
 
             <?php wp_nav_menu(
-    array(
-        'theme_location' => 'header_nav',
-        'container' => 'nav',
-        'container_class' => 'heder-menu redux_font-heder_navigation',
-        'container_id' => 'heder-menu',
-    )
-);
-}?>
+                array(
+                    'theme_location' => 'header_nav',
+                    'container' => 'nav',
+                    'container_class' => 'heder-menu redux_font-heder_navigation',
+                    'container_id' => 'heder-menu',
+                )
+            );
+            }?>
 
             <div class="cart-book">
                 <?php if ($restaurant_site_options['search_icon']['url']) {?>
