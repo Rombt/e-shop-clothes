@@ -10,7 +10,7 @@ function restaurant_site_acf_metaboxes()
         'title' => 'Properties Food Menu Item',
         'fields' => array(
             array(
-                'key' => 'field_1',
+                'key' => 'fmip_field-1',
                 'name' => 'food_price',
                 'label' => 'Dish price',
                 'type' => 'number',
@@ -21,24 +21,24 @@ function restaurant_site_acf_metaboxes()
                 'step' => '0.01',
             ),
             array(
-                'key' => 'field_2',
-                'name' => 'food-menu-items_show-in-front-page',
+                'key' => 'fmip_field-2',
+                'name' => 'food-menu-items_show-in-food-menu',
                 'label' => 'Show this dish on front page',
                 'type' => 'checkbox',
                 'choices' => array(
                     'show' => 'show on',
                 ),
-                'layout' => 'horizontal',
+                // 'layout' => 'horizontal',
             ),
             array(
-                'key' => 'field_4',
+                'key' => 'fmip_field-3',
                 'name' => 'food-menu-items_show-in-section-today-specialy',
                 'label' => 'Show this dish in the section "Today Specialy"',
                 'type' => 'checkbox',
                 'choices' => array(
                     'show' => 'show on',
                 ),
-                'layout' => 'horizontal',
+                // 'layout' => 'horizontal',
             ),
         ),
         'location' => array(
@@ -64,7 +64,7 @@ function restaurant_site_acf_metaboxes()
         'title' => 'Properties of Food Categories',
         'fields' => array(
             array(
-                'key' => 'field_3',
+                'key' => 'pfc_field-1',
                 'name' => 'food-categories-icon',
                 'label' => 'Icon for this food categories',
                 'type' => 'image',

@@ -16,7 +16,7 @@ $query_Menu_items = new WP_Query($params);
           while ($query_Menu_items->have_posts()) {
               $query_Menu_items->the_post();
 
-              if (class_exists('ACF') && !get_field('food-menu-items_show-in-front-page')) {
+              if (class_exists('ACF') && !get_field('food-menu-items_show-in-food-menu')) {
                   continue;
               }
               ?>

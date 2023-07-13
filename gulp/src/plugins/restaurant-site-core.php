@@ -20,7 +20,7 @@ require_once plugin_dir_path(__FILE__) . 'inc/acf.php';
 
 function restaurant_site_core_scripts()
 {
-    wp_enqueue_script('restaurant_site-core_jq', plugins_url('/', __FILE__) . 'assets/js/jquery_scripts.js', array('jquery'), '1.0', true);
+
 
 }
 add_action('admin_enqueue_scripts', 'restaurant_site_core_scripts');
@@ -117,19 +117,28 @@ add_action('init', 'rs_register_post_types_menu_items');
 // Добавляем новую колонку в перечень записей
 function add_custom_field_column($columns)
 {
-    $columns['show-front-page'] = esc_html__('Show front page', 'restaurant-site');
+    $columns['show-food-menu'] = esc_html__('Show in the "Food menu" section ', 'restaurant-site');
+    $columns['show-today-specialy'] = esc_html__('Show in the "Today Specialy" section ', 'restaurant-site');
     return $columns;
 }
 add_filter('manage_food-menu-items_posts_columns', 'add_custom_field_column');
 
 function display_custom_field_column($column, $post_id)
 {
-    if ($column === 'show-front-page') {
-        $field_name = 'food-menu-items_show-in-front-page';
+    if ($column === 'show-food-menu') {
+        $field_name = 'food-menu-items_show-in-food-menu';
         echo '<input type="checkbox" data-post-id="' . $post_id
             . '" data-field-name="' . $field_name . '" '
             . (get_field($field_name, $post_id) ? 'checked' : '')
-            . ' class="check-show-in-front-page">';
+            . ' class="check-show-food-menu">';
+    }
+
+    if ($column === 'show-today-specialy') {
+        $field_name = 'food-menu-items_show-in-section-today-specialy';
+        echo '<input type="checkbox" data-post-id="' . $post_id
+            . '" data-field-name="' . $field_name . '" '
+            . (get_field($field_name, $post_id) ? 'checked' : '')
+            . ' class="check-show-today-specialy">';
     }
 }
 add_action('manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2);

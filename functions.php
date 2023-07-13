@@ -1,8 +1,7 @@
 <?php
 
-require_once get_template_directory() . '/inc/admin/functions/general.php';
-// require_once get_template_directory() . '/inc/admin/functions/nav.php';
-require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/general.php';
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/Redux/redux-options.php';
 
 define('rs_PATH_THEME', get_template_directory());
@@ -111,6 +110,15 @@ function restaurant_site_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'restaurant_site_scripts', 20);
+
+function restaurant_site_scripts_admin()
+{
+
+    wp_enqueue_script('restaurant_site-core_jq', get_template_directory_uri() . '/admin/assets/js/jquery_scripts.js', array('jquery'), '1.0', true);
+
+
+}
+add_action('admin_enqueue_scripts', 'restaurant_site_scripts_admin');
 
 function simple_restaurant_site_setup()
 {
