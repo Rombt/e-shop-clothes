@@ -1589,7 +1589,7 @@ a {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
     height: 50px;
     background-color: #7d8587;
     margin-top: 10px;
@@ -1597,21 +1597,22 @@ a {
     border-radius: 4px;
     opacity: 1;
     transition: all 0.3s ease-in-out;
+    z-index: 10;
   }
   .active .food-menu__item ::after {
     content: '';
     position: absolute;
-    width: 98.5%;
-    height: 90%;
     border: 1px solid #ffffff;
     left: 2px;
+    right: 2px;
     top: 2px;
+    bottom: 2px;
     opacity: 1;
     transition: all 0.5s ease-in-out;
   }
   .active .food-menu__list {
     top: 70px;
-    z-index: 5;
+    z-index: 10;
   }
 }
 .wrap-nenu__border {
@@ -3045,6 +3046,44 @@ a {
 }
 .modal-menu li {
   padding: 10px 0px;
+}
+.accordion-item {
+  position: relative;
+}
+.accordion-item__icon {
+  position: absolute;
+  cursor: pointer;
+  left: -20px;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+}
+.accordion-item__icon::after,
+.accordion-item__icon::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  width: 0px;
+  height: 50%;
+  border: 1px solid #adb2b7;
+  transition: all 0.7s;
+}
+.accordion-item__icon::after {
+  right: 25%;
+  transform: rotate(45deg);
+}
+.accordion-item__icon::before {
+  left: 25%;
+  transform: rotate(-45deg);
+}
+.accordion-item__icon:hover {
+  transform: scale(1.3);
+}
+.accordion-item__icon-active::after {
+  transform: rotate(-45deg);
+}
+.accordion-item__icon-active::before {
+  transform: rotate(45deg);
 }
 .header {
   position: relative;
@@ -4576,6 +4615,7 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 2 - 30px);
   min-width: 170px;
+  position: relative;
 }
 @media screen and (max-width: 1120px) {
   .footer__navigation {
@@ -4722,6 +4762,10 @@ a {
   line-height: 2;
   z-index: 7;
   text-align: center;
+}
+#footer-menu .sub-menu {
+  padding-left: 15px;
+  display: none;
 }
 .background-contact-us {
   min-height: 1150px;
