@@ -44,7 +44,7 @@
             <div class="about-row__text-buttons">
                 <?php get_template_part('template-parts/components/button', 'orange', ['href'=>'#','title'=>'READ MORE']); ?>
                 <div class="wrap-img">
-                    <img src="@img/about-button-bg.jpg" alt="">
+                    <img src="img/about-button-bg.jpg" alt="">
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    multilevelHeaderMenu();
-
+   accordionMenu('#footer-menu', '.sub-menu')
 
 
 
@@ -10,8 +10,29 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    //---------------------- funktions ---------------------
 
+   function accordionMenu(menu, subMenu) {
+
+      const $subMenu = $(`${menu} ${subMenu}`);
+      const icon = '<div class="accordion-item__icon"></div>';
+
+      if ($.isEmptyObject($subMenu)) {
+         return false;
+      }
+
+      const $subMenuParent = $subMenu.parent('li');
+      $subMenuParent.addClass('accordion-item');
+      $subMenuParent.prepend(icon);
+
+      $('.accordion-item__icon').on('click', function (e) {
+         $(e.target).parent('li')
+            .children('.sub-menu')
+            .slideToggle(300);
+         $(e.target).toggleClass(`accordion-item__icon-active`);
+      });
+
+   }
+
    function multilevelHeaderMenu() {
-      // search modal window
       modalWindow('search-icon', 'searc-modal', 'close-window');
 
       if (!$('#heder-menu > ul').length) {

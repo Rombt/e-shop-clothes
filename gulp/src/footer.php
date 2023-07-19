@@ -6,9 +6,9 @@
 				<?php echo $restaurant_site_options['title_one'] ? '<h2>' . esc_html($restaurant_site_options['title_one']) . '</h2>' : '' ?>
 				<?php wp_nav_menu(
 				    array(
-				                                        'theme_location' => 'footer_nav',
-				                                                'menu_id' => 'footer-menu',
-				                                    )
+				                                                        'theme_location' => 'footer_nav',
+				                                                                'menu_id' => 'footer-menu',
+				                                                    )
 				); ?>
 			</div>
 			<div class="footer__news">
@@ -16,22 +16,22 @@
 				<span>Enter your email address and subscribe daily newsletter</span>
 				<div class="form-footer">
 					<div class="form-footer__input">
-						<img src="@img/form-icon_email.png" alt="">
+						<img src="img/form-icon_email.png" alt="">
 						<p>Email Address</p>
 						<input type="email">
 					</div>
-					@@include('html/parts/button-orange.html',{'mod':'','title':'Subscribe', 'href':'#'})
+					<a href="#" class="button-orange ">Subscribe</a>
 				</div>
 				<?php get_template_part('template-parts/components/icons_block'); ?>
 			</div>
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>
 				<?php get_template_part('template-parts/components/button', 'app', [
-				                                                    'href'=> esc_html__($restaurant_site_options['linck-app-apple'], 'restaurant-site'),
-				                                                    'icon'=> $restaurant_site_options['icon-app-apple']['url'],
-				                                                    'text'=>'Avilable on the',
-				                                                    'title'=>'App Store',
-				                                                    ]);
+				                                                                    'href'=> esc_html__($restaurant_site_options['linck-app-apple'], 'restaurant-site'),
+				                                                                    'icon'=> $restaurant_site_options['icon-app-apple']['url'],
+				                                                                    'text'=>'Avilable on the',
+				                                                                    'title'=>'App Store',
+				                                                                    ]);
 	?>
  				<?php get_template_part('template-parts/components/button', 'app', [
 	        'href'=> esc_html__($restaurant_site_options['linck-app-google'], 'restaurant-site'),

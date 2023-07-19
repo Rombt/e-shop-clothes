@@ -1,6 +1,5 @@
 <?php
 
-// echo '***************************************************';
 
 function restaurant_site_acf_metaboxes()
 {
@@ -91,15 +90,51 @@ function restaurant_site_acf_metaboxes()
         // 'return_format' => 'array',
     ));
 
+
+    acf_add_local_field_group(array(
+        'key' => 'our-clients_properties',
+        'title' => 'Properties Our Clients',
+        'fields' => array(
+            array(
+                'key' => 'ocp_field-1',
+                'name' => 'our-clients_show-slider-happy-clients',
+                'label' => 'Show this client on the "Happy Clients" slider ',
+                'type' => 'checkbox',
+                'choices' => array(
+                    'show' => 'show on',
+                ),
+                // 'layout' => 'horizontal',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'our-clients',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array(),
+        'return_format' => 'array',
+    ));
+
+
 }
 add_action('acf/init', 'restaurant_site_acf_metaboxes');
 
-add_action('wp_ajax_update_custom_field', 'update_food_menu_items_show_in_front_page');
 function update_food_menu_items_show_in_front_page()  // for change field value by ajax
 {
+
     $post_id = $_POST['post_id'];
     $field_name = $_POST['field_name'];
     $field_value = $_POST['field_value'];
     update_field($field_name, $field_value, $post_id);
     wp_die();
 }
+add_action('wp_ajax_update_custom_field', 'update_food_menu_items_show_in_front_page');

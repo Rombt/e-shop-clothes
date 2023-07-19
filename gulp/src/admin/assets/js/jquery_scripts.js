@@ -50,7 +50,7 @@ jQuery(document).ready(function ($) {
    });
 
    //"our-clients_show-slider-happy-clients"   checkbox  change event handler
-   $(document).on('change', '.check-show-happy-clients', function () {
+   $(document).on('change', '.check-show-slider-happy-clients', function () {
 
       var postId = $(this).data('post-id');
       var fieldName = $(this).data('field-name');
