@@ -4,7 +4,11 @@ import imageMin from "gulp-imagemin";
 
 
 export const images = () => {
-    return app.gulp.src(app.path.src.images, { sourcemaps: true, "allowEmpty": true }) // "allowEmpty": true для того что бы  не было ошибок из-за отсутствия файлов .sass
+    return app.gulp.src(app.path.src.images, {
+        sourcemaps: true,
+        allowEmpty: true,
+        base: app.path.srcFolder,
+    })
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "Images", message: "Error: <%= error.message %>" })))
         .pipe(app.plugins.newer(app.plugins.if(app.isWP, app.path.wp.images, app.path.prod.images)))
 
@@ -25,7 +29,7 @@ export const images = () => {
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
             file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
         })))
-        .pipe(app.gulp.src(app.path.src.svg))
+        .pipe(app.gulp.src(app.path.src.svg, { base: app.path.srcFolder }))
 
         .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.images, app.path.prod.images)))
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {

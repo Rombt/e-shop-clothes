@@ -2,7 +2,7 @@ import svgSprite from "gulp-svg-sprite";
 
 
 export const createSvgSprite = () => {
-    return app.gulp.src(app.path.src.svgicons)
+    return app.gulp.src(app.path.src.svgicons, { base: app.path.srcFolder })
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "SVG", message: "Error: <%= error.message %>" })))
         .pipe(svgSprite({
             mode: {

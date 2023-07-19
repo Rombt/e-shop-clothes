@@ -12,7 +12,11 @@ const sass = gulpSasss(dartSasss);
 export const styles = () => {
 
 
-    return app.gulp.src(app.plugins.if(global.app.isSASS, app.path.src.scss, app.path.src.less), { sourcemaps: app.isDev, "allowEmpty": true }) // "allowEmpty": true для того что бы  не было ошибок из-за отсутствия файлов .sass
+    return app.gulp.src(app.plugins.if(global.app.isSASS, app.path.src.scss, app.path.src.less), {
+        sourcemaps: app.isDev,
+        "allowEmpty": true,
+        base: app.path.srcFolder,
+    })
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "SCSS", message: "Error: <%= error.message %>" })))
 
         .pipe(app.plugins.if(global.app.isSASS, sass({ outputStyle: 'expanded' }), less()))
@@ -35,7 +39,5 @@ export const styles = () => {
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
             file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
         })))
-
-
         .pipe(app.plugins.browsersync.stream());
 }

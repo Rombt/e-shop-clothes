@@ -10,19 +10,18 @@ const themeName = nodePath.basename(nodePath.dirname(nodePath.resolve()));
 const wpPluginName = `${themeName}-core`;
 const pluginsPath = nodePath.join(themePath, '..', '..', `plugins/${wpPluginName}`);
 
-
 export const path = {
     wp: {
         themeName: `${themeName}`,
         wpPluginName: `${wpPluginName}`,
         arr_processedFiles: [],
         js: `${themePath}/assets/js/`,
-        styles: `${themePath}/assets/styles/`,
+        styles: `${themePath}/`,
         php: `${themePath}`,
-        images: `${themePath}/assets/img/`,
-        fonts: `${themePath}/assets/fonts/`,
-        files: `${themePath}/assets/`,
-        svgicons: `${themePath}/assets/img/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
+        images: `${themePath}/`,
+        fonts: `${themePath}/`,
+        files: `${themePath}/`,
+        svgicons: `${themePath}/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
     prod: {
         js: `${prodFolder}/js/`,
@@ -39,26 +38,39 @@ export const path = {
             `${srcFolder}/template-parts/**/*`,
         ],
         wpPlugins: `${srcFolder}/plugins/**/*.*`,
-        less: `${srcFolder}/assets/styles/main-style.less`,
-        scss: `${srcFolder}/assets/styles/main-style.scss`,
-        js: `${srcFolder}/assets/js/app.js`,
-        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`, // добавить форматы при необходимости
-        svg: `${srcFolder}/assets/img/**/*.svg`,
-        fonts: `${srcFolder}/assets/fonts`,
-        files: [
-            `${srcFolder}/js/libs/**/*.*`,      // for simple file transfer
+        less: [
+            `${srcFolder}/assets/styles/main-style.less`,
+            `${srcFolder}/admin/assets/css/admin-main-style.less`,
         ],
-        svgicons: `${srcFolder}/assets/svgicons/*.svg`,
+        scss: [
+            `${srcFolder}/assets/styles/main-style.scss`,
+            `${srcFolder}/admin/assets/css/main-style.scss`,
+        ],
+        js: `${srcFolder}/assets/js/app.js`,
+        images: [   // добавить форматы при необходимости
+            `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp,html}`,
+            `${srcFolder}/admin/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
+        ],
+        svg: [
+            `${srcFolder}/assets/img/icons/**/*.svg`,
+            `${srcFolder}/admin/assets/img/icons/**/*.svg`,
+        ],
+        files: [     // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
+            `${srcFolder}/admin/assets/js/**/*.js`,
+        ],
+        svgicons: [
+            `${srcFolder}/assets/svgicons/*.svg`,
+            `${srcFolder}/admin/assets/svgicons/*.svg`,
+        ],
     },
     watch: {
         php: `${srcFolder}/**/*.{php,html,txt}`, // слежу за всеми 
-        styles: `${srcFolder}/assets/styles/**/*.{scss,less}`,
-        js: `${srcFolder}/assets/js/**/*.js`,
-        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
-        files: [
-            `${srcFolder}/js/libs/**/*.*`,
+        styles: `${srcFolder}/**/*.{scss,less}`,
+        js: `${srcFolder}/**/*.js`,
+        images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+        files: [        // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
+            `${srcFolder}/admin/assets/js/**/*.js`,
         ],
-        wp: `${themePath}/functions.php`,       // добавить файлы для отслеживания
     },
     wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,

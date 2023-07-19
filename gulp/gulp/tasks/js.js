@@ -1,7 +1,10 @@
 import webpackStream from "webpack-stream";
 
 export const js = () => {
-    return app.gulp.src(app.path.src.js, { sourcemaps: global.app.isDev, "allowEmpty": true }) // "allowEmpty": true для того что бы  не было ошибок из-за отсутствия файлов .sass
+    return app.gulp.src(app.path.src.js, {
+        sourcemaps: global.app.isDev,
+        allowEmpty: true,
+    })
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "JS",
