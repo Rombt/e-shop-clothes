@@ -1,7 +1,7 @@
 <?php
 
-require_once get_template_directory() . '/inc/admin/functions/general.php';
-require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/general.php';
+require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/inc/Redux/redux-options.php';
 
 define('rs_PATH_THEME', get_template_directory());
@@ -9,7 +9,16 @@ define('rs_URL_THEME', esc_url(get_template_directory_uri()));
 
 /*===================    TODO    ====================================
 для второй версии темы:
-    кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
+    Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
+    В опциях темы добавить возможность выбирать:
+        сколько слов будет выводится при обрезке текста
+        символ который будет выводится обрыве текста
+    Переключение тёмной и светлой темы сайта  https://youtu.be/JzC5_tNOK8k
+    Дать возможность пользователям рестарана регистрироваться на сайте
+        зарегестрированных пользователей добовлять в пост тайп our_clients
+        некоторых из них выводить на главную страницу в слайдер
+    Поддержку многоуровневых меню в footer
+        ввиде акардиона     https://youtu.be/0fg9bZcL1RM
 
 Добавить таксономии по типам блюд:
     По типу кухни:
@@ -93,7 +102,6 @@ use dynamic_section for redux
 форму и страницу поиска по сайту
 отдельные локации меню для мобильных устройств
 
-assets\js\libs\jQuery_scripts.js
 
  */
 
@@ -113,9 +121,8 @@ add_action('wp_enqueue_scripts', 'restaurant_site_scripts', 20);
 
 function restaurant_site_scripts_admin()
 {
-
-    wp_enqueue_script('restaurant_site-core_jq', get_template_directory_uri() . '/admin/assets/js/jquery_scripts.js', array('jquery'), '1.0', true);
-
+    wp_enqueue_style('restaurant_site-admin_main', get_template_directory_uri() . '/admin/assets/css/admin-main-style.min.css', array(), '1.0', 'all');
+    wp_enqueue_script('restaurant_site-admin_core_jq', get_template_directory_uri() . '/admin/assets/js/jquery_scripts.js', array('jquery'), '1.0', true);
 
 }
 add_action('admin_enqueue_scripts', 'restaurant_site_scripts_admin');

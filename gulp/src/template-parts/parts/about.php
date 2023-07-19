@@ -8,24 +8,24 @@
             <?php }?>
 
             <div>
-                <?php _e( $restaurant_site_options['read_revie_text'] ) ?>
+                <?php _e($restaurant_site_options['read_revie_text']) ?>
             </div>
             <?php if ($restaurant_site_options['read_revie_icon']['url']) { ?>
                 <img class='read__icon' src="<?php echo esc_url($restaurant_site_options['read_revie_icon']['url']) ?>" alt="">
             <?php }?>
         </a>
 
-        <?php if ($restaurant_site_options['phone-numbers_home-delivery']){   ?>
-        <a href="tel: <?php esc_html_e( $restaurant_site_options['phone-numbers_home-delivery'] ) ?> " class="about-call-us">
+        <?php if ($restaurant_site_options['phone-numbers_home-delivery']) {   ?>
+        <a href="tel: <?php esc_html_e($restaurant_site_options['phone-numbers_home-delivery']) ?> " class="about-call-us">
             <?php if ($restaurant_site_options['home_delivery_icon']['url']) { ?>
                 <img class='read__cercle' src="<?php echo esc_url($restaurant_site_options['home_delivery_icon']['url']) ?>" alt="">
             <?php }?>
 
             <div class="about-call-us__text">
-                <?php _e( $restaurant_site_options['home_delivery_text'] ) ?>
+                <?php _e($restaurant_site_options['home_delivery_text']) ?>
             </div>
             <div class="phone-number">
-                <?php esc_html_e( $restaurant_site_options['phone-numbers_home-delivery'] ); ?>
+                <?php esc_html_e($restaurant_site_options['phone-numbers_home-delivery']); ?>
             </div>
         </a>
         <?php }?>
@@ -36,13 +36,13 @@
     <section class="about-row">
         <div class="about-row__text">
             <h2>
-                <?php esc_html_e( $restaurant_site_options['about_section_title'] ); ?>
+                <?php esc_html_e($restaurant_site_options['about_section_title']); ?>
             </h2>
             <p>
-                <?php esc_html_e( $restaurant_site_options['about_section_text'] ); ?>
+                <?php echo rstr_trim_excerpt(50, esc_html__($restaurant_site_options['about_section_text'])); ?>
             </p>
             <div class="about-row__text-buttons">
-                <?php get_template_part( 'template-parts/components/button', 'orange', ['href'=>'#','title'=>'READ MORE']); ?>
+                <?php get_template_part('template-parts/components/button', 'orange', ['href'=>'#','title'=>'READ MORE']); ?>
                 <div class="wrap-img">
                     <img src="@img/about-button-bg.jpg" alt="">
                 </div>

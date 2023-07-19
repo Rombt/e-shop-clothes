@@ -5,10 +5,10 @@
 			<div class="footer__navigation">
 				<?php echo $restaurant_site_options['title_one'] ? '<h2>' . esc_html($restaurant_site_options['title_one']) . '</h2>' : '' ?>
 				<?php wp_nav_menu(
-					array(
-						'theme_location' => 'footer_nav',
-						'container' => false,
-					)
+				    array(
+				                                        'theme_location' => 'footer_nav',
+				                                                'menu_id' => 'footer-menu',
+				                                    )
 				); ?>
 			</div>
 			<div class="footer__news">
@@ -22,24 +22,24 @@
 					</div>
 					@@include('html/parts/button-orange.html',{'mod':'','title':'Subscribe', 'href':'#'})
 				</div>
-				<?php get_template_part( 'template-parts/components/icons_block'); ?>
+				<?php get_template_part('template-parts/components/icons_block'); ?>
 			</div>
 			<div class="footer__app">
 				<?php echo $restaurant_site_options['title_three'] ? '<h2>' . esc_html($restaurant_site_options['title_three']) . '</h2>' : '' ?>
-				<?php get_template_part( 'template-parts/components/button', 'app', [
-						'href'=> esc_html__($restaurant_site_options['linck-app-apple'],'restaurant-site'),
-						'icon'=> $restaurant_site_options['icon-app-apple']['url'],
-						'text'=>'Avilable on the',
-						'title'=>'App Store',
-						]); 
-				?>
- 				<?php get_template_part( 'template-parts/components/button', 'app', [
-						'href'=> esc_html__($restaurant_site_options['linck-app-google'],'restaurant-site'),
-						'icon'=> $restaurant_site_options['icon-app-google']['url'],
-						'text'=>'Get it on',
-						'title'=>' Google Play',
-						]); 
-				?>
+				<?php get_template_part('template-parts/components/button', 'app', [
+				                                                    'href'=> esc_html__($restaurant_site_options['linck-app-apple'], 'restaurant-site'),
+				                                                    'icon'=> $restaurant_site_options['icon-app-apple']['url'],
+				                                                    'text'=>'Avilable on the',
+				                                                    'title'=>'App Store',
+				                                                    ]);
+	?>
+ 				<?php get_template_part('template-parts/components/button', 'app', [
+	        'href'=> esc_html__($restaurant_site_options['linck-app-google'], 'restaurant-site'),
+	        'icon'=> $restaurant_site_options['icon-app-google']['url'],
+	        'text'=>'Get it on',
+	        'title'=>' Google Play',
+	        ]);
+	?>
 			</div>
 		</section>
 	</div>
@@ -48,6 +48,7 @@
 		<?php echo $restaurant_site_options['copyright'] ? '<p>' . wp_kses_post($restaurant_site_options['copyright']) . '</p>' : '<p>' . esc_html_e('2016 © Luxury RestaurAnt, All rights reserved') . '</p>' ?>
 		<span></span>
 	</div>
+	
 </div>
 
 

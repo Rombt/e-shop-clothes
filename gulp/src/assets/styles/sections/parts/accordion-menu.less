@@ -1,0 +1,50 @@
+.accordion-item {
+   position: relative;
+
+   &__icon {
+      position: absolute;
+      cursor: pointer;
+      left: -20px;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+
+      &::after,
+      &::before {
+         content: '';
+         position: absolute;
+         top: 30%;
+         width: 0px;
+         height: 50%;
+         border: 1px solid #adb2b7;
+         transition: all 0.7s;
+      }
+
+      &::after {
+         right: 25%;
+         transform: rotate(45deg);
+      }
+
+      &::before {
+         left: 25%;
+         transform: rotate(-45deg);
+      }
+
+   }
+
+   &__icon:hover {
+      transform: scale(1.3);
+   }
+
+   &__icon-active {
+      &::after {
+         transform: rotate(-45deg);
+      }
+
+      &::before {
+         transform: rotate(45deg);
+      }
+   }
+
+
+}
