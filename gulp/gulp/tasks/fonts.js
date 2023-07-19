@@ -4,7 +4,7 @@ import ttf2woff2 from 'gulp-ttf2woff2';
 
 
 export const otfToTtf = () => {
-    return app.gulp.src(`${app.path.srcFolder}/fonts/*.otf`, {})
+    return app.gulp.src(`${app.path.src.fonts}/*.otf`, {})
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "FONTS",
@@ -14,12 +14,12 @@ export const otfToTtf = () => {
         .pipe(fonter({
             formats: ['ttf']
         }))
-        .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
+        .pipe(app.gulp.dest(`${app.path.src.fonts}/`))
 
 }
 
 export const ttfToWoff = () => {
-    return app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`, {})
+    return app.gulp.src(`${app.path.src.fonts}/*.ttf`, {})
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "FONTS",
@@ -28,14 +28,14 @@ export const ttfToWoff = () => {
         .pipe(fonter({
             formats: ['woff']
         }))
-        .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
-        .pipe(app.gulp.src(`${app.path.srcFolder}/fonts/*.ttf`))
+        .pipe(app.gulp.dest(`${app.path.src.fonts}/`))
+        .pipe(app.gulp.src(`${app.path.src.fonts}/*.ttf`))
         .pipe(ttf2woff2())
-        .pipe(app.gulp.dest(`${app.path.srcFolder}/fonts/`))
+        .pipe(app.gulp.dest(`${app.path.src.fonts}/`))
 }
 
 export const copyFonts = () => {
-    return app.gulp.src(`${app.path.srcFolder}/fonts/*.{woff,woff2}`)
+    return app.gulp.src(`${app.path.src.fonts}/*.{woff,woff2}`)
 
 
         .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.fonts, app.path.prod.fonts)))
@@ -47,7 +47,7 @@ export const copyFonts = () => {
 
 export const fontStyle = () => {
     let fontsFile = `${app.path.srcFolder}/styles/fonts.${global.app.isSASS ? 'sass' : 'less'}`; // нужно создавать файл шрифтов заново при каждой смене препроцессора
-    fs.readdir(`${app.path.srcFolder}/fonts/`, function (err, fontsFiles) {
+    fs.readdir(`${app.path.src.fonts}/`, function (err, fontsFiles) {
         if (fontsFile) {
             if (!fs.existsSync(fontStyle)) {
                 fs.writeFile(fontsFile, '', cd);

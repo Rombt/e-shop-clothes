@@ -39,21 +39,22 @@ export const path = {
             `${srcFolder}/template-parts/**/*`,
         ],
         wpPlugins: `${srcFolder}/plugins/**/*.*`,
-        less: `${srcFolder}/styles/main-style.less`,
-        scss: `${srcFolder}/styles/main-style.scss`,
-        js: `${srcFolder}/js/app.js`,
-        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`, // добавить форматы при необходимости
-        svg: `${srcFolder}/img/**/*.svg`,
+        less: `${srcFolder}/assets/styles/main-style.less`,
+        scss: `${srcFolder}/assets/styles/main-style.scss`,
+        js: `${srcFolder}/assets/js/app.js`,
+        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp}`, // добавить форматы при необходимости
+        svg: `${srcFolder}/assets/img/**/*.svg`,
+        fonts: `${srcFolder}/assets/fonts`,
         files: [
             `${srcFolder}/js/libs/**/*.*`,      // for simple file transfer
         ],
-        svgicons: `${srcFolder}/svgicons/*.svg`,
+        svgicons: `${srcFolder}/assets/svgicons/*.svg`,
     },
     watch: {
         php: `${srcFolder}/**/*.{php,html,txt}`, // слежу за всеми 
-        styles: `${srcFolder}/styles/**/*.{scss,less}`,
-        js: `${srcFolder}/js/**/*.js`,
-        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
+        styles: `${srcFolder}/assets/styles/**/*.{scss,less}`,
+        js: `${srcFolder}/assets/js/**/*.js`,
+        images: `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: [
             `${srcFolder}/js/libs/**/*.*`,
         ],
