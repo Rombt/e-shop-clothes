@@ -17,6 +17,12 @@
     <div class="conteiner">
         <header class="header ">
             <a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
+
+<?php
+class_exists('ReduxFramework') ? 'Плагин Redux установлен и активирован.' : 'Плагин Redux не установлен или не активирован.';
+?>
+
+            
                 <?php if ($restaurant_site_options['logo_site']['url']) {?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
                 <?php } else {?>
@@ -30,11 +36,11 @@
 
             <?php wp_nav_menu(
                 array(
-                    'theme_location' => 'header_nav',
-                    'container' => 'nav',
-                    'container_class' => 'heder-menu redux_font-heder_navigation',
-                    'container_id' => 'heder-menu',
-                )
+                                'theme_location' => 'header_nav',
+                                'container' => 'nav',
+                                'container_class' => 'heder-menu redux_font-heder_navigation',
+                                'container_id' => 'heder-menu',
+                            )
             );
             }?>
 
