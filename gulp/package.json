@@ -54,6 +54,7 @@
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "php-serialize": "^4.1.1",
     "sass": "^1.58.3",
     "smart-grid": "^2.1.2",
     "vinyl-ftp": "^0.6.1",

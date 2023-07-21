@@ -4,10 +4,36 @@ if (isset($restaurant_site_options['today-gallery'])) {
     $arr_dish_gallery = explode(",", $restaurant_site_options['today-gallery']);
 }
 
-$params = [
-    'post_type' => 'food-menu-items',
-    'posts_per_page' => -1,
-];
+
+if (class_exists('ACF')) {
+
+    $params = [
+        'post_type' => 'food-menu-items',
+        'posts_per_page' => -1,
+          'meta_query'     => [
+             'relation' => 'OR',
+             [
+                   'key'     => 'food-menu-items_show-in-section-today-specialy',
+                   'value'   => 'a:1:{i:0;s:4:"show";}',
+                   'compare' => 'LIKE',
+             ],
+             [
+                   'key'     => 'food-menu-items_show-in-section-today-specialy',
+                   'value'   => 'show',
+                   'compare' => 'LIKE',
+             ],
+          ],
+    ];
+
+} else {
+
+    $params = [
+       'post_type' => 'food-menu-items',
+       'posts_per_page' => 2,
+       ];
+}
+
+
 $query_Menu_items = new WP_Query($params);
 
 ?>
@@ -40,9 +66,9 @@ $query_Menu_items = new WP_Query($params);
      while ($query_Menu_items->have_posts()) {
          $query_Menu_items->the_post();
 
-         if (class_exists('ACF') && !get_field('food-menu-items_show-in-section-today-specialy')) {
-             continue;
-         }
+         // if (class_exists('ACF') && !get_field('food-menu-items_show-in-section-today-specialy')) {
+         //     continue;
+         // }
          ?>
 
 

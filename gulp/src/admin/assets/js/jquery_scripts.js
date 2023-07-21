@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
-            field_value: checked ? 'show' : ''
+            field_value: checked ? "show" : ""
          },
          success: function (response) {
             // console.log('Значение поля успешно обновлено!');

@@ -1,10 +1,36 @@
- <?php global $restaurant_site_options;?>
+<?php global $restaurant_site_options;?>
 <?php
 
-$params = [
-    'post_type' => 'food-menu-items',
-    'posts_per_page' => -1,
-];
+
+if (class_exists('ACF')) {
+
+    $params = [
+       'post_type' => 'food-menu-items',
+       'posts_per_page' => -1,
+          'meta_query'     => [
+             'relation' => 'OR',
+             [
+                   'key'     => 'food-menu-items_show-in-food-menu',
+                   'value'   => 'a:1:{i:0;s:4:"show";}',
+                   'compare' => 'LIKE',
+             ],
+             [
+                   'key'     => 'food-menu-items_show-in-food-menu',
+                   'value'   => 'show',
+                   'compare' => 'LIKE',
+             ],
+          ],
+       ];
+
+} else {
+
+    $params = [
+       'post_type' => 'food-menu-items',
+       'posts_per_page' => 8,
+       ];
+}
+
+
 $query_Menu_items = new WP_Query($params);
 
 ?>
@@ -16,9 +42,9 @@ $query_Menu_items = new WP_Query($params);
           while ($query_Menu_items->have_posts()) {
               $query_Menu_items->the_post();
 
-              if (class_exists('ACF') && !get_field('food-menu-items_show-in-food-menu')) {
-                  continue;
-              }
+              //   if (class_exists('ACF') && !get_field('food-menu-items_show-in-food-menu')) {
+              //       continue;
+              //   }
               ?>
          <article <?php post_class('dish-menu');?> id="post-<?php the_id()?>" data-post-id="<?php the_id()?>">
             <a href="<?php echo esc_url(the_permalink()); ?>">

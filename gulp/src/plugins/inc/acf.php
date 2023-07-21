@@ -85,9 +85,6 @@ function restaurant_site_acf_metaboxes()
         'position' => 'normal',
         'style' => 'default',
         'label_placement' => 'top',
-        // 'instruction_placement' => 'label',
-        // 'hide_on_screen' => array(),
-        // 'return_format' => 'array',
     ));
 
 

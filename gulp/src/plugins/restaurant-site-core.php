@@ -153,65 +153,63 @@ function rs_register_post_types()
 }
 add_action('init', 'rs_register_post_types');
 
-// Добавляем новую колонку в перечень записей
-function add_food_menu_items_column($columns)
-{
-    $columns['show-food-menu'] = esc_html__('Show in the "Food menu" section ', 'restaurant-site');
-    $columns['show-today-specialy'] = esc_html__('Show in the "Today Specialy" section ', 'restaurant-site');
-    return $columns;
-}
-add_filter('manage_food-menu-items_posts_columns', 'add_food_menu_items_column');
 
-function display_custom_field_column($column, $post_id)
-{
-    if ($column === 'show-food-menu') {
-        $field_name = 'food-menu-items_show-in-food-menu';
-        echo '<input type="checkbox" data-post-id="' . $post_id
-            . '" data-field-name="' . $field_name . '" '
-            . (get_field($field_name, $post_id) ? 'checked' : '')
-            . ' class="check-show-food-menu">';
+if (class_exists('ACF')) {
+
+    // Добавляем новую колонку в перечень записей
+    function add_food_menu_items_column($columns)
+    {
+        $columns['show-food-menu'] = esc_html__('Show in the "Food menu" section ', 'restaurant-site');
+        $columns['show-today-specialy'] = esc_html__('Show in the "Today Specialy" section ', 'restaurant-site');
+        return $columns;
     }
+    add_filter('manage_food-menu-items_posts_columns', 'add_food_menu_items_column');
 
-    if ($column === 'show-today-specialy') {
-        $field_name = 'food-menu-items_show-in-section-today-specialy';
-        echo '<input type="checkbox" data-post-id="' . $post_id
-            . '" data-field-name="' . $field_name . '" '
-            . (get_field($field_name, $post_id) ? 'checked' : '')
-            . ' class="check-show-today-specialy">';
+    function display_custom_field_column($column, $post_id)
+    {
+        if ($column === 'show-food-menu') {
+            $field_name = 'food-menu-items_show-in-food-menu';
+            echo '<input type="checkbox" data-post-id="' . $post_id
+                . '" data-field-name="' . $field_name . '" '
+                . (get_field($field_name, $post_id) ? 'checked' : '')
+                . ' class="check-show-food-menu">';
+        }
+
+        if ($column === 'show-today-specialy') {
+            $field_name = 'food-menu-items_show-in-section-today-specialy';
+            echo '<input type="checkbox" data-post-id="' . $post_id
+                . '" data-field-name="' . $field_name . '" '
+                . (get_field($field_name, $post_id) ? 'checked' : '')
+                . ' class="check-show-today-specialy">';
+        }
+
     }
+    add_action('manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2);
 
-    if ($column === 'show-our-clients') {
-        $field_name = 'our-clients_show-slider-happy-clients';
-        echo '<input type="checkbox" data-post-id="' . $post_id
-            . '" data-field-name="' . $field_name . '" '
-            . (get_field($field_name, $post_id) ? 'checked' : '')
-            . ' class="check-show-slider-happy-clients">';
+    function add_our_clients_column($columns)
+    {
+        $columns['show-our-clients'] = esc_html__('Show in the "Happy Clients" slider', 'restaurant-site');
+        return $columns;
     }
-}
-add_action('manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2);
+    add_filter('manage_our-clients_posts_columns', 'add_our_clients_column');
 
 
-
-
-function add_our_clients_column($columns)
-{
-    $columns['show-our-clients'] = esc_html__('Show in the "Happy Clients" slider', 'restaurant-site');
-    return $columns;
-}
-add_filter('manage_our-clients_posts_columns', 'add_our_clients_column');
-
-
-function display_our_clients__column($column, $post_id)
-{
-    if ($column === 'show-our-clients') {
-        $field_name = 'our-clients_show-slider-happy-clients';
-        echo '<input type="checkbox" data-post-id="' . $post_id
-            . '" data-field-name="' . $field_name . '" '
-            . (get_field($field_name, $post_id) ? 'checked' : '')
-            . ' class="check-show-slider-happy-clients">';
+    function display_our_clients__column($column, $post_id)
+    {
+        if ($column === 'show-our-clients') {
+            $field_name = 'our-clients_show-slider-happy-clients';
+            echo '<input type="checkbox" data-post-id="' . $post_id
+                . '" data-field-name="' . $field_name . '" '
+                . (get_field($field_name, $post_id) ? 'checked' : '')
+                . ' class="check-show-slider-happy-clients">';
+        }
     }
+    add_action('manage_our-clients_posts_custom_column', 'display_our_clients__column', 10, 2);
+
+
 }
-add_action('manage_our-clients_posts_custom_column', 'display_our_clients__column', 10, 2);
+
+
 
 
 
