@@ -36,7 +36,7 @@ $query_Menu_items = new WP_Query($params);
 ?>
 
 <div class="conteiner" id="restaurant-menu">
-   <?php get_template_part('template-parts/components/food_menu', null, ['title' => esc_html($restaurant_site_options['restaurant_menu-section_title'])]);?>
+   <?php get_template_part('template-parts/components/food_menu', null, ['title' => class_exists('ReduxFramework') ? esc_html($restaurant_site_options['restaurant_menu-section_title']) : ""]);?>
    <section class="row-dish-menu dish-menu__row">
       <?php if ($query_Menu_items->have_posts()) {
           while ($query_Menu_items->have_posts()) {
@@ -70,17 +70,17 @@ $query_Menu_items = new WP_Query($params);
    
 
    <div class="wrap-img wrap-img__311x311">
-      <?php if ($restaurant_site_options['restaurant_menu-section_img_1']['url']) {?>
+      <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['restaurant_menu-section_img_1']['url']) {?>
       <img src="<?php echo esc_url($restaurant_site_options['restaurant_menu-section_img_1']['url']) ?>" alt="">
       <?php }?>
    </div>
    <div class="wrap-img wrap-img__267x414">
-      <?php if ($restaurant_site_options['restaurant_menu-section_img_2']['url']) {?>
+      <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['restaurant_menu-section_img_2']['url']) {?>
       <img src="<?php echo esc_url($restaurant_site_options['restaurant_menu-section_img_2']['url']) ?>" alt="">
       <?php }?>
    </div>
    <div class="wrap-img wrap-img__241x241">
-      <?php if ($restaurant_site_options['restaurant_menu-section_img_3']['url']) {?>
+      <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['restaurant_menu-section_img_3']['url']) {?>
       <img src="<?php echo esc_url($restaurant_site_options['restaurant_menu-section_img_3']['url']) ?>" alt="">
       <?php }?>
    </div>

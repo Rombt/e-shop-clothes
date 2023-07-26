@@ -33,13 +33,13 @@ $query_Our_clients = new WP_Query($params);
 
 <div class="background background__clients">
    <div class="wrap-img background-clients__wrap-img">
-      <?php if ($restaurant_site_options['clients-section_background_img']['url']) { ?>
+      <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['clients-section_background_img']['url']) { ?>
             <img src="<?php echo esc_url($restaurant_site_options['clients-section_background_img']['url']) ?>" alt="">
       <?php }?>
    </div>
 
    <section class="conteiner" id="clients">
-      <h2 class="slide-body__title"><?php _e($restaurant_site_options['clients-section_title'], 'restaurant-site') ?></h2>
+      <h2 class="slide-body__title"><?php class_exists('ReduxFramework') ? _e($restaurant_site_options['clients-section_title'], 'restaurant-site') : '' ?></h2>
       <div class="swiper swiper-clients">
          <div class="swiper-wrapper  clients__swiper-wrapper">
             

@@ -2,7 +2,7 @@
 /* Template Name: 404-page */
 ?>
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/parts/head_pages'); ?>
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 <main id="primary" class="site-main background e404-page-background">
 	<div class="conteiner e404-page">
@@ -16,7 +16,7 @@
 			</span>
 			<div class="wrap-img e404-page__wrap-img">
 
-				<?php if ($restaurant_site_options['404_img']['url']) { ?>
+				<?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['404_img']['url']) { ?>
 					<img src="<?php echo esc_url($restaurant_site_options['404_img']['url']) ?>" alt="404 img">
 				<?php }?>
 

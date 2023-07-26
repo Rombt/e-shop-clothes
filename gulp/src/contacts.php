@@ -4,7 +4,7 @@
 
 
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/parts/head_pages'); ?>
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 <body>
    <div class="background background-contact-us">
@@ -30,31 +30,31 @@
                      <textarea name="mesage" id="mesage"></textarea>
                   </div>
                </form>
-               <?php get_template_part( 'template-parts/components/button', 'orange', [
-                  'href'=> esc_html( $restaurant_site_options['button_href_contact-page']),
-                  'title'=>esc_html( $restaurant_site_options['button_title_contact-page']),
-                  ]); 
-               ?>               
+               <?php get_template_part('template-parts/components/button', 'orange', [
+                  'href'=> esc_html($restaurant_site_options['button_href_contact-page']),
+                  'title'=>esc_html($restaurant_site_options['button_title_contact-page']),
+                  ]);
+?>               
             </div>
             <div class="contact-us__address">
-               <h2> <?php echo esc_html($restaurant_site_options['our-address_title'])?> </h2>
+               <h2> <?php echo class_exists('ReduxFramework') ? esc_html($restaurant_site_options['our-address_title']) : "" ?> </h2>
                <div>
                   <h3><?php echo __($restaurant_site_options['our-address'])?></h3>
                </div>
                <div>
                   <h3>Phone</h3>
-                  <a href="tel:<?php echo preg_replace('![^0-9]+!', '', $restaurant_site_options['our-phone']) // delete spaces ?>">  
+                  <a href="tel:<?php echo preg_replace('![^0-9]+!', '', $restaurant_site_options['our-phone']) // delete spaces?>">  
                      <?php echo preg_replace('![^0-9\s]+!', '', $restaurant_site_options['our-phone'])?>
                   </a>
                </div>
                <div>
                   <h3> Email</h3>
                   <!-- info@luxuryrestaurent.com -->
-                  <?php echo esc_html($restaurant_site_options['our-email'])?>
+                  <?php echo class_exists('ReduxFramework') ? esc_html($restaurant_site_options['our-email']) : "" ?>
                </div>
                <div>
                   <h3>Follow us</h3>
-                  <?php get_template_part( 'template-parts/components/icons_block'); ?>
+                  <?php get_template_part('template-parts/components/icons_block'); ?>
                </div>
             </div>
          </div>

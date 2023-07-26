@@ -19,11 +19,11 @@
             <a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
 
 <?php
-class_exists('ReduxFramework') ? 'Плагин Redux установлен и активирован.' : 'Плагин Redux не установлен или не активирован.';
+// class_exists('ReduxFramework') ? 'Плагин Redux установлен и активирован.' : 'Плагин Redux не установлен или не активирован.';
 ?>
 
             
-                <?php if ($restaurant_site_options['logo_site']['url']) {?>
+                <?php if (class_exists('ReduxFramework') && $restaurant_site_options['logo_site']['url']) {?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
                 <?php } else {?>
                     <h1 class='redux_font-title_site'> <?php esc_attr(bloginfo('title'))?> </h1>
@@ -36,24 +36,24 @@ class_exists('ReduxFramework') ? 'Плагин Redux установлен и а�
 
             <?php wp_nav_menu(
                 array(
-                                'theme_location' => 'header_nav',
-                                'container' => 'nav',
-                                'container_class' => 'heder-menu redux_font-heder_navigation',
-                                'container_id' => 'heder-menu',
-                            )
+                                        'theme_location' => 'header_nav',
+                                        'container' => 'nav',
+                                        'container_class' => 'heder-menu redux_font-heder_navigation',
+                                        'container_id' => 'heder-menu',
+                                    )
             );
             }?>
 
             <div class="cart-book">
-                <?php if ($restaurant_site_options['search_icon']['url']) {?>
+                <?php if (class_exists('ReduxFramework') && $restaurant_site_options['search_icon']['url']) {?>
                 <div href="#" class="wrap-img search-icon">
-                    <img class="wrap-img search-icon" src="<?php echo esc_url($restaurant_site_options['search_icon']['url']) ?>" alt="">
+                    <img class="wrap-img search-icon" src="<?php echo esc_url(class_exists('ReduxFramework') && $restaurant_site_options['search_icon']['url']) ?>" alt="">
                 </div>
                 <?php }?>
                 <div class="cart">
                     <div class="cart__cercle">3</div>
                     <a href="shopping-cart.html">
-                        <?php if ($restaurant_site_options['icon_cart']['url']) {?>
+                        <?php if (class_exists('ReduxFramework') && $restaurant_site_options['icon_cart']['url']) {?>
                             <img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
                         <?php }?>
                     </a>

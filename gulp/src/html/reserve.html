@@ -34,7 +34,7 @@
          <div class="reserve-call-us">
             @@include('parts/button-orange.html',{'mod':'','title':'Make reservation', 'href':'#'})
 
-            <?php if ($restaurant_site_options['reservation']){ ?>
+            <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['reservation']){ ?>
 
             <p>
                You can also call <span>for a reservation</span>

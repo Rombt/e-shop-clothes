@@ -29,7 +29,7 @@
                <footer class="food-card__order-block">
                   <div class="food-card__title">home <p>delivery</p>
                   </div>
-                  <?php if ( $restaurant_site_options['home_delivery'] ){ ?>
+                  <?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['home_delivery'] ){ ?>
                   <a href="<?php echo esc_html( $restaurant_site_options['home_delivery'] );?>"
                      class="food-card__phone-namber">
                      <?php echo esc_html( $restaurant_site_options['home_delivery'] ); ?>
