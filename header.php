@@ -50,9 +50,10 @@
 				<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['search_icon']['url'] ) { ?>
 					<div href="#" class="wrap-img search-icon">
 						<img class="wrap-img search-icon"
-							src="<?php echo esc_url( class_exists( 'ReduxFramework' ) && $restaurant_site_options['search_icon']['url'] ) ?>"
-							alt="">
+							src="<?php echo esc_url( $restaurant_site_options['search_icon']['url'] ) ?>" alt="">
 					</div>
+				<?php } else { ?>
+					<div href="#" class="wrap-img search-icon"> </div>
 				<?php } ?>
 				<div class="cart">
 					<div class="cart__cercle">3</div>

@@ -1229,6 +1229,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: start;
+  padding-left: 15px;
 }
 .button-app p {
   font-size: 15px;
@@ -1246,7 +1247,6 @@ a {
 .button-app img {
   height: 35px;
   width: 35px;
-  margin-left: 15px;
   margin-right: 15px;
 }
 .button-app:hover {

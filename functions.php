@@ -10,6 +10,7 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 /*===================    TODO    ====================================
 для второй версии темы:
 Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
+если в пункте меню есть подпункты выводить стрелрочку вниз
 В опциях темы добавить возможность выбирать:
 сколько слов будет выводится при обрезке текста
 символ который будет выводится обрыве текста
@@ -165,13 +166,20 @@ add_action( 'after_setup_theme', 'simple_restaurant_site_content_width', 0 );
 function restaurant_site_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'               => 'Restaurant site core', // The plugin name.
-			'slug'               => 'restaurant-site-core', // The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip', // The plugin source.
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'name'               => 'Restaurant site core',
+			// The plugin name.
+			'slug'               => 'restaurant-site-core',
+			// The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip',
+			// The plugin source.
+			'required'           => true,
+			// If false, the plugin is only 'recommended' instead of required.
+			'version'            => '1.0',
+			// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => false,
+			// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false,
+			// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
 		array(
@@ -189,13 +197,20 @@ function restaurant_site_register_required_plugins() {
 	);
 
 	$config = array(
-		'id'           => 'restaurant-site', // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '', // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins', // Menu slug.
-		'has_notices'  => true, // Show admin notices or not.
-		'dismissable'  => true, // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '', // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false, // Automatically activate plugins after installation or not.
+		'id'           => 'restaurant-site',
+		// Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',
+		// Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins',
+		// Menu slug.
+		'has_notices'  => true,
+		// Show admin notices or not.
+		'dismissable'  => true,
+		// If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',
+		// If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,
+		// Automatically activate plugins after installation or not.
 		'message'      => '', // Message to output right before the plugins table.
 
 	);
