@@ -10,125 +10,49 @@
 
 	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
 
+	<?php
+	$params           = [ 
+		'post_type'      => 'food-menu-items',
+		'posts_per_page' => -1,
+	];
+	$query_Menu_items = new WP_Query( $params );
+	?>
+
 	<div class="menu-page-conteiner__row">
 
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
+		<?php if ( $query_Menu_items->have_posts() ) {
+			while ( $query_Menu_items->have_posts() ) {
+				$query_Menu_items->the_post();
+				if ( class_exists( 'ACF' ) ) { ?>
+
+					<div class="prod-card-grid">
+						<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
+						<div class="prod-card-grid__body">
+							<h3>
+								<?php echo the_title() ?>
+							</h3>
+							<!-- <p> -->
+							<?php echo rstr_trim_excerpt( 7 ) ?>
+							<!-- </p> -->
+						</div>
+						<div class="prod-card-grid__footer">
+							<div>
+								<span>$</span>
+								<?php echo get_field( 'food_price' ) ?>
+							</div>
+						</div>
+					</div>
 
 
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
+				<?php } ?>
 
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
-
-		<div class="prod-card-grid">
-   <figure class="wrap-img"><img src="img/prod-card-img.jpg" alt="prod card img"></figure>
-   <div class="prod-card-grid__body">
-      <h3>jumbo carb thanroor</h3>
-      <p>survived not only five centuries but the leap</p>
-   </div>
-   <div class="prod-card-grid__footer">
-      <span>
-         <p>$</p>50.00
-      </span>
-   </div>
-</div>
+				<?php
+			}
+			wp_reset_postdata();
+		} else {
+			// something
+		}
+		?>
 
 
 		<?php get_template_part( 'template-parts/components/button', 'orange', [ 

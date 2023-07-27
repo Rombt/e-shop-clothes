@@ -10,71 +10,49 @@
 
 	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
 
+	<?php
+	$params           = [ 
+		'post_type'      => 'food-menu-items',
+		'posts_per_page' => -1,
+	];
+	$query_Menu_items = new WP_Query( $params );
+	?>
+
 	<div class="menu-page-conteiner__row">
 
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
+		<?php if ( $query_Menu_items->have_posts() ) {
+			while ( $query_Menu_items->have_posts() ) {
+				$query_Menu_items->the_post();
+				if ( class_exists( 'ACF' ) ) { ?>
+
+					<div class="prod-card-grid">
+						<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
+						<div class="prod-card-grid__body">
+							<h3>
+								<?php echo the_title() ?>
+							</h3>
+							<!-- <p> -->
+							<?php echo rstr_trim_excerpt( 7 ) ?>
+							<!-- </p> -->
+						</div>
+						<div class="prod-card-grid__footer">
+							<div>
+								<span>$</span>
+								<?php echo get_field( 'food_price' ) ?>
+							</div>
+						</div>
+					</div>
 
 
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
+				<?php } ?>
 
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
-
-		@@include('html/parts/prod-card__grid.html',{
-		'title':'jumbo carb thanroor',
-		'img_src':'@img/prod-card-img.jpg',
-		'description':'survived not only five centuries but the leap',
-		'price':'50.00',
-		})
+				<?php
+			}
+			wp_reset_postdata();
+		} else {
+			// something
+		}
+		?>
 
 
 		<?php get_template_part( 'template-parts/components/button', 'orange', [ 

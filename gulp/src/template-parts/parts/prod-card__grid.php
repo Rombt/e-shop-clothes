@@ -1,0 +1,12 @@
+<div class="prod-card-grid">
+	<figure class="wrap-img"><img src="@@img_src" alt="prod card img"></figure>
+	<div class="prod-card-grid__body">
+		<h3>@@title</h3>
+		<p>@@description</p>
+	</div>
+	<div class="prod-card-grid__footer">
+		<span>
+			<p>$</p>@@price
+		</span>
+	</div>
+</div>
