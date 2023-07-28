@@ -23,7 +23,7 @@
 ?>
 
             
-                <?php if (class_exists('ReduxFramework') && $restaurant_site_options['logo_site']['url']) {?>
+                <?php if (class_exists('ReduxFramework') && $restaurant_site_options['logo_site']['url']) { ?>
                     <img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
                 <?php } else {?>
                     <h1 class='redux_font-title_site'> <?php esc_attr(bloginfo('title'))?> </h1>
@@ -36,11 +36,11 @@
 
             <?php wp_nav_menu(
                 array(
-                                        'theme_location' => 'header_nav',
-                                        'container' => 'nav',
-                                        'container_class' => 'heder-menu redux_font-heder_navigation',
-                                        'container_id' => 'heder-menu',
-                                    )
+            'theme_location' => 'header_nav',
+            'container' => 'nav',
+            'container_class' => 'heder-menu redux_font-heder_navigation',
+            'container_id' => 'heder-menu',
+        )
             );
             }?>
 

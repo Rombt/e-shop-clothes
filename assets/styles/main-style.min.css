@@ -1287,48 +1287,6 @@ a {
   border: 1px solid #fff;
   border-radius: 4px;
 }
-.pagination-next {
-  color: #d38a0c;
-  font-size: 14px;
-  font-family: "Sintony";
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 2.143;
-  background-color: #ffeac5;
-  border: 1px solid #ffeac5;
-  width: 110px;
-  height: 44px;
-  border-radius: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pagination-next img {
-  width: 8px;
-  height: 14px;
-  margin-left: 10px;
-}
-.pagination-prev {
-  color: #fff;
-  font-size: 14px;
-  font-family: "Sintony";
-  font-weight: bold;
-  text-transform: uppercase;
-  line-height: 2.143;
-  background-color: #fea100;
-  border: 1px solid #fea100;
-  width: 110px;
-  height: 44px;
-  border-radius: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.pagination-prev img {
-  width: 8px;
-  height: 14px;
-  margin-right: 10px;
-}
 .article-icons-block {
   width: 370px;
   height: 100%;
@@ -1681,7 +1639,7 @@ a {
   height: 65px;
   padding: 0 30px;
 }
-.prod-card-grid__footer div {
+.prod-card-grid__footer p {
   font-size: 26px;
   font-family: "PlayfairDisplay";
   color: #fea100;
@@ -1692,8 +1650,9 @@ a {
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
+  margin-bottom: 0px;
 }
-.prod-card-grid__footer div span {
+.prod-card-grid__footer p span {
   display: inline-block;
   font-size: 14px;
   margin-right: 2px;
@@ -2053,8 +2012,6 @@ a {
   column-gap: 10px;
   row-gap: 10px;
   width: 100%;
-  /* .articles-pagination__prev */
-  /* .articles-pagination__next */
 }
 .pagination__ather-numbers {
   background-color: #fff;
@@ -2072,6 +2029,69 @@ a {
     display: none;
     /* в дальнейшем скрыват тьлько те которые не помещаются */
   }
+}
+.pagination-button {
+  color: #d38a0c;
+  font-size: 14px;
+  font-family: "Sintony";
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2.143;
+  background-color: #ffeac5;
+  border: 1px solid #ffeac5;
+  width: 110px;
+  height: 44px;
+  border-radius: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.pagination-button p {
+  margin-bottom: 0;
+}
+.pagination-button:hover {
+  color: #fff;
+  background-color: #fea100;
+  border: 1px solid #fea100;
+  transition: all 0.7s;
+}
+.pagination-button:hover .pagination-icon::after,
+.pagination-button:hover .pagination-icon::before {
+  border: 1px solid #fff;
+  transition: all 0.7s;
+}
+.pagination-icon {
+  position: absolute;
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+}
+.pagination-icon__next {
+  right: 15px;
+  transform: rotate(-90deg);
+}
+.pagination-icon__prev {
+  left: 15px;
+  transform: rotate(90deg);
+}
+.pagination-icon::after,
+.pagination-icon::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  width: 0px;
+  height: 50%;
+  border: 1px solid #d38a0c;
+  transition: all 0.7s;
+}
+.pagination-icon::after {
+  right: 25%;
+  transform: rotate(45deg);
+}
+.pagination-icon::before {
+  left: 25%;
+  transform: rotate(-45deg);
 }
 .opening-hours-conteiner {
   position: relative;

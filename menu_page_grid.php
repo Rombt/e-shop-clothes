@@ -13,7 +13,7 @@
 	<?php
 	$params           = [ 
 		'post_type'      => 'food-menu-items',
-		'posts_per_page' => -1,
+		'posts_per_page' => 9,
 	];
 	$query_Menu_items = new WP_Query( $params );
 	?>
@@ -31,15 +31,13 @@
 							<h3>
 								<?php echo the_title() ?>
 							</h3>
-							<!-- <p> -->
 							<?php echo rstr_trim_excerpt( 7 ) ?>
-							<!-- </p> -->
 						</div>
 						<div class="prod-card-grid__footer">
-							<div>
+							<p>
 								<span>$</span>
 								<?php echo get_field( 'food_price' ) ?>
-							</div>
+							</p>
 						</div>
 					</div>
 
@@ -52,13 +50,19 @@
 		} else {
 			// something
 		}
+
+		get_template_part( 'template-parts/components/pagination' );
+
 		?>
 
 
-		<?php get_template_part( 'template-parts/components/button', 'orange', [ 
-			'href'  => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_href'] : "" ),
-			'title' => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_title'] : "" ),
-		] ); ?>
+
+		<?php
+		// get_template_part( 'template-parts/components/button', 'orange', [ 
+		// 	'href'  => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_href'] : "" ),
+		// 	'title' => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_title'] : "" ),
+		// ] ); 
+		?>
 	</div>
 
 </main>
