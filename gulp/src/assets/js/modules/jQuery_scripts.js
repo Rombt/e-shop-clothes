@@ -2,13 +2,50 @@
 export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    multilevelHeaderMenu();
+
    accordionMenu('#footer-menu', '.sub-menu')
 
-
+   paginationAdaptive();
 
 
 
    //---------------------- funktions ---------------------
+
+   function paginationAdaptive() {
+
+      let widthPaginationBTN = $('.pagination').children('.page-numbers').width();
+      let allPaginationBTN = $('.pagination').children('.page-numbers').length;
+      let widthPaginationBlock;
+      let amounthPaginationBTN;
+      let indexCurrentPaginationBTN = $('.pagination').children('.page-numbers').find('.current');
+      console.log("indexCurrentPaginationBTN = ", index(indexCurrentPaginationBTN.eq(0)));
+
+      $(window).resize(function () {
+         widthPaginationBlock = $('.pagination').width();
+         amounthPaginationBTN = widthPaginationBlock / widthPaginationBTN;
+
+
+         // console.log("$(window).width() = ", $(window).width());
+      });
+
+
+
+
+
+
+
+
+
+   }
+
+
+
+
+
+
+
+
+
 
    function accordionMenu(menu, subMenu) {
 
