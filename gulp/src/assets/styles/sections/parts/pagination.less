@@ -12,7 +12,8 @@
      row-gap: 10px;
      width: 100%;
 
-     &__ather-numbers {
+     //   &__ather-numbers {
+     .page-numbers {
 
         background-color: #fff;
         border: 1px solid #d4dade;
@@ -32,20 +33,30 @@
         });
 
 
+     &:hover {
+        transform: scale(1.1);
+        transition: all 0.7s;
+     }
   }
+
+  .current {
+     background-color: rgb(254, 161, 0);
+     border: 1px solid rgb(254, 161, 0);
+     color: #fff;
   }
 
+  }
 
-
-  .pagination-button {
+  .prev.page-numbers,
+  .next.page-numbers {
      color: #d38a0c;
      font-size: 14px;
      font-family: "Sintony";
      font-weight: bold;
      text-transform: uppercase;
      line-height: 2.143;
-     background-color: rgb(255, 234, 197);
-     border: 1px solid rgb(255, 234, 197);
+     background-color: #ffeac5;
+     border: 1px solid #ffeac5;
      width: 110px;
      height: 44px;
      border-radius: 55px;

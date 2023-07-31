@@ -9,6 +9,7 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 /*===================    TODO    ====================================
 для второй версии темы:
+предоставить пользователю возможность выбирать количество записей разных типов на страницах с пагинацией
 Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
 если в пункте меню есть подпункты выводить стрелрочку вниз
 В опциях темы добавить возможность выбирать:
@@ -149,7 +150,7 @@ function simple_restaurant_site_setup() {
 		array(
 			'header_nav' => esc_html__( 'Header Navigation', 'restaurant-site' ),
 			'footer_nav' => esc_html__( 'Footer Navigation', 'restaurant-site' ),
-			'food_menu'  => esc_html__( 'Food Menu', 'restaurant-site' ),
+			'food_menu' => esc_html__( 'Food Menu', 'restaurant-site' ),
 		)
 	);
 
@@ -167,52 +168,52 @@ add_action( 'after_setup_theme', 'simple_restaurant_site_content_width', 0 );
 function restaurant_site_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'               => 'Restaurant site core',
+			'name' => 'Restaurant site core',
 			// The plugin name.
-			'slug'               => 'restaurant-site-core',
+			'slug' => 'restaurant-site-core',
 			// The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip',
+			'source' => get_template_directory() . '/plugins/restaurant-site-core.zip',
 			// The plugin source.
-			'required'           => true,
+			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.0',
+			'version' => '1.0',
 			// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false,
+			'force_activation' => false,
 			// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false,
 			// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
 		array(
-			'name'     => 'Advanced Custom Fields',
-			'slug'     => 'advanced-custom-fields',
+			'name' => 'Advanced Custom Fields',
+			'slug' => 'advanced-custom-fields',
 			'required' => true,
 		),
 
 		array(
-			'name'     => 'Redux Framework',
-			'slug'     => 'redux-framework',
+			'name' => 'Redux Framework',
+			'slug' => 'redux-framework',
 			'required' => true,
 		),
 
 	);
 
 	$config = array(
-		'id'           => 'restaurant-site',
+		'id' => 'restaurant-site',
 		// Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',
 		// Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins',
+		'menu' => 'tgmpa-install-plugins',
 		// Menu slug.
-		'has_notices'  => true,
+		'has_notices' => true,
 		// Show admin notices or not.
-		'dismissable'  => true,
+		'dismissable' => true,
 		// If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',
+		'dismiss_msg' => '',
 		// If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,
 		// Automatically activate plugins after installation or not.
-		'message'      => '', // Message to output right before the plugins table.
+		'message' => '', // Message to output right before the plugins table.
 
 	);
 
@@ -223,13 +224,13 @@ add_action( 'tgmpa_register', 'restaurant_site_register_required_plugins' );
 function simple_restaurant_site_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'restaurant-site' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'restaurant-site' ),
+			'name' => esc_html__( 'Sidebar', 'restaurant-site' ),
+			'id' => 'sidebar-1',
+			'description' => esc_html__( 'Add widgets here.', 'restaurant-site' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 }
@@ -279,3 +280,23 @@ add_filter( 'nav_menu_item_args', 'rstr_change_menus_items', 10, 2 );
 
 //===========================================================================
 //===========================================================================
+
+
+
+
+// function my_theme_pagination( $query,  ) {
+// 	$current = absint(
+// 		max(
+// 			1,
+// 			get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' )
+// 		)
+// 	);
+// 	paginate_links(
+// 		array(
+// 			'total' => $query->max_num_pages,
+// 			'current' => $current,
+// 			'prev_text' => '<div class="arow-block__arow-left fon-white"><img src="img/arow-block__arow-left-green.png" alt=""></div>',
+// 			'next_text' => '<div class="arow-block__arow-right fon-white"><img src="img/arow-block__arow-right-green.png" alt=""></div>',
+// 		)
+// 	);
+// }

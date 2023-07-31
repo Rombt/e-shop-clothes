@@ -11,9 +11,12 @@
 	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
 
 	<?php
-	$params           = [ 
-		'post_type'      => 'food-menu-items',
-		'posts_per_page' => 9,
+
+	$curent = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+	$params = [ 
+		'post_type' => 'food-menu-items',
+		'posts_per_page' => 2,
+		'paged' => $curent,
 	];
 	$query_Menu_items = new WP_Query( $params );
 	?>
@@ -49,20 +52,23 @@
 			wp_reset_postdata();
 		} else {
 			// something
-		}
+		} ?>
 
-		get_template_part( 'template-parts/components/pagination' );
-
-		?>
-
-
-
-		<?php
-		// get_template_part( 'template-parts/components/button', 'orange', [ 
-		// 	'href'  => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_href'] : "" ),
-		// 	'title' => esc_html__( class_exists( 'ReduxFramework' ) ? $restaurant_site_options['button_title'] : "" ),
-		// ] ); 
-		?>
+		<div class="pagination">
+			<?php
+			$big = 999999999;
+			echo paginate_links(
+				array(
+					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+					'total' => $query_Menu_items->max_num_pages,
+					'current' => $curent,
+					'format' => '?paged=%#%',
+					'prev_text' => '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>',
+					'next_text' => '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>',
+				)
+			); ?>
+		</div>
+	</div>
 	</div>
 
 </main>

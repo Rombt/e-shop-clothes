@@ -2013,7 +2013,7 @@ a {
   row-gap: 10px;
   width: 100%;
 }
-.pagination__ather-numbers {
+.pagination .page-numbers {
   background-color: #fff;
   border: 1px solid #d4dade;
   width: 110px;
@@ -2025,12 +2025,22 @@ a {
   color: #14141d;
 }
 @media screen and (max-width: 630px) {
-  .pagination__ather-numbers {
+  .pagination .page-numbers {
     display: none;
     /* в дальнейшем скрыват тьлько те которые не помещаются */
   }
 }
-.pagination-button {
+.pagination .page-numbers:hover {
+  transform: scale(1.1);
+  transition: all 0.7s;
+}
+.pagination .current {
+  background-color: #fea100;
+  border: 1px solid #fea100;
+  color: #fff;
+}
+.prev.page-numbers,
+.next.page-numbers {
   color: #d38a0c;
   font-size: 14px;
   font-family: "Sintony";
@@ -2047,17 +2057,21 @@ a {
   justify-content: center;
   position: relative;
 }
-.pagination-button p {
+.prev.page-numbers p,
+.next.page-numbers p {
   margin-bottom: 0;
 }
-.pagination-button:hover {
+.prev.page-numbers:hover,
+.next.page-numbers:hover {
   color: #fff;
   background-color: #fea100;
   border: 1px solid #fea100;
   transition: all 0.7s;
 }
-.pagination-button:hover .pagination-icon::after,
-.pagination-button:hover .pagination-icon::before {
+.prev.page-numbers:hover .pagination-icon::after,
+.next.page-numbers:hover .pagination-icon::after,
+.prev.page-numbers:hover .pagination-icon::before,
+.next.page-numbers:hover .pagination-icon::before {
   border: 1px solid #fff;
   transition: all 0.7s;
 }
