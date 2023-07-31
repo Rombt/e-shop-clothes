@@ -2,6 +2,5 @@
 	<p>
 		<?php previous_post_link( esc_html__( 'next' ) ) ?>
 	</p>
-
 	<div class="pagination-icon pagination-icon__next"></div>
 </a>
