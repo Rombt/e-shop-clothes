@@ -13,25 +13,46 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    function paginationAdaptive() {
 
-      let widthPaginationBTN = $('.pagination').children('.page-numbers').width();
-      let allPaginationBTN = $('.pagination').children('.page-numbers').length;
       let widthPaginationBlock;
-      let amounthPaginationBTN;
-      let indexCurrentPaginationBTN = $('.pagination').children('.page-numbers').find('.current');
-      console.log("indexCurrentPaginationBTN = ", index(indexCurrentPaginationBTN.eq(0)));
+      let offsetWidth = $('.pagination').children('.page-numbers')[0].offsetWidth;
+      let AllPaginationBTN = $('.pagination').children('.page-numbers').length;
+      let amounthVisiblePaginationBTN;
+      let PaginationBTNs = $('.pagination').children('.page-numbers')
+
+      let indexCurrentPaginationBTN = $('.pagination').children('.page-numbers').index($('.page-numbers.current'));
+
+      let OffsetCurrentPaginationBTN = $('.page-numbers.current').position().left;
+      let OffsetNextPaginationBTN = $('.page-numbers.current').next().position().left;
+      let GupNexAndCurrentPaginationBTN = OffsetNextPaginationBTN - OffsetCurrentPaginationBTN - offsetWidth;
+
+
+
 
       $(window).resize(function () {
+
+         PaginationBTNs.detach();
+
+
          widthPaginationBlock = $('.pagination').width();
-         amounthPaginationBTN = widthPaginationBlock / widthPaginationBTN;
+         amounthVisiblePaginationBTN = Math.floor((widthPaginationBlock + GupNexAndCurrentPaginationBTN) / (offsetWidth + GupNexAndCurrentPaginationBTN) / 2);
+
+         let VisiblePaginationBTNs = PaginationBTNs.map(function (index, elem) {
+            if (
+               index == 0 ||
+               index == indexCurrentPaginationBTN ||
+               index == AllPaginationBTN - 1 ||
+               (index > indexCurrentPaginationBTN - amounthVisiblePaginationBTN + 1 && index < indexCurrentPaginationBTN + amounthVisiblePaginationBTN)
+            ) {
+               return elem;
+            }
+         });
 
 
-         // console.log("$(window).width() = ", $(window).width());
+
+
+         $('.pagination').append(VisiblePaginationBTNs);
+
       });
-
-
-
-
-
 
 
 
@@ -40,7 +61,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
 
+   function VisiblePaginationBTNs() {
 
+   }
 
 
 

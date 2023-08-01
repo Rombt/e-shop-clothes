@@ -2024,10 +2024,9 @@ a {
   justify-content: center;
   color: #14141d;
 }
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 390px) {
   .pagination .page-numbers {
     display: none;
-    /* в дальнейшем скрыват тьлько те которые не помещаются */
   }
 }
 .pagination .page-numbers:hover {
