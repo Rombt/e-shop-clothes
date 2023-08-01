@@ -12,11 +12,11 @@
 
 	<?php
 
-	$curent = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+	$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
 	$params = [ 
 		'post_type' => 'food-menu-items',
 		'posts_per_page' => 2,
-		'paged' => $curent,
+		'paged' => $current,
 	];
 	$query_Menu_items = new WP_Query( $params );
 	?>
@@ -54,20 +54,8 @@
 			// something
 		} ?>
 
-		<div class="pagination">
-			<?php
-			$big = 999999999;
-			echo paginate_links(
-				array(
-					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-					'total' => $query_Menu_items->max_num_pages,
-					'current' => $curent,
-					'format' => '?paged=%#%',
-					'prev_text' => '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>',
-					'next_text' => '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>',
-				)
-			); ?>
-		</div>
+
+		<?php get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] ); ?>
 	</div>
 	</div>
 

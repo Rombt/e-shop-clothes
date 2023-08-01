@@ -13,28 +13,29 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    function paginationAdaptive() {
 
+      let PaginationBlock = $('.pagination');
       let widthPaginationBlock;
-      let offsetWidth = $('.pagination').children('.page-numbers')[0].offsetWidth;
-      let AllPaginationBTN = $('.pagination').children('.page-numbers').length;
+      let WidthPaginationBTN = PaginationBlock.children('.page-numbers')[0].offsetWidth;
+      let AllPaginationBTN = PaginationBlock.children('.page-numbers').length;
       let amounthVisiblePaginationBTN;
-      let PaginationBTNs = $('.pagination').children('.page-numbers')
+      let PaginationBTNs = PaginationBlock.children('.page-numbers')
+      let indexCurrentPaginationBTN = PaginationBlock.children('.page-numbers').index($('.page-numbers.current'));
+      let GupNexAndCurrentPaginationBTN;
 
-      let indexCurrentPaginationBTN = $('.pagination').children('.page-numbers').index($('.page-numbers.current'));
+      if ($('.page-numbers.current').next().position() == undefined) {
+         GupNexAndCurrentPaginationBTN = $('.page-numbers.current').position().left - $('.page-numbers.current').prev().position().left - WidthPaginationBTN;
+      } else {
+         GupNexAndCurrentPaginationBTN = $('.page-numbers.current').next().position().left - $('.page-numbers.current').position().left - WidthPaginationBTN;
+      }
 
-      let OffsetCurrentPaginationBTN = $('.page-numbers.current').position().left;
-      let OffsetNextPaginationBTN = $('.page-numbers.current').next().position().left;
-      let GupNexAndCurrentPaginationBTN = OffsetNextPaginationBTN - OffsetCurrentPaginationBTN - offsetWidth;
+      updatePaginationBTN();
+      $(window).resize(updatePaginationBTN);
 
-
-
-
-      $(window).resize(function () {
-
+      function updatePaginationBTN() {
          PaginationBTNs.detach();
 
-
-         widthPaginationBlock = $('.pagination').width();
-         amounthVisiblePaginationBTN = Math.floor((widthPaginationBlock + GupNexAndCurrentPaginationBTN) / (offsetWidth + GupNexAndCurrentPaginationBTN) / 2);
+         widthPaginationBlock = PaginationBlock.width();
+         amounthVisiblePaginationBTN = Math.floor((widthPaginationBlock + GupNexAndCurrentPaginationBTN) / (WidthPaginationBTN + GupNexAndCurrentPaginationBTN) / 2);
 
          let VisiblePaginationBTNs = PaginationBTNs.map(function (index, elem) {
             if (
@@ -47,27 +48,11 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             }
          });
 
+         PaginationBlock.append(VisiblePaginationBTNs);
+         PaginationBlock.css('visibility', 'visible')
 
-
-
-         $('.pagination').append(VisiblePaginationBTNs);
-
-      });
-
-
-
-
+      }
    }
-
-
-
-   function VisiblePaginationBTNs() {
-
-   }
-
-
-
-
 
 
    function accordionMenu(menu, subMenu) {
