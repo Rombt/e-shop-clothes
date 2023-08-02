@@ -4,7 +4,6 @@
 	echo paginate_links(
 		array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			// 'total' => $query_Menu_items->max_num_pages,
 			'total' => $args['query']->max_num_pages,
 			'current' => $args['current'],
 			'format' => '?paged=%#%',
