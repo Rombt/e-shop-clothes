@@ -3,6 +3,7 @@ import { Burger } from "./modules/burger.js";
 import { Swipe } from "./modules/Swipe.js";
 import * as sliders from "./modules/sliders.js";
 import { jQuery_scripts } from "./modules/jQuery_scripts.js";
+import { ajax_scripts } from "./modules/ajax.js";
 
 
 window.onload = function () {

@@ -38,9 +38,4 @@
 </div>
 
 
-<div class="conteiner breadcrumbs-conteiner">
-	<div class="breadcrumbs-conteiner__row">
-		<?php echo rstr_get_breadcrumbs(); ?>
-	</div>
-
-</div>
+<?php get_template_part( 'template-parts/components/previe_block' ); ?>

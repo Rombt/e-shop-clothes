@@ -58,7 +58,6 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       }
    }
 
-
    function accordionMenu(menu, subMenu) {
 
       const $subMenu = $(`${menu} ${subMenu}`);
