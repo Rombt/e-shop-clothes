@@ -13,14 +13,18 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    function paginationAdaptive() {
 
+
       let PaginationBlock = $('.pagination');
-      let widthPaginationBlock;
+      if (PaginationBlock.children('.page-numbers').length == 0) {
+         return false;
+      }
       let WidthPaginationBTN = PaginationBlock.children('.page-numbers')[0].offsetWidth;
       let AllPaginationBTN = PaginationBlock.children('.page-numbers').length;
-      let amounthVisiblePaginationBTN;
       let PaginationBTNs = PaginationBlock.children('.page-numbers')
       let indexCurrentPaginationBTN = PaginationBlock.children('.page-numbers').index($('.page-numbers.current'));
       let GupNexAndCurrentPaginationBTN;
+      let amounthVisiblePaginationBTN;
+      let widthPaginationBlock;
 
       if ($('.page-numbers.current').next().position() == undefined) {
          GupNexAndCurrentPaginationBTN = $('.page-numbers.current').position().left - $('.page-numbers.current').prev().position().left - WidthPaginationBTN;
