@@ -9,85 +9,103 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 /** ===================    TODO    ====================================
  *	Для второй версии темы:
+ *		Виджит для админ панели который будет позволять пользователю 	https://youtu.be/H7h8a2ZWVKE
+ * 			вести заметки, что то типа todo листа    
+ * 			отправлять сообщения други пользователям админпанели
+ *				например администратор ставит задачи редакторам 
+ *			здесь же ф-ционал типа 
+ *				дедлайнов, 
+ *				выполнено / не выполнено, 
+ *				на проверке, 
+ *				срок выполнения 
+ *				прочее
+ *		Добавить роли пользователям админпанели
+ *			админ, редактор, прочее
+ *			при выставлении галочек food-menu и прочего    https://youtu.be/OoyTfdHM_Aw		
  *		Помимо гоовых шаблонов статических страниц добавить пользователю возможность формировать свои собственные страницы спомощью Элементора
  *		т.е взять из вёрстки основные блоки и на их базе зделать виджиты элемнтора таким образом что бы сами блоки собиралися из блолее мелких
  *		
- *	Для "Menu items" добавить возможность вместо картинок в ставлять видео или несколько картинок тогда должен быть слайдер, при наведении картинка должна увиличиваься
- *		1:41:15; 2:00:04; 2:48:50	F:\Личное\WP уроки\Весь WordPress и PHP. Как создавать сайты, темы и плагины (2022) WEB-DL [Часть 3]\12. Extra! Advanced Level. Практика по разработке Премиум WordPress Темы
- *	предоставить пользователю возможность выбирать количество записей разных типов на страницах с пагинацией
- *	Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
- *		если в пункте меню есть подпункты выводить стрелрочку вниз
- *	В опциях темы добавить возможность выбирать:
- *		сколько слов будет выводится при обрезке текста
- *		символ который будет выводится обрыве текста
- *	Переключение тёмной и светлой темы сайта  https://youtu.be/JzC5_tNOK8k
- *	Дать возможность пользователям рестарана регистрироваться на сайте
- *		зарегестрированных пользователей добовлять в пост тайп our_clients
- *		некоторых из них выводить на главную страницу в слайдер
- *	Поддержку многоуровневых меню в footer
- *		ввиде акардиона     https://youtu.be/0fg9bZcL1RM
- *	Изменить архетиктуру темы таким обраом что бы проверка на существование ACF была только в одном месте
- *		if (class_exists('ACF')) {}
- *	Для Food Menu  исправить позиционирование при отсутствии выбранных элементов
- *	Добавить таксономии по типам блюд:
- *		По типу кухни:
- *			Итальянская кухня
- *			Французская кухня
- *			Японская кухня
- *			Мексиканская кухня
- *			Индийская кухня
- *			и т.д.
- *		По основным ингредиентам:
- *			Мясные блюда
- *			Рыбные блюда
- *			Блюда из птицы
- *			Вегетарианские блюда
- *			Блюда с морепродуктами
- *			и т.д.
- *		По времени приема пищи:
- *			Завтраки
- *			Обеды
- *			Ужины
- *			Поздний ужин/ночной меню
- *			Бранч (завтрак+обед)
- *			и т.д.
- *		По типу блюда:
- *			Супы
- *			Салаты
- *			Основные блюда
- *			Паста и пицца
- *			Десерты
- *			Напитки
- *			и т.д.
- *		По сезонности:
- *			Меню осени
- *			Меню зимы
- *			Меню весны
- *			Меню лета
- *			и т.д.
- *		По ценовым категориям:
- *			Бюджетные блюда
- *			Среднего класса
- *			Эксклюзивные блюда
- *			Шеф-поварское меню
- *			и т.д.
- *		По диетическим потребностям:
- *			Безглютеновое меню
- *			Веганское меню
- *			Постное меню
- *			Меню для диабетиков
- *			и т.д.
- *	Предоставить пользователю возможность манипулировать блоками страницы из редактора страниц(!!) Элементор 
- *		настраивать геометрию блоков страниц
- *		добавлять или удалять блоки
- *	демо фотки сделать с помощью
- *		плагина для GPT-chat Photorealistic подробнее сдесь: https://youtu.be/gX9z6irImto
- *	добавить картинки удвоеного качества для Rétina
- *	доработать страницу выдачи поисковых запросов
- *	выбор иконок https://devs.redux.io/core-extensions/icon-select.html
+ *		Для "Menu items" добавить возможность вместо картинок в ставлять видео или несколько картинок тогда должен быть слайдер, при наведении картинка должна увиличиваься
+ *			1:41:15; 2:00:04; 2:48:50	F:\Личное\WP уроки\Весь WordPress и PHP. Как создавать сайты, темы и плагины (2022) WEB-DL [Часть 3]\12. Extra! Advanced Level. Практика по разработке Премиум WordPress Темы
+ *		предоставить пользователю возможность выбирать количество записей разных типов на страницах с пагинацией
+ *		Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
+ *			если в пункте меню есть подпункты выводить стрелрочку вниз
+ *		В опциях темы добавить возможность выбирать:
+ *			сколько слов будет выводится при обрезке текста
+ *			символ который будет выводится обрыве текста
+ *		Переключение тёмной и светлой темы сайта  https://youtu.be/JzC5_tNOK8k
+ *		Дать возможность пользователям рестарана регистрироваться на сайте
+ *			зарегестрированных пользователей добовлять в пост тайп our_clients
+ *			некоторых из них выводить на главную страницу в слайдер
+ *		Поддержку многоуровневых меню в footer
+ *			ввиде акардиона     https://youtu.be/0fg9bZcL1RM
+ *		Изменить архетиктуру темы таким обраом что бы проверка на существование ACF была только в одном месте
+ *			if (class_exists('ACF')) {}
+ *		Для Food Menu  исправить позиционирование при отсутствии выбранных элементов
+ *		Добавить таксономии по типам блюд:
+ *			По типу кухни:
+ *				Итальянская кухня
+ *				Французская кухня
+ *				Японская кухня
+ *				Мексиканская кухня
+ *				Индийская кухня
+ *				и т.д.
+ *			По основным ингредиентам:
+ *				Мясные блюда
+ *				Рыбные блюда
+ *				Блюда из птицы
+ *				Вегетарианские блюда
+ *				Блюда с морепродуктами
+ *				и т.д.
+ *			По времени приема пищи:
+ *				Завтраки
+ *				Обеды
+ *				Ужины
+ *				Поздний ужин/ночной меню
+ *				Бранч (завтрак+обед)
+ *				и т.д.
+ *			По типу блюда:
+ *				Супы
+ *				Салаты
+ *				Основные блюда
+ *				Паста и пицца
+ *				Десерты
+ *				Напитки
+ *				и т.д.
+ *			По сезонности:
+ *				Меню осени
+ *				Меню зимы
+ *				Меню весны
+ *				Меню лета
+ *				и т.д.
+ *			По ценовым категориям:
+ *				Бюджетные блюда
+ *				Среднего класса
+ *				Эксклюзивные блюда
+ *				Шеф-поварское меню
+ *				и т.д.
+ *			По диетическим потребностям:
+ *				Безглютеновое меню
+ *				Веганское меню
+ *				Постное меню
+ *				Меню для диабетиков
+ *				и т.д.
+ *		Предоставить пользователю возможность манипулировать блоками страницы из редактора страниц(!!) Элементор 
+ *			настраивать геометрию блоков страниц
+ *			добавлять или удалять блоки
+ *		демо фотки сделать с помощью
+ *			плагина для GPT-chat Photorealistic подробнее сдесь: https://youtu.be/gX9z6irImto
+ *		добавить картинки удвоеного качества для Rétina
+ *		доработать страницу выдачи поисковых запросов
+ *		выбор иконок https://devs.redux.io/core-extensions/icon-select.html
  *	
  *
  * Исправить в текущей версии темы:
+ * 	Разобраться 
+ * 		WP REST API
+ * 		как лучше подключать скрипты 
+ * 			ипортами в main.min.js через gulp 
+ * 			или по стандартам wp каждый в отдельности с помощью wp_enqueue_script()
  * 	создать архивную страницу для типа записи food-menu-items  т.е. продублировать функционал статической страницы
  * 		добавить типу записи параметр 'has_archive', установленный в true во время его регистрации
  * 		создать файл archive-food_menu_items.php
@@ -163,7 +181,7 @@ function simple_restaurant_site_setup() {
 		array(
 			'header_nav' => esc_html__( 'Header Navigation', 'restaurant-site' ),
 			'footer_nav' => esc_html__( 'Footer Navigation', 'restaurant-site' ),
-			'food_menu' => esc_html__( 'Food Menu', 'restaurant-site' ),
+			'food_menu'  => esc_html__( 'Food Menu', 'restaurant-site' ),
 		)
 	);
 
@@ -181,52 +199,52 @@ add_action( 'after_setup_theme', 'simple_restaurant_site_content_width', 0 );
 function restaurant_site_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name' => 'Restaurant site core',
+			'name'               => 'Restaurant site core',
 			// The plugin name.
-			'slug' => 'restaurant-site-core',
+			'slug'               => 'restaurant-site-core',
 			// The plugin slug (typically the folder name).
-			'source' => get_template_directory() . '/plugins/restaurant-site-core.zip',
+			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip',
 			// The plugin source.
-			'required' => true,
+			'required'           => true,
 			// If false, the plugin is only 'recommended' instead of required.
-			'version' => '1.0',
+			'version'            => '1.0',
 			// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation' => false,
+			'force_activation'   => false,
 			// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false,
 			// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
 		array(
-			'name' => 'Advanced Custom Fields',
-			'slug' => 'advanced-custom-fields',
+			'name'     => 'Advanced Custom Fields',
+			'slug'     => 'advanced-custom-fields',
 			'required' => true,
 		),
 
 		array(
-			'name' => 'Redux Framework',
-			'slug' => 'redux-framework',
+			'name'     => 'Redux Framework',
+			'slug'     => 'redux-framework',
 			'required' => true,
 		),
 
 	);
 
 	$config = array(
-		'id' => 'restaurant-site',
+		'id'           => 'restaurant-site',
 		// Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',
 		// Default absolute path to bundled plugins.
-		'menu' => 'tgmpa-install-plugins',
+		'menu'         => 'tgmpa-install-plugins',
 		// Menu slug.
-		'has_notices' => true,
+		'has_notices'  => true,
 		// Show admin notices or not.
-		'dismissable' => true,
+		'dismissable'  => true,
 		// If false, a user cannot dismiss the nag message.
-		'dismiss_msg' => '',
+		'dismiss_msg'  => '',
 		// If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,
 		// Automatically activate plugins after installation or not.
-		'message' => '', // Message to output right before the plugins table.
+		'message'      => '', // Message to output right before the plugins table.
 
 	);
 
@@ -237,13 +255,13 @@ add_action( 'tgmpa_register', 'restaurant_site_register_required_plugins' );
 function simple_restaurant_site_widgets_init() {
 	register_sidebar(
 		array(
-			'name' => esc_html__( 'Sidebar', 'restaurant-site' ),
-			'id' => 'sidebar-1',
-			'description' => esc_html__( 'Add widgets here.', 'restaurant-site' ),
+			'name'          => esc_html__( 'Sidebar', 'restaurant-site' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'restaurant-site' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget' => '</section>',
-			'before_title' => '<h2 class="widget-title">',
-			'after_title' => '</h2>',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 }

@@ -4,6 +4,7 @@ export const js = () => {
     return app.gulp.src(app.path.src.js, {
         sourcemaps: global.app.isDev,
         allowEmpty: true,
+        base: app.path.srcFolder,
     })
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
@@ -12,11 +13,25 @@ export const js = () => {
             })))
         .pipe(webpackStream({
             mode: app.isProd ? 'production' : 'development',
+            entry: {
+                admin: `${app.path.srcFolder}/admin/assets/js/admin.js`, // Входная точка для фронтенда
+                app: app.path.src.js, // Входная точка для админ панели
+            },
             output: {
-                filename: 'app.min.js',
+                filename: '[name].min.js',
             }
         }))
-        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.js, app.path.prod.js)))
+        .pipe(app.plugins.if(
+            app.isWP && '**/app.min.js',
+            app.gulp.dest(app.path.wp.js.app)
+        ))
+        .pipe(app.plugins.if(
+            app.isWP && '**/admin.min.js',
+            app.gulp.dest(app.path.wp.js.admin)
+        ))
+
+        // app.gulp.dest(app.path.prod.js))     // для вёрстки!!!
+
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
             file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
         })))

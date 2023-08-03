@@ -5,18 +5,19 @@
 if ( class_exists( 'ACF' ) ) {
 
 	$params = [ 
-		'post_type'      => 'food-menu-items',
+		'post_type' => 'food-menu-items',
 		'posts_per_page' => -1,
-		'meta_query'     => [ 
+		'meta_query' => [ 
 			'relation' => 'OR',
 			[ 
-				'key'     => 'food-menu-items_show-in-food-menu',
-				'value'   => 'a:1:{i:0;s:4:"show";}',
+				'key' => 'food-menu-items_show-in-food-menu',
+				// todo убрать это дублирование 
+				'value' => 'a:1:{i:0;s:4:"show";}',
 				'compare' => 'LIKE',
 			],
 			[ 
-				'key'     => 'food-menu-items_show-in-food-menu',
-				'value'   => 'show',
+				'key' => 'food-menu-items_show-in-food-menu',
+				'value' => 'show',
 				'compare' => 'LIKE',
 			],
 		],
@@ -25,7 +26,7 @@ if ( class_exists( 'ACF' ) ) {
 } else {
 
 	$params = [ 
-		'post_type'      => 'food-menu-items',
+		'post_type' => 'food-menu-items',
 		'posts_per_page' => 8,
 	];
 }

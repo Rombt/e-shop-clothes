@@ -15,6 +15,13 @@
 
 
 
+//   .on('data', (file) => {
+//      console.log('1. File in stream:', file.path);
+//   })
+
+
+
+
 
 
 //=================== without .pipe  =================

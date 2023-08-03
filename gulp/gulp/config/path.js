@@ -15,7 +15,10 @@ export const path = {
         themeName: `${themeName}`,
         wpPluginName: `${wpPluginName}`,
         arr_processedFiles: [],
-        js: `${themePath}/assets/js/`,
+        js: {
+            admin: `${themePath}/admin/assets/js/`,
+            app: `${themePath}/assets/js/`,
+        },
         styles: `${themePath}/`,
         php: `${themePath}`,
         images: `${themePath}/`,
@@ -23,7 +26,7 @@ export const path = {
         files: `${themePath}/`,
         svgicons: `${themePath}/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
-    prod: {
+    prod: {     // эти пути нужны только для вёрстки в wp всё должно быть иначе!!!
         js: `${prodFolder}/js/`,
         styles: `${prodFolder}/styles/`,
         php: `${prodFolder}/`,
@@ -46,7 +49,10 @@ export const path = {
             `${srcFolder}/assets/styles/main-style.scss`,
             `${srcFolder}/admin/assets/css/main-style.scss`,
         ],
-        js: `${srcFolder}/assets/js/app.js`,
+        js: [
+            `${srcFolder}/assets/js/app.js`,
+            `${srcFolder}/admin/assets/js/admin.js`
+        ],
         images: [   // добавить форматы при необходимости
             `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp,html}`,
             `${srcFolder}/admin/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
@@ -56,7 +62,7 @@ export const path = {
             `${srcFolder}/admin/assets/img/icons/**/*.svg`,
         ],
         files: [     // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
-            `${srcFolder}/admin/assets/js/**/*.js`,
+            // `${srcFolder}/admin/assets/js/**/*.js`,
         ],
         svgicons: [
             `${srcFolder}/assets/svgicons/*.svg`,

@@ -132,10 +132,15 @@ add_action( 'acf/init', 'restaurant_site_acf_metaboxes' );
 
 function update_food_menu_items_show_in_front_page() // for change field value by ajax
 {
+	// nonce: '',     !!!!!!!!!!!
+	// авторизованый пользователь должен иметь соответсвующие права (права админа например)
 
-	$post_id     = $_POST['post_id'];
-	$field_name  = $_POST['field_name'];
-	$field_value = $_POST['field_value'];
+	// проверить существование   $_POST['field_name']; 
+
+	$post_id = $_POST['post_id'];
+	$field_name = $_POST['field_name'];
+	$field_value = $_POST['field_value']; // проеобразовывать в PHP формат для хранения в базе данных нужно здесь а так же санитизация и прочее
+
 	update_field( $field_name, $field_value, $post_id );
 	wp_die();
 }

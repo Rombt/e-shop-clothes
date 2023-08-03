@@ -10,6 +10,7 @@ jQuery(document).ready(function ($) {
          url: ajaxurl,
          type: 'POST',
          data: {
+            // nonce: '',     !!!!!!!!!!!
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
@@ -35,6 +36,7 @@ jQuery(document).ready(function ($) {
          url: ajaxurl,
          type: 'POST',
          data: {
+            // nonce: '',     !!!!!!!!!!!
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
@@ -59,10 +61,11 @@ jQuery(document).ready(function ($) {
          url: ajaxurl,
          type: 'POST',
          data: {
+            // nonce: '',     !!!!!!!!!!!
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
-            field_value: checked ? "show" : ""
+            field_value: checked ? "show" : ""     // todo проеобразовать в PHP формат для хранения в базе данных
          },
          success: function (response) {
             // console.log('Значение поля успешно обновлено!');

@@ -3,8 +3,6 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
    // Обработчик события клика по кнопке
    $('.select-view__colomns').on('click', function () {
 
-
-
       var templatePart = $(this).data('template-part'); // Получение имени шаблона из атрибута data
 
       // AJAX-запрос на сервер
