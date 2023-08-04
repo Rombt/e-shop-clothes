@@ -1,27 +1,46 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
 
-   // Обработчик события клика по кнопке
-   $('.select-view__colomns').on('click', function () {
+   const mainBlock = $('.menu-page-conteiner__row')
 
-      var templatePart = $(this).data('template-part'); // Получение имени шаблона из атрибута data
 
-      // AJAX-запрос на сервер
+   let view_mod = 'grid';
+
+
+   $('.select-view__colomns').on('click', function (e) {
+      e.preventDefault();
+      view_mod = (view_mod == 'grid') ? 'list' : 'grid';
+
+      mainBlock.empty();
+
+
+
+
+
+
+
       $.ajax({
-         url: ajaxurl, // Специальная переменная WordPress, содержащая URL для AJAX-обработчика
-         type: 'post',
+         url: rstrAppData.rstrAjaxURL,
+         type: 'POST',
          data: {
-            action: 'load_template_part', // Название вашего AJAX-обработчика на сервере
-            template_part: templatePart // Передача имени шаблона на сервер
+            action: 'menu_page_view',
+            view_mod: view_mod,
          },
          success: function (response) {
-            // Обновление содержимого контейнера на странице
-            $('#template-container').html(response);
+            mainBlock.html(response);
+
          },
-         error: function (errorThrown) {
-            console.log(errorThrown); // Обработка ошибок (если есть)
+         error: function (xhr, status, error) {
+            // console.log('Ошибка при обновлении значения поля:', error);
          }
       });
+
+
+
+
+
    });
+
+
 
 
 

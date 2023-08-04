@@ -1,6 +1,7 @@
 <?php
 
 require_once get_template_directory() . '/inc/functions/general.php';
+require_once get_template_directory() . '/inc/functions/ajax.php';
 require_once get_template_directory() . '/admin/inc/class-tgm-plugin-activation.php';
 require_once get_template_directory() . '/admin/inc/Redux/redux-options.php';
 
@@ -145,6 +146,12 @@ function restaurant_site_scripts() {
 
 	wp_enqueue_script( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true );
 	wp_enqueue_script( 'restaurant_site-app', get_template_directory_uri() . '/assets/js/app.main.min.js', array( 'jquery' ), '1.0', true );
+
+
+	wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
+		'rstrAjaxURL' => admin_url( 'admin-ajax.php' )
+	] );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

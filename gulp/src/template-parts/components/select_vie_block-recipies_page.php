@@ -13,7 +13,7 @@
 			<div class="menu-recipies-burger burger-open">
 				<span></span>
 			</div>
-			<nav class="menu-recipies">
+			<!-- <nav class="menu-recipies">				// времменоо что бы не сыпались ошибки
 				<ul class="menu-recipies__list">
 					<li>
 						<a href="#">
@@ -46,7 +46,7 @@
 						</a>
 					</li>
 				</ul>
-			</nav>
+			</nav> -->
 		</div>
 	</div>
 </div>

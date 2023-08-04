@@ -24,28 +24,9 @@
 		<?php if ( $query_Menu_items->have_posts() ) {
 			while ( $query_Menu_items->have_posts() ) {
 				$query_Menu_items->the_post();
-				if ( class_exists( 'ACF' ) ) { ?>
-
-					<div class="prod-card-grid">
-						<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
-						<div class="prod-card-grid__body">
-							<h3>
-								<?php echo the_title() ?>
-							</h3>
-							<?php echo rstr_trim_excerpt( 7 ) ?>
-						</div>
-						<div class="prod-card-grid__footer">
-							<p>
-								<span>$</span>
-								<?php echo get_field( 'food_price' ) ?>
-							</p>
-						</div>
-					</div>
-
-
-				<?php } ?>
-
-				<?php
+				if ( class_exists( 'ACF' ) ) {
+					get_template_part( 'template-parts/parts/prod_card', 'grid' );
+				}
 			}
 			wp_reset_postdata();
 		} else {
