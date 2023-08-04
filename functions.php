@@ -1,8 +1,8 @@
 <?php
 
 require_once get_template_directory() . '/inc/functions/general.php';
-require_once get_template_directory() . '/inc/admin/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/Redux/redux-options.php';
+require_once get_template_directory() . '/admin/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/admin/inc/Redux/redux-options.php';
 
 define( 'rs_PATH_THEME', get_template_directory() );
 define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
