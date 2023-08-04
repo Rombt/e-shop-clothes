@@ -6,7 +6,7 @@ import fileInclude from "gulp-file-include";
 export const php = () => {
 
 
-    return app.gulp.src(app.path.src.php, { base: app.path.srcFolder })     // параметр base позволяет  сохранить структуру папок
+    return app.gulp.src(app.path.src.html, { base: app.path.srcFolder })     // параметр base позволяет  сохранить структуру папок
         .pipe(app.plugins.plumber(
             app.plugins.notify.onError({
                 title: "PHP",
@@ -38,6 +38,7 @@ export const php = () => {
                 'file': 'gulp/version.json'
             }
         })))
+
         .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.php, app.path.prod.php)))
         .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
             file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;

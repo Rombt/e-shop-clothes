@@ -1,0 +1,1 @@
+import { jQuery_scripts } from "./modules/admin.ajax.js";

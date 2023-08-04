@@ -37,9 +37,10 @@ export const path = {
     },
     src: {
         php: [
-            `${srcFolder}/*.{php,html,txt}`,
-            `${srcFolder}/template-parts/**/*`,
+            `${srcFolder}/**/*.php`,
+            `!${srcFolder}/plugins/**/*.php`
         ],
+
         wpPlugins: `${srcFolder}/plugins/**/*.*`,
         less: [
             `${srcFolder}/assets/styles/main-style.less`,
