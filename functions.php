@@ -154,7 +154,7 @@ add_action( 'wp_enqueue_scripts', 'restaurant_site_scripts', 20 );
 
 function restaurant_site_scripts_admin() {
 	wp_enqueue_style( 'restaurant_site-admin_main', get_template_directory_uri() . '/admin/assets/css/admin-main-style.min.css', array(), '1.0', 'all' );
-	wp_enqueue_script( 'restaurant_site-admin_core_jq', get_template_directory_uri() . '/admin/assets/js/jquery_scripts.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'restaurant_site-admin_core_jq', get_template_directory_uri() . '/admin/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
 
 }
 add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
@@ -181,7 +181,7 @@ function simple_restaurant_site_setup() {
 		array(
 			'header_nav' => esc_html__( 'Header Navigation', 'restaurant-site' ),
 			'footer_nav' => esc_html__( 'Footer Navigation', 'restaurant-site' ),
-			'food_menu'  => esc_html__( 'Food Menu', 'restaurant-site' ),
+			'food_menu' => esc_html__( 'Food Menu', 'restaurant-site' ),
 		)
 	);
 
@@ -199,52 +199,52 @@ add_action( 'after_setup_theme', 'simple_restaurant_site_content_width', 0 );
 function restaurant_site_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'               => 'Restaurant site core',
+			'name' => 'Restaurant site core',
 			// The plugin name.
-			'slug'               => 'restaurant-site-core',
+			'slug' => 'restaurant-site-core',
 			// The plugin slug (typically the folder name).
-			'source'             => get_template_directory() . '/plugins/restaurant-site-core.zip',
+			'source' => get_template_directory() . '/plugins/restaurant-site-core.zip',
 			// The plugin source.
-			'required'           => true,
+			'required' => true,
 			// If false, the plugin is only 'recommended' instead of required.
-			'version'            => '1.0',
+			'version' => '1.0',
 			// E.g. 1.0.0. If set, the active plugin must be this version or higher. If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
-			'force_activation'   => false,
+			'force_activation' => false,
 			// If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false,
 			// If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 
 		array(
-			'name'     => 'Advanced Custom Fields',
-			'slug'     => 'advanced-custom-fields',
+			'name' => 'Advanced Custom Fields',
+			'slug' => 'advanced-custom-fields',
 			'required' => true,
 		),
 
 		array(
-			'name'     => 'Redux Framework',
-			'slug'     => 'redux-framework',
+			'name' => 'Redux Framework',
+			'slug' => 'redux-framework',
 			'required' => true,
 		),
 
 	);
 
 	$config = array(
-		'id'           => 'restaurant-site',
+		'id' => 'restaurant-site',
 		// Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',
 		// Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins',
+		'menu' => 'tgmpa-install-plugins',
 		// Menu slug.
-		'has_notices'  => true,
+		'has_notices' => true,
 		// Show admin notices or not.
-		'dismissable'  => true,
+		'dismissable' => true,
 		// If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',
+		'dismiss_msg' => '',
 		// If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,
 		// Automatically activate plugins after installation or not.
-		'message'      => '', // Message to output right before the plugins table.
+		'message' => '', // Message to output right before the plugins table.
 
 	);
 
@@ -255,13 +255,13 @@ add_action( 'tgmpa_register', 'restaurant_site_register_required_plugins' );
 function simple_restaurant_site_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'restaurant-site' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'restaurant-site' ),
+			'name' => esc_html__( 'Sidebar', 'restaurant-site' ),
+			'id' => 'sidebar-1',
+			'description' => esc_html__( 'Add widgets here.', 'restaurant-site' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
 		)
 	);
 }

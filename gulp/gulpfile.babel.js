@@ -43,6 +43,8 @@ function watcher() {
     gulp.watch(path.wp_watch, gulp.series(resetWpPlugin, wpPlugin))
 }
 
+
+// для вёрстки добавить задачу оброботки html файлов отдельно от php файлов так что бы при разработке WP тем html файлы не переносились в dist каталог
 const mainTasks = gulp.series(gulp.parallel(copyFonts, php, wpPlugin, styles, js, images, copy), listProcFiles);
 export const dev = gulp.series(reset, resetWpPlugin, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, resetWpPlugin, mainTasks);

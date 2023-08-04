@@ -5,87 +5,87 @@ function restaurant_site_acf_metaboxes() {
 
 	acf_add_local_field_group(
 		array(
-			'key'                   => 'food-menu-items_properties',
-			'title'                 => 'Properties Food Menu Item',
-			'fields'                => array(
+			'key' => 'food-menu-items_properties',
+			'title' => 'Properties Food Menu Item',
+			'fields' => array(
 				array(
-					'key'         => 'fmip_field-1',
-					'name'        => 'food_price',
-					'label'       => 'Dish price',
-					'type'        => 'number',
+					'key' => 'fmip_field-1',
+					'name' => 'food_price',
+					'label' => 'Dish price',
+					'type' => 'number',
 					'placeholder' => 'Add price this dish here',
-					'prepend'     => '$',
-					'min'         => '0.01',
-					'max'         => '',
-					'step'        => '0.01',
+					'prepend' => '$',
+					'min' => '0.01',
+					'max' => '',
+					'step' => '0.01',
 				),
 				array(
-					'key'     => 'fmip_field-2',
-					'name'    => 'food-menu-items_show-in-food-menu',
-					'label'   => 'Show this dish on front page',
-					'type'    => 'checkbox',
+					'key' => 'fmip_field-2',
+					'name' => 'food-menu-items_show-in-food-menu',
+					'label' => 'Show this dish on front page',
+					'type' => 'checkbox',
 					'choices' => array(
 						'show' => 'show on',
 					),
 					// 'layout' => 'horizontal',
 				),
 				array(
-					'key'     => 'fmip_field-3',
-					'name'    => 'food-menu-items_show-in-section-today-specialy',
-					'label'   => 'Show this dish in the section "Today Specialy"',
-					'type'    => 'checkbox',
+					'key' => 'fmip_field-3',
+					'name' => 'food-menu-items_show-in-section-today-specialy',
+					'label' => 'Show this dish in the section "Today Specialy"',
+					'type' => 'checkbox',
 					'choices' => array(
 						'show' => 'show on',
 					),
 					// 'layout' => 'horizontal',
 				),
 			),
-			'location'              => array(
+			'location' => array(
 				array(
 					array(
-						'param'    => 'post_type',
+						'param' => 'post_type',
 						'operator' => '==',
-						'value'    => 'food-menu-items',
+						'value' => 'food-menu-items',
 					),
 				),
 			),
-			'menu_order'            => 0,
-			'position'              => 'normal',
-			'style'                 => 'default',
-			'label_placement'       => 'top',
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
 			'instruction_placement' => 'label',
-			'hide_on_screen'        => array(),
-			'return_format'         => 'array',
+			'hide_on_screen' => array(),
+			'return_format' => 'array',
 		)
 	);
 
 	acf_add_local_field_group(
 		array(
-			'key'             => 'properties-food-categories',
-			'title'           => 'Properties of Food Categories',
-			'fields'          => array(
+			'key' => 'properties-food-categories',
+			'title' => 'Properties of Food Categories',
+			'fields' => array(
 				array(
-					'key'           => 'pfc_field-1',
-					'name'          => 'food-categories-icon',
-					'label'         => 'Icon for this food categories',
-					'type'          => 'image',
+					'key' => 'pfc_field-1',
+					'name' => 'food-categories-icon',
+					'label' => 'Icon for this food categories',
+					'type' => 'image',
 					'return_format' => 'url',
-					'max_width'     => '50px',
-					'max_height'    => '50px',
+					'max_width' => '50px',
+					'max_height' => '50px',
 				),
 			),
-			'location'        => array(
+			'location' => array(
 				array(
 					array(
-						'param'    => 'taxonomy',
+						'param' => 'taxonomy',
 						'operator' => '==',
-						'value'    => 'food-categories',
+						'value' => 'food-categories',
 					),
 				),
 			),
-			'menu_order'      => 0,
-			'position'        => 'normal',
-			'style'           => 'default',
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
 			'label_placement' => 'top',
 		)
 	);
@@ -93,36 +93,36 @@ function restaurant_site_acf_metaboxes() {
 
 	acf_add_local_field_group(
 		array(
-			'key'                   => 'our-clients_properties',
-			'title'                 => 'Properties Our Clients',
-			'fields'                => array(
+			'key' => 'our-clients_properties',
+			'title' => 'Properties Our Clients',
+			'fields' => array(
 				array(
-					'key'     => 'ocp_field-1',
-					'name'    => 'our-clients_show-slider-happy-clients',
-					'label'   => 'Show this client on the "Happy Clients" slider ',
-					'type'    => 'checkbox',
+					'key' => 'ocp_field-1',
+					'name' => 'our-clients_show-slider-happy-clients',
+					'label' => 'Show this client on the "Happy Clients" slider ',
+					'type' => 'checkbox',
 					'choices' => array(
 						'show' => 'show on',
 					),
 					// 'layout' => 'horizontal',
 				),
 			),
-			'location'              => array(
+			'location' => array(
 				array(
 					array(
-						'param'    => 'post_type',
+						'param' => 'post_type',
 						'operator' => '==',
-						'value'    => 'our-clients',
+						'value' => 'our-clients',
 					),
 				),
 			),
-			'menu_order'            => 0,
-			'position'              => 'normal',
-			'style'                 => 'default',
-			'label_placement'       => 'top',
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
 			'instruction_placement' => 'label',
-			'hide_on_screen'        => array(),
-			'return_format'         => 'array',
+			'hide_on_screen' => array(),
+			'return_format' => 'array',
 		)
 	);
 
@@ -139,7 +139,7 @@ function update_food_menu_items_show_in_front_page() // for change field value b
 
 	$post_id = $_POST['post_id'];
 	$field_name = $_POST['field_name'];
-	$field_value = $_POST['field_value']; // проеобразовывать в PHP формат для хранения в базе данных нужно здесь а так же санитизация и прочее
+	$field_value = $_POST['field_value']; // проеобразовывать в PHP формат для хранения в базе данных нужно здесь а так же санитизация и прочее serialize()
 
 	update_field( $field_name, $field_value, $post_id );
 	wp_die();

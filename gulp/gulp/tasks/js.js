@@ -18,15 +18,15 @@ export const js = () => {
                 app: app.path.src.js, // Входная точка для админ панели
             },
             output: {
-                filename: '[name].min.js',
+                filename: '[name].main.min.js',
             }
         }))
         .pipe(app.plugins.if(
-            app.isWP && '**/app.min.js',
+            app.isWP && '**/app.main.min.js',
             app.gulp.dest(app.path.wp.js.app)
         ))
         .pipe(app.plugins.if(
-            app.isWP && '**/admin.min.js',
+            app.isWP && '**/admin.main.min.js',
             app.gulp.dest(app.path.wp.js.admin)
         ))
 

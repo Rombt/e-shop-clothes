@@ -11,7 +11,7 @@ if ( class_exists( 'ACF' ) ) {
 			'relation' => 'OR',
 			[ 
 				'key' => 'food-menu-items_show-in-food-menu',
-				// todo убрать это дублирование 
+				// todo убрать это дублирование т.е. правильно сериализовать массив
 				'value' => 'a:1:{i:0;s:4:"show";}',
 				'compare' => 'LIKE',
 			],

@@ -1,4 +1,4 @@
-jQuery(document).ready(function ($) {
+export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
    //"food-menu-items_show-food-menu"   checkbox  change event handler
