@@ -13,6 +13,7 @@
 	<?php $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
 	$params = [ 
 		'post_type' => 'food-menu-items',
+		'post_status' => 'publish',
 		'posts_per_page' => 9,
 		'paged' => $current,
 	];

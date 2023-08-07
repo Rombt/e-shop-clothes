@@ -149,7 +149,8 @@ function restaurant_site_scripts() {
 
 
 	wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
-		'rstrAjaxURL' => admin_url( 'admin-ajax.php' )
+		'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
+		'rstrAjaxNonce' => wp_create_nonce( 'rstr-ajax-nonce' ),
 	] );
 
 

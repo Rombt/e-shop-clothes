@@ -2,7 +2,7 @@
 	<div class="recipies-title-nav recipies-title__nav">
 		<div class="select-view">
 			<?php if ( is_page( 'menu-page-grid' ) ) {
-				echo '<div class="select-view__colomns"> <h3>List</h3> </div>';
+				echo '<div class="select-view__colomns"> <h3>greed</h3> </div>';
 			} elseif ( is_page( 'recipies-page' ) ) {
 				echo '<div class="select-view__colomns"><h3>2 column</h3></div>';
 			} ?>
