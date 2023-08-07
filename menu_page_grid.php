@@ -22,20 +22,28 @@
 
 	<div class="menu-page-conteiner__row">
 
+		<?php echo '***' . wp_cache_get( 'View_Mode_Menu_Page' ); ?>
+
+
+
 		<?php if ( $query_Menu_items->have_posts() ) {
 			while ( $query_Menu_items->have_posts() ) {
 				$query_Menu_items->the_post();
 				if ( class_exists( 'ACF' ) ) {
-					get_template_part( 'template-parts/parts/prod_card', 'grid' );
+					get_template_part( 'template-parts/parts/prod_card', wp_cache_get( 'View_Mode_Menu_Page' ) );
 				}
 			}
-			wp_reset_postdata();
+			// get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] );
+		
 		} else {
 			// something
 		} ?>
 
-		<?php get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] ); ?>
 	</div>
+	<?php get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] ); ?>
+	<?php wp_reset_postdata(); ?>
+
+	<!-- </div> -->
 	</div>
 
 </main>

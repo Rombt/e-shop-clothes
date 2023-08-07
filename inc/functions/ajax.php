@@ -10,18 +10,52 @@ function rstr_menu_page_view() {
 		die;
 	}
 
+	// $GLOBALS['View_Mode_Menu_Page'] = $_POST['view_mod'];
+	// wp_cache_set( 'View_Mode_Menu_Page', $_POST['view_mod'] );
+	wp_cache_add( 'View_Mode_Menu_Page', $_POST['view_mod'] );
 
-	$view_mod = $_POST['view_mod'];
+	// $posts_per_page = ( $view_mod == 'list' ) ? 12 : 9;
 
-	if ( $_POST['view_mod'] == 'grid' ) {
-		echo $_POST['view_mod'];
-		get_template_part( 'template-parts/parts/prod_card', 'grid' );
+	$current = $_POST['paged'];
 
-	} else if ( $_POST['view_mod'] == 'list' ) {
-		echo $_POST['view_mod'];
-		get_template_part( 'template-parts/parts/prod_card', 'list' );
 
+	$params = [ 
+		'post_type' => 'food-menu-items',
+		'post_status' => 'publish',
+		// 'posts_per_page' => $posts_per_page,
+		'posts_per_page' => 9,
+		'paged' => $current,
+	];
+	$query_Menu_items = new WP_Query( $params );
+
+
+	if ( $query_Menu_items->have_posts() ) {
+		while ( $query_Menu_items->have_posts() ) {
+			$query_Menu_items->the_post();
+			if ( class_exists( 'ACF' ) ) {
+
+				// if ( $view_mod == 'grid' ) {
+				get_template_part( 'template-parts/parts/prod_card', wp_cache_get( 'View_Mode_Menu_Page' ) );
+
+				// } else if ( $view_mod == 'list' ) {
+				// get_template_part( 'template-parts/parts/prod_card', 'list' );
+
+				// }
+
+
+			}
+		}
+		// get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] );
+	} else {
+		// something
 	}
+	wp_reset_postdata();
+
+
+
+
+
+
 
 	wp_die();
 }

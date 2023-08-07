@@ -140,6 +140,44 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *		Адаптивные шрифты на маленьктх экранах стр menu
  */
 
+// 
+
+// Global vars
+
+
+// if ( empty( $GLOBALS['View_Mode_Menu_Page'] ) ) {
+
+// 	echo '***************';
+// 	$GLOBALS['View_Mode_Menu_Page'] = 'grid';
+
+// }
+
+
+
+
+function my_init_function() {
+
+	// echo '000';
+
+	// 	if ( false === wp_cache_get( 'View_Mode_Menu_Page' ) ) {
+// 		echo '<br> 111' . wp_cache_get( 'View_Mode_Menu_Page' );
+// 		wp_cache_add( 'View_Mode_Menu_Page', 'grid' );
+	echo '<br> 2222' . wp_cache_get( 'View_Mode_Menu_Page' );
+	// 		// echo "Переменная добавлена в кеш.";
+// 	} else {
+// 		echo "*** View_Mode_Menu_Page *** уже существует в кеше.";
+// 	}
+
+}
+
+
+
+add_action( 'init', 'my_init_function' );
+
+
+
+
+
 function restaurant_site_scripts() {
 	wp_enqueue_style( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all' );
 	wp_enqueue_style( 'restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all' );

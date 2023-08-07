@@ -53,7 +53,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          });
 
          PaginationBlock.append(VisiblePaginationBTNs);
-         PaginationBlock.css('visibility', 'visible')
+         PaginationBlock.css('visibility', 'visible');
 
       }
    }
