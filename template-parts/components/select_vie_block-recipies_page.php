@@ -1,11 +1,28 @@
 <div class="select-vie-block-conteiner">
 	<div class="recipies-title-nav recipies-title__nav">
 		<div class="select-view">
-			<?php if ( is_page( 'menu-page-grid' ) ) {
-				echo '<div class="select-view__colomns"> <h3>list</h3> </div>';
+
+
+
+			<?php // echo '<div class="select-view__colomns"></div> <h3> ' . $_SESSION['View_Mode_Menu_Page'] . '</h3> </div>'; ?>
+
+			<?php
+
+			if ( is_page( 'menu-page-grid' ) ) {
+				$view_mode = 'list';
+
+				if ( isset( $_SESSION['View_Mode_Menu_Page'] ) ) {
+					$view_mode = ( $_SESSION['View_Mode_Menu_Page'] == 'list' ) ? 'grid' : 'list';
+				} else {
+					$view_mode = 'list';
+				}
+				echo '<div class="select-view__colomns"> <h3>' . $view_mode . '</h3> </div>';
+
+
 			} elseif ( is_page( 'recipies-page' ) ) {
 				echo '<div class="select-view__colomns"><h3>2 column</h3></div>';
-			} ?>
+			}
+			?>
 			<!-- <div class="select-view__grid"><img src="img/title-nav__icon_two-grid.png" alt=""></div> -->
 		</div>
 		<div class="recipies-title-nav__brows-recipes">

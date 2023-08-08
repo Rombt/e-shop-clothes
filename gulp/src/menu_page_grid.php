@@ -2,7 +2,6 @@
 /* Template Name: Menu page grid */
 ?>
 
-
 <?php get_header(); ?>
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
@@ -11,6 +10,8 @@
 	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
 
 	<?php $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+
+
 	$params = [ 
 		'post_type' => 'food-menu-items',
 		'post_status' => 'publish',
@@ -22,15 +23,13 @@
 
 	<div class="menu-page-conteiner__row">
 
-		<?php echo '***' . wp_cache_get( 'View_Mode_Menu_Page' ); ?>
-
-
+		<?php $view_mode = isset( $_SESSION['View_Mode_Menu_Page'] ) ? $_SESSION['View_Mode_Menu_Page'] : 'grid'; ?>
 
 		<?php if ( $query_Menu_items->have_posts() ) {
 			while ( $query_Menu_items->have_posts() ) {
 				$query_Menu_items->the_post();
 				if ( class_exists( 'ACF' ) ) {
-					get_template_part( 'template-parts/parts/prod_card', wp_cache_get( 'View_Mode_Menu_Page' ) );
+					get_template_part( 'template-parts/parts/prod_card', $view_mode );
 				}
 			}
 			// get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] );

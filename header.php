@@ -11,6 +11,12 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+
+	<?php if ( session_status() == PHP_SESSION_NONE ) {
+		session_start();
+	} ?>
+
+
 	<?php global $restaurant_site_options; ?>
 
 
@@ -57,8 +63,7 @@
 					<div class="cart__cercle">3</div>
 					<a href="shopping-cart.html">
 						<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon_cart']['url'] ) { ?>
-							<img src="<?php echo esc_url( $restaurant_site_options['icon_cart']['url'] ) ?>"
-								alt="icon cart">
+							<img src="<?php echo esc_url( $restaurant_site_options['icon_cart']['url'] ) ?>" alt="icon cart">
 						<?php } ?>
 					</a>
 				</div>

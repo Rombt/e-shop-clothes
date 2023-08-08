@@ -99,6 +99,10 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *		добавить картинки удвоеного качества для Rétina
  *		доработать страницу выдачи поисковых запросов
  *		выбор иконок https://devs.redux.io/core-extensions/icon-select.html
+ * 	favicon.ico
+ * 		должна быть хорошо видима
+ * 			для тёмных тем светлая
+ * 			для акивных страниц сайта favicon.ico должна меняться	
  *	
  *
  * Исправить в текущей версии темы:
@@ -138,44 +142,13 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *		форму и страницу поиска по сайту
  *		отдельные локации меню для мобильных устройств
  *		Адаптивные шрифты на маленьктх экранах стр menu
+ *		JQMIGRATE: Migrate is installed, version 3.4.0
+ *			разобраться с устаревшими методами jQuery
+ *		высота блока menu-page-conteiner__row должна расчитываться в момент выполнения ajax запроса
+ *		доработать адаптив блока select-vie-block-conteiner !!!!
  */
 
 // 
-
-// Global vars
-
-
-// if ( empty( $GLOBALS['View_Mode_Menu_Page'] ) ) {
-
-// 	echo '***************';
-// 	$GLOBALS['View_Mode_Menu_Page'] = 'grid';
-
-// }
-
-
-
-
-function my_init_function() {
-
-	// echo '000';
-
-	// 	if ( false === wp_cache_get( 'View_Mode_Menu_Page' ) ) {
-// 		echo '<br> 111' . wp_cache_get( 'View_Mode_Menu_Page' );
-// 		wp_cache_add( 'View_Mode_Menu_Page', 'grid' );
-	echo '<br> 2222' . wp_cache_get( 'View_Mode_Menu_Page' );
-	// 		// echo "Переменная добавлена в кеш.";
-// 	} else {
-// 		echo "*** View_Mode_Menu_Page *** уже существует в кеше.";
-// 	}
-
-}
-
-
-
-add_action( 'init', 'my_init_function' );
-
-
-
 
 
 function restaurant_site_scripts() {
@@ -208,6 +181,7 @@ add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
 function simple_restaurant_site_setup() {
 
 
+	add_theme_support( 'custom-logo' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support(

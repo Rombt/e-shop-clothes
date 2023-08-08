@@ -1754,11 +1754,6 @@ a {
   transition: 0.3s;
   text-transform: capitalize;
 }
-@media screen and (max-width: 576px) {
-  .select-view {
-    display: none;
-  }
-}
 .select-view h3:hover {
   color: #fea100;
   transform: scale(1.03);
@@ -5143,17 +5138,18 @@ a {
   margin-bottom: 1px;
 }
 .menu-page-conteiner {
+  padding-bottom: 110px;
   /* .menu-page-conteiner__row */
 }
 .menu-page-conteiner__row {
   display: flex;
   margin-left: -15px;
   margin-right: -15px;
-  padding: 0px 0 50px 0;
+  padding: 0px 0 0px 0;
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 110px;
+  min-height: 600px;
 }
 @media screen and (max-width: 576px) {
   .menu-page-conteiner .top-menu-wrap h2 {

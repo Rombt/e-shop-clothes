@@ -1,6 +1,6 @@
 <?php
 
-
+session_status() == PHP_SESSION_NONE ? session_start() : null;
 
 add_action( 'wp_ajax_menu_page_view', 'rstr_menu_page_view' );
 add_action( 'wp_ajax_nopriv_menu_page_view', 'rstr_menu_page_view' );
@@ -10,11 +10,7 @@ function rstr_menu_page_view() {
 		die;
 	}
 
-	// $GLOBALS['View_Mode_Menu_Page'] = $_POST['view_mod'];
-	// wp_cache_set( 'View_Mode_Menu_Page', $_POST['view_mod'] );
-	wp_cache_add( 'View_Mode_Menu_Page', $_POST['view_mod'] );
-
-	// $posts_per_page = ( $view_mod == 'list' ) ? 12 : 9;
+	$_SESSION['View_Mode_Menu_Page'] = $_POST['view_mod'];
 
 	$current = $_POST['paged'];
 
@@ -35,7 +31,7 @@ function rstr_menu_page_view() {
 			if ( class_exists( 'ACF' ) ) {
 
 				// if ( $view_mod == 'grid' ) {
-				get_template_part( 'template-parts/parts/prod_card', wp_cache_get( 'View_Mode_Menu_Page' ) );
+				get_template_part( 'template-parts/parts/prod_card', $_SESSION['View_Mode_Menu_Page'] );
 
 				// } else if ( $view_mod == 'list' ) {
 				// get_template_part( 'template-parts/parts/prod_card', 'list' );
