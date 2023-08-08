@@ -5138,8 +5138,7 @@ a {
   margin-bottom: 1px;
 }
 .menu-page-conteiner {
-  padding-bottom: 110px;
-  /* .menu-page-conteiner__row */
+  padding-bottom: 80px;
 }
 .menu-page-conteiner__row {
   display: flex;
@@ -5149,7 +5148,6 @@ a {
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 600px;
 }
 @media screen and (max-width: 576px) {
   .menu-page-conteiner .top-menu-wrap h2 {

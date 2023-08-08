@@ -9,16 +9,11 @@
 
 	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
 
-	<?php $current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+	<?php
 
+	$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+	$query_Menu_items = rst_menu_page_WPquery( $current );
 
-	$params = [ 
-		'post_type' => 'food-menu-items',
-		'post_status' => 'publish',
-		'posts_per_page' => 9,
-		'paged' => $current,
-	];
-	$query_Menu_items = new WP_Query( $params );
 	?>
 
 	<div class="menu-page-conteiner__row">

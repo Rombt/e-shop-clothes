@@ -9,18 +9,23 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
    let fullUrl = window.location.pathname.split("/");
    let currentPage = fullUrl[fullUrl.length - 2];
 
-   // let heightMainBlock = mainBlock.height();
-   // mainBlock.css('height', heightMainBlock);
+   let TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');;
+   let heightMainBlock;
 
 
    $('.select-view__colomns').on('click', function (e) {
       e.preventDefault();
 
 
-      mainBlock.fadeOut(400, function () {
-         mainBlock.empty();
-         mainBlock.fadeIn(400);
-      });
+
+
+
+
+
+
+
+      // mainBlock.fadeOut(400, function () {
+      // mainBlock.fadeIn(400);
 
 
       let view_mod = $('.select-view__colomns>h3').text().toLowerCase();
@@ -36,18 +41,24 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          success: function (response) {
             $(e.target).html((view_mod == view_mod_1) ? view_mod_0 : view_mod_1);
 
+            TempBlock.html(response);
+            $('.menu-page-conteiner__row').append(TempBlock);
+            heightMainBlock = TempBlock.height();
+            TempBlock.remove();
 
-            // mainBlock.slideUp(400, function () {
-            // mainBlock.slideDown();
+            mainBlock.css('height', heightMainBlock);
 
-            // });
-            mainBlock.fadeOut(400, function () {
-               mainBlock.fadeIn(400);
-               mainBlock.html(response);
+            mainBlock.slideUp(800, function () {
+               mainBlock.empty();
             });
 
+            mainBlock.slideDown({
+               duration: 800,
+               start: function () {
+                  mainBlock.html(response);
+               },
 
-            // $(paginationBlock) ? $(paginationBlock).css('visibility', 'visible') : null;
+            });
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);
