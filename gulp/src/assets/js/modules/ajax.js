@@ -1,7 +1,7 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
 
    const mainBlock = $('.menu-page-conteiner__row');
-   const paginationBlock = '.pagination';
+   const TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');;
 
    let view_mod_0 = 'grid';
    let view_mod_1 = 'list';
@@ -9,24 +9,18 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
    let fullUrl = window.location.pathname.split("/");
    let currentPage = fullUrl[fullUrl.length - 2];
 
-   let TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');;
    let heightMainBlock;
-
+   let animationParamsHide = {
+      height: heightMainBlock + 'px',
+      opacity: 0,
+   };
+   let animationParamsShow = {
+      height: heightMainBlock + 'px',
+      opacity: 1,
+   };
 
    $('.select-view__colomns').on('click', function (e) {
       e.preventDefault();
-
-
-
-
-
-
-
-
-
-      // mainBlock.fadeOut(400, function () {
-      // mainBlock.fadeIn(400);
-
 
       let view_mod = $('.select-view__colomns>h3').text().toLowerCase();
       $.ajax({
@@ -46,30 +40,23 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             heightMainBlock = TempBlock.height();
             TempBlock.remove();
 
-            mainBlock.css('height', heightMainBlock);
-
-            mainBlock.slideUp(800, function () {
-               mainBlock.empty();
+            mainBlock.animate(animationParamsHide, {
+               duration: 500,
+               complete: function () {
+                  mainBlock.empty();
+               },
             });
 
-            mainBlock.slideDown({
-               duration: 800,
+            mainBlock.animate(animationParamsShow, {
+               duration: 500,
                start: function () {
                   mainBlock.html(response);
                },
-
             });
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);
          }
       });
-
    });
-
-
-
-
-
-
 })

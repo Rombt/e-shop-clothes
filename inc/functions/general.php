@@ -8,7 +8,6 @@
 
 function rst_menu_page_WPquery( $current ) {
 
-
 	$params = [ 
 		'post_type' => 'food-menu-items',
 		'post_status' => 'publish',
