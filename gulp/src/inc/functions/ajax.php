@@ -14,7 +14,7 @@ function rstr_menu_page_view() {
 
 	$current = $_POST['paged'];
 	$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 12;
-	$query_Menu_items = rst_menu_page_WPquery( $posts_per_page, $current );
+	$query_Menu_items = rst_menu_page_WPquery( 'food_menu_items', $posts_per_page, $current );
 
 	if ( $query_Menu_items->have_posts() ) {
 		while ( $query_Menu_items->have_posts() ) {

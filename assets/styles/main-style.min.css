@@ -4969,6 +4969,9 @@ a {
   z-index: 7;
   text-align: center;
 }
+#footer-menu {
+  text-transform: capitalize;
+}
 #footer-menu .sub-menu {
   padding-left: 15px;
   display: none;

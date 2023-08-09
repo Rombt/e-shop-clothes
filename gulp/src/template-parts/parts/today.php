@@ -8,18 +8,18 @@ if ( isset( $restaurant_site_options['today-gallery'] ) ) {
 if ( class_exists( 'ACF' ) ) {
 
 	$params = [ 
-		'post_type'      => 'food-menu-items',
+		'post_type' => 'food_menu_items',
 		'posts_per_page' => -1,
-		'meta_query'     => [ 
+		'meta_query' => [ 
 			'relation' => 'OR',
 			[ 
-				'key'     => 'food-menu-items_show-in-section-today-specialy',
-				'value'   => 'a:1:{i:0;s:4:"show";}',
+				'key' => 'food_menu_items_show-in-section-today-specialy',
+				'value' => 'a:1:{i:0;s:4:"show";}',
 				'compare' => 'LIKE',
 			],
 			[ 
-				'key'     => 'food-menu-items_show-in-section-today-specialy',
-				'value'   => 'show',
+				'key' => 'food_menu_items_show-in-section-today-specialy',
+				'value' => 'show',
 				'compare' => 'LIKE',
 			],
 		],
@@ -28,7 +28,7 @@ if ( class_exists( 'ACF' ) ) {
 } else {
 
 	$params = [ 
-		'post_type'      => 'food-menu-items',
+		'post_type' => 'food_menu_items',
 		'posts_per_page' => 2,
 	];
 }
@@ -44,7 +44,7 @@ $query_Menu_items = new WP_Query( $params );
 				<?php if ( ! empty( $arr_dish_gallery[0] ) ) :
 					foreach ( $arr_dish_gallery as $image_id ) :
 						$image_data = wp_get_attachment_image_src( $image_id, 'full' );
-						$image_url  = $image_data[0];
+						$image_url = $image_data[0];
 						?>
 						<div class="swiper-slide">
 							<div class="wrap-img today__wrap-img">

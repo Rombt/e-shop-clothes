@@ -1,19 +1,13 @@
-<?php
-/* Template Name: Menu page grid */
-?>
-
 <?php get_header(); ?>
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 <main class="conteiner menu-page-conteiner">
 
-	<?php get_template_part( 'template-parts/components/food_menu', null, [ 'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" ) ] ); ?>
-
-	<?php
-
-
-
-	?>
+	<?php get_template_part( 'template-parts/components/food_menu',
+		null,
+		[ 
+			'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['menu_title'] ) : "" )
+		] ); ?>
 
 	<div class="menu-page-conteiner__row">
 
@@ -21,10 +15,9 @@
 
 		<?php
 		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
-		// $current = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		
+
 		$posts_per_page = ( $view_mode == 'grid' ) ? 9 : 12;
-		$query_Menu_items = rst_menu_page_WPquery( $posts_per_page, $current );
+		$query_Menu_items = rst_menu_page_WPquery( 'food_menu_items', $posts_per_page, $current );
 
 		if ( $query_Menu_items->have_posts() ) {
 
@@ -42,11 +35,11 @@
 
 		} else {
 			// something
-		} ?>
+		}
+		?>
 
 	<?php wp_reset_postdata(); ?>
 
-	<!-- </div> -->
 	</div>
 
 </main>

@@ -5,7 +5,7 @@ function restaurant_site_acf_metaboxes() {
 
 	acf_add_local_field_group(
 		array(
-			'key' => 'food-menu-items_properties',
+			'key' => 'food_menu_items_properties',
 			'title' => 'Properties Food Menu Item',
 			'fields' => array(
 				array(
@@ -21,7 +21,7 @@ function restaurant_site_acf_metaboxes() {
 				),
 				array(
 					'key' => 'fmip_field-2',
-					'name' => 'food-menu-items_show-in-food-menu',
+					'name' => 'food_menu_items_show-in-food-menu',
 					'label' => 'Show this dish on front page',
 					'type' => 'checkbox',
 					'choices' => array(
@@ -31,7 +31,7 @@ function restaurant_site_acf_metaboxes() {
 				),
 				array(
 					'key' => 'fmip_field-3',
-					'name' => 'food-menu-items_show-in-section-today-specialy',
+					'name' => 'food_menu_items_show-in-section-today-specialy',
 					'label' => 'Show this dish in the section "Today Specialy"',
 					'type' => 'checkbox',
 					'choices' => array(
@@ -45,7 +45,7 @@ function restaurant_site_acf_metaboxes() {
 					array(
 						'param' => 'post_type',
 						'operator' => '==',
-						'value' => 'food-menu-items',
+						'value' => 'food_menu_items',
 					),
 				),
 			),

@@ -5,18 +5,18 @@
 if ( class_exists( 'ACF' ) ) {
 
 	$params = [ 
-		'post_type' => 'food-menu-items',
+		'post_type' => 'food_menu_items',
 		'posts_per_page' => -1,
 		'meta_query' => [ 
 			'relation' => 'OR',
 			[ 
-				'key' => 'food-menu-items_show-in-food-menu',
+				'key' => 'food_menu_items_show-in-food-menu',
 				// todo убрать это дублирование т.е. правильно сериализовать массив
 				'value' => 'a:1:{i:0;s:4:"show";}',
 				'compare' => 'LIKE',
 			],
 			[ 
-				'key' => 'food-menu-items_show-in-food-menu',
+				'key' => 'food_menu_items_show-in-food-menu',
 				'value' => 'show',
 				'compare' => 'LIKE',
 			],
@@ -26,7 +26,7 @@ if ( class_exists( 'ACF' ) ) {
 } else {
 
 	$params = [ 
-		'post_type' => 'food-menu-items',
+		'post_type' => 'food_menu_items',
 		'posts_per_page' => 8,
 	];
 }

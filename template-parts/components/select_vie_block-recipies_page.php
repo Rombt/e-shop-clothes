@@ -8,7 +8,7 @@
 
 			<?php
 
-			if ( is_page( 'menu-page-grid' ) ) {
+			if ( is_post_type_archive( 'food_menu_items' ) ) {
 				$view_mode = 'list';
 
 				if ( isset( $_SESSION['View_Mode_Menu_Page'] ) ) {
@@ -18,19 +18,18 @@
 				}
 				echo '<div class="select-view__colomns"> <h3>' . $view_mode . '</h3> </div>';
 
-
-			} elseif ( is_page( 'recipies-page' ) ) {
+			} elseif ( is_post_type_archive( 'recipes' ) ) {
 				echo '<div class="select-view__colomns"><h3>2 column</h3></div>';
 			}
 			?>
-			<!-- <div class="select-view__grid"><img src="img/title-nav__icon_two-grid.png" alt=""></div> -->
 		</div>
 		<div class="recipies-title-nav__brows-recipes">
 			<h3>Brows Recipes</h3>
 			<div class="menu-recipies-burger burger-open">
 				<span></span>
 			</div>
-			<!-- <nav class="menu-recipies">				// времменоо что бы не сыпались ошибки
+			<!-- // НУЖНЫЙ код времмено закоментировал что бы не сыпались ошибки  //todo доработать!-->
+			<!-- <nav class="menu-recipies">				
 				<ul class="menu-recipies__list">
 					<li>
 						<a href="#">

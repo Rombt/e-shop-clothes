@@ -120,7 +120,7 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  * 			как лучше подключать скрипты 
  * 				ипортами в main.min.js через gulp 
  * 				или по стандартам wp каждый в отдельности с помощью wp_enqueue_script()
- * 		создать архивную страницу для типа записи food-menu-items  т.е. продублировать функционал статической страницы
+ * 		создать архивную страницу для типа записи food_menu_items  т.е. продублировать функционал статической страницы
  * 			добавить типу записи параметр 'has_archive', установленный в true во время его регистрации
  * 			создать файл archive-food_menu_items.php
  *		добавить анимацию по максимуму!!!
@@ -316,8 +316,6 @@ function rstr_change_menus_items( $args, $item ) {
 		} else {
 
 			if ( class_exists( 'ACF' ) ) {
-
-
 				$args->before = '<img src="' . get_field( 'food-categories-icon', 'term_' . $item->object_id ) . '" alt="">';
 			}
 

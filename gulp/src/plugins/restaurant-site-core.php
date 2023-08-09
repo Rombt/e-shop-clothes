@@ -101,7 +101,7 @@ function rs_register_post_types() {
 		'menu_icon' => 'dashicons-image-filter',
 		'show_in_nav_menus' => true,
 	);
-	register_post_type( 'food-menu-items', $args_food_menu );
+	register_post_type( 'food_menu_items', $args_food_menu );
 
 	$labels_our_clients = array(
 		'name' => esc_html_x( 'Our Clients', 'Post type general name', 'restaurant-site' ),
@@ -148,6 +148,64 @@ function rs_register_post_types() {
 		'show_in_nav_menus' => true,
 	);
 	register_post_type( 'our-clients', $args_our_clients );
+
+
+
+
+
+
+
+	$labels_recipe = array(
+		'name' => esc_html_x( 'Recipes', 'Post type general name', 'restaurant-site' ),
+		'singular_name' => esc_html_x( 'Recipe', 'Post type singular name', 'restaurant-site' ),
+		'menu_name' => esc_html_x( 'Recipes', 'Admin Menu text', 'restaurant-site' ),
+		'name_admin_bar' => esc_html_x( 'Recipe', 'Add New on Toolbar', 'restaurant-site' ),
+		'add_new' => esc_html__( 'Add New', 'restaurant-site' ),
+		'add_new_item' => esc_html__( 'Add New recipe', 'restaurant-site' ),
+		'new_item' => esc_html__( 'New Recipe', 'restaurant-site' ),
+		'edit_item' => esc_html__( 'Edit Recipe', 'restaurant-site' ),
+		'view_item' => esc_html__( 'View Recipe', 'restaurant-site' ),
+		'all_items' => esc_html__( 'All Recipes', 'restaurant-site' ),
+		'search_items' => esc_html__( 'Search Recipes', 'restaurant-site' ),
+		'parent_item_colon' => esc_html__( 'Parent Recipes:', 'restaurant-site' ),
+		'not_found' => esc_html__( 'No Recipes found.', 'restaurant-site' ),
+		'not_found_in_trash' => esc_html__( 'No Recipes found in Trash.', 'restaurant-site' ),
+		'featured_image' => esc_html_x( 'Recipe Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'set_featured_image' => esc_html_x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'remove_featured_image' => esc_html_x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'use_featured_image' => esc_html_x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'restaurant-site' ),
+		'archives' => esc_html_x( 'Recipe archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'restaurant-site' ),
+		'insert_into_item' => esc_html_x( 'Insert into Recipe', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'restaurant-site' ),
+		'uploaded_to_this_item' => esc_html_x( 'Uploaded to this Recipe', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'restaurant-site' ),
+		'filter_items_list' => esc_html_x( 'Filter Recipes list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'restaurant-site' ),
+		'items_list_navigation' => esc_html_x( 'Recipes list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'restaurant-site' ),
+		'items_list' => esc_html_x( 'Recipes list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'restaurant-site' ),
+	);
+
+	$args_recipe = array(
+		'labels' => $labels_recipe,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_rest' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'recipes' ),
+		'has_archive' => true,
+		'hierarchical' => true,
+		'menu_position' => 4,
+		'taxonomies' => [ 'food-categories' ],
+		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields' ),
+		'menu_icon' => 'dashicons-image-filter',
+		'show_in_nav_menus' => true,
+	);
+	register_post_type( 'recipes', $args_recipe );
+
+
+
+
+
+
 }
 add_action( 'init', 'rs_register_post_types' );
 
@@ -160,11 +218,11 @@ if ( class_exists( 'ACF' ) ) {
 		$columns['show-today-specialy'] = esc_html__( 'Show in the "Today Specialy" section ', 'restaurant-site' );
 		return $columns;
 	}
-	add_filter( 'manage_food-menu-items_posts_columns', 'add_food_menu_items_column' );
+	add_filter( 'manage_food_menu_items_posts_columns', 'add_food_menu_items_column' );
 
 	function display_custom_field_column( $column, $post_id ) {
 		if ( $column === 'show-food-menu' ) {
-			$field_name = 'food-menu-items_show-in-food-menu';
+			$field_name = 'food_menu_items_show-in-food-menu';
 			echo '<input type="checkbox" data-post-id="' . $post_id
 				. '" data-field-name="' . $field_name . '" '
 				. ( get_field( $field_name, $post_id ) ? 'checked' : '' )
@@ -172,7 +230,7 @@ if ( class_exists( 'ACF' ) ) {
 		}
 
 		if ( $column === 'show-today-specialy' ) {
-			$field_name = 'food-menu-items_show-in-section-today-specialy';
+			$field_name = 'food_menu_items_show-in-section-today-specialy';
 			echo '<input type="checkbox" data-post-id="' . $post_id
 				. '" data-field-name="' . $field_name . '" '
 				. ( get_field( $field_name, $post_id ) ? 'checked' : '' )
@@ -180,7 +238,7 @@ if ( class_exists( 'ACF' ) ) {
 		}
 
 	}
-	add_action( 'manage_food-menu-items_posts_custom_column', 'display_custom_field_column', 10, 2 );
+	add_action( 'manage_food_menu_items_posts_custom_column', 'display_custom_field_column', 10, 2 );
 
 	function add_our_clients_column( $columns ) {
 		$columns['show-our-clients'] = esc_html__( 'Show in the "Happy Clients" slider', 'restaurant-site' );
