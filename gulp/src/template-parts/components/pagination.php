@@ -1,5 +1,46 @@
+<!-- <div class="pagination"> -->
+<?php
+// $big = 999999999;
+// echo paginate_links(
+// 	array(
+// 		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+// 		'total' => $args['query']->max_num_pages,
+// 		'current' => $args['current'],
+// 		'format' => '?paged=%#%',
+// 		'prev_text' => '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>',
+// 		'next_text' => '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>',
+// 	)
+// ); 
+?>
+<!-- </div> -->
+
 <div class="pagination">
+
 	<?php
+
+	// if ( ! get_previous_posts_link() ) {
+	
+	// echo ( get_previous_posts_link() );
+	
+	// }
+	
+
+	// <a href="#" class="pagination-prev">
+//    <picture><source srcset="img/pagination-left-arrow.webp" type="image/webp"><img src="img/pagination-left-arrow.png" alt="arrow left"></picture>
+//    <p>prev</p>
+// </a>
+	
+	$prev_link = get_previous_posts_link( '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>' );
+
+	if ( $prev_link ) {
+		echo str_replace( '<a', '<a class="prev page-numbers active"', $prev_link );
+	} else {
+
+		echo '<div class="prev page-numbers" ><div class="pagination-icon pagination-icon__prev"></div> <p> prev </p></div>';
+	}
+
+
+
 	$big = 999999999;
 	echo paginate_links(
 		array(
@@ -7,8 +48,41 @@
 			'total' => $args['query']->max_num_pages,
 			'current' => $args['current'],
 			'format' => '?paged=%#%',
-			'prev_text' => '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>',
-			'next_text' => '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>',
+			'prev_next' => false,
+			// 'prev_text' => '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>',
+			// 'next_text' => '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>',
 		)
-	); ?>
+	);
+
+
+
+
+	$next_link = get_next_posts_link( '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>', $args['query']->max_num_pages );
+
+	if ( $next_link ) {
+		echo str_replace( '<a', '<a class="next page-numbers active"', $next_link );
+	} else {
+
+		echo '<div class="prev page-numbers" > <p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div></div>';
+	}
+
+
+	// if ( ! get_next_posts_link( null, $args['query']->max_num_pages ) ) {
+	// echo ( get_next_posts_link( null, $args['query']->max_num_pages ) );
+	// }
+	
+
+
+	?>
+
+
+
+
+
 </div>
+
+
+<?php
+
+
+?>

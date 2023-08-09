@@ -13,7 +13,7 @@ function rstr_menu_page_view() {
 	$_SESSION['View_Mode_Menu_Page'] = $_POST['view_mod'];
 
 	$current = $_POST['paged'];
-	$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 8;
+	$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 12;
 	$query_Menu_items = rst_menu_page_WPquery( $posts_per_page, $current );
 
 	if ( $query_Menu_items->have_posts() ) {

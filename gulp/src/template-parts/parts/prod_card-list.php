@@ -5,7 +5,7 @@
 				<?php echo the_title() ?>
 			</h3>
 			<p>
-				<?php echo rstr_trim_excerpt( 7 ) ?>
+				<?php echo rstr_trim_excerpt( 5 ) ?>
 			</p>
 		</a>
 	</div>

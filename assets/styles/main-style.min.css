@@ -2212,19 +2212,18 @@ a {
 }
 .pagination .current {
   background-color: #fea100;
-  border: 1px solid #fea100;
+  border: 1px solid #d98a03;
   color: #fff;
 }
 .prev.page-numbers,
 .next.page-numbers {
-  color: #d38a0c;
+  color: #9fa3a6;
   font-size: 14px;
   font-family: "Sintony";
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2.143;
-  background-color: #ffeac5;
-  border: 1px solid #ffeac5;
+  background-color: #ececea;
   width: 110px;
   height: 44px;
   border-radius: 55px;
@@ -2237,36 +2236,53 @@ a {
 .next.page-numbers p {
   margin-bottom: 0;
 }
-.prev.page-numbers:hover,
-.next.page-numbers:hover {
+.prev.page-numbers .pagination-icon::after,
+.next.page-numbers .pagination-icon::after,
+.prev.page-numbers .pagination-icon::before,
+.next.page-numbers .pagination-icon::before {
+  border: 1px solid #9fa3a6;
+}
+.prev.page-numbers.active,
+.next.page-numbers.active {
+  color: #d38a0c;
+  background-color: #ffeac5;
+  border: 1px solid #fadca9;
+}
+.prev.page-numbers.active:hover,
+.next.page-numbers.active:hover {
   color: #fff;
   background-color: #fea100;
   border: 1px solid #fea100;
   transition: all 0.7s;
 }
-.prev.page-numbers:hover .pagination-icon::after,
-.next.page-numbers:hover .pagination-icon::after,
-.prev.page-numbers:hover .pagination-icon::before,
-.next.page-numbers:hover .pagination-icon::before {
-  border: 1px solid #fff;
+.prev.page-numbers.active:hover .pagination-icon::after,
+.next.page-numbers.active:hover .pagination-icon::after,
+.prev.page-numbers.active:hover .pagination-icon::before,
+.next.page-numbers.active:hover .pagination-icon::before {
+  border: 1px solid #ffffff;
   transition: all 0.7s;
 }
-.pagination-icon {
+.prev.page-numbers.active .pagination-icon,
+.next.page-numbers.active .pagination-icon {
   position: absolute;
   cursor: pointer;
   width: 17px;
   height: 17px;
 }
-.pagination-icon__next {
+.prev.page-numbers.active .pagination-icon__next,
+.next.page-numbers.active .pagination-icon__next {
   right: 15px;
   transform: rotate(-90deg);
 }
-.pagination-icon__prev {
+.prev.page-numbers.active .pagination-icon__prev,
+.next.page-numbers.active .pagination-icon__prev {
   left: 15px;
   transform: rotate(90deg);
 }
-.pagination-icon::after,
-.pagination-icon::before {
+.prev.page-numbers.active .pagination-icon::after,
+.next.page-numbers.active .pagination-icon::after,
+.prev.page-numbers.active .pagination-icon::before,
+.next.page-numbers.active .pagination-icon::before {
   content: '';
   position: absolute;
   top: 30%;
@@ -2275,11 +2291,13 @@ a {
   border: 1px solid #d38a0c;
   transition: all 0.7s;
 }
-.pagination-icon::after {
+.prev.page-numbers.active .pagination-icon::after,
+.next.page-numbers.active .pagination-icon::after {
   right: 25%;
   transform: rotate(45deg);
 }
-.pagination-icon::before {
+.prev.page-numbers.active .pagination-icon::before,
+.next.page-numbers.active .pagination-icon::before {
   left: 25%;
   transform: rotate(-45deg);
 }
@@ -5147,7 +5165,11 @@ a {
   padding: 0px 0 0px 0;
   position: relative;
   flex-wrap: wrap;
-  justify-content: center;
+}
+@media screen and (max-width: 1170px) {
+  .menu-page-conteiner__row {
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 576px) {
   .menu-page-conteiner .top-menu-wrap h2 {
