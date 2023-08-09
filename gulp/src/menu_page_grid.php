@@ -11,8 +11,7 @@
 
 	<?php
 
-	$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
-	$query_Menu_items = rst_menu_page_WPquery( $current );
+
 
 	?>
 
@@ -20,15 +19,19 @@
 
 		<?php $view_mode = isset( $_SESSION['View_Mode_Menu_Page'] ) ? $_SESSION['View_Mode_Menu_Page'] : 'grid'; ?>
 
-		<?php if ( $query_Menu_items->have_posts() ) {
+		<?php
+		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+
+		$posts_per_page = ( $view_mode == 'grid' ) ? 9 : 8;
+		$query_Menu_items = rst_menu_page_WPquery( $posts_per_page, $current );
+
+		if ( $query_Menu_items->have_posts() ) {
 			while ( $query_Menu_items->have_posts() ) {
 				$query_Menu_items->the_post();
 				if ( class_exists( 'ACF' ) ) {
 					get_template_part( 'template-parts/parts/prod_card', $view_mode );
 				}
 			}
-			// get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] );
-		
 		} else {
 			// something
 		} ?>

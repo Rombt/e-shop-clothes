@@ -6,12 +6,12 @@
 
 
 
-function rst_menu_page_WPquery( $current ) {
+function rst_menu_page_WPquery( $posts_per_page, $current ) {
 
 	$params = [ 
 		'post_type' => 'food-menu-items',
 		'post_status' => 'publish',
-		'posts_per_page' => 9,
+		'posts_per_page' => $posts_per_page,
 		'paged' => $current,
 	];
 

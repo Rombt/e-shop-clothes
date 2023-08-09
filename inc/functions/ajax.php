@@ -13,8 +13,8 @@ function rstr_menu_page_view() {
 	$_SESSION['View_Mode_Menu_Page'] = $_POST['view_mod'];
 
 	$current = $_POST['paged'];
-	$query_Menu_items = rst_menu_page_WPquery( $current );
-
+	$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 8;
+	$query_Menu_items = rst_menu_page_WPquery( $posts_per_page, $current );
 
 	if ( $query_Menu_items->have_posts() ) {
 		while ( $query_Menu_items->have_posts() ) {
@@ -27,12 +27,6 @@ function rstr_menu_page_view() {
 		// something
 	}
 	wp_reset_postdata();
-
-
-
-
-
-
 
 	wp_die();
 }
