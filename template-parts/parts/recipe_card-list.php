@@ -16,10 +16,8 @@
 		
 
 		<?php
-		get_template_part( 'template-parts/components/button', 'orange', [ 
-			'href' => esc_html__( "*****************" ),
-			'title' => esc_html__( "#" ),
-		] );
+		get_template_part( 'template-parts/components/button', 'orange', [ 'h' => "#", 't' => "***********",] );
+		// get_template_part( 'template-parts/components/button', 'orange');
 		?>
 	</div>
 </div>
