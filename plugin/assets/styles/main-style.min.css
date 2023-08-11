@@ -7,6 +7,8 @@
   text-transform: capitalize;
   font-size: 15px;
   display: flex;
+  flex-direction: column;
+  row-gap: 10px;
   position: relative;
   min-height: 60px;
   padding: 10px;
