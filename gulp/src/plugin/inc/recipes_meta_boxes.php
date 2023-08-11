@@ -20,10 +20,11 @@ function rstr_recipe_mb_html( $post ) {
 	?>
 
 	<div class="ingredient-block">
-		<label for="ingredient">
-			<?php esc_html_e( 'ingredient', 'restaurant-site' ); ?>
+		<label for="ingredients">
+			<?php esc_html_e( 'ingredients', 'restaurant-site' ); ?>
 		</label>
-		<input type="text" id="ingredient" name="Ingredient" value="<?php echo esc_attr( $ingredients ); ?>">
+		<input type="text" class="ingredient-input" id="ingredient" name="Ingredient"
+			value="<?php echo esc_attr( $ingredients ); ?>">
 		<div class="add-button">Add Ingredient</div>
 	</div>
 

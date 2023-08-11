@@ -1,5 +1,50 @@
 .ingredient-block {
-  background-color: aqua;
+  background-color: #ecf3f5;
+  border: 1px solid #dddedf;
+  border-radius: 10px;
+  color: #909397;
+  font-weight: 800;
+  text-transform: capitalize;
+  font-size: 15px;
+  display: flex;
+  position: relative;
+  min-height: 60px;
+  padding: 10px;
+  padding-left: 90px;
+}
+.ingredient-block label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.ingredient-block .ingredient-input {
+  height: 20px;
+  border: 1px solid #dddedf;
+  margin-left: 10px;
+  border-radius: 10px;
+  width: 500px;
+}
+.ingredient-block .add-button {
+  color: #6a6d71;
+  background-color: #90f9a9;
+  border: 1px solid #73a67f;
+  border-radius: 10px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ingredient-block .add-button:hover {
+  background-color: #a4f7b8;
+  border: 1px solid #6ea47b;
+  transform: scale(0.98);
+  transform: translate(0, -1px);
+  color: #909397;
 }
 .column-show-food-menu,
 .column-show-today-specialy,
