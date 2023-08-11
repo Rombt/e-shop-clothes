@@ -75,4 +75,89 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          }
       });
    });
+
+
+
+
+
+
+
+
+   //"Recipes"   add ingredient
+   $(document).on('click', '.add-button', function (e) {
+      var postId = $(this).data('post-id');
+
+      // $.ajax({
+      //    url: ajaxurl,
+      //    type: 'POST',
+      //    data: {
+      //       // nonce: '',     *************
+      //       action: 'add_ingredient',
+      //       post_id: postId,
+      //    },
+      //    success: function (response) {
+      //       console.log('****************');
+      //    },
+      //    error: function (xhr, status, error) {
+      //       // console.log('Ошибка при обновлении значения поля:', error);
+      //    }
+      // });
+
+
+
+      e.preventDefault();
+
+      $.ajax({
+         url: ajaxurl,
+         type: 'POST',
+         data: {
+            action: 'add_ingredient',
+            // nonce: rstrAppData.rstrAjaxNonce,
+            action: 'add_ingredient',
+            post_id: postId,
+         },
+         success: function (response) {
+
+            // $('.ingredient-block').html(response);
+            $('.ingredient-block').append(response);
+
+            // mainBlock.animate(animationParamsHide, {
+            //    duration: 500,
+            //    complete: function () {
+            //       mainBlock.empty();
+            //    },
+            // });
+
+            // mainBlock.animate(animationParamsShow, {
+            //    duration: 500,
+            //    start: function () {
+            //       mainBlock.html(response);
+            //    },
+            // });
+         },
+         error: function (xhr, status, error) {
+            // console.log('Ошибка при обновлении значения поля:', error);
+         }
+      });
+
+
+
+
+
+
+
+
+   });
+
+
+
+
+
+
+
+
+
+
+
+
 });
