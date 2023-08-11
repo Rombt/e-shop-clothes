@@ -174,13 +174,6 @@ function restaurant_site_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'restaurant_site_scripts', 20 );
 
-function restaurant_site_scripts_admin() {
-	wp_enqueue_style( 'restaurant_site-admin_main', get_template_directory_uri() . '/admin/assets/css/admin-main-style.min.css', array(), '1.0', 'all' );
-	wp_enqueue_script( 'restaurant_site-admin_core_jq', get_template_directory_uri() . '/admin/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
-
-}
-add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
-
 function simple_restaurant_site_setup() {
 
 

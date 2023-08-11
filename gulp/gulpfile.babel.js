@@ -40,12 +40,12 @@ function watcher() {
     gulp.watch(path.watch.js, js)
     gulp.watch(path.watch.images, images)
 
-    gulp.watch(path.wp_watch, gulp.series(resetWpPlugin, wpPlugin))
+    gulp.watch(path.wp_watch, gulp.series(resetWpPlugin, php, wpPlugin))
 }
 
 
 // для вёрстки добавить задачу оброботки html файлов отдельно от php файлов так что бы при разработке WP тем html файлы не переносились в dist каталог
-const mainTasks = gulp.series(gulp.parallel(copyFonts, php, wpPlugin, styles, js, images, copy), listProcFiles);
+const mainTasks = gulp.series(gulp.parallel(copyFonts, php, styles, js, images, copy), wpPlugin, listProcFiles);
 export const dev = gulp.series(reset, resetWpPlugin, mainTasks, gulp.parallel(watcher, server));
 export const prod = gulp.series(reset, resetWpPlugin, mainTasks);
 

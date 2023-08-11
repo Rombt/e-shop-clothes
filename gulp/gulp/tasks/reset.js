@@ -8,7 +8,6 @@ export const reset = () => {
 
         let arr_filesForDell = [];
         if (app.plugins.fs.existsSync('gulp/filelist.json')) {
-
             const jsonData = app.plugins.fs.readFileSync('gulp/filelist.json', 'utf8');
             try {
                 JSON.parse(jsonData).forEach(pathToFile => {

@@ -14,8 +14,8 @@ export const js = () => {
         .pipe(webpackStream({
             mode: app.isProd ? 'production' : 'development',
             entry: {
-                admin: `${app.path.srcFolder}/admin/assets/js/admin.js`, // Входная точка для фронтенда
-                app: app.path.src.js, // Входная точка для админ панели
+                app: app.path.src.js[0], // Входная точка для фронтенда
+                admin: app.path.src.js[1],  // Входная точка для админ панели
             },
             output: {
                 filename: '[name].main.min.js',

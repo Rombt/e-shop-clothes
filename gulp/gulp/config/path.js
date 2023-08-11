@@ -16,7 +16,7 @@ export const path = {
         wpPluginName: `${wpPluginName}`,
         arr_processedFiles: [],
         js: {
-            admin: `${themePath}/admin/assets/js/`,
+            admin: `${themePath}/plugin/assets/js/`,
             app: `${themePath}/assets/js/`,
         },
         styles: `${themePath}/`,
@@ -38,36 +38,34 @@ export const path = {
     src: {
         php: [
             `${srcFolder}/**/*.php`,
-            `!${srcFolder}/plugins/**/*.php`
         ],
-
-        wpPlugins: `${srcFolder}/plugins/**/*.*`,
+        wpPlugins: `${themePath}/plugin/**/*.*`,   // собираю весь плагин в папке темы и только потом весь в сборе в папку плагинов
         less: [
             `${srcFolder}/assets/styles/main-style.less`,
-            `${srcFolder}/admin/assets/css/admin-main-style.less`,
+            `${srcFolder}/plugin/assets/styles/main-style.less`,
         ],
         scss: [
             `${srcFolder}/assets/styles/main-style.scss`,
-            `${srcFolder}/admin/assets/css/main-style.scss`,
+            `${srcFolder}/plugin/assets/css/main-style.scss`,
         ],
         js: [
             `${srcFolder}/assets/js/app.js`,
-            `${srcFolder}/admin/assets/js/admin.js`
+            `${srcFolder}/plugin/assets/js/admin.js`
         ],
         images: [   // добавить форматы при необходимости
             `${srcFolder}/assets/img/**/*.{jpg,jpeg,png,gif,webp,html}`,
-            `${srcFolder}/admin/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
+            `${srcFolder}/plugin/assets/img/**/*.{jpg,jpeg,png,gif,webp}`,
         ],
         svg: [
             `${srcFolder}/assets/img/icons/**/*.svg`,
-            `${srcFolder}/admin/assets/img/icons/**/*.svg`,
+            `${srcFolder}/s/assets/img/icons/**/*.svg`,
         ],
         files: [     // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
             // `${srcFolder}/admin/assets/js/**/*.js`,
         ],
         svgicons: [
             `${srcFolder}/assets/svgicons/*.svg`,
-            `${srcFolder}/admin/assets/svgicons/*.svg`,
+            `${srcFolder}/plugin/assets/svgicons/*.svg`,
         ],
     },
     watch: {
@@ -76,13 +74,13 @@ export const path = {
         js: `${srcFolder}/**/*.js`,
         images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: [        // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
-            `${srcFolder}/admin/assets/js/**/*.js`,
+            `${srcFolder}/plugin/assets/js/**/*.js`,
         ],
     },
     wp_watch: [             // добавдять файлы для отслеживания 
         `${themePath}/functions.php`,
         `${themePath}/inc/redux-options.php`,
-        `${srcFolder}/plugins/**/*.*`,       // дублирует watch.php  нужно для того что бы запускать task wpPlugin отдельно от task php  
+        `${srcFolder}/plugin/**/*.*`,       // дублирует watch.php  нужно для того что бы запускать task wpPlugin отдельно от task php  
     ],
     rootFolder: rootFolder,
     prodFolder: prodFolder,
