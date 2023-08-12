@@ -16,10 +16,14 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 function rstr_recipe_mb_html( $post ) {
 
 	$ingredients_0 = get_post_meta( $post->ID, 'ingredient_0', true );
+	// $ingredients_1 = get_post_meta( $post->ID, 'ingredient_1', true );
+	// $ingredients_2 = get_post_meta( $post->ID, 'ingredient_2', true );
+	// $ingredients_3 = get_post_meta( $post->ID, 'ingredient_3', true );
 
-	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
+	wp_nonce_field( 'rstr_ingredients_fild', '_ingredient_metabox' );
 
 	$arr_filds = get_post_custom_keys( $post->ID );
+
 	?>
 
 	<!-- Добавить кнобку удалеия ингридиента -->
@@ -31,25 +35,14 @@ function rstr_recipe_mb_html( $post ) {
 
 		<?php
 
-		if ( ! in_array( 'ingredient_0', $arr_filds ) ) { ?>
-			<div class="wrap_ingredient">
-				<input type="text" class="ingredient-input" id="ingredient_0" name="ingredient_0"
-					value="<?php echo esc_attr( $ingredients_0 ); ?>">
-				<div class="del-ingredient"></div>
-			</div>
+		if ( in_array( 'ingredient_0', $arr_filds ) ) { ?>
+			<input type="text" class="ingredient-input" id="ingredient_0" name="ingredient_0"
+				value="<?php echo esc_attr( $ingredients_0 ); ?>">.
 		<?php } else {
-			foreach ( $arr_filds as $value ) {
-
-				if ( str_contains( $value, 'ingredient_' ) ) {
-					?>
-					<div class="wrap_ingredient">
-						<input type="text" class="ingredient-input" id="$value" name="$value"
-							value="<?php echo esc_attr( get_post_meta( $post->ID, $value, true ) ); ?>">
-						<div class="del-ingredient"></div>
-					</div>
-					<?php
-				}
-
+			foreach ( $arr_filds as $value ) { ?>
+				<input type="text" class="ingredient-input" id="ingredient_1" name="ingredient_1"
+					value="<?php echo esc_attr( get_post_meta( $post->ID, $value, true ) ); ?>">
+				<?php
 			}
 		}
 		?>
@@ -58,41 +51,56 @@ function rstr_recipe_mb_html( $post ) {
 
 
 
+
+		<!-- <input type="text" class="ingredient-input" id="ingredient_1" name="ingredient_1"
+			value="<? php //  echo esc_attr( $ingredients_1 ); ?>">
+		<input type="text" class="ingredient-input" id="ingredient_2" name="ingredient_2"
+			value="<?php // echo esc_attr( $ingredients_2 ); ?>">
+		<input type="text" class="ingredient-input" id="ingredient_3" name="ingredient_3"
+			value="<? php // echo esc_attr( $ingredients_3 ); ?>"> -->
+
+
 		<div class="add-button">Add Ingredient</div>
 	</div>
 
 	<?php
+
 }
-
-
 
 
 function rstr_save_metabox( $post_id, $post ) {
 
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return $post_id;
-	}
-	if ( $post->post_type != 'recipes' ) {
-		return $post_id;
-	}
-	$post_type = get_post_type_object( $post->post_type );
-	if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
-		return $post_id;
-	}
+	// if ( ! isset( $_POST['ingredient_0'] ) || ! wp_verify_nonce( $_POST['_ingredient_metabox'], 'rstr_ingredients_fild' ) ) {
+	// 	return $post_id;
+	// }
+	// if ( ! isset( $_POST['ingredient_1'] ) || ! wp_verify_nonce( $_POST['_ingredient_metabox'], 'rstr_ingredients_fild' ) ) {
+	// 	return $post_id;
+	// }
+	// if ( ! isset( $_POST['ingredient_2'] ) || ! wp_verify_nonce( $_POST['_ingredient_metabox'], 'rstr_ingredients_fild' ) ) {
+	// 	return $post_id;
+	// }
+	// if ( ! isset( $_POST['ingredient_3'] ) || ! wp_verify_nonce( $_POST['_ingredient_metabox'], 'rstr_ingredients_fild' ) ) {
+	// 	return $post_id;
+	// }
+	// if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	// 	return $post_id;
+	// }
+	// if ( $post->post_type != 'recipes' ) {
+	// 	return $post_id;
+	// }
+	// $post_type = get_post_type_object( $post->post_type );
+	// if ( ! current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+	// 	return $post_id;
+	// }
+
 
 	foreach ( $_POST as $field_name => $field_value ) {
-
 		if ( str_contains( $field_name, 'ingredient_' ) ) {
-
-			if ( ! isset( $_POST[ $field_name ] ) || ! wp_verify_nonce( $_POST['_ingredients_metabox'], 'rstr_ingredients_fild' ) ) {
-				return $post_id;
-			}
-
-
 			if ( isset( $_POST[ $field_name ] ) ) {
 				update_post_meta( $post_id, $field_name, sanitize_text_field( $_POST[ $field_name ] ) );
 			} else {
-				delete_post_meta( $post_id, $field_name );
+				echo '***';
+				delete_post_meta( $post_id, 'ingredient_0' );
 			}
 		}
 

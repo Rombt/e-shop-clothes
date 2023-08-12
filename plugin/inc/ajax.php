@@ -26,15 +26,15 @@ function add_ingredient_field() {
 
 
 	$post_id = $_POST['post_id'];
-	$count_Inputs = $_POST['count'];
-	?>
 
-	<div class="wrap_ingredient">
-		<input type="text" class="ingredient-input" id="ingredient_ <?php $count_Inputs ?>"
-			name="ingredient_ <?php $count_Inputs ?>" value="">
-		<div class="del-ingredient"></div>
-	</div>
-	<?php
+
+
+	echo '<input type="text" class="ingredient-input" id="ingredient_3" name="ingredient_" value="">';
+
+	echo "<pre>";
+	print_r( get_post_custom_keys( $post_id ) );
+	echo "</pre>";
+
 	wp_die();
 }
 add_action( 'wp_ajax_add_ingredient', 'add_ingredient_field' );
