@@ -85,27 +85,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    //"Recipes"   add ingredient
    $(document).on('click', '.add-button', function (e) {
+
       var postId = $(this).data('post-id');
-
-      // $.ajax({
-      //    url: ajaxurl,
-      //    type: 'POST',
-      //    data: {
-      //       // nonce: '',     *************
-      //       action: 'add_ingredient',
-      //       post_id: postId,
-      //    },
-      //    success: function (response) {
-      //       console.log('****************');
-      //    },
-      //    error: function (xhr, status, error) {
-      //       // console.log('Ошибка при обновлении значения поля:', error);
-      //    }
-      // });
-
-
-
-      e.preventDefault();
+      var countInputs = $('.ingredient-input').length;
 
       $.ajax({
          url: ajaxurl,
@@ -115,10 +97,10 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             // nonce: rstrAppData.rstrAjaxNonce,
             action: 'add_ingredient',
             post_id: postId,
+            count: countInputs,
          },
          success: function (response) {
 
-            // $('.ingredient-block').html(response);
             $('.ingredient-block').append(response);
 
             // mainBlock.animate(animationParamsHide, {
@@ -139,14 +121,6 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             // console.log('Ошибка при обновлении значения поля:', error);
          }
       });
-
-
-
-
-
-
-
-
    });
 
 

@@ -27,14 +27,6 @@
 
    }
 
-   .ingredient-input {
-      height: 20px;
-      border: 1px solid #dddedf;
-      margin-left: 10px;
-      border-radius: 10px;
-
-      width: 500px;
-   }
 
    .add-button {
 
@@ -59,9 +51,6 @@
 
          background-color: #a4f7b8;
          border: 1px solid #6ea47b;
-
-
-
          transform: scale(0.98);
          transform: translate(0, -1px);
          color: #909397;
@@ -69,4 +58,36 @@
       }
 
    }
+
+   .wrap_ingredient {
+
+      width: max-content;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 10px;
+
+      .ingredient-input {
+         height: 20px;
+         border: 1px solid #dddedf;
+         margin-left: 10px;
+         border-radius: 10px;
+
+         width: 500px;
+      }
+
+      .del-ingredient {
+
+         height: 15px;
+         width: 15px;
+         background-color: #fa080873;
+         border: 1px solid #fa080873;
+         border-radius: 50%;
+         cursor: pointer;
+
+
+
+      }
+   }
+
 }

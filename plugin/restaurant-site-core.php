@@ -153,7 +153,7 @@ function rs_register_post_types() {
 		'rewrite' => array( 'slug' => 'our-clients' ),
 		'has_archive' => true,
 		'hierarchical' => true,
-		'menu_position' => 4,
+		'menu_position' => 5,
 		// 'taxonomies' => ['food-categories'],
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields' ),
 		'menu_icon' => 'dashicons-image-filter',
@@ -205,13 +205,17 @@ function rs_register_post_types() {
 		'rewrite' => array( 'slug' => 'recipes' ),
 		'has_archive' => true,
 		'hierarchical' => true,
-		'menu_position' => 4,
-		'taxonomies' => [ 'food-categories' ],
+		'menu_position' => 6,
+		// 'taxonomies' => [ 'food-categories' ],
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields' ),
 		'menu_icon' => 'dashicons-image-filter',
 		'show_in_nav_menus' => true,
 	);
 	register_post_type( 'recipes', $args_recipe );
+
+
+
+
 
 
 
