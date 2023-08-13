@@ -83,19 +83,16 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
 
-   //"Recipes"   add ingredient
+   //"Recipes"   ingredient action
    $(document).on('click', '.add-button, .dell-ingredient', function (e) {
       var postId = $(this).data('post_id');
       var countInputs = $('.ingredient-input').length;
-      var operation = '';
-
-      console.log("postId = ", postId);
 
 
       if ($(this).attr("class") === "dell-ingredient") {
-
+         var ingredientId = $(this).attr("id");
+         var operation = 'dell';
          $(this).parent($(this)).remove();
-         operation = 'dell';
       }
 
 
@@ -108,6 +105,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             post_id: postId,
             count: countInputs,
             operation: operation,
+            ingredientId: ingredientId,
          },
          success: function (response) {
             $('.ingredient-block').append(response);
