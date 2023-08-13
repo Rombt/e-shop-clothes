@@ -84,7 +84,19 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
    //"Recipes"   ingredient action
-   $(document).on('click', '.add-button, .dell-ingredient', function (e) {
+   $(document).on('click', '.add-button, .dell-ingredient', IngredientOperation);
+
+   // $('#my-input').keypress(function (event) {
+   //    if (event.which === 13) { // Код клавиши Enter
+   //       // Ваш код обработки нажатия Enter здесь
+   //       event.preventDefault(); // Отменяет стандартное действие Enter (обычно отправку формы)
+   //    }
+   // });
+
+
+
+   function IngredientOperation() {
+
       var postId = $(this).data('post_id');
       var countInputs = $('.ingredient-input').length;
 
@@ -115,11 +127,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             // console.log('Ошибка при обновлении значения поля:', error);
          }
       });
-   });
 
-
-
-
+   }
 
 
 
