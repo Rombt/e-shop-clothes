@@ -84,18 +84,20 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
    //"Recipes"   add ingredient
-   $(document).on('click', '.add-button', function (e) {
-
+   $(document).on('click', '.add-button, .dell-ingredient', function (e) {
       var postId = $(this).data('post-id');
       var countInputs = $('.ingredient-input').length;
+
+
+      console.log("$(this) = ", $(this));
+
 
       $.ajax({
          url: ajaxurl,
          type: 'POST',
          data: {
-            action: 'add_ingredient',
-            // nonce: rstrAppData.rstrAjaxNonce,
-            action: 'add_ingredient',
+            action: 'ingredient_action',
+            nonce: $('#_ingredients_metabox').val(),
             post_id: postId,
             count: countInputs,
          },
@@ -103,19 +105,6 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
             $('.ingredient-block').append(response);
 
-            // mainBlock.animate(animationParamsHide, {
-            //    duration: 500,
-            //    complete: function () {
-            //       mainBlock.empty();
-            //    },
-            // });
-
-            // mainBlock.animate(animationParamsShow, {
-            //    duration: 500,
-            //    start: function () {
-            //       mainBlock.html(response);
-            //    },
-            // });
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);

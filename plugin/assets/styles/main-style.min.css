@@ -41,21 +41,21 @@
   transform: translate(0, -1px);
   color: #909397;
 }
-.ingredient-block .wrap_ingredient {
+.ingredient-block .wrap-ingredient {
   width: max-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
 }
-.ingredient-block .wrap_ingredient .ingredient-input {
+.ingredient-block .wrap-ingredient .ingredient-input {
   height: 20px;
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
   width: 500px;
 }
-.ingredient-block .wrap_ingredient .del-ingredient {
+.ingredient-block .wrap-ingredient .dell-ingredient {
   height: 15px;
   width: 15px;
   background-color: #fa080873;

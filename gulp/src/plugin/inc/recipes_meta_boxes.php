@@ -30,40 +30,23 @@ function rstr_recipe_mb_html( $post ) {
 		</div>
 
 		<?php
-
-		if ( ! in_array( 'ingredient_0', $arr_filds ) ) { ?>
-			<div class="wrap_ingredient">
-				<input type="text" class="ingredient-input" id="ingredient_0" name="ingredient_0"
-					value="<?php echo esc_attr( $ingredients_0 ); ?>">
-				<div class="del-ingredient"></div>
-			</div>
-		<?php } else {
+		if ( ! in_array( 'ingredient_0', $arr_filds ) ) {
+			$value = "ingredient_0";
+			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+		} else {
 			foreach ( $arr_filds as $value ) {
-
 				if ( str_contains( $value, 'ingredient_' ) ) {
-					?>
-					<div class="wrap_ingredient">
-						<input type="text" class="ingredient-input" id="$value" name="$value"
-							value="<?php echo esc_attr( get_post_meta( $post->ID, $value, true ) ); ?>">
-						<div class="del-ingredient"></div>
-					</div>
-					<?php
+					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 				}
-
 			}
 		}
 		?>
-
-
-
-
 
 		<div class="add-button">Add Ingredient</div>
 	</div>
 
 	<?php
 }
-
 
 
 
@@ -88,7 +71,6 @@ function rstr_save_metabox( $post_id, $post ) {
 				return $post_id;
 			}
 
-
 			if ( isset( $_POST[ $field_name ] ) ) {
 				update_post_meta( $post_id, $field_name, sanitize_text_field( $_POST[ $field_name ] ) );
 			} else {
@@ -98,33 +80,6 @@ function rstr_save_metabox( $post_id, $post ) {
 
 
 	}
-
-
-
-
-	// if ( isset( $_POST['ingredient_0'] ) ) {
-	// 	update_post_meta( $post_id, 'ingredient_0', sanitize_text_field( $_POST['ingredient_0'] ) );
-	// } else {
-	// 	delete_post_meta( $post_id, 'ingredient_0' );
-	// }
-
-	// if ( isset( $_POST['ingredient_1'] ) ) {
-	// 	update_post_meta( $post_id, 'ingredient_1', sanitize_text_field( $_POST['ingredient_1'] ) );
-	// } else {
-	// 	delete_post_meta( $post_id, 'ingredient_1' );
-	// }
-
-	// if ( isset( $_POST['ingredient_2'] ) ) {
-	// 	update_post_meta( $post_id, 'ingredient_2', sanitize_text_field( $_POST['ingredient_2'] ) );
-	// } else {
-	// 	delete_post_meta( $post_id, 'ingredient_2' );
-	// }
-
-	// if ( isset( $_POST['ingredient_3'] ) ) {
-	// 	update_post_meta( $post_id, 'ingredient_3', sanitize_text_field( $_POST['ingredient_3'] ) );
-	// } else {
-	// 	delete_post_meta( $post_id, 'ingredient_3' );
-	// }
 
 	return $post_id;
 }

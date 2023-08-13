@@ -19,22 +19,17 @@ add_action( 'wp_ajax_update_custom_field', 'update_food_menu_items_show_in_front
 
 
 
-function add_ingredient_field() {
-	// nonce: '',     !!!!!!!!!!!
-	// wp_nonce_field( 'rstr_*******', '_food_menu_items_checked' );
-	// авторизованый пользователь должен иметь соответсвующие права (права админа например)
-
+function ingredient_action() {
 
 	$post_id = $_POST['post_id'];
+	$count_inputs = $_POST['count'];
+	$value = "ingredient_" . esc_attr( $count_inputs );
 
-
-
-	echo '<input type="text" class="ingredient-input" id="ingredient_3" name="ingredient_" value="">';
-
-	echo "<pre>";
-	print_r( get_post_custom_keys( $post_id ) );
-	echo "</pre>";
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr_ingredients_fild' ) ) {
+		wp_die();
+	}
+	include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 
 	wp_die();
 }
-add_action( 'wp_ajax_add_ingredient', 'add_ingredient_field' );
+add_action( 'wp_ajax_ingredient_action', 'ingredient_action' );
