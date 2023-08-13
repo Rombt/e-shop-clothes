@@ -15,11 +15,14 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 
 function rstr_recipe_mb_html( $post ) {
 
+	$post_id = $post->ID;
+
+
 	$ingredients_0 = get_post_meta( $post->ID, 'ingredient_0', true );
 
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
 
-	$arr_filds = get_post_custom_keys( $post->ID );
+	$arr_filds = get_post_custom_keys( $post_id );
 	?>
 
 	<!-- Добавить кнобку удалеия ингридиента -->
@@ -42,7 +45,7 @@ function rstr_recipe_mb_html( $post ) {
 		}
 		?>
 
-		<div class="add-button">Add Ingredient</div>
+		<div data-post_id="<?php echo esc_attr( $post_id ) ?>" class="add-button">Add Ingredient</div>
 	</div>
 
 	<?php

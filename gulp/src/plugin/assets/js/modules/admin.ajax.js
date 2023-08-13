@@ -85,11 +85,18 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    //"Recipes"   add ingredient
    $(document).on('click', '.add-button, .dell-ingredient', function (e) {
-      var postId = $(this).data('post-id');
+      var postId = $(this).data('post_id');
       var countInputs = $('.ingredient-input').length;
+      var operation = '';
+
+      console.log("postId = ", postId);
 
 
-      console.log("$(this) = ", $(this));
+      if ($(this).attr("class") === "dell-ingredient") {
+
+         $(this).parent($(this)).remove();
+         operation = 'dell';
+      }
 
 
       $.ajax({
@@ -100,11 +107,11 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             nonce: $('#_ingredients_metabox').val(),
             post_id: postId,
             count: countInputs,
+            operation: operation,
          },
          success: function (response) {
-
             $('.ingredient-block').append(response);
-
+            $("#ingredient_" + countInputs).focus();
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);

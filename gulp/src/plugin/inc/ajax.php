@@ -22,13 +22,27 @@ add_action( 'wp_ajax_update_custom_field', 'update_food_menu_items_show_in_front
 function ingredient_action() {
 
 	$post_id = $_POST['post_id'];
+	$operation = $_POST['operation'];
 	$count_inputs = $_POST['count'];
-	$value = "ingredient_" . esc_attr( $count_inputs );
+	$value = "ingredient_" . esc_attr( $count_inputs ); // проблем сдесь, нужно получать id удаляемого блока
+
 
 	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr_ingredients_fild' ) ) {
 		wp_die();
 	}
-	include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+
+
+	if ( $operation == "dell" ) {
+		echo "**" . $operation . "<br>";
+		echo "**" . $post_id . "<br>";
+		echo "**" . $value . "<br>";
+		delete_post_meta( $post_id, $value );
+	} else {
+
+		include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+	}
+
+
 
 	wp_die();
 }
