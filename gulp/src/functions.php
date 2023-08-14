@@ -28,6 +28,17 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *			при выставлении галочек food-menu и прочего    https://youtu.be/OoyTfdHM_Aw	
  *		Кнопку которая будет выполнять функцию аналогичную ctrl+z на админ страницах кастомных категорий
  *			если в пункте меню есть подпункты выводить стрелрочку вниз	
+ *		Кнопка добавить Ингридиент в админ панели
+ *			добавить всплывающюю подсказку 
+ *				wp_enqueue_script( 'tooltipster-script', 'https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js', array( 'jquery' ), null, true );
+ *				   	$('.add-button').tooltipster({
+ *			      	animation: 'fade',
+ *			      	delay: 200,
+ *			      	theme: 'tooltipster-punk',
+ *			      	trigger: 'hover',
+ *			      	content: 'or press enter',
+ *			   });
+ *
  *
  *
  *		ФРОНТ

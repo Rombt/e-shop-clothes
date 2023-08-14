@@ -17,6 +17,7 @@ if ( ! function_exists( 'add_action' ) ) {
 
 function restaurant_site_scripts_admin() {
 	wp_enqueue_style( 'restaurant_site-admin_main', plugins_url() . '/restaurant-site-core/assets/styles/main-style.min.css', array(), '1.0', 'all' );
+
 	wp_enqueue_script( 'restaurant_site-admin_core_jq', plugins_url() . '/restaurant-site-core/assets/js/admin.main.min.js', array( 'jquery' ), '1.0', true );
 
 }

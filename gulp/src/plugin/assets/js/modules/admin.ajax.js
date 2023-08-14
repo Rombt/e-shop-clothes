@@ -65,7 +65,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
-            field_value: checked ? "show" : ""     // todo проеобразовать в PHP формат для хранения в базе данных
+            field_value: checked ? "show" : ""
          },
          success: function (response) {
             // console.log('Значение поля успешно обновлено!');
@@ -77,23 +77,15 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    });
 
 
-
-
-
-
-
-
    //"Recipes"   ingredient action
    $(document).on('click', '.add-button, .dell-ingredient', IngredientOperation);
 
-   // $('#my-input').keypress(function (event) {
-   //    if (event.which === 13) { // Код клавиши Enter
-   //       // Ваш код обработки нажатия Enter здесь
-   //       event.preventDefault(); // Отменяет стандартное действие Enter (обычно отправку формы)
-   //    }
-   // });
-
-
+   $(document).on('keypress', '.ingredient-input', function (e) {
+      if (e.which === 13) {
+         e.preventDefault();
+         IngredientOperation();
+      }
+   });
 
    function IngredientOperation() {
 

@@ -10,7 +10,7 @@ function update_food_menu_items_show_in_front_page() {
 
 	$post_id = $_POST['post_id'];
 	$field_name = $_POST['field_name'];
-	$field_value = $_POST['field_value']; // проеобразовывать в PHP формат для хранения в базе данных нужно здесь а так же санитизация и прочее serialize()
+	$field_value = $_POST['field_value']; // todo проеобразовывать в PHP формат для хранения в базе данных нужно здесь а так же санитизация и прочее serialize()
 
 	update_field( $field_name, $field_value, $post_id );
 	wp_die();
