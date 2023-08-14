@@ -15,6 +15,4 @@
 	</p>
 
 	<?php get_template_part( 'template-parts/components/button', 'orange', [ 'title' => 'recipe details', 'href' => '#' ] ) ?>
-	?>
-</div>
 </div>

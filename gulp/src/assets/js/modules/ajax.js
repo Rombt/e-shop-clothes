@@ -1,10 +1,15 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
 
-   const mainBlock = $('.menu-page-conteiner__row');
-   const TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');;
+   // const mainBlock = $('.menu-page-conteiner__row');
+   // const TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');
 
-   let view_mod_0 = 'grid';
-   let view_mod_1 = 'list';
+   let mainBlock;
+   let TempBlock;
+
+
+   let view_mod_0;
+   let view_mod_1;
+   let view_mod;
 
    let fullUrl = window.location.pathname.split("/");
    let currentPage = fullUrl[fullUrl.length - 2];
@@ -19,10 +24,28 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       opacity: 1,
    };
 
-   $('.select-view__colomns').on('click', function (e) {
+   $('.select-view').on('click', function (e) {
       e.preventDefault();
+      let typePage = $('.select-view').children().first().attr('class');
 
-      let view_mod = $('.select-view__colomns>h3').text().toLowerCase();
+
+      if (typePage == 'select-view__recipes-page') {
+         view_mod_0 = '2_columns';
+         view_mod_1 = '3_columns';
+         view_mod = $('.select-view__recipes-page>h3').text().toLowerCase().replace(/ /g, '_');
+
+         mainBlock = $('.recipies-page-conteiner__row');
+         TempBlock = $('<div style="visibility: hidden;" class="recipies-page-conteiner__row"></div>');
+
+      } else if (typePage == 'select-view__menu-page') {
+         view_mod_0 = 'grid';
+         view_mod_1 = 'list';
+         view_mod = $('.select-view__menu-page>h3').text().toLowerCase();
+
+         mainBlock = $('.menu-page-conteiner__row');
+         TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>').replace(/ /g, '_');
+      }
+
       $.ajax({
          url: rstrAppData.rstrAjaxURL,
          type: 'POST',
@@ -31,9 +54,11 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             nonce: rstrAppData.rstrAjaxNonce,
             view_mod: view_mod,
             paged: currentPage,
+            type_page: typePage,
          },
          success: function (response) {
-            $(e.target).html((view_mod == view_mod_1) ? view_mod_0 : view_mod_1);
+            $(e.target).html((view_mod == view_mod_1) ? view_mod_0.replace(/_/g, ' ') : view_mod_1.replace(/_/, ' '));
+            // $(e.target).html((view_mod == view_mod_1) ? view_mod_0 : view_mod_1);
 
             TempBlock.html(response);
             $('.menu-page-conteiner__row').append(TempBlock);

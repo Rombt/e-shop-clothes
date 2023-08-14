@@ -10,17 +10,31 @@ function rstr_menu_page_view() {
 		die;
 	}
 
-	$_SESSION['View_Mode_Menu_Page'] = $_POST['view_mod'];
-
 	$current = $_POST['paged'];
-	$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 12;
-	$query_Menu_items = rst_menu_page_WPquery( 'food_menu_items', $posts_per_page, $current );
 
-	if ( $query_Menu_items->have_posts() ) {
-		while ( $query_Menu_items->have_posts() ) {
-			$query_Menu_items->the_post();
+
+	if ( $_POST['type_page'] == 'select-view__menu-page' ) {
+		$view_mode = $_SESSION['View_Mode_Menu_Page'] = $_POST['view_mod'];
+		$posts_per_page = ( $_SESSION['View_Mode_Menu_Page'] == 'grid' ) ? 9 : 12;
+		$query = rst_custom_page_WPquery( 'food_menu_items', $posts_per_page, $current );
+
+	} else if ( $_POST['type_page'] == 'select-view__recipes-page' ) {
+		$view_mode = $_SESSION['View_Mode_Recipe_Page'] = $_POST['view_mod'];
+		$posts_per_page = 12;
+		$query = rst_custom_page_WPquery( 'recipes', $posts_per_page, $current );
+
+	}
+
+
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) {
+			$query->the_post();
 			if ( class_exists( 'ACF' ) ) {
-				get_template_part( 'template-parts/parts/prod_card', $_SESSION['View_Mode_Menu_Page'] );
+				if ( $_POST['type_page'] == 'select-view__menu-page' ) {
+					get_template_part( 'template-parts/parts/prod_card', $view_mode );
+				} elseif ( $_POST['type_page'] == 'select-view__recipes-page' ) {
+					get_template_part( 'template-parts/parts/recipe_card', $view_mode );
+				}
 			}
 		}
 	} else {

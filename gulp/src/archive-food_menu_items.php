@@ -17,7 +17,7 @@
 		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
 
 		$posts_per_page = ( $view_mode == 'grid' ) ? 9 : 12;
-		$query_Menu_items = rst_menu_page_WPquery( 'food_menu_items', $posts_per_page, $current );
+		$query_Menu_items = rst_custom_page_WPquery( 'food_menu_items', $posts_per_page, $current );
 
 		if ( $query_Menu_items->have_posts() ) {
 

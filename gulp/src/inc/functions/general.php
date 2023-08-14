@@ -6,14 +6,12 @@
 
 
 
-function rst_menu_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_current ) {
+function rst_custom_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_current ) {
 
 	$params = [ 
-		// 'post_type' => 'food_menu_items',
 		'post_type' => $rst_post_type,
 		'post_status' => 'publish',
 		'posts_per_page' => $rst_posts_per_page,
-		// 'posts_per_page' => 4,
 		'paged' => $rst_current,
 	];
 

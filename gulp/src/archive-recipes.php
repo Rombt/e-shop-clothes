@@ -18,50 +18,32 @@
 
 	</div>
 </div>
-<main class="conteiner recipies-conteiner">
-	<div class="recipies-conteiner__row">
-
-
-
-		<?php $view_mode = isset( $_SESSION['View_Mode_Menu_Page'] ) ? $_SESSION['View_Mode_Menu_Page'] : 'grid'; ?>
+<main class="conteiner recipies-page-conteiner">
+	<div class="recipies-page-conteiner__row">
 
 		<?php
+		$view_mode = isset( $_SESSION['View_Mode_Recipe_Page'] ) ? $_SESSION['View_Mode_Recipe_Page'] : '2_columns';
 		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+		$posts_per_page = 12;
+		$query_Recipes = rst_custom_page_WPquery( 'recipes', $posts_per_page, $current );
 
-		$posts_per_page = ( $view_mode == 'grid' ) ? 9 : 12;
-		$query_Menu_items = rst_menu_page_WPquery( 'recipes', $posts_per_page, $current );
-
-		if ( $query_Menu_items->have_posts() ) {
-
-			while ( $query_Menu_items->have_posts() ) {
-				$query_Menu_items->the_post();
+		if ( $query_Recipes->have_posts() ) {
+			while ( $query_Recipes->have_posts() ) {
+				$query_Recipes->the_post();
 				if ( class_exists( 'ACF' ) ) {
 					get_template_part( 'template-parts/parts/recipe_card', $view_mode );
 				}
 			}
-
 			?>
 		</div>
-
-		<?php get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Menu_items, 'current' => $current ] );
-
+		<?php
+		get_template_part( 'template-parts/components/pagination', null, [ 'query' => $query_Recipes, 'current' => $current ] );
 		} else {
 			// something
 		}
+		wp_reset_postdata();
 		?>
 
-	<?php wp_reset_postdata(); ?>
-
-
-
-
-	<!-- @@include('html/parts/recipe-card.html',{
-		'title':'Prawns tikka',
-		'img_src':'@img/recipe-card-img.jpg',
-		'description':"Lorem Ipsum has been the industry's standard dummy text ever sistandard dummy text ever si"
-		}) -->
-
-	</div>
 </main>
 
 

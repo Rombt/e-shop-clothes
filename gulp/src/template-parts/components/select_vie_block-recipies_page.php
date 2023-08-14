@@ -16,10 +16,18 @@
 				} else {
 					$view_mode = 'list';
 				}
-				echo '<div class="select-view__colomns"> <h3>' . $view_mode . '</h3> </div>';
+				echo '<div class="select-view__menu-page"> <h3>' . $view_mode . '</h3> </div>';
 
 			} elseif ( is_post_type_archive( 'recipes' ) ) {
-				echo '<div class="select-view__colomns"><h3>2 column</h3></div>';
+
+				if ( isset( $_SESSION['View_Mode_Recipes_Page'] ) ) {
+					$view_mode = ( $_SESSION['View_Mode_Recipes_Page'] == '2 columns' ) ? '3 columns' : '2 columns';
+				} else {
+					$view_mode = '2 columns';
+				}
+
+
+				echo '<div class="select-view__recipes-page"><h3>' . $view_mode . '</h3></div>';
 			}
 			?>
 		</div>
