@@ -1,10 +1,10 @@
 <?php
-/* Template Name: Shop details */
+/* Template Name: shop-details */
 ?>
 
 
-<?php get_header();?>
-<?php get_template_part('template-parts/parts/head_pages');?>
+<?php get_header(); ?>
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 
 

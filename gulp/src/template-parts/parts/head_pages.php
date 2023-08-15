@@ -27,6 +27,8 @@
 				echo sprintf( esc_html__( 'Yearly Archive: %s', 'restaurant-site' ), get_the_date( _x( 'Y', 'yearly archives date format', 'restaurant-site' ) ) );
 			elseif ( is_post_type_archive( 'food_menu_items' ) ) :
 				echo esc_html__( 'menu', 'restaurant-site' );
+			elseif ( is_post_type_archive( 'recipes' ) ) :
+				echo esc_html__( 'recipes', 'restaurant-site' );
 			else :
 				echo esc_html__( 'Archive', 'restaurant-site' );
 			endif;
