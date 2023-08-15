@@ -29,6 +29,28 @@ Redux::set_section(
 				'title' => esc_html__( 'Recipes Subtitle', 'restaurant-site' ),
 				'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in, veniam tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia' ),
 			),
+			array(
+				'id' => 'rating-star-active_img',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'The icon of rating star  active', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/star-rating-icon.png'
+				),
+			),
+			array(
+				'id' => 'rating-star-passive_img',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'The icon of rating star passive', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/star-white-rating-icon.png'
+				),
+			),
 
 		),
 	)

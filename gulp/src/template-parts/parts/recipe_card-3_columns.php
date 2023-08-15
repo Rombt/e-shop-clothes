@@ -1,13 +1,18 @@
-<div class="recipe-card-grid-2">
+<?php global $restaurant_site_options; ?>
+<div class="recipe-card-3col">
 	<figure class="wrap-img"><img src="@@img_src" alt=""></figure>
-	<div class="recipe-card-grid-2__body">
-		<div class="recipe-card-g<?php echo the_title() ?>echo args['title']</h3>
-			<div class=" rating">
-			<img src="@img/rating-star.png" alt="">
-			<img src="@img/rating-star.png" alt="">
-			<img src="@img/rating-star.png" alt="">
-			<img src="@img/rating-star.png" alt="">
-			<img src="@img/rating-star.png" alt="">
+	<div class="recipe-card-3col__body">
+		<div class="recipe-card-3col__title">
+			<h3>
+				<?php _e( the_title(), 'restaurant-site' ); ?>
+			</h3>
+		</div>
+		<div class="rating">
+			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
+			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
 		</div>
 	</div>
 	<p>
