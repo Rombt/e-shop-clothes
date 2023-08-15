@@ -33,11 +33,10 @@
 		</div>
 		<div class="recipes-title-nav__brows-recipes">
 			<h3>Brows Recipes</h3>
-			<div class="menu-recipes-burger burger-open">
+			<div class="burger-open menu-recipes__burger ">
 				<span></span>
 			</div>
-			<!-- // НУЖНЫЙ код времмено закоментировал что бы не сыпались ошибки  //todo доработать!-->
-			<!-- <nav class="menu-recipes">				
+			<nav class="menu-recipes">
 				<ul class="menu-recipes__list">
 					<li>
 						<a href="#">
@@ -70,7 +69,7 @@
 						</a>
 					</li>
 				</ul>
-			</nav> -->
+			</nav>
 		</div>
 	</div>
 </div>

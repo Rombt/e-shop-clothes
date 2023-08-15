@@ -19,7 +19,6 @@
        .sm-block({
           color: #fff;
        });
-
  }
 
  .sm-block({
@@ -65,66 +64,56 @@
     width: 280px;
     justify-content: center;
     column-gap: 15px;
-
-
  });
-
-
 
  }
 
- .wrap-nenu {
-    margin: 0 auto;
 
-    .size(8);
+ .food-menu {
 
-    .to(1000px, {
-       .size(12);
-    });
 
- .sm-block({
-    margin: 0;
-    .size(1);
-
- });
- }
-
- .sm-block({
-    .food-menu__burger {
+    &__burger {
+       display: none;
        height: 20px;
        width: 30px;
        z-index: 2;
        cursor: pointer;
        position: relative;
-    }
 
-
- });
-
- .food-menu {
-
-    &__list {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: space-between;
-       align-items: center;
-       min-height: 50px;
+       &::after,
+       &::before,
+       span {
+          //  background-color: #fea100;
+          background-color: #000;
+       }
 
        .sm-block({
-          position: absolute;
-          z-index: 10;
-          width: 100%;
-          min-height: 100px;
-          left: 0px;
-          z-index: -1;
-          flex-direction: column;
-          background-color: #fff;
+          display:block;
        });
+ }
+
+
+ &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+
+    .sm-block({
+       position: absolute;
+       z-index: 10;
+       width: 100%;
+       min-height: 100px;
+       left: 0px;
+       z-index: -1;
+       flex-direction: column;
+       background-color: #fff;
+    });
 
 
  }
 
- /* .menu__item */
 
  &__item {
 
@@ -160,9 +149,6 @@
  }
  }
 
-
- /* .menu__link */
-
  &__link {
     font-size: 15px;
     font-family: "PlayfairDisplay";
@@ -177,15 +163,11 @@
     })
  }
 
- /* .menu__sub-menu-list */
-
  &__sub-menu-list {
     display: none;
  }
 
- }
-
- .active {
+ &__active {
     .sm-block({
        .food-menu__item {
           display: flex;
@@ -226,6 +208,12 @@
 
     });
  }
+
+
+ }
+
+
+
 
  .wrap-nenu__border {
     border-bottom: 1px dotted #a3b0ba;

@@ -1,5 +1,5 @@
 import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
-import { Burger } from "./modules/burger.js";
+import { Burger } from "./modules/Burger.js";
 import { Swipe } from "./modules/Swipe.js";
 import * as sliders from "./modules/sliders.js";
 import { jQuery_scripts } from "./modules/jQuery_scripts.js";
@@ -12,7 +12,7 @@ window.onload = function () {
 
     let params_headerMenuBurger = {
         conteiner: 'heder-menu',
-        menuList: 'menu__list',
+        // menuList: 'menu__list',
         classActive: 'menu__sm',
         burgerOpen: 'heder-menu__burger',
         burgerClose: 'heder-menu__burger-close',
@@ -22,9 +22,9 @@ window.onload = function () {
 
     let params_foodMenuBurger = {
         conteiner: 'food-menu',
-        menuList: 'food-menu__list',
-        classActive: 'active',
-        burgerOpen: 'burger-open',
+        // menuList: 'food-menu__list',
+        classActive: 'food-menu__active',
+        burgerOpen: 'food-menu__burger',
         burgerClose: 'burger-close',
     }
     const foodMenuBurger = new Burger(params_foodMenuBurger);
@@ -32,16 +32,15 @@ window.onload = function () {
 
     let params_recipesTitleNavBurger = {
         conteiner: 'menu-recipes',
-        menuList: 'menu-recipes__list',
-        classActive: 'menu-recipes-active',
-        burgerOpen: 'menu-recipes-burger',
+        // menuList: 'menu-recipes__list',
+        classActive: 'menu-recipes__active',
+        burgerOpen: 'menu-recipes__burger',
         burgerClose: 'burger-close',
     }
     const recipesTitleNavBurger = new Burger(params_recipesTitleNavBurger);
     recipesTitleNavBurger.init();
 
 
-    // var swiper = new Swipe('.toggle-on');
     var swiper = new Swipe('.shop-sidebar');
     let touchToggle = document.querySelector('.touch-toggle')
     let sideBar = document.querySelector('.shop-sidebar')
