@@ -1615,6 +1615,11 @@ a {
   width: max-content;
   position: relative;
 }
+@media screen and (max-width: 940px) {
+  .select-vie-block-conteiner {
+    z-index: 50;
+  }
+}
 .recipes-title-nav {
   display: flex;
   align-items: center;
@@ -1650,26 +1655,45 @@ a {
   text-align: center;
   transition: 0.3s;
 }
-.recipes-title-nav__brows-recipes h3:hover {
-  color: #fea100;
+.recipes-title-nav__burger {
+  height: 20px;
+  width: 20px;
+  position: relative;
+}
+.recipes-title-nav__burger:hover {
   cursor: pointer;
-  transform: scale(1.03);
+}
+.recipes-title-nav__burger:hover::after,
+.recipes-title-nav__burger:hover::before,
+.recipes-title-nav__burger:hover span {
+  background-color: #5c6369;
+}
+.recipes-title-nav__burger::after,
+.recipes-title-nav__burger::before,
+.recipes-title-nav__burger span {
+  background-color: #fea100;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  right: 0px;
+}
+.recipes-title-nav__burger::after,
+.recipes-title-nav__burger::before {
+  content: '';
+  width: 75%;
+}
+.recipes-title-nav__burger::before {
+  top: 0px;
+}
+.recipes-title-nav__burger span {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.recipes-title-nav__burger::after {
+  bottom: 0px;
 }
 .menu-recipes {
   display: none;
-}
-.menu-recipes__burger {
-  height: 20px;
-  width: 20px;
-}
-.menu-recipes__burger::after,
-.menu-recipes__burger::before,
-.menu-recipes__burger span {
-  background-color: #fea100;
-}
-.menu-recipes__active {
-  position: relative;
-  display: block;
   position: absolute;
   background-color: #fe4c8d;
   top: 40px;
@@ -1678,7 +1702,7 @@ a {
   padding: 10px;
   z-index: 10;
 }
-.menu-recipes__active::before {
+.menu-recipes::before {
   content: '';
   position: absolute;
   right: 0;
@@ -1690,7 +1714,7 @@ a {
   border-top: 7px solid transparent;
   border-bottom: 7px solid #fe4c8d;
 }
-.menu-recipes__active li {
+.menu-recipes li {
   font-size: 13px;
   font-family: "Sintony";
   color: #ffffff;
@@ -1700,19 +1724,19 @@ a {
   height: 45px;
   border: 1px solid rgba(248, 247, 247, 0.5);
 }
-.menu-recipes__active li a {
+.menu-recipes li a {
   display: flex;
   align-items: center;
   justify-content: start;
   color: inherit;
 }
-.menu-recipes__active li img {
+.menu-recipes li img {
   height: 25px;
   width: 25px;
   margin-right: 20px;
   margin-left: 20px;
 }
-.menu-recipes__active li:not(:last-child) {
+.menu-recipes li:not(:last-child) {
   border-bottom: none;
 }
 .select-view {

@@ -4,6 +4,9 @@
    width: max-content;
    position: relative;
 
+   .to(940px, {
+      z-index: 50;
+   })
 }
 
 
@@ -40,56 +43,67 @@
       text-align: center;
       transition: 0.3s;
 
-      &:hover {
-         color: #fea100;
-         cursor: pointer;
-         transform: scale(1.03);
+   }
 
+}
+
+&__burger {
+   height: 20px;
+   width: 20px;
+   position: relative;
+
+   &:hover {
+      cursor: pointer;
+
+      &::after,
+      &::before,
+      & span {
+         background-color: #5c6369;
+         // background-color: #fea100;
       }
    }
 
 
+
+   &::after,
+   &::before,
+   span {
+      background-color: #fea100;
+      // background-color: #5c6369;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      right: 0px;
+
+   }
+
+   &::after,
+   &::before {
+      content: '';
+      width: 75%;
+   }
+
+   &::before {
+      top: 0px;
+   }
+
+   span {
+      top: 50%;
+      transform: translate(0, -50%);
+   }
+
+   &::after {
+      bottom: 0px;
+   }
+
+
 }
+
 
 }
 
 .menu-recipes {
    display: none;
-
-   &__burger {
-      height: 20px;
-      width: 20px;
-
-      &::after,
-      &::before,
-      span {
-         background-color: #fea100;
-      }
-
-      // &::after {
-      //    bottom: 0;
-      //    width: 15px;
-      // }
-
-      // &::before {
-      //    top: 0;
-      //    width: 15px;
-      // }
-
-      // span {
-      //    width: 100%;
-      //    top: 50%;
-      // }
-   }
-
-
-
-
-}
-
-.menu-recipes__active {
-   position: relative;
-   display: block;
    position: absolute;
    background-color: #fe4c8d;
    top: 40px;
@@ -110,7 +124,6 @@
       border-top: 7px solid transparent;
       border-bottom: 7px solid #fe4c8d;
    }
-
 
    li {
       font-size: 13px;

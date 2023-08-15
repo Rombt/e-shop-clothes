@@ -7,6 +7,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    paginationAdaptive();
 
+   modalWindow('recipes-title-nav__burger', 'menu-recipes', '');
+
 
 
    //---------------------- funktions ---------------------

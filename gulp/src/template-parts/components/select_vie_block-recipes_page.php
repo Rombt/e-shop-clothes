@@ -33,7 +33,7 @@
 		</div>
 		<div class="recipes-title-nav__brows-recipes">
 			<h3>Brows Recipes</h3>
-			<div class="burger-open menu-recipes__burger ">
+			<div class="recipes-title-nav__burger">
 				<span></span>
 			</div>
 			<nav class="menu-recipes">

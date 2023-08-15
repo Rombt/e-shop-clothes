@@ -30,15 +30,15 @@ window.onload = function () {
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
 
-    let params_recipesTitleNavBurger = {
-        conteiner: 'menu-recipes',
-        // menuList: 'menu-recipes__list',
-        classActive: 'menu-recipes__active',
-        burgerOpen: 'menu-recipes__burger',
-        burgerClose: 'burger-close',
-    }
-    const recipesTitleNavBurger = new Burger(params_recipesTitleNavBurger);
-    recipesTitleNavBurger.init();
+    // let params_recipesTitleNavBurger = {
+    //     conteiner: 'menu-recipes',
+    //     // menuList: 'menu-recipes__list',
+    //     classActive: 'menu-recipes__active',
+    //     burgerOpen: 'menu-recipes__burger',
+    //     burgerClose: 'burger-close',
+    // }
+    // const recipesTitleNavBurger = new Burger(params_recipesTitleNavBurger);
+    // recipesTitleNavBurger.init();
 
 
     var swiper = new Swipe('.shop-sidebar');
