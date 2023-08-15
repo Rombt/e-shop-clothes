@@ -34,8 +34,8 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          view_mod_1 = '3_columns';
          view_mod = $('.select-view__recipes-page>h3').text().toLowerCase().replace(/ /g, '_');
 
-         mainBlock = $('.recipies-page-conteiner__row');
-         TempBlock = $('<div style="visibility: hidden;" class="recipies-page-conteiner__row"></div>');
+         mainBlock = $('.recipes-page-conteiner__row');
+         TempBlock = $('<div style="visibility: hidden;" class="recipes-page-conteiner__row"></div>');
 
       } else if (typePage == 'select-view__menu-page') {
          view_mod_0 = 'grid';

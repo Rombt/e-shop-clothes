@@ -30,15 +30,15 @@ window.onload = function () {
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
 
-    let params_recipiesTitleNavBurger = {
-        conteiner: 'menu-recipies',
-        menuList: 'menu-recipies__list',
-        classActive: 'menu-recipies-active',
-        burgerOpen: 'menu-recipies-burger',
+    let params_recipesTitleNavBurger = {
+        conteiner: 'menu-recipes',
+        menuList: 'menu-recipes__list',
+        classActive: 'menu-recipes-active',
+        burgerOpen: 'menu-recipes-burger',
         burgerClose: 'burger-close',
     }
-    const recipiesTitleNavBurger = new Burger(params_recipiesTitleNavBurger);
-    recipiesTitleNavBurger.init();
+    const recipesTitleNavBurger = new Burger(params_recipesTitleNavBurger);
+    recipesTitleNavBurger.init();
 
 
     // var swiper = new Swipe('.toggle-on');

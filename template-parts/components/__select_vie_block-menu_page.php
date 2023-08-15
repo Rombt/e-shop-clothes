@@ -1,16 +1,16 @@
 <div class="select-vie-block-conteiner">
-	<div class="recipies-title-nav recipies-title__nav">
+	<div class="recipes-title-nav recipes-title__nav">
 		<div class="select-view">
 			<div class="select-view__colomns">2 column</div>
 			<div class="select-view__grid"><img src="img/title-nav__icon_two-grid.png" alt=""></div>
 		</div>
-		<div class="recipies-title-nav__brows-recipes">
+		<div class="recipes-title-nav__brows-recipes">
 			<h3>Brows Recipes</h3>
-			<div class="menu-recipies-burger burger-open">
+			<div class="menu-recipes-burger burger-open">
 				<span></span>
 			</div>
-			<nav class="menu-recipies">
-				<ul class="menu-recipies__list">
+			<nav class="menu-recipes">
+				<ul class="menu-recipes__list">
 					<li>
 						<a href="#">
 							<img src="img/title-nav__icon_breakfast.png" alt="">

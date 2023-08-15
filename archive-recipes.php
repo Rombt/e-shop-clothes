@@ -7,19 +7,19 @@
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 
-<div class="conteiner recipies-title">
-	<div class="recipies-title__row">
+<div class="conteiner recipes-title">
+	<div class="recipes-title__row">
 		<h1>
-			<?php echo class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['recipies_title'] ) : ""; ?>
+			<?php echo class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['recipes_title'] ) : ""; ?>
 		</h1>
-		<div class="recipies-title__subtitle">
-			<?php echo class_exists( 'ReduxFramework' ) ? wp_kses( $restaurant_site_options['recipies_subtitle'], 'post' ) : ""; ?>
+		<div class="recipes-title__subtitle">
+			<?php echo class_exists( 'ReduxFramework' ) ? wp_kses( $restaurant_site_options['recipes_subtitle'], 'post' ) : ""; ?>
 		</div>
 
 	</div>
 </div>
-<main class="conteiner recipies-page-conteiner">
-	<div class="recipies-page-conteiner__row">
+<main class="conteiner recipes-page-conteiner">
+	<div class="recipes-page-conteiner__row">
 
 		<?php
 		$view_mode = isset( $_SESSION['View_Mode_Recipe_Page'] ) ? $_SESSION['View_Mode_Recipe_Page'] : '2_columns';

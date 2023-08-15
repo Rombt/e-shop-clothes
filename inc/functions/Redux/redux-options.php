@@ -6,11 +6,11 @@ if ( ! class_exists( 'Redux' ) ) {
 	return;
 }
 
-$opt_name             = 'restaurant_site_options';
-$dir                  = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
+$opt_name = 'restaurant_site_options';
+$dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
 $sample_patterns_path = Redux_Core::$dir . '../sample/patterns/';
-$sample_patterns_url  = Redux_Core::$url . '../sample/patterns/';
-$sample_patterns      = array();
+$sample_patterns_url = Redux_Core::$url . '../sample/patterns/';
+$sample_patterns = array();
 
 if ( is_dir( $sample_patterns_path ) ) {
 	$sample_patterns_dir = opendir( $sample_patterns_path );
@@ -18,8 +18,8 @@ if ( is_dir( $sample_patterns_path ) ) {
 	if ( $sample_patterns_dir ) {
 		while ( false !== ( $sample_patterns_file = readdir( $sample_patterns_dir ) ) ) {
 			if ( stristr( $sample_patterns_file, '.png' ) !== false || stristr( $sample_patterns_file, '.jpg' ) !== false ) {
-				$name              = explode( '.', $sample_patterns_file );
-				$name              = str_replace( '.' . end( $name ), '', $sample_patterns_file );
+				$name = explode( '.', $sample_patterns_file );
+				$name = str_replace( '.' . end( $name ), '', $sample_patterns_file );
 				$sample_patterns[] = array(
 					'alt' => $name,
 					'img' => $sample_patterns_url . $sample_patterns_file,
@@ -30,12 +30,12 @@ if ( is_dir( $sample_patterns_path ) ) {
 }
 
 $kses_exceptions = array(
-	'a'      => array(
+	'a' => array(
 		'href' => array(),
 	),
 	'strong' => array(),
-	'br'     => array(),
-	'code'   => array(),
+	'br' => array(),
+	'code' => array(),
 );
 
 /*
@@ -45,112 +45,112 @@ $kses_exceptions = array(
 $theme = wp_get_theme();
 
 $args = array(
-	'opt_name'                  => $opt_name,
-	'display_name'              => $theme->get( 'Name' ),
-	'display_version'           => $theme->get( 'Version' ),
+	'opt_name' => $opt_name,
+	'display_name' => $theme->get( 'Name' ),
+	'display_version' => $theme->get( 'Version' ),
 
 	// Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only).
-	'menu_type'                 => 'submenu',
+	'menu_type' => 'submenu',
 	// Show the sections below the admin menu item or not.
-	'allow_sub_menu'            => false,
+	'allow_sub_menu' => false,
 	// The text to appear in the admin menu.
-	'menu_title'                => esc_html__( 'Опции темы', 'restaurant-site' ),
+	'menu_title' => esc_html__( 'Опции темы', 'restaurant-site' ),
 	// The text to appear on the page title.
-	'page_title'                => esc_html__( 'Опции темы', 'restaurant-site' ),
+	'page_title' => esc_html__( 'Опции темы', 'restaurant-site' ),
 	// Disable to create your own Google fonts loader.
 	'disable_google_fonts_link' => false,
 	// Show the panel pages on the admin bar.
-	'admin_bar'                 => true,
+	'admin_bar' => true,
 	// Icon for the admin bar menu.
-	'admin_bar_icon'            => 'dashicons-portfolio',
+	'admin_bar_icon' => 'dashicons-portfolio',
 	// Priority for the admin bar menu.
-	'admin_bar_priority'        => 50,
+	'admin_bar_priority' => 50,
 	// Sets a different name for your global variable other than the opt_name.
-	'global_variable'           => $opt_name,
+	'global_variable' => $opt_name,
 	// Show the time the page took to load, etc. (forced on while on localhost or when WP_DEBUG is enabled).
-	'dev_mode'                  => true,
+	'dev_mode' => true,
 	// Enable basic customizer support.
-	'customizer'                => true,
+	'customizer' => true,
 	// Allow the panel to open expanded.
-	'open_expanded'             => false,
+	'open_expanded' => false,
 	// Disable the save warning when a user changes a field.
-	'disable_save_warn'         => false,
+	'disable_save_warn' => false,
 	// Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
-	'page_priority'             => 90,
+	'page_priority' => 90,
 	// For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters.
-	'page_parent'               => 'themes.php',
+	'page_parent' => 'themes.php',
 	// Permissions needed to access the options panel.
-	'page_permissions'          => 'manage_options',
+	'page_permissions' => 'manage_options',
 	// Specify a custom URL to an icon.
 
 	// Force your panel to always open to a specific tab (by id).
-	'last_tab'                  => '',
+	'last_tab' => '',
 	// Icon displayed in the admin panel next to your menu_title.
-	'page_icon'                 => 'icon-themes',
+	'page_icon' => 'icon-themes',
 	// Page slug used to denote the panel, will be based off page title, then menu title, then opt_name if not provided.
-	'page_slug'                 => $opt_name,
+	'page_slug' => $opt_name,
 	// On load save the defaults to DB before user clicks save.
-	'save_defaults'             => true,
+	'save_defaults' => true,
 	// Display the default value next to each field when not set to the default value.
-	'default_show'              => false,
+	'default_show' => false,
 	// What to print by the field's title if the value shown is default.
-	'default_mark'              => '*',
+	'default_mark' => '*',
 	// Shows the Import/Export panel when not used as a field.
-	'show_import_export'        => true,
+	'show_import_export' => true,
 	// The time transients will expire when the 'database' arg is set.
-	'transient_time'            => 60 * MINUTE_IN_SECONDS,
+	'transient_time' => 60 * MINUTE_IN_SECONDS,
 	// Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output.
-	'output'                    => true,
+	'output' => true,
 	// Allows dynamic CSS to be generated for customizer and google fonts,
 	// but stops the dynamic CSS from going to the page head.
-	'output_tag'                => true,
+	'output_tag' => true,
 	// Disable the footer credit of Redux. Please leave if you can help it.
-	'footer_credit'             => '',
+	'footer_credit' => '',
 	// If you prefer not to use the CDN for ACE Editor.
 	// You may download the Redux Vendor Support plugin to run locally or embed it in your code.
-	'use_cdn'                   => true,
+	'use_cdn' => true,
 	// Set the theme of the option panel.  Use 'wp' to use a more modern style, default is classic.
-	'admin_theme'               => 'wp',
+	'admin_theme' => 'wp',
 	// Enable or disable flyout menus when hovering over a menu with submenus.
-	'flyout_submenus'           => true,
+	'flyout_submenus' => true,
 	// Mode to display fonts (auto|block|swap|fallback|optional)
 	// See: https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display.
-	'font_display'              => 'swap',
+	'font_display' => 'swap',
 	// HINTS.
-	'hints'                     => array(
-		'icon'          => 'el el-question-sign',
+	'hints' => array(
+		'icon' => 'el el-question-sign',
 		'icon_position' => 'right',
-		'icon_color'    => 'lightgray',
-		'icon_size'     => 'normal',
-		'tip_style'     => array(
-			'color'   => 'red',
-			'shadow'  => true,
+		'icon_color' => 'lightgray',
+		'icon_size' => 'normal',
+		'tip_style' => array(
+			'color' => 'red',
+			'shadow' => true,
 			'rounded' => false,
-			'style'   => '',
+			'style' => '',
 		),
-		'tip_position'  => array(
+		'tip_position' => array(
 			'my' => 'top left',
 			'at' => 'bottom right',
 		),
-		'tip_effect'    => array(
+		'tip_effect' => array(
 			'show' => array(
-				'effect'   => 'slide',
+				'effect' => 'slide',
 				'duration' => '500',
-				'event'    => 'mouseover',
+				'event' => 'mouseover',
 			),
 			'hide' => array(
-				'effect'   => 'slide',
+				'effect' => 'slide',
 				'duration' => '500',
-				'event'    => 'click mouseleave',
+				'event' => 'click mouseleave',
 			),
 		),
 	),
 
 	// FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
 	// possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!
-	'database'                  => '',
-	'network_admin'             => true,
-	'search'                    => true,
+	'database' => '',
+	'network_admin' => true,
+	'search' => true,
 );
 
 
@@ -194,16 +194,16 @@ Redux::set_args( $opt_name, $args );
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'            => esc_html__( 'Pages settings', 'restaurant-site' ),
-		'id'               => 'section_of_pages',
-		'desc'             => esc_html__( 'Settings header site', 'restaurant-site' ),
+		'title' => esc_html__( 'Pages settings', 'restaurant-site' ),
+		'id' => 'section_of_pages',
+		'desc' => esc_html__( 'Settings header site', 'restaurant-site' ),
 		'customizer_width' => '450',
 		// 'icon'             => 'el el-home',
 	)
 );
 require_once dirname( __FILE__ ) . '/sections/home_page.php';
 require_once dirname( __FILE__ ) . '/sections/menu_page.php';
-require_once dirname( __FILE__ ) . '/sections/recipies_page.php';
+require_once dirname( __FILE__ ) . '/sections/recipes_page.php';
 require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
 require_once dirname( __FILE__ ) . '/sections/contact_us_page.php';
 require_once dirname( __FILE__ ) . '/sections/search_page.php';
@@ -221,10 +221,10 @@ require_once dirname( __FILE__ ) . '/sections/opening_hours.php';
 Redux::set_section(
 	$opt_name,
 	array(
-		'title'            => esc_html__( 'Typography', 'restaurant-site' ),
-		'id'               => 'typography',
-		'desc'             => esc_html__( 'Typography settings', 'restaurant-site' ),
-		'icon'             => 'el el-font',
+		'title' => esc_html__( 'Typography', 'restaurant-site' ),
+		'id' => 'typography',
+		'desc' => esc_html__( 'Typography settings', 'restaurant-site' ),
+		'icon' => 'el el-font',
 		'customizer_width' => '450',
 	)
 );
@@ -260,7 +260,7 @@ require_once dirname( __FILE__ ) . '/sections/typography/copyright_typography.ph
 Redux::set_section(
 	$opt_name,
 	array(
-		'id'   => 'my-divide-sample',
+		'id' => 'my-divide-sample',
 		'type' => 'divide',
 	)
 );

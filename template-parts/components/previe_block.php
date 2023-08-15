@@ -4,5 +4,5 @@
 			<?php echo rstr_get_breadcrumbs(); ?>
 		</div>
 	</div>
-	<?php get_template_part( 'template-parts/components/select_vie_block', 'recipies_page' ); ?>
+	<?php get_template_part( 'template-parts/components/select_vie_block', 'recipes_page' ); ?>
 </div>
