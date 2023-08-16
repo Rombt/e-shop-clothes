@@ -1,13 +1,7 @@
 <div class="select-vie-block-conteiner">
 	<div class="recipes-title-nav recipes-title__nav">
 		<div class="select-view">
-
-
-
-			<?php // echo '<div class="select-view__colomns"></div> <h3> ' . $_SESSION['View_Mode_Menu_Page'] . '</h3> </div>'; ?>
-
 			<?php
-
 			if ( is_post_type_archive( 'food_menu_items' ) ) {
 				$view_mode = 'list';
 
@@ -36,8 +30,19 @@
 			<div class="recipes-title-nav__burger">
 				<span></span>
 			</div>
-			<nav class="menu-recipes">
-				<ul class="menu-recipes__list">
+
+			<?php wp_nav_menu( [ 
+				'theme_location' => 'brows_recipes',
+				'fallback_cb' => '__return_empty_string',
+				'container' => 'nav',
+				'container_class' => 'menu-recipes',
+				'menu_class' => 'menu-recipes__list',
+				'link_before' => '<img src="@img/title-nav__icon_starter.png" alt="">',
+
+			] ); ?>
+
+			<!-- <nav class="menu-recipes"> -->
+			<!-- <ul class="menu-recipes__list">
 					<li>
 						<a href="#">
 							<img src="@img/title-nav__icon_breakfast.png" alt="">
@@ -69,16 +74,7 @@
 						</a>
 					</li>
 				</ul>
-			</nav>
+			</nav> -->
 		</div>
 	</div>
 </div>
-
-
-
-<!-- if ( is_page( 'menu-page-grid' ) ) {
-
-
-		} elseif ( is_page( 'recipes-page' ) ) {
-
-	} -->

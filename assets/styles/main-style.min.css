@@ -1698,7 +1698,8 @@ a {
   background-color: #fe4c8d;
   top: 40px;
   right: 15px;
-  width: 180px;
+  min-width: 180px;
+  max-width: 380px;
   padding: 10px;
   z-index: 10;
 }
@@ -1720,9 +1721,12 @@ a {
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
-  line-height: 3.308;
-  height: 45px;
+  line-height: 1.5;
+  min-height: 45px;
   border: 1px solid rgba(248, 247, 247, 0.5);
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
 }
 .menu-recipes li a {
   display: flex;

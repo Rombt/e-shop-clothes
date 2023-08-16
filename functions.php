@@ -209,6 +209,7 @@ function simple_restaurant_site_setup() {
 			'header_nav' => esc_html__( 'Header Navigation', 'restaurant-site' ),
 			'footer_nav' => esc_html__( 'Footer Navigation', 'restaurant-site' ),
 			'food_menu' => esc_html__( 'Food Menu', 'restaurant-site' ),
+			'brows_recipes' => esc_html__( 'Brows Recipes', 'restaurant-site' ),
 		)
 	);
 
