@@ -19,5 +19,5 @@
 		<?php echo rstr_trim_excerpt( 20 ) ?>
 	</p>
 
-	<?php get_template_part( 'template-parts/components/button', 'orange', [ 'title' => 'recipe details', 'href' => get_permalink(),] ) ?>
+	<?php get_template_part( 'template-parts/components/button', 'orange', [ 'title' => 'recipe details', 'href' => esc_attr( get_permalink() ),] ) ?>
 </div>

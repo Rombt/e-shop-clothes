@@ -18,6 +18,6 @@
 		<p>
 			<?php _e( rstr_trim_excerpt( 19 ), 'restaurant-site' ); ?>
 		</p>
-		<?php get_template_part( 'template-parts/components/button', 'orange', [ 'title' => 'recipe details', 'href' => get_permalink(),] ) ?>
+		<?php get_template_part( 'template-parts/components/button', 'orange', [ 'title' => 'recipe details', 'href' => esc_attr( get_permalink() ),] ) ?>
 	</div>
 </div>
