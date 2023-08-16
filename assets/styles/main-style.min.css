@@ -1612,8 +1612,8 @@ a {
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  width: max-content;
   position: relative;
+  width: max-content;
 }
 @media screen and (max-width: 940px) {
   .select-vie-block-conteiner {
@@ -1624,20 +1624,18 @@ a {
   display: flex;
   align-items: center;
   max-width: 270px;
+  flex-wrap: wrap;
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
   .recipes-title-nav {
-    justify-content: end;
-    width: auto;
-  }
-}
-@media screen and (max-width: 920px) {
-  .recipes-title-nav {
-    transform: translate(0, -100%);
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 5px;
+    border-right: none;
   }
 }
 .recipes-title-nav__brows-recipes {
@@ -1703,6 +1701,11 @@ a {
   padding: 10px;
   z-index: 10;
 }
+@media screen and (max-width: 600px) {
+  .menu-recipes {
+    top: 70px;
+  }
+}
 .menu-recipes::before {
   content: '';
   position: absolute;
@@ -1758,6 +1761,11 @@ a {
   border-right: 3px solid #d2dbe2;
   transition: 0.3s;
   text-transform: capitalize;
+}
+@media screen and (max-width: 600px) {
+  .select-view {
+    border-right: none;
+  }
 }
 .select-view h3:hover {
   color: #fea100;
@@ -5202,10 +5210,15 @@ a {
   row-gap: 30px;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1140px) {
   .recipes-page-conteiner__row {
-    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 740px) {
+  .recipes-page-conteiner__row {
     align-items: center;
+    flex-direction: column;
     justify-content: center;
   }
 }

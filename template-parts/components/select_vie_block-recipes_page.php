@@ -30,61 +30,14 @@
 			<div class="recipes-title-nav__burger">
 				<span></span>
 			</div>
-
-
-
 			<?php
-			// if ( class_exists( 'ACF' ) ) {
-			// 	$before = '<img src="' . get_field( 'food-categories-icon', 'term_' . $item->object_id ) . '" alt="">';
-			// } else {
-			// 	$before = '';
-			// }
-			
-
 			wp_nav_menu( [ 
 				'theme_location' => 'brows_recipes',
 				'fallback_cb' => '__return_empty_string',
 				'container' => 'nav',
 				'container_class' => 'menu-recipes',
 				'menu_class' => 'menu-recipes__list',
-				// 'link_before' => $before,
-			
 			] ); ?>
-
-			<!-- <nav class="menu-recipes"> -->
-			<!-- <ul class="menu-recipes__list">
-					<li>
-						<a href="#">
-							<img src="img/title-nav__icon_breakfast.png" alt="">
-							<p>Breakfast</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="img/title-nav__icon_starter.png" alt="">
-							<p>Starter</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="img/title-nav__icon_lunch.png" alt="">
-							<p>Lunch</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="img/title-nav__icon_icon_dinner.png" alt="">
-							<p>Dinner</p>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<img src="img/title-nav__icon_icon_dessert.png" alt="">
-							<p>Dessert</p>
-						</a>
-					</li>
-				</ul>
-			</nav> -->
 		</div>
 	</div>
 </div>
