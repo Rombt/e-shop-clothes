@@ -16,7 +16,7 @@ Redux::set_section(
 			array(
 				'id' => 'recipes_title',
 				'type' => 'text',
-				'title' => esc_html__( 'Recipes title', 'restaurant-site' ),
+				'title' => esc_html__( 'Title of Recipes page', 'restaurant-site' ),
 				'default' => esc_html__( 'Our Spescial Recipes', 'restaurant-site' ),
 			),
 			array(
@@ -26,8 +26,14 @@ Redux::set_section(
 					'media_buttons' => false,
 					// 'textarea_rows' => 5,
 				),
-				'title' => esc_html__( 'Recipes Subtitle', 'restaurant-site' ),
+				'title' => esc_html__( 'Subtitle of Recipes page', 'restaurant-site' ),
 				'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in, veniam tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia' ),
+			),
+			array(
+				'id' => 'recipes_page_posts_per_page',
+				'type' => 'text',
+				'title' => esc_html__( 'Posts Per Page', 'restaurant-site' ),
+				'default' => esc_html__( 12, 'restaurant-site' ),
 			),
 			array(
 				'id' => 'rating-star-active_img',

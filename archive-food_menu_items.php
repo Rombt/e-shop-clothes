@@ -16,7 +16,15 @@
 		<?php
 		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
 
-		$posts_per_page = ( $view_mode == 'grid' ) ? 9 : 12;
+		if ( class_exists( 'ReduxFramework' ) ) {
+			if ( $view_mode == 'grid' ) {
+				$posts_per_page = esc_html( $restaurant_site_options['menu_page_grid_posts_per_page'] );
+			} else {
+				$posts_per_page = esc_html( $restaurant_site_options['menu_page_list_posts_per_page'] );
+			}
+		}
+
+
 		$query_Menu_items = rst_custom_page_WPquery( 'food_menu_items', $posts_per_page, $current );
 
 		if ( $query_Menu_items->have_posts() ) {
