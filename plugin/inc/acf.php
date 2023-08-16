@@ -73,6 +73,15 @@ function rstr_food_menu_items_acf_metaboxes() {
 					'max_width' => '50px',
 					'max_height' => '50px',
 				),
+				array(
+					'key' => 'pfc_field-2',
+					'name' => 'food-recepes-icon',
+					'label' => 'Icon this food categories for browser of recipes',
+					'type' => 'image',
+					'return_format' => 'url',
+					'max_width' => '50px',
+					'max_height' => '50px',
+				),
 			),
 			'location' => array(
 				array(

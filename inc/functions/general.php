@@ -19,9 +19,6 @@ function rst_custom_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_curr
 }
 
 
-
-
-
 // Breadcrumbs Custom Function
 function rstr_get_breadcrumbs() {
 

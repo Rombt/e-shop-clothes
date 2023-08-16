@@ -320,11 +320,14 @@ function rstr_change_menus_items( $args, $item ) {
 		if ( class_exists( 'ReduxFramework' ) && in_array( 'menu-item-type-post_type_archive', $item->classes ) ) {
 			$args->before = '<img src="' . $restaurant_site_options['restaurant_menu-section_icon_first_item_menu']['url'] . '" alt="">';
 		} else {
-
 			if ( class_exists( 'ACF' ) ) {
 				$args->before = '<img src="' . get_field( 'food-categories-icon', 'term_' . $item->object_id ) . '" alt="">';
 			}
 
+		}
+	} elseif ( $args->theme_location === 'brows_recipes' ) {
+		if ( class_exists( 'ACF' ) ) {
+			$args->before = '<img src="' . get_field( 'food-recepes-icon', 'term_' . $item->object_id ) . '" alt="">';
 		}
 	}
 
