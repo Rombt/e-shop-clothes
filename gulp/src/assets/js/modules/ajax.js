@@ -43,7 +43,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          view_mod = $('.select-view__menu-page>h3').text().toLowerCase();
 
          mainBlock = $('.menu-page-conteiner__row');
-         TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>').replace(/ /g, '_');
+         TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');
       }
 
       $.ajax({
