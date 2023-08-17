@@ -125,6 +125,32 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *
  *
  * Исправить в текущей версии темы:
+ * 	добавить комментарии для функция в соответствии в требованиями PHPDocs 
+ * 	пагинацию для страницы поиска использовать вот это:
+ * 			function ale_page_links() {
+ *					global $wp_query, $wp_rewrite;
+ *					$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+ *				
+ *					$pagination = array(
+ *						'base'               => '%_%',
+ *						'format'             => '?paged=%#%',
+ *						'total' => $wp_query->max_num_pages,
+ *						'current' => $current,
+ *						'show_all' => false,
+ *						'type' => 'plain',
+ *						'prev_next' => true,
+ *						'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+ *						'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>'
+ *						);
+ *				
+ *					if( $wp_rewrite->using_permalinks() )
+ *						$pagination['base'] = user_trailingslashit( trailingslashit( remove_query_arg( 's', get_pagenum_link( 1 ) ) ) . 'page/%#%/', 'paged' );
+ *				
+ *					if( !empty($wp_query->query_vars['s']) )
+ *						$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
+ *				
+ *					echo paginate_links($pagination);
+ *				}
  * 	для каждой таксономии в.ч. и метки должна быть страница в соответствии с иерархией файлов на пример taxonomy-$taxonomy.php
  * 		либо обеспечить адекватное отображение контента каждой котегории в файле taxonomy.php
  * 			функция is_tax();
