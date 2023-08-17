@@ -77,6 +77,14 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    });
 
 
+
+
+
+
+
+
+
+
    //"Recipes"   ingredient action
    $(document).on('click', '.add-button, .dell-ingredient', IngredientOperation);
 

@@ -1,4 +1,19 @@
-.ingredient-block {
+#rstr_recipe_mb {
+   .inside {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+
+      background-color: #c0f1cc;
+   }
+}
+
+
+.ingredient-block,
+.nutrition-block,
+.food-step-block {
    // background-color: #ececea;
    // background-color: #fdebe7;
    // background-color: #e8ebee;
@@ -19,12 +34,13 @@
    padding: 10px;
    padding-left: 90px;
 
+   width: 40%;
+
 
    .title-block {
       position: absolute;
       left: 10px;
       top: 10px;
-
    }
 
 
@@ -74,7 +90,7 @@
          margin-left: 10px;
          border-radius: 10px;
 
-         width: 500px;
+         // width: 100px;
       }
 
       .dell-ingredient {
@@ -131,4 +147,12 @@
       }
    }
 
+}
+
+.food-step-block {
+   width: 100%;
+
+   .ingredient-input {
+      width: 500px;
+   }
 }

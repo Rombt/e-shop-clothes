@@ -16,22 +16,15 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 function rstr_recipe_mb_html( $post ) {
 
 	$post_id = $post->ID;
-
-
 	$ingredients_0 = get_post_meta( $post->ID, 'ingredient_0', true );
-
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
-
 	$arr_filds = get_post_custom_keys( $post_id );
 	?>
-
-	<!-- Добавить кнобку удалеия ингридиента -->
 
 	<div class="ingredient-block">
 		<div class="title-block">
 			<?php esc_html_e( 'ingredients', 'restaurant-site' ); ?>
 		</div>
-
 		<?php
 		if ( ! in_array( 'ingredient_0', $arr_filds ) ) {
 			$value = "ingredient_0";
@@ -44,9 +37,54 @@ function rstr_recipe_mb_html( $post ) {
 			}
 		}
 		?>
-
 		<div data-post_id="<?php echo esc_attr( $post_id ) ?>" class="add-button">Add Ingredient</div>
 	</div>
+
+	<div class="nutrition-block">
+
+		<div class="title-block">
+			<?php esc_html_e( 'nutrition', 'restaurant-site' ); ?>
+		</div>
+		<?php
+		if ( ! in_array( 'nutrition_0', $arr_filds ) ) {
+			$value = "nutrition_0";
+			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+		} else {
+			foreach ( $arr_filds as $value ) {
+				if ( str_contains( $value, 'ingredient_' ) ) {
+					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+				}
+			}
+		}
+		?>
+		<div data-post_id="<?php echo esc_attr( $post_id ) ?>" class="add-button">Add Nutrition</div>
+
+
+	</div>
+
+
+	<div class="food-step-block">
+
+		<div class="title-block">
+			<?php esc_html_e( 'nutrition', 'restaurant-site' ); ?>
+		</div>
+		<?php
+		if ( ! in_array( 'nutrition_0', $arr_filds ) ) {
+			$value = "nutrition_0";
+			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+		} else {
+			foreach ( $arr_filds as $value ) {
+				if ( str_contains( $value, 'ingredient_' ) ) {
+					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+				}
+			}
+		}
+		?>
+		<div data-post_id="<?php echo esc_attr( $post_id ) ?>" class="add-button">Add Nutrition</div>
+
+
+	</div>
+
 
 	<?php
 }
@@ -86,5 +124,4 @@ function rstr_save_metabox( $post_id, $post ) {
 
 	return $post_id;
 }
-;
 add_action( 'save_post', 'rstr_save_metabox', 10, 2 );
