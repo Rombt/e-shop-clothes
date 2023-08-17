@@ -18,6 +18,8 @@
 			echo esc_html__( 'Tag', 'restaurant-site' ) . single_tag_title( "", false );
 		} elseif ( is_search() ) {
 			echo esc_html__( $restaurant_site_options['search-page_title'], 'restaurant-site' );
+		} elseif ( is_tax( "food-categories" ) ) {
+			echo esc_html__( 'Tax archive', 'restaurant-site' ); // todo страница для таксономий??
 		} elseif ( is_archive() ) {
 			if ( is_day() ) :
 				echo sprintf( esc_html__( 'Daily Archive: %s', 'restaurant-site' ), get_the_date() );
