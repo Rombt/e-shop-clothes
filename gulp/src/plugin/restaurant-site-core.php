@@ -42,7 +42,7 @@ add_action( 'after_switch_theme', 'rs_rewrite_rules' );
 add_action( 'init', 'rs_create_taxonomy' );
 function rs_create_taxonomy() {
 
-	register_taxonomy( 'food-categories', [ 'food-categories' ], [ 
+	register_taxonomy( 'food_categories', [ 'food_menu_items' ], [ 
 		'label' => '',
 		// определяется параметром $labels->name
 		'labels' => [ 
