@@ -30,7 +30,13 @@ Redux::set_section(
 				'default' => esc_html__( 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi ab natus cum iure in, veniam tempore magnam nostrum, itaque alias nemo id incidunt architecto debitis quos voluptates ipsum officia' ),
 			),
 			array(
-				'id' => 'recipes_page_posts_per_page',
+				'id' => 'recipes_page_2_columns_posts_per_page',
+				'type' => 'text',
+				'title' => esc_html__( 'Posts Per Page', 'restaurant-site' ),
+				'default' => esc_html__( 8, 'restaurant-site' ),
+			),
+			array(
+				'id' => 'recipes_page_3_columns_posts_per_page',
 				'type' => 'text',
 				'title' => esc_html__( 'Posts Per Page', 'restaurant-site' ),
 				'default' => esc_html__( 12, 'restaurant-site' ),

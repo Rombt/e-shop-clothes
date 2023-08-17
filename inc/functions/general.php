@@ -1,12 +1,12 @@
 <?php
 
 
+function rst_custom_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_current = '' ) {
 
+	if ( empty( $rst_current ) ) {
+		$rst_current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
+	}
 
-
-
-
-function rst_custom_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_current ) {
 
 	$params = [ 
 		'post_type' => $rst_post_type,
@@ -17,7 +17,6 @@ function rst_custom_page_WPquery( $rst_post_type, $rst_posts_per_page, $rst_curr
 
 	return new WP_Query( $params );
 }
-
 
 // Breadcrumbs Custom Function
 function rstr_get_breadcrumbs() {

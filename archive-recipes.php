@@ -1,8 +1,3 @@
-<?php
-/* Template Name: Recipies page */
-?>
-
-
 <?php get_header(); ?>
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
@@ -22,19 +17,19 @@
 	<div class="recipes-page-conteiner__row">
 
 		<?php
-		$view_mode = isset( $_SESSION['View_Mode_Recipe_Page'] ) ? $_SESSION['View_Mode_Recipe_Page'] : '2_columns';
+		$view_mode = isset( $_SESSION['View_Mode_Recipe_Page'] ) ? $_SESSION['View_Mode_Recipe_Page'] : '3_columns';
 		$current = absint( max( 1, get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' ) ) );
 
-		// $posts_per_page = 12;
 		if ( class_exists( 'ReduxFramework' ) ) {
-			if ( $view_mode == 'grid' ) {
-				$posts_per_page = esc_html( $restaurant_site_options['recipes_page_posts_per_page'] );
+			if ( $view_mode == '3_columns' ) {
+				$posts_per_page = esc_html( $restaurant_site_options['recipes_page_3_columns_posts_per_page'] );
+			} else {
+				$posts_per_page = esc_html( $restaurant_site_options['recipes_page_2_columns_posts_per_page'] );
+
 			}
 		}
 
-
 		$query_Recipes = rst_custom_page_WPquery( 'recipes', $posts_per_page, $current );
-
 		if ( $query_Recipes->have_posts() ) {
 			while ( $query_Recipes->have_posts() ) {
 				$query_Recipes->the_post();
@@ -53,7 +48,6 @@
 		?>
 
 </main>
-
 
 <?php get_template_part( 'template-parts/components/opening_hours' ); ?>
 

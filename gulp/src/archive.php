@@ -1,37 +1,45 @@
 <?php get_header(); ?>
 
-	<main id="primary" class="site-main conteiner-for-wp-blocs">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+<?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 
-			<h1>***** archive.php **********</h1>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+<main id="primary" class="site-main conteiner-for-wp-blocs">
 
-				get_template_part( 'template-parts/content', get_post_type() );
+	<?php if ( have_posts() ) : ?>
 
-			endwhile;
 
-			the_posts_navigation();
 
-		else :
+		<h1> Is archive.php </h1>
 
-			get_template_part( 'template-parts/content', 'none' );
+		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 
-		endif;
-		?>
 
-	</main><!-- #main -->
+		<?php
+		echo '<hr>';
+		echo '<hr>';
+		echo '<br>';
+		/* Start the Loop */
+		while ( have_posts() ) :
+
+			the_post();
+			echo '<h1>';
+			the_title();
+			echo '</h1>';
+			the_content();
+			echo '<hr>';
+		endwhile;
+
+		echo '<br>';
+		the_posts_navigation();
+
+	else :
+
+		get_template_part( 'template-parts/content', 'none' );
+
+	endif;
+	?>
+
+</main><!-- #main -->
 
 <?php
 // get_sidebar();

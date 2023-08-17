@@ -3,13 +3,14 @@
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 
-<main id="primary" class="site-main conteiner-for-wp-blocs">
+
+<main id="primary" class="site-main conteiner-for-wp-blocs menu-page-conteiner">
 
 	<?php if ( have_posts() ) : ?>
 
 
 
-		<h1> Is archive.php </h1>
+		<h1> Is taxonomy-food_categories.php </h1>
 
 		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
 
@@ -30,7 +31,6 @@
 		endwhile;
 
 		echo '<br>';
-		the_posts_navigation();
 
 	else :
 
@@ -39,8 +39,11 @@
 	endif;
 	?>
 
+	<?php get_template_part( 'template-parts/components/pagination' ); ?>
+
+
+
 </main><!-- #main -->
 
-<?php
-// get_sidebar();
-get_footer();
+
+<?php get_footer(); ?>

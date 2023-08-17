@@ -17,10 +17,8 @@
 				if ( isset( $_SESSION['View_Mode_Recipes_Page'] ) ) {
 					$view_mode = ( $_SESSION['View_Mode_Recipes_Page'] == '2 columns' ) ? '3 columns' : '2 columns';
 				} else {
-					$view_mode = '2 columns';
+					$view_mode = '3 columns';
 				}
-
-
 				echo '<div class="select-view__recipes-page"><h3>' . $view_mode . '</h3></div>';
 			}
 			?>
