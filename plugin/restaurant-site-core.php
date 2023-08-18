@@ -29,7 +29,8 @@ add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
 require_once plugin_dir_path( __FILE__ ) . 'inc/elementor-addon/elementor-addon.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/acf.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/ajax.php';
-require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes.php';
+// require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes_2.php';
 
 
 function rs_rewrite_rules() {

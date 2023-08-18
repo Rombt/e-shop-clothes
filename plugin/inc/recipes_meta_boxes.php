@@ -3,10 +3,7 @@
 
 add_action( 'add_meta_boxes', 'rstr_recipes_meta_box', 10, 2 );
 function rstr_recipes_meta_box( $post_type, $post ) {
-
 	add_meta_box( 'rstr_recipe_mb', esc_html__( 'Recipe data', 'restaurant-site' ), 'rstr_recipe_mb_html', 'recipes', 'normal' );
-
-
 }
 
 
@@ -16,9 +13,10 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 function rstr_recipe_mb_html( $post ) {
 
 	$post_id = $post->ID;
-	$ingredients_0 = get_post_meta( $post->ID, 'ingredient_0', true );
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
 	$arr_filds = get_post_custom_keys( $post_id );
+
+	$ingredients_0 = get_post_meta( $post->ID, 'ingredient_0', true );
 	?>
 
 	<div class="ingredient-block">
