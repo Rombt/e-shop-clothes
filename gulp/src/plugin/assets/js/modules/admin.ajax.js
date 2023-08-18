@@ -81,12 +81,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
 
+   //"Recipes" action
 
-
-
-
-   //"Recipes"   ingredient action
-   $(document).on('click', '.add-button, .dell-ingredient', IngredientOperation);
+   $('#rstr_recipe_mb').on('click', IngredientOperation)
 
    $(document).on('keypress', '.ingredient-input', function (e) {
       if (e.which === 13) {
@@ -95,38 +92,48 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       }
    });
 
-   function IngredientOperation() {
+   function IngredientOperation(e) {
 
-      var postId = $(this).data('post_id');
-      var countInputs = $('.ingredient-input').length;
+      let ingredientId;
+      let operation;
+      let targetButton = $(e.target);
+      let TargetBlock = $(e.target).parents()[0];
 
+      let postId = $(this).data('post_id');
+      let countInputs = $('.ingredient-input').length;
 
-      if ($(this).attr("class") === "dell-ingredient") {
-         var ingredientId = $(this).attr("id");
-         var operation = 'dell';
-         $(this).parent($(this)).remove();
+      if ($(targetButton).attr('class') === "dell-ingredient") {
+         ingredientId = $(this).attr("id");
+         operation = 'dell';
+         TargetBlock.remove();
+      }
+
+      if ($(targetButton).attr('class') === "add-button") {
+         $.ajax({
+            url: ajaxurl,
+            type: 'POST',
+            data: {
+               action: 'ingredient_action',
+               nonce: $('#_ingredients_metabox').val(),
+               post_id: postId,
+               count: countInputs,
+               operation: operation,
+               ingredientId: ingredientId,
+
+            },
+            success: function (response) {
+               // $('.ingredient-block').append(response);
+               // $("#ingredient_" + countInputs).focus();
+               $(TargetBlock).append(response);
+               $("#ingredient_" + countInputs).focus();
+            },
+            error: function (xhr, status, error) {
+               // console.log('Ошибка при обновлении значения поля:', error);
+            }
+         });
       }
 
 
-      $.ajax({
-         url: ajaxurl,
-         type: 'POST',
-         data: {
-            action: 'ingredient_action',
-            nonce: $('#_ingredients_metabox').val(),
-            post_id: postId,
-            count: countInputs,
-            operation: operation,
-            ingredientId: ingredientId,
-         },
-         success: function (response) {
-            $('.ingredient-block').append(response);
-            $("#ingredient_" + countInputs).focus();
-         },
-         error: function (xhr, status, error) {
-            // console.log('Ошибка при обновлении значения поля:', error);
-         }
-      });
 
    }
 
