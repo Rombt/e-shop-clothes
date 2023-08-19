@@ -13,10 +13,6 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 	add_meta_box( 'rstr_recipe_mb', esc_html__( 'Recipe data', 'restaurant-site' ), 'rstr_recipe_mb_html', 'recipes', 'normal' );
 }
 
-
-
-
-
 function rstr_recipe_mb_html( $post ) {
 
 	global $arr_blocks;
@@ -25,29 +21,35 @@ function rstr_recipe_mb_html( $post ) {
 	$arr_filds = get_post_custom_keys( $post_id );
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
 
+	$arr_filds = array_filter( $arr_filds, function ($value) use ($arr_blocks) {
+		foreach ( $arr_blocks as $value_2 ) {
+			if ( preg_match( "/^" . $value_2 . "_d*/i", $value ) ) {
+				return $value;
+			}
+		}
+	} );
+	$arr_filds = array_values( $arr_filds );
 	$args = [ 
 		'post_id' => $post_id,
 		'arr_filds' => $arr_filds,
 	];
 	array_walk( $arr_blocks, function ($value, $key, $args) {
-
 		echo '<div class="' . esc_html__( $value ) . '-block">';
 		echo '<div class="title-block">' . esc_html__( $value, 'restaurant-site' ) . '</div>';
 
-		if ( ! in_array( $value . '_0', $args['arr_filds'] ) ) {
-
-			$value = $value . '_0';
-			$value_field = get_post_meta( $args['post_id'], $value . '_0', true ) ?? '###';
-
-			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
-		} else {
+		if ( ! count( $args['arr_filds'] ) == 0 ) {
+			$key_field = 0;
 			foreach ( $args['arr_filds'] as $value_field ) {
-
-				if ( str_contains( $value_field, $value . '_' ) ) {
-					$value_field = get_post_meta( $args['post_id'], $value_field, true ) ?? '###';
+				if ( stristr( $value_field, $value ) ) {
+					$value_field = get_post_meta( $args['post_id'], $value_field, true );
 					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+					$key_field++;
 				}
 			}
+		} else {
+			$key_field = 0;
+			$value_field = '';
+			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 		}
 		?>
 
@@ -77,9 +79,7 @@ function rstr_save_metabox( $post_id, $post ) {
 		return $post_id;
 	}
 
-	echo '#############################################';
 	foreach ( $_POST as $field_name => $field_value ) {
-
 
 		// foreach ( $arr_blocks as $value ) {
 
@@ -103,18 +103,3 @@ function rstr_save_metabox( $post_id, $post ) {
 	return $post_id;
 }
 add_action( 'save_post', 'rstr_save_metabox', 10, 2 );
-
-// function display_my_variable() {
-// 	$post_id = isset( $_GET['post'] ) ? $_GET['post'] : ( isset( $_POST['post_ID'] ) ? $_POST['post_ID'] : '' );
-
-// 	if ( ! empty( $post_id ) ) {
-// 		// Вызываем функцию rstr_save_metabox, чтобы получить значение переменной
-// 		$my_variable = rstr_save_metabox( $post_id, get_post( $post_id ) );
-
-// 		// Выводим значение переменной
-// 		echo '*************************************';
-// 		echo $my_variable;
-// 	}
-// }
-
-// add_action( 'admin_notices', 'display_my_variable', 10, 2 );

@@ -94,51 +94,44 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    function IngredientOperation(e) {
 
-      let ingredientId;
-      let operation;
+      let data = {};
       let targetButton = $(e.target);
       let TargetBlock = $(e.target).parents()[0];
+      let classTargetBlock = $(TargetBlock).attr("class");
+      let countInputs = $(`.${classTargetBlock} input`).length;
 
-      let postId = $(this).data('post_id');
-      let countInputs = $('.ingredient-input').length;
+      data.nameTargetBlock = classTargetBlock.replace('-block', '');
+      data.postId = targetButton.data('post_id');
+      data.ingredientId = targetButton.attr("id");
+      data.action = 'ingredient_action';
+      data.nonce = $('#_ingredients_metabox').val();
+      data.count = countInputs;
 
       if ($(targetButton).attr('class') === "dell-ingredient") {
-         ingredientId = $(this).attr("id");
-         operation = 'dell';
+         data.operation = 'dell';
          TargetBlock.remove();
+         ajaxRecepes(data, TargetBlock);
       }
-
       if ($(targetButton).attr('class') === "add-button") {
-         $.ajax({
-            url: ajaxurl,
-            type: 'POST',
-            data: {
-               action: 'ingredient_action',
-               nonce: $('#_ingredients_metabox').val(),
-               post_id: postId,
-               count: countInputs,
-               operation: operation,
-               ingredientId: ingredientId,
-
-            },
-            success: function (response) {
-               // $('.ingredient-block').append(response);
-               // $("#ingredient_" + countInputs).focus();
-               $(TargetBlock).append(response);
-               $("#ingredient_" + countInputs).focus();
-            },
-            error: function (xhr, status, error) {
-               // console.log('Ошибка при обновлении значения поля:', error);
-            }
-         });
+         data.operation = 'add';
+         ajaxRecepes(data, TargetBlock);
       }
-
-
-
    }
 
-
-
+   function ajaxRecepes(data, TargetBlock) {
+      $.ajax({
+         url: ajaxurl,
+         type: 'POST',
+         data: data,
+         success: function (response) {
+            $(TargetBlock).append(response);
+            $(`#${data.nameTargetBlock}_` + data.countInputs).focus();
+         },
+         error: function (xhr, status, error) {
+            // console.log('Ошибка при обновлении значения поля:', error);
+         }
+      });
+   }
 
 
 
