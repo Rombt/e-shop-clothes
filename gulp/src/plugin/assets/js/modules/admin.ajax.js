@@ -118,6 +118,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       }
    }
 
+
+
    function ajaxRecepes(data, TargetBlock) {
       $.ajax({
          url: ajaxurl,
@@ -125,7 +127,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          data: data,
          success: function (response) {
             $(TargetBlock).append(response);
-            $(`#${data.nameTargetBlock}_` + data.countInputs).focus();
+            $(`#${data.nameTargetBlock}_` + data.count).focus();
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);
