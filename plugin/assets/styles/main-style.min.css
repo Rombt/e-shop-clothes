@@ -1,9 +1,15 @@
+#rstr_recipe_mb .postbox-header {
+  color: #686e77;
+  font-weight: 800;
+  text-transform: capitalize;
+}
 #rstr_recipe_mb .inside {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #c0f1cc;
+  row-gap: 20px;
+  padding-top: 10px;
 }
 .ingredient-block,
 .nutrition-block,
@@ -11,8 +17,8 @@
   background-color: #ecf3f5;
   border: 1px solid #dddedf;
   border-radius: 10px;
-  color: #909397;
-  font-weight: 800;
+  color: #686e77;
+  font-weight: 600;
   text-transform: capitalize;
   font-size: 15px;
   display: flex;
@@ -42,7 +48,7 @@
   position: absolute;
   right: 10px;
   top: 10px;
-  padding: 7px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,6 +71,8 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
+  width: 85%;
+  margin-left: 10px;
 }
 .ingredient-block .wrap-ingredient .ingredient-input,
 .nutrition-block .wrap-ingredient .ingredient-input,
@@ -73,6 +81,7 @@
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
+  width: 100%;
 }
 .ingredient-block .wrap-ingredient .dell-ingredient,
 .nutrition-block .wrap-ingredient .dell-ingredient,
