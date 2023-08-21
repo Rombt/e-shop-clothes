@@ -61,7 +61,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          url: ajaxurl,
          type: 'POST',
          data: {
-            // nonce: '',     !!!!!!!!!!!
+            // nonce = $('#_ingredients_metabox').val(),
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
@@ -83,28 +83,33 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
       let data = {};
       let targetButton = $(e.target);
-      let TargetBlock = $(e.target).parents()[0];
-      let classTargetBlock = $(TargetBlock).attr("class");
-      let countInputs = $(`.${classTargetBlock} input`).length;
+      let TargetBlock;
+      let classTargetBlock;
 
-      data.nameTargetBlock = classTargetBlock.replace('-block', '');
       data.postId = targetButton.data('post_id');
-      data.ingredientId = targetButton.attr("id");
       data.action = 'ingredient_action';
       data.nonce = $('#_ingredients_metabox').val();
-      data.count = countInputs;
 
       if ($(targetButton).attr('class') === "dell-ingredient") {
+         data.ingredientId = targetButton.attr("id");
          data.operation = 'dell';
+         TargetBlock = $(e.target).parents()[0];
          TargetBlock.remove();
       } else if ($(targetButton).attr('class') === "add-button") {
          data.operation = 'add';
+         TargetBlock = $(e.target).parents()[0];
+         classTargetBlock = $(TargetBlock).attr("class");
+         data.nameTargetBlock = classTargetBlock.replace('-block', '');
+         data.count = $(`.${classTargetBlock} input`).length;
       } else if ($(targetButton).attr('class') === "ingredient-input") {
          if (e.type == 'keypress') {
 
             if (e.which === 13) {
                data.operation = 'add';
                TargetBlock = $(e.target).parents()[1];
+               classTargetBlock = $(TargetBlock).attr("class");
+               data.nameTargetBlock = classTargetBlock.replace('-block', '');
+               data.count = $(`.${classTargetBlock} input`).length;
             }
          }
       }
@@ -126,9 +131,4 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          }
       });
    }
-
-
-
-
-
 });
