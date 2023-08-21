@@ -6,11 +6,13 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       var postId = $(this).data('post-id');
       var fieldName = $(this).data('field-name');
       var checked = $(this).is(':checked');
+      let nonce = $('#_rstr_show-food-menu_metabox').val();
+
       $.ajax({
          url: ajaxurl,
          type: 'POST',
          data: {
-            // nonce: '',     *************
+            nonce: nonce,
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
@@ -32,11 +34,12 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       var postId = $(this).data('post-id');
       var fieldName = $(this).data('field-name');
       var checked = $(this).is(':checked');
+      let nonce = $('#_rstr_show-today-specialy_metabox').val();
       $.ajax({
          url: ajaxurl,
          type: 'POST',
          data: {
-            // nonce: '',     !!!!!!!!!!!
+            nonce: nonce,
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,
@@ -54,14 +57,15 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    //"our-clients_show-slider-happy-clients"   checkbox  change event handler
    $(document).on('change', '.check-show-slider-happy-clients', function () {
 
-      var postId = $(this).data('post-id');
-      var fieldName = $(this).data('field-name');
-      var checked = $(this).is(':checked');
+      let postId = $(this).data('post-id');
+      let fieldName = $(this).data('field-name');
+      let checked = $(this).is(':checked');
+      let nonce = $('#_rstr_show-our-clients_metabox').val();
       $.ajax({
          url: ajaxurl,
          type: 'POST',
          data: {
-            // nonce = $('#_ingredients_metabox').val(),
+            nonce: nonce,
             action: 'update_custom_field',
             post_id: postId,
             field_name: fieldName,

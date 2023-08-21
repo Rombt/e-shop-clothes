@@ -1,12 +1,12 @@
 <?php
 
 
-function update_food_menu_items_show_in_front_page() {
-	// nonce: '',     !!!!!!!!!!!
-	// wp_nonce_field( 'rstr_*******', '_food_menu_items_checked' );
+function update_fields_show_on_front_page() {
 	// авторизованый пользователь должен иметь соответсвующие права (права админа например)
 
-	// проверить существование   $_POST['field_name']; 
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr_food_menu_items_show_in_front_page' ) ) {
+		wp_die();
+	}
 
 	$post_id = $_POST['post_id'];
 	$field_name = $_POST['field_name'];
@@ -15,9 +15,7 @@ function update_food_menu_items_show_in_front_page() {
 	update_field( $field_name, $field_value, $post_id );
 	wp_die();
 }
-add_action( 'wp_ajax_update_custom_field', 'update_food_menu_items_show_in_front_page' );
-
-
+add_action( 'wp_ajax_update_custom_field', 'update_fields_show_on_front_page' );
 
 function ingredient_action() {
 
