@@ -77,21 +77,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    });
 
 
-
-
-
-
    //"Recipes" action
-
-   $('#rstr_recipe_mb').on('click', IngredientOperation)
-
-   $(document).on('keypress', '.ingredient-input', function (e) {
-      if (e.which === 13) {
-         e.preventDefault();
-         IngredientOperation();
-      }
-   });
-
+   $('#rstr_recipe_mb').on('click keypress', IngredientOperation)
    function IngredientOperation(e) {
 
       let data = {};
@@ -110,15 +97,20 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       if ($(targetButton).attr('class') === "dell-ingredient") {
          data.operation = 'dell';
          TargetBlock.remove();
-         ajaxRecepes(data, TargetBlock);
-      }
-      if ($(targetButton).attr('class') === "add-button") {
+      } else if ($(targetButton).attr('class') === "add-button") {
          data.operation = 'add';
-         ajaxRecepes(data, TargetBlock);
+      } else if ($(targetButton).attr('class') === "ingredient-input") {
+         if (e.type == 'keypress') {
+
+            if (e.which === 13) {
+               data.operation = 'add';
+               TargetBlock = $(e.target).parents()[1];
+            }
+         }
       }
+
+      ajaxRecepes(data, TargetBlock);
    }
-
-
 
    function ajaxRecepes(data, TargetBlock) {
       $.ajax({

@@ -81,22 +81,15 @@ function rstr_save_metabox( $post_id, $post ) {
 
 	foreach ( $_POST as $field_name => $field_value ) {
 
-		// foreach ( $arr_blocks as $value ) {
-
-		// if ( str_contains( $field_name, $value . '_' ) ) {
-
-		// if ( ! isset( $_POST[ $field_name ] ) || ! wp_verify_nonce( $_POST['_ingredients_metabox'], 'rstr_ingredients_fild' ) ) {
-		// 	return $post_id;
-		// }
+		if ( ! isset( $_POST[ $field_name ] ) || ! wp_verify_nonce( $_POST['_ingredients_metabox'], 'rstr_ingredients_fild' ) ) {
+			return $post_id;
+		}
 
 		if ( isset( $_POST[ $field_name ] ) ) {
 			update_post_meta( $post_id, $field_name, sanitize_text_field( $_POST[ $field_name ] ) );
 		} else {
 			delete_post_meta( $post_id, $field_name );
 		}
-		// }
-
-		// }
 
 	}
 
