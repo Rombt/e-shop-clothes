@@ -155,8 +155,6 @@ function add_our_clients_column( $columns ) {
 }
 add_filter( 'manage_our-clients_posts_columns', 'add_our_clients_column' );
 
-
-
 function display_custom_field_column( $column, $post_id ) {
 	if ( $column === 'show-food-menu' ) {
 		render_custom_columns(
