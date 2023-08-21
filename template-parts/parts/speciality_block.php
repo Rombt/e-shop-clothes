@@ -1,7 +1,7 @@
 <?php global $restaurant_site_options; ?>
 <section class="background speciality-block">
 	<figure class="wrap-img speciality-block__img">
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['speciality_img']['url'] ) { ?>
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['speciality_img']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['speciality_img']['url'] ) ?>" alt="">
 		<?php } ?>
 	</figure>

@@ -82,7 +82,7 @@ $query_Menu_items = new WP_Query( $params );
 								<div class="food-card__title">
 									<?php class_exists( 'ReduxFramework' ) ? _e( $restaurant_site_options['today_section_footer_text'] ) : ""; ?>
 								</div>
-								<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['phone-numbers_home-delivery'] ) { ?>
+								<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['phone-numbers_home-delivery'] ) ) { ?>
 									<a href="tel:<?php echo class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['phone-numbers_home-delivery'] ) : ""; ?>"
 										class="food-card__phone-namber">
 										<?php echo class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['phone-numbers_home-delivery'] ) : ""; ?>

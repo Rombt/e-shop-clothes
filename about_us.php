@@ -21,7 +21,7 @@
 				<?php echo class_exists( 'ReduxFramework' ) ? wp_kses( $restaurant_site_options['about_us_subtitle'], 'post' ) : ""; ?>
 			</div>
 			<div class="video-blok-history">
-				<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['home_page_slogan_label']['url'] ) { ?>
+				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['home_page_slogan_label']['url'] ) ) { ?>
 					<figure class="wrap-video wrap-img">
 						<?php echo wp_oembed_get( $restaurant_site_options['about_us_video'] ) ?>
 					</figure>

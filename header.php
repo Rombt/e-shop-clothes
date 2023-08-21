@@ -29,7 +29,7 @@
 				?>
 
 
-				<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['logo_site']['url'] ) { ?>
+				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['logo_site']['url'] ) ) { ?>
 					<img src="<?php echo esc_url( $restaurant_site_options['logo_site']['url'] ) ?>" alt="Site logo">
 				<?php } else { ?>
 					<h1 class='redux_font-title_site'>
@@ -53,7 +53,7 @@
 			} ?>
 
 			<div class="cart-book">
-				<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['search_icon']['url'] ) { ?>
+				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['search_icon']['url'] ) ) { ?>
 					<div href="#" class="wrap-img search-icon">
 						<img class="wrap-img search-icon"
 							src="<?php echo esc_url( $restaurant_site_options['search_icon']['url'] ) ?>" alt="">
@@ -62,7 +62,7 @@
 				<div class="cart">
 					<div class="cart__cercle">3</div>
 					<a href="shopping-cart.html">
-						<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon_cart']['url'] ) { ?>
+						<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['icon_cart']['url'] ) ) { ?>
 							<img src="<?php echo esc_url( $restaurant_site_options['icon_cart']['url'] ) ?>" alt="icon cart">
 						<?php } ?>
 					</a>

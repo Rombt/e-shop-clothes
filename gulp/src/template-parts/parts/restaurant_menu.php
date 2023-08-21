@@ -67,17 +67,17 @@ $query_Menu_items = new WP_Query( $params );
 	<!-- @@include('./parts/button-orange.html',{'mod':'','title':'Explor food menu', 'href':'#'}) -->
 
 	<div class="wrap-img wrap-img__311x311">
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['restaurant_menu-section_img_1']['url'] ) { ?>
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['restaurant_menu-section_img_1']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['restaurant_menu-section_img_1']['url'] ) ?>" alt="">
 		<?php } ?>
 	</div>
 	<div class="wrap-img wrap-img__267x414">
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['restaurant_menu-section_img_2']['url'] ) { ?>
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['restaurant_menu-section_img_2']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['restaurant_menu-section_img_2']['url'] ) ?>" alt="">
 		<?php } ?>
 	</div>
 	<div class="wrap-img wrap-img__241x241">
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['restaurant_menu-section_img_3']['url'] ) { ?>
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['restaurant_menu-section_img_3']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['restaurant_menu-section_img_3']['url'] ) ?>" alt="">
 		<?php } ?>
 	</div>

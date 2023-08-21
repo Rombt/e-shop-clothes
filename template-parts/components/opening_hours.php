@@ -17,7 +17,7 @@
 			<?php class_exists( 'ReduxFramework' ) ? _e( wp_kses( $restaurant_site_options['opening-hours_subtitle-2'], 'post' ), 'restaurant-site' ) : "" ?>
 		</p>
 		<div class="wrap-img opening-hours-conteiner__wrap-img">
-			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['opening-hours_img']['url'] ) { ?>
+			<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['opening-hours_img']['url'] ) ) { ?>
 				<img src="<?php echo esc_url( $restaurant_site_options['opening-hours_img']['url'] ) ?>" alt="">
 			<?php } ?>
 		</div>

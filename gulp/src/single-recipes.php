@@ -6,7 +6,9 @@
 
 <div class="conteiner recipe-details-title">
 	<div class="recipe-details-title__row">
-		<h2>Pakoda Chatny</h2>
+		<h2>
+			<?php echo the_title() ?>
+		</h2>
 		<div class="rating">
 			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
 			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
@@ -18,125 +20,154 @@
 </div>
 <main class="conteiner recipe-details">
 	<div class="recipe-details__row">
-		<div class="wrap-img recipe-details__wrap-img">
-			<img src="@img/recipe-details-main.jpg" alt="">
-		</div>
-		<div class="white-box">
-			<div class="white-box__items">
-				<p>
-					15 M
-					<span>Prep time</span>
-				</p>
-				<p>
-					30 M
-					<span>Cook Time</span>
-				</p>
-				<p>
-					50 M
-					<span>
-						Read in
-					</span>
-				</p>
-			</div>
-			<div class="white-box__download">
-				<a href="#">
-					<img src="@img/icon-pdf.png" alt="">
+
+		<?php
+		if ( $wp_query->have_posts() ) {
+			$wp_query->the_post();
+			?>
+
+			<figure class="wrap-img recipe-details__wrap-img">
+				<img src="<?php the_post_thumbnail_url() ?>" alt="">
+			</figure>
+			<div class="white-box">
+				<div class="white-box__items">
 					<p>
-						Download
-						<span> Food RecipieFood </span>
+						15 M
+						<span>Prep time</span>
 					</p>
-				</a>
+					<p>
+						30 M
+						<span>Cook Time</span>
+					</p>
+					<p>
+						50 M
+						<span>
+							Read in
+						</span>
+					</p>
+				</div>
+				<div class="white-box__download">
+					<a href="#">
+						<img src="@img/icon-pdf.png" alt="">
+						<p>
+							Download
+							<span> Food RecipieFood </span>
+						</p>
+					</a>
+				</div>
 			</div>
-		</div>
-		<div class="recipe-details__text">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eius laborum, dicta temporibus est quibusdam
-			id
-			voluptatibus illo aspernatur ex nam dolores quidem doloribus repellendus recusandae reprehenderit officia
-			labore fuga. voluptatibus illo aspernatur ex nam dolores quidem doloribus repellendus recusandae
-		</div>
-		<div class="recipe-details__blocks">
-			<div class="ingredients">
-				<h3>Ingredients</h3>
-				<ul>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						1/2 cup chopped red onions
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						2 ounce lemon drops chupas chups bear
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						3 pound seasme snaps powder gingerbread
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						1/4 cup jujubes jelly chupa
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						1/2 cup sour cream (optional)
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						1 ounce suger plum pastry fruitcake
-					</li>
-					<li>
-						<img src="@img/arrow_bg.png" alt="arrow">
-						1/4 cup jujubes jelly chupa
-					</li>
-				</ul>
+			<div class="recipe-details__text">
+				<?php // echo rstr_trim_excerpt( 7 ) ?>
+				<?php the_content(); ?>
 			</div>
-			<div class="nutrition">
-				<h3>Nutrition</h3>
-				<table>
-					<thead>
-						<tr>
-							<th>Nutrient</th>
-							<th>DV</th>
-							<th>%DV</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Protein</td>
-							<td>3.2 gr</td>
-							<td>5%</td>
-						</tr>
-						<tr>
-							<td>Fat</td>
-							<td>6.5 gr</td>
-							<td>6%</td>
-						</tr>
-						<tr>
-							<td>Carbohydrates</td>
-							<td>4.8 gr</td>
-							<td>2%</td>
-						</tr>
-						<tr>
-							<td>calories</td>
-							<td>4.8 gr</td>
-							<td>2%</td>
-						</tr>
-						<tr>
-							<td>cholesterol</td>
-							<td>102 kcal</td>
-							<td>8%</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="recipe-details__blocks">
+				<div class="ingredients">
+					<h3>Ingredients</h3>
+					<ul>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							1/2 cup chopped red onions
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							2 ounce lemon drops chupas chups bear
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							3 pound seasme snaps powder gingerbread
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							1/4 cup jujubes jelly chupa
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							1/2 cup sour cream (optional)
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							1 ounce suger plum pastry fruitcake
+						</li>
+						<li>
+							<img src="@img/arrow_bg.png" alt="arrow">
+							1/4 cup jujubes jelly chupa
+						</li>
+					</ul>
+				</div>
+				<div class="nutrition">
+					<h3>Nutrition</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Nutrient</th>
+								<th>DV</th>
+								<th>%DV</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Protein</td>
+								<td>3.2 gr</td>
+								<td>5%</td>
+							</tr>
+							<tr>
+								<td>Fat</td>
+								<td>6.5 gr</td>
+								<td>6%</td>
+							</tr>
+							<tr>
+								<td>Carbohydrates</td>
+								<td>4.8 gr</td>
+								<td>2%</td>
+							</tr>
+							<tr>
+								<td>calories</td>
+								<td>4.8 gr</td>
+								<td>2%</td>
+							</tr>
+							<tr>
+								<td>cholesterol</td>
+								<td>102 kcal</td>
+								<td>8%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="wrap-img recipe-details__blocks-img">
+					<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['small_img']['url'] ) ) { ?>
+						<img src="<?php echo esc_url( $restaurant_site_options['small_img']['url'] ) ?>" alt="">
+					<?php } ?>
+				</div>
 			</div>
-			<div class="wrap-img recipe-details__blocks-img">
-				<img src="@img/Image_228x228.jpg" alt="">
-			</div>
-		</div>
+
+
+			<?php
+
+
+
+		} else {
+			// something
+		}
+		?>
+
+
+
+
+
+
+
+
+
+
 	</div>
 </main>
 
 <div class="food-step-background background ">
 	<div class="wrap-img food-step-background__img">
-		<img src="@img/food-step-background.jpg" alt="food step background">
+		<!-- <img src="@img/food-step-background.jpg" alt="food step background"> -->
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['background_food_step_img']['url'] ) ) { ?>
+			<img src="<?php echo esc_url( $restaurant_site_options['background_food_step_img']['url'] ) ?>" alt="">
+		<?php } ?>
 	</div>
 	<div class="conteiner food-step">
 		<h2>Food Step</h2>

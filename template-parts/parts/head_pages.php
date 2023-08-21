@@ -2,7 +2,7 @@
 
 <div class="background background-title-page-block">
 	<div class="wrap-img">
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['background-title-img']['url'] ) { ?>
+		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['background-title-img']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['background-title-img']['url'] ) ?>" alt="">
 		<?php } ?>
 	</div>
