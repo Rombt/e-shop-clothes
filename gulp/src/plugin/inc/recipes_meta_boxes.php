@@ -2,8 +2,12 @@
 
 $arr_blocks = [ 
 	'block_ingredients' => 'ingredient',
-	'block_nutritions' => 'nutrition',
-	'block_food-step' => 'food-step',
+	'block_nutritions' => [ 
+		'nutrition',
+		'dv',
+		'dv_percent',
+	],
+	'block_food-step' => 'food-step'
 ];
 
 
@@ -23,6 +27,9 @@ function rstr_recipe_mb_html( $post ) {
 
 	$arr_filds = array_filter( $arr_filds, function ($value) use ($arr_blocks) {
 		foreach ( $arr_blocks as $value_2 ) {
+			if ( is_array( $value_2 ) ) {
+				$value_2 = $value_2[0];
+			}
 			if ( preg_match( "/^" . $value_2 . "_d*/i", $value ) ) {
 				return $value;
 			}
@@ -34,12 +41,28 @@ function rstr_recipe_mb_html( $post ) {
 		'arr_filds' => $arr_filds,
 	];
 	array_walk( $arr_blocks, function ($value, $key, $args) {
+
+		if ( is_array( $value ) ) {
+
+			foreach ( $value as $key => $additional_fields_value ) {
+				if ( $key == 0 ) {
+					continue;
+				}
+				$arr_additional_fields[ $additional_fields_value ] = get_post_meta( $args['post_id'], $additional_fields_value, true );
+			}
+
+			// $arr_additional_fields = $value;
+			// array_shift( $arr_additional_fields );
+			$value = $value[0];
+		}
+
 		echo '<div class="' . esc_html__( $value ) . '-block">';
 		echo '<div class="title-block">' . esc_html__( $value, 'restaurant-site' ) . '</div>';
 
 		if ( ! count( $args['arr_filds'] ) == 0 ) {
 			$key_field = 0;
 			foreach ( $args['arr_filds'] as $value_field ) {
+
 				if ( stristr( $value_field, $value ) ) {
 					$value_field = get_post_meta( $args['post_id'], $value_field, true );
 					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
