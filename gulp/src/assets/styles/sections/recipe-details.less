@@ -98,10 +98,9 @@
    });
 
 .ingredients {
-   height: 370px;
+   min-height: 370px;
    min-width: 300px;
    .size(5);
-
 
    .to(945px, {
       display: flex;
@@ -127,6 +126,15 @@ li {
    font-weight: 400;
    text-transform: uppercase;
    line-height: 3.077;
+
+   display: flex;
+   align-items: center;
+   padding: 5px 0px;
+
+   p {
+      margin-bottom: 0px;
+      line-height: 1.5;
+   }
 
    img {
       height: 25px;

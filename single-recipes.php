@@ -6,25 +6,26 @@
 
 <div class="conteiner recipe-details-title">
 	<div class="recipe-details-title__row">
-		<h2>
-			<?php echo the_title() ?>
-		</h2>
-		<div class="rating">
-			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
-			<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
-		</div>
-	</div>
-</div>
-<main class="conteiner recipe-details">
-	<div class="recipe-details__row">
 
 		<?php
 		if ( $wp_query->have_posts() ) {
 			$wp_query->the_post();
 			?>
+
+			<h2>
+				<?php echo the_title() ?>
+			</h2>
+			<div class="rating">
+				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
+				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
+				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
+			</div>
+		</div>
+	</div>
+	<main class="conteiner recipe-details">
+		<div class="recipe-details__row">
 
 			<figure class="wrap-img recipe-details__wrap-img">
 				<img src="<?php the_post_thumbnail_url() ?>" alt="">
@@ -57,41 +58,41 @@
 				</div>
 			</div>
 			<div class="recipe-details__text">
-				<?php // echo rstr_trim_excerpt( 7 ) ?>
 				<?php the_content(); ?>
+
+				<?php
+
+				$arr_all_filds = get_post_meta( get_the_ID() );
+
+				$arr_ingredients = array_filter( $arr_all_filds, function ($key) {
+					if ( preg_match( "/^ingredient_d*/i", $key ) ) {
+						return $key;
+					}
+				}, ARRAY_FILTER_USE_KEY );
+				$arr_ingredients = array_map( function ($value) {
+					return $value[0];
+				}, $arr_ingredients );
+				?>
+
+
+
+
 			</div>
 			<div class="recipe-details__blocks">
 				<div class="ingredients">
 					<h3>Ingredients</h3>
 					<ul>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							1/2 cup chopped red onions
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							2 ounce lemon drops chupas chups bear
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							3 pound seasme snaps powder gingerbread
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							1/4 cup jujubes jelly chupa
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							1/2 cup sour cream (optional)
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							1 ounce suger plum pastry fruitcake
-						</li>
-						<li>
-							<img src="img/arrow_bg.png" alt="arrow">
-							1/4 cup jujubes jelly chupa
-						</li>
+						<?php
+						foreach ( $arr_ingredients as $value ) : ?>
+							<li>
+								<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['marker_list_ingr_img']['url'] ) ) : ?>
+									<img src="<?php echo esc_url( $restaurant_site_options['marker_list_ingr_img']['url'] ) ?>" alt="">
+								<?php endif ?>
+								<p>
+									<?php echo $value ?>
+								</p>
+							</li>
+						<?php endforeach ?>
 					</ul>
 				</div>
 				<div class="nutrition">

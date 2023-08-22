@@ -5354,7 +5354,7 @@ a {
   }
 }
 .recipe-details__blocks .ingredients {
-  height: 370px;
+  min-height: 370px;
   min-width: 300px;
   width: calc(100% / 12 * 5 - 30px);
 }
@@ -5382,6 +5382,13 @@ a {
   font-weight: 400;
   text-transform: uppercase;
   line-height: 3.077;
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
+.recipe-details__blocks .ingredients li p {
+  margin-bottom: 0px;
+  line-height: 1.5;
 }
 .recipe-details__blocks .ingredients li img {
   height: 25px;

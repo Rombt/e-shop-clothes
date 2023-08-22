@@ -82,37 +82,17 @@
 				<div class="ingredients">
 					<h3>Ingredients</h3>
 					<ul>
-						<li>
-							<!-- <img src="@img/arrow_bg.png" alt="arrow"> -->
-							<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['marker_list_ingr_img']['url'] ) ) { ?>
-								<img src="<?php echo esc_url( $restaurant_site_options['marker_list_ingr_img']['url'] ) ?>" alt="">
-							<?php } ?>
-							1/2 cup chopped red onions
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							2 ounce lemon drops chupas chups bear
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							3 pound seasme snaps powder gingerbread
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							1/4 cup jujubes jelly chupa
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							1/2 cup sour cream (optional)
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							1 ounce suger plum pastry fruitcake
-						</li>
-						<li>
-							<img src="@img/arrow_bg.png" alt="arrow">
-							1/4 cup jujubes jelly chupa
-						</li>
+						<?php
+						foreach ( $arr_ingredients as $value ) : ?>
+							<li>
+								<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['marker_list_ingr_img']['url'] ) ) : ?>
+									<img src="<?php echo esc_url( $restaurant_site_options['marker_list_ingr_img']['url'] ) ?>" alt="">
+								<?php endif ?>
+								<p>
+									<?php echo $value ?>
+								</p>
+							</li>
+						<?php endforeach ?>
 					</ul>
 				</div>
 				<div class="nutrition">
