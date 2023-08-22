@@ -57,6 +57,17 @@ Redux::set_section(
 					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/star-white-rating-icon.png'
 				),
 			),
+			array(
+				'id' => 'marker_list_ingr_img',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'The icon of rating star passive', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/arrow_bg.png'
+				),
+			),
 
 		),
 	)
