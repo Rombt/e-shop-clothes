@@ -3,9 +3,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    //"food-menu-items_show-food-menu"   checkbox  change event handler
    $(document).on('change', '.check-show-food-menu', function () {
-      var postId = $(this).data('post-id');
-      var fieldName = $(this).data('field-name');
-      var checked = $(this).is(':checked');
+      let postId = $(this).data('post-id');
+      let fieldName = $(this).data('field-name');
+      let checked = $(this).is(':checked');
       let nonce = $('#_rstr_show-food-menu_metabox').val();
 
       $.ajax({
@@ -29,11 +29,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
    //"food-menu-items_show-today-specialy"   checkbox  change event handler
    $(document).on('change', '.check-show-today-specialy', function () {
-
-
-      var postId = $(this).data('post-id');
-      var fieldName = $(this).data('field-name');
-      var checked = $(this).is(':checked');
+      let postId = $(this).data('post-id');
+      let fieldName = $(this).data('field-name');
+      let checked = $(this).is(':checked');
       let nonce = $('#_rstr_show-today-specialy_metabox').val();
       $.ajax({
          url: ajaxurl,
