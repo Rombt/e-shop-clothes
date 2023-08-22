@@ -7,7 +7,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   row-gap: 20px;
   padding-top: 10px;
 }
@@ -26,9 +25,12 @@
   row-gap: 10px;
   position: relative;
   min-height: 60px;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 90px;
-  width: 40%;
+  width: 37%;
+  height: max-content;
+  padding-right: 80px;
 }
 .ingredient-block .title-block,
 .nutrition-block .title-block,
@@ -71,7 +73,7 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 10px;
-  width: 85%;
+  width: 95%;
   margin-left: 10px;
 }
 .ingredient-block .wrap-ingredient .ingredient-input,
