@@ -6,8 +6,9 @@
 #rstr_recipe_mb .inside {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   row-gap: 20px;
+  column-gap: 20px;
   padding-top: 10px;
 }
 .ingredient-block,
@@ -27,10 +28,11 @@
   min-height: 60px;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 90px;
-  width: 37%;
   height: max-content;
-  padding-right: 80px;
+  padding-left: 110px;
+  padding-right: 110px;
+  flex-grow: 1;
+  min-width: 35%;
 }
 .ingredient-block .title-block,
 .nutrition-block .title-block,
@@ -68,13 +70,18 @@
 .ingredient-block .wrap-ingredient,
 .nutrition-block .wrap-ingredient,
 .food-step-block .wrap-ingredient {
-  width: max-content;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  column-gap: 10px;
-  width: 95%;
-  margin-left: 10px;
+  justify-content: center;
+  width: 100%;
+}
+@media screen and (max-width: 650px) {
+  .ingredient-block .wrap-ingredient,
+  .nutrition-block .wrap-ingredient,
+  .food-step-block .wrap-ingredient {
+    position: relative;
+    padding-right: 5px;
+  }
 }
 .ingredient-block .wrap-ingredient .ingredient-input,
 .nutrition-block .wrap-ingredient .ingredient-input,
@@ -82,16 +89,19 @@
 .ingredient-block .wrap-ingredient .additional-field,
 .nutrition-block .wrap-ingredient .additional-field,
 .food-step-block .wrap-ingredient .additional-field {
-  height: 20px;
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
-  width: 100%;
+}
+.ingredient-block .wrap-ingredient .ingredient-input,
+.nutrition-block .wrap-ingredient .ingredient-input,
+.food-step-block .wrap-ingredient .ingredient-input {
+  flex-grow: 1;
 }
 .ingredient-block .wrap-ingredient .additional-field,
 .nutrition-block .wrap-ingredient .additional-field,
 .food-step-block .wrap-ingredient .additional-field {
-  width: 15%;
+  width: 10%;
 }
 .ingredient-block .wrap-ingredient .dell-ingredient,
 .nutrition-block .wrap-ingredient .dell-ingredient,
@@ -102,6 +112,7 @@
   cursor: pointer;
   width: 12px;
   height: 12px;
+  margin-left: 10px;
   transform: rotate(45deg);
 }
 .ingredient-block .wrap-ingredient .dell-ingredient:before,
@@ -145,11 +156,14 @@
 .food-step-block .wrap-ingredient .dell-ingredient:hover:before {
   height: 2px;
 }
-.food-step-block {
-  width: 100%;
-}
-.food-step-block .ingredient-input {
-  width: 500px;
+@media screen and (max-width: 650px) {
+  .ingredient-block .wrap-ingredient .dell-ingredient,
+  .nutrition-block .wrap-ingredient .dell-ingredient,
+  .food-step-block .wrap-ingredient .dell-ingredient {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
 }
 .column-show-food-menu,
 .column-show-today-specialy,

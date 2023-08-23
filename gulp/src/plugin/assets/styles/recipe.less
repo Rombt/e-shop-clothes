@@ -9,8 +9,10 @@
    .inside {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      // justify-content: space-between;
+      justify-content: center;
       row-gap: 20px;
+      column-gap: 20px;
       padding-top: 10px;
    }
 }
@@ -35,10 +37,11 @@
    min-height: 60px;
    padding-top: 20px;
    padding-bottom: 20px;
-   padding-left: 90px;
-   width: 37%;
    height: max-content;
-   padding-right: 80px;
+   padding-left: 110px;
+   padding-right: 110px;
+   flex-grow: 1;
+   min-width: 35%;
 
    .title-block {
       position: absolute;
@@ -75,25 +78,31 @@
    }
 
    .wrap-ingredient {
-      width: max-content;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      column-gap: 10px;
-      width: 95%;
-      margin-left: 10px;
+      justify-content: center;
+      width: 100%;
+
+      @media screen and (max-width: 650px) {
+         position: relative;
+         padding-right: 5px;
+      }
+
 
       .ingredient-input,
       .additional-field {
-         height: 20px;
          border: 1px solid #dddedf;
          margin-left: 10px;
          border-radius: 10px;
-         width: 100%;
+
+      }
+
+      .ingredient-input {
+         flex-grow: 1;
       }
 
       .additional-field {
-         width: 15%;
+         width: 10%;
 
       }
 
@@ -109,6 +118,7 @@
 
          width: 12px;
          height: 12px;
+         margin-left: 10px;
          transform: rotate(45deg);
 
          &:before {
@@ -147,17 +157,13 @@
             }
          }
 
-
+         @media screen and (max-width: 650px) {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+         }
 
       }
    }
 
-}
-
-.food-step-block {
-   width: 100%;
-
-   .ingredient-input {
-      width: 500px;
-   }
 }
