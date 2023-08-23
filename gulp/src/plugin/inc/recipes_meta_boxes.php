@@ -55,32 +55,17 @@ function rstr_recipe_mb_html( $post ) {
 		echo '<div class="' . esc_html__( $value ) . '-block">';
 		echo '<div class="title-block">' . esc_html__( $value, 'restaurant-site' ) . '</div>';
 
-
-		// echo "<pre>";
-		// print_r( $args['arr_filds'] );
-		// echo "</pre>";
-
-		if ( count( $args['arr_filds'] ) != 0 ) {
-			$key_field = 0;
-			foreach ( $args['arr_filds'] as $value_field ) {
-
-				if ( stristr( $value_field, $value ) ) {
-
-					echo '<br>' . $value_field;
-					echo '<br>' . $value;
-
-
-					$value_field = get_post_meta( $args['post_id'], $value_field, true );
-					include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
-					$key_field++;
-				}
+		$key_field = 0;
+		foreach ( $args['arr_filds'] as $value_field ) {
+			if ( stristr( $value_field, $value ) ) {
+				$value_field = get_post_meta( $args['post_id'], $value_field, true );
+				include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
+				$key_field++;
 			}
-		} else {
-
+		}
+		if ( $key_field == 0 ) {
 			$key_field = 0;
 			$value_field = '';
-
-			echo '**' . $key_field;
 			include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 		}
 		?>
