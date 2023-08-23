@@ -87,8 +87,6 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       let targetButton = $(e.target);
       let TargetBlock;
       let classTargetBlock;
-      let arrAdditionalFields = [];
-      let objAdditionalFields = {};
 
       data.postId = targetButton.data('post_id');
       data.action = 'ingredient_action';
@@ -100,19 +98,19 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          data.operation = 'dell';
          TargetBlock = $(e.target).parents()[0];
          TargetBlock.remove();
+         ajaxRecepes(data, TargetBlock);
       } else if ($(targetButton).attr('class') === "add-button") {
          data.operation = 'add';
          TargetBlock = $(e.target).parents()[0];
          classTargetBlock = $(TargetBlock).attr("class");
          data.nameTargetBlock = classTargetBlock.replace('-block', '');
-         data.count = $(`.${classTargetBlock} input`).length;
-         data.objAdditionalFields = $(`.${classTargetBlock} .additional-field`).map(function () {     // todo проверка существования дополнительных путей!!
+         data.count = $(`.${classTargetBlock} .ingredient-input`).length;
+         data.objAdditionalFields = $(`.${classTargetBlock} .additional-field`).map(function () {
             const start = this.id.lastIndexOf('_');
             return this.id.slice(0, start)
          }).get();
-
          ajaxRecepes(data, TargetBlock);
-      } else if ($(targetButton).attr('class') === "ingredient-input") {
+      } else if ($(targetButton).attr('class') === "ingredient-input" || $(targetButton).attr('class') === "additional-field") {
          if (e.type == 'keypress') {
 
             if (e.which === 13) {
@@ -120,7 +118,11 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
                TargetBlock = $(e.target).parents()[1];
                classTargetBlock = $(TargetBlock).attr("class");
                data.nameTargetBlock = classTargetBlock.replace('-block', '');
-               data.count = $(`.${classTargetBlock} input`).length;
+               data.count = $(`.${classTargetBlock} .ingredient-input`).length;
+               data.objAdditionalFields = $(`.${classTargetBlock} .additional-field`).map(function () {
+                  const start = this.id.lastIndexOf('_');
+                  return this.id.slice(0, start)
+               }).get();
             }
          }
 

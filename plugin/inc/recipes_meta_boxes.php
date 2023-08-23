@@ -47,7 +47,7 @@ function rstr_recipe_mb_html( $post ) {
 				if ( $key == 0 ) {
 					continue;
 				}
-				$arr_additional_fields[ $additional_fields_value ] = get_post_meta( $args['post_id'], $additional_fields_value, true );
+				$arr_additional_fields[ $additional_fields_value ] = '';
 			}
 			$value = $value[0];
 		}
@@ -58,6 +58,12 @@ function rstr_recipe_mb_html( $post ) {
 		$key_field = 0;
 		foreach ( $args['arr_filds'] as $value_field ) {
 			if ( stristr( $value_field, $value ) ) {
+				if ( isset( $arr_additional_fields ) && count( $arr_additional_fields ) != 0 ) {
+					foreach ( $arr_additional_fields as $key_additional_fields => $value_additional_fields ) {
+						$arr_additional_fields[ $key_additional_fields ] = get_post_meta( $args['post_id'], $key_additional_fields . '_' . $key_field, true );
+					}
+				}
+
 				$value_field = get_post_meta( $args['post_id'], $value_field, true );
 				include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 				$key_field++;

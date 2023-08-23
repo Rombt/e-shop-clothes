@@ -24,12 +24,16 @@ function ingredient_action() {
 	$operation = $_POST['operation'];
 	$key_field = $_POST['count'];
 	$value = $_POST['nameTargetBlock'];
-	$arr_additional_fields = array_fill_keys( $_POST['objAdditionalFields'], '' );
+
+	if ( isset( $_POST['objAdditionalFields'] ) ) {
+		$arr_additional_fields = array_fill_keys( $_POST['objAdditionalFields'], '' );
+	}
 
 	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr_ingredients_fild' ) ) {
 		wp_die();
 	}
 	if ( $operation == "dell" ) {
+
 		delete_post_meta( $post_id, $ingredient_id );
 	} else if ( $operation == "add" ) {
 		include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';

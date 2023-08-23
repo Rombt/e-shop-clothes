@@ -78,12 +78,20 @@
 }
 .ingredient-block .wrap-ingredient .ingredient-input,
 .nutrition-block .wrap-ingredient .ingredient-input,
-.food-step-block .wrap-ingredient .ingredient-input {
+.food-step-block .wrap-ingredient .ingredient-input,
+.ingredient-block .wrap-ingredient .additional-field,
+.nutrition-block .wrap-ingredient .additional-field,
+.food-step-block .wrap-ingredient .additional-field {
   height: 20px;
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
   width: 100%;
+}
+.ingredient-block .wrap-ingredient .additional-field,
+.nutrition-block .wrap-ingredient .additional-field,
+.food-step-block .wrap-ingredient .additional-field {
+  width: 15%;
 }
 .ingredient-block .wrap-ingredient .dell-ingredient,
 .nutrition-block .wrap-ingredient .dell-ingredient,
