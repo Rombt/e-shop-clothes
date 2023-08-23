@@ -24,6 +24,7 @@ function ingredient_action() {
 	$operation = $_POST['operation'];
 	$key_field = $_POST['count'];
 	$value = $_POST['nameTargetBlock'];
+	$arr_additional_fields = array_fill_keys( $_POST['objAdditionalFields'], '' );
 
 	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr_ingredients_fild' ) ) {
 		wp_die();

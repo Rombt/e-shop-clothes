@@ -87,10 +87,13 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       let targetButton = $(e.target);
       let TargetBlock;
       let classTargetBlock;
+      let arrAdditionalFields = [];
+      let objAdditionalFields = {};
 
       data.postId = targetButton.data('post_id');
       data.action = 'ingredient_action';
       data.nonce = $('#_ingredients_metabox').val();
+
 
       if ($(targetButton).attr('class') === "dell-ingredient") {
          data.ingredientId = targetButton.attr("id");
@@ -103,6 +106,12 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          classTargetBlock = $(TargetBlock).attr("class");
          data.nameTargetBlock = classTargetBlock.replace('-block', '');
          data.count = $(`.${classTargetBlock} input`).length;
+         data.objAdditionalFields = $(`.${classTargetBlock} .additional-field`).map(function () {     // todo проверка существования дополнительных путей!!
+            const start = this.id.lastIndexOf('_');
+            return this.id.slice(0, start)
+         }).get();
+
+         ajaxRecepes(data, TargetBlock);
       } else if ($(targetButton).attr('class') === "ingredient-input") {
          if (e.type == 'keypress') {
 
@@ -114,9 +123,9 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
                data.count = $(`.${classTargetBlock} input`).length;
             }
          }
-      }
 
-      ajaxRecepes(data, TargetBlock);
+         ajaxRecepes(data, TargetBlock);
+      }
    }
 
    function ajaxRecepes(data, TargetBlock) {
@@ -124,6 +133,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
          url: ajaxurl,
          type: 'POST',
          data: data,
+         dataType: "html",
+
          success: function (response) {
             $(TargetBlock).append(response);
             $(`#${data.nameTargetBlock}_` + data.count).focus();
