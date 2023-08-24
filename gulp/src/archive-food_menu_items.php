@@ -21,7 +21,7 @@
 			}
 		}
 
-		$query_Menu_items = rst_custom_page_WPquery( 'food_menu_items', $posts_per_page );
+		$query_Menu_items = rstr_custom_WPquery( 'food_menu_items', $posts_per_page );
 		if ( $query_Menu_items->have_posts() ) {
 			while ( $query_Menu_items->have_posts() ) {
 				$query_Menu_items->the_post();

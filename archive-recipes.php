@@ -29,7 +29,7 @@
 			}
 		}
 
-		$query_Recipes = rst_custom_page_WPquery( 'recipes', $posts_per_page, $current );
+		$query_Recipes = rstr_custom_WPquery( 'recipes', $posts_per_page, $current );
 		if ( $query_Recipes->have_posts() ) {
 			while ( $query_Recipes->have_posts() ) {
 				$query_Recipes->the_post();

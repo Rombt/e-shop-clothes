@@ -181,25 +181,33 @@
 </div>
 
 <div class="conteiner featured-recipes">
-	<div class="featured-recipes__title">Featured Recipies</div>
+	<div class="featured-recipes__title">Featured Recipes</div>
 	<div class="featured-recipes__row">
-		@@include('html/parts/recipe-card-2.html',{
-		'title':'Prawns tikka',
-		'img_src':'@img/recipe-card-img-2.jpg',
-		'description':"Lorem Ipsum has been the industry's standard dummy text ever sistandard"
-		})
-		@@include('html/parts/recipe-card-2.html',{
-		'title':'Prawns tikka',
-		'img_src':'@img/recipe-card-img-2.jpg',
-		'description':"Lorem Ipsum has been the industry's standard dummy text ever sistandard"
-		})
-		@@include('html/parts/recipe-card-2.html',{
-		'title':'Prawns tikka',
-		'img_src':'@img/recipe-card-img-2.jpg',
-		'description':"Lorem Ipsum has been the industry's standard dummy text ever sistandard"
-		})
 
-	</div>
+		<?php
+		$rstr_fr_query = rstr_custom_WPquery( 'recipes', 3 );
+		if ( $rstr_fr_query->have_posts() ) {
+			while ( $rstr_fr_query->have_posts() ) {
+				$rstr_fr_query->the_post();
+				if ( class_exists( 'ACF' ) ) {
+					get_template_part( '/template-parts/parts/recipe_card', '3_columns' );
+				}
+			}
+			?>
+		</div>
+		<?php
+		} else {
+			// todo something
+		}
+		wp_reset_postdata();
+
+
+
+
+
+		?>
+
+</div>
 </div>
 
 

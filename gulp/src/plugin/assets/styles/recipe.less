@@ -41,14 +41,13 @@
    padding-left: 110px;
    padding-right: 110px;
    flex-grow: 1;
-   min-width: 35%;
+   min-width: 330px;
 
    .title-block {
       position: absolute;
       left: 10px;
       top: 10px;
    }
-
 
    .add-button {
       color: #6a6d71;
@@ -157,13 +156,23 @@
             }
          }
 
-         @media screen and (max-width: 650px) {
+         @media (max-width: 650px) {
             position: absolute;
-            top: -10px;
-            right: -10px;
+            // top: 50px;
+            right: -30px;
          }
 
       }
    }
 
+}
+
+.ingredient-block,
+.nutrition-block {
+
+   max-width: 35%;
+
+   @media (max-width: 1210px) {
+      max-width: 100%;
+   }
 }

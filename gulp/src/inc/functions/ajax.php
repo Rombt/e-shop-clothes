@@ -22,7 +22,7 @@ function rstr_menu_page_view() {
 				$posts_per_page = esc_html( $restaurant_site_options['menu_page_list_posts_per_page'] );
 			}
 		}
-		$query = rst_custom_page_WPquery( 'food_menu_items', $posts_per_page, $current );
+		$query = rstr_custom_WPquery( 'food_menu_items', $posts_per_page, $current );
 
 	} else if ( $_POST['type_page'] == 'select-view__recipes-page' ) {
 		$view_mode = $_SESSION['View_Mode_Recipe_Page'] = $_POST['view_mod'];
@@ -34,7 +34,7 @@ function rstr_menu_page_view() {
 
 			}
 		}
-		$query = rst_custom_page_WPquery( 'recipes', $posts_per_page, $current );
+		$query = rstr_custom_WPquery( 'recipes', $posts_per_page, $current );
 
 	}
 

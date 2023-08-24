@@ -1,7 +1,7 @@
 <?php global $restaurant_site_options; ?>
 
 <div class="recipe-card-grid">
-	<figure class="wrap-img"><img src="@@img_src" alt=""></figure>
+	<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
 	<div class="recipe-card-grid__body">
 		<div class="recipe-card-grid__title">
 			<h3>

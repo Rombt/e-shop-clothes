@@ -1,6 +1,6 @@
 <?php global $restaurant_site_options; ?>
 <div class="recipe-card-3col">
-	<figure class="wrap-img"><img src="@@img_src" alt=""></figure>
+	<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
 	<div class="recipe-card-3col__body">
 		<div class="recipe-card-3col__title">
 			<h3>
