@@ -179,6 +179,19 @@
   .recepe-time .wrap-ingredient .dell-ingredient {
     position: absolute;
     right: -30px;
+<<<<<<< HEAD
+=======
+  }
+}
+.ingredient-block,
+.nutrition-block {
+  max-width: 35%;
+}
+@media (max-width: 1210px) {
+  .ingredient-block,
+  .nutrition-block {
+    max-width: 100%;
+>>>>>>> 3279e7161017738e72b6b0ffa9682785bc6277f2
   }
 }
 .ingredient-block,
