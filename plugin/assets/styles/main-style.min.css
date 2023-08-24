@@ -32,7 +32,7 @@
   padding-left: 110px;
   padding-right: 110px;
   flex-grow: 1;
-  min-width: 35%;
+  min-width: 330px;
 }
 .ingredient-block .title-block,
 .nutrition-block .title-block,
@@ -156,13 +156,22 @@
 .food-step-block .wrap-ingredient .dell-ingredient:hover:before {
   height: 2px;
 }
-@media screen and (max-width: 650px) {
+@media (max-width: 650px) {
   .ingredient-block .wrap-ingredient .dell-ingredient,
   .nutrition-block .wrap-ingredient .dell-ingredient,
   .food-step-block .wrap-ingredient .dell-ingredient {
     position: absolute;
-    top: -10px;
-    right: -10px;
+    right: -30px;
+  }
+}
+.ingredient-block,
+.nutrition-block {
+  max-width: 35%;
+}
+@media (max-width: 1210px) {
+  .ingredient-block,
+  .nutrition-block {
+    max-width: 100%;
   }
 }
 .column-show-food-menu,

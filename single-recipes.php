@@ -181,61 +181,33 @@
 </div>
 
 <div class="conteiner featured-recipes">
-	<div class="featured-recipes__title">Featured Recipies</div>
+	<div class="featured-recipes__title">Featured Recipes</div>
 	<div class="featured-recipes__row">
-		<div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt=""></figure>
-   <div class="recipe-card-grid-2__body">
-      <div class="recipe-card-grid-2__title">
-         <h3>Prawns tikka</h3>
-         <div class="rating">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-         </div>
-      </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
-      <a href="recipe-details.html" class="button-orange ">recipe details</a>
-   </div>
-</div>
-		<div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt=""></figure>
-   <div class="recipe-card-grid-2__body">
-      <div class="recipe-card-grid-2__title">
-         <h3>Prawns tikka</h3>
-         <div class="rating">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-         </div>
-      </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
-      <a href="recipe-details.html" class="button-orange ">recipe details</a>
-   </div>
-</div>
-		<div class="recipe-card-grid-2">
-   <figure class="wrap-img"><img src="img/recipe-card-img-2.jpg" alt=""></figure>
-   <div class="recipe-card-grid-2__body">
-      <div class="recipe-card-grid-2__title">
-         <h3>Prawns tikka</h3>
-         <div class="rating">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-            <img src="img/rating-star.png" alt="">
-         </div>
-      </div>
-      <p>Lorem Ipsum has been the industry's standard dummy text ever sistandard</p>
-      <a href="recipe-details.html" class="button-orange ">recipe details</a>
-   </div>
-</div>
 
-	</div>
+		<?php
+		$rstr_fr_query = rstr_custom_WPquery( 'recipes', 3 );
+		if ( $rstr_fr_query->have_posts() ) {
+			while ( $rstr_fr_query->have_posts() ) {
+				$rstr_fr_query->the_post();
+				if ( class_exists( 'ACF' ) ) {
+					get_template_part( '/template-parts/parts/recipe_card', '3_columns' );
+				}
+			}
+			?>
+		</div>
+		<?php
+		} else {
+			// todo something
+		}
+		wp_reset_postdata();
+
+
+
+
+
+		?>
+
+</div>
 </div>
 
 
