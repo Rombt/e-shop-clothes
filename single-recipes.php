@@ -35,15 +35,15 @@
 			<div class="white-box">
 				<div class="white-box__items">
 					<p>
-						15 M
+						<?php esc_html_e( get_post_meta( get_the_ID(), 'read-in', true ) ) ?>
 						<span>Prep time</span>
 					</p>
 					<p>
-						30 M
+						<?php esc_html_e( get_post_meta( get_the_ID(), 'cook-time', true ) ) ?>
 						<span>Cook Time</span>
 					</p>
 					<p>
-						50 M
+						<?php esc_html_e( get_post_meta( get_the_ID(), 'prep-time', true ) ) ?>
 						<span>
 							Read in
 						</span>

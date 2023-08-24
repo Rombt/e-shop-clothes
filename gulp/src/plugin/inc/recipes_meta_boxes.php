@@ -10,8 +10,6 @@ $arr_blocks = [
 	'block_food-step' => 'food-step'
 ];
 
-
-
 add_action( 'add_meta_boxes', 'rstr_recipes_meta_box', 10, 2 );
 function rstr_recipes_meta_box( $post_type, $post ) {
 	add_meta_box( 'rstr_recipe_mb', esc_html__( 'Recipe data', 'restaurant-site' ), 'rstr_recipe_mb_html', 'recipes', 'normal' );
@@ -24,7 +22,18 @@ function rstr_recipe_mb_html( $post ) {
 	$post_id = $post->ID;
 	$arr_filds = get_post_custom_keys( $post_id );
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
+	?>
 
+	<div class="recepe-time">
+		<label for="read-in">read in</label><input type="text" class="recepe-time-input" id="read-in" name="read-in"
+			value="<?php esc_html_e( get_post_meta( $post_id, 'read-in', true ) ) ?>">
+		<label for="cook-time">cook time</label><input type="text" class="recepe-time-input" id="cook-time" name="cook-time"
+			value="<?php esc_html_e( get_post_meta( $post_id, 'cook-time', true ) ) ?>">
+		<label for="prep-time">prep time</label><input type="text" class="recepe-time-input" id="prep-time" name="prep-time"
+			value="<?php esc_html_e( get_post_meta( $post_id, 'prep-time', true ) ) ?>">
+	</div>
+
+	<?php
 	$arr_filds = array_filter( $arr_filds, function ($value) use ($arr_blocks) {
 		foreach ( $arr_blocks as $value_2 ) {
 			if ( is_array( $value_2 ) ) {

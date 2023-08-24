@@ -11,10 +11,6 @@
 		<?php endforeach; ?>
 	<?php endif; ?>
 
-
-
-
-
 	<div data-post_id="<?php echo esc_attr( $args['post_id'] ) ?>" class="dell-ingredient"
 		id="<?php echo $value . '_' . $key_field ?>">
 	</div>

@@ -17,10 +17,10 @@
    }
 }
 
-
 .ingredient-block,
 .nutrition-block,
-.food-step-block {
+.food-step-block,
+.recepe-time {
    background-color: #ecf3f5;
    border: 1px solid #dddedf;
    border-radius: 10px;
@@ -169,10 +169,31 @@
 
 .ingredient-block,
 .nutrition-block {
-
    max-width: 35%;
 
    @media (max-width: 1210px) {
       max-width: 100%;
    }
+}
+
+
+.recepe-time {
+
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   align-items: center;
+   width: 100%;
+   padding: 10px;
+
+   .recepe-time-input {
+
+      border: 1px solid #dddedf;
+      margin-left: 10px;
+      border-radius: 10px;
+      margin: 0px 25px 0px 10px;
+      width: max-content;
+      max-height: 20px;
+   }
+
 }
