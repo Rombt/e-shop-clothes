@@ -2,13 +2,15 @@
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 <?php global $restaurant_site_options; ?>
+<?php $arr_all_filds = get_post_meta( get_the_ID() ); ?>
+
 
 
 <div class="conteiner recipe-details-title">
 	<div class="recipe-details-title__row">
 
 		<?php
-		if ( $wp_query->have_posts() ) {
+		if ( $wp_query->have_posts() ) :
 			$wp_query->the_post();
 			?>
 
@@ -59,27 +61,19 @@
 			</div>
 			<div class="recipe-details__text">
 				<?php the_content(); ?>
-
-				<?php
-
-				$arr_all_filds = get_post_meta( get_the_ID() );
-
-				$arr_ingredients = array_filter( $arr_all_filds, function ($key) {
-					if ( preg_match( "/^ingredient_d*/i", $key ) ) {
-						return $key;
-					}
-				}, ARRAY_FILTER_USE_KEY );
-				$arr_ingredients = array_map( function ($value) {
-					return $value[0];
-				}, $arr_ingredients );
-				?>
-
-
-
-
 			</div>
 			<div class="recipe-details__blocks">
 				<div class="ingredients">
+					<?php
+					$arr_ingredients = array_filter( $arr_all_filds, function ($key) {
+						if ( preg_match( "/^ingredient_d*/i", $key ) ) {
+							return $key;
+						}
+					}, ARRAY_FILTER_USE_KEY );
+					$arr_ingredients = array_map( function ($value) {
+						return $value[0];
+					}, $arr_ingredients );
+					?>
 					<h3>Ingredients</h3>
 					<ul>
 						<?php
@@ -89,7 +83,7 @@
 									<img src="<?php echo esc_url( $restaurant_site_options['marker_list_ingr_img']['url'] ) ?>" alt="">
 								<?php endif ?>
 								<p>
-									<?php echo $value ?>
+									<?php esc_html_e( $value, 'restaurant-site' ) ?>
 								</p>
 							</li>
 						<?php endforeach ?>
@@ -106,31 +100,23 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Protein</td>
-								<td>3.2 gr</td>
-								<td>5%</td>
-							</tr>
-							<tr>
-								<td>Fat</td>
-								<td>6.5 gr</td>
-								<td>6%</td>
-							</tr>
-							<tr>
-								<td>Carbohydrates</td>
-								<td>4.8 gr</td>
-								<td>2%</td>
-							</tr>
-							<tr>
-								<td>calories</td>
-								<td>4.8 gr</td>
-								<td>2%</td>
-							</tr>
-							<tr>
-								<td>cholesterol</td>
-								<td>102 kcal</td>
-								<td>8%</td>
-							</tr>
+							<?php foreach ( $arr_all_filds as $key => $value ) :
+								if ( preg_match( "/^nutrition_d*/i", $key, ) ) :
+									preg_match( "/\d*$/i", $key, $current ) ?>
+									<tr>
+										<td>
+											<?php esc_html_e( $value[0], 'restaurant-site' ) ?>
+										</td>
+										<td>
+											<?php esc_html_e( implode( '', $arr_all_filds[ "dv_$current[0]" ] ), 'restaurant-site' ) ?>
+										</td>
+										<td>
+											<?php esc_html_e( implode( '', $arr_all_filds[ "dv_percent_$current[0]" ] ), 'restaurant-site' ) ?>
+										</td>
+									</tr>
+								<?php endif;
+							endforeach;
+							?>
 						</tbody>
 					</table>
 				</div>
@@ -140,137 +126,53 @@
 					<?php } ?>
 				</div>
 			</div>
-
-
-			<?php
-
-
-
-		} else {
+		<?php else :
 			// something
-		}
-		?>
-
-
-
-
-
-
-
-
-
-
+		endif ?>
 	</div>
 </main>
 
 <div class="food-step-background background ">
 	<div class="wrap-img food-step-background__img">
-		<!-- <img src="img/food-step-background.jpg" alt="food step background"> -->
 		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['background_food_step_img']['url'] ) ) { ?>
 			<img src="<?php echo esc_url( $restaurant_site_options['background_food_step_img']['url'] ) ?>" alt="">
 		<?php } ?>
 	</div>
 	<div class="conteiner food-step">
+
+		<?php
+		$arr_food_step = array_filter( $arr_all_filds, function ($key) {
+			if ( preg_match( "/^food-step_d*/i", $key ) ) {
+				return $key;
+			}
+		}, ARRAY_FILTER_USE_KEY );
+		$arr_food_step = array_map( function ($value) {
+			return $value[0];
+		}, $arr_food_step );
+		$current_step = 0;
+		?>
+
 		<h2>Food Step</h2>
 		<div class="food-step__row">
 			<div class="swiper swiper-food-step">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>1</p>
-							<p>Step</p>
+
+
+					<?php
+					foreach ( $arr_food_step as $value ) :
+						$current_step++ ?>
+						<div class="swiper-slide step-row">
+							<div class="step-square">
+								<p>
+									<?php esc_html_e( $current_step, 'restaurant-site' ) ?>
+								</p>
+								<p>Step</p>
+							</div>
+							<div class="step-row__text">
+								<?php esc_html_e( $value, 'restaurant-site' ) ?> // todo разобраться с шрифтом
+							</div>
 						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>2</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>3</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>4</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>5</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>6</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>7</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
-					<div class="swiper-slide step-row">
-						<div class="step-square">
-							<p>8</p>
-							<p>Step</p>
-						</div>
-						<div class="step-row__text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda omnis totam tempora,
-							voluptatem
-							ratione architecto, consectetur praesentium dolorem. Magni omnis architecto odit sit at nobis
-							doloribus culpa cum eaque? Laborum.
-						</div>
-					</div>
+					<?php endforeach ?>
 				</div>
 				<div class="swiper-scrollbar food-step__scrollbar"></div>
 			</div>
