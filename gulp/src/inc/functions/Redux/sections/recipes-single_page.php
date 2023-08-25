@@ -69,6 +69,18 @@ Redux::set_section(
 				),
 			),
 
+			array(
+				'id' => 'icon_download_file_recipe',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'The icon of download file', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/icon-pdf.png'
+				),
+			),
+
 		),
 	)
 );

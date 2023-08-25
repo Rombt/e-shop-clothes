@@ -5260,9 +5260,6 @@ a {
   row-gap: 120px;
   padding-bottom: 25px;
 }
-.recipe-details-title {
-  /* .recipe-details-title__rating */
-}
 .recipe-details-title__row {
   flex-wrap: wrap;
   margin-left: -15px;
@@ -5283,8 +5280,6 @@ a {
 }
 .recipe-details {
   padding-bottom: 120px;
-  /* .recipe-details__row */
-  /* .recipe-details__text */
 }
 .recipe-details__row {
   display: flex;
@@ -5404,8 +5399,6 @@ a {
   border-width: 1px;
   border-color: #ededed;
   box-shadow: 0px 19px 49px 0px rgba(0, 0, 0, 0.1);
-  /* .nutrition__title */
-  /* .nutrition__row */
 }
 @media screen and (max-width: 945px) {
   .recipe-details__blocks .nutrition {
@@ -5486,8 +5479,6 @@ a {
   top: -50px;
   z-index: 5;
   min-height: 104px;
-  /* .white-box__items */
-  /* .white-box__download */
 }
 @media screen and (max-width: 720px) {
   .white-box {
@@ -5552,12 +5543,16 @@ a {
   overflow: hidden;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 }
 @media screen and (max-width: 720px) {
   .white-box__download a {
     margin: 10px 0;
     justify-content: center;
   }
+}
+.white-box__download a p {
+  margin-bottom: 0px;
 }
 .white-box__download a p span {
   font-size: 16px;
@@ -5587,7 +5582,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* .food-step-background__row */
 }
 @media screen and (max-width: 1200px) {
   .food-step {
@@ -5625,7 +5619,6 @@ a {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
-  /* .food-step-background__text */
 }
 @media screen and (max-width: 545px) {
   .step-row {
@@ -5691,7 +5684,6 @@ a {
   min-height: 760px;
   padding-top: 100px;
   padding-bottom: 90px;
-  /* .featured-recipes__title */
 }
 .featured-recipes__row {
   display: flex;

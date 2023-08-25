@@ -25,12 +25,12 @@ add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
 
 
 
-
+require_once get_template_directory() . '/inc/functions/general.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/elementor-addon/elementor-addon.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/acf.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/ajax.php';
-// require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes.php';
+
 
 
 function rs_rewrite_rules() {
@@ -69,7 +69,6 @@ function rs_create_taxonomy() {
 		'show_in_nav_menus' => true,
 	] );
 }
-
 function rs_register_post_types() {
 	$labels_food_menu = array(
 		'name' => esc_html_x( 'Menu items', 'Post type general name', 'restaurant-site' ),
@@ -219,7 +218,15 @@ function rs_register_post_types() {
 }
 add_action( 'init', 'rs_register_post_types' );
 
+function create_download_directory_for_files_recipes() {
+	$upload_dir = wp_upload_dir();
+	$download_dir = $upload_dir['basedir'] . '/files recipes';
 
+	if ( ! file_exists( $download_dir ) ) {
+		wp_mkdir_p( $download_dir );
+	}
+}
+add_action( 'after_setup_theme', 'create_download_directory_for_files_recipes' );
 
 
 

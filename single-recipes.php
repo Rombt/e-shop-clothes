@@ -8,12 +8,8 @@
 
 <div class="conteiner recipe-details-title">
 	<div class="recipe-details-title__row">
-
-		<?php
-		if ( $wp_query->have_posts() ) :
-			$wp_query->the_post();
-			?>
-
+		<?php if ( $wp_query->have_posts() ) :
+			$wp_query->the_post(); ?>
 			<h2>
 				<?php echo the_title() ?>
 			</h2>
@@ -28,7 +24,6 @@
 	</div>
 	<main class="conteiner recipe-details">
 		<div class="recipe-details__row">
-
 			<figure class="wrap-img recipe-details__wrap-img">
 				<img src="<?php the_post_thumbnail_url() ?>" alt="">
 			</figure>
@@ -50,8 +45,11 @@
 					</p>
 				</div>
 				<div class="white-box__download">
-					<a href="#">
-						<img src="img/icon-pdf.png" alt="">
+					<a download
+						href="<?php esc_attr_e( wp_upload_dir()['baseurl'] . '/files recipes/' . get_post_meta( get_the_ID(), 'file_recipe', true ) ) ?>">
+						<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['icon_download_file_recipe']['url'] ) ) : ?>
+							<img src="<?php echo esc_url( $restaurant_site_options['icon_download_file_recipe']['url'] ) ?>" alt="">
+						<?php endif ?>
 						<p>
 							Download
 							<span> Food RecipieFood </span>
@@ -139,7 +137,6 @@
 		<?php } ?>
 	</div>
 	<div class="conteiner food-step">
-
 		<?php
 		$arr_food_step = array_filter( $arr_all_filds, function ($key) {
 			if ( preg_match( "/^food-step_d*/i", $key ) ) {
@@ -151,13 +148,10 @@
 		}, $arr_food_step );
 		$current_step = 0;
 		?>
-
 		<h2>Food Step</h2>
 		<div class="food-step__row">
 			<div class="swiper swiper-food-step">
 				<div class="swiper-wrapper">
-
-
 					<?php
 					foreach ( $arr_food_step as $value ) :
 						$current_step++ ?>
@@ -183,7 +177,6 @@
 <div class="conteiner featured-recipes">
 	<div class="featured-recipes__title">Featured Recipes</div>
 	<div class="featured-recipes__row">
-
 		<?php
 		$rstr_fr_query = rstr_custom_WPquery( 'recipes', 3 );
 		if ( $rstr_fr_query->have_posts() ) {
@@ -200,11 +193,6 @@
 			// todo something
 		}
 		wp_reset_postdata();
-
-
-
-
-
 		?>
 
 </div>

@@ -14,7 +14,7 @@
 .ingredient-block,
 .nutrition-block,
 .food-step-block,
-.recepe-time {
+.recepe-time-block {
   background-color: #ecf3f5;
   border: 1px solid #dddedf;
   border-radius: 10px;
@@ -38,7 +38,7 @@
 .ingredient-block .title-block,
 .nutrition-block .title-block,
 .food-step-block .title-block,
-.recepe-time .title-block {
+.recepe-time-block .title-block {
   position: absolute;
   left: 10px;
   top: 10px;
@@ -46,7 +46,7 @@
 .ingredient-block .add-button,
 .nutrition-block .add-button,
 .food-step-block .add-button,
-.recepe-time .add-button {
+.recepe-time-block .add-button {
   color: #6a6d71;
   background-color: #90f9a9;
   border: 1px solid #73a67f;
@@ -64,7 +64,7 @@
 .ingredient-block .add-button:hover,
 .nutrition-block .add-button:hover,
 .food-step-block .add-button:hover,
-.recepe-time .add-button:hover {
+.recepe-time-block .add-button:hover {
   background-color: #a4f7b8;
   border: 1px solid #6ea47b;
   transform: scale(0.98);
@@ -74,7 +74,7 @@
 .ingredient-block .wrap-ingredient,
 .nutrition-block .wrap-ingredient,
 .food-step-block .wrap-ingredient,
-.recepe-time .wrap-ingredient {
+.recepe-time-block .wrap-ingredient {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
   .ingredient-block .wrap-ingredient,
   .nutrition-block .wrap-ingredient,
   .food-step-block .wrap-ingredient,
-  .recepe-time .wrap-ingredient {
+  .recepe-time-block .wrap-ingredient {
     position: relative;
     padding-right: 5px;
   }
@@ -92,11 +92,11 @@
 .ingredient-block .wrap-ingredient .ingredient-input,
 .nutrition-block .wrap-ingredient .ingredient-input,
 .food-step-block .wrap-ingredient .ingredient-input,
-.recepe-time .wrap-ingredient .ingredient-input,
+.recepe-time-block .wrap-ingredient .ingredient-input,
 .ingredient-block .wrap-ingredient .additional-field,
 .nutrition-block .wrap-ingredient .additional-field,
 .food-step-block .wrap-ingredient .additional-field,
-.recepe-time .wrap-ingredient .additional-field {
+.recepe-time-block .wrap-ingredient .additional-field {
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
@@ -104,19 +104,19 @@
 .ingredient-block .wrap-ingredient .ingredient-input,
 .nutrition-block .wrap-ingredient .ingredient-input,
 .food-step-block .wrap-ingredient .ingredient-input,
-.recepe-time .wrap-ingredient .ingredient-input {
+.recepe-time-block .wrap-ingredient .ingredient-input {
   flex-grow: 1;
 }
 .ingredient-block .wrap-ingredient .additional-field,
 .nutrition-block .wrap-ingredient .additional-field,
 .food-step-block .wrap-ingredient .additional-field,
-.recepe-time .wrap-ingredient .additional-field {
+.recepe-time-block .wrap-ingredient .additional-field {
   width: 10%;
 }
 .ingredient-block .wrap-ingredient .dell-ingredient,
 .nutrition-block .wrap-ingredient .dell-ingredient,
 .food-step-block .wrap-ingredient .dell-ingredient,
-.recepe-time .wrap-ingredient .dell-ingredient {
+.recepe-time-block .wrap-ingredient .dell-ingredient {
   background-color: #fa080873;
   border: 1px solid #fa080873;
   border-radius: 50%;
@@ -129,7 +129,7 @@
 .ingredient-block .wrap-ingredient .dell-ingredient:before,
 .nutrition-block .wrap-ingredient .dell-ingredient:before,
 .food-step-block .wrap-ingredient .dell-ingredient:before,
-.recepe-time .wrap-ingredient .dell-ingredient:before {
+.recepe-time-block .wrap-ingredient .dell-ingredient:before {
   content: '';
   position: absolute;
   left: 50%;
@@ -142,7 +142,7 @@
 .ingredient-block .wrap-ingredient .dell-ingredient:after,
 .nutrition-block .wrap-ingredient .dell-ingredient:after,
 .food-step-block .wrap-ingredient .dell-ingredient:after,
-.recepe-time .wrap-ingredient .dell-ingredient:after {
+.recepe-time-block .wrap-ingredient .dell-ingredient:after {
   content: '';
   position: absolute;
   left: 50%;
@@ -155,7 +155,7 @@
 .ingredient-block .wrap-ingredient .dell-ingredient:hover,
 .nutrition-block .wrap-ingredient .dell-ingredient:hover,
 .food-step-block .wrap-ingredient .dell-ingredient:hover,
-.recepe-time .wrap-ingredient .dell-ingredient:hover {
+.recepe-time-block .wrap-ingredient .dell-ingredient:hover {
   transform: scale(1.3) rotate(-135deg);
   transition: all 0.4s;
   cursor: pointer;
@@ -163,35 +163,22 @@
 .ingredient-block .wrap-ingredient .dell-ingredient:hover:after,
 .nutrition-block .wrap-ingredient .dell-ingredient:hover:after,
 .food-step-block .wrap-ingredient .dell-ingredient:hover:after,
-.recepe-time .wrap-ingredient .dell-ingredient:hover:after {
+.recepe-time-block .wrap-ingredient .dell-ingredient:hover:after {
   width: 2px;
 }
 .ingredient-block .wrap-ingredient .dell-ingredient:hover:before,
 .nutrition-block .wrap-ingredient .dell-ingredient:hover:before,
 .food-step-block .wrap-ingredient .dell-ingredient:hover:before,
-.recepe-time .wrap-ingredient .dell-ingredient:hover:before {
+.recepe-time-block .wrap-ingredient .dell-ingredient:hover:before {
   height: 2px;
 }
 @media (max-width: 650px) {
   .ingredient-block .wrap-ingredient .dell-ingredient,
   .nutrition-block .wrap-ingredient .dell-ingredient,
   .food-step-block .wrap-ingredient .dell-ingredient,
-  .recepe-time .wrap-ingredient .dell-ingredient {
+  .recepe-time-block .wrap-ingredient .dell-ingredient {
     position: absolute;
     right: -30px;
-<<<<<<< HEAD
-=======
-  }
-}
-.ingredient-block,
-.nutrition-block {
-  max-width: 35%;
-}
-@media (max-width: 1210px) {
-  .ingredient-block,
-  .nutrition-block {
-    max-width: 100%;
->>>>>>> 3279e7161017738e72b6b0ffa9682785bc6277f2
   }
 }
 .ingredient-block,
@@ -204,7 +191,7 @@
     max-width: 100%;
   }
 }
-.recepe-time {
+.recepe-time-block {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -212,13 +199,17 @@
   width: 100%;
   padding: 10px;
 }
-.recepe-time .recepe-time-input {
+.recepe-time-block .recepe-time-input,
+.recepe-time-block .download-file {
   border: 1px solid #dddedf;
   margin-left: 10px;
   border-radius: 10px;
   margin: 0px 25px 0px 10px;
   width: max-content;
   max-height: 20px;
+}
+.recepe-time-block .download-file {
+  flex-grow: 1;
 }
 .column-show-food-menu,
 .column-show-today-specialy,

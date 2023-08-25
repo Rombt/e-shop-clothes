@@ -10,6 +10,8 @@ $arr_blocks = [
 	'block_food-step' => 'food-step'
 ];
 
+$arr_files_recire = get_files_list( wp_upload_dir()['basedir'] . '/files recipes' );
+
 add_action( 'add_meta_boxes', 'rstr_recipes_meta_box', 10, 2 );
 function rstr_recipes_meta_box( $post_type, $post ) {
 	add_meta_box( 'rstr_recipe_mb', esc_html__( 'Recipe data', 'restaurant-site' ), 'rstr_recipe_mb_html', 'recipes', 'normal' );
@@ -18,19 +20,37 @@ function rstr_recipes_meta_box( $post_type, $post ) {
 function rstr_recipe_mb_html( $post ) {
 
 	global $arr_blocks;
+	global $arr_files_recire;
 
 	$post_id = $post->ID;
 	$arr_filds = get_post_custom_keys( $post_id );
 	wp_nonce_field( 'rstr_ingredients_fild', '_ingredients_metabox' );
 	?>
 
-	<div class="recepe-time">
-		<label for="read-in">read in</label><input type="text" class="recepe-time-input" id="read-in" name="read-in"
+	<div class="recepe-time-block">
+		<label for="read-in">read in</label>
+		<input type="text" class="recepe-time-input" id="read-in" name="read-in"
 			value="<?php esc_html_e( get_post_meta( $post_id, 'read-in', true ) ) ?>">
-		<label for="cook-time">cook time</label><input type="text" class="recepe-time-input" id="cook-time" name="cook-time"
+		<label for="cook-time">cook time</label>
+		<input type="text" class="recepe-time-input" id="cook-time" name="cook-time"
 			value="<?php esc_html_e( get_post_meta( $post_id, 'cook-time', true ) ) ?>">
-		<label for="prep-time">prep time</label><input type="text" class="recepe-time-input" id="prep-time" name="prep-time"
+		<label for="prep-time">prep time</label>
+		<input type="text" class="recepe-time-input" id="prep-time" name="prep-time"
 			value="<?php esc_html_e( get_post_meta( $post_id, 'prep-time', true ) ) ?>">
+		<label for="download-file">file recipe</label>
+		<?php // todo добавить всплывающe подсказкe "файл должен быть предворительно загружен на сервер" ?>
+		<select class="download-file" name="file_recipe">
+			<?php if ( ! get_post_meta( $post_id, 'file_recipe', true ) == '' || get_post_meta( $post_id, 'file_recipe', true ) == '' ) : ?>
+				<option value="" selected>select file</option>
+			<?php endif ?>
+			<?php foreach ( $arr_files_recire as $value ) : ?>
+				<?php if ( $value == get_post_meta( $post_id, 'file_recipe', true ) ) : ?>
+					<option value="<?php esc_attr_e( $value ) ?>" selected><?php esc_html_e( $value ) ?></option>
+				<?php else : ?>
+					<option value="<?php esc_attr_e( $value ) ?>"><?php esc_html_e( $value ) ?></option>
+				<?php endif ?>
+			<?php endforeach ?>
+		</select>
 	</div>
 
 	<?php
@@ -72,7 +92,6 @@ function rstr_recipe_mb_html( $post ) {
 						$arr_additional_fields[ $key_additional_fields ] = get_post_meta( $args['post_id'], $key_additional_fields . '_' . $key_field, true );
 					}
 				}
-
 				$value_field = get_post_meta( $args['post_id'], $value_field, true );
 				include plugin_dir_path( __FILE__ ) . '../assets/template_parts/ingredient_block.php';
 				$key_field++;
