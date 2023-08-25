@@ -228,3 +228,48 @@ hr {
    clear: both;
    padding: 0;
 }
+
+
+/* Общий стиль для блока blockquote */
+blockquote {
+   padding: 20px;
+   margin: 20px 0;
+   border-left: 3px solid #333;
+   /* Левая бордерная полоса */
+   font-style: italic;
+}
+
+/* Стиль для цитат внутри блока blockquote */
+blockquote p {
+   margin: 0;
+}
+
+/* Стиль для источника цитаты */
+blockquote footer {
+   margin-top: 10px;
+   font-size: 14px;
+   color: #777;
+}
+
+/* Стиль для ссылки внутри блока blockquote */
+blockquote a {
+   text-decoration: underline;
+}
+
+/* Стиль для блока blockquote внутри другого блока blockquote (цитаты в цитате) */
+blockquote blockquote {
+   border-left-color: #888;
+   /* Изменение цвета бордерной полосы */
+   margin: 15px 0;
+   /* Уменьшение отступов */
+   padding: 15px;
+   /* Уменьшение отступов */
+}
+
+/* Адаптивный дизайн для мобильных устройств */
+@media (max-width: 768px) {
+   blockquote {
+      padding: 15px;
+      margin: 15px 0;
+   }
+}

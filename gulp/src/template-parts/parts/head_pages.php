@@ -37,10 +37,12 @@
 			else :
 				echo esc_html__( 'Archive', 'restaurant-site' );
 			endif;
+		} elseif ( is_singular( 'recipes' ) ) {
+			echo esc_html__( wp_title( "" ) );
 		} elseif ( is_404() ) {
 			echo esc_html__( 'Page not found', 'restaurant-site' );
 		} else {
-			echo wp_title( "" );
+			echo esc_html__( wp_title( "" ) );
 		}
 		?>
 	</h1>

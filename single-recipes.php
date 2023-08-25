@@ -163,7 +163,7 @@
 								<p>Step</p>
 							</div>
 							<div class="step-row__text">
-								<?php esc_html_e( $value, 'restaurant-site' ) ?> // todo разобраться с шрифтом
+								<?php esc_html_e( $value, 'restaurant-site' ) // todo разобраться с шрифтом ?>
 							</div>
 						</div>
 					<?php endforeach ?>
@@ -178,7 +178,7 @@
 	<div class="featured-recipes__title">Featured Recipes</div>
 	<div class="featured-recipes__row">
 		<?php
-		$rstr_fr_query = rstr_custom_WPquery( 'recipes', 3 );
+		$rstr_fr_query = rstr_custom_WPquery( 'recipes', 3 ); // todo выбирать рецепты по какомуто признаку пр: связанные, похожие, популярные, из той же категории и т.п.
 		if ( $rstr_fr_query->have_posts() ) {
 			while ( $rstr_fr_query->have_posts() ) {
 				$rstr_fr_query->the_post();
@@ -196,8 +196,18 @@
 		?>
 
 </div>
-</div>
 
+
+<?php if ( get_the_tags() ) { ?>
+	<p class="tagsphar">
+		<?php the_tags( esc_html__( 'Tags: ', 'restaurant-site' ), ' ', '' ); ?>
+	</p>
+<?php } ?>
+
+
+<?php if ( comments_open() || get_comments_number() ) : ?>
+	<?php comments_template(); ?>
+<?php endif; ?>
 
 <?php get_template_part( 'template-parts/components/opening_hours' ); ?>
 
