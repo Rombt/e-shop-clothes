@@ -339,3 +339,48 @@ function get_files_list( $path ) {
 
 	return $file_options;
 }
+
+function rstr_comment_default( $comment, $args, $depth ) {
+
+	$GLOBALS['comment'] = $comment;
+	extract( $args, EXTR_SKIP );
+
+	// $tag = 'div';
+	$add_below = 'comment';
+
+	?>
+	<div class="comment">
+		<div class="wrap-img comment__img">
+			<?php if ( $args['avatar_size'] != 0 )
+				echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		</div>
+		<div class="comment__text">
+			<div class="comment__title">
+				<?php printf( esc_html__( '%s', 'restaurant-site' ), get_comment_author_link() ) ?>
+				<p>
+					<?php echo human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ?>
+				</p>
+			</div>
+			<span>
+				<?php comment_text() ?>
+			</span>
+			<a href="#" class="comment__reply">
+				<div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
+				<p>
+					<?php // comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ?>
+
+				</p>
+			</a>
+		</div>
+	</div>
+
+
+	<?php
+
+
+
+
+
+
+
+}

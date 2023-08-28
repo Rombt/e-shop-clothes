@@ -385,25 +385,6 @@ add_filter( 'nav_menu_item_args', 'rstr_change_menus_items', 10, 2 );
 
 
 
+
 //===========================================================================
 //===========================================================================
-
-
-
-
-// function my_theme_pagination( $query,  ) {
-// 	$current = absint(
-// 		max(
-// 			1,
-// 			get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' )
-// 		)
-// 	);
-// 	paginate_links(
-// 		array(
-// 			'total' => $query->max_num_pages,
-// 			'current' => $current,
-// 			'prev_text' => '<div class="arow-block__arow-left fon-white"><img src="img/arow-block__arow-left-green.png" alt=""></div>',
-// 			'next_text' => '<div class="arow-block__arow-right fon-white"><img src="img/arow-block__arow-right-green.png" alt=""></div>',
-// 		)
-// 	);
-// }

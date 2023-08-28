@@ -2733,7 +2733,6 @@ a {
   padding-bottom: 40px;
   /* .comment__img */
   /* .comment__title */
-  /* .comment__reply */
   /* .reply__icon */
 }
 .comment__img {
@@ -2750,7 +2749,7 @@ a {
   line-height: 1.7;
   margin: 20px 0 30px 0;
 }
-.comment__title {
+.comment__title a {
   text-transform: uppercase;
   font-weight: bold;
   color: #14141d;
