@@ -13,7 +13,6 @@
 
 
 <div class="background comments-background">
-	<?php // if ( have_comments() ) : ?>
 	<div class="conteiner comments">
 		<div class="comments__row">
 			<h2>
@@ -21,39 +20,13 @@
 			</h2>
 
 
-
-
 			<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 2, 'avatar_size' => 55, ) ); ?>
+			<?php // wp_list_comments(); ?>
 			<?php the_comments_navigation(); ?>
-			<!-- <div class="comment__title">@@name-user <p>@@time-ago</p>
-					</div>
-
-					<span>@@text</span>
-					<a href="#" class="comment__reply">
-						<div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
-						<p>Reply</p>
-					</a> -->
-			<!-- </div>
-			</div> -->
-
 			<?php comment_form(); ?>
-
-
-
-
-
-
-
-
-
-
-
-			
-
 
 
 		</div>
 
 	</div>
-	<?php // endif; ?>
 </div>
