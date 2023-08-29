@@ -1,4 +1,4 @@
-.comment {
+.rstr_comment {
 
    font-size: 14px;
    font-family: "Sintony";
@@ -12,30 +12,30 @@
 
    column-gap: @offset;
 
+
    padding-top: 30px;
    padding-bottom: 40px;
 
 
-   border: 1px solid #0515fd;
 
-
-
-
-   /* .comment__img */
-
-   &__img {
+   &__avatar {
       height: 70px;
       width: 70px;
+      border-radius: 100%;
    }
 
-   /* .comment__title */
-
-   &__text {
+   &__box {
       width: (770 / 1170) * 100%;
 
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      row-gap: 25px;
+
+      p {
+
+         margin-bottom: 0px;
+      }
 
 
       span {
@@ -46,7 +46,7 @@
    }
 
 
-   &__title {
+   &__author {
 
       a {
          text-transform: uppercase;
@@ -64,12 +64,15 @@
 
    }
 
-   &__reply {
+   .comment-reply-link {
 
       line-height: 1;
       text-transform: capitalize;
       font-weight: 800;
       color: rgb(20, 20, 29);
+
+      border: 1px solid #0515fd;
+
 
       p {
          display: inline-block;

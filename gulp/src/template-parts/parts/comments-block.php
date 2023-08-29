@@ -1,7 +1,7 @@
 <div class="background comments-background">
 	<div class="conteiner comments">
 		<div class="comments__row">
-			<!-- <h2>Comments (@@amount-comments)</h2> -->
+			<h2>Comments (@@amount-comments)</h2>
 
 			<!-- @@include('parts/comment.html',{
 			'name-user':'Mark peeter',

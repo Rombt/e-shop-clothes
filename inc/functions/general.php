@@ -354,53 +354,60 @@ function rstr_comment_default( $comment, $args, $depth ) {
 		$add_below = 'div-comment';
 	}
 	?>
-	<<?php echo esc_attr( $tag ) ?>
 
-		<?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?>
+	<<?php echo esc_attr( $tag ) ?>
+		<?php comment_class( 'rstr_comment' ) ?>
 		<?php echo 'id="comment-' . get_comment_ID() . '">'; ?>
 
+		<?php // if ( 'div' != $args['style'] ) : ?>
+		<!-- <div id="div-comment-<?php // comment_ID() ?>" class="comment-body"> -->
+		<?php // endif; ?>
+		<?php // if ( $depth > 1 ) { ?>
+		<!-- <div class="comment-item comment2 second-level cf">
+				<div class="response"></div> -->
+		<?php // } else { ?>
+		<!-- <div class="comment-item comment1 first-level cf"> -->
+		<?php // } ?>
+
+		<div class="wrap-img rstr_comment__avatar">
+			<?php if ( $args['avatar_size'] != 0 )
+				echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		</div>
+		<div class="rstr_comment__box">
+			<?php printf( "<div class='rstr_comment__author'>" . esc_html__( '%s', 'restaurant-site' ), get_comment_author_link() ); ?>
+			<p>
+				<?php echo human_time_diff( get_comment_time( 'U' ), current_time( 'timestamp' ) ) ?>
+			</p>
+			<?php echo "</div>" ?>
+			<?php comment_text() ?>
+
+			<?php if ( $depth == 1 ) { ?>
+
+
+				<?php comment_reply_link( array_merge( $args, array(
+					'add_below' => $add_below,
+					'depth' => $depth,
+					'max_depth' => $args['max_depth'],
+					'reply_text' => '<div class="wrap-img rstr_comment__reply-icon"> <img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/icon_reply.png" alt="reply icon"></div> <p>Reply</p>',
+				) ) ) // todo !!!!!!!!!! ?>
+
+			<?php } ?>
+			<div class="info-content">
+				<?php if ( $comment->comment_approved == '0' ) : ?>
+					<em class="comment-awaiting-moderation">
+						<?php esc_html_e( 'Your comment is awaiting moderation.', 'ale' ) ?>
+					</em>
+					<br />
+				<?php endif; ?>
+
+			</div>
+		</div>
+
+		</div>
 		<?php if ( 'div' != $args['style'] ) : ?>
-			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-			<?php endif; ?>
-			<?php if ( $depth > 1 ) { ?>
-				<div class="comment-item comment2 second-level cf">
-					<div class="response"></div>
-				<?php } else { ?>
-					<div class="comment-item comment1 first-level cf">
-					<?php } ?>
-
-					<div class="commenter-avatar">
-						<?php if ( $args['avatar_size'] != 0 )
-							echo get_avatar( $comment, $args['avatar_size'] ); ?>
-					</div>
-					<div class="comment-box">
-						<div class="info-meta">
-							<?php echo esc_html_e( 'Posted by ', 'ale' );
-							printf( "<span class='author'>" . esc_html__( '%s', 'ale' ) . "</span>", get_comment_author_link() );
-							echo " / " ?>
-							<?php printf( rstr_wp_kses( esc_html__( '%1$s %2$s', 'ale' ) ), get_comment_time(), get_comment_date() ) ?>
-
-							<?php if ( $depth == 1 ) { ?><span class="reply-link"><i class="fa fa-reply" aria-hidden="true"></i>
-									<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ?>
-								</span>
-							<?php } ?>
-						</div>
-						<div class="info-content">
-							<?php if ( $comment->comment_approved == '0' ) : ?>
-								<em class="comment-awaiting-moderation">
-									<?php esc_html_e( 'Your comment is awaiting moderation.', 'ale' ) ?>
-								</em>
-								<br />
-							<?php endif; ?>
-							<?php comment_text() ?>
-						</div>
-					</div>
-
-				</div>
-				<?php if ( 'div' != $args['style'] ) : ?>
-				</div>
-			<?php endif; ?>
-			<?php
+			</div>
+		<?php endif; ?>
+		<?php
 
 
 
