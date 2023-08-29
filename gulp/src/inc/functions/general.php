@@ -355,8 +355,10 @@ function rstr_comment_default( $comment, $args, $depth ) {
 	}
 	?>
 	<<?php echo esc_attr( $tag ) ?>
-		<?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-
-		<?php comment_ID() ?>">
+
+		<?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?>
+		<?php echo 'id="comment-' . get_comment_ID() . '">'; ?>
+
 		<?php if ( 'div' != $args['style'] ) : ?>
 			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 			<?php endif; ?>

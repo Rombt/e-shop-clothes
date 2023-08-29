@@ -388,3 +388,10 @@ add_filter( 'nav_menu_item_args', 'rstr_change_menus_items', 10, 2 );
 
 //===========================================================================
 //===========================================================================
+
+
+// function enqueue_comment_reply() {
+// 	if ( is_singular() )
+// 		wp_enqueue_script( 'comment-reply' );
+// }
+// add_action( 'wp_enqueue_scripts', 'enqueue_comment_reply' );
