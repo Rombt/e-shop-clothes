@@ -49,7 +49,7 @@ $req = get_option( 'require_name_email' );
 
 
 
-					
+
 					<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // todo !!!!! are there comments to navigate through ?>
 						<nav class="comments-nav" class="pager">
 							<div class="previous">
@@ -83,7 +83,7 @@ $req = get_option( 'require_name_email' );
 
 
 
-		
+
 		<?php if ( comments_open() ) { ?>
 			<div id="respond" class="leave-a-comment">
 				<div class="comments_name cf">
@@ -106,7 +106,7 @@ $req = get_option( 'require_name_email' );
 						<?php if ( is_user_logged_in() ) : ?>
 							<div class="loginforcomment cf">
 								<p>
-									<?php printf( ale_wp_kses( __( 'Logged in as <a class="login_link" href="%s/wp-admin/profile.php">%s</a>.', 'ale' ) ), get_option( 'siteurl' ), $user_identity ); ?>
+									<?php printf( rstr_wp_kses( __( 'Logged in as <a class="login_link" href="%s/wp-admin/profile.php">%s</a>.', 'ale' ) ), get_option( 'siteurl' ), $user_identity ); ?>
 									<a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>"
 										title="<?php esc_html__( 'Log out of this account', 'ale' ); ?>"><?php esc_html_e( 'Log out', 'ale' ); ?></a>
 								</p>
