@@ -340,7 +340,7 @@ function get_files_list( $path ) {
 	return $file_options;
 }
 
-function rstr_comment_default( $comment, $args, $depth ) {
+function rstr_comment_default( $comment, $args, $depth ) { // todo to use semantic tags
 
 
 	$GLOBALS['comment'] = $comment;

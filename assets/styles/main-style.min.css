@@ -809,7 +809,6 @@ input[type="submit"] {
   min-height: 35px;
   -webkit-appearance: button;
   font-size: 14px;
-  background: transparent;
   letter-spacing: 1px;
   border: 1px;
   text-transform: uppercase;
@@ -2678,13 +2677,11 @@ a {
   padding: 20px 10px;
 }
 .comments-background {
-  background-color: #edf1f3;
+  background-color: #d6e4eb;
 }
 .comments {
-  min-height: 760px;
   padding-top: 100px;
   padding-bottom: 100px;
-  /* .comments__row */
 }
 .comments .button-with-border {
   width: 170px;
@@ -2711,15 +2708,6 @@ a {
   .comments__row h2 {
     margin-bottom: 50px;
   }
-}
-.leave-comment {
-  /* .leave-comment-form__row */
-}
-.leave-comment__row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
 }
 .rstr_comment {
   font-size: 14px;
@@ -2770,7 +2758,6 @@ a {
   text-transform: capitalize;
   font-weight: 800;
   color: #14141d;
-  border: 1px solid #0515fd;
 }
 .rstr_comment .comment-reply-link p {
   display: inline-block;
@@ -2788,9 +2775,6 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 8.5 - 30px);
   min-height: 200px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  /* .reserve-form__input */
 }
 .leave-comment-form h2 {
   font-size: 35px;
@@ -2817,7 +2801,7 @@ a {
   min-height: 67px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   column-gap: 20px;
 }
 .leave-comment-form__input img,
@@ -2831,6 +2815,7 @@ a {
 .leave-comment-form__textarea p {
   display: block;
   margin-right: 3px;
+  margin-bottom: 0px;
 }
 .leave-comment-form__input input,
 .leave-comment-form__textarea input,
@@ -2838,7 +2823,7 @@ a {
 .leave-comment-form__textarea textarea {
   height: 50%;
   flex-grow: 1;
-  border: none;
+  border: 1px solid #dde7ec;
 }
 .leave-comment-form__input:nth-last-child(-n+2) input,
 .leave-comment-form__textarea:nth-last-child(-n+2) input {
@@ -2846,13 +2831,12 @@ a {
 }
 .leave-comment-form__textarea {
   align-items: flex-start;
-  padding-top: 30px;
+  padding: 25px 0px;
 }
 .leave-comment-form__textarea textarea {
   height: 170px;
   resize: vertical;
   appearance: none;
-  /* отключает стандартный внешний вид элемента в некоторых браузерах */
   resize: none;
 }
 .leave-comment-form .button-with-border {

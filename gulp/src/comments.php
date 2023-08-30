@@ -1,16 +1,21 @@
 <?php
-if ( post_password_required() ) {
-	return;
+
+if ( ! empty( $_SERVER['SCRIPT_FILENAME'] && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) ) {
+	die( 'Please do not load this page directly. Thanks' );
 }
 
+if ( post_password_required() ) { // todo add styles for this section!!!!!?> ?>
+	<p class="nocomments">
+		<?php _e( "This post is password protected. Enter the password to view comments.", 'restaurant-site' ) ?>
+	</p>
+	<?php return;
+}
 
 $post_id = get_the_ID();
 $user = wp_get_current_user();
 $user_identity = $user->exists() ? $user->display_name : '';
 
-$req = get_option( 'require_name_email' );
 ?>
-<!-- Comments -->
 
 
 <div class="background comments-background">
@@ -20,136 +25,95 @@ $req = get_option( 'require_name_email' );
 				<h2>
 					<?php comments_number( esc_html__( 'Comments', 'restaurant-site' ) . ' (0)', esc_html__( 'Comment', 'restaurant-site' ) . ' (1)', esc_html__( 'Comments', 'restaurant-site' ) . ' &#40;%&#41;' ) ?>
 				</h2>
-
-				<?php if ( post_password_required() ) : // todo !!!!!?>
+				<?php if ( post_password_required() ) : // todo add styles for this section!!!!!?>
 					<p class="comments-protected">
-						<?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'ale' ); ?>
+						<?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'restaurant-site' ); ?>
 					</p>
 					<?php
 					return;
 				endif; ?>
 				<?php if ( have_comments() ) : ?>
-
 					<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 2, 'avatar_size' => 55, ) ); ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // todo !!!!! are there comments to navigate through ?>
+					<?php if ( get_comment_pages_count() > 1 ) : // todo !!!!! are there comments to navigate,  add styles for this section!!!!! ?>
 						<nav class="comments-nav" class="pager">
 							<div class="previous">
-								<?php previous_comments_link( esc_html__( '&larr; Older comments', 'ale' ) ); ?>
+								<?php previous_comments_link( esc_html__( '&larr; Older comments', 'restaurant-site' ) ); ?>
 							</div>
 							<div class="next">
-								<?php next_comments_link( esc_html__( 'Newer comments &rarr;', 'ale' ) ); ?>
+								<?php next_comments_link( esc_html__( 'Newer comments &rarr;', 'restaurant-site' ) ); ?>
 							</div>
 						</nav>
-					<?php endif; // check for comment navigation ?>
+					<?php endif; ?>
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
-
-
 		<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : // todo add styles for this section!!!!!
 			?>
 			<p class="no-comments">
-				<?php esc_html_e( 'Comments are closed.', 'ale' ); ?>
+				<?php esc_html_e( 'Comments are closed.', 'restaurant-site' ); ?>
 			</p>
 		<?php endif; ?>
 
-
-
-
-
-
-
-
-
-
-
-		<?php if ( comments_open() ) { ?>
-			<div id="respond" class="leave-a-comment">
-				<div class="comments_name cf">
-					<div id="reply-title" class="comment-reply-title comments_title">
-						<?php esc_html_e( 'Leave a comment', 'ale' ); ?>
-						<?php echo cancel_comment_reply_link(); ?>
-					</div>
-					<div class="comments_separator"></div>
-					<a name="respond"></a>
+		<div class="background leave-comment-form-background">
+			<div class="conteiner leave-comment">
+				<div class="leave-comment__row">
+					<?php
+					$rstr_args_form_comment = array(
+						'fields' => [ 
+							'author' => '  <div class="leave-comment-form__input">
+												<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_name.png" alt="">
+												<p>Name*</p>
+												<input type="text" tabindex="1" name="name" value="">
+											</div>',
+							'email' => '   <div class="leave-comment-form__input">
+												<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_email.png" alt="">
+												<p>Email*</p><input type="email" tabindex="5" name="email-address" value="">
+											</div>',
+						],
+						'comment_field' => '<div class="leave-comment-form__textarea">
+														<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_masage.png" alt="">
+														<label for="comment">' . _x( 'Masage*', 'noun', 'restaurant-site' ) . '</label>
+														<textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea>
+													</div>',
+						'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+						'logged_in_as' => '',
+						'comment_notes_before' => '',
+						'comment_notes_after' => '',
+						'id_form' => 'commentform',
+						'id_submit' => 'submit',
+						'class_container' => 'comment-respond',
+						'class_form' => 'leave-comment-form',
+						'class_submit' => 'button-with-border',
+						'name_submit' => 'submit',
+						'title_reply' => __( 'Leave a Comment' ),
+						'title_reply_to' => __( 'Leave a Comment to %s' ),
+						'title_reply_before' => '<h2 id="reply-title" /*class="comment-reply-title"*/>',
+						'title_reply_after' => '</h2>',
+						'cancel_reply_before' => ' <small>',
+						'cancel_reply_after' => '</small>',
+						'cancel_reply_link' => __( 'Cancel reply' ),
+						'label_submit' => __( 'Comment now' ),
+						'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+						'submit_field' => '<p class="form-submit">%1$s %2$s</p>',
+						'format' => 'html5',
+					);
+					add_filter( 'comment_form_fields', 'rstr_reorder_comment_fields' );
+					function rstr_reorder_comment_fields( $fields ) {
+						$new_fields = array();
+						$myorder = array( 'author', 'email', 'comment' );
+						foreach ( $myorder as $key ) {
+							$new_fields[ $key ] = $fields[ $key ];
+							unset( $fields[ $key ] );
+						}
+						if ( $fields )
+							foreach ( $fields as $key => $val )
+								$new_fields[ $key ] = $val;
+						return $new_fields;
+					}
+					comment_form( $rstr_args_form_comment );
+					?>
 				</div>
-
-				<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
-					<p class="loginforcomment">
-						<?php printf( rstr_wp_kses( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'ale' ) ), wp_login_url( get_permalink() ) ); ?>
-					</p>
-				<?php else : ?>
-					<form action="<?php echo esc_url( get_option( 'siteurl' ) ); ?>/wp-comments-post.php" id="comment-form"
-						method="post" class="comment-form cf">
-
-						<?php if ( is_user_logged_in() ) : ?>
-							<div class="loginforcomment cf">
-								<p>
-									<?php printf( rstr_wp_kses( __( 'Logged in as <a class="login_link" href="%s/wp-admin/profile.php">%s</a>.', 'ale' ) ), get_option( 'siteurl' ), $user_identity ); ?>
-									<a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>"
-										title="<?php esc_html__( 'Log out of this account', 'ale' ); ?>"><?php esc_html_e( 'Log out', 'ale' ); ?></a>
-								</p>
-							</div>
-						<?php endif; ?>
-
-						<div class="line-item comment_container">
-							<textarea id="message" name="comment" tabindex="1" class="message" required="required"
-								placeholder="<?php esc_html_e( 'Type here your comment', 'ale' ); ?>"></textarea>
-						</div>
-
-						<?php if ( ! is_user_logged_in() ) : ?>
-							<div class="line-item cf">
-								<div class="third_item">
-									<input type="text" name="author" id="author" tabindex="2" <?php if ( $req )
-										echo "aria-required='true'"; ?> required="required"
-										placeholder="<?php esc_html_e( 'Your name*', 'ale' ); ?>" />
-								</div>
-								<div class="third_item">
-									<input type="email" name="email" id="email" tabindex="3" <?php if ( $req )
-										echo "aria-required='true'"; ?> required="required" email="true"
-										placeholder="<?php esc_html_e( 'Your e-mail*', 'ale' ); ?>" />
-								</div>
-								<div class="third_item last">
-									<input type="text" name="url" id="url" tabindex="4"
-										placeholder="<?php esc_html_e( 'Your website', 'ale' ); ?>" />
-								</div>
-							</div>
-						<?php endif; ?>
-
-						<div class="line-item submit_container cf">
-							<input type="submit" name="submit" tabindex="5"
-								value="<?php esc_html_e( 'Post a Comment', 'ale' ); ?>" />
-						</div>
-
-						<?php comment_id_fields(); ?>
-						<?php do_action( 'comment_form', get_the_ID() ); ?>
-					</form>
-				<?php endif; // if registration required and not logged in ?>
-
-				<?php if ( isset( $wp_default_form ) ) {
-					comment_form();
-				} ?>
 			</div>
-		<?php } ?>
-	</div>
+		</div>
+		<!-- </div> -->
