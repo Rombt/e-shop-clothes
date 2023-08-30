@@ -2716,11 +2716,13 @@ a {
   font-weight: 400;
   text-transform: lowercase;
   min-height: 167px;
-  display: flex;
   column-gap: 30px;
   padding-top: 30px;
   padding-bottom: 40px;
   /* .reply__icon */
+}
+.rstr_comment .second-level {
+  border: 1px solid #0515fd;
 }
 .rstr_comment__avatar {
   height: 70px;

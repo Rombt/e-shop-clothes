@@ -116,4 +116,4 @@ $user_identity = $user->exists() ? $user->display_name : '';
 				</div>
 			</div>
 		</div>
-		<!-- </div> -->
+	</div>
