@@ -33,7 +33,7 @@ $user_identity = $user->exists() ? $user->display_name : '';
 					return;
 				endif; ?>
 				<?php if ( have_comments() ) : ?>
-					<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 2, 'avatar_size' => 55, ) ); ?>
+					<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 5, 'avatar_size' => 55, ) ); ?>
 					<?php if ( get_comment_pages_count() > 1 ) : // todo !!!!! are there comments to navigate,  add styles for this section!!!!! ?>
 						<nav class="comments-nav" class="pager">
 							<div class="previous">
@@ -82,17 +82,18 @@ $user_identity = $user->exists() ? $user->display_name : '';
 						'comment_notes_after' => '',
 						'id_form' => 'commentform',
 						'id_submit' => 'submit',
-						'class_container' => 'comment-respond',
+						// 'class_container' => 'comment-respond',
+						'class_container' => 'leave-comment-form',
 						'class_form' => 'leave-comment-form',
 						'class_submit' => 'button-with-border',
 						'name_submit' => 'submit',
 						'title_reply' => __( 'Leave a Comment' ),
 						'title_reply_to' => __( 'Leave a Comment to %s' ),
-						'title_reply_before' => '<h2 id="reply-title" /*class="comment-reply-title"*/>',
+						'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 						'title_reply_after' => '</h2>',
-						'cancel_reply_before' => ' <small>',
-						'cancel_reply_after' => '</small>',
-						'cancel_reply_link' => __( 'Cancel reply' ),
+						'cancel_reply_before' => '',
+						'cancel_reply_after' => '',
+						'cancel_reply_link' => __( '<div class="close-window"></div>' ),
 						'label_submit' => __( 'Comment now' ),
 						'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
 						'submit_field' => '<p class="form-submit">%1$s %2$s</p>',

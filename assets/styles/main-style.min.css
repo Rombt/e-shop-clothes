@@ -2677,7 +2677,7 @@ a {
   padding: 20px 10px;
 }
 .comments-background {
-  background-color: #d6e4eb;
+  background-color: #edf1f3;
 }
 .comments {
   padding-top: 100px;
@@ -2685,6 +2685,12 @@ a {
 }
 .comments .button-with-border {
   width: 170px;
+}
+.comments__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 @media screen and (max-width: 1200px) {
   .comments__row {
@@ -2716,28 +2722,33 @@ a {
   font-weight: 400;
   text-transform: lowercase;
   min-height: 167px;
-  column-gap: 30px;
   padding-top: 30px;
-  padding-bottom: 40px;
   /* .reply__icon */
 }
-.rstr_comment .second-level {
-  border: 1px solid #0515fd;
+.rstr_comment #respond {
+  max-width: 600px;
 }
-.rstr_comment__avatar {
+.rstr_comment .comment-item {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+}
+.rstr_comment .avatar {
   height: 70px;
   width: 70px;
   border-radius: 100%;
+  flex-shrink: 0;
 }
 .rstr_comment__box {
-  width: 65.81196581%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   row-gap: 25px;
+  padding-right: 10px;
 }
 .rstr_comment__box p {
   margin-bottom: 0px;
+  word-break: break-all;
 }
 .rstr_comment__box span {
   line-height: 1.7;
@@ -2843,6 +2854,9 @@ a {
 }
 .leave-comment-form .button-with-border {
   margin-top: 30px;
+}
+.comment-reply-title {
+  position: relative;
 }
 .background-related-products {
   background-color: #edf1f3;

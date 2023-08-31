@@ -359,18 +359,15 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 		<?php comment_class( 'rstr_comment' ) ?>
 		<?php echo 'id="comment-' . get_comment_ID() . '">'; ?>
 
-		<?php // if ( 'div' != $args['style'] ) : ?>
-		<!-- <div id="div-comment-<?php comment_ID() ?>" class="comment-body"> ************************* -->
-		<?php // endif; ?>
 		<?php if ( $depth > 1 ) { ?>
-			<!-- <div class="comment-item comment2 second-level cf"> +++++++ -->
-			<div class="second-level"> +++++++
+			<div class="comment-item child-level" style="margin-left:<?php echo $depth * 50 ?>px">
 				<div class="response"></div>
 			<?php } else { ?>
-				<div class="comment-item comment1 first-level cf"> *************
+				<div class="comment-item">
 				<?php } ?>
 
-				<div class="wrap-img rstr_comment__avatar">
+				<!-- <div class="wrap-img rstr_comment__avatar"> -->
+				<div class="wrap-img avatar">
 					<?php if ( $args['avatar_size'] != 0 )
 						echo get_avatar( $comment, $args['avatar_size'] ); ?>
 				</div>
@@ -382,15 +379,13 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 					<?php echo "</div>" ?>
 					<?php comment_text() ?>
 
-					<?php if ( $depth == 1 ) { ?>
-
-
+					<?php if ( $depth <= 5 ) { ?>
 						<?php comment_reply_link( array_merge( $args, array(
 							'add_below' => $add_below,
 							'depth' => $depth,
 							'max_depth' => $args['max_depth'],
 							'reply_text' => '<div class="wrap-img rstr_comment__reply-icon"> <img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/icon_reply.png" alt="reply icon"></div> <p>Reply</p>',
-						) ) ) // todo !!!!!!!!!! ?>
+						) ) ) // todo  ?>
 
 					<?php } ?>
 					<div class="info-content">
