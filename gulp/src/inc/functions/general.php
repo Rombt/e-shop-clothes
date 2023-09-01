@@ -388,15 +388,13 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 						) ) ) // todo  ?>
 
 					<?php } ?>
-					<div class="info-content">
-						<?php if ( $comment->comment_approved == '0' ) : ?>
-							<em class="comment-awaiting-moderation">
-								<?php esc_html_e( 'Your comment is awaiting moderation.', 'ale' ) ?>
-							</em>
-							<br />
-						<?php endif; ?>
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+						<em class="comment-awaiting-moderation">
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'ale' ) ?>
+						</em>
+						<br />
+					<?php endif; ?>
 
-					</div>
 				</div>
 
 			</div>

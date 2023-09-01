@@ -14,6 +14,10 @@ if ( post_password_required() ) { // todo add styles for this section!!!!!?> ?>
 $post_id = get_the_ID();
 $user = wp_get_current_user();
 $user_identity = $user->exists() ? $user->display_name : '';
+$aria_req = true; // todo  значенине должно задаваться в опциях темы
+$html5 = 'html5';
+$req = true; // get_option( 'require_name_email' );
+$html_req = ( $req ? " required='required'" : '' );
 
 ?>
 
@@ -55,66 +59,68 @@ $user_identity = $user->exists() ? $user->display_name : '';
 			</p>
 		<?php endif; ?>
 
-		<div class="background leave-comment-form-background">
-			<div class="conteiner leave-comment">
-				<div class="leave-comment__row">
-					<?php
-					$rstr_args_form_comment = array(
-						'fields' => [ 
-							'author' => '  <div class="leave-comment-form__input">
+
+	</div>
+</div>
+
+<div class="background ">
+	<div class="conteiner leave-comment">
+		<div class="leave-comment__row">
+			<?php
+			$rstr_args_form_comment = array(
+				'fields' => [ 
+					'author' => '  <div class="leave-comment-form__input">
 												<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_name.png" alt="">
 												<p>Name*</p>
-												<input type="text" tabindex="1" name="name" value="">
+												<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . ( $aria_req ? ' aria-required="true"' : '' ) . $html_req . ' />
 											</div>',
-							'email' => '   <div class="leave-comment-form__input">
+					'email' => '   <div class="leave-comment-form__input">
 												<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_email.png" alt="">
-												<p>Email*</p><input type="email" tabindex="5" name="email-address" value="">
+												<p>Email*</p>
+												<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-describedby="email-notes"' . ( $aria_req ? ' aria-required="true"' : '' ) . $html_req . ' />
 											</div>',
-						],
-						'comment_field' => '<div class="leave-comment-form__textarea">
+				],
+				'comment_field' => '<div class="leave-comment-form__textarea">
 														<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_masage.png" alt="">
 														<label for="comment">' . _x( 'Masage*', 'noun', 'restaurant-site' ) . '</label>
 														<textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea>
 													</div>',
-						'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-						'logged_in_as' => '',
-						'comment_notes_before' => '',
-						'comment_notes_after' => '',
-						'id_form' => 'commentform',
-						'id_submit' => 'submit',
-						// 'class_container' => 'comment-respond',
-						'class_container' => 'leave-comment-form',
-						'class_form' => 'leave-comment-form',
-						'class_submit' => 'button-with-border',
-						'name_submit' => 'submit',
-						'title_reply' => __( 'Leave a Comment' ),
-						'title_reply_to' => __( 'Leave a Comment to %s' ),
-						'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-						'title_reply_after' => '</h2>',
-						'cancel_reply_before' => '',
-						'cancel_reply_after' => '',
-						'cancel_reply_link' => __( '<div class="close-window"></div>' ),
-						'label_submit' => __( 'Comment now' ),
-						'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-						'submit_field' => '<p class="form-submit">%1$s %2$s</p>',
-						'format' => 'html5',
-					);
-					add_filter( 'comment_form_fields', 'rstr_reorder_comment_fields' );
-					function rstr_reorder_comment_fields( $fields ) {
-						$new_fields = array();
-						$myorder = array( 'author', 'email', 'comment' );
-						foreach ( $myorder as $key ) {
-							$new_fields[ $key ] = $fields[ $key ];
-							unset( $fields[ $key ] );
-						}
-						if ( $fields )
-							foreach ( $fields as $key => $val )
-								$new_fields[ $key ] = $val;
-						return $new_fields;
-					}
-					comment_form( $rstr_args_form_comment );
-					?>
-				</div>
-			</div>
+				'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+				'logged_in_as' => '',
+				'comment_notes_before' => '',
+				'comment_notes_after' => '',
+				'id_form' => 'commentform',
+				'id_submit' => 'submit',
+				'class_container' => 'leave-comment-form',
+				'class_form' => 'leave-comment-form',
+				'class_submit' => 'button-with-border',
+				'name_submit' => 'submit',
+				'title_reply' => __( 'Leave a Comment' ),
+				'title_reply_to' => __( 'Leave a Comment to %s' ),
+				'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+				'title_reply_after' => '</h2>',
+				'cancel_reply_before' => '',
+				'cancel_reply_after' => '',
+				'cancel_reply_link' => __( '<div class="close-window"></div>' ),
+				'label_submit' => __( 'Comment now' ),
+				'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+				'submit_field' => '<p class="form-submit">%1$s %2$s</p>',
+			);
+			add_filter( 'comment_form_fields', 'rstr_reorder_comment_fields' );
+			function rstr_reorder_comment_fields( $fields ) {
+				$new_fields = array();
+				$myorder = array( 'author', 'email', 'comment' );
+				foreach ( $myorder as $key ) {
+					$new_fields[ $key ] = $fields[ $key ];
+					unset( $fields[ $key ] );
+				}
+				if ( $fields )
+					foreach ( $fields as $key => $val )
+						$new_fields[ $key ] = $val;
+				return $new_fields;
+			}
+			comment_form( $rstr_args_form_comment );
+			?>
 		</div>
 	</div>
+</div>

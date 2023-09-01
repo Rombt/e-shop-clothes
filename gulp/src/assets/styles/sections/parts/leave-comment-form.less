@@ -1,8 +1,8 @@
 .leave-comment-form {
    .col();
-   .size(8.5);
-
+   .size(10);
    min-height: 200px;
+
 
    h2 {
       font-size: 35px;
@@ -18,6 +18,24 @@
       margin-right: auto;
    });
 
+
+.comment-form-cookies-consent {
+
+   label {
+
+      font-size: 14px;
+      font-family: "Sintony";
+      // font-family: inherit;
+      color: rgb(54, 61, 67);
+      line-height: 1.857;
+      text-align: left;
+
+      border: 1px solid #0515fd;
+
+   }
+
+}
+
 &__input,
 &__textarea {
    font-size: 14px;
@@ -31,6 +49,8 @@
    justify-content: space-between;
    align-items: center;
    column-gap: 20px;
+
+   width: 115%;
 
    img {
 
@@ -84,17 +104,5 @@
 
 
 .comment-reply-title {
-
    position: relative;
-
-   #cancel-comment-reply-link {
-      // display: block;
-
-      // width: max-content;
-      // height: max-content;
-      // border: 1px solid #0515fd;
-
-   }
-
-
 }
