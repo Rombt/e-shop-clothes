@@ -929,10 +929,150 @@ blockquote blockquote {
   }
 }
 @font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Black.woff2") format("woff2"), url("../fonts/FiraSans-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-BlackItalic.woff2") format("woff2"), url("../fonts/FiraSans-BlackItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Bold.woff2") format("woff2"), url("../fonts/FiraSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-ExtraBold.woff2") format("woff2"), url("../fonts/FiraSans-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-ExtraBoldItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-BoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-BoldItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Light.woff2") format("woff2"), url("../fonts/FiraSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-ExtraLightItalic.woff2") format("woff2"), url("../fonts/FiraSans-ExtraLightItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-ExtraLight.woff2") format("woff2"), url("../fonts/FiraSans-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Medium.woff2") format("woff2"), url("../fonts/FiraSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-LightItalic.woff2") format("woff2"), url("../fonts/FiraSans-LightItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Regular.woff2") format("woff2"), url("../fonts/FiraSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-MediumItalic.woff2") format("woff2"), url("../fonts/FiraSans-MediumItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-SemiBold.woff2") format("woff2"), url("../fonts/FiraSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-SemiBoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-SemiBoldItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Fira_Sans";
+  font-display: swap;
+  src: url("../fonts/Fira_Sans.woff2") format("woff2"), url("../fonts/Fira_Sans.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-ThinItalic.woff2") format("woff2"), url("../fonts/FiraSans-ThinItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FiraSans";
+  font-display: swap;
+  src: url("../fonts/FiraSans-Thin.woff2") format("woff2"), url("../fonts/FiraSans-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OFL";
+  font-display: swap;
+  src: url("../fonts/OFL.woff2") format("woff2"), url("../fonts/OFL.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "PlayfairDisplay";
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-BlackItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-BlackItalic.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-display: swap;
+  src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
@@ -973,15 +1113,22 @@ blockquote blockquote {
 @font-face {
   font-family: "PlayfairDisplay";
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-MediumItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-MediumItalic.woff") format("woff");
+  src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-display: swap;
+  src: url("../fonts/PlayfairDisplay-BlackItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-BlackItalic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "PlayfairDisplay";
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
-  font-weight: 500;
+  src: url("../fonts/PlayfairDisplay-MediumItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-MediumItalic.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -1006,10 +1153,31 @@ blockquote blockquote {
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: "Playfair_Display";
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Black.woff") format("woff");
-  font-weight: 900;
+  src: url("../fonts/Playfair_Display.woff2") format("woff2"), url("../fonts/Playfair_Display.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Sintony, FiraSans;
+  font-display: swap;
+  src: url("../fonts/Sintony-Bold.woff2") format("woff2"), url("../fonts/Sintony-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Sintony, FiraSans;
+  font-display: swap;
+  src: url("../fonts/Sintony-Regular.woff2") format("woff2"), url("../fonts/Sintony-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Sintony, FiraSans;
+  font-display: swap;
+  src: url("../fonts/Sintony.woff2") format("woff2"), url("../fonts/Sintony.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -1020,31 +1188,10 @@ blockquote blockquote {
   font-style: normal;
 }
 @font-face {
-  font-family: "Playfair_Display";
+  font-family: "FiraSans";
   font-display: swap;
-  src: url("../fonts/Playfair_Display.woff2") format("woff2"), url("../fonts/Playfair_Display.woff") format("woff");
+  src: url("../fonts/FiraSans-Italic.woff2") format("woff2"), url("../fonts/FiraSans-Italic.woff") format("woff");
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Sintony";
-  font-display: swap;
-  src: url("../fonts/Sintony-Bold.woff2") format("woff2"), url("../fonts/Sintony-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Sintony";
-  font-display: swap;
-  src: url("../fonts/Sintony-Regular.woff2") format("woff2"), url("../fonts/Sintony-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PlayfairDisplay";
-  font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
-  font-weight: 700;
   font-style: normal;
 }
 /* основной цвет шрифта */
@@ -1179,7 +1326,7 @@ a {
   left: 0;
 }
 .searc-modal {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   position: absolute;
   top: 120px;
   left: 0px;
@@ -1238,7 +1385,7 @@ a {
   width: 199px;
   height: 50px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -1270,7 +1417,7 @@ a {
 }
 .button-app p {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #edf1f3;
   line-height: 1.818;
   text-align: left;
@@ -1296,7 +1443,7 @@ a {
 }
 .button-with-border {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -1369,7 +1516,7 @@ a {
 }
 .article-icons-block__likes-amounth p {
   font-size: 11px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -1444,7 +1591,7 @@ a {
 @media screen and (max-width: 720px) {
   .top-menu-wrap {
     font-size: 14px;
-    font-family: "Sintony";
+    font-family: Sintony, FiraSans;
     position: relative;
     display: flex;
     flex-direction: row;
@@ -1624,7 +1771,7 @@ a {
   margin-left: 15px;
   margin-right: 15px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
 }
@@ -1684,7 +1831,7 @@ a {
 }
 .recipes-title-nav__brows-recipes h3 {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: center;
@@ -1757,7 +1904,7 @@ a {
 }
 .menu-recipes li {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -1785,7 +1932,7 @@ a {
 }
 .select-view {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: center;
@@ -1846,7 +1993,7 @@ a {
 }
 .prod-card-grid__body h3 {
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -1854,7 +2001,7 @@ a {
 }
 .prod-card-grid__body p {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   margin-bottom: 0;
@@ -1910,7 +2057,7 @@ a {
 }
 .prod-card-list__body h3 {
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -1923,7 +2070,7 @@ a {
 }
 .prod-card-list__body p {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   margin-bottom: 0;
@@ -1988,7 +2135,7 @@ a {
 }
 .recipe-card-grid__body p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -2045,7 +2192,7 @@ a {
 }
 .recipe-card-3col p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -2097,7 +2244,7 @@ a {
   }
 }
 .article-blog__text span {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -2137,14 +2284,14 @@ a {
   border: 1px solid #fff;
 }
 .square-date p:first-of-type {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   line-height: 0.733;
   font-size: calc(16px + 14 * ((100vw - 320px) / 910));
 }
 .square-date p:last-of-type {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -2226,7 +2373,7 @@ a {
 .pagination {
   visibility: hidden;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -2267,7 +2414,7 @@ a {
 .next.page-numbers {
   color: #9fa3a6;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-weight: bold;
   text-transform: uppercase;
   line-height: 2.143;
@@ -2543,7 +2690,7 @@ a {
   min-height: 100px;
   max-width: 270px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -2597,7 +2744,7 @@ a {
 }
 .recent-post__body p {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   font-weight: bold;
   text-transform: uppercase;
@@ -2623,7 +2770,7 @@ a {
   min-height: 100px;
   max-width: 270px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -2644,7 +2791,7 @@ a {
   min-height: 100px;
   max-width: 270px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   display: flex;
   flex-wrap: wrap;
@@ -2661,7 +2808,7 @@ a {
 }
 .tag-block a {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #d38a0c;
   font-weight: bold;
   text-transform: uppercase;
@@ -2718,7 +2865,7 @@ a {
 }
 .rstr_comment {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   font-weight: 400;
   text-transform: lowercase;
@@ -2806,16 +2953,15 @@ a {
 }
 .leave-comment-form .comment-form-cookies-consent label {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
-  border: 1px solid #0515fd;
 }
 .leave-comment-form__input,
 .leave-comment-form__textarea {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -2984,7 +3130,7 @@ a {
 }
 .widget-food-category li {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -3047,7 +3193,7 @@ a {
 }
 .widget-filter-by-price p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   position: absolute;
@@ -3105,7 +3251,7 @@ a {
 }
 .widget-newsletter p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #bcbdc1;
   line-height: 1.857;
   text-align: center;
@@ -3116,7 +3262,7 @@ a {
   display: block;
   color: inherit;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #e6e9eb;
   line-height: 1.857;
   text-align: left;
@@ -3195,7 +3341,7 @@ a {
 }
 .prod-card-from-shop__text h3 {
   font-size: 17px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -3204,7 +3350,7 @@ a {
 .prod-card-from-shop__text p {
   display: inline-block;
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.375;
 }
@@ -3246,7 +3392,7 @@ a {
 }
 .rating-box {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;
@@ -3484,7 +3630,7 @@ a {
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   position: relative;
   z-index: 3;
   visibility: hidden;
@@ -3618,7 +3764,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-size: 14px;
   font-weight: bold;
   color: #fff;
@@ -3682,7 +3828,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-size: 11px;
 }
 .header .cart-book .heder-menu-button {
@@ -3807,7 +3953,7 @@ a {
 }
 .speciality-block__text h3 {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -3820,7 +3966,7 @@ a {
 }
 .speciality-block__text p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -3891,7 +4037,7 @@ a {
 }
 .img-text {
   font-size: 24px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -4091,14 +4237,14 @@ a {
   margin: 0;
 }
 .about-row__text p {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-weight: 400;
   font-size: 12.14px;
   line-height: 22.55px;
   color: #878d91;
 }
 .about-row__text-buttons {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-size: 14px;
   color: #fff;
   font-weight: 700;
@@ -4309,7 +4455,7 @@ a {
   font-weight: 700;
 }
 .food-card__food-name p {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-size: 14px;
   color: #5c6369;
   font-weight: regular;
@@ -4332,7 +4478,7 @@ a {
   }
 }
 .food-card__title {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-size: 13px;
   color: #14141d;
   font-weight: bold;
@@ -4496,7 +4642,7 @@ a {
 }
 .dish-menu__title {
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -4514,7 +4660,7 @@ a {
 }
 .dish-menu__title p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   font-weight: 400;
   color: #5c6369;
   line-height: 1.857;
@@ -4607,7 +4753,7 @@ a {
 }
 .slide-body__text {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   line-height: 1.733;
   text-align: center;
@@ -4645,7 +4791,7 @@ a {
 }
 .name {
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #fffaf1;
   font-weight: bold;
   text-transform: uppercase;
@@ -4755,7 +4901,7 @@ a {
 }
 .reserve-form__input {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -4814,7 +4960,7 @@ a {
 }
 .reserve-call-us p {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -4846,7 +4992,7 @@ a {
   justify-content: end;
   /* .footer__row */
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #adb2b7;
   line-height: 2.143;
   /* .footer__navigation */
@@ -4985,7 +5131,7 @@ a {
 .form-footer__input p {
   display: inline-block;
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #e6e9eb;
   line-height: 1.857;
   text-align: left;
@@ -5028,7 +5174,7 @@ a {
   margin-right: 15px;
   width: calc(180px + (400 - 180) * ((100vw - 320px)/(1230 - 320)));
   font-size: calc(10px + 3 * ((100vw - 320px) / 910));
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #adb2b7;
   text-transform: uppercase;
   line-height: 2;
@@ -5205,7 +5351,7 @@ a {
 }
 .form__input p {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -5301,7 +5447,7 @@ a {
 }
 .recipes-title__subtitle {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: center;
@@ -5348,7 +5494,7 @@ a {
   margin-left: 15px;
   margin-right: 15px;
   width: calc(100% / 12 * 10 - 30px);
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -5423,7 +5569,7 @@ a {
 }
 .recipe-details__blocks .ingredients li {
   font-size: calc(9px + 3 * ((100vw - 320px) / 910));
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: 400;
   text-transform: uppercase;
@@ -5498,7 +5644,7 @@ a {
 }
 .recipe-details__blocks .nutrition tbody tr {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -5509,7 +5655,7 @@ a {
 }
 .recipe-details__blocks .nutrition__row span {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -5684,7 +5830,7 @@ a {
 }
 .step-row__text {
   font-size: 14px;
-  font-family: "Sintony" !important;
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   line-height: 1.857;
   text-align: left;
@@ -5726,7 +5872,7 @@ a {
 }
 .step-square p {
   font-size: 16px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: 500;
   line-height: 1.2;
@@ -5860,7 +6006,7 @@ a {
   width: calc(100% / 12 * 8 - 30px);
   min-height: 95px;
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: center;
@@ -5883,7 +6029,7 @@ a {
 }
 .video-blok-history__description {
   font-size: 13px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -5946,7 +6092,7 @@ a {
 }
 .swiper-cooks__card span {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -6212,7 +6358,7 @@ a {
 }
 .default-sourting {
   font-size: calc(10px + 4 * ((100vw - 320px) / 910));
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -6250,7 +6396,7 @@ a {
 }
 .showing-block {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -6383,7 +6529,7 @@ a {
 }
 .shop-details__reviews {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #363d43;
   line-height: 1.857;
   text-align: left;
@@ -6393,7 +6539,7 @@ a {
 }
 .shop-details__price {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.222;
   margin-bottom: 15px;
@@ -6414,7 +6560,7 @@ a {
   margin-left: 5px;
 }
 .shop-details__text {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   font-size: calc(12px + 2 * ((100vw - 320px) / 910));
@@ -6450,7 +6596,7 @@ a {
 }
 .quantity-goods {
   font-size: 21px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #000000;
   line-height: 1.222;
   width: 110px;
@@ -6515,7 +6661,7 @@ a {
   color: #fe4c8d;
 }
 .description__text {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #5c6369;
   line-height: 1.857;
   text-align: left;
@@ -6523,7 +6669,7 @@ a {
 }
 .description__footer {
   font-size: 14px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   line-height: 2.357;
@@ -6571,7 +6717,7 @@ a {
   }
 }
 .product-cart table h3 {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -6599,7 +6745,7 @@ a {
   }
 }
 .product-cart table td {
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -6657,7 +6803,7 @@ a {
   margin-right: 15px;
   width: calc(100% / 12 * 3 - 30px);
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: rgba(255, 222, 234, 0.6);
   line-height: 1.867;
   background-color: #fe4c8d;
@@ -6689,7 +6835,7 @@ a {
 }
 .summary__table table {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: rgba(255, 255, 255, 0.8);
   line-height: 2;
   text-align: left;
@@ -6720,7 +6866,7 @@ a {
 }
 .summary__title {
   font-size: 15px;
-  font-family: "Sintony";
+  font-family: Sintony, FiraSans;
   color: #ffffff;
   font-weight: bold;
   text-transform: uppercase;

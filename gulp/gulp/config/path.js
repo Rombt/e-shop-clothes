@@ -22,7 +22,7 @@ export const path = {
         styles: `${themePath}/`,
         php: `${themePath}`,
         images: `${themePath}/`,
-        fonts: `${themePath}/`,
+        fonts: `${themePath}/assets/fonts/`,
         files: `${themePath}/`,
         svgicons: `${themePath}/`, // так же как и файлы шрифтов иканки генерируются только один раз, но переносить их нужно при каждой сборкой        
     },
