@@ -218,45 +218,45 @@
       <div class="comments__row">
          <h2>Comments (3)</h2>
 
-         <div class="comment">
-   <div class="wrap-img comment__img">
+         <div class="rstr_comment">
+   <div class="wrap-img comment__avatar">
       <img src="img/avatar-user.png" alt="comment img">
    </div>
-   <div class="comment__text">
-      <div class="comment__title">Mark peeter <p>23 min ago</p>
+   <div class="comment__box">
+      <div class="rstr_comment__author">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
-      <a href="#" class="comment__reply">
+      <a href="#" class="comment-reply-link">
          <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
          <p>Reply</p>
       </a>
    </div>
 </div>
 
-         <div class="comment">
-   <div class="wrap-img comment__img">
+         <div class="rstr_comment">
+   <div class="wrap-img comment__avatar">
       <img src="img/avatar-user.png" alt="comment img">
    </div>
-   <div class="comment__text">
-      <div class="comment__title">Mark peeter <p>23 min ago</p>
+   <div class="comment__box">
+      <div class="rstr_comment__author">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
-      <a href="#" class="comment__reply">
+      <a href="#" class="comment-reply-link">
          <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
          <p>Reply</p>
       </a>
    </div>
 </div>
 
-         <div class="comment">
-   <div class="wrap-img comment__img">
+         <div class="rstr_comment">
+   <div class="wrap-img comment__avatar">
       <img src="img/avatar-user.png" alt="comment img">
    </div>
-   <div class="comment__text">
-      <div class="comment__title">Mark peeter <p>23 min ago</p>
+   <div class="comment__box">
+      <div class="rstr_comment__author">Mark peeter <p>23 min ago</p>
       </div>
       <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, soluta consequuntur voluptatum </span>
-      <a href="#" class="comment__reply">
+      <a href="#" class="comment-reply-link">
          <div class="wrap-img comment__reply-icon"><img src="img/icon_reply.png" alt="reply icon"></div>
          <p>Reply</p>
       </a>
