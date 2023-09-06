@@ -3,14 +3,14 @@
 
 
 
-<?php get_template_part( 'template-parts/parts/head_pages' ); ?>
+<?php get_template_part( 'template-parts/parts/head_pages'); ?>
 
 <div class="conteiner articles-conteiner">
 
-	<div class="articles-page-row">
-		<main class="article-row">
+   <div class="articles-page-row">
+      <main class="article-row">
 
-			<article class="article-blog">
+         <article class="article-blog">
    <figure class="wrap-img article-blog__img">
       <img src="img/articles-img.jpg" alt="">
    </figure>
@@ -67,7 +67,7 @@
 
 </article>
 
-			<article class="article-blog">
+         <article class="article-blog">
    <figure class="wrap-img article-blog__img">
       <img src="img/articles-img.jpg" alt="">
    </figure>
@@ -124,7 +124,7 @@
 
 </article>
 
-			<article class="article-blog">
+         <article class="article-blog">
    <figure class="wrap-img article-blog__img">
       <img src="img/articles-img.jpg" alt="">
    </figure>
@@ -181,7 +181,7 @@
 
 </article>
 
-			<div class="pagination">
+         <div class="pagination">
    <a href="#" class="pagination-prev">
    <img src="img/pagination-left-arrow.png" alt="arrow left">
    <p>prev</p>
@@ -201,9 +201,9 @@
 </a>
 
 </div>
-		</main>
+      </main>
 
-		<aside class="blog-sidebar">
+      <aside class="blog-sidebar">
     <div class="blog-sidebar__body">
         <section class="category">
             <h2>category</h2>
@@ -300,7 +300,7 @@
         </div>
     </div>
 </aside>
-	</div>
+   </div>
 
 </div>
 
