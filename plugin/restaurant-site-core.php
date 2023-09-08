@@ -228,11 +228,36 @@ function create_download_directory_for_files_recipes() {
 }
 add_action( 'after_setup_theme', 'create_download_directory_for_files_recipes' );
 
+function rstr_get_images_sizes() {
+
+	return array(
+		'post' => array(
+			array(
+				'name' => 'post-img',
+				'width' => 845,
+				'height' => 400,
+				'crop' => true,
+			),
+		)
+	);
+
+}
+
+add_action( 'plugin_loaded', 'rstr_register_image_size' );
+function rstr_register_image_size() {
+	if ( function_exists( 'rstr_get_images_sizes' ) ) {
+		foreach ( rstr_get_images_sizes() as $post_type => $sizes ) {
+			foreach ( $sizes as $config ) {
+				add_image_size( $config['name'], $config['width'], $config['height'], $config['crop'] );
+			}
+		}
+	}
+}
 
 
-
-
-
+// function rst_add_image_size( $post_type, $config ) {
+// 	add_image_size( $config['name'], $config['width'], $config['height'], $config['crop'] );
+// }
 
 
 

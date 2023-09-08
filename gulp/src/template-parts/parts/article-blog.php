@@ -1,6 +1,8 @@
-<article class="article-blog">
+<article <?php post_class( 'article-blog' ) ?> id="<?php the_ID() ?>">
 	<figure class="wrap-img article-blog__img">
-		<img src="@img/articles-img.jpg" alt="">
+		<!-- <img src="@img/articles-img.jpg" alt=""> -->
+		<?php echo get_the_post_thumbnail( $post->ID, 'post-img' ); ?>
+
 	</figure>
 	<div class="article-blog__body">
 		<div class="square-date">

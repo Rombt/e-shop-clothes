@@ -133,6 +133,7 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *
  *
  * Исправить в текущей версии темы:
+ * 	при отключении темы плагин должен работать!!!
  * 	Добавить на страницу single-recepe блок "связанные" рецепты
  * 	Разобраться со стилями и блоками которые должны быть в wp по умолчанию
  * 		теги доступные внутри котентной части WP 
@@ -232,7 +233,7 @@ function restaurant_site_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'restaurant_site_scripts', 20 );
 
-function simple_restaurant_site_setup() {
+function rstr_site_setup() {
 
 
 	add_theme_support( 'custom-logo' );
@@ -264,7 +265,7 @@ function simple_restaurant_site_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 }
-add_action( 'after_setup_theme', 'simple_restaurant_site_setup' );
+add_action( 'after_setup_theme', 'rstr_site_setup' );
 
 function simple_restaurant_site_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'simple_restaurant_site_content_width', 640 );
