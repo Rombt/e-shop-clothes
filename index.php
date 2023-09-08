@@ -10,197 +10,38 @@
 	<div class="articles-page-row">
 		<main class="article-row">
 
-			<article class="article-blog">
-   <figure class="wrap-img article-blog__img">
-      <img src="img/articles-img.jpg" alt="">
-   </figure>
-   <div class="article-blog__body">
-      <div class="square-date">
-         <p>08</p>
-         <p>nov-06</p>
-      </div>
-      <div class="article-blog__text">
-         <h2>Aenean pharetra lectus utsto.</h2>
-         <span>Lorem&nbspipsum,&nbspdolor&nbspsit&nbspamet&nbspconsectetur&nbspadipisicing&nbspelit.&nbspQuam&nbspharum&nbspdelectus&nbspcumque&nbspdeserunt&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplaboriosam&nbspquis&nbspdicta&nbspsuscipit&nbsplaudantium&nbspcorrupti&nbspquos&nbspdoloremque&nbspasperiores,&nbspconsequuntur&nbsput&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsprepellendus!&nbspLaudantium&nbspsint&nbspaut&nbspest&nbspeum!</span>
-      </div>
-   </div>
 
-   <footer class="article-blog-footer" >
-      <a href="blog-details.html" class="button-orange ">read more</a>
+			<?php
+			// echo "<pre>";
+			// print_r( $wp_query );
+			// echo "</pre>";
+			?>
 
-      <div class="article-icons-block">
-   <div class="article-icons-block__likes">
-      <img src="img/article-blog-heart.png" alt="heart">
-      <div class="article-icons-block__likes-amounth">
-         <p>65</p>
-      </div>
-   </div>
-   <div class="article-icons-block__icons">
-      <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
-      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
-      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
-      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
-   </div>
-</div>
-   </footer>
+			<?php if ( have_posts() ) {
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/parts/article-blog' );
+				endwhile;
+			} else {
+				//   get_template_part('partials/notfound');
+			}
+			; ?>
 
 
-   <footer class="blog-details-footer" style="display:none">
-      <div class="blog-details-footer__quotes quotes-left">
-         <img src="img/quotes-article__left.png" alt="">
-      </div>
-
-      <div class="blog-details-footer__text">
-
-         Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-         accident,
-         sometimes on purpose (injected humour and the like).
-
-      </div>
-
-      <div class="blog-details-footer__quotes quotes-right">
-         <img src="img/quotes-article__right.png" alt="">
-      </div>
-
-   </footer>
 
 
-</article>
-
-			<article class="article-blog">
-   <figure class="wrap-img article-blog__img">
-      <img src="img/articles-img.jpg" alt="">
-   </figure>
-   <div class="article-blog__body">
-      <div class="square-date">
-         <p>12</p>
-         <p>nov-09</p>
-      </div>
-      <div class="article-blog__text">
-         <h2>Mauris finibus urna a nunc.</h2>
-         <span>Lorem&nbspipsum,&nbspdolor&nbspsit&nbspamet&nbspconsectetur&nbspadipisicing&nbspelit.&nbspQuam&nbspharum&nbspdelectus&nbspcumque&nbspdeserunt&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplaboriosam&nbspquis&nbspdicta&nbspsuscipit&nbsplaudantium&nbspcorrupti&nbspquos&nbspdoloremque&nbspasperiores,&nbspconsequuntur&nbsput&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsprepellendus!&nbspLaudantium&nbspsint&nbspaut&nbspest&nbspeum!</span>
-      </div>
-   </div>
-
-   <footer class="article-blog-footer" >
-      <a href="blog-details.html" class="button-orange ">read more</a>
-
-      <div class="article-icons-block">
-   <div class="article-icons-block__likes">
-      <img src="img/article-blog-heart.png" alt="heart">
-      <div class="article-icons-block__likes-amounth">
-         <p>65</p>
-      </div>
-   </div>
-   <div class="article-icons-block__icons">
-      <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
-      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
-      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
-      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
-   </div>
-</div>
-   </footer>
 
 
-   <footer class="blog-details-footer" style="display:none">
-      <div class="blog-details-footer__quotes quotes-left">
-         <img src="img/quotes-article__left.png" alt="">
-      </div>
-
-      <div class="blog-details-footer__text">
-
-         Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-         accident,
-         sometimes on purpose (injected humour and the like).
-
-      </div>
-
-      <div class="blog-details-footer__quotes quotes-right">
-         <img src="img/quotes-article__right.png" alt="">
-      </div>
-
-   </footer>
 
 
-</article>
-
-			<article class="article-blog">
-   <figure class="wrap-img article-blog__img">
-      <img src="img/articles-img.jpg" alt="">
-   </figure>
-   <div class="article-blog__body">
-      <div class="square-date">
-         <p>15</p>
-         <p>nov-06</p>
-      </div>
-      <div class="article-blog__text">
-         <h2>Mauris finibus urna a nunc.</h2>
-         <span>Lorem&nbspipsum,&nbspdolor&nbspsit&nbspamet&nbspconsectetur&nbspadipisicing&nbspelit.&nbspQuam&nbspharum&nbspdelectus&nbspcumque&nbspdeserunt&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplaboriosam&nbspquis&nbspdicta&nbspsuscipit&nbsplaudantium&nbspcorrupti&nbspquos&nbspdoloremque&nbspasperiores,&nbspconsequuntur&nbsput&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsprepellendus!&nbspLaudantium&nbspsint&nbspaut&nbspest&nbspeum!</span>
-      </div>
-   </div>
-
-   <footer class="article-blog-footer" >
-      <a href="blog-details.html" class="button-orange ">read more</a>
-
-      <div class="article-icons-block">
-   <div class="article-icons-block__likes">
-      <img src="img/article-blog-heart.png" alt="heart">
-      <div class="article-icons-block__likes-amounth">
-         <p>65</p>
-      </div>
-   </div>
-   <div class="article-icons-block__icons">
-      <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
-      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
-      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
-      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
-   </div>
-</div>
-   </footer>
 
 
-   <footer class="blog-details-footer" style="display:none">
-      <div class="blog-details-footer__quotes quotes-left">
-         <img src="img/quotes-article__left.png" alt="">
-      </div>
 
-      <div class="blog-details-footer__text">
-
-         Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-         accident,
-         sometimes on purpose (injected humour and the like).
-
-      </div>
-
-      <div class="blog-details-footer__quotes quotes-right">
-         <img src="img/quotes-article__right.png" alt="">
-      </div>
-
-   </footer>
+			
 
 
-</article>
+			<!-- <?php get_template_part( 'template-parts/components/pagination' ); ?> -->
 
-			<div class="pagination">
-   <a href="#" class="pagination-prev">
-   <img src="img/pagination-left-arrow.png" alt="arrow left">
-   <p>prev</p>
-</a>
-   <div class="pagination__ather-numbers">
-      1-3
-   </div>
-   <div class="pagination__ather-numbers">
-      3-9
-   </div>
-   <div class="pagination__ather-numbers">
-      9-12
-   </div>
-   <a href="#" class="pagination-next">
-   <p>next</p>
-   <img src="img/pagination-right-arrow.png" alt="arrow right">
-</a>
-
-</div>
 		</main>
 
 		<aside class="blog-sidebar">

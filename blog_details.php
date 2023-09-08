@@ -1,19 +1,19 @@
 <?php
-/* Template Name: Blog details */
+/* ____Template Name: Blog details */
 ?>
 
 
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/parts/head_pages'); ?>
+<?php get_template_part( 'template-parts/parts/head_pages' ); ?>
 
 
 
 
 
 <div class="conteiner blog-details-conteiner">
-   <main class="blog-details-row">
+	<main class="blog-details-row">
 
-      <article class="article-blog">
+		<article class="article-blog">
    <figure class="wrap-img article-blog__img">
       <img src="img/articles-img.jpg" alt="">
    </figure>
@@ -70,33 +70,33 @@
 
 </article>
 
-      <section class="blog-details-block">
-         <div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
-         <div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
+		<section class="blog-details-block">
+			<div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
+			<div class="wrap-img blog-details-block__img"><img src="img/Image_412x270.jpg" alt=""></div>
 
-         <div class="blog-details-block__text">
-            <h4>
-               Randomised words which don't look even slightly believable
-            </h4>
-            <span>
-               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sit odit est eligendi quae harum
-               numquam, tempore dolorum porro amet?adipisicing elit. Quas sit odit est eligendi quae harum
-               numquam,
-            </span>
-         </div>
+			<div class="blog-details-block__text">
+				<h4>
+					Randomised words which don't look even slightly believable
+				</h4>
+				<span>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas sit odit est eligendi quae harum
+					numquam, tempore dolorum porro amet?adipisicing elit. Quas sit odit est eligendi quae harum
+					numquam,
+				</span>
+			</div>
 
-         <footer class="blog-details-block__footer">
-            <div class="blog-details-block__button-block">
-               <a href="#" class="pagination-prev">
+			<footer class="blog-details-block__footer">
+				<div class="blog-details-block__button-block">
+					<a href="#" class="pagination-prev">
    <img src="img/pagination-left-arrow.png" alt="arrow left">
    <p>prev</p>
 </a>
-               <a href="#" class="pagination-next">
+					<a href="#" class="pagination-next">
    <p>next</p>
    <img src="img/pagination-right-arrow.png" alt="arrow right">
 </a>
-            </div>
-            <div class="article-icons-block">
+				</div>
+				<div class="article-icons-block">
    <div class="article-icons-block__likes">
       <img src="img/article-blog-heart.png" alt="heart">
       <div class="article-icons-block__likes-amounth">
@@ -110,11 +110,11 @@
       <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
    </div>
 </div>
-         </footer>
-      </section>
-   </main>
+			</footer>
+		</section>
+	</main>
 
-   <aside class="blog-sidebar">
+	<aside class="blog-sidebar">
     <div class="blog-sidebar__body">
         <section class="category">
             <h2>category</h2>
@@ -301,4 +301,4 @@
 
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>
