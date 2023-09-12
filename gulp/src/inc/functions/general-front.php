@@ -365,8 +365,6 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 			<?php } else { ?>
 				<div class="comment-item">
 				<?php } ?>
-
-				<!-- <div class="wrap-img rstr_comment__avatar"> -->
 				<div class="wrap-img avatar">
 					<?php if ( $args['avatar_size'] != 0 )
 						echo get_avatar( $comment, $args['avatar_size'] ); ?>

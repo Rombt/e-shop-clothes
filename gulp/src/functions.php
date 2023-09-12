@@ -1,6 +1,6 @@
 <?php
 
-require_once get_template_directory() . '/inc/functions/general.php';
+require_once get_template_directory() . '/inc/functions/general-front.php';
 require_once get_template_directory() . '/inc/functions/ajax.php';
 
 require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
@@ -133,6 +133,8 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *
  *
  * Исправить в текущей версии темы:
+ * 	Ссылки на в социальных сетях
+ * 		дать возможность пользовантелю выбирать в опциях темы на какие соц сети оставлять ссылки в том чесле в блоках "поделится ссылкой"
  * 	при отключении темы плагин должен работать!!!
  * 	Добавить на страницу single-recepe блок "связанные" рецепты
  * 	Разобраться со стилями и блоками которые должны быть в wp по умолчанию

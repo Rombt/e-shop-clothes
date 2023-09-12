@@ -1,0 +1,14 @@
+<div class="article-icons-block">
+   <div class="article-icons-block__likes">
+      <img src="img/article-blog-heart.png" alt="heart">
+      <div class="article-icons-block__likes-amounth">
+         <p>@@likes-amounth</p>
+      </div>
+   </div>
+   <div class="article-icons-block__icons">
+      <a href="#"><img src="img/article-blog-share.png " alt="icon share" style="width: 25px; height: 25px;"></a>
+      <a href="#"><img src="img/article-blog-facebook.png" alt="icon facebook"></a>
+      <a href="#"><img src="img/article-blog-twitter.png" alt="icon twitter"></a>
+      <a href="#"><img src="img/article-blog-google.png" alt="icon google"></a>
+   </div>
+</div>

@@ -25,7 +25,8 @@ add_action( 'admin_enqueue_scripts', 'restaurant_site_scripts_admin' );
 
 
 
-require_once get_template_directory() . '/inc/functions/general.php';
+// require_once get_template_directory() . '/inc/functions/general.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/general-admin.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/elementor-addon/elementor-addon.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/acf.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/ajax.php';

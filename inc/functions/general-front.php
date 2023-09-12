@@ -326,19 +326,19 @@ function rstr_trim_excerpt( $length, $text = '' ) {
 	return $text;
 }
 
-function get_files_list( $path ) {
+// function get_files_list( $path ) {
 
-	$files = scandir( $path ); // Получаем список файлов в директории
-	$file_options = array();
+// 	$files = scandir( $path ); // Получаем список файлов в директории
+// 	$file_options = array();
 
-	foreach ( $files as $file ) {
-		if ( $file !== '.' && $file !== '..' ) {
-			$file_options[] = $file; // Создаем массив для использования в метабоксе
-		}
-	}
+// 	foreach ( $files as $file ) {
+// 		if ( $file !== '.' && $file !== '..' ) {
+// 			$file_options[] = $file; // Создаем массив для использования в метабоксе
+// 		}
+// 	}
 
-	return $file_options;
-}
+// 	return $file_options;
+// }
 
 function rstr_comment_default( $comment, $args, $depth ) { // todo to use semantic tags
 
@@ -365,8 +365,6 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 			<?php } else { ?>
 				<div class="comment-item">
 				<?php } ?>
-
-				<!-- <div class="wrap-img rstr_comment__avatar"> -->
 				<div class="wrap-img avatar">
 					<?php if ( $args['avatar_size'] != 0 )
 						echo get_avatar( $comment, $args['avatar_size'] ); ?>

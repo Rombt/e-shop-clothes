@@ -203,6 +203,7 @@ Redux::set_section(
 );
 require_once dirname( __FILE__ ) . '/sections/home_page.php';
 require_once dirname( __FILE__ ) . '/sections/menu_page.php';
+require_once dirname( __FILE__ ) . '/sections/blog_page.php';
 require_once dirname( __FILE__ ) . '/sections/recipes_page.php';
 require_once dirname( __FILE__ ) . '/sections/recipes-single_page.php';
 require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
@@ -218,6 +219,7 @@ require_once dirname( __FILE__ ) . '/sections/copyright.php';
 require_once dirname( __FILE__ ) . '/sections/phone_numbers.php';
 require_once dirname( __FILE__ ) . '/sections/app_buttons.php';
 require_once dirname( __FILE__ ) . '/sections/opening_hours.php';
+require_once dirname( __FILE__ ) . '/sections/article_blog.php';
 
 Redux::set_section(
 	$opt_name,
