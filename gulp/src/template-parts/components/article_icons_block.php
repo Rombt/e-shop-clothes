@@ -2,13 +2,17 @@
 <div class="article-icons-block">
 	<div class="article-icons-block__likes">
 		<!-- <img src="@img/article-blog-heart.png" alt="heart"> -->
-		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon-heart']['url'] ) { ?>
-			<img src="<?php echo esc_url( $restaurant_site_options['icon-heart']['url'] ) ?>" alt="">
+		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon-heart-pasive']['url'] ) { ?>
+			<img src="<?php echo esc_url( $restaurant_site_options['icon-heart-pasive']['url'] ) ?>" alt="">
 		<?php } ?>
 
 
 		<div class="article-icons-block__likes-amounth">
-			<p>@@likes-amounth</p>
+			<?php $qautity_likes = esc_html( get_post_meta( $post->ID, 'desired_quantity_likes', true ) ); ?>
+
+			<p>
+				<?php echo $qautity_likes; ?>
+			</p>
 		</div>
 	</div>
 	<div class="article-icons-block__icons">

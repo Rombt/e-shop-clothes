@@ -122,14 +122,25 @@ Redux::set_section(
 				'default' => esc_html__( 'read more', 'restaurant-site' ),
 			),
 			array(
-				'id' => 'icon-heart',
+				'id' => 'icon-heart-pasive',
 				'type' => 'media',
 				'url' => true,
 				'title' => esc_html__( 'The Like  Icon', 'restaurant-site' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/article-blog-heart.png'
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/article-blog-heart-new.png'
+				),
+			),
+			array(
+				'id' => 'icon-heart-active',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'The Active Like  Icon', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/article-blog-heart-new-active.png'
 				),
 			),
 		),
