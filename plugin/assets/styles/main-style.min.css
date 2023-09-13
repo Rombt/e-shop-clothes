@@ -228,3 +228,22 @@ th.column-show-our-clients {
   word-wrap: break-word;
   width: 140px;
 }
+.likes-block {
+  color: #1e1e1e;
+  font-weight: 500;
+}
+.real-likes {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  column-gap: 10px;
+}
+.desired-likes {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.desired-likes input {
+  width: 70px;
+  height: 30px;
+}

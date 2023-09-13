@@ -31,6 +31,7 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/elementor-addon/elementor-addon.
 require_once plugin_dir_path( __FILE__ ) . 'inc/acf.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/ajax.php';
 require_once plugin_dir_path( __FILE__ ) . 'inc/recipes_meta_boxes.php';
+require_once plugin_dir_path( __FILE__ ) . 'inc/liks_meta_boxes.php';
 
 
 

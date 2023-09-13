@@ -113,7 +113,7 @@ function rstr_recipe_mb_html( $post ) {
 
 }
 
-function rstr_save_metabox( $post_id, $post ) {
+function rstr_save_metabox_recipes( $post_id, $post ) {
 
 	global $arr_blocks;
 
@@ -130,7 +130,7 @@ function rstr_save_metabox( $post_id, $post ) {
 
 	foreach ( $_POST as $field_name => $field_value ) {
 
-		if ( ! isset( $_POST[ $field_name ] ) || ! wp_verify_nonce( $_POST['_ingredients_metabox'], 'rstr_ingredients_fild' ) ) {
+		if ( ! wp_verify_nonce( $_POST['_ingredients_metabox'], 'rstr_ingredients_fild' ) ) {
 			return $post_id;
 		}
 
@@ -144,4 +144,4 @@ function rstr_save_metabox( $post_id, $post ) {
 
 	return $post_id;
 }
-add_action( 'save_post', 'rstr_save_metabox', 10, 2 );
+add_action( 'save_post', 'rstr_save_metabox_recipes', 10, 2 );
