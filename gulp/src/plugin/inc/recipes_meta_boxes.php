@@ -113,8 +113,6 @@ function rstr_recipe_mb_html( $post ) {
 
 }
 
-
-
 function rstr_save_metabox( $post_id, $post ) {
 
 	global $arr_blocks;
