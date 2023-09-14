@@ -1,11 +1,7 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
 
-   // const mainBlock = $('.menu-page-conteiner__row');
-   // const TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');
-
    let mainBlock;
    let TempBlock;
-
 
    let view_mod_0;
    let view_mod_1;
@@ -27,7 +23,6 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
    $('.select-view').on('click', function (e) {
       e.preventDefault();
       let typePage = $('.select-view').children().first().attr('class');
-
 
       if (typePage == 'select-view__recipes-page') {
          view_mod_0 = '2_columns';
@@ -58,8 +53,6 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          },
          success: function (response) {
             $(e.target).html((view_mod == view_mod_1) ? view_mod_0.replace(/_/g, ' ') : view_mod_1.replace(/_/, ' '));
-            // $(e.target).html((view_mod == view_mod_1) ? view_mod_0 : view_mod_1);
-
             TempBlock.html(response);
             $('.menu-page-conteiner__row').append(TempBlock);
             heightMainBlock = TempBlock.height();

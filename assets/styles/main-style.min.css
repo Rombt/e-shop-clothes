@@ -1508,7 +1508,12 @@ a {
     border-right: none;
   }
 }
-.article-icons-block__likes-amounth {
+.article-icons-block__likes .like-img {
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+}
+__likes-amounth {
   background-color: #fc4350;
   min-width: 33px;
   height: 17px;
@@ -1517,7 +1522,7 @@ a {
   max-width: 60px;
   padding: 5px;
 }
-.article-icons-block__likes-amounth p {
+__likes-amounth p {
   font-size: 11px;
   font-family: Sintony, FiraSans;
   color: #ffffff;
@@ -1529,17 +1534,12 @@ a {
   transform: translate(-50%, -50%);
   margin: 0px;
 }
-.article-icons-block__icons {
+__icons {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
   min-width: 235px;
-}
-.article-icons-block__icons img {
-  width: 25px;
-  height: 25px;
-  margin: 0 5px;
 }
 @media screen and (max-width: 1120px) {
   .icons-block {

@@ -1,13 +1,5 @@
 <?php
 
-require_once get_template_directory() . '/inc/functions/general-front.php';
-require_once get_template_directory() . '/inc/functions/ajax.php';
-
-require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/functions/Redux/redux-options.php';
-
-define( 'rs_PATH_THEME', get_template_directory() );
-define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 /** ===================    TODO    ====================================
  *	Для второй версии темы:
@@ -135,6 +127,16 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
  *
  *
  * Исправить в текущей версии темы:
+ * 	multilevelHeaderMenu()
+ * 		работает не всегда котректно 
+ * 			ширины дочерних элемнтов расчитываются не корректно в результате бургер проваливается на следующую строку
+ * 				использовать это
+ * 					   TempBlock.html(response);
+ *							$('.menu-page-conteiner__row').append(TempBlock);
+ *							heightMainBlock = TempBlock.height();
+ *							TempBlock.remove();
+ * 	Использовать https вместо http
+ * 	если какой либо элемент был скрыт js и в дальнейшем не будет использоваться он должен быть удалён
  * 	Поддержка Gutenberg метабоксами
  * 	Ссылки на в социальных сетях
  * 		дать возможность пользовантелю выбирать в опциях темы на какие соц сети оставлять ссылки в том чесле в блоках "поделится ссылкой"
@@ -218,13 +220,27 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 // 
 
 
+
+
+
+require_once get_template_directory() . '/inc/functions/general-front.php';
+require_once get_template_directory() . '/inc/functions/ajax.php';
+
+require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/Redux/redux-options.php';
+
+define( 'rs_PATH_THEME', get_template_directory() );
+define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
+
+
+
 function restaurant_site_scripts() {
+
 	wp_enqueue_style( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all' );
 	wp_enqueue_style( 'restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all' );
 
 	wp_enqueue_script( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true );
 	wp_enqueue_script( 'restaurant_site-app', get_template_directory_uri() . '/assets/js/app.main.min.js', array( 'jquery' ), '1.0', true );
-
 
 	wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
 		'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),

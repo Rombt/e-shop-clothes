@@ -3,7 +3,8 @@ import { Burger } from "./modules/Burger.js";
 import { Swipe } from "./modules/Swipe.js";
 import * as sliders from "./modules/sliders.js";
 import { jQuery_scripts } from "./modules/jQuery_scripts.js";
-import { ajax_scripts } from "./modules/ajax.js";
+import { ajax_selectView } from "./modules/ajax_select-view.js";
+import { ajax_likes } from "./modules/ajax_likes.js";
 
 
 window.onload = function () {
@@ -29,17 +30,6 @@ window.onload = function () {
     }
     const foodMenuBurger = new Burger(params_foodMenuBurger);
     foodMenuBurger.init();
-
-    // let params_recipesTitleNavBurger = {
-    //     conteiner: 'menu-recipes',
-    //     // menuList: 'menu-recipes__list',
-    //     classActive: 'menu-recipes__active',
-    //     burgerOpen: 'menu-recipes__burger',
-    //     burgerClose: 'burger-close',
-    // }
-    // const recipesTitleNavBurger = new Burger(params_recipesTitleNavBurger);
-    // recipesTitleNavBurger.init();
-
 
     var swiper = new Swipe('.shop-sidebar');
     let touchToggle = document.querySelector('.touch-toggle')
