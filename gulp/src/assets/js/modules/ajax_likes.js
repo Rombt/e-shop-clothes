@@ -5,34 +5,35 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       return;
    }
 
-   // rstrLikeIconImg.rstrLikeIconImgActive
-   // rstrLikeIconImg.rstrLikeIconImgPasive
-
-   const arr_likesImg = $('.like-img');
+   let likes = [];
    let postID;
-   arr_likesImg.each(function () {
+   let indexToDelete;
+   let actionWithLike = '';
+
+   $('.like-img').on('click', function (e) {
+      // e.preventDefault();
       postID = $(this).data('post_id');
-      console.log("postID = ", postID);
-
-      if (getCookie(`like-${postID}`)) {
-
+      likes = JSON.parse(localStorage.getItem("likes")) || [];
+      indexToDelete = likes.indexOf(postID);
+      if (indexToDelete !== -1) {
+         likes.splice(indexToDelete, 1);
+         $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgPasive);
+         actionWithLike = 'del';
+      } else {
+         likes.push(postID);
          $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgActive);
-      };
-
-   });
-
-
-
-   $('').on('click', function (e) {
-      e.preventDefault();
-
+         actionWithLike = 'add';
+      }
+      localStorage.setItem("likes", JSON.stringify(likes));
 
       $.ajax({
          url: rstrAppData.rstrAjaxURL,
          type: 'POST',
          data: {
             action: 'blog_page_likes',
-            nonce: '',
+            nonce: rstrLikeIconImg.rstrAjaxNonceLike,
+            actionWithLike: actionWithLike,
+            postID: postID,
          },
          success: function (response) {
 
@@ -41,13 +42,12 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             // console.log('Ошибка при обновлении значения поля:', error);
          }
       });
+
    });
 
 
-   function getCookie(name) {
-      let matches = document.cookie.match(new RegExp(
-         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-      ));
-      return matches ? decodeURIComponent(matches[1]) : undefined;
-   }
+
+
+
+
 })

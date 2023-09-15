@@ -7,7 +7,7 @@ add_action( 'wp_ajax_nopriv_menu_page_view', 'rstr_menu_page_view' );
 function rstr_menu_page_view() {
 	global $restaurant_site_options;
 
-	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr-ajax-nonce' ) ) {
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr-ajax-nonce-view' ) ) {
 		die;
 	}
 
@@ -56,4 +56,38 @@ function rstr_menu_page_view() {
 
 	wp_die();
 }
-;
+
+
+add_action( 'wp_ajax_blog_page_likes', 'rstr_blog_page_likes' );
+add_action( 'wp_ajax_nopriv_blog_page_likes', 'rstr_blog_page_likes' );
+function rstr_blog_page_likes() {
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr-ajax-nonce-like' ) ) {
+		die;
+	}
+
+	$post_id = $_POST['postID'];
+
+	if ( ! get_post_meta( $post_id, 'quantity_likes', true ) ) {
+		$quantity_likes = 0;
+	} else {
+		$quantity_likes = get_post_meta( $post_id, 'quantity_likes', true );
+	}
+
+	echo ( $_POST['actionWithLike'] );
+
+	if ( 'add' == $_POST['actionWithLike'] ) {
+		$quantity_likes++;
+		echo '+';
+	} else {
+		$quantity_likes--;
+		echo '-';
+	}
+
+	update_post_meta( $post_id, 'quantity_likes', $quantity_likes );
+
+
+
+	echo ( $quantity_likes );
+	wp_die();
+
+}

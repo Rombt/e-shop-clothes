@@ -1513,7 +1513,7 @@ a {
   height: 25px;
   margin: 0 5px;
 }
-__likes-amounth {
+.article-icons-block__likes-amounth {
   background-color: #fc4350;
   min-width: 33px;
   height: 17px;
@@ -1522,7 +1522,7 @@ __likes-amounth {
   max-width: 60px;
   padding: 5px;
 }
-__likes-amounth p {
+.article-icons-block__likes-amounth p {
   font-size: 11px;
   font-family: Sintony, FiraSans;
   color: #ffffff;
@@ -1534,7 +1534,7 @@ __likes-amounth p {
   transform: translate(-50%, -50%);
   margin: 0px;
 }
-__icons {
+.article-icons-block__icons {
   display: flex;
   justify-content: center;
   align-items: center;

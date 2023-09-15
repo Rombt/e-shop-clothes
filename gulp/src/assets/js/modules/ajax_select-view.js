@@ -46,7 +46,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          type: 'POST',
          data: {
             action: 'menu_page_view',
-            nonce: rstrAppData.rstrAjaxNonce,
+            nonce: rstrAppData.rstrAjaxNonceView,
             view_mod: view_mod,
             paged: currentPage,
             type_page: typePage,
