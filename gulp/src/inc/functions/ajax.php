@@ -73,21 +73,14 @@ function rstr_blog_page_likes() {
 		$quantity_likes = get_post_meta( $post_id, 'quantity_likes', true );
 	}
 
-	echo ( $_POST['actionWithLike'] );
-
 	if ( 'add' == $_POST['actionWithLike'] ) {
 		$quantity_likes++;
-		echo '+';
 	} else {
 		$quantity_likes--;
-		echo '-';
 	}
 
 	update_post_meta( $post_id, 'quantity_likes', $quantity_likes );
-
-
-
-	echo ( $quantity_likes );
+	echo $quantity_likes;
 	wp_die();
 
 }

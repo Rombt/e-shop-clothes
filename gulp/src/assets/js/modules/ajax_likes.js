@@ -15,6 +15,10 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       postID = $(this).data('post_id');
       likes = JSON.parse(localStorage.getItem("likes")) || [];
       indexToDelete = likes.indexOf(postID);
+
+
+      let blockLikesQautity = $(this).parent().find('.article-icons-block__likes-amounth>p');
+
       if (indexToDelete !== -1) {
          likes.splice(indexToDelete, 1);
          $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgPasive);
@@ -36,7 +40,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             postID: postID,
          },
          success: function (response) {
-
+            $(blockLikesQautity).html(response);
          },
          error: function (xhr, status, error) {
             // console.log('Ошибка при обновлении значения поля:', error);

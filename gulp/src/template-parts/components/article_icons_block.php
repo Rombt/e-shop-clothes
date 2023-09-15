@@ -3,28 +3,6 @@
 <div class="article-icons-block">
 	<div class="article-icons-block__likes">
 
-		<?php
-		/**
-		 * Для лайков 
-		 * 	Все посетители могут ставить лайки
-		 * 		информоция о предидущих действиях пользователя в куках
-		 * 		проверить куку 
-		 * 			если этот поьзователь поставил лайк ранее
-		 * 
-		 * 			если этот поьзователь НЕ поставил лайк ранее
-		 * 				
-		 * 	Только зарегистрированные пользователи могут ставить лайки
-		 * 		информоция о предидущих действиях пользователя в базе данных(?) 
-		 * 
-		 */
-
-
-
-		?>
-
-
-
-
 
 		<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon-heart-pasive']['url'] ) { ?>
 			<div class="wrap-img like-img" data-post_id="<?php echo esc_attr( the_ID() ) ?>">
@@ -34,7 +12,18 @@
 
 
 		<div class="article-icons-block__likes-amounth">
-			<?php $qautity_likes = esc_html( get_post_meta( $post->ID, 'desired_quantity_likes', true ) ); ?>
+			<?php
+
+			if ( get_post_meta( $post->ID, 'desired_quantity_likes', true ) ) {
+				$qautity_likes = esc_html( get_post_meta( $post->ID, 'desired_quantity_likes', true ) );
+			} else {
+				if ( get_post_meta( $post->ID, 'quantity_likes', true ) ) {
+					$qautity_likes = esc_html( get_post_meta( $post->ID, 'quantity_likes', true ) );
+				} else {
+					$qautity_likes = 0;
+				}
+			}
+			?>
 			<p>
 				<?php echo $qautity_likes; ?>
 			</p>
