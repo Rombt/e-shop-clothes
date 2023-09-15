@@ -1509,9 +1509,11 @@ a {
   }
 }
 .article-icons-block__likes .like-img {
+  visibility: hidden;
   width: 25px;
   height: 25px;
   margin: 0 5px;
+  cursor: pointer;
 }
 .article-icons-block__likes-amounth {
   background-color: #fc4350;

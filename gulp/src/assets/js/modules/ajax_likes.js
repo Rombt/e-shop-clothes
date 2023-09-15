@@ -5,20 +5,28 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       return;
    }
 
-   let likes = [];
    let postID;
    let indexToDelete;
+   let blockLikesQautity;
    let actionWithLike = '';
+   let likes = JSON.parse(localStorage.getItem("likes")) || [];
+   let hearts = $('.like-img');
+
+   hearts.each(function (index, heart) {
+      likes.forEach(id_like => {
+         if ($(heart).data('post_id') == id_like) {
+            $(heart).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgActive);
+            $(heart).css('visibility', 'visible')
+         }
+      });
+      $(heart).css('visibility', 'visible')
+   });
 
    $('.like-img').on('click', function (e) {
-      // e.preventDefault();
+      blockLikesQautity = $(this).parent().find('.article-icons-block__likes-amounth>p');
       postID = $(this).data('post_id');
-      likes = JSON.parse(localStorage.getItem("likes")) || [];
+
       indexToDelete = likes.indexOf(postID);
-
-
-      let blockLikesQautity = $(this).parent().find('.article-icons-block__likes-amounth>p');
-
       if (indexToDelete !== -1) {
          likes.splice(indexToDelete, 1);
          $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgPasive);

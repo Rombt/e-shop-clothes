@@ -66,11 +66,15 @@ function rstr_blog_page_likes() {
 	}
 
 	$post_id = $_POST['postID'];
-
-	if ( ! get_post_meta( $post_id, 'quantity_likes', true ) ) {
-		$quantity_likes = 0;
-	} else {
+	if ( get_post_meta( $post_id, 'desired_quantity_likes', true ) ) {
+		$quantity_likes = get_post_meta( $post_id, 'desired_quantity_likes', true );
+		$fild_likes = 'desired_quantity_likes';
+	} elseif ( get_post_meta( $post_id, 'quantity_likes', true ) ) {
 		$quantity_likes = get_post_meta( $post_id, 'quantity_likes', true );
+		$fild_likes = 'quantity_likes';
+	} else {
+		$quantity_likes = 0;
+		$fild_likes = 'quantity_likes';
 	}
 
 	if ( 'add' == $_POST['actionWithLike'] ) {
@@ -79,7 +83,7 @@ function rstr_blog_page_likes() {
 		$quantity_likes--;
 	}
 
-	update_post_meta( $post_id, 'quantity_likes', $quantity_likes );
+	update_post_meta( $post_id, $fild_likes, $quantity_likes );
 	echo $quantity_likes;
 	wp_die();
 
