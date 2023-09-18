@@ -16,7 +16,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    function paginationAdaptive() {
 
 
-      let PaginationBlock = $('.pagination');
+      let PaginationBlock = $('.rstr-pagination');
       if (PaginationBlock.children('.page-numbers').length == 0) {
          return false;
       }

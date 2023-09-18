@@ -2374,7 +2374,7 @@ a {
   width: 78.10650888%;
   margin-bottom: 20px;
 }
-.pagination {
+.rstr-pagination {
   visibility: hidden;
   font-size: 14px;
   font-family: Sintony, FiraSans;
@@ -2389,7 +2389,7 @@ a {
   row-gap: 10px;
   width: 100%;
 }
-.pagination .page-numbers {
+.rstr-pagination .page-numbers {
   background-color: #fff;
   border: 1px solid #d4dade;
   width: 110px;
@@ -2401,15 +2401,15 @@ a {
   color: #14141d;
 }
 @media screen and (max-width: 390px) {
-  .pagination .page-numbers {
+  .rstr-pagination .page-numbers {
     display: none;
   }
 }
-.pagination .page-numbers:hover {
+.rstr-pagination .page-numbers:hover {
   transform: scale(1.1);
   transition: all 0.7s;
 }
-.pagination .current {
+.rstr-pagination .current {
   background-color: #fea100;
   border: 1px solid #d98a03;
   color: #fff;
@@ -2435,10 +2435,10 @@ a {
 .next.page-numbers p {
   margin-bottom: 0;
 }
-.prev.page-numbers .pagination-icon::after,
-.next.page-numbers .pagination-icon::after,
-.prev.page-numbers .pagination-icon::before,
-.next.page-numbers .pagination-icon::before {
+.prev.page-numbers .rstr-pagination-icon::after,
+.next.page-numbers .rstr-pagination-icon::after,
+.prev.page-numbers .rstr-pagination-icon::before,
+.next.page-numbers .rstr-pagination-icon::before {
   border: 1px solid #9fa3a6;
 }
 .prev.page-numbers.active,
@@ -2454,34 +2454,34 @@ a {
   border: 1px solid #fea100;
   transition: all 0.7s;
 }
-.prev.page-numbers.active:hover .pagination-icon::after,
-.next.page-numbers.active:hover .pagination-icon::after,
-.prev.page-numbers.active:hover .pagination-icon::before,
-.next.page-numbers.active:hover .pagination-icon::before {
+.prev.page-numbers.active:hover .rstr-pagination-icon::after,
+.next.page-numbers.active:hover .rstr-pagination-icon::after,
+.prev.page-numbers.active:hover .rstr-pagination-icon::before,
+.next.page-numbers.active:hover .rstr-pagination-icon::before {
   border: 1px solid #ffffff;
   transition: all 0.7s;
 }
-.prev.page-numbers.active .pagination-icon,
-.next.page-numbers.active .pagination-icon {
+.prev.page-numbers.active .rstr-pagination-icon,
+.next.page-numbers.active .rstr-pagination-icon {
   position: absolute;
   cursor: pointer;
   width: 17px;
   height: 17px;
 }
-.prev.page-numbers.active .pagination-icon__next,
-.next.page-numbers.active .pagination-icon__next {
+.prev.page-numbers.active .rstr-pagination-icon__next,
+.next.page-numbers.active .rstr-pagination-icon__next {
   right: 15px;
   transform: rotate(-90deg);
 }
-.prev.page-numbers.active .pagination-icon__prev,
-.next.page-numbers.active .pagination-icon__prev {
+.prev.page-numbers.active .rstr-pagination-icon__prev,
+.next.page-numbers.active .rstr-pagination-icon__prev {
   left: 15px;
   transform: rotate(90deg);
 }
-.prev.page-numbers.active .pagination-icon::after,
-.next.page-numbers.active .pagination-icon::after,
-.prev.page-numbers.active .pagination-icon::before,
-.next.page-numbers.active .pagination-icon::before {
+.prev.page-numbers.active .rstr-pagination-icon::after,
+.next.page-numbers.active .rstr-pagination-icon::after,
+.prev.page-numbers.active .rstr-pagination-icon::before,
+.next.page-numbers.active .rstr-pagination-icon::before {
   content: '';
   position: absolute;
   top: 30%;
@@ -2490,13 +2490,13 @@ a {
   border: 1px solid #d38a0c;
   transition: all 0.7s;
 }
-.prev.page-numbers.active .pagination-icon::after,
-.next.page-numbers.active .pagination-icon::after {
+.prev.page-numbers.active .rstr-pagination-icon::after,
+.next.page-numbers.active .rstr-pagination-icon::after {
   right: 25%;
   transform: rotate(45deg);
 }
-.prev.page-numbers.active .pagination-icon::before,
-.next.page-numbers.active .pagination-icon::before {
+.prev.page-numbers.active .rstr-pagination-icon::before,
+.next.page-numbers.active .rstr-pagination-icon::before {
   left: 25%;
   transform: rotate(-45deg);
 }

@@ -1,4 +1,4 @@
-<div class="pagination">
+<div class="rstr-pagination">
 
 	<?php
 	global $wp_query;
@@ -17,12 +17,12 @@
 		$current_page = $args['current'];
 	}
 
-	$prev_link = get_previous_posts_link( '<div class="pagination-icon pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>' );
+	$prev_link = get_previous_posts_link( '<div class="rstr-pagination-icon rstr-pagination-icon__prev"></div> <p> ' . esc_html__( "prev" ) . ' </p>' );
 
 	if ( $prev_link ) {
 		echo str_replace( '<a', '<a class="prev page-numbers active"', $prev_link );
 	} else {
-		echo '<div class="prev page-numbers" ><div class="pagination-icon pagination-icon__prev"></div> <p> prev </p></div>';
+		echo '<div class="prev page-numbers" ><div class="rstr-pagination-icon rstr-pagination-icon__prev"></div> <p> prev </p></div>';
 	}
 
 	$big = 999999999;
@@ -36,12 +36,12 @@
 		)
 	);
 
-	$next_link = get_next_posts_link( '<p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div>', $query->max_num_pages );
+	$next_link = get_next_posts_link( '<p>' . esc_html__( "next" ) . '</p> <div class="rstr-pagination-icon rstr-pagination-icon__next"></div>', $query->max_num_pages );
 
 	if ( $next_link ) {
 		echo str_replace( '<a', '<a class="next page-numbers active"', $next_link );
 	} else {
-		echo '<div class="prev page-numbers" > <p>' . esc_html__( "next" ) . '</p> <div class="pagination-icon pagination-icon__next"></div></div>';
+		echo '<div class="prev page-numbers" > <p>' . esc_html__( "next" ) . '</p> <div class="rstr-pagination-icon rstr-pagination-icon__next"></div></div>';
 	}
 	?>
 </div>

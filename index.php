@@ -17,17 +17,8 @@
 	}
 	?>
 
-
-
 	<div class="articles-page-row">
 		<main class="article-row">
-
-
-			<?php
-			// echo "<pre>";
-			// print_r( $wp_query );
-			// echo "</pre>";
-			?>
 
 			<?php if ( have_posts() ) {
 				while ( have_posts() ) :
@@ -37,22 +28,11 @@
 			} else {
 				//   get_template_part('partials/notfound');
 			}
-			; ?>
+			?>
 
 
 
-
-
-
-
-
-
-
-
-			
-
-
-			<!-- <?php get_template_part( 'template-parts/components/pagination' ); ?> -->
+			<?php get_template_part( 'template-parts/components/pagination' ); ?>
 
 		</main>
 
