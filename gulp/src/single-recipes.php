@@ -13,18 +13,7 @@
 			<h2>
 				<?php echo the_title() ?>
 			</h2>
-			<div class="rating">
-				<div class="wrap-img"><img
-						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
-				<div class="wrap-img"><img
-						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
-				<div class="wrap-img"><img
-						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
-				<div class="wrap-img"><img
-						src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt=""></div>
-				<div class="wrap-img"><img
-						src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt=""></div>
-			</div>
+			<?php get_template_part( 'template-parts/components/rating-block' ) ?>
 		</div>
 	</div>
 	<main class="conteiner recipe-details">
