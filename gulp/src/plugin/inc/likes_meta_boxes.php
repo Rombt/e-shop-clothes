@@ -9,18 +9,25 @@ function rstr_likes_meta_box( $post_type, $post ) {
 
 function rstr_likes_mb_html( $post ) {
 
-	$value = get_post_meta( $post->ID, 'desired_quantity_likes', true );
+	// $value = get_post_meta( $post->ID, 'desired_quantity_likes', true );
 	wp_nonce_field( 'rstr_likes_fild', '_likes_fild_metabox' );
 	?>
 
 	<div class="likes-block" style="">
 		<div class="real-likes" style="">
 			<span>Real quantity</span>
-			<div class="quantity-likes">9568</div>
+			<div class="quantity-likes">
+				<?php
+				if ( get_post_meta( $post->ID, 'quantity_likes', true ) )
+					echo esc_html( get_post_meta( $post->ID, 'quantity_likes', true ) );
+				else
+					echo 0;
+				?>
+			</div>
 		</div>
 		<div class="desired-likes" style="">
 			<label for="desired_quantity_likes">Set the desired quantity</label>
-			<input type="text" id="desired_quantity_likes" name="desired_quantity_likes" value=<?php echo esc_html( $value ) ?>>
+			<input type="text" id="desired_quantity_likes" name="desired_quantity_likes" value=<?php echo esc_html( get_post_meta( $post->ID, 'desired_quantity_likes', true ) ) ?>>
 		</div>
 	</div>
 
@@ -41,8 +48,6 @@ function rstr_save_metabox_likes( $post_id, $post ) {
 		return $post_id;
 	}
 
-	// foreach ( $_POST as $field_name => $field_value ) {
-
 	if ( ! wp_verify_nonce( $_POST['_likes_fild_metabox'], 'rstr_likes_fild' ) ) {
 		return $post_id;
 	}
@@ -52,8 +57,6 @@ function rstr_save_metabox_likes( $post_id, $post ) {
 	} else {
 		delete_post_meta( $post_id, 'desired_quantity_likes' );
 	}
-
-	// }
 
 	return $post_id;
 }

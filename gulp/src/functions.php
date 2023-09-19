@@ -226,6 +226,7 @@
 
 
 require_once get_template_directory() . '/inc/functions/general-front.php';
+require_once get_template_directory() . '/inc/functions/comment_default.php';
 require_once get_template_directory() . '/inc/functions/ajax.php';
 
 require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';

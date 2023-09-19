@@ -8,7 +8,7 @@
 
 function add_likes_column_recipes( $columns ) {
 	$columns['quantity_likes_recipe'] = esc_html__( 'Quantity of likes', 'restaurant-site' );
-	// $columns['quantity_likes_posts'] = esc_html__( 'Quantity of likes', 'restaurant-site' );
+	$columns['desired-quantity_likes_recipe'] = esc_html__( 'Desired quantity of likes', 'restaurant-site' );
 	return $columns;
 }
 add_filter( 'manage_recipes_posts_columns', 'add_likes_column_recipes' );
@@ -16,13 +16,26 @@ add_filter( 'manage_recipes_posts_columns', 'add_likes_column_recipes' );
 
 function add_likes_column_posts( $columns ) {
 	$columns['quantity_likes_post'] = esc_html__( 'Quantity of likes posts', 'restaurant-site' );
+	$columns['desired-quantity_likes_post'] = esc_html__( 'Desired quantity of likes posts', 'restaurant-site' );
 	return $columns;
 }
 add_filter( 'manage_post_posts_columns', 'add_likes_column_posts' );
 
 
 function display_custom_field_column_likes( $column, $post_id ) {
-	echo '<p> ' . get_field( 'quantity_likes_post', $post_id ) . '</p>';
+	if ( 'quantity_likes_recipe' === $column || 'quantity_likes_post' === $column ) {
+		if ( get_post_meta( $post_id, 'quantity_likes', true ) )
+			echo esc_html( get_post_meta( $post_id, 'quantity_likes', true ) );
+		else
+			echo 0;
+	}
+
+	if ( 'desired-quantity_likes_recipe' === $column || 'desired-quantity_likes_post' === $column ) {
+		if ( get_post_meta( $post_id, 'desired_quantity_likes', true ) )
+			echo esc_html( get_post_meta( $post_id, 'desired_quantity_likes', true ) );
+		else
+			echo 0;
+	}
 }
 add_action( 'manage_post_posts_custom_column', 'display_custom_field_column_likes', 10, 2 );
 

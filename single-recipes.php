@@ -14,11 +14,16 @@
 				<?php echo the_title() ?>
 			</h2>
 			<div class="rating">
-				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
-				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
-				<img src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">
+				<div class="wrap-img"><img
+						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
+				<div class="wrap-img"><img
+						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
+				<div class="wrap-img"><img
+						src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt=""></div>
+				<div class="wrap-img"><img
+						src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt=""></div>
+				<div class="wrap-img"><img
+						src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt=""></div>
 			</div>
 		</div>
 	</div>
