@@ -8,7 +8,10 @@
 <div class="conteiner articles-conteiner">
 
 	<?php
-	if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['icon-heart-pasive']['url'] ) {
+	if ( class_exists( 'ReduxFramework' )
+		&& $restaurant_site_options['icon-heart-active']['url']
+		&& $restaurant_site_options['icon-heart-pasive']['url']
+	) {
 		wp_localize_script( 'restaurant_site-app', 'rstrLikeIconImg', [ 
 			'rstrLikeIconImgActive' => esc_url( $restaurant_site_options['icon-heart-active']['url'] ),
 			'rstrLikeIconImgPasive' => esc_url( $restaurant_site_options['icon-heart-pasive']['url'] ),
@@ -38,7 +41,7 @@
 
 		<aside class="blog-sidebar">
     <div class="blog-sidebar__body">
-        <section class="category">
+        <section class="rstr-category">
             <h2>category</h2>
             <ul>
                 <li>

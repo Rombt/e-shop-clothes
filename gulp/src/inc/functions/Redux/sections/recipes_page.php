@@ -32,13 +32,13 @@ Redux::set_section(
 			array(
 				'id' => 'recipes_page_2_columns_posts_per_page',
 				'type' => 'text',
-				'title' => esc_html__( 'Posts Per Page', 'restaurant-site' ),
+				'title' => esc_html__( 'Posts Per Page to two columns view', 'restaurant-site' ),
 				'default' => esc_html__( 8, 'restaurant-site' ),
 			),
 			array(
 				'id' => 'recipes_page_3_columns_posts_per_page',
 				'type' => 'text',
-				'title' => esc_html__( 'Posts Per Page', 'restaurant-site' ),
+				'title' => esc_html__( 'Posts Per Page to three columns view', 'restaurant-site' ),
 				'default' => esc_html__( 12, 'restaurant-site' ),
 			),
 			array(
@@ -62,6 +62,12 @@ Redux::set_section(
 				'default' => array(
 					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/star-white-rating-icon.png'
 				),
+			),
+			array(
+				'id' => 'quantity-rating-stars',
+				'type' => 'text',
+				'title' => esc_html__( 'Quantity of rating stars', 'restaurant-site' ),
+				'default' => esc_html__( 5, 'restaurant-site' ),
 			),
 
 		),

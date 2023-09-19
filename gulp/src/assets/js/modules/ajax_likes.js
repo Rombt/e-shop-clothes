@@ -62,9 +62,37 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
    if ($('body').attr('class').split(' ').includes('recipes-template-default')
       || $('body').attr('class').split(' ').includes('post-type-archive-recipes')
    ) {
+      // $('.rstr-rating').on('click', function (e) {
+      // $('.wrap-img > img').on('click', function (e) {
+      $('.wrap-img').on('click', function (e) {
+
+         let postID = $(this).parent().data('post_id');
+         let arr_stars = $(this).parent().find('.wrap-img>img');
+         let starIndex = arr_stars.index($(this).find('img'));
+
+         arr_stars.each((index, element) => {
+
+            if (index <= starIndex) {
+               $(element).attr("src", rstrStarIconImg.rstrStarIconImgActive);
+            }
+
+         });
 
 
-      console.log("***********");
+
+         // indexToDelete = likes.indexOf(postID);
+         // if (indexToDelete !== -1) {
+         //    likes.splice(indexToDelete, 1);
+         //    $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgPasive);
+         //    actionWithLike = 'del';
+         // } else {
+         //    likes.push(postID);
+         //    $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgActive);
+         //    actionWithLike = 'add';
+         // }
+         // localStorage.setItem("likes", JSON.stringify(likes));
+      })
+
 
    }
 
