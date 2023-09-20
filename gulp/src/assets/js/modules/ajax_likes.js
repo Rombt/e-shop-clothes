@@ -59,43 +59,65 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
 
 
 
-   if ($('body').attr('class').split(' ').includes('recipes-template-default')
-      || $('body').attr('class').split(' ').includes('post-type-archive-recipes')
-   ) {
-      // $('.rstr-rating').on('click', function (e) {
-      // $('.wrap-img > img').on('click', function (e) {
+   if ($('body').hasClass('recipes-template-default') || $('body').hasClass('post-type-archive-recipes')) {
+
+
+
+
+
+      let arr_quantityStars = JSON.parse(localStorage.getItem("quantityStars")) || [];
+
       $('.wrap-img').on('click', function (e) {
 
          let postID = $(this).parent().data('post_id');
-         let arr_stars = $(this).parent().find('.wrap-img>img');
+         let arr_stars = $(this).parent().find('.wrap-img > img');
          let starIndex = arr_stars.index($(this).find('img'));
+         let rating = starIndex + 1;
+
+         let indexToUpdate = arr_quantityStars.findIndex(item => item.hasOwnProperty(postID));
+         let updated = false;
 
          arr_stars.each((index, element) => {
+            let $element = $(element);
 
-            if (index <= starIndex) {
-               $(element).attr("src", rstrStarIconImg.rstrStarIconImgActive);
+            if ($element.data('status') === 'pasive' && index <= starIndex) {
+               $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
+               $element.data('status', 'active');
+
+               if (!updated) {
+                  updated = true;
+                  if (indexToUpdate !== -1) {
+                     arr_quantityStars[indexToUpdate][postID] = rating;
+                  } else {
+                     arr_quantityStars.push({ [postID]: rating });
+                  }
+               }
+            } else if ($element.data('status') === 'active' && index > starIndex) {
+               $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+               $element.data('status', 'pasive');
+
+               if (indexToUpdate !== -1) {
+                  arr_quantityStars[indexToUpdate][postID] = rating;
+               }
+
+            } else if ($element.data('status') === 'active' && starIndex == 0) {    // !!!!!!!!!!  клик по первой активной звезде должен делать её пасивной
+
+               $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+               $element.data('status', 'pasive');
+
+               console.log("**starIndex = ", starIndex);
             }
-
          });
 
-
-
-         // indexToDelete = likes.indexOf(postID);
-         // if (indexToDelete !== -1) {
-         //    likes.splice(indexToDelete, 1);
-         //    $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgPasive);
-         //    actionWithLike = 'del';
-         // } else {
-         //    likes.push(postID);
-         //    $(this).find('>img').attr("src", rstrLikeIconImg.rstrLikeIconImgActive);
-         //    actionWithLike = 'add';
-         // }
-         // localStorage.setItem("likes", JSON.stringify(likes));
-      })
-
-
+         localStorage.setItem("quantityStars", JSON.stringify(arr_quantityStars));
+      });
    }
 
 
 
 })
+
+
+
+
+
