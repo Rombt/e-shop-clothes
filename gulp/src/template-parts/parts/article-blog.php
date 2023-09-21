@@ -42,33 +42,10 @@
 				'title' => class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['article-blog_button-title'] ) : "",
 			]
 		); ?>
-		<!-- @@include('article-icons-block.html',{'likes-amounth':'65'}) -->
 		<?php
 		get_template_part( 'template-parts/components/article_icons_block' )
 			?>
 
 
 	</footer>
-
-
-	<!-- <footer class="blog-details-footer" @@blog-details-footer-display>
-		<div class="blog-details-footer__quotes quotes-left">
-			<img src="@img/quotes-article__left.png" alt="">
-		</div>
-
-		<div class="blog-details-footer__text">
-
-			Uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by
-			accident,
-			sometimes on purpose (injected humour and the like).
-
-		</div>
-
-		<div class="blog-details-footer__quotes quotes-right">
-			<img src="@img/quotes-article__right.png" alt="">
-		</div>
-
-	</footer> -->
-
-
 </article>

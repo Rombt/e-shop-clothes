@@ -4,18 +4,34 @@
 
 add_action( 'add_meta_boxes', 'rstr_likes_meta_box', 10, 2 );
 function rstr_likes_meta_box( $post_type, $post ) {
-	add_meta_box( 'rstr_likes_mb', esc_html__( 'Likes', 'restaurant-site' ), 'rstr_likes_mb_html', [ 'post', 'recipes' ], 'side' );
+	add_meta_box( 'rstr_likes_mb', esc_html__( 'Likes', 'restaurant-site' ), 'rstr_likes_mb_html', [ 'post' ], 'side' );
+}
+
+add_action( 'add_meta_boxes', 'rstr_stars_meta_box', 10, 2 );
+function rstr_stars_meta_box( $post_type, $post ) {
+	add_meta_box( 'rstr_stars_mb', esc_html__( 'Rating', 'restaurant-site' ), 'rstr_likes_mb_html', [ 'recipes' ], 'side' );
 }
 
 function rstr_likes_mb_html( $post ) {
 
-	// $value = get_post_meta( $post->ID, 'desired_quantity_likes', true );
+	$current_screen = get_current_screen();
+
 	wp_nonce_field( 'rstr_likes_fild', '_likes_fild_metabox' );
 	?>
 
 	<div class="likes-block" style="">
 		<div class="real-likes" style="">
-			<span>Real quantity</span>
+			<?php if ( $current_screen ) {
+				switch ( $current_screen->post_type ) {
+					case 'recipes':
+						echo '<span>Real rating</span>';
+						break;
+					case 'post':
+						echo '<span>Real quantity</span>';
+						break;
+				}
+			} ?>
+
 			<div class="quantity-likes">
 				<?php
 				if ( get_post_meta( $post->ID, 'quantity_likes', true ) )
@@ -25,8 +41,17 @@ function rstr_likes_mb_html( $post ) {
 				?>
 			</div>
 		</div>
-		<div class="desired-likes" style="">
-			<label for="desired_quantity_likes">Set the desired quantity</label>
+		<div class="desired-likes">
+			<?php if ( $current_screen ) {
+				switch ( $current_screen->post_type ) {
+					case 'recipes':
+						echo '<label for="desired_quantity_likes">Set the desired rating</label>';
+						break;
+					case 'post':
+						echo '<label for="desired_quantity_likes">Set the desired quantity</label>';
+						break;
+				}
+			} ?>
 			<input type="text" id="desired_quantity_likes" name="desired_quantity_likes" value=<?php echo esc_html( get_post_meta( $post->ID, 'desired_quantity_likes', true ) ) ?>>
 		</div>
 	</div>

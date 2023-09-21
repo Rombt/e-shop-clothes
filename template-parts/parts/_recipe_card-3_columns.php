@@ -7,7 +7,7 @@
 				<?php _e( the_title(), 'restaurant-site' ); ?>
 			</h3>
 		</div>
-		<?php get_template_part( './components/rating-block' ) ?>
+		<?php get_template_part( './components/rating_block' ) ?>
 		<!-- <div class="rating">
 			<img src="<?php // echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">
 			<img src="<?php // echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>" alt="">

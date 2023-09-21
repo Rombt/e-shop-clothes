@@ -8,7 +8,7 @@
 				<?php _e( the_title(), 'restaurant-site' ); ?>
 			</h3>
 		</div>
-		<?php get_template_part( 'template-parts/components/rating-block' ) ?>
+		<?php get_template_part( 'template-parts/components/rating_block' ) ?>
 	</div>
 	<p>
 		<?php echo rstr_trim_excerpt( 20 ) ?>

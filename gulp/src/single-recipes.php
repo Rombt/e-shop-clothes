@@ -13,7 +13,7 @@
 			<h2>
 				<?php echo the_title() ?>
 			</h2>
-			<?php get_template_part( 'template-parts/components/rating-block' ) ?>
+			<?php get_template_part( 'template-parts/components/rating_block' ) ?>
 		</div>
 	</div>
 	<main class="conteiner recipe-details">

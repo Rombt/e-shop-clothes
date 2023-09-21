@@ -88,3 +88,32 @@ function rstr_blog_page_likes() {
 	wp_die();
 
 }
+
+add_action( 'wp_ajax_recipes_page_stars', 'rstr_recipes_page_stars' );
+add_action( 'wp_ajax_nopriv_recipes_page_stars', 'rstr_recipes_page_stars' );
+function rstr_recipes_page_stars() {
+	if ( ! wp_verify_nonce( $_POST['nonce'], 'rstr-ajax-nonce-star' ) ) {
+		die;
+	}
+
+
+	$user_id = get_current_user_id();
+	if ( $user_id === 0 ) {
+		echo 'unregUser';
+		wp_die();
+	}
+
+	$post_id = $_POST['postID'];
+	$rating = intval( $_POST['rating'] );
+
+	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
+	$arr_ratings[ $user_id ] = $rating;
+
+	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );
+
+	// print_r( $arr_ratings );
+	// get_template_part( 'template-parts/components/rating_block' );
+
+	wp_die();
+
+}
