@@ -87,8 +87,12 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                postID: postID,
             },
             success: function (response) {
-               // $(blockStars).parent().append(response);
 
+               if (response === 'unregUser') {
+
+                  confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
+                  return;
+               }
                let arr_quantityStars = JSON.parse(localStorage.getItem("quantityStars")) || [];
                const indexToUpdate = arr_quantityStars.findIndex(item => item.hasOwnProperty(postID));
                let updated = false;
@@ -117,8 +121,6 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                      $element.data('status', 'pasive');
                   }
                });
-
-               localStorage.setItem("quantityStars", JSON.stringify(arr_quantityStars));
 
 
 
