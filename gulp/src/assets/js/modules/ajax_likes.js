@@ -65,7 +65,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       // если нет вывести окно с предложнением зарегистрироватся и ссылкай на страницу регестрации
 
 
-      let arr_quantityStars = JSON.parse(localStorage.getItem("quantityStars")) || [];
+
 
       $('.wrap-img').on('click', function (e) {
 
@@ -75,39 +75,6 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          const arr_stars = blockStars.find('.wrap-img > img');
          const starIndex = arr_stars.index($this.find('img'));
          const rating = starIndex + 1;
-         const indexToUpdate = arr_quantityStars.findIndex(item => item.hasOwnProperty(postID));
-
-
-         let updated = false;
-
-         arr_stars.each((index, element) => {
-            const $element = $(element);
-
-            if ($element.data('status') === 'pasive' && index <= starIndex) {
-               $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
-               $element.data('status', 'active');
-
-               if (!updated) {
-                  updated = true;
-                  if (indexToUpdate !== -1) {
-                     arr_quantityStars[indexToUpdate][postID] = rating;
-                  } else {
-                     arr_quantityStars.push({ [postID]: rating });
-                  }
-               }
-            } else if ($element.data('status') === 'active' && index > starIndex) {
-               $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-               $element.data('status', 'pasive');
-               (indexToUpdate !== -1) ? arr_quantityStars[indexToUpdate][postID] = rating : null;
-            }
-            else if ($element.data('status') === 'active' && starIndex == 0 && arr_quantityStars[indexToUpdate][postID] == 1) {
-               $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-               $element.data('status', 'pasive');
-            }
-         });
-
-         localStorage.setItem("quantityStars", JSON.stringify(arr_quantityStars));
-
 
 
          $.ajax({
@@ -121,6 +88,40 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             },
             success: function (response) {
                // $(blockStars).parent().append(response);
+
+               let arr_quantityStars = JSON.parse(localStorage.getItem("quantityStars")) || [];
+               const indexToUpdate = arr_quantityStars.findIndex(item => item.hasOwnProperty(postID));
+               let updated = false;
+               arr_stars.each((index, element) => {
+                  const $element = $(element);
+
+                  if ($element.data('status') === 'pasive' && index <= starIndex) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
+                     $element.data('status', 'active');
+
+                     if (!updated) {
+                        updated = true;
+                        if (indexToUpdate !== -1) {
+                           arr_quantityStars[indexToUpdate][postID] = rating;
+                        } else {
+                           arr_quantityStars.push({ [postID]: rating });
+                        }
+                     }
+                  } else if ($element.data('status') === 'active' && index > starIndex) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                     $element.data('status', 'pasive');
+                     (indexToUpdate !== -1) ? arr_quantityStars[indexToUpdate][postID] = rating : null;
+                  }
+                  else if ($element.data('status') === 'active' && starIndex == 0 && arr_quantityStars[indexToUpdate][postID] == 1) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                     $element.data('status', 'pasive');
+                  }
+               });
+
+               localStorage.setItem("quantityStars", JSON.stringify(arr_quantityStars));
+
+
+
             },
             error: function (xhr, status, error) {
                // console.log('Ошибка при обновлении значения поля:', error);
