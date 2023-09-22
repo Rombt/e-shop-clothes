@@ -74,8 +74,12 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          const postID = blockStars.data('post_id');
          const arr_stars = blockStars.find('.wrap-img > img');
          const starIndex = arr_stars.index($this.find('img'));
-         const rating = starIndex + 1;
+         let rating = starIndex + 1;
 
+
+         if ($this.find('img').data('status') === 'active' && starIndex == 0 && $(arr_stars[1]).data('status') === 'pasive') {
+            rating = starIndex;
+         }
 
          $.ajax({
             url: rstrAppData.rstrAjaxURL,
@@ -87,40 +91,40 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                postID: postID,
             },
             success: function (response) {
+               response = JSON.parse(response);
 
                if (response === 'unregUser') {
 
                   confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
                   return;
-               }
-               let arr_quantityStars = JSON.parse(localStorage.getItem("quantityStars")) || [];
-               const indexToUpdate = arr_quantityStars.findIndex(item => item.hasOwnProperty(postID));
-               let updated = false;
-               arr_stars.each((index, element) => {
-                  const $element = $(element);
+               } else if (response.hasOwnProperty('rating')) {
 
-                  if ($element.data('status') === 'pasive' && index <= starIndex) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
-                     $element.data('status', 'active');
+                  const indexToUpdate = response.rating;
 
-                     if (!updated) {
-                        updated = true;
-                        if (indexToUpdate !== -1) {
-                           arr_quantityStars[indexToUpdate][postID] = rating;
-                        } else {
-                           arr_quantityStars.push({ [postID]: rating });
-                        }
+                  // let updated = false;
+                  arr_stars.each((index, element) => {
+                     const $element = $(element);
+
+                     if ($element.data('status') === 'pasive' && index <= starIndex) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
+                        $element.data('status', 'active');
+
+
+                     } else if ($element.data('status') === 'active' && index > starIndex) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                        $element.data('status', 'pasive');
                      }
-                  } else if ($element.data('status') === 'active' && index > starIndex) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                     $element.data('status', 'pasive');
-                     (indexToUpdate !== -1) ? arr_quantityStars[indexToUpdate][postID] = rating : null;
-                  }
-                  else if ($element.data('status') === 'active' && starIndex == 0 && arr_quantityStars[indexToUpdate][postID] == 1) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                     $element.data('status', 'pasive');
-                  }
-               });
+                     else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                        $element.data('status', 'pasive');
+                     }
+                  });
+
+
+               }
+
+
+
 
 
 

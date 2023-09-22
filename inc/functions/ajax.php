@@ -99,7 +99,7 @@ function rstr_recipes_page_stars() {
 
 	$user_id = get_current_user_id();
 	if ( $user_id === 0 ) {
-		echo 'unregUser';
+		echo json_encode( 'unregUser' );
 		wp_die();
 	}
 
@@ -108,11 +108,15 @@ function rstr_recipes_page_stars() {
 
 	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
 	$arr_ratings[ $user_id ] = $rating;
-
 	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );
 
-	// print_r( $arr_ratings );
-	// get_template_part( 'template-parts/components/rating_block' );
+
+	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
+	$values = array_values( $arr_ratings );
+	$count = count( $values );
+	$total_rating = $count > 0 ? array_sum( $values ) / $count : 0;
+
+	echo json_encode( [ 'rating' => $total_rating ] );
 
 	wp_die();
 
