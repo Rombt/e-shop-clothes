@@ -65,7 +65,7 @@ function rstr_save_metabox_likes( $post_id, $post ) {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return $post_id;
 	}
-	if ( $post->post_type != 'post' ) {
+	if ( $post->post_type != 'post' ) { // пропускает recipe !!?? 
 		return $post_id;
 	}
 	$post_type = get_post_type_object( $post->post_type );

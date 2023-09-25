@@ -65,7 +65,9 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
       // если нет вывести окно с предложнением зарегистрироватся и ссылкай на страницу регестрации
 
 
-
+      // let oldUserHasRated = JSON.parse(localStorage.getItem("userHasRated")) || false;
+      let oldRating = JSON.parse(localStorage.getItem("rating")) || false;
+      let newUserHasRated;
 
       $('.wrap-img').on('click', function (e) {
 
@@ -81,23 +83,32 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             rating = starIndex;
          }
 
+         // newUserHasRated = userHasRated ? false : true;
+         let d_Rating = rating - oldRating;
+         let UserHasRated = (d_Rating === rating) ? true : false;
+
          $.ajax({
             url: rstrAppData.rstrAjaxURL,
             type: 'POST',
             data: {
                action: 'recipes_page_stars',
                nonce: rstrStarIconImg.rstrAjaxNonceStar,
-               rating: rating,
+               // rating: rating,
+               d_rating: d_Rating,
+               UserHasRated: UserHasRated,
                postID: postID,
             },
             success: function (response) {
+
+               localStorage.setItem("rating", JSON.stringify(rating));
                response = JSON.parse(response);
 
-               if (response === 'unregUser') {
+               // if (response === 'unregUser') {     // todo пользователь в настройках темы указывает разрешено и не зарегистрированным пользователям участвывать в оценке
+               //    confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
+               //    return;
+               // };
 
-                  confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
-                  return;
-               } else if (response.hasOwnProperty('rating')) {
+               if (response.hasOwnProperty('rating')) {
 
                   const indexToUpdate = response.rating;
 

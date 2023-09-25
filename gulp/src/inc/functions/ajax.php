@@ -96,27 +96,60 @@ function rstr_recipes_page_stars() {
 		die;
 	}
 
+	// $user_id = get_current_user_id();		// todo пользователь в настройках темы указывает разрешено и не зарегистрированным пользователям участвывать в оценке
+	// if ( $user_id === 0 ) {
+	// 	echo json_encode( 'unregUser' );
+	// 	wp_die();
+	// }
+	// $user_has_rated = false;
 
-	$user_id = get_current_user_id();
-	if ( $user_id === 0 ) {
-		echo json_encode( 'unregUser' );
-		wp_die();
-	}
+
+
 
 	$post_id = $_POST['postID'];
-	$rating = intval( $_POST['rating'] );
+	$d_rating = intval( $_POST['d_rating'] );
+	$UserHasRated = intval( $_POST['UserHasRated'] );
+	$number_of_raters = 1;
+	$rating = 0;
 
-	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
-	$arr_ratings[ $user_id ] = $rating;
+	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? [];
+
+	if ( count( $arr_ratings ) == 0 ) {
+		$arr_ratings[0] = $number_of_raters;
+		// $arr_ratings[0] = ($UserHasRated > 0) ? $number_of_raters++ : $number_of_raters--;
+		$arr_ratings[1] = $d_rating;
+	} else {
+		$number_of_raters = $arr_ratings[0];
+		$rating = $arr_ratings[1];
+	}
+
+	$number_of_raters = ( $UserHasRated > 0 ) ? $number_of_raters++ : $number_of_raters--; //!!!!!!!!!!!!
+
+	$rating = ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters;
+
+	// $arr_ratings = [$number_of_raters, $rating];
+	// $arr_ratings[ $user_id ] = $rating;
+
+
+
+	// todo вынисти на сторону SQL
+	// перещёт рейтинга с учётом вновь посавленой оценки 
+	// rating хранится как пара: непосредственно значение рейтинга и количество оценивших
+
+
+
+
 	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );
 
 
-	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
-	$values = array_values( $arr_ratings );
-	$count = count( $values );
-	$total_rating = $count > 0 ? array_sum( $values ) / $count : 0;
 
-	echo json_encode( [ 'rating' => $total_rating ] );
+
+	// $arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
+	// $values = array_values( $arr_ratings );
+	// $count = count( $values );
+	// $total_rating = $count > 0 ? array_sum( $values ) / $count : 0;
+
+	// echo json_encode( [ 'rating' => $total_rating ] );
 
 	wp_die();
 
