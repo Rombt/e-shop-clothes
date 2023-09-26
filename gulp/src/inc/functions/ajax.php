@@ -108,48 +108,26 @@ function rstr_recipes_page_stars() {
 
 	$post_id = $_POST['postID'];
 	$d_rating = intval( $_POST['d_rating'] );
-	$UserHasRated = intval( $_POST['UserHasRated'] );
-	$number_of_raters = 1;
+	$UserHasRated = $_POST['UserHasRated'];
+	$number_of_raters = 0;
 	$rating = 0;
 
-	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? [];
+	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?: [];
 
 	if ( count( $arr_ratings ) == 0 ) {
-		$arr_ratings[0] = $number_of_raters;
-		// $arr_ratings[0] = ($UserHasRated > 0) ? $number_of_raters++ : $number_of_raters--;
-		$arr_ratings[1] = $d_rating;
+		$arr_ratings[] = $number_of_raters;
+		$arr_ratings[] = $d_rating;
 	} else {
 		$number_of_raters = $arr_ratings[0];
 		$rating = $arr_ratings[1];
 	}
 
-	$number_of_raters = ( $UserHasRated > 0 ) ? $number_of_raters++ : $number_of_raters--; //!!!!!!!!!!!!
-
-	$rating = ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters;
-
-	// $arr_ratings = [$number_of_raters, $rating];
-	// $arr_ratings[ $user_id ] = $rating;
-
-
-
-	// todo вынисти на сторону SQL
-	// перещёт рейтинга с учётом вновь посавленой оценки 
-	// rating хранится как пара: непосредственно значение рейтинга и количество оценивших
-
-
-
+	$number_of_raters = ( $UserHasRated == 'true' ) ? $number_of_raters + 1 : $number_of_raters;
+	$rating = floor( ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters );
+	$arr_ratings = [ $number_of_raters, $rating ];
 
 	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );
-
-
-
-
-	// $arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?? 0;
-	// $values = array_values( $arr_ratings );
-	// $count = count( $values );
-	// $total_rating = $count > 0 ? array_sum( $values ) / $count : 0;
-
-	// echo json_encode( [ 'rating' => $total_rating ] );
+	echo json_encode( [ 'rating' => $rating ] );
 
 	wp_die();
 

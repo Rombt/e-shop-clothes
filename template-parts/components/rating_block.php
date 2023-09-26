@@ -6,15 +6,18 @@
 	if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['quantity-rating-stars'] ) :
 
 		$desired_quantity_likes = get_post_meta( $post->ID, 'desired_quantity_likes', true );
-		if ( $desired_quantity_likes ) {
-			$qautity_active_stars = esc_html( $desired_quantity_likes ? $desired_quantity_likes : 0 );
-		} else {
+		$quantity_rating_stars = intval( $restaurant_site_options['quantity-rating-stars'] );
 
-			$qautity_active_stars = intval( get_post_meta( $post->ID, 'quantity_likes', true ) ?? 0 );
+		if ( $desired_quantity_likes ) {
+			$qautity_active_stars = esc_html( $desired_quantity_likes );
+		} else {
+			$qautity_active_stars = intval( unserialize( get_post_meta( $post->ID, 'rating', true ) )[1] ?? 0 );
 		}
 
-
 		for ( $i = 0; $i < $qautity_active_stars; $i++ ) : ?>
+			<?php if ( $i >= $quantity_rating_stars )
+				break; ?>
+
 			<div class="wrap-img">
 				<img data-status="active" src="<?php echo esc_url( $restaurant_site_options['rating-star-active_img']['url'] ) ?>"
 					alt="">
@@ -23,7 +26,7 @@
 			<?php
 		endfor;
 
-		for ( $i = 0; $i < ( intval( $restaurant_site_options['quantity-rating-stars'] ) - $qautity_active_stars ); $i++ ) : ?>
+		for ( $i = 0; $i < ( $quantity_rating_stars - $qautity_active_stars ); $i++ ) : ?>
 			<div class="wrap-img">
 				<img data-status="pasive"
 					src="<?php echo esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ) ?>" alt="">

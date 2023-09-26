@@ -66,7 +66,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
 
 
       // let oldUserHasRated = JSON.parse(localStorage.getItem("userHasRated")) || false;
-      let oldRating = JSON.parse(localStorage.getItem("rating")) || false;
+
       let newUserHasRated;
 
       $('.wrap-img').on('click', function (e) {
@@ -76,7 +76,9 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          const postID = blockStars.data('post_id');
          const arr_stars = blockStars.find('.wrap-img > img');
          const starIndex = arr_stars.index($this.find('img'));
+
          let rating = starIndex + 1;
+         let oldRating = JSON.parse(localStorage.getItem("rating")) || 0;
 
 
          if ($this.find('img').data('status') === 'active' && starIndex == 0 && $(arr_stars[1]).data('status') === 'pasive') {
@@ -85,7 +87,13 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
 
          // newUserHasRated = userHasRated ? false : true;
          let d_Rating = rating - oldRating;
-         let UserHasRated = (d_Rating === rating) ? true : false;
+         // let UserHasRated = (d_Rating === rating) ? 1 : 0;    // если это первая оценка этого пользователя
+         let UserHasRated = (d_Rating === rating) ? true : false;    // если это первая оценка этого пользователя
+
+         console.log(" UserHasRated = ", UserHasRated);
+         console.log("rating = ", rating);
+         console.log("oldRating = ", oldRating);
+         console.log("d_Rating = ", d_Rating);
 
          $.ajax({
             url: rstrAppData.rstrAjaxURL,

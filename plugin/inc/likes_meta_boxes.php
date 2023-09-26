@@ -34,10 +34,18 @@ function rstr_likes_mb_html( $post ) {
 
 			<div class="quantity-likes">
 				<?php
-				if ( get_post_meta( $post->ID, 'quantity_likes', true ) )
-					echo esc_html( get_post_meta( $post->ID, 'quantity_likes', true ) );
-				else
+
+				if ( get_post_meta( $post->ID, 'rating', true ) ) {
+					if ( $current_screen->post_type == 'recipes' ) {
+						echo esc_html( intval( unserialize( get_post_meta( $post->ID, 'rating', true ) )[1] ?? 0 ) );
+
+					} elseif ( $current_screen->post_type == 'post' ) {
+						echo esc_html( get_post_meta( $post->ID, 'quantity_likes', true ) );
+					}
+
+				} else {
 					echo 0;
+				}
 				?>
 			</div>
 		</div>
