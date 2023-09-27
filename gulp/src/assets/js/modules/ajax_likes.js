@@ -57,20 +57,9 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
 
    }
 
-
-
    if ($('body').hasClass('recipes-template-default') || $('body').hasClass('post-type-archive-recipes')) {
 
-      // проверить зарегтстрирован ли пользователь
-      // если нет вывести окно с предложнением зарегистрироватся и ссылкай на страницу регестрации
-
-
-      // let oldUserHasRated = JSON.parse(localStorage.getItem("userHasRated")) || false;
-
-      let newUserHasRated;
-
       $('.wrap-img').on('click', function (e) {
-
          const $this = $(this);
          const blockStars = $this.parent();
          const postID = blockStars.data('post_id');
@@ -80,20 +69,12 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          let rating = starIndex + 1;
          let oldRating = JSON.parse(localStorage.getItem("rating")) || 0;
 
-
          if ($this.find('img').data('status') === 'active' && starIndex == 0 && $(arr_stars[1]).data('status') === 'pasive') {
             rating = starIndex;
          }
 
-         // newUserHasRated = userHasRated ? false : true;
          let d_Rating = rating - oldRating;
-         // let UserHasRated = (d_Rating === rating) ? 1 : 0;    // если это первая оценка этого пользователя
          let UserHasRated = (d_Rating === rating) ? true : false;    // если это первая оценка этого пользователя
-
-         console.log(" UserHasRated = ", UserHasRated);
-         console.log("rating = ", rating);
-         console.log("oldRating = ", oldRating);
-         console.log("d_Rating = ", d_Rating);
 
          $.ajax({
             url: rstrAppData.rstrAjaxURL,
@@ -101,34 +82,29 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             data: {
                action: 'recipes_page_stars',
                nonce: rstrStarIconImg.rstrAjaxNonceStar,
-               // rating: rating,
                d_rating: d_Rating,
                UserHasRated: UserHasRated,
                postID: postID,
             },
             success: function (response) {
 
-               localStorage.setItem("rating", JSON.stringify(rating));
-               response = JSON.parse(response);
-
                // if (response === 'unregUser') {     // todo пользователь в настройках темы указывает разрешено и не зарегистрированным пользователям участвывать в оценке
                //    confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
                //    return;
                // };
 
-               if (response.hasOwnProperty('rating')) {
+               localStorage.setItem("rating", JSON.stringify(rating));
+               response = JSON.parse(response);
 
+               if (response.hasOwnProperty('rating')) {
                   const indexToUpdate = response.rating;
 
-                  // let updated = false;
                   arr_stars.each((index, element) => {
                      const $element = $(element);
 
                      if ($element.data('status') === 'pasive' && index <= starIndex) {
                         $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
                         $element.data('status', 'active');
-
-
                      } else if ($element.data('status') === 'active' && index > starIndex) {
                         $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
                         $element.data('status', 'pasive');
@@ -138,15 +114,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                         $element.data('status', 'pasive');
                      }
                   });
-
-
                }
-
-
-
-
-
-
             },
             error: function (xhr, status, error) {
                // console.log('Ошибка при обновлении значения поля:', error);

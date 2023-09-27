@@ -96,22 +96,17 @@ function rstr_recipes_page_stars() {
 		die;
 	}
 
-	// $user_id = get_current_user_id();		// todo пользователь в настройках темы указывает разрешено и не зарегистрированным пользователям участвывать в оценке
+	// $user_id = get_current_user_id();		// todo пользователь в настройках темы указывает разрешено и не зарегистрированным посетителям участвывать в оценке
 	// if ( $user_id === 0 ) {
 	// 	echo json_encode( 'unregUser' );
 	// 	wp_die();
 	// }
-	// $user_has_rated = false;
-
-
-
 
 	$post_id = $_POST['postID'];
 	$d_rating = intval( $_POST['d_rating'] );
 	$UserHasRated = $_POST['UserHasRated'];
 	$number_of_raters = 0;
 	$rating = 0;
-
 	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?: [];
 
 	if ( count( $arr_ratings ) == 0 ) {

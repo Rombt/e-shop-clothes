@@ -6,70 +6,42 @@
 
 
 
-function add_likes_column_recipes( $columns ) {
-	$columns['quantity_likes_recipe'] = esc_html__( 'Quantity of likes', 'restaurant-site' );
-	$columns['desired-quantity_likes_recipe'] = esc_html__( 'Desired quantity of likes', 'restaurant-site' );
-	return $columns;
-}
-add_filter( 'manage_recipes_posts_columns', 'add_likes_column_recipes' );
 
 
-function add_likes_column_posts( $columns ) {
-	$columns['quantity_likes_post'] = esc_html__( 'Quantity of likes posts', 'restaurant-site' );
-	$columns['desired-quantity_likes_post'] = esc_html__( 'Desired quantity of likes posts', 'restaurant-site' );
-	return $columns;
-}
-add_filter( 'manage_post_posts_columns', 'add_likes_column_posts' );
+
+
+
+
+//===============================================================================================
+//===============================================================================================
 
 
 function display_custom_field_column_likes( $column, $post_id ) {
-	if ( 'quantity_likes_recipe' === $column || 'quantity_likes_post' === $column ) {
+
+	if ( 'quantity_likes_post' === $column ) {
 		if ( get_post_meta( $post_id, 'quantity_likes', true ) )
 			echo esc_html( get_post_meta( $post_id, 'quantity_likes', true ) );
 		else
-			echo 0;
+			echo '—';
 	}
 
-	if ( 'desired-quantity_likes_recipe' === $column || 'desired-quantity_likes_post' === $column ) {
+	if ( 'desired-quantity_likes_post' === $column ) {
 		if ( get_post_meta( $post_id, 'desired_quantity_likes', true ) )
 			echo esc_html( get_post_meta( $post_id, 'desired_quantity_likes', true ) );
 		else
-			echo 0;
+			echo '—';
 	}
 }
 add_action( 'manage_post_posts_custom_column', 'display_custom_field_column_likes', 10, 2 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//===============================================================================================
-//===============================================================================================
-
-// Add new column on page of all recipes
-function add_food_menu_items_column( $columns ) {
-	$columns['show-food-menu'] = esc_html__( 'Show in the "Food menu" section ', 'restaurant-site' );
-	$columns['show-today-specialy'] = esc_html__( 'Show in the "Today Specialy" section ', 'restaurant-site' );
-	return $columns;
+function display_custom_field_column_rating( $column, $post_id ) {
+	if ( 'quantity_likes_recipe' === $column ) {
+		echo esc_html( unserialize( get_post_meta( $post_id, 'rating', true ) )[1] ?? '—' );
+	} elseif ( 'desired-quantity_likes_recipe' === $column ) {
+		echo esc_html( get_post_meta( $post_id, 'desired_quantity_likes', true ) ?: '—' );
+	}
 }
-add_filter( 'manage_food_menu_items_posts_columns', 'add_food_menu_items_column' );
-
-function add_our_clients_column( $columns ) {
-	$columns['show-our-clients'] = esc_html__( 'Show in the "Happy Clients" slider', 'restaurant-site' );
-	return $columns;
-}
-add_filter( 'manage_our-clients_posts_columns', 'add_our_clients_column' );
+add_action( 'manage_recipes_posts_custom_column', 'display_custom_field_column_rating', 10, 2 );
 
 function display_custom_field_column( $column, $post_id ) {
 	if ( 'show-food-menu' === $column ) {
@@ -107,6 +79,33 @@ function display_our_clients__column( $column, $post_id ) {
 	}
 }
 add_action( 'manage_our-clients_posts_custom_column', 'display_our_clients__column', 10, 2 );
+
+function add_likes_column_recipes( $columns ) {
+	$columns['quantity_likes_recipe'] = esc_html__( 'Rating', 'restaurant-site' );
+	$columns['desired-quantity_likes_recipe'] = esc_html__( 'Desired rating', 'restaurant-site' );
+	return $columns;
+}
+add_filter( 'manage_recipes_posts_columns', 'add_likes_column_recipes' );
+
+function add_likes_column_posts( $columns ) {
+	$columns['quantity_likes_post'] = esc_html__( 'Quantity of likes posts', 'restaurant-site' );
+	$columns['desired-quantity_likes_post'] = esc_html__( 'Desired quantity of likes posts', 'restaurant-site' );
+	return $columns;
+}
+add_filter( 'manage_post_posts_columns', 'add_likes_column_posts' );
+
+function add_food_menu_items_column( $columns ) {
+	$columns['show-food-menu'] = esc_html__( 'Show in the "Food menu" section ', 'restaurant-site' );
+	$columns['show-today-specialy'] = esc_html__( 'Show in the "Today Specialy" section ', 'restaurant-site' );
+	return $columns;
+}
+add_filter( 'manage_food_menu_items_posts_columns', 'add_food_menu_items_column' );
+
+function add_our_clients_column( $columns ) {
+	$columns['show-our-clients'] = esc_html__( 'Show in the "Happy Clients" slider', 'restaurant-site' );
+	return $columns;
+}
+add_filter( 'manage_our-clients_posts_columns', 'add_our_clients_column' );
 
 function render_custom_columns( $name_field, $class_checkbox, $post_id, $nonce, $id_nonce ) {
 
