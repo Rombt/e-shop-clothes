@@ -67,13 +67,22 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          const starIndex = arr_stars.index($this.find('img'));
 
          let rating = starIndex + 1;
-         let oldRating = JSON.parse(localStorage.getItem("rating")) || 0;
+
+         let ratings = JSON.parse(localStorage.getItem("ratings")) || {};
+         let oldRating = ratings[postID] || 0;
+
+
 
          if ($this.find('img').data('status') === 'active' && starIndex == 0 && $(arr_stars[1]).data('status') === 'pasive') {
             rating = starIndex;
          }
 
          let d_Rating = rating - oldRating;
+
+         console.log("rating = ", rating);
+         console.log("oldRating = ", oldRating);
+
+
          let UserHasRated = (d_Rating === rating) ? true : false;    // если это первая оценка этого пользователя
 
          $.ajax({
@@ -88,33 +97,35 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             },
             success: function (response) {
                response = JSON.parse(response);
-
                if (response === 'unregUser') {
                   confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
                   return;
                };
 
-               if (response.hasOwnProperty('rating')) {
+               // if (response.hasOwnProperty('rating')) {
 
-                  localStorage.setItem("rating", JSON.stringify(rating));
-                  const indexToUpdate = response.rating;
+               ratings[postID] = rating;
 
-                  arr_stars.each((index, element) => {
-                     const $element = $(element);
 
-                     if ($element.data('status') === 'pasive' && index <= starIndex) {
-                        $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
-                        $element.data('status', 'active');
-                     } else if ($element.data('status') === 'active' && index > starIndex) {
-                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                        $element.data('status', 'pasive');
-                     }
-                     else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
-                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                        $element.data('status', 'pasive');
-                     }
-                  });
-               }
+               localStorage.setItem("ratings", JSON.stringify(ratings));
+               const indexToUpdate = response.rating;
+
+               arr_stars.each((index, element) => {
+                  const $element = $(element);
+
+                  if ($element.data('status') === 'pasive' && index <= starIndex) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
+                     $element.data('status', 'active');
+                  } else if ($element.data('status') === 'active' && index > starIndex) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                     $element.data('status', 'pasive');
+                  }
+                  else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
+                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                     $element.data('status', 'pasive');
+                  }
+               });
+               // }
             },
             error: function (xhr, status, error) {
                // console.log('Ошибка при обновлении значения поля:', error);

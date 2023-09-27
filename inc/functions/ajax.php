@@ -119,7 +119,13 @@ function rstr_recipes_page_stars() {
 	$rating = 0;
 	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?: [];
 
-	if ( count( $arr_ratings ) == 0 ) {
+	// echo "<pre>";
+	// print_r( $arr_ratings );
+	// echo "</pre>";
+
+
+
+	if ( empty( $arr_ratings ) ) {
 		$arr_ratings[] = $number_of_raters;
 		$arr_ratings[] = $d_rating;
 	} else {
