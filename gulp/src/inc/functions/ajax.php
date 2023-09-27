@@ -2,6 +2,7 @@
 
 session_status() == PHP_SESSION_NONE ? session_start() : null;
 
+
 add_action( 'wp_ajax_menu_page_view', 'rstr_menu_page_view' );
 add_action( 'wp_ajax_nopriv_menu_page_view', 'rstr_menu_page_view' );
 function rstr_menu_page_view() {
@@ -66,6 +67,7 @@ function rstr_blog_page_likes() {
 	}
 
 	$post_id = $_POST['postID'];
+
 	if ( get_post_meta( $post_id, 'desired_quantity_likes', true ) ) {
 		$quantity_likes = get_post_meta( $post_id, 'desired_quantity_likes', true );
 		$fild_likes = 'desired_quantity_likes';
@@ -96,15 +98,23 @@ function rstr_recipes_page_stars() {
 		die;
 	}
 
-	// $user_id = get_current_user_id();		// todo пользователь в настройках темы указывает разрешено и не зарегистрированным посетителям участвывать в оценке
-	// if ( $user_id === 0 ) {
-	// 	echo json_encode( 'unregUser' );
-	// 	wp_die();
-	// }
+	global $restaurant_site_options;
+	if ( $restaurant_site_options['rights_set_rating'] ) {
+		$user_id = get_current_user_id();
+		if ( $user_id === 0 ) {
+			echo json_encode( 'unregUser' );
+			wp_die();
+		}
+	}
 
 	$post_id = $_POST['postID'];
 	$d_rating = intval( $_POST['d_rating'] );
 	$UserHasRated = $_POST['UserHasRated'];
+
+	// echo '$post_id = ' . $post_id . '<br>';
+	// echo '$d_rating = ' . $d_rating . '<br>';
+	// echo '$UserHasRated = ' . $UserHasRated . '<br>';
+
 	$number_of_raters = 0;
 	$rating = 0;
 	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?: [];
@@ -118,7 +128,15 @@ function rstr_recipes_page_stars() {
 	}
 
 	$number_of_raters = ( $UserHasRated == 'true' ) ? $number_of_raters + 1 : $number_of_raters;
-	$rating = floor( ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters );
+
+	if ( 0 != $number_of_raters ) {
+		$rating = floor( ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters );
+	} else {
+		$rating = $d_rating;
+	}
+
+
+
 	$arr_ratings = [ $number_of_raters, $rating ];
 
 	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );

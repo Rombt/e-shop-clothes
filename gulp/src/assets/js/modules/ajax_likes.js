@@ -87,16 +87,16 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                postID: postID,
             },
             success: function (response) {
-
-               // if (response === 'unregUser') {     // todo пользователь в настройках темы указывает разрешено и не зарегистрированным пользователям участвывать в оценке
-               //    confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
-               //    return;
-               // };
-
-               localStorage.setItem("rating", JSON.stringify(rating));
                response = JSON.parse(response);
 
+               if (response === 'unregUser') {
+                  confirm('You must register');    // todo  модальное окно с формой регестрации пользователя
+                  return;
+               };
+
                if (response.hasOwnProperty('rating')) {
+
+                  localStorage.setItem("rating", JSON.stringify(rating));
                   const indexToUpdate = response.rating;
 
                   arr_stars.each((index, element) => {

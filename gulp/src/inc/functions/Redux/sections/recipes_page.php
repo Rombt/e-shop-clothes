@@ -2,7 +2,6 @@
 defined( 'ABSPATH' ) || exit;
 
 
-// Menu page sections start
 Redux::set_section(
 	$opt_name,
 	array(
@@ -11,7 +10,6 @@ Redux::set_section(
 		'desc' => esc_html__( 'Recipes page settings', 'restaurant-site' ),
 		'customizer_width' => '450',
 		'subsection' => true,
-		// 'icon'             => 'el el-home',
 		'fields' => array(
 			array(
 				'id' => 'recipes_title',
@@ -42,6 +40,13 @@ Redux::set_section(
 				'default' => esc_html__( 12, 'restaurant-site' ),
 			),
 			array(
+				'id' => 'rating-section-accordion-start',
+				'type' => 'accordion',
+				'title' => esc_html__( 'Rating Section', 'restaurant-site' ),
+				'subtitle' => 'Add settings for rating of recipes',
+				'position' => 'start',
+			),
+			array(
 				'id' => 'rating-star-active_img',
 				'type' => 'media',
 				'url' => true,
@@ -68,6 +73,19 @@ Redux::set_section(
 				'type' => 'text',
 				'title' => esc_html__( 'Quantity of rating stars', 'restaurant-site' ),
 				'default' => esc_html__( 5, 'restaurant-site' ),
+			),
+			array(
+				'id' => 'rights_set_rating',
+				'type' => 'switch',
+				'on' => 'Yes',
+				'off' => 'No',
+				'title' => esc_html__( 'Rights for set rating', 'restaurant-site' ),
+				'subtitle' => esc_html__( 'Would you allow set rating for unregistered users', 'restaurant-site' )
+			),
+			array(
+				'id' => 'rating-section-accordion-end',
+				'type' => 'accordion',
+				'position' => 'end'
 			),
 
 		),

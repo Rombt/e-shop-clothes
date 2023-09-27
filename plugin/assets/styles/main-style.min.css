@@ -254,7 +254,7 @@ th.column-show-our-clients {
 #quantity_likes_post,
 .column-quantity_likes_recipe,
 .column-quantity_likes_post {
-  background-color: #fdebe7;
+  background-color: #eef9dd;
   width: 100px;
   text-align: center;
 }
@@ -262,5 +262,10 @@ th.column-show-our-clients {
 #desired-quantity_likes_post,
 .column-desired-quantity_likes_recipe,
 .column-desired-quantity_likes_post {
-  background-color: #eef9dd;
+  background-color: #fdebe7;
+}
+#image_rating-star-active_img,
+#image_rating-star-passive_img {
+  width: 50px;
+  height: 50px;
 }
