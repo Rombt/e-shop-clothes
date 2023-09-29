@@ -107,6 +107,8 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                   localStorage.setItem("ratings", JSON.stringify(ratings));
                   const indexToUpdate = response.rating;
 
+                  console.log("indexToUpdate = ", indexToUpdate);
+
                   arr_stars.each((index, element) => {
                      const $element = $(element);
 
@@ -121,7 +123,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                         $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
                         $element.data('status', 'pasive');
                      }
-                     else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
+                     else if ($element.data('status') === 'active' && starIndex == 0 && (indexToUpdate <= 1)) {
                         $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
                         $element.data('status', 'pasive');
                      }
