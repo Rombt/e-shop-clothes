@@ -108,22 +108,13 @@ function rstr_recipes_page_stars() {
 	}
 
 	$post_id = $_POST['postID'];
-	$d_rating = intval( $_POST['d_rating'] );
 	$UserHasRated = $_POST['UserHasRated'];
+	$d_rating = intval( $_POST['d_rating'] );
 
-	// echo '$post_id = ' . $post_id . '<br>';
-	// echo '$d_rating = ' . $d_rating . '<br>';
-	// echo '$UserHasRated = ' . $UserHasRated . '<br>';
-
+	$d_number_of_raters = 0;
 	$number_of_raters = 0;
 	$rating = 0;
 	$arr_ratings = unserialize( get_post_meta( $post_id, 'rating', true ) ) ?: [];
-
-	// echo "<pre>";
-	// print_r( $arr_ratings );
-	// echo "</pre>";
-
-
 
 	if ( empty( $arr_ratings ) ) {
 		$arr_ratings[] = $number_of_raters;
@@ -133,16 +124,18 @@ function rstr_recipes_page_stars() {
 		$rating = $arr_ratings[1];
 	}
 
-	$number_of_raters = ( $UserHasRated == 'true' ) ? $number_of_raters + 1 : $number_of_raters;
+	if ( $UserHasRated == 'true' ) {
+		$d_number_of_raters = 1;
+		$number_of_raters++;
+	}
 
 	if ( 0 != $number_of_raters ) {
-		$rating = floor( ( ( $rating * $number_of_raters ) + $d_rating ) / $number_of_raters );
+		$rating = floor( ( ( $rating * ( $number_of_raters - $d_number_of_raters ) ) + $d_rating ) / $number_of_raters );
 	} else {
 		$rating = $d_rating;
 	}
 
-
-
+	$rating = abs( $rating );
 	$arr_ratings = [ $number_of_raters, $rating ];
 
 	update_post_meta( $post_id, 'rating', serialize( $arr_ratings ) );

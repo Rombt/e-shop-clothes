@@ -67,23 +67,21 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          const starIndex = arr_stars.index($this.find('img'));
 
          let rating = starIndex + 1;
-
          let ratings = JSON.parse(localStorage.getItem("ratings")) || {};
-         let oldRating = ratings[postID] || 0;
-
-
+         let oldRating = ratings[postID];
+         let d_Rating = 0;
+         let UserHasRated = false;
 
          if ($this.find('img').data('status') === 'active' && starIndex == 0 && $(arr_stars[1]).data('status') === 'pasive') {
             rating = starIndex;
          }
 
-         let d_Rating = rating - oldRating;
-
-         console.log("rating = ", rating);
-         console.log("oldRating = ", oldRating);
-
-
-         let UserHasRated = (d_Rating === rating) ? true : false;    // если это первая оценка этого пользователя
+         if (typeof oldRating === 'undefined') {      // если это первая оценка этого пользователя
+            UserHasRated = true;
+            d_Rating = rating
+         } else {
+            d_Rating = rating - oldRating;
+         }
 
          $.ajax({
             url: rstrAppData.rstrAjaxURL,
@@ -102,30 +100,33 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
                   return;
                };
 
-               // if (response.hasOwnProperty('rating')) {
+               if (response.hasOwnProperty('rating')) {
 
-               ratings[postID] = rating;
+                  ratings[postID] = rating;
 
+                  localStorage.setItem("ratings", JSON.stringify(ratings));
+                  const indexToUpdate = response.rating;
 
-               localStorage.setItem("ratings", JSON.stringify(ratings));
-               const indexToUpdate = response.rating;
+                  arr_stars.each((index, element) => {
+                     const $element = $(element);
 
-               arr_stars.each((index, element) => {
-                  const $element = $(element);
+                     if (index >= rstrStarIconImg.rstrQuantityRatingStars) {
+                        return;
+                     }
 
-                  if ($element.data('status') === 'pasive' && index <= starIndex) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
-                     $element.data('status', 'active');
-                  } else if ($element.data('status') === 'active' && index > starIndex) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                     $element.data('status', 'pasive');
-                  }
-                  else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
-                     $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
-                     $element.data('status', 'pasive');
-                  }
-               });
-               // }
+                     if ($element.data('status') === 'pasive' && index <= starIndex) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgActive);
+                        $element.data('status', 'active');
+                     } else if ($element.data('status') === 'active' && index > starIndex) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                        $element.data('status', 'pasive');
+                     }
+                     else if ($element.data('status') === 'active' && starIndex == 0 && indexToUpdate == 0) {
+                        $element.attr('src', rstrStarIconImg.rstrStarIconImgPasive);
+                        $element.data('status', 'pasive');
+                     }
+                  });
+               }
             },
             error: function (xhr, status, error) {
                // console.log('Ошибка при обновлении значения поля:', error);

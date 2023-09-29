@@ -8,6 +8,7 @@ if ( class_exists( 'ReduxFramework' )
 	wp_localize_script( 'restaurant_site-app', 'rstrStarIconImg', [ 
 		'rstrStarIconImgActive' => esc_url( $restaurant_site_options['rating-star-active_img']['url'] ),
 		'rstrStarIconImgPasive' => esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ),
+		'rstrQuantityRatingStars' => esc_url( $restaurant_site_options['quantity-rating-stars'] ),
 		'rstrAjaxNonceStar' => wp_create_nonce( 'rstr-ajax-nonce-star' ),
 	] );
 }
