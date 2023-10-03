@@ -24,33 +24,34 @@ $html_req = ( $req ? " required='required'" : '' );
 
 <div class="background comments-background">
 	<div class="conteiner comments" id="comments">
-		<?php if ( have_comments() ) : ?>
-			<div class="comments__row">
-				<h2>
-					<?php comments_number( esc_html__( 'Comments', 'restaurant-site' ) . ' (0)', esc_html__( 'Comment', 'restaurant-site' ) . ' (1)', esc_html__( 'Comments', 'restaurant-site' ) . ' &#40;%&#41;' ) ?>
-				</h2>
-				<?php if ( post_password_required() ) : // todo add styles for this section!!!!!?>
-					<p class="comments-protected">
-						<?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'restaurant-site' ); ?>
-					</p>
-					<?php
-					return;
-				endif; ?>
-				<?php if ( have_comments() ) : ?>
-					<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 5, 'avatar_size' => 55, ) ); ?>
-					<?php if ( get_comment_pages_count() > 1 ) : // todo !!!!! are there comments to navigate,  add styles for this section!!!!! ?>
-						<nav class="comments-nav" class="pager">
-							<div class="previous">
-								<?php previous_comments_link( esc_html__( '&larr; Older comments', 'restaurant-site' ) ); ?>
-							</div>
-							<div class="next">
-								<?php next_comments_link( esc_html__( 'Newer comments &rarr;', 'restaurant-site' ) ); ?>
-							</div>
-						</nav>
-					<?php endif; ?>
+		<?php // if ( have_comments() ) : ?>
+		<div class="comments__row">
+			<h2>
+				<?php comments_number( esc_html__( 'Comments', 'restaurant-site' ) . ' (0)', esc_html__( 'Comment', 'restaurant-site' ) . ' (1)', esc_html__( 'Comments', 'restaurant-site' ) . ' &#40;%&#41;' ) ?>
+			</h2>
+			<?php // if ( have_comments() ) : ?>
+			<?php if ( post_password_required() ) : // todo add styles for this section!!!!!?>
+				<p class="comments-protected">
+					<?php esc_html_e( 'This post is password protected. Enter the password to view comments.', 'restaurant-site' ); ?>
+				</p>
+				<?php
+				return;
+			endif; ?>
+			<?php if ( have_comments() ) : ?>
+				<?php wp_list_comments( array( 'callback' => 'rstr_comment_default', 'style' => 'div', 'max_depth' => 5, 'avatar_size' => 55, ) ); ?>
+				<?php if ( get_comment_pages_count() > 1 ) : // todo !!!!! are there comments to navigate,  add styles for this section!!!!! ?>
+					<nav class="comments-nav" class="pager">
+						<div class="previous">
+							<?php previous_comments_link( esc_html__( '&larr; Older comments', 'restaurant-site' ) ); ?>
+						</div>
+						<div class="next">
+							<?php next_comments_link( esc_html__( 'Newer comments &rarr;', 'restaurant-site' ) ); ?>
+						</div>
+					</nav>
 				<?php endif; ?>
-			</div>
-		<?php endif; ?>
+			<?php endif; ?>
+		</div>
+		<?php // endif; ?>
 		<?php
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : // todo add styles for this section!!!!!
 			?>
@@ -63,7 +64,7 @@ $html_req = ( $req ? " required='required'" : '' );
 	</div>
 </div>
 
-<div class="background ">
+<div class="background background-comment-form">
 	<div class="conteiner leave-comment">
 		<div class="leave-comment__row">
 			<?php

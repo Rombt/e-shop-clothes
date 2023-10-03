@@ -116,7 +116,7 @@
 
 	<aside class="blog-sidebar">
     <div class="blog-sidebar__body">
-        <section class="category">
+        <section class="rstr-category">
             <h2>category</h2>
             <ul>
                 <li>

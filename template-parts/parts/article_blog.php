@@ -32,7 +32,7 @@
 		</div>
 	</div>
 
-	<footer class="article-blog-footer" @@article-blog-footer-display>
+	<footer class="article-blog-footer">
 
 		<?php get_template_part(
 			'template-parts/components/button',
@@ -49,3 +49,17 @@
 
 	</footer>
 </article>
+
+
+<?php
+
+if ( is_single() ) {
+
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
+	endif;
+
+}
+
+
+?>

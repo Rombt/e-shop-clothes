@@ -249,6 +249,22 @@ function restaurant_site_scripts() {
 
 
 
+	if ( is_home() || is_single() ) {
+		global $restaurant_site_options;
+
+		if ( class_exists( 'ReduxFramework' )
+			&& $restaurant_site_options['icon-heart-active']['url']
+			&& $restaurant_site_options['icon-heart-pasive']['url']
+		) {
+			wp_localize_script( 'restaurant_site-app', 'rstrLikeIconImg', [ 
+				'rstrLikeIconImgActive' => esc_url( $restaurant_site_options['icon-heart-active']['url'] ),
+				'rstrLikeIconImgPasive' => esc_url( $restaurant_site_options['icon-heart-pasive']['url'] ),
+				'rstrAjaxNonceLike' => wp_create_nonce( 'rstr-ajax-nonce-like' ),
+				'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
+			] );
+		}
+	}
+
 	if ( is_post_type_archive( 'recipes' ) || is_post_type_archive( 'food_menu_items' ) ) {
 		wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
 			'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),

@@ -48,7 +48,7 @@ function rstr_comment_default( $comment, $args, $depth ) { // todo to use semant
 					<?php } ?>
 					<?php if ( $comment->comment_approved == '0' ) : ?>
 						<em class="comment-awaiting-moderation">
-							<?php esc_html_e( 'Your comment is awaiting moderation.', 'ale' ) ?>
+							<?php esc_html_e( 'Your comment is awaiting moderation.', 'restaurant-site' ) ?>
 						</em>
 						<br />
 					<?php endif; ?>

@@ -2211,9 +2211,6 @@ a {
   align-items: center;
   max-width: 845px;
   width: calc(300px + (845 - 300) * ((100vw - 320px)/(1230 - 320)));
-  /* .article-blog__img */
-  /* .article-blog__body */
-  /* .article-blog__text */
 }
 .article-blog__img {
   width: 100%;
@@ -2221,8 +2218,6 @@ a {
 }
 .article-blog__body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 45px;
@@ -2829,6 +2824,7 @@ a {
 .comments-background {
   background-color: #edf1f3;
   margin-bottom: 50px;
+  width: 100%;
 }
 .comments {
   padding-top: 100px;
@@ -2931,6 +2927,9 @@ a {
   height: 14px;
   width: 14px;
   display: inline-block;
+}
+.background-comment-form {
+  width: 100%;
 }
 .leave-comment-form {
   box-sizing: border-box;

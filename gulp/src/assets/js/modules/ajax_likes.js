@@ -1,7 +1,9 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
 
 
-   if ($('body').attr('class').split(' ').includes('blog')) {
+   let is_page = $('body').attr('class').split(' ');
+
+   if (!is_page.includes('blog') || !is_page.includes('single-post')) {
 
       let actionWithLike = '';
       let likes = JSON.parse(localStorage.getItem("likes")) || [];
@@ -37,7 +39,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          localStorage.setItem("likes", JSON.stringify(likes));
 
          $.ajax({
-            url: rstrAppData.rstrAjaxURL,
+            url: rstrLikeIconImg.rstrAjaxURL,
             type: 'POST',
             data: {
                action: 'blog_page_likes',
