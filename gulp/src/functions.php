@@ -127,6 +127,7 @@
  *
  *
  * Исправить в текущей версии темы:
+ * 	написать тест для подсчёта рейтинга (звёзд) на странице рецептов
  * 	найти неиспользуемый js и css код
  *			https://youtu.be/-dZbD2yxLQs?si=kWyiaQ9ExSF06iEN
  * 	multilevelHeaderMenu()
@@ -245,11 +246,31 @@ function restaurant_site_scripts() {
 	wp_enqueue_script( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true );
 	wp_enqueue_script( 'restaurant_site-app', get_template_directory_uri() . '/assets/js/app.main.min.js', array( 'jquery' ), '1.0', true );
 
-	wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
-		'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
-		'rstrAjaxNonceView' => wp_create_nonce( 'rstr-ajax-nonce-view' ),
-	] );
 
+
+
+	if ( is_post_type_archive( 'recipes' ) || is_post_type_archive( 'food_menu_items' ) ) {
+		wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
+			'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
+			'rstrAjaxNonceView' => wp_create_nonce( 'rstr-ajax-nonce-view' ),
+		] );
+	}
+
+	if ( is_post_type_archive( 'recipes' ) || is_singular( 'recipes' ) ) {
+		global $restaurant_site_options;
+
+		if ( class_exists( 'ReduxFramework' )
+			&& $restaurant_site_options['rating-star-active_img']['url']
+			&& $restaurant_site_options['rating-star-passive_img']['url']
+		) {
+			wp_localize_script( 'restaurant_site-app', 'rstrStarIconImg', [ 
+				'rstrStarIconImgActive' => esc_url( $restaurant_site_options['rating-star-active_img']['url'] ),
+				'rstrStarIconImgPasive' => esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ),
+				'rstrQuantityRatingStars' => esc_url( $restaurant_site_options['quantity-rating-stars'] ),
+				'rstrAjaxNonceStar' => wp_create_nonce( 'rstr-ajax-nonce-star' ),
+			] );
+		}
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

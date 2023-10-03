@@ -1,18 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part( 'template-parts/parts/head_pages' ); ?>
-<?php
-if ( class_exists( 'ReduxFramework' )
-	&& $restaurant_site_options['rating-star-active_img']['url']
-	&& $restaurant_site_options['rating-star-passive_img']['url']
-) {
-	wp_localize_script( 'restaurant_site-app', 'rstrStarIconImg', [ 
-		'rstrStarIconImgActive' => esc_url( $restaurant_site_options['rating-star-active_img']['url'] ),
-		'rstrStarIconImgPasive' => esc_url( $restaurant_site_options['rating-star-passive_img']['url'] ),
-		'rstrQuantityRatingStars' => esc_url( $restaurant_site_options['quantity-rating-stars'] ),
-		'rstrAjaxNonceStar' => wp_create_nonce( 'rstr-ajax-nonce-star' ),
-	] );
-}
-?>
+
 
 
 <div class="conteiner recipes-title">
