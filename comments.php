@@ -104,7 +104,7 @@ $html_req = ( $req ? " required='required'" : '' );
 				'cancel_reply_after' => '',
 				'cancel_reply_link' => __( '<div class="close-window"></div>' ),
 				'label_submit' => __( 'Comment now' ),
-				'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+				'submit_button' => '<button name="%1$s" type="submit" id="%2$s" class="%3$s" > %4$s </button>',
 				'submit_field' => '<p class="form-submit">%1$s %2$s</p>',
 			);
 			add_filter( 'comment_form_fields', 'rstr_reorder_comment_fields' );
