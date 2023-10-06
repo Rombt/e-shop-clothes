@@ -225,13 +225,14 @@
 
 
 
+require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/functions/Redux/redux-options.php';
 
 require_once get_template_directory() . '/inc/functions/general-front.php';
 require_once get_template_directory() . '/inc/functions/comment_default.php';
 require_once get_template_directory() . '/inc/functions/ajax.php';
+require_once get_template_directory() . '/inc/widgets/widget-recent_post.php';
 
-require_once get_template_directory() . '/inc/functions/class-tgm-plugin-activation.php';
-require_once get_template_directory() . '/inc/functions/Redux/redux-options.php';
 
 define( 'rs_PATH_THEME', get_template_directory() );
 define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
@@ -389,20 +390,33 @@ function restaurant_site_register_required_plugins() {
 }
 add_action( 'tgmpa_register', 'restaurant_site_register_required_plugins' );
 
-function simple_restaurant_site_widgets_init() {
+function rstr_widgets_init() {
 	register_sidebar(
 		array(
-			'name' => esc_html__( 'Sidebar', 'restaurant-site' ),
-			'id' => 'sidebar-1',
-			'description' => esc_html__( 'Add widgets here.', 'restaurant-site' ),
+			'name' => esc_html__( 'Sidebar For Blog page', 'restaurant-site' ),
+			'id' => 'rstr_blog_sidebar',
+			'description' => esc_html__( 'Add widgets here', 'restaurant-site' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget' => '</section>',
 			'before_title' => '<h2 class="widget-title">',
 			'after_title' => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name' => esc_html__( 'Sidebar For Shop page', 'restaurant-site' ),
+			'id' => 'rstr_shop_sidebar',
+			'description' => esc_html__( 'Add widgets here', 'restaurant-site' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget' => '</section>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
+		)
+	);
+
+	register_widget( 'rstr_recent_posts_widget' );
 }
-add_action( 'widgets_init', 'simple_restaurant_site_widgets_init' );
+add_action( 'widgets_init', 'rstr_widgets_init' );
 
 function menu_item_css_classes( $classes, $item, $args, $depth ) {
 	if ( isset( $args->add_li_class ) ) {

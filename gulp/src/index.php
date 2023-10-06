@@ -7,19 +7,6 @@
 
 <div class="conteiner articles-conteiner">
 
-	<!-- <?php
-	// if ( class_exists( 'ReduxFramework' )
-	// 	&& $restaurant_site_options['icon-heart-active']['url']
-	// 	&& $restaurant_site_options['icon-heart-pasive']['url']
-	// ) {
-	// 	wp_localize_script( 'restaurant_site-app', 'rstrLikeIconImg', [ 
-	// 		'rstrLikeIconImgActive' => esc_url( $restaurant_site_options['icon-heart-active']['url'] ),
-	// 		'rstrLikeIconImgPasive' => esc_url( $restaurant_site_options['icon-heart-pasive']['url'] ),
-	// 		'rstrAjaxNonceLike' => wp_create_nonce( 'rstr-ajax-nonce-like' ),
-	// 	] );
-	// }
-	?> -->
-
 	<div class="articles-page-row">
 		<main class="article-row">
 
@@ -39,7 +26,7 @@
 
 		</main>
 
-		@@include('html/parts/blog-sidebar.html',{})
+		<?php get_sidebar( 'blog' ) ?>
 	</div>
 
 </div>
