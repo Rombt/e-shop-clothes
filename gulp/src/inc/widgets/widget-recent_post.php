@@ -8,8 +8,9 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 		parent::__construct(
 			'rstr_recent_posts_widget',
 			esc_html__( 'Recent post widget', 'restaurant-site' ),
-			$widget_options = array(
-				'description' => esc_html__( 'Shows recent posts', 'restaurant-site' )
+			// $widget_options = array(
+			array(
+				'description' => esc_html__( '***Shows recent posts***', 'restaurant-site' )
 			),
 			// $control_options = array() 
 		);
@@ -34,6 +35,8 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 
 		echo $after_widget;
 
+		echo "<hr><br><br>";
+
 
 	}
 
@@ -53,10 +56,19 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 		}
 
 		?>
-		<!-- вёрстка виджета -->
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"> <?php esc_html_e( 'Title', 'restaurant-site' ) ?></label>
+			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
+				name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+		</p>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'text' ); ?>"> <?php esc_html_e( 'Text', 'restaurant-site' ) ?></label>
+			<textarea class="widefat" id="<?php echo $this->get_field_id( 'text' ); ?>"
+				name="<?php echo $this->get_field_name( 'text' ); ?>" type="text"> <?php echo esc_attr( $text ) ?> </textarea>
+		</p>
 
 
-		*****************************
+
 		<?php
 
 

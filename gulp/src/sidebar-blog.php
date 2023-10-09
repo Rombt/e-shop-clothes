@@ -1,4 +1,23 @@
+<?php
+
+if ( ! is_active_sidebar( 'rstr_blog_sidebar' ) ) {
+	return;
+}
+
+
+
+?>
+
+
+
+
+
 <aside class="blog-sidebar">
+
+
+	<?php dynamic_sidebar( 'rstr_blog_sidebar' ) ?>
+
+
 	<div class="blog-sidebar__body">
 		<section class="rstr-category">
 			<h2>category</h2>
