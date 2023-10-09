@@ -19,32 +19,8 @@ if ( ! is_active_sidebar( 'rstr_blog_sidebar' ) ) {
 
 
 	<div class="blog-sidebar__body">
-		<section class="rstr-category">
-			<h2>category</h2>
-			<ul>
-				<li>
-					<img src="@img/category-icon-arrow.png" alt="arrow category">
-					<a href="#">All foods</a>
-				</li>
-				<li>
-					<img src="@img/category-icon-arrow.png" alt="arrow category">
-					<a href="#">vegitabales</a>
-				</li>
-				<li>
-					<img src="@img/category-icon-arrow.png" alt="arrow category">
-					<a href="#">delicious food</a>
-				</li>
-				<li>
-					<img src="@img/category-icon-arrow.png" alt="arrow category">
-					<a href="#">Special dishes</a>
-				</li>
-				<li>
-					<img src="@img/category-icon-arrow.png" alt="arrow category">
-					<a href="#">juices</a>
-				</li>
-			</ul>
-		</section>
-		<section class="recent-post">
+
+		<!-- <section class="recent-post">
 			<h2>Recent Post</h2>
 			<div class="recent-post-slider">
 				<a href="#" class="recent-post__row">
@@ -76,6 +52,32 @@ if ( ! is_active_sidebar( 'rstr_blog_sidebar' ) ) {
 				</a>
 			</div>
 			<div class="pagination"></div>
+		</section> -->
+
+		<section class="rstr-category">
+			<h2>category</h2>
+			<ul>
+				<li>
+					<img src="@img/category-icon-arrow.png" alt="arrow category">
+					<a href="#">All foods</a>
+				</li>
+				<li>
+					<img src="@img/category-icon-arrow.png" alt="arrow category">
+					<a href="#">vegitabales</a>
+				</li>
+				<li>
+					<img src="@img/category-icon-arrow.png" alt="arrow category">
+					<a href="#">delicious food</a>
+				</li>
+				<li>
+					<img src="@img/category-icon-arrow.png" alt="arrow category">
+					<a href="#">Special dishes</a>
+				</li>
+				<li>
+					<img src="@img/category-icon-arrow.png" alt="arrow category">
+					<a href="#">juices</a>
+				</li>
+			</ul>
 		</section>
 		<section class="archive-sidebar">
 			<h2>Archive</h2>
