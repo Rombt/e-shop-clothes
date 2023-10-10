@@ -233,7 +233,6 @@ require_once get_template_directory() . '/inc/functions/Redux/redux-options.php'
 require_once get_template_directory() . '/inc/functions/general-front.php';
 require_once get_template_directory() . '/inc/functions/comment_default.php';
 require_once get_template_directory() . '/inc/functions/ajax.php';
-require_once get_template_directory() . '/inc/widgets/widget-recent_post.php';
 
 
 define( 'rs_PATH_THEME', get_template_directory() );
