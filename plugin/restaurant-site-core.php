@@ -235,9 +235,15 @@ function rstr_get_images_sizes() {
 	return array(
 		'post' => array(
 			array(
-				'name' => 'post-img',
+				'name' => 'rstr_post-img',
 				'width' => 845,
 				'height' => 400,
+				'crop' => true,
+			),
+			array(
+				'name' => 'rstr_small-img',
+				'width' => 70,
+				'height' => 70,
 				'crop' => true,
 			),
 		)

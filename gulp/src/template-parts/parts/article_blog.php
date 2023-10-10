@@ -4,15 +4,15 @@
 
 	<figure class="wrap-img article-blog__img">
 		<?php if ( '' != get_the_post_thumbnail() ) : ?>
-			<?php echo get_the_post_thumbnail( $post->ID, 'post-img' ); ?>
+			<?php echo get_the_post_thumbnail( $post->ID, 'rstr_post-img' ); ?>
 		<?php else : ?>
 			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['no-thumbnail']['url'] ) { ?>
-				<img src="<?php echo esc_url( $restaurant_site_options['no-thumbnail']['url'] ) ?>" alt="">
-			<?php } ?>
+				<img class="no-thumbnail" src="<?php echo esc_url( $restaurant_site_options['no-thumbnail']['url'] ) ?>" alt="" ">
+				<?php } ?>
 		<?php endif ?>
 	</figure>
 
-	<div class="article-blog__body">
+	<div class=" article-blog__body">
 		<div class="square-date">
 			<?php $arr_str_data = explode( ' ', get_post_time( 'd M y', true ) ); ?>
 			<p>
@@ -30,24 +30,24 @@
 				<?php echo rstr_trim_excerpt( 40 ) ?>
 			</span>
 		</div>
-	</div>
+		</div>
 
-	<footer class="article-blog-footer">
+		<footer class="article-blog-footer">
 
-		<?php get_template_part(
-			'template-parts/components/button',
-			'orange',
-			[ 
-				'href' => get_permalink(),
-				'title' => class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['article-blog_button-title'] ) : "",
-			]
-		); ?>
-		<?php
-		get_template_part( 'template-parts/components/article_icons_block' )
-			?>
+			<?php get_template_part(
+				'template-parts/components/button',
+				'orange',
+				[ 
+					'href' => get_permalink(),
+					'title' => class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['article-blog_button-title'] ) : "",
+				]
+			); ?>
+			<?php
+			get_template_part( 'template-parts/components/article_icons_block' )
+				?>
 
 
-	</footer>
+		</footer>
 </article>
 
 

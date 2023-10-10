@@ -2215,6 +2215,13 @@ a {
 .article-blog__img {
   width: 100%;
   padding: 0px 0px 47.33727811% 0px;
+  display: flex;
+  justify-content: center;
+}
+.article-blog .no-thumbnail {
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 .article-blog__body {
   display: flex;
@@ -2629,6 +2636,7 @@ a {
   width: calc(100% / 12 * 3 - 30px);
   margin-left: calc(100% / 12 * 0.3 + 15px);
   min-width: 230px;
+  max-width: 500px;
 }
 @media screen and (max-width: 1040px) {
   .blog-sidebar {

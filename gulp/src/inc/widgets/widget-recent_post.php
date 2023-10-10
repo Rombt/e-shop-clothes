@@ -8,43 +8,27 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 		parent::__construct(
 			'rstr_recent_posts_widget',
 			esc_html__( 'Recent posts', 'restaurant-site' ),
-			// $widget_options = array(
 			array(
-				'description' => esc_html__( '***Shows recent posts***', 'restaurant-site' )
+				'description' => esc_html__( 'Shows recent posts', 'restaurant-site' )
 			),
-			// $control_options = array() 
 		);
 	}
 
 
 	public function widget( $args, $instance ) {
 
+		global $restaurant_site_options;
 		extract( $args );
 
 		$title = apply_filters( 'widget_title', $instance['title'] );
-
-
-
-		// $text = apply_filters( 'the_content', $instance['posts_per_page'] );
-		$posts_per_page = apply_filters( 'the_content', $instance['posts_per_page'] );
-
-
-
 		$posts_per_page = $instance['posts_per_page'];
-
 		echo $before_widget;
-
-		echo "<pre>";
-		print_r( $instance );
-		echo "</pre>";
-
-
 
 		?>
 		<section class="recent-post">
 			<h2>
 				<?php if ( $title )
-					echo $before_title . esc_html( $title ) . $after_title; ?>
+					echo $before_title . esc_html__( $title, 'restaurant-site' ) . $after_title; ?>
 			</h2>
 			<?php
 
@@ -55,20 +39,33 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 				<div class="recent-post-slider">
 					<?php
 					while ( $q->have_posts() ) :
-						$q->the_post(); ?>
-
-
-						<!-- <li><a href="<?php // the_permalink() ?>"><?php // the_title() ?></a></li> -->
-
+						$q->the_post();
+						$post_id = get_the_ID(); ?>
 
 						<a href="<?php the_permalink() ?>" class="recent-post__row">
 							<div class="wrap-img recent-post__img">
-								<img src="@img/Image_70x70.jpg" alt="thimb recent post">
+
+
+								<?php
+
+								if ( get_the_post_thumbnail( $post_id, 'rstr_small-img' ) ) {
+									echo get_the_post_thumbnail( $post_id, 'rstr_small-img' );
+								} elseif ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['no-small-thumbnail']['url'] ) {
+									echo '<img src="' . esc_url( $restaurant_site_options['no-small-thumbnail']['url'] ) . '"alt="" >';
+								}
+
+
+								?>
+
+
 							</div>
 							<div class="recent-post__body">
-								<p>08-nov-2016</p>
+								<!-- <p>08-nov-2016</p> -->
+								<p>
+									<?php the_date( 'd-M-Y' ) ?>
+								</p>
 								<span>
-									<?php the_title() ?>
+									<?php echo rstr_trim_excerpt( 4, get_the_title() ) ?>
 								</span>
 							</div>
 						</a>
@@ -80,7 +77,7 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 			wp_reset_postdata(); ?>
 
 
-			<div class="recent-post-slider">
+			<!-- <div class="recent-post-slider">
 
 
 				<a href="#" class="recent-post__row">
@@ -116,7 +113,7 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 					</div>
 				</a>
 			</div>
-			<div class="pagination"></div>
+			<div class="pagination"></div> -->
 		</section>
 
 		<?php
@@ -134,26 +131,9 @@ class rstr_Recent_Posts_Widget extends WP_Widget {
 	public function form( $instance ) {
 
 
-
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$posts_per_page = ! empty( $instance['posts_per_page'] ) ? $instance['posts_per_page'] : 5;
 
-
-		// if ( isset( $instance['title'] ) ) {
-		// 	$title = $instance['title'];
-		// } else {
-		// 	$title = '';
-		// }
-
-		// if ( isset( $instance['posts_per_page'] ) ) {
-		// 	$posts_per_page = $instance['posts_per_page'];
-		// } else {
-		// 	$posts_per_page = 5;
-		// }
-
-		echo "<pre>";
-		print_r( $instance );
-		echo "</pre>";
 		?>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"> <?php esc_html_e( 'Title', 'restaurant-site' ) ?></label>

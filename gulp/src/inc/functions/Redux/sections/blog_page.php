@@ -93,27 +93,31 @@ Redux::set_section(
 				),
 			),
 
-			// array(
-			// 	'id' => 'social_article-icons-accordion-end',
-			// 	'type' => 'accordion',
-			// 	'position' => 'end'
-			// ),
-
 			array(
 				'id' => 'no-thumbnail',
 				'type' => 'media',
 				'url' => true,
 				'title' => esc_html__( 'If post does`t have thumbnail', 'restaurant-site' ),
+				'subtitle' => esc_html__( 'For a large size thumbnail', 'restaurant-site' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/no-thumbnail.png'
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/no-thumbnail.jpg'
 				),
 			),
 
-
-
-
+			array(
+				'id' => 'no-small-thumbnail',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'If post does`t have thumbnail', 'restaurant-site' ),
+				'subtitle' => esc_html__( 'For a small size thumbnail', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'full',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/no-thumbnail.jpg'
+				),
+			),
 
 			array(
 				'id' => 'article-blog_button-title',
