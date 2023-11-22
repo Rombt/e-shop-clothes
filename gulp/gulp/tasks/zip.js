@@ -1,4 +1,3 @@
-import del from "del";
 import zipPlugin from "gulp-zip";
 
 let files = '';
@@ -18,7 +17,7 @@ export const zip = () => {
     }
 
 
-    del(app.plugins.if(app.wpPlugins, `./${app.path.wp.wpPluginName}.zip`, `./${app.path.wp.themeName}.zip`));
+    app.plugins.del(app.plugins.if(app.wpPlugins, `./${app.path.wp.wpPluginName}.zip`, `./${app.path.wp.themeName}.zip`));
 
     return app.gulp.src(app.plugins.if(app.isWP, files, `${app.path.prodFolder}/**/*.*`), {})
         .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "ZIP", message: "Error: <%= error.message %>" })))

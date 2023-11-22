@@ -26,7 +26,7 @@ global.app = {
     isProd: process.argv.includes('--prod'),
     toCleanCss: process.argv.includes('--prod'),
     isDev: !process.argv.includes('--prod'),
-    isValid: process.argv.includes('--valid'),  // проэкт собирается как для prod но без минификации стилей 
+    isValid: process.argv.includes('--valid'),  // проект собирается как для prod но без минификации стилей 
     isSASS: false, // false == LESS; true == SASS
     path: path,
     gulp: gulp,

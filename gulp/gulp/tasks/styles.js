@@ -17,7 +17,7 @@ export const styles = () => {
         "allowEmpty": true,
         base: app.path.srcFolder,
     })
-        .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "SCSS", message: "Error: <%= error.message %>" })))
+        .pipe(app.plugins.plumber(app.plugins.notify.onError({ title: "Styles", message: "Error: <%= error.message %>" })))
 
         .pipe(app.plugins.if(global.app.isSASS, sass({ outputStyle: 'expanded' }), less()))
 

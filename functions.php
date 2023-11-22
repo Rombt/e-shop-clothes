@@ -129,9 +129,6 @@
  *
  *
  * Исправить в текущей версии темы:
- * 	референсы для выпадающего меню в шапке сайта
- * 		https://www.academyux.com/ux-recruiting
- * 		https://enpowertrading.co.za/
  * 	написать тест для подсчёта рейтинга (звёзд) на странице рецептов
  * 	найти неиспользуемый js и css код
  *			https://youtu.be/-dZbD2yxLQs?si=kWyiaQ9ExSF06iEN
@@ -386,8 +383,7 @@ function restaurant_site_register_required_plugins() {
 		// If 'dismissable' is false, this message will be output at top of nag.
 		'is_automatic' => false,
 		// Automatically activate plugins after installation or not.
-		'message' => '',
-		// Message to output right before the plugins table.
+		'message' => '', // Message to output right before the plugins table.
 
 	);
 

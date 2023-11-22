@@ -34,17 +34,6 @@ export const ttfToWoff = () => {
         .pipe(app.gulp.dest(`${app.path.srcFolder}/assets/fonts/`))
 }
 
-export const copyFonts = () => {
-    return app.gulp.src(`${app.path.srcFolder}/assets/fonts/*.{woff,woff2}`)
-
-
-        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.fonts, app.path.prod.fonts)))
-        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
-            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
-        })))
-}
-
-
 export const fontStyle = () => {
     let fontsFile = `${app.path.srcFolder}/assets/styles/fonts.${global.app.isSASS ? 'sass' : 'less'}`; // нужно создавать файл шрифтов заново при каждой смене препроцессора
     fs.readdir(`${app.path.srcFolder}/assets/fonts/`, function (err, fontsFiles) {
@@ -94,4 +83,14 @@ export const fontStyle = () => {
     return app.gulp.src(`${app.path.srcFolder}`);
 
     function cd() { };
+}
+
+
+
+export const copyFonts = () => {
+    return app.gulp.src(`${app.path.srcFolder}/assets/fonts/*.{woff,woff2}`)
+        .pipe(app.gulp.dest(app.plugins.if(app.isWP, app.path.wp.fonts, app.path.prod.fonts)))
+        .pipe(app.plugins.if(app.isWP, app.plugins.tap(function (file) {
+            file.path ? app.path.wp.arr_processedFiles.push(file.path) : null;
+        })))
 }
