@@ -2,7 +2,7 @@ import * as nodePath from 'path';
 
 
 const rootFolder = nodePath.basename(nodePath.resolve());
-const prodFolder = './docs'; //  dist заменил не docs для git pages
+const prodFolder = './docs';
 const srcFolder = './src';
 
 const themePath = `..`;
