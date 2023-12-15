@@ -63,7 +63,7 @@ export const path = {
         files: [     // для тех файлов которые не попадают в перечисленные выше пути и которые  нужно переместить без обработки
             `${srcFolder}/style.css`,   // for WP theme
             `${srcFolder}/screenshot.png`,   // for WP theme
-            `${srcFolder}/readme.txt`,   // for WP theme
+            // `${srcFolder}/readme.txt`,   // for WP theme
         ],
         svgicons: [
             `${srcFolder}/assets/svgicons/*.svg`,
