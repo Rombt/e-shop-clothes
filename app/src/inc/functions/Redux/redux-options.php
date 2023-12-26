@@ -219,7 +219,8 @@ require_once dirname( __FILE__ ) . '/sections/copyright.php';
 require_once dirname( __FILE__ ) . '/sections/phone_numbers.php';
 require_once dirname( __FILE__ ) . '/sections/app_buttons.php';
 require_once dirname( __FILE__ ) . '/sections/opening_hours.php';
-require_once dirname( __FILE__ ) . '/sections/article_blog.php';
+
+// require_once dirname( __FILE__ ) . '/sections/article_blog.php';
 
 Redux::set_section(
 	$opt_name,

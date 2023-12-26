@@ -36,12 +36,6 @@ export const path = {
       plug: PlugFolder,
    },
 
-   // ftp: {
-   //    html: 'htdocs',
-   //    php: 'htdocs/wp-content/themes',
-   //    plug: 'htdocs/wp-content/plugins',
-   // },
-
    get watch() {
       return {
          styles: [
