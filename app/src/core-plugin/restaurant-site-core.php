@@ -36,7 +36,7 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/widgets/widget-recent_post.php';
 
 
 
-require_once plugin_dir_path( __FILE__ ) . 'inc/gutenberg/gutenberg.php';
+// require_once plugin_dir_path( __FILE__ ) . 'inc/gutenberg/gutenberg.php';
 
 
 
