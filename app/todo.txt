@@ -116,8 +116,9 @@
 	
 	
 Исправить в текущей версии темы:
-
+	
 	Настройки 
+		!! Правильно заполнить все поля в style.css и restaurant-site-core.php
 		подборка хаков, которые можно использовать для админ-панели WordPress.
 			Изучить:		https://wp-kama.ru/id_7627/adminka-15-hukov-dlya-functions-php.html		!!!
 

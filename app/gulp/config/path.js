@@ -13,19 +13,20 @@ if (typeof __dirname !== 'undefined') {
 const THEME_NAME = nodePath.basename(nodePath.resolve(currentDir, '..', '..', '..'));
 const ROOT_PATH = nodePath.resolve(currentDir, '..', '..').replace(/\\/g, '/');
 
-
 const srcFolder = `${ROOT_PATH}/src`;
 const prodFolder = `${ROOT_PATH}/..`;
 const prodPluginName = `${THEME_NAME}-core`;    // set name your plugin for production version
 const prodPlugFolder = `${ROOT_PATH}/../../../plugins/${prodPluginName}`;
-
-
 
 export const path = {
 
    ThemeName: THEME_NAME,
    srcPluginName: 'core-plugin',    // set name your plugin for development version 
    RootPath: ROOT_PATH,
+   proxy: [
+      `http://ms/`,
+      `http://web/ms/`,
+   ],
 
    get src() {
       return {
