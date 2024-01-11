@@ -1,21 +1,24 @@
 .background__dish {
-    height: 570px;
+    max-height: 570px;
     position: relative;
-
     z-index: 1;
 }
 
 .dish__wrap-img {
-    height: 570px;
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-dish {
     height: 100%;
-    width: 100%;
     position: absolute !important;
     top: 0;
     left: 0;
+    max-width: 1970px;
+    .adaptiv-prop(width, 1970, 320) !important;
+
 }
+
 
 .swiper-pagination-dish {
     left: 30px !important;
@@ -57,10 +60,13 @@
 }
 
 #dish {
-    height: 570px;
+    max-height: 570px;
     display: flex;
     color: #ffffff;
     position: relative;
+
+    .adaptiv-prop(height, 570, 285);
+    width: 100%;
 
 }
 
@@ -98,31 +104,37 @@
 }
 
 .exlore-food-menu {
-    width: 200px;
-    height: 210px;
     font-size: 22px;
     font-family: PlayfairDisplay;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+     ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
 
     position: absolute;
-    bottom: -80px;
-
+    .adaptiv-prop(bottom, -80, -20);
     z-index: 5;
-
+    .adaptiv-prop(width, 200, 50);
+    .adaptiv-prop(height, 210, 60);
 
     img {
         height: 84px;
         width: 84px;
         position: absolute;
         top: -40px;
+        .adaptiv-prop(top, -40, -10);
+
+
+        .adaptiv-prop(width, 84, 21);
+        .adaptiv-prop(height, 84, 21);
     }
 
     p {
         width: 110px;
         text-align: center;
+
+
+        .adaptiv-prop(width, 110, 28);
     }
 }

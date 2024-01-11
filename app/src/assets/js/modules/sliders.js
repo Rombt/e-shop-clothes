@@ -35,22 +35,10 @@ if (document.querySelector('.swiper.swiper-dish')) {
     swiperDish = new Swiper('.swiper.swiper-dish', {
         direction: 'horizontal',
         speed: 1000,
-
-
-        // breakpoints: {       // c этой опцией вся сотраница дёргается в WP особенно без стилей
-        //     1250: {
-        //         direction: 'vertical',
-        //     }
-        // },
-
         loop: true,
         autoplay: {
             delay: 5000,
         },
-        // effect: 'fade',
-        // fadeEffect: {
-        //     crossFade: true,
-        // },
         pagination: {
             el: '.swiper-pagination',
             clickable: true,

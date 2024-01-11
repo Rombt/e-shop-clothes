@@ -251,6 +251,12 @@ function rstr_get_images_sizes() {
 				'height' => 70,
 				'crop' => true,
 			),
+			array(
+				'name' => 'rstr_largest-img',
+				'width' => 1970,
+				'height' => 570,
+				'crop' => true,
+			),
 		)
 	);
 
@@ -267,10 +273,16 @@ function rstr_register_image_size() {
 	}
 }
 
-
-// function rst_add_image_size( $post_type, $config ) {
-// 	add_image_size( $config['name'], $config['width'], $config['height'], $config['crop'] );
-// }
+/**
+ * For procesing type errors "warning" in blocks try-catch
+ */
+function errorWarning( $errno, $errstr, $errfile, $errline ) {
+	// the code of error  processing must be here if it need you
+	// echo "Ошибка: [$errno] $errstr в файле $errfile на строке $errline\n";
+	return true;
+	// return false; // прервать обработку ошибки
+}
+set_error_handler( "errorWarning" );
 
 
 
