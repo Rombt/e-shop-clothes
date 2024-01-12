@@ -11,12 +11,10 @@
 
 .swiper-dish {
     height: 100%;
+    width: 100%;
     position: absolute !important;
     top: 0;
     left: 0;
-    max-width: 1970px;
-    .adaptiv-prop(width, 1970, 320) !important;
-
 }
 
 
@@ -86,14 +84,16 @@
     z-index: 5;
 
     &__title {
-        font-size: 56px;
+        // font-size: 56px;
+        .adaptiv-prop(font-size, 56, 30);
         font-family: "PlayfairDisplay";
         margin: 0px 0 -5px 0;
     }
 
     &__subtitle-title {
         font-family: "PlayfairDisplay";
-        font-size: 40px;
+        // font-size: 40px;
+        // .adaptiv-prop(40, 20);
         margin: 0px;
     }
 
@@ -110,7 +110,7 @@
     align-items: center;
     justify-content: center;
 
-     ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+    //  ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
 
     position: absolute;
     .adaptiv-prop(bottom, -80, -20);
