@@ -36,6 +36,8 @@ function watcher() {
    })
 
    gulp.watch(path.watch.php, { ignorePermissionErrors: true }, php).on('unlink', (currentPath) => {
+
+      console.log("currentPath = ", currentPath);
       path.clearForTask(currentPath, path.php.dest);
    })
 

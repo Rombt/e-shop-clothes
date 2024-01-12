@@ -303,6 +303,13 @@ export const path = {
       } else {
          clearPath = `${destPath}/${newFolder[1]}`;
       }
+
+      console.log("lastFolder = ", lastFolder);
+      console.log("newFolder[1] = ", newFolder[1]);
+      console.log("destPath = ", destPath);
+      console.log("nodePath.basename(currentPath) = ", nodePath.basename(currentPath));
+      console.log("clearPath = ", clearPath);
+
       app.plugins.del(clearPath, { force: true });
    },
 
