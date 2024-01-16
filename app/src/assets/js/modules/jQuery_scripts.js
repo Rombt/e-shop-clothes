@@ -88,6 +88,8 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       if (!$('#heder-menu > ul').length) {
          console.log($('#menu-header-menu').length);
          return false;
+      } else if ($('#heder-menu > ul').length < 4) {
+         $('#heder-menu > ul').css("justify-content", "flex-start");
       }
 
       const $menuHeaderMenu = $('#heder-menu > ul');
