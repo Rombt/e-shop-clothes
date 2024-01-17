@@ -1,9 +1,10 @@
 <?php global $restaurant_site_options; ?>
 
 <div class="background background-title-page-block">
+	<!-- <div class="background-title-page-block__filter"></div> -->
 	<div class="wrap-img">
 		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['background-title-img']['url'] ) ) { ?>
-			<img src="<?php echo esc_url( $restaurant_site_options['background-title-img']['url'] ) ?>" alt="">
+			<?php echo wp_get_attachment_image( $restaurant_site_options['background-title-img']['id'], 'rstr_header-img' ); ?>
 		<?php } ?>
 	</div>
 	<h1>

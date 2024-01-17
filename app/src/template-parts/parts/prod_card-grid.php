@@ -1,8 +1,12 @@
 <div class="prod-card-grid">
-	<figure class="wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></figure>
+	<figure class="wrap-img">
+		<a href="<?php echo get_permalink() ?>"><img src="<?php the_post_thumbnail_url() ?>" alt=""></a>
+	</figure>
 	<div class="prod-card-grid__body">
 		<h3>
-			<?php echo the_title() ?>
+			<a href="<?php echo get_permalink() ?>">
+				<?php echo the_title() ?>
+			</a>
 		</h3>
 		<?php echo rstr_trim_excerpt( 7 ) ?>
 	</div>

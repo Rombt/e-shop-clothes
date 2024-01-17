@@ -257,6 +257,12 @@ function rstr_get_images_sizes() {
 				'height' => 570,
 				'crop' => true,
 			),
+			array(
+				'name' => 'rstr_header-img',
+				'width' => 1970,
+				'height' => 250,
+				'crop' => true,
+			),
 		)
 	);
 

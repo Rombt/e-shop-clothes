@@ -1,13 +1,13 @@
 <div class="prod-card-list">
 	<div class="prod-card-list__body">
-		<a href="#">
-			<h3>
+		<h3>
+			<a href="<?php echo get_permalink() ?>">
 				<?php echo the_title() ?>
-			</h3>
-			<p>
-				<?php echo rstr_trim_excerpt( 5 ) ?>
-			</p>
-		</a>
+			</a>
+		</h3>
+		<p>
+			<?php echo rstr_trim_excerpt( 5 ) ?>
+		</p>
 	</div>
 	<div class="prod-card-list__footer">
 		<p>

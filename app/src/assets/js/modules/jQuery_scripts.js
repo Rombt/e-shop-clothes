@@ -17,7 +17,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
       let PaginationBlock = $('.rstr-pagination');
-      if (PaginationBlock.children('.page-numbers').length == 0 || PaginationBlock.css("visibility", "hidden")) {
+      if (PaginationBlock.children('.page-numbers').length == 0) {
          return false;
       }
       let WidthPaginationBTN = PaginationBlock.children('.page-numbers')[0].offsetWidth;
