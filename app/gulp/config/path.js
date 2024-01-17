@@ -29,7 +29,7 @@ export const path = {
     RootPath: ROOT_PATH,
     proxy: [
         `http://ms/`,
-        `http://web/rombt/gulp-assembly`,
+        `http://web/ms/`,
     ],
 
     get src() {
