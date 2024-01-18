@@ -213,7 +213,6 @@ export const path = {
                     `${this.src.php}/README.md`,
                     `${this.src.php}/style.css`,
                     `${this.src.php}/screenshot.png`,
-                    `${this.src.php}/files_recipes/**/*.*`,
                 ],
                 plug: [
                     `${this.src.php}/${this.srcPluginName}/README.md`,
