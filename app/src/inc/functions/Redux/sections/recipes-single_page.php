@@ -14,6 +14,13 @@ Redux::set_section(
 		// 'icon'             => 'el el-home',
 		'fields' => array(
 			array(
+				'id' => 'title_into_background_title_image_recipe',
+				'type' => 'checkbox',
+				'title' => esc_html__( 'Title into Background title image', 'restaurant-site' ),
+				'desc' => esc_html__( 'You need the Title into Background title image', 'restaurant-site' ),
+				'default' => '0',
+			),
+			array(
 				'id' => 'background_food_step_img',
 				'type' => 'media',
 				'url' => true,

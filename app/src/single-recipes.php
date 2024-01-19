@@ -24,7 +24,7 @@
 			<div class="white-box">
 				<div class="white-box__items">
 					<p>
-						<?php esc_html_e( get_post_meta( get_the_ID(), 'read-in', true ) ) ?>
+						<?php esc_html_e( get_post_meta( get_the_ID(), 'prep-time', true ) ) ?>
 						<span>Prep time</span>
 					</p>
 					<p>
@@ -32,7 +32,7 @@
 						<span>Cook Time</span>
 					</p>
 					<p>
-						<?php esc_html_e( get_post_meta( get_the_ID(), 'prep-time', true ) ) ?>
+						<?php esc_html_e( get_post_meta( get_the_ID(), 'read-in', true ) ) ?>
 						<span>
 							Read in
 						</span>

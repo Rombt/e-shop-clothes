@@ -31,6 +31,13 @@ Redux::set_section(
 				'title' => esc_html__( 'Posts Per Page List', 'restaurant-site' ),
 				'default' => esc_html__( 12, 'restaurant-site' ),
 			),
+			array(
+				'id' => 'title_into_background_title_image_food_menu_items',
+				'type' => 'checkbox',
+				'title' => esc_html__( 'Title into Background title image', 'restaurant-site' ),
+				'desc' => esc_html__( 'You need the Title into Background title image', 'restaurant-site' ),
+				'default' => '0',
+			),
 		),
 	)
 );

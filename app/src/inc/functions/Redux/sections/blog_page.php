@@ -22,10 +22,18 @@ Redux::set_section(
 			// ),
 
 			array(
+				'id' => 'title_into_background_title_image_blog',
+				'type' => 'checkbox',
+				'title' => esc_html__( 'Title into Background title image', 'restaurant-site' ),
+				'desc' => esc_html__( 'You need the Title into Background title image', 'restaurant-site' ),
+				'default' => '1',
+			),
+
+			array(
 				'id' => 'article-blog_share-link',
 				'type' => 'text',
 				'title' => esc_html__( 'The Link Share ', 'restaurant-site' ),
-				'default' => esc_url( '????????' ),
+				'default' => esc_url( '????????' ),		//todo
 			),
 			array(
 				'id' => 'article-icons_share_icon',
