@@ -85,10 +85,11 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
    function multilevelHeaderMenu() {
       modalWindow('search-icon', 'searc-modal', 'close-window');
 
+
+
       if (!$('#heder-menu > ul').length) {
-         console.log($('#menu-header-menu').length);
          return false;
-      } else if ($('#heder-menu > ul').length < 4) {
+      } else if ($('#heder-menu > ul').children().length < 4) {
          $('#heder-menu > ul').css("justify-content", "flex-start");
       }
 
