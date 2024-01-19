@@ -43,36 +43,40 @@
 
    .sm-block({
       display: block;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-
       position: absolute;
       top: @offset_one_side;
       left: @offset_one_side;
       width: 40px;
       height: 25px;
-      transition: all 0.9s ease 0s;
+      cursor: pointer;
 
-      &::before {
+      &::before, &::after, span {
          content: '';
+         transition: top 0.9s ease 0s;
+      }
+
+      &::before,
+      &::after,
+      span {
+         position: absolute;
          background-color: #647786;
          width: 100%;
          height: 3px;
+      }
+
+      &::before {
+         top: 0px;
       }
 
       &::after {
-         content: '';
-         background-color: #647786;
-         width: 100%;
-         height: 3px;
+         top: 100%;
       }
 
       span {
-         background-color: #647786;
-         width: 100%;
-         height: 3px;
+         top: 50%;
+         transform: translate(0%, -50%);
+         transition: top opacity 0.9s ease 0s;
+         opacity: 1;
       }
 
    });
@@ -82,24 +86,20 @@
 
    .heder-menu__burger-close {
 
-      height: 40px !important;
-      width: 40px;
-      overflow: hidden;
-      background: url('../img/menu-burger-close.svg') 0px 0px no-repeat;
-
-      z-index: 50;
-      transition: all 0.9s ease 0s;
-
       &::before {
-         display: none;
+         top: 50%;
+         transform: translate(0%, -50%) rotate(45deg);
+         transition: transform 0.9s ease 0s;
       }
 
       &::after {
-         display: none;
+         top: 50%;
+         transform: translate(0%, -50%) rotate(-45deg);
+         transition: transform 0.9s ease 0s;
       }
 
       span {
-         display: none;
+         opacity: 0;
       }
    }
 
@@ -119,7 +119,18 @@
    .size-md_1(8);
 
    .sm-block({
-      display: none;
+      position: absolute;
+      height: @menu_height;
+      top: @offset_one_side + 25px;
+      // opacity: 0;
+
+      width: 10px;
+
+      transition: width 0.9s ease 0s;
+
+      border: 1px solid #0515fd;
+
+
    });
 
 ul {
@@ -207,11 +218,19 @@ li {
 
 .sm-block({
    .menu__sm {
-      display: block;
-      position: absolute;
-      top: @offset_one_side + 25px;
-      z-index: 10;
+      // top: @offset_one_side + 25px;
+      // z-index: 10;
+      // height: @menu_height;
       width: 100%;
+      opacity: 1;
+      transition: all 30.9s ease 0s;
+
+      background-color: #fff;
+      display: flex;
+      align-items:center;
+
+
+      color: rgb(100, 119, 134);
 
       ul {
 
@@ -219,8 +238,8 @@ li {
          flex-wrap: wrap;
          justify-content: space-around;
          align-items: centr;
-         background-color: #fff;
-         height: @menu_height;
+
+         background-color: rgb(110, 240, 50);
 
          li {
 
