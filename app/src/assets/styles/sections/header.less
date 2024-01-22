@@ -27,10 +27,12 @@
    .col();
    .size(3);
    .size-md_1(12);
+   .size-sm(8);
    display: flex;
    align-items: center;
    justify-content: center;
    color: #647786; // todo смена цвета фона через redux 
+   z-index: 7;
 
    img {
       max-height: 45px;
@@ -49,6 +51,7 @@
       width: 40px;
       height: 25px;
       cursor: pointer;
+      z-index: 5;
 
       &::before, &::after, span {
          content: '';
@@ -114,6 +117,9 @@
    z-index: 3;
    visibility: hidden; // скрываю до момента формирования на странице потом показываю скриптом jQuery
 
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
    .col();
    .size(6);
    .size-md_1(8);
@@ -122,13 +128,10 @@
       position: absolute;
       height: @menu_height;
       top: @offset_one_side + 25px;
-      // opacity: 0;
+      opacity: 0;
 
-      width: 10px;
+      transition: all 0.9s ease 0s;
 
-      transition: width 0.9s ease 0s;
-
-      border: 1px solid #0515fd;
 
 
    });
@@ -143,9 +146,11 @@ ul {
    flex-wrap: wrap;
    width: 100%;
    column-gap: 5px;
+   max-height: 100%;
 
    .md_2-block({
       margin-top: 15px;
+
    });
 
 li {
@@ -218,28 +223,14 @@ li {
 
 .sm-block({
    .menu__sm {
-      // top: @offset_one_side + 25px;
-      // z-index: 10;
-      // height: @menu_height;
       width: 100%;
       opacity: 1;
-      transition: all 30.9s ease 0s;
-
-      background-color: #fff;
+      transition: all 0.9s ease 0s;
       display: flex;
       align-items:center;
-
-
-      color: rgb(100, 119, 134);
+      background-color: rgb(255, 255, 255);
 
       ul {
-
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: space-around;
-         align-items: centr;
-
-         background-color: rgb(110, 240, 50);
 
          li {
 
