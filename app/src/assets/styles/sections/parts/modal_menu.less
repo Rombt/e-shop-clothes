@@ -1,28 +1,41 @@
 .hide-menu-burger {
    position: relative;
-   height: 20px;
-   width: 25px;
+   min-height: 23px;
+   min-width: 35px;
    cursor: pointer;
+   border: 1px solid #647786;
+   border-radius: 20%;
 
    &::after,
    &::before,
    span {
       content: '';
       position: absolute;
-      left: 0;
-      height: 2px;
-      width: 100%;
       background-color: #647786;
-   }
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
 
-   span {
-      top: 50%;
-      transform: translate(0, -50%);
    }
 
    &::before {
-      bottom: 0;
+      left: 4px;
+      top: 50%;
+      transform: translate(0%, -50%);
    }
+
+   span {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+   }
+
+   &::after {
+      right: 4px;
+      top: 50%;
+      transform: translate(0%, -50%);
+   }
+
 
    &:hover {
       transform: scale(1.2);
@@ -32,11 +45,28 @@
 .modal-menu {
    position: absolute;
    top: 0;
-   right: 0px;
    height: max-content;
+   min-width: 250px;
    width: max-content;
    padding: 40px 20px;
-   background-color: #f5f3f3;
+   overflow-y: auto;
+   z-index: 100;
+   list-style: none;
+
+   background-color: #fff;
+   max-height: 100vh;
+
+
+   // todo sub-menu закрыть спойлерами 
+
+   a {
+      text-decoration: none;
+      color: rgb(100, 119, 134);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: Sintony, FiraSans;
+   }
 
    li {
       padding: 10px 0px;

@@ -17,17 +17,27 @@ define( 'rs_URL_THEME', esc_url( get_template_directory_uri() ) );
 
 function restaurant_site_scripts() {
 
+	wp_enqueue_style( 'simplebar', get_template_directory_uri() . '/assets/styles/libs/simplebar.min.css', array(), '1.0', 'all' );
 	wp_enqueue_style( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css', array(), '1.0', 'all' );
 	wp_enqueue_style( 'restaurant_site-main', get_template_directory_uri() . '/assets/styles/main-style.min.css', array(), '1.0', 'all' );
 
+	wp_enqueue_script( 'simplebar', get_template_directory_uri() . '/assets/js/libs/simplebar.min.js', array(), '1.0', true );
 	wp_enqueue_script( 'swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '', true );
 	wp_enqueue_script( 'restaurant_site-app', get_template_directory_uri() . '/assets/js/app.main.min.js', array( 'jquery' ), '1.0', true );
 
+	global $restaurant_site_options;
 
-
+	if ( class_exists( 'ReduxFramework' )
+		&& $restaurant_site_options['modal_menu_location']
+		&& $restaurant_site_options['modal_menu_side']
+	) {
+		wp_localize_script( 'restaurant_site-app', 'rstrHederMenu', [ 
+			'rstrModalMenuLocation' => $restaurant_site_options['modal_menu_location'],
+			'rstrModalMenuSide' => $restaurant_site_options['modal_menu_side'],
+		] );
+	}
 
 	if ( is_home() || is_single() ) {
-		global $restaurant_site_options;
 
 		if ( class_exists( 'ReduxFramework' )
 			&& $restaurant_site_options['icon-heart-active']['url']
@@ -38,6 +48,8 @@ function restaurant_site_scripts() {
 				'rstrLikeIconImgPasive' => esc_url( $restaurant_site_options['icon-heart-pasive']['url'] ),
 				'rstrAjaxNonceLike' => wp_create_nonce( 'rstr-ajax-nonce-like' ),
 				'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
+				'rstrModalMenuLocation' => esc_url( $restaurant_site_options['modal_menu_location'] ),
+				'rstrModalMenuSide' => esc_url( $restaurant_site_options['modal_menu_side'] ),
 			] );
 		}
 	}
