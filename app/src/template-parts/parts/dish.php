@@ -38,8 +38,15 @@ if ( isset( $restaurant_site_options['dish-gallery'] ) ) {
 			</p>
 		</div>
 		<div class="exlore-food-menu redux_font-explore_food_menu">
+
+			<svg>
+				<use
+					xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#exlore-food-menu-block">
+				</use>
+			</svg>
+
 			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['home_page_slogan_label']['url'] ) { ?>
-				<img src="<?php echo esc_url( $restaurant_site_options['home_page_slogan_label']['url'] ) ?>" alt="404 img">
+				<img src="<?php echo esc_url( $restaurant_site_options['home_page_slogan_label']['url'] ) ?>" alt="">
 			<?php } ?>
 			<p>
 				<?php echo class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['home_page_slogan'], 'restaurant-site' ) : "" ?>
