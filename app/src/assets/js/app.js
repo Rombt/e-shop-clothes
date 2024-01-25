@@ -1,4 +1,4 @@
-import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
+// import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
 import { Burger } from "./modules/Burger.js";
 import { Swipe } from "./modules/Swipe.js";
 import * as sliders from "./modules/sliders.js";
@@ -6,10 +6,15 @@ import { jQuery_scripts } from "./modules/jQuery_scripts.js";
 import { ajax_selectView } from "./modules/ajax_select-view.js";
 import { ajax_likes } from "./modules/ajax_likes.js";
 
+import "./modules/_isWebp.js";
+import "./modules/mobile.js";
+import "./modules/dynamic_adapt.js";
+
+
 
 window.onload = function () {
 
-    isWebp(); // проверяет поддерживает ли браузер формат webp
+    // isWebp(); // проверяет поддерживает ли браузер формат webp
 
     let params_headerMenuBurger = {
         conteiner: 'heder-menu',

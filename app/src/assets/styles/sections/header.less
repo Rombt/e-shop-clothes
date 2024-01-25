@@ -10,18 +10,18 @@
    .row-flex();
    align-items: center;
    justify-content: space-between;
+   flex-wrap: nowrap;
 
 
    .md_1-block({
       margin-bottom: 10px;
    });
 
-.to(350px, {
-   flex-direction: column;
-});
+.to(350px, {});
 
 .md_2-block({
-   justify-content: center;
+   flex-direction: column;
+   justify-content: space-around;
    transition: all 0.3s ease 0s;
    margin-bottom: 0px;
 
@@ -30,7 +30,6 @@
 .logo {
    .col();
    .size(3);
-   .size-md_1(12);
    .size-sm(8);
    display: flex;
    align-items: center;
@@ -38,8 +37,8 @@
    color: #647786; // todo смена цвета фона через redux 
    z-index: 7;
 
-   .to(350px, {
-      align-self: flex-end;
+   .to(400px, {
+      width: 160px;
    });
 
 img {
@@ -129,6 +128,9 @@ img {
    align-items: center;
    column-gap: 10px;
    visibility: hidden; // скрываю до момента формирования на странице потом показываю скриптом jQuery
+
+   padding-top: 15px;
+
 
    .col();
    .size(6);
@@ -260,23 +262,32 @@ ul {
 
 });
 
-.search-icon {
-   width: 20px;
-   height: 20px;
-   margin-right: 10px;
-   overflow: visible;
+&>.search-icon,
+&>.cart {
+   position: absolute;
+   cursor: pointer;
+   z-index: 5;
+   .adaptiv-prop(width, 55, 25);
+   .adaptiv-prop(height, 55, 25);
 
-   &:hover {
-      transform: scale(1.2);
-      transition: 0.2s;
-      cursor: pointer;
-   }
-
-   img {
-      object-fit: contain;
-   }
 
 }
+
+&>.search-icon {
+   margin: 0px;
+   right: 42px;
+   .adaptiv-prop(right, 120, 42);
+   top: 17px;
+}
+
+&>.cart {
+   top: 15px;
+   .adaptiv-prop(right, 40, 10);
+
+}
+
+
+
 
 .cart-book {
    .col();
@@ -290,72 +301,21 @@ ul {
    align-items: center;
    justify-content: space-between;
 
-   .md_1-block({
-      justify-content: space-evenly;
+
+   .md_2-block({
+      justify-content: center;
+
+      .search-icon {
+         order: 2;
+         margin-left: 20px
+      }
+
+      .cart {
+         order: 3;
+         margin-left: 20px !important;
+      }
 
    });
-
-.md_2-block({
-   justify-content: center;
-
-   .search-icon {
-      order: 2;
-      margin-left: 20px
-   }
-
-   .cart {
-      order: 3;
-      margin-left: 20px !important;
-   }
-
-});
-
-
-.cart {
-
-   width: 42px;
-   height: 25px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   position: relative;
-   margin: 2px;
-   padding: 2px;
-
-   &:hover {
-      transform: scale(1.2);
-      transition: 0.2s;
-   }
-
-
-   a {
-      display: flex;
-      align-items: center;
-
-      img {
-         width: 21px;
-         height: 17px;
-      }
-   }
-
-   &__cercle {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background-color: #fe4c8d;
-      position: absolute;
-      left: 15px;
-      top: -6px;
-
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Sintony, FiraSans;
-      font-size: 11px;
-   }
-
-}
 
 .heder-menu-button {
    font-family: Sintony, FiraSans;
@@ -367,7 +327,7 @@ ul {
    height: 47px;
    width: @bootton_width;
 
-   margin-left: 0;
+   margin-left: 10px;
    border: 1px solid #fea100;
    background-color: rgb(254, 161, 0);
    border-radius: 4px;
@@ -411,4 +371,62 @@ img {
 
 }
 }
+}
+
+
+.search-icon {
+   width: 20px;
+   height: 20px;
+   overflow: visible;
+
+   &:hover {
+      transform: scale(1.2);
+      transition: 0.2s;
+      cursor: pointer;
+   }
+
+   img {
+      object-fit: contain;
+   }
+
+}
+
+.cart {
+
+   width: 25px;
+   height: 25px;
+   position: relative;
+   margin: 2px;
+   padding: 2px;
+   overflow: visible;
+
+   &:hover {
+      transform: scale(1.2);
+      transition: 0.2s;
+   }
+
+
+   a {
+      display: block;
+   }
+
+   &__cercle {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #fe4c8d;
+      position: absolute;
+      left: 15px;
+      top: -6px;
+
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Sintony, FiraSans;
+      font-size: 11px;
+
+      z-index: 10;
+   }
+
 }

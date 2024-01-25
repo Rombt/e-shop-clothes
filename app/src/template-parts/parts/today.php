@@ -38,7 +38,7 @@ $query_Menu_items = new WP_Query( $params );
 
 ?>
 <section>
-	<div class="background background__today">
+	<div class="background background-today">
 		<div class="swiper-today swiper">
 			<div class="swiper-wrapper">
 				<?php if ( ! empty( $arr_dish_gallery[0] ) ) :
@@ -69,13 +69,14 @@ $query_Menu_items = new WP_Query( $params );
 						$query_Menu_items->the_post();
 						?>
 						<article class="food-card today-row__food-card">
-							<div class="wrap-img food-card__wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt=""></div>
-							<div class="food-card__food-name">
+							<header class="wrap-img food-card__wrap-img"><img src="<?php the_post_thumbnail_url() ?>" alt="">
+							</header>
+							<div class="food-card__food-body">
 								<h3>
 									<?php echo the_title() ?>
 								</h3>
 								<p>
-									<?php echo rstr_trim_excerpt( 25 ) ?>
+									<?php echo rstr_trim_excerpt( 20 ) ?>
 								</p>
 							</div>
 							<footer class="food-card__order-block">

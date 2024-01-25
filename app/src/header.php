@@ -22,6 +22,7 @@
 
 	<div class="conteiner">
 		<header class="header ">
+
 			<a href="<?php echo esc_url( get_home_url() ); ?>" class="logo">
 
 				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['logo_site']['url'] ) ) { ?>
@@ -48,22 +49,35 @@
 			} ?>
 
 			<div class="cart-book">
-				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['search_icon']['url'] ) ) { ?>
-					<div href="#" class="wrap-img search-icon">
-						<img class="wrap-img search-icon"
-							src="<?php echo esc_url( $restaurant_site_options['search_icon']['url'] ) ?>" alt="">
-					</div>
-				<?php } ?>
-				<div class="cart">
+				<a href="#" class="wrap-img search-icon" data-da=".header, 720">
+					<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['search_icon']['url'] ) && $restaurant_site_options['search_icon']['url'] !== "" ) { ?>
+						<img class="wrap-img" src="<?php echo esc_url( $restaurant_site_options['search_icon']['url'] ) ?>"
+							alt="">
+					<?php } else { ?>
+						<svg>
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#search_6">
+							</use>
+						</svg>
+					<?php } ?>
+				</a>
+				<a href="shopping-cart.html" class="cart wrap-img" data-da=".header, 720">
 					<div class="cart__cercle">3</div>
-					<a href="shopping-cart.html">
-						<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['icon_cart']['url'] ) ) { ?>
-							<img src="<?php echo esc_url( $restaurant_site_options['icon_cart']['url'] ) ?>" alt="icon cart">
-						<?php } ?>
-					</a>
-				</div>
+					<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['search_icon']['url'] ) && $restaurant_site_options['search_icon']['url'] !== "" ) { ?>
+						<img src="<?php echo esc_url( $restaurant_site_options['icon_cart']['url'] ) ?>" alt="icon cart">
+					<?php } else { ?>
+						<svg>
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#cart_2">
+							</use>
+						</svg>
+					<?php } ?>
+				</a>
 				<?php get_template_part( 'template-parts/components/button', 'book', [ 'href' => '#', 'title' => 'BOOK YOU TABLE' ] ); ?>
 			</div>
 		</header>
 	</div>
 	<?php get_template_part( 'template-parts/parts/searchform' ); ?>
+
+	<svg>
+		<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#">
+		</use>
+	</svg>

@@ -42,9 +42,6 @@ Redux::set_section(
 				'title' => esc_html__( 'Search icon', 'restaurant-site' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
-				'default' => array(
-					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/search_icon-2.png'
-				),
 			),
 			array(
 				'id' => 'icon_cart',
@@ -53,9 +50,6 @@ Redux::set_section(
 				'title' => esc_html__( 'Icon cart', 'restaurant-site' ),
 				'compiler' => 'true',
 				'preview_size' => 'full',
-				'default' => array(
-					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/icon_cart.png'
-				),
 			),
 			array(
 				'id' => 'icon_button_book',

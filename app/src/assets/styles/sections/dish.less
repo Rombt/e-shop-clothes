@@ -97,7 +97,6 @@
     z-index: 5;
 
     &__title {
-        // font-size: 56px;
         .adaptiv-prop(font-size, 56, 30);
         font-family: "PlayfairDisplay";
         margin: 0px 0 -5px 0;
@@ -107,6 +106,7 @@
         font-family: "PlayfairDisplay";
         // font-size: 40px;
         // .adaptiv-prop(40, 20);
+        .adaptiv-prop(font-size, 40, 20);
         margin: 0px;
     }
 
@@ -123,24 +123,27 @@
     align-items: center;
     justify-content: center;
 
-    //  ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
 
     position: absolute;
     .adaptiv-prop(bottom, -80, -20);
     z-index: 5;
-    .adaptiv-prop(width, 200, 50);
-    .adaptiv-prop(height, 210, 60);
+    .adaptiv-prop(width, 205, 95);
+    .adaptiv-prop(height, 202, 92);
+
+    svg {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+        .adaptiv-prop(width, 205, 95);
+        .adaptiv-prop(height, 202, 92);
+    }
 
     img {
-        height: 84px;
-        width: 84px;
         position: absolute;
-        top: -40px;
-        .adaptiv-prop(top, -40, -10);
-
-
-        .adaptiv-prop(width, 84, 21);
-        .adaptiv-prop(height, 84, 21);
+        .adaptiv-prop(top, -40, -20);
+        .adaptiv-prop(width, 84, 41);
+        .adaptiv-prop(height, 84, 41);
     }
 
     p {
@@ -149,5 +152,6 @@
 
 
         .adaptiv-prop(width, 110, 28);
+        .adaptiv-prop(font-size, 22, 10);
     }
 }
