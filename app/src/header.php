@@ -76,8 +76,3 @@
 		</header>
 	</div>
 	<?php get_template_part( 'template-parts/parts/searchform' ); ?>
-
-	<svg>
-		<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#">
-		</use>
-	</svg>

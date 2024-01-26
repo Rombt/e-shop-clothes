@@ -267,7 +267,6 @@ function rstr_get_images_sizes() {
 	);
 
 }
-
 add_action( 'plugin_loaded', 'rstr_register_image_size' );
 function rstr_register_image_size() {
 	if ( function_exists( 'rstr_get_images_sizes' ) ) {

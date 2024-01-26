@@ -90,7 +90,7 @@ function rstr_food_menu_items_acf_metaboxes() {
 					array(
 						'param' => 'taxonomy',
 						'operator' => '==',
-						'value' => 'food-categories',
+						'value' => 'food_categories',
 					),
 				),
 			),

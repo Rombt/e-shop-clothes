@@ -227,12 +227,23 @@ Redux::set_section(
 				'subtitle' => 'Add your content to the section \'Restaurant Menu\'',
 				'position' => 'start',
 			),
-
 			array(
 				'id' => 'restaurant_menu-section_title',
 				'type' => 'text',
-				'title' => esc_html__( 'Restaurant menu section title', 'restaurant-site' ),
+				'title' => esc_html__( 'Restaurant Menu Section Title', 'restaurant-site' ),
 				'default' => esc_html__( 'Food Menu', 'restaurant-site' ),
+			),
+			array(
+				'id' => 'restaurant_menu-section_button_title',
+				'type' => 'text',
+				'title' => esc_html__( 'Restaurant Menu Button Title', 'restaurant-site' ),
+				'default' => esc_html__( 'Explor food menu', 'restaurant-site' ),
+			),
+			array(
+				'id' => 'restaurant_menu-section_button_href',
+				'type' => 'text',
+				'title' => esc_html__( 'Restaurant Menu Button link', 'restaurant-site' ),
+				'default' => get_home_url() . "/food-menu-items/",
 			),
 			array(
 				'id' => 'restaurant_menu-section_img_1',

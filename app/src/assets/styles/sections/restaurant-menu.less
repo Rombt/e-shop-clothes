@@ -8,10 +8,11 @@
     position: relative;
     padding-top: 85px;
 
-    .top-menu-wrap {
-       margin-top: 0px;
 
-    }
+    //  .top-menu-wrap {
+    //     margin-top: 0px;
+
+    //  }
 
     .wrap-img {
 
@@ -94,101 +95,155 @@
     justify-content: space-between;
     align-items: start;
     width: 100%;
-    //  min-height: 390px;
+    min-height: 390px;
     z-index: 5;
     margin-bottom: 100px;
+    row-gap: 25px;
+    .adaptiv-prop(column-gap, 15, 0);
 
 
-    .sm-block({
+    .md_1-block({
        margin-top: 30px;
+       flex-direction: column;
        justify-content: center;
+       align-items: center;
     });
 
  }
+
 
  .dish-menu {
-    max-height: 90px;
-    min-height: 60px;
-    overflow: hidden;
-    background-color: #fff;
-    border-bottom: 2px solid #dddddd;
 
-    padding-top: 5px;
-    padding-bottom: 10px;
+    display: flex;
+    .adaptiv-prop(width, 530, 450);
+    .adaptiv-prop(column-gap, 25, 15);
+    transition: all 0.15s ease-in;
 
-    &:not(:last-child) {
-       margin-bottom: 10px;
-    }
-
-    a {
-       display: block;
-       height: inherit;
-       max-height: inherit;
-       width: inherit;
-       display: flex;
-       justify-content: space-between;
+    .md_1-block({
+       .adaptiv-prop(width, 1200, 250);
        align-items: center;
-    }
+       justify-content: space-between;
 
-
-    .xs-block({
-
-       height: auto;
-       padding-top: 10px;
-       padding-bottom: 10px;
     });
 
- .xs-block({
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 5px;
- });
+ &:hover {
+    transform: scale(1.02);
+    transition: all 0.15s ease-in;
+    box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+ }
 
-
- /* .dish-menu__title */
+ &__body {}
 
  &__title {
+    text-decoration: none;
+    color: #000;
+    .adaptiv-prop(font-size, 16, 14);
+    font-weight: 600;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 5px;
 
-    font-size: 16px;
+
+    //  &:hover {
+    //     transform: scale(1.05);
+    //     transition: all 0.15s ease-in;
+    //  }
+
+
+ }
+
+
+ &__description {
     font-family: Sintony, FiraSans;
-    color: rgb(20, 20, 29);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.063;
-
-    padding: 5px;
-    max-height: 100%;
-    max-width: 400px;
-    width: 400px;
-
-
-    .xs-block({
-       width: 100%;
-       text-align: center;
-    });
-
- p {
-    font-size: 14px;
-    font-family: Sintony, FiraSans;
-    font-weight: 400;
     color: #5c6369;
-    line-height: 1.857;
-    text-transform: none;
-    margin-bottom: 0;
+
+    .adaptiv-prop(font-size, 14, 12);
+    line-height: 0.5;
 
 
-    .xs-block({
-       margin-top: 7px;
-       line-height: 1.2;
+ }
 
 
-    });
+ &__price {
+    //  width: 100px;
+    //  border: 1px solid #0515fd;
+
  }
  }
 
- .price {
-    width: 125px;
-    text-align: right;
 
- }
- }
+ //  .dish-menu {
+ //     max-height: 90px;
+ //     min-height: 60px;
+ //     overflow: hidden;
+ //     background-color: #fff;
+ //     border-bottom: 2px solid #dddddd;
+
+ //     padding-top: 5px;
+ //     padding-bottom: 10px;
+
+ //     &:not(:last-child) {
+ //        margin-bottom: 10px;
+ //     }
+
+ //     .xs-block({
+
+ //        height: auto;
+ //        padding-top: 10px;
+ //        padding-bottom: 10px;
+ //     });
+
+ //  .xs-block({
+ //     flex-wrap: wrap;
+ //     justify-content: center;
+ //     row-gap: 5px;
+ //  });
+
+
+
+ //  &__title {
+
+ //     font-size: 16px;
+ //     font-family: Sintony, FiraSans;
+ //     color: rgb(20, 20, 29);
+ //     font-weight: bold;
+ //     text-transform: uppercase;
+ //     line-height: 1.063;
+
+ //     padding: 5px;
+ //     max-height: 100%;
+ //     max-width: 400px;
+ //     width: 400px;
+
+
+ //     .xs-block({
+ //        width: 100%;
+ //        text-align: center;
+ //     });
+
+ //  }
+
+ //  &__text {
+ //     font-size: 14px;
+ //     font-family: Sintony, FiraSans;
+ //     font-weight: 400;
+ //     color: #5c6369;
+ //     line-height: 1.857;
+ //     text-transform: none;
+ //     margin-bottom: 0;
+
+
+ //     .xs-block({
+ //        margin-top: 7px;
+ //        line-height: 1.2;
+
+
+ //     });
+ //  }
+
+ //  .price {
+ //     width: 125px;
+ //     text-align: right;
+
+ //  }
+ //  }

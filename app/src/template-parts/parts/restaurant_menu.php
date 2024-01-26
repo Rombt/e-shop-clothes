@@ -42,18 +42,21 @@ $query_Menu_items = new WP_Query( $params );
 				$query_Menu_items->the_post();
 				?>
 				<article <?php post_class( 'dish-menu' ); ?> id="post-<?php the_id() ?>" data-post-id="<?php the_id() ?>">
-					<a href="<?php echo esc_url( the_permalink() ); ?>">
-						<div class="dish-menu__title">
+					<div class="dish-menu__body">
+						<a class="dish-menu__title" href="<?php echo esc_url( the_permalink() ); ?>">
 							<?php echo the_title() ?>
-							<p>
-								<?php echo rstr_trim_excerpt( 12 ) ?>
-							</p>
+						</a>
+						<div class="dish-menu__description">
+							<?php echo rstr_trim_excerpt( 12 ) ?>
 						</div>
+					</div>
+					<footer class="dish-menu__price">
 						<?php if ( class_exists( 'ACF' ) ) {
 							get_template_part( 'template-parts/components/price', null, [ 'price' => get_field( 'food_price' ) ] );
 						}
 						?>
-					</a>
+					</footer>
+
 				</article>
 				<?php
 			}
@@ -64,7 +67,14 @@ $query_Menu_items = new WP_Query( $params );
 		?>
 
 	</section>
-	<!-- @@include('./parts/button-orange.html',{'mod':'','title':'Explor food menu', 'href':'#'}) -->
+	<?php if ( class_exists( 'ReduxFramework' ) && ( $restaurant_site_options['restaurant_menu-section_button_title'] || $restaurant_site_options['restaurant_menu-section_button_href'] ) ) {
+		$restaurant_menu_button_title = $restaurant_site_options['restaurant_menu-section_button_title'];
+		$restaurant_menu_button_href = $restaurant_site_options['restaurant_menu-section_button_href'];
+	} else {
+		$restaurant_menu_button_title = '';
+		$restaurant_menu_button_href = get_permalink();
+	} ?>
+	<?php get_template_part( 'template-parts/components/button', 'orange', [ 'href' => $restaurant_menu_button_href, 'title' => $restaurant_menu_button_title ] ); ?>
 
 	<div class="wrap-img wrap-img__311x311">
 		<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['restaurant_menu-section_img_1']['url'] ) ) { ?>
