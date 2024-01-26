@@ -166,11 +166,11 @@ ul {
          text-overflow: ellipsis;
       }
 
-      // &:hover {
-
-      //    background-color: rgb(120, 197, 248);
-      // }
-
+      &:hover {
+         transform: scale(1.04);
+         transition: all 0.15s ease-in;
+         box-shadow: 0px 24px 38px 0px rgba(0, 0, 0, 0.09);
+      }
 
       &:hover>ul.sub-menu {
          max-height: 1000px;
@@ -368,6 +368,17 @@ img {
    border: 1px solid #fff;
 }
 
+
+&:hover {
+   border: 1px solid #fea100;
+   background-color: #ffb12b;
+   scale: 1.02;
+}
+
+&:active {
+   box-shadow: 0 2px #ca8102;
+   transform: translateY(2px);
+}
 
 }
 }
