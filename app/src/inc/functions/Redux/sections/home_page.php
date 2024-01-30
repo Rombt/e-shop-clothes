@@ -323,6 +323,17 @@ Redux::set_section(
 					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/background-clients-block.jpg'
 				),
 			),
+			array(
+				'id' => 'clients-section_avatar_default',
+				'type' => 'media',
+				'url' => true,
+				'title' => esc_html__( 'Default avatar of client', 'restaurant-site' ),
+				'compiler' => 'true',
+				'preview_size' => 'thumbnail',
+				'default' => array(
+					'url' => esc_url( get_template_directory_uri() ) . '/assets/img/icons/sprite.svg#avatar_default'
+				),
+			),
 
 			array(
 				'id' => 'clients-accordion-end',
