@@ -140,23 +140,25 @@
 
    h3 {
       margin: 0;
-
       font-family: "PlayfairDisplay";
-      font-size: 26px;
+      .adaptiv-prop(font-size, 26, 20);
+      line-height: 1.2;
       color: #14141d;
       font-weight: 700;
       overflow: hidden;
       margin-bottom: 10px;
       padding-bottom: 5px;
-
    }
 
    p {
       font-family: Sintony, FiraSans;
       font-size: 14px;
+      .adaptiv-prop(font-size, 14, 12);
       color: #5c6369;
       font-weight: regular;
-      line-height: 26px;
+      // line-height: 26px;
+      .adaptiv-prop(line-height, 26, 20);
+
    }
 }
 

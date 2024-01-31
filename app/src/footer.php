@@ -13,10 +13,20 @@
 			</div>
 			<div class="footer__news">
 				<?php echo '<h2>' . ( class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['title_two'] ) : "" ) . '</h2>' ?>
-				<span>Enter your email address and subscribe daily newsletter</span>
+				<span>
+					<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['footer-form-section_form-subtitle'] ) {
+						echo $restaurant_site_options['footer-form-section_form-subtitle'];
+					} ?>
+				</span>
 				<div class="form-footer">
 					<div class="form-footer__input">
-						<!-- <img src="img/form-icon_email.png" alt=""> -->
+						<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['footer-form-section_form_email-icon']['url'] ) { ?>
+							<svg>
+								<use
+									xlink:href="<?php echo esc_url( $restaurant_site_options['footer-form-section_form_email-icon']['url'] ) ?>">
+								</use>
+							</svg>
+						<?php } ?>
 						<p>Email Address</p>
 						<input type="email">
 					</div>

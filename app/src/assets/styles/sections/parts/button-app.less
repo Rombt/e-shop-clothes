@@ -2,18 +2,21 @@
    border-radius: 4px;
    border: 1px solid #52535e;
    background-color: #52535e;
-   max-width: 219px;
-   height: 61px;
+   .adaptiv-prop(max-width, 219, 140);
+   .adaptiv-prop(height, 60, 40);
 
    display: flex;
    align-items: center;
    justify-content: start;
-
    padding-left: 15px;
 
+   transform: scale(1);
+   transition: all 0.3s ease 0s;
 
    p {
       font-size: 15px;
+      .adaptiv-prop(font-size, 15, 12);
+
       font-family: Sintony, FiraSans;
       color: rgb(237, 241, 243);
       line-height: 1.818;
@@ -28,9 +31,8 @@
    }
 
    img {
-      height: 35px;
-      width: 35px;
-      // margin-left: 15px;
+      .adaptiv-prop(height, 35, 25);
+      .adaptiv-prop(width, 35, 25);
       margin-right: 15px;
    }
 
@@ -38,13 +40,13 @@
 }
 
 .button-app:hover {
-
    border: 1px solid #595a64;
    background-color: #595a64;
+   transform: scale(1.03);
+   transition: all 0.3s ease 0s;
 }
 
 .button-app:active {
-   // background-color: #3e8e41;
    box-shadow: 0 2px #3f424e;
    transform: translateY(2px);
 }
