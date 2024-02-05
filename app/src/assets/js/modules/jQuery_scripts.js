@@ -18,21 +18,24 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
 
       let PaginationBlock = $('.rstr-pagination');
-      if (PaginationBlock.children('.page-numbers').length == 0) {
+      const pageNumberCurrent = $('.page-numbers.current');
+
+      if (pageNumberCurrent.length == 0) {
          return false;
       }
+
       let WidthPaginationBTN = PaginationBlock.children('.page-numbers')[0].offsetWidth;
       let AllPaginationBTN = PaginationBlock.children('.page-numbers').length;
       let PaginationBTNs = PaginationBlock.children('.page-numbers')
-      let indexCurrentPaginationBTN = PaginationBlock.children('.page-numbers').index($('.page-numbers.current'));
+      let indexCurrentPaginationBTN = PaginationBlock.children('.page-numbers').index(pageNumberCurrent);
       let GupNexAndCurrentPaginationBTN;
       let amounthVisiblePaginationBTN;
       let widthPaginationBlock;
 
-      if ($('.page-numbers.current').next().position() == undefined) {
-         GupNexAndCurrentPaginationBTN = $('.page-numbers.current').position().left - $('.page-numbers.current').prev().position().left - WidthPaginationBTN;
+      if (pageNumberCurrent.next().position() == undefined) {
+         GupNexAndCurrentPaginationBTN = pageNumberCurrent.position().left - pageNumberCurrent.prev().position().left - WidthPaginationBTN;
       } else {
-         GupNexAndCurrentPaginationBTN = $('.page-numbers.current').next().position().left - $('.page-numbers.current').position().left - WidthPaginationBTN;
+         GupNexAndCurrentPaginationBTN = pageNumberCurrent.next().position().left - pageNumberCurrent.position().left - WidthPaginationBTN;
       }
 
       updatePaginationBTN();

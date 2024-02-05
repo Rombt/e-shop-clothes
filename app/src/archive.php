@@ -27,6 +27,7 @@
 			echo '</h1>';
 			the_content();
 			echo '<hr>';
+			echo '****<hr>****';
 		endwhile;
 
 		echo '<br>';

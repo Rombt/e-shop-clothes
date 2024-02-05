@@ -26,6 +26,7 @@ function restaurant_site_scripts() {
 	wp_enqueue_script( 'restaurant_site-app', get_template_directory_uri() . '/assets/js/app.main.min.js', array( 'jquery' ), '1.0', true );
 
 	global $restaurant_site_options;
+	global $rstr_taxonomy;
 
 	if ( class_exists( 'ReduxFramework' )
 		&& $restaurant_site_options['modal_menu_location']
@@ -54,10 +55,11 @@ function restaurant_site_scripts() {
 		}
 	}
 
-	if ( is_post_type_archive( 'recipes' ) || is_post_type_archive( 'food_menu_items' ) ) {
+	if ( is_post_type_archive( 'recipes' ) || is_post_type_archive( 'food_menu_items' ) || is_tax( 'food_categories' ) ) {
 		wp_localize_script( 'restaurant_site-app', 'rstrAppData', [ 
 			'rstrAjaxURL' => admin_url( 'admin-ajax.php' ),
 			'rstrAjaxNonceView' => wp_create_nonce( 'rstr-ajax-nonce-view' ),
+			'rstrTaxonomy' => $rstr_taxonomy,
 		] );
 	}
 

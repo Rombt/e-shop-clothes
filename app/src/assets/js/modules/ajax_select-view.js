@@ -1,4 +1,5 @@
 export const ajax_scripts = jQuery(document).ready(function ($) {
+   let typePage;
 
    let mainBlock;
    let TempBlock;
@@ -22,9 +23,9 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
 
    $('.select-view').on('click', function (e) {
       e.preventDefault();
-      let typePage = $('.select-view').children().first().attr('class');
+      let typeView = $('.select-view').children().first().attr('class');
 
-      if (typePage == 'select-view__recipes-page') {
+      if (typeView == 'select-view__recipes-page') {
          view_mod_0 = '2_columns';
          view_mod_1 = '3_columns';
          view_mod = $('.select-view__recipes-page>h3').text().toLowerCase().replace(/ /g, '_');
@@ -32,7 +33,7 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          mainBlock = $('.recipes-page-conteiner__row');
          TempBlock = $('<div style="visibility: hidden;" class="recipes-page-conteiner__row"></div>');
 
-      } else if (typePage == 'select-view__menu-page') {
+      } else if (typeView == 'select-view__menu-page') {
          view_mod_0 = 'grid';
          view_mod_1 = 'list';
          view_mod = $('.select-view__menu-page>h3').text().toLowerCase();
@@ -40,6 +41,14 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
          mainBlock = $('.menu-page-conteiner__row');
          TempBlock = $('<div style="visibility: hidden;" class="menu-page-conteiner__row"></div>');
       }
+
+      console.log("window.location.pathname = ", window.location.pathname);
+      if (window.location.pathname.includes('food-categories')) {
+         typePage = 'taxonomy';
+      } else if (window.location.pathname.includes('food-menu-items') || window.location.pathname.includes('recipes')) {
+         typePage = 'custom_post_type';
+      }
+
 
       $.ajax({
          url: rstrAppData.rstrAjaxURL,
@@ -49,7 +58,8 @@ export const ajax_scripts = jQuery(document).ready(function ($) {
             nonce: rstrAppData.rstrAjaxNonceView,
             view_mod: view_mod,
             paged: currentPage,
-            type_page: typePage,
+            type_view: typeView,
+            type_page: typePage
          },
          success: function (response) {
             $(e.target).html((view_mod == view_mod_1) ? view_mod_0.replace(/_/g, ' ') : view_mod_1.replace(/_/, ' '));

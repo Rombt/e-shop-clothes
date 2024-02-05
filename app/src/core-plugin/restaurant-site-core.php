@@ -40,12 +40,7 @@ require_once plugin_dir_path( __FILE__ ) . 'inc/widgets/widget-recent_post.php';
 
 
 
-function rs_rewrite_rules() {
-	rs_register_post_types();
 
-	flush_rewrite_rules();
-}
-add_action( 'after_switch_theme', 'rs_rewrite_rules' );
 
 add_action( 'init', 'rs_create_taxonomy' );
 function rs_create_taxonomy() {
@@ -116,7 +111,8 @@ function rs_register_post_types() {
 		'has_archive' => true,
 		'hierarchical' => true,
 		'menu_position' => 4,
-		'taxonomies' => [ 'food-categories' ],
+		// 'taxonomies' => [ 'food-categories' ],
+		'taxonomies' => [ 'food_categories' ],
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields' ),
 		'menu_icon' => 'dashicons-image-filter',
 		'show_in_nav_menus' => true,
@@ -224,6 +220,12 @@ function rs_register_post_types() {
 
 }
 add_action( 'init', 'rs_register_post_types' );
+
+function rs_rewrite_rules() {
+	rs_register_post_types();
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'rs_rewrite_rules' );
 
 function create_download_directory_for_files_recipes() {
 	$upload_dir = wp_upload_dir();

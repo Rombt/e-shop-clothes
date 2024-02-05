@@ -2,7 +2,7 @@
 	<div class="recipes-title-nav recipes-title__nav">
 		<div class="select-view">
 			<?php
-			if ( is_post_type_archive( 'food_menu_items' ) ) {
+			if ( is_post_type_archive( 'food_menu_items' ) || is_tax( 'food_categories' ) ) {
 				$view_mode = 'list';
 
 				if ( isset( $_SESSION['View_Mode_Menu_Page'] ) ) {
