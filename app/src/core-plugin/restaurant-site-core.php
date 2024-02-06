@@ -154,21 +154,14 @@ function rs_register_post_types() {
 		'show_in_menu' => true,
 		'show_in_rest' => true,
 		'query_var' => true,
-		'rewrite' => array( 'slug' => 'our-clients' ),
-		'has_archive' => true,
-		'hierarchical' => true,
+		'has_archive' => false,
+		'hierarchical' => false,
 		'menu_position' => 5,
-		// 'taxonomies' => ['food-categories'],
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'comments', 'custom-fields' ),
 		'menu_icon' => 'dashicons-image-filter',
 		'show_in_nav_menus' => true,
 	);
 	register_post_type( 'our-clients', $args_our_clients );
-
-
-
-
-
 
 
 	$labels_recipe = array(

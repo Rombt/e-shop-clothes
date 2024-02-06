@@ -1,31 +1,46 @@
 <?php global $restaurant_site_options; ?>
 
-<article <?php post_class( 'article-blog' ) ?> id="<?php the_ID() ?>">
+<?php
+$class_article = 'article-blog';
+$class_article_img = 'article-blog__img';
+$class_article_body = 'article-blog__body';
+$class_text = 'article-blog__text';
+if ( 'our-clients' === get_post_type() ) {
+	$class_article = 'article-client';
+	$class_article_img = 'article-client__img';
+	$class_article_body = 'article-client__body';
+	$class_text = 'article-client__text';
+} ?>
 
-	<figure class="wrap-img article-blog__img">
+
+
+<article <?php post_class( $class_article ) ?> id="<?php the_ID() ?>">
+
+	<figure class="wrap-img <?php echo $class_article_img ?>">
 		<?php if ( '' != get_the_post_thumbnail() ) : ?>
 			<?php echo get_the_post_thumbnail( $post->ID, 'rstr_post-img' ); ?>
 		<?php else : ?>
 			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['no-thumbnail']['url'] ) { ?>
 				<img class="no-thumbnail" src="<?php echo esc_url( $restaurant_site_options['no-thumbnail']['url'] ) ?>" alt="" ">
-				<?php } ?>
+																											<?php } ?>
 		<?php endif ?>
 	</figure>
 
-	<div class=" article-blog__body">
-		<div class="square-date">
-			<?php $arr_str_data = explode( ' ', get_post_time( 'd M y', true ) ); ?>
-			<p>
-				<?php echo $arr_str_data[0] ?>
-			</p>
-			<p>
-				<?php echo $arr_str_data[1] . '-' . $arr_str_data[2] ?>
-			</p>
-		</div>
-		<div class="article-blog__text">
+	<div class=" <?php echo $class_article_body ?>">
+		<?php if ( 'our-clients' !== get_post_type() ) {
+			get_template_part( 'template-parts/components/date', 'square' );
+		} ?>
+
+		<div class="<?php echo $class_text ?>">
 			<h2>
 				<?php the_title() ?>
 			</h2>
+			<?php if ( 'our-clients' === get_post_type() ) {
+				get_template_part( 'template-parts/components/date', 'line' );
+			} ?>
+
+
+
 			<span>
 				<?php echo rstr_trim_excerpt( 40 ) ?>
 			</span>

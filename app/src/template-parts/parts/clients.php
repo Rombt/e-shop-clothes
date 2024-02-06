@@ -54,27 +54,27 @@ $query_Our_clients = new WP_Query( $params );
 								<div class="slide-body__text">
 									<?php echo rstr_trim_excerpt( 50 ) ?>
 								</div>
-
-								<div class="wrap-img slide-body__client-avatar">
-									<?php
-									if ( has_post_thumbnail( $id ) ) {
-										echo get_the_post_thumbnail( $id, 'thumbnail' );
-									} else { ?>
-										<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['clients-section_avatar_default']['url'] ) { ?>
-											<svg>
-												<use
-													xlink:href="<?php echo esc_url( $restaurant_site_options['clients-section_avatar_default']['url'] ) ?>">
-												</use>
-											</svg>
+								<a href="<?php echo get_permalink(); ?>">
+									<div class="wrap-img slide-body__client-avatar">
+										<?php
+										if ( has_post_thumbnail( $id ) ) {
+											echo get_the_post_thumbnail( $id, 'thumbnail' );
+										} else { ?>
+											<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['clients-section_avatar_default']['url'] ) { ?>
+												<svg>
+													<use
+														xlink:href="<?php echo esc_url( $restaurant_site_options['clients-section_avatar_default']['url'] ) ?>">
+													</use>
+												</svg>
+											<?php } ?>
 										<?php } ?>
-									<?php } ?>
+									</div>
 
+									<div class="name">
 
-								</div>
-
-								<div class="name">
-									<?php echo the_title(); ?>
-								</div>
+										<?php echo the_title(); ?>
+									</div>
+								</a>
 								<div class="rating">
 									<img src="@img/star-rating-icon.png" alt="">
 									<img src="@img/star-rating-icon.png" alt="">

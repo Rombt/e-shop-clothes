@@ -1,31 +1,35 @@
 .breadcrumbs-conteiner {
    width: max-content;
 
-   &__row {
-      .row-flex();
-   }
+   .md_2-block({
+      display: none;
+   });
 
-   .breadcrumbs {
-      .col();
+&__row {
+   .row-flex();
+}
 
-      font-size: 14px;
-      font-family: Sintony, FiraSans;
-      color: #5c6369;
-      line-height: 1.857;
+.breadcrumbs {
+   .col();
 
-      a {
-         color: inherit;
-         display: inline-block;
+   font-size: 14px;
+   font-family: Sintony, FiraSans;
+   color: #5c6369;
+   line-height: 1.857;
+
+   a {
+      color: inherit;
+      display: inline-block;
+      transition: 0.3s;
+
+      &:hover {
+         color: #fea100;
          transition: 0.3s;
-
-         &:hover {
-            color: #fea100;
-            transition: 0.3s;
-            transform: scale(1.03);
-            transition: 0.3s;
-         }
+         transform: scale(1.03);
+         transition: 0.3s;
       }
-
    }
+
+}
 
 }

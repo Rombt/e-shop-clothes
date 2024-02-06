@@ -10,9 +10,13 @@
    .size(10);
    min-height: 200px;
 
+   .adaptiv-prop(width, 600, 240);
+
+
 
    h2 {
-      font-size: 35px;
+      .adaptiv-prop(font-size, 35, 20);
+
       font-family: "PlayfairDisplay";
       color: rgb(20, 20, 29);
       font-weight: bold;
@@ -23,6 +27,19 @@
       columns: 1;
       margin-left: auto;
       margin-right: auto;
+
+      &__textarea {
+         display: flex;
+         flex-direction: column;
+
+      }
+
+      .form-submit {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
    });
 
 
@@ -54,35 +71,62 @@
    justify-content: space-between;
    align-items: center;
    column-gap: 20px;
-
+   row-gap: 15px;
    width: 115%;
 
-   img {
 
-      height: 20px;
-      width: 20px;
-      margin-bottom: 10px;
-      margin-left: 3px;
-   }
 
-   p {
-      display: block;
-      margin-right: 3px;
-      margin-bottom: 0px;
-   }
+   label {
+      position: relative;
+      padding-left: 35px;
 
-   input,
-   textarea {
-      height: 50%;
-      flex-grow: 1;
-      border: 1px solid #dde7ec;
+
+      img {
+         position: absolute;
+         left: 0px;
+         top: 50%;
+         transform: translate(0, -50%);
+      }
+
    }
 
 
+   .xs-block({
 
-   &:nth-last-child(-n+2) input {
-      width: 30px;
-   }
+      width: 100%;
+
+   });
+
+
+img {
+
+   height: 20px;
+   width: 20px;
+   margin-bottom: 10px;
+   margin-left: 3px;
+}
+
+p {
+   display: block;
+   margin-right: 3px;
+   margin-bottom: 0px;
+}
+
+input,
+textarea {
+   height: 50%;
+   flex-grow: 1;
+   border: 1px solid #dde7ec;
+
+   width: 100%;
+
+}
+
+
+
+&:nth-last-child(-n+2) input {
+   width: 30px;
+}
 }
 
 &__textarea {
@@ -102,6 +146,8 @@
 
 .button-with-border {
    margin-top: 30px;
+
+
 }
 
 

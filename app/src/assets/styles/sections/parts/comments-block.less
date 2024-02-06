@@ -7,8 +7,10 @@
 }
 
 .comments {
-   padding-top: 100px;
-   padding-bottom: 100px;
+   .adaptiv-prop(padding-top, 100, 20);
+   .adaptiv-prop(padding-bottom, 100, 20);
+
+
 
    .button-with-border {
       width: 170px;
@@ -16,29 +18,25 @@
 
    &__row {
       .row-flex();
+      // align-items: flex-start;
 
-      .to(1200px, {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-      });
+      .comment:not(:last-child) {
+         border-bottom: 1px solid #d4dade;
+      }
 
-   .comment:not(:last-child) {
-      border-bottom: 1px solid #d4dade;
+      h2 {
+         .adaptiv-prop(font-size, 35, 25);
+         font-family: "PlayfairDisplay";
+         color: rgb(20, 20, 29);
+         font-weight: bold;
+         line-height: 0.629;
+         text-transform: capitalize;
+
+
+         .to(1200px, {
+            margin-bottom: 50px;
+         });
    }
-
-   h2 {
-      font-size: 35px;
-      font-family: "PlayfairDisplay";
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      line-height: 0.629;
-      text-transform: capitalize;
-
-      .to(1200px, {
-         margin-bottom: 50px;
-      });
-}
 
 
 }

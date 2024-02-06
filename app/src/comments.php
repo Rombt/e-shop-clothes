@@ -82,8 +82,8 @@ $html_req = ( $req ? " required='required'" : '' );
 											</div>',
 				],
 				'comment_field' => '<div class="leave-comment-form__textarea">
-														<img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_masage.png" alt="">
-														<label for="comment">' . _x( 'Masage*', 'noun', 'restaurant-site' ) . '</label>
+														
+														<label for="comment"> <img src="//localhost:3000/ms/wp-content/themes/restaurant-site/assets/img/form_icon_masage.png" alt="">' . _x( 'Masage*', 'noun', 'restaurant-site' ) . '</label>
 														<textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea>
 													</div>',
 				'must_log_in' => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
