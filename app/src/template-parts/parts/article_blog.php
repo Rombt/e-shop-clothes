@@ -12,6 +12,12 @@ if ( 'our-clients' === get_post_type() ) {
 	$class_text = 'article-client__text';
 } ?>
 
+<?php
+$article_blog_footer = 'article-blog-footer';
+if ( is_single() ) {
+	$article_blog_footer .= ' article-blog-footer_pagination';
+}
+?>
 
 
 <article <?php post_class( $class_article ) ?> id="<?php the_ID() ?>">
@@ -22,7 +28,7 @@ if ( 'our-clients' === get_post_type() ) {
 		<?php else : ?>
 			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['no-thumbnail']['url'] ) { ?>
 				<img class="no-thumbnail" src="<?php echo esc_url( $restaurant_site_options['no-thumbnail']['url'] ) ?>" alt="" ">
-																											<?php } ?>
+						<?php } ?>
 		<?php endif ?>
 	</figure>
 
@@ -38,25 +44,39 @@ if ( 'our-clients' === get_post_type() ) {
 			<?php if ( 'our-clients' === get_post_type() ) {
 				get_template_part( 'template-parts/components/date', 'line' );
 			} ?>
-
-
-
-			<span>
-				<?php echo rstr_trim_excerpt( 40 ) ?>
-			</span>
-		</div>
+			<?php if ( ! is_single() ) { ?>
+				<span>
+					<?php echo rstr_trim_excerpt( 40 ) ?>
+				</span>
+			<?php } ?>
 		</div>
 
-		<footer class="article-blog-footer">
+		<?php if ( is_single() ) { ?>
+			<div class="article-blog__content">
+				<?php the_content(); ?>
+			</div>
 
-			<?php get_template_part(
-				'template-parts/components/button',
-				'orange',
-				[ 
-					'href' => get_permalink(),
-					'title' => class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['article-blog_button-title'] ) : "",
-				]
-			); ?>
+		<?php } ?>
+		</div>
+
+		<!-- <footer class="article-blog-footer"> -->
+		<footer class="<?php echo $article_blog_footer ?>">
+
+			<?php if ( is_single() ) {
+				get_template_part( 'template-parts/components/pagination' );
+			} else {
+
+				get_template_part(
+					'template-parts/components/button',
+					'orange',
+					[ 
+						'href' => get_permalink(),
+						'title' => class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['article-blog_button-title'] ) : "",
+					]
+				);
+
+			} ?>
+
 			<?php
 			get_template_part( 'template-parts/components/article_icons_block' )
 				?>
@@ -68,8 +88,11 @@ if ( 'our-clients' === get_post_type() ) {
 
 <?php
 
-if ( is_single() ) {
 
+
+
+
+if ( is_single() ) {
 	if ( comments_open() || get_comments_number() ) :
 		comments_template();
 	endif;

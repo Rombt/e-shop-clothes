@@ -3,6 +3,9 @@
    flex-direction: column;
    align-items: center;
    width: 100%;
+   padding: 0px 10px 0px 10px;
+
+
 
    &__img {
       width: 100%;
@@ -22,16 +25,25 @@
 
    &__body {
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       padding-top: 30px;
       padding-bottom: 45px;
 
+      font-family: Sintony, FiraSans;
+      color: rgb(92, 99, 105);
+      line-height: 1.857;
+      text-align: left;
+      .adaptiv-font(14, 12);
+      column-gap: (30px / @width-article) * 100%;
+      row-gap: (30px / @width-article) * 100%;
+
    }
 
    &__text {
-      width: (720px / @width-article) * 100%;
-      padding-left: (30px / @width-article) * 100%;
       word-break: break-word;
+      .adaptiv-prop(flex-basis, 800, 230);
+      flex-shrink: 1;
 
       h2 {
          font-family: "PlayfairDisplay";
@@ -46,15 +58,10 @@
             line-height: 1.1;
          });
    }
-
-   span {
-      font-family: Sintony, FiraSans;
-      color: rgb(92, 99, 105);
-      line-height: 1.857;
-      text-align: left;
-      .adaptiv-font(14, 12);
-   }
 }
+
+&__content {}
+
 }
 
 .date-square {
@@ -143,6 +150,16 @@ p:last-of-type {
 
    row-gap: 30px;
 });
+
+&_pagination {
+   justify-content: space-between;
+
+}
+
+.rstr-pagination {
+   margin: 0px 0px 0px 0px;
+   max-width: 60%;
+}
 
 
 .button-orange {
