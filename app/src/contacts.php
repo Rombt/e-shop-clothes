@@ -8,30 +8,45 @@
 
 <body>
 	<div class="background background-contact-us">
-		<div class="wrap-img"><img src="@img/background-contact-us.jpg" alt=""></div>
+		<div class="wrap-img">
+			<?php if ( class_exists( 'ReduxFramework' ) && $restaurant_site_options['contact_img']['url'] ) { ?>
+				<img src="<?php echo esc_url( $restaurant_site_options['contact_img']['url'] ) ?>" alt="contact_img">
+			<?php } ?>
+		</div>
 		<div class="conteiner">
 			<div class="contact-us">
 				<div class="contact-us__touch">
 					<h2>Get in touch</h2>
 					<form action="#" class="contact-us__form form">
 						<div class="form__input">
-							<img src="@img/form_icon_name.png" alt="">
+							<svg>
+								<use
+									xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#user_name">
+								</use>
+							</svg>
 							<p>Name*</p>
 							<input type="text">
 						</div>
 						<div class="form__input">
-							<img src="@img/form_icon_email.png" alt="">
+							<svg>
+								<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#email">
+								</use>
+							</svg>
 							<p>Email*</p>
 							<input type="text">
 						</div>
 						<div class="form__input">
-							<img src="@img/form_icon_message.png" alt="icon message">
+							<svg>
+								<use
+									xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#messages">
+								</use>
+							</svg>
 							<p>Message*</p>
 							<textarea name="mesage" id="mesage"></textarea>
 						</div>
 					</form>
 					<?php get_template_part( 'template-parts/components/button', 'orange', [ 
-						'href'  => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['button_href_contact-page'] ) : "" ),
+						'href' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['button_href_contact-page'] ) : "" ),
 						'title' => ( class_exists( 'ReduxFramework' ) ? esc_html__( $restaurant_site_options['button_title_contact-page'] ) : "" ),
 					] );
 					?>
