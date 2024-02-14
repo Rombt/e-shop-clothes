@@ -2,72 +2,68 @@
 @import (less) '../gulp/node_modules/normalize.css/normalize.css';
 @import './smart-grid.less';
 @import 'wp_core_style.less'; // для элементов WP
-@import "fonts";
+@import 'fonts';
 
-@import "variables.less";
-@import "mixins.less";
-
-
+@import 'variables.less';
+@import 'mixins.less';
 
 body {
-    width: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none
+  text-decoration: none;
 }
 
 .debug-grid {
-    .debug(#b2bdfa1a, 1px rgba(6, 235, 197, 0.5) solid);
+  .debug(#b2bdfa1a, 1px rgba(6, 235, 197, 0.5) solid);
 
-    pointer-events: none;
-    z-index: 100;
+  pointer-events: none;
+  z-index: 100;
 }
 
 .conteiner {
-    .wrapper();
+  .wrapper();
 }
 
 .conteiner-for-wp-blocs {
-    .wrapper();
-    min-height: 300px;
-
+  .wrapper();
+  min-height: 300px;
 }
 
-
 .background {
-    .adaptiv-prop(width, 1970, 320);
-    margin: 0 auto;
-
+  .adaptiv-prop(width, 1970, 320);
+  margin: 0 auto;
 }
 
 .wrap-img {
-    position: relative;
-    overflow: hidden;
-    min-height: 10px;
-    min-width: 10px;
+  position: relative;
+  overflow: hidden;
+  min-height: 10px;
+  min-width: 10px;
 
-    img,
-    svg {
-        width: 100%;
-        /* задавать спомощью padding*/
-        height: 100%;
-        object-fit: cover;
-        /* или более подходящее значение*/
-        object-position: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-    }
+  img,
+  svg {
+    width: 100%;
+    /* задавать спомощью padding*/
+    height: 100%;
+    object-fit: cover;
+    /* или более подходящее значение*/
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
-
+.lock {
+  overflow: hidden;
+}
 
 // .page-template-fullwidthtemplate {       подобная перезапись лишает пользователя виджита возможности управлять размером из админ панели
 //     .elementor-container {
@@ -79,9 +75,6 @@ a {
 //         padding-right: 0px !important;
 //     }
 // }
-
-
-
 
 @import 'sections/parts/searchform.less';
 @import 'sections/parts/button-orange.less';
@@ -119,8 +112,7 @@ a {
 @import 'sections/parts/close_window.less';
 @import 'sections/parts/modal_menu.less';
 @import 'sections/parts/accordion-menu.less';
-
-
+@import 'sections/parts/popup.less';
 
 @import 'sections/header.less';
 @import 'sections/title-page-block.less';
@@ -133,7 +125,6 @@ a {
 @import 'sections/clients.less';
 @import 'sections/reserve.less';
 @import 'sections/footer.less';
-
 
 @import 'sections/contacts.less';
 @import 'sections/menu-page.less';

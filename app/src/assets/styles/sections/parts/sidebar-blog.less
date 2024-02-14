@@ -1,254 +1,81 @@
 .blog-sidebar {
-    .col();
-    .size(3);
-    .shift-left(0.3);
-    min-width: 230px;
-    max-width: 500px;
+  position: relative;
+  width: 270px;
+  opacity: 1;
+  transition: all 0.5s ease;
 
-    .to(1040px, {
-        position: absolute;
-        height: 90%;
-        min-width: 250px;
-        right: 0;
-        transform: translate(110%, 0px);
-        transition-duration: 1s;
-    });
-
-&__body {
-    display: flex;
-    flex-direction: column;
-    row-gap: 80px;
-    width: 100%;
-    min-height: 400px;
-    padding: 30px 5px 30px 15px;
-
-    .to(1040px, {
-        background-color: #fff;
-        box-shadow: 0px 0px 0px 0px #a8acb3;
-        transition: all 0.5s ease-in-out;
-    });
-}
-
-
-}
-
-
-.blog-touch-toggle {
-    display: none;
-}
-
-.to(1040px, {
-
-    .blog-swipe {
-        z-index: 10;
-        transform: translate(0px, 0);
-        transition: all 1s ease-in-out;
-
-        .blog-sidebar__body {
-            box-shadow: 0px 7px 7px 7px #a8acb3;
-            transition: all 1s ease-in-out;
-        }
-    }
-
-    .blog-touch-toggle {
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        transition-duration: 1s;
-        transform: translate(-50px, 0px);
-    }
-
-    .blog-toggle-on {
-
-        transform: translate(-50px, 0px);
-
-        img {
-            transform: rotate(180deg);
-            transition-duration: 1s;
-        }
-    }
-});
-
-
-
-
-
-
-.rstr-category {
-    min-height: 100px;
-    max-width: 270px;
-    font-size: 14px;
-    font-family: Sintony, FiraSans;
-    color: rgb(20, 20, 29);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 2.714;
-
-    h2 {
-        font-size: 26px;
-        font-family: "PlayfairDisplay";
-        color: rgb(20, 20, 29);
-        font-weight: bold;
-        line-height: 0.846;
-        text-transform: capitalize;
-        margin-bottom: 30px;
-    }
-
-    li {
-        display: flex;
-        align-items: center;
-
-        img {
-            width: 25px;
-            height: 25px;
-            margin-right: 15px;
-        }
-
-        a {
-            color: inherit;
-        }
-    }
-
-}
-
-.recent-post {
-
-    /* .recent-post__row */
-
-    &__row {
-        display: flex;
-        //   flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        column-gap: 15px;
-    }
-
-    /* .recent-post__img */
-
-    &__img {
-        height: 70px;
-        width: 70px;
-    }
-
-
-    /* .recent-post__body */
-
-    &__body {
-        width: 150px;
-
-        span {
-            font-size: 16px;
-            font-family: "PlayfairDisplay";
-            color: rgb(20, 20, 29);
-            font-weight: bold;
-            line-height: 1.222;
-        }
-
-        p {
-
-            font-size: 13px;
-            font-family: Sintony, FiraSans;
-            color: rgb(92, 99, 105);
-            font-weight: bold;
-            text-transform: uppercase;
-            line-height: 2;
-            text-align: left;
-
-            margin-bottom: 10px;
-        }
-
-
-    }
-
-    h2 {
-        font-size: 26px;
-        font-family: "PlayfairDisplay";
-        color: rgb(20, 20, 29);
-        font-weight: bold;
-        line-height: 0.846;
-        text-transform: capitalize;
-        margin-bottom: 30px;
-    }
-
-
-
-}
-
-.recent-post-slider {
+  &__body {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    width: 100%;
+    padding: 30px 5px 30px 15px;
+    background-color: #fff;
+    min-height: 100vh;
+  }
 }
 
-.archive-sidebar {
-    min-height: 100px;
-    max-width: 270px;
-    font-size: 14px;
-    font-family: Sintony, FiraSans;
-    color: rgb(20, 20, 29);
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 2.714;
+.blog-touch-toggle {
+  display: none;
+}
 
-    h2 {
-        font-size: 26px;
-        font-family: "PlayfairDisplay";
-        line-height: 0.846;
-        margin-bottom: 30px;
-    }
+.to(767px, {
 
-    li {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
 
+.blog-sidebar {
+
+     width: 0px;
+     transition: all 0.5s ease;
+     position: fixed;
+     top: 0;
+     right: 0;
+     z-index: 10;
+
+
+
+     &__body {
+       width: 0px;
+       padding: 0px 0px 0px 0px; 
+       transition: all 0.5s ease;
+     }
 
 }
 
-.tag-block {
-    min-height: 100px;
-    max-width: 270px;
-    font-size: 14px;
-    font-family: Sintony, FiraSans;
-    color: rgb(20, 20, 29);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    h2 {
-        font-size: 26px;
-        font-family: "PlayfairDisplay";
-        color: rgb(20, 20, 29);
-        font-weight: bold;
-        line-height: 0.846;
-        width: 100%;
-        margin-bottom: 20px;
-
-    }
-
-    a {
-
-        font-size: 14px;
-        font-family: Sintony, FiraSans;
-        color: rgb(211, 138, 12);
-        font-weight: bold;
-        text-transform: uppercase;
-        line-height: 2.143;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 4px;
-        background-color: rgb(255, 234, 197);
-        height: 46px;
-        flex-grow: 1;
-        width: max-content;
-        padding: 20px 10px;
 
 
-
-    }
+.blog-touch-toggle {
+      display: block;
+      width: min-content;
+      position: absolute;
+      top: 0px;
+      transform: translate(-100%, 50vh);
+      z-index: 10;
+      img{
+         transform: rotate(-180deg);
+         transition: all 0.5s ease;
+      }
 
 
 }
+
+.blog-swipe {
+  width: 270px;
+  transition: all 0.5s ease;
+
+  .blog-sidebar__body {
+    width: 100%;
+    padding: 30px 5px 30px 15px;
+    overflow-y: scroll;
+    height: 100px;
+  }
+
+  .blog-touch-toggle {
+    img {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+
+
+});

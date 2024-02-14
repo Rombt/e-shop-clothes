@@ -1,83 +1,77 @@
 .article-blog {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   width: 100%;
-   padding: 0px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10px 0px 10px;
 
+  &__img {
+    width: 100%;
+    padding: 0px 0px (400px/845px) * 100% 0px;
+    display: flex;
+    justify-content: center;
+  }
 
+  .no-thumbnail {
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 
-   &__img {
-      width: 100%;
-      padding: 0px 0px (400px/845px)*100% 0px;
-      display: flex;
-      justify-content: center;
-   }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 45px;
 
-   .no-thumbnail {
-      width: 50%;
-      left: 50%;
-      transform: translate(-50%, 0);
+    font-family: Sintony, FiraSans;
+    color: rgb(92, 99, 105);
+    line-height: 1.857;
+    text-align: left;
+    .adaptiv-font(14, 12);
+    column-gap: (30px / @width-article) * 100%;
+    row-gap: (30px / @width-article) * 100%;
+  }
 
+  &__text {
+    word-break: break-word;
+    .adaptiv-prop(flex-basis, 800, 230);
+    flex-shrink: 1;
 
-   }
+    h2 {
+      font-family: 'PlayfairDisplay';
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      .adaptiv-font(35, 25);
 
-
-   &__body {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      padding-top: 30px;
-      padding-bottom: 45px;
-
-      font-family: Sintony, FiraSans;
-      color: rgb(92, 99, 105);
-      line-height: 1.857;
-      text-align: left;
-      .adaptiv-font(14, 12);
-      column-gap: (30px / @width-article) * 100%;
-      row-gap: (30px / @width-article) * 100%;
-
-   }
-
-   &__text {
-      word-break: break-word;
-      .adaptiv-prop(flex-basis, 800, 230);
-      flex-shrink: 1;
-
-      h2 {
-         font-family: "PlayfairDisplay";
-         color: rgb(20, 20, 29);
-         font-weight: bold;
-         line-height: 1.1;
-         margin-bottom: 30px;
-         .adaptiv-font(35, 25);
-
-         .to(870px, {
+      .to(870px, {
             text-align: center;
             line-height: 1.1;
          });
-   }
-}
+    }
+  }
 
-&__content {}
-
+  &__content {
+  }
 }
 
 .date-square {
-   height: 65px;
-   width: 85px;
-   padding-top: 15px;
-   background-color: #fea100;
-   position: relative;
-   .adaptiv-prop(width, 85, 55);
-   .adaptiv-prop(height, 65, 45);
+  height: 65px;
+  width: 85px;
+  padding-top: 15px;
+  background-color: #fea100;
+  position: relative;
+  .adaptiv-prop(width, 85, 55);
+  .adaptiv-prop(height, 65, 45);
 
-   p {
-      margin-bottom: 0;
-   }
+  p {
+    margin-bottom: 0;
+  }
 
-   .to(750px, {
+  .to(750px, {
       padding-top: 7px;
       padding-left: 0px;
       display: flex;
@@ -86,127 +80,120 @@
       justify-content: center;
    });
 
-&::after {
-   content: '';
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   width: 85%;
-   height: 85%;
-   border: 1px solid #fff;
-}
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    border: 1px solid #fff;
+  }
 
-p {
-   font-family: Sintony, FiraSans;
-   color: rgb(255, 255, 255);
-   font-weight: bold;
-   text-align: center;
-}
+  p {
+    font-family: Sintony, FiraSans;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: center;
+  }
 
+  p:first-of-type {
+    line-height: 0.733;
+    .adaptiv-font(30, 16);
+  }
 
-p:first-of-type {
-   line-height: 0.733;
-   .adaptiv-font(30, 16);
-
-}
-
-p:last-of-type {
-   text-transform: uppercase;
-   line-height: 1.833;
-   .adaptiv-font(12, 10);
-}
-
+  p:last-of-type {
+    text-transform: uppercase;
+    line-height: 1.833;
+    .adaptiv-font(12, 10);
+  }
 }
 
 .article-blog-footer {
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: center;
-   width: (745px / @width-article) * 100%;
-   align-self: end;
-   min-height: 70px;
-   border-top: 1px solid #d4dade;
-   border-bottom: 1px solid #d4dade;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: (745px / @width-article) * 100%;
+  align-self: end;
+  min-height: 70px;
+  border-top: 1px solid #d4dade;
+  border-bottom: 1px solid #d4dade;
 
-   row-gap: 20px;
-   column-gap: 20px;
-   padding-top: 7px;
-   padding-bottom: 7px;
+  row-gap: 20px;
+  column-gap: 20px;
+  padding-top: 7px;
+  padding-bottom: 7px;
 
-   .to(870px, {
+  .to(870px, {
       justify-content: center;
       padding-top: 30px;
       padding-bottom: 20px;
       align-self: center;
    });
 
-.to(753px, {
+  .to(753px, {
    row-gap: 15px;
 });
 
-.xxs-block({
+  .xxs-block({
 
    row-gap: 30px;
 });
 
-&_pagination {
-   justify-content: space-between;
+  &_pagination {
+    justify-content: space-between;
+  }
 
-}
+  .rstr-pagination {
+    margin: 0px 0px 0px 0px;
+    max-width: 60%;
+  }
 
-.rstr-pagination {
-   margin: 0px 0px 0px 0px;
-   max-width: 60%;
-}
-
-
-.button-orange {
-   width: 125px;
-}
+  .button-orange {
+    width: 125px;
+  }
 }
 
 .blog-details-footer {
+  width: (745px / @width-article) * 100%;
+  padding-left: (55px / @width-article) * 100%;
 
-   width: (745px / @width-article) * 100%;
-   padding-left: (55px / @width-article) * 100%;
+  display: flex;
+  align-self: end;
 
-   display: flex;
-   align-self: end;
-
-
-   .to(1140px, {
+  .to(1140px, {
       padding-left:0;
    });
 
-.xxs-block({
+  .xxs-block({
    width: 100%;
    align-self: center;
 });
 
-/* .blog-details-footer__quotes */
+  /* .blog-details-footer__quotes */
 
-&__quotes {
-   height: 20px;
-   width: 65px;
-}
+  &__quotes {
+    height: 20px;
+    width: 65px;
+  }
 
-.quotes-right {
-   align-self: flex-end;
-   margin-left: 10px;
-}
+  .quotes-right {
+    align-self: flex-end;
+    margin-left: 10px;
+  }
 
-/* .blog-details-footer__text */
+  /* .blog-details-footer__text */
 
-&__text {
-   font-size: 18px;
-   font-family: "PlayfairDisplay";
-   color: rgb(20, 20, 29);
-   font-weight: bold;
-   line-height: 1.444;
+  &__text {
+    font-size: 18px;
+    font-family: 'PlayfairDisplay';
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    line-height: 1.444;
 
-   width: (660px / @width-article) * 100%;
-   margin-bottom: 20px;
-}
+    width: (660px / @width-article) * 100%;
+    margin-bottom: 20px;
+  }
 }
