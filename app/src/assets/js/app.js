@@ -1,5 +1,5 @@
 // import { isWebp } from "./modules/isWebp.js"; // проверяет поддерживает ли браузер формат webp
-import { Burger } from './modules/Burger.js';
+import { Burger } from './modules/rstr_Burger.js';
 import { Swipe } from './modules/Swipe.js';
 import * as sliders from './modules/sliders.js';
 import { jQuery_scripts } from './modules/jQuery_scripts.js';
