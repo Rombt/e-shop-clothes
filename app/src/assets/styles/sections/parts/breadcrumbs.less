@@ -1,6 +1,30 @@
 .breadcrumbs-conteiner {
   width: max-content;
 
+  nav,  /*for woocommerce_breadcrumb*/
+  .breadcrumbs {
+    font-size: 14px;
+    font-family: Sintony, FiraSans;
+    color: #5c6369;
+    line-height: 1.857;
+    text-transform: capitalize;
+
+    .col();
+  }
+
+  a {
+    color: inherit;
+    display: inline-block;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fea100;
+      transition: 0.3s;
+      transform: scale(1.03);
+      transition: 0.3s;
+    }
+  }
+
   .md_2-block({
       display: none;
    });
@@ -9,25 +33,19 @@
     .row-flex();
   }
 
-  .breadcrumbs {
-    .col();
+  // .breadcrumbs {
+  //   .col();
+  // a {
+  //   color: inherit;
+  //   display: inline-block;
+  //   transition: 0.3s;
 
-    font-size: 14px;
-    font-family: Sintony, FiraSans;
-    color: #5c6369;
-    line-height: 1.857;
-
-    a {
-      color: inherit;
-      display: inline-block;
-      transition: 0.3s;
-
-      &:hover {
-        color: #fea100;
-        transition: 0.3s;
-        transform: scale(1.03);
-        transition: 0.3s;
-      }
-    }
-  }
+  //   &:hover {
+  //     color: #fea100;
+  //     transition: 0.3s;
+  //     transform: scale(1.03);
+  //     transition: 0.3s;
+  //   }
+  // }
+  // }
 }

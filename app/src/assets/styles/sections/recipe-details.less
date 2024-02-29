@@ -1,280 +1,268 @@
 .recipe-details-title {
-   &__row {
-      .row-flex();
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 180px;
+  &__row {
+    .row-flex();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
 
-      h2 {
-         font-size: 35px;
-         font-family: "PlayfairDisplay";
-         color: rgb(20, 20, 29);
-         font-weight: bold;
-         line-height: 0.629;
-         margin-bottom: 15px;
-      }
-
-
-
-   }
+    h2 {
+      font-size: 35px;
+      font-family: 'PlayfairDisplay';
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      line-height: 0.629;
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .rstr-rating {
+  display: flex;
 
-   display: flex;
-
-   .wrap-img {
-      width: 15px;
-      height: 15px;
-      cursor: pointer;
-   }
-
+  .wrap-img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
 }
-
-
 
 .recipe-details {
-   padding-bottom: 120px;
+  padding-bottom: 120px;
 
-   &__row {
-      .row-flex();
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-   }
+  &__row {
+    .row-flex();
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-   &__text {
-      .col();
-      .size(10);
+  &__text {
+    .col();
+    .size(10);
 
-      font-family: Sintony, FiraSans;
-      color: rgb(92, 99, 105);
-      line-height: 1.857;
-      text-align: left;
-      min-height: 93px;
-      margin-bottom: 90px;
+    font-family: Sintony, FiraSans;
+    color: rgb(92, 99, 105);
+    line-height: 1.857;
+    text-align: left;
+    min-height: 93px;
+    margin-bottom: 90px;
 
-      .adaptiv-font(14, 11);
+    .adaptive-font(14, 11);
 
-      .to(945px, {
+    .to(945px, {
          margin-bottom: 0px;
       });
-}
+  }
 
-&__wrap-img {
-   .col();
-   .size(12);
-   height: 450px;
-}
+  &__wrap-img {
+    .col();
+    .size(12);
+    height: 450px;
+  }
 
-&__blocks-img {
-   height: 228px;
-   width: 228px;
-   position: absolute;
-   top: -30px;
-   left: 350px;
-   z-index: -1;
+  &__blocks-img {
+    height: 228px;
+    width: 228px;
+    position: absolute;
+    top: -30px;
+    left: 350px;
+    z-index: -1;
 
-   .to(945px, {
+    .to(945px, {
 
       position: relative;
       top: 60px;
       left: 0;
    });
-}
+  }
 
-&__blocks {
-   .col();
-   .size(10);
-   display: flex;
-   position: relative;
+  &__blocks {
+    .col();
+    .size(10);
+    display: flex;
+    position: relative;
 
-   .to(945px, {
+    .to(945px, {
       flex-direction: column;
       align-items: center;
    });
 
-.ingredients {
-   min-height: 370px;
-   min-width: 300px;
+    .ingredients {
+      min-height: 370px;
+      min-width: 300px;
 
-   .size(5);
+      .size(5);
 
-   .to(945px, {
+      .to(945px, {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-bottom: 30px;
    });
 
-h3 {
-   .adaptiv-font(24, 20);
-   font-family: "PlayfairDisplay";
-   color: rgb(20, 20, 29);
-   font-weight: bold;
-   line-height: 0.917;
-   margin-top: 40px;
-   margin-bottom: 30px;
-}
+      h3 {
+        .adaptive-font(24, 20);
+        font-family: 'PlayfairDisplay';
+        color: rgb(20, 20, 29);
+        font-weight: bold;
+        line-height: 0.917;
+        margin-top: 40px;
+        margin-bottom: 30px;
+      }
 
-li {
-   .adaptiv-font(12, 9);
-   font-family: Sintony, FiraSans;
-   color: rgb(20, 20, 29);
-   font-weight: 400;
-   text-transform: uppercase;
-   line-height: 3.077;
-   display: flex;
-   align-items: center;
-   padding: 5px 0px;
+      li {
+        .adaptive-font(12, 9);
+        font-family: Sintony, FiraSans;
+        color: rgb(20, 20, 29);
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 3.077;
+        display: flex;
+        align-items: center;
+        padding: 5px 0px;
 
-   p {
-      margin-bottom: 0px;
-      line-height: 1.5;
-   }
+        p {
+          margin-bottom: 0px;
+          line-height: 1.5;
+        }
 
-   img {
-      height: 25px;
-      width: 25px;
-      margin-right: 15px;
-   }
-}
-}
+        img {
+          height: 25px;
+          width: 25px;
+          margin-right: 15px;
+        }
+      }
+    }
 
-.nutrition {
-   height: 370px;
+    .nutrition {
+      height: 370px;
 
-   .shift-left(1.4);
-   padding: 40px;
-   padding-right: 0px;
-   background-color: #fff;
-   border-style: solid;
-   border-width: 1px;
-   border-color: rgb(237, 237, 237);
-   box-shadow: 0px 19px 49px 0px rgba(0, 0, 0, 0.1);
+      .shift-left(1.4);
+      padding: 40px;
+      padding-right: 0px;
+      background-color: #fff;
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(237, 237, 237);
+      box-shadow: 0px 19px 49px 0px rgba(0, 0, 0, 0.1);
 
-   .to(945px, {
+      .to(945px, {
       padding-left: 0px;
       margin-left: 0px;
    });
 
-h3 {
-   font-size: 24px;
-   font-family: "PlayfairDisplay";
-   color: rgb(20, 20, 29);
-   font-weight: bold;
-   line-height: 0.917;
-   margin-bottom: 30px;
+      h3 {
+        font-size: 24px;
+        font-family: 'PlayfairDisplay';
+        color: rgb(20, 20, 29);
+        font-weight: bold;
+        line-height: 0.917;
+        margin-bottom: 30px;
 
-   .to(945px, {
+        .to(945px, {
       text-align: center;
    });
+      }
 
-
-}
-
-table {
-
-   .to(945px, {
+      table {
+        .to(945px, {
       margin: 0 auto;
    });
 
+        tr {
+          height: 40px;
+        }
 
-tr {
-   height: 40px;
-}
+        td,
+        th {
+          text-align: center;
+          vertical-align: middle;
+        }
 
-td,
-th {
-   text-align: center;
-   vertical-align: middle;
-}
+        td:first-child,
+        th:first-child {
+          text-align: start;
+          width: 200px;
+        }
+      }
 
-td:first-child,
-th:first-child {
-   text-align: start;
-   width: 200px;
-}
-}
+      thead {
+        font-size: 18px;
+        font-family: 'PlayfairDisplay';
+        color: rgb(254, 76, 141);
+        font-weight: bold;
+        line-height: 1.222;
+      }
 
-thead {
-   font-size: 18px;
-   font-family: "PlayfairDisplay";
-   color: rgb(254, 76, 141);
-   font-weight: bold;
-   line-height: 1.222;
-}
+      tbody {
+        tr {
+          font-size: 13px;
+          font-family: Sintony, FiraSans;
+          color: rgb(20, 20, 29);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 3.077;
+        }
 
-tbody {
-   tr {
-      font-size: 13px;
-      font-family: Sintony, FiraSans;
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      text-transform: uppercase;
-      line-height: 3.077;
-   }
+        td {
+          width: 100px;
+        }
+      }
 
-   td {
-      width: 100px;
-   }
-
-}
-
-&__row {
-   span {
-      font-size: 13px;
-      font-family: Sintony, FiraSans;
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      text-transform: uppercase;
-      line-height: 3.077;
-   }
-}
-}
-}
+      &__row {
+        span {
+          font-size: 13px;
+          font-family: Sintony, FiraSans;
+          color: rgb(20, 20, 29);
+          font-weight: bold;
+          text-transform: uppercase;
+          line-height: 3.077;
+        }
+      }
+    }
+  }
 }
 
 .white-box {
-   .col();
-   .size(10);
-   background-color: rgb(255, 255, 255);
-   box-shadow: 0px 19px 49px 0px rgba(0, 0, 0, 0.15);
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   align-items: center;
-   position: relative;
-   top: -50px;
-   z-index: 5;
-   min-height: 104px;
+  .col();
+  .size(10);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 19px 49px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: -50px;
+  z-index: 5;
+  min-height: 104px;
 
-   .sm-block({
+  .sm-block({
       flex-direction: column;
    });
 
-.xxs-block({
+  .xxs-block({
    padding: 0;
    padding-bottom: 10px;
 
 });
 
-&__items {
-   .size(6);
-   font-size: 24px;
-   font-family: "PlayfairDisplay";
-   color: rgb(20, 20, 29);
-   font-weight: bold;
-   text-transform: uppercase;
-   line-height: 0.917;
-   display: flex;
-   align-items: center;
-   justify-content: space-around;
-   min-width: 200px;
+  &__items {
+    .size(6);
+    font-size: 24px;
+    font-family: 'PlayfairDisplay';
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 0.917;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 200px;
 
-   p {
+    p {
       padding: 5px;
       overflow: hidden;
       max-width: 100px;
@@ -291,21 +279,21 @@ tbody {
          padding: 10px;
          line-height: 1.2;
       });
-}
+    }
 
-span {
-   font-size: 16px;
-   color: #5c6369;
-   font-weight: 400;
-   text-transform: capitalize;
-   margin-top: 6px;
-}
-}
+    span {
+      font-size: 16px;
+      color: #5c6369;
+      font-weight: 400;
+      text-transform: capitalize;
+      margin-top: 6px;
+    }
+  }
 
-&__download {
-   a {
+  &__download {
+    a {
       font-size: 24px;
-      font-family: "PlayfairDisplay";
+      font-family: 'PlayfairDisplay';
       color: rgb(20, 20, 29);
       font-weight: bold;
       line-height: 0.917;
@@ -323,182 +311,172 @@ span {
          justify-content: center;
       });
 
-   p {
-      margin-bottom: 0px;
+      p {
+        margin-bottom: 0px;
 
-      span {
-         font-size: 16px;
-         color: #5c6369;
-         font-weight: 400;
-         text-transform: capitalize;
-         margin-top: 6px;
-         display: block;
+        span {
+          font-size: 16px;
+          color: #5c6369;
+          font-weight: 400;
+          text-transform: capitalize;
+          margin-top: 6px;
+          display: block;
+        }
       }
 
-   }
-
-   img {
-      height: 40px;
-      width: 30px;
-      margin: 0 15px;
-   }
-}
-}
+      img {
+        height: 40px;
+        width: 30px;
+        margin: 0 15px;
+      }
+    }
+  }
 }
 
 .food-step-background {
-   position: relative;
+  position: relative;
 
-   &__img {
-      left: 0;
-      right: 0;
-      position: absolute;
-      height: 100%;
-      z-index: -1;
-   }
-
+  &__img {
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+  }
 }
 
 .food-step {
-   height: 570px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-   .to(1200px, {
+  .to(1200px, {
       margin-left: 20px;
    });
 
-h2 {
-   font-size: 35px;
-   font-family: "PlayfairDisplay";
-   color: rgb(255, 255, 255);
-   font-weight: bold;
-   line-height: 0.629;
-   margin-bottom: 30px;
-}
+  h2 {
+    font-size: 35px;
+    font-family: 'PlayfairDisplay';
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    line-height: 0.629;
+    margin-bottom: 30px;
+  }
 
-&__row {
-   .row-flex();
-}
+  &__row {
+    .row-flex();
+  }
 
-&__scrollbar {
-   width: 6px !important;
-}
-
+  &__scrollbar {
+    width: 6px !important;
+  }
 }
 
 .swiper-food-step {
-   margin-left: 0;
-   height: 340px;
-   width: 915px;
+  margin-left: 0;
+  height: 340px;
+  width: 915px;
 
-   .swiper-wrapper {
-      width: 98%;
-      margin: 0px;
-
-   }
+  .swiper-wrapper {
+    width: 98%;
+    margin: 0px;
+  }
 }
 
 .step-row {
-   height: 90px;
-   display: flex;
-   align-items: center;
-   margin-bottom: 40px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
 
-   .to(545px, {
+  .to(545px, {
       margin-bottom: 70px;
 
    });
 
-.to(445px, {
+  .to(445px, {
    margin-bottom: 90px;
 
 });
 
-&__text {
-   font-size: 14px;
-   font-family: Sintony, FiraSans;
-   color: rgb(255, 255, 255);
-   line-height: 1.857;
-   text-align: left;
-   margin-left: calc(30/800 * 100%);
-   min-height: 90px;
-   overflow: hidden;
-   word-wrap: break-word;
-}
+  &__text {
+    font-size: 14px;
+    font-family: Sintony, FiraSans;
+    color: rgb(255, 255, 255);
+    line-height: 1.857;
+    text-align: left;
+    margin-left: calc(30 / 800 * 100%);
+    min-height: 90px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
 }
 
 .step-square {
-   width: 64px;
-   height: 80px;
-   flex-shrink: 0;
-   position: relative;
-   background-color: rgb(204, 131, 6);
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
+  width: 64px;
+  height: 80px;
+  flex-shrink: 0;
+  position: relative;
+  background-color: rgb(204, 131, 6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-   &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 75%;
-      width: 75%;
-      border: 3px solid #fea100;
-   }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 75%;
+    width: 75%;
+    border: 3px solid #fea100;
+  }
 
-   P {
-      margin-bottom: 0px;
-   }
+  P {
+    margin-bottom: 0px;
+  }
 
-   p:nth-of-type(1) {
-      font-size: 30px;
-      margin-top: -6px;
-      font-weight: 700;
-      font-family: "PlayfairDisplay";
-      margin-bottom: 2px;
+  p:nth-of-type(1) {
+    font-size: 30px;
+    margin-top: -6px;
+    font-weight: 700;
+    font-family: 'PlayfairDisplay';
+    margin-bottom: 2px;
+  }
 
-   }
-
-   p {
-      font-size: 16px;
-      font-family: Sintony, FiraSans;
-      color: rgb(255, 255, 255);
-      font-weight: 500;
-      line-height: 1.2;
-      text-transform: uppercase;
-   }
-
-
+  p {
+    font-size: 16px;
+    font-family: Sintony, FiraSans;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
 }
 
 .featured-recipes {
+  min-height: 760px;
+  padding-top: 100px;
+  padding-bottom: 90px;
 
-   min-height: 760px;
-   padding-top: 100px;
-   padding-bottom: 90px;
+  &__row {
+    .row-flex();
+    justify-content: center;
+  }
 
-   &__row {
-      .row-flex();
-      justify-content: center;
-   }
+  &__title {
+    font-size: 35px;
+    font-family: 'PlayfairDisplay';
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    line-height: 0.629;
+    margin-bottom: 40px;
 
-   &__title {
-
-      font-size: 35px;
-      font-family: "PlayfairDisplay";
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      line-height: 0.629;
-      margin-bottom: 40px;
-
-      .md_1-block({
+    .md_1-block({
          text-align: center;
       });
-
-}
+  }
 }

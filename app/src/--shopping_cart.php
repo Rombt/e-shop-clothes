@@ -5,12 +5,16 @@
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
-<?php get_template_part( 'template-parts/parts/head_pages'); ?>
+
+<?php defined('ABSPATH') || exit; ?>
+
+
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 <main class="conteiner shopping-cart-conteiner">
    <h2>Product Cart</h2>
    <div class="shopping-cart__row">
-      <div class="product-cart">
+      <!-- <div class="product-cart">
          <table>
             <tr>
                <th>Item</th>
@@ -25,7 +29,7 @@
                      <div class="produkt-img-block__img wrap-img"><img src="@img/Image_115x115.jpg" alt="produkt img">
                      </div>
                   </div>
-                  <p>green mung beas</p>
+                  <p>***green mung beas</p>
                </td>
                <td>$ 100</td>
                <td>1</td>
@@ -58,7 +62,26 @@
                <td>$ 100</td>
             </tr>
          </table>
-      </div>
+      </div> -->
+
+      <?php if (have_posts()) {
+         while (have_posts()) :
+            the_post();
+            // get_template_part('template-parts/parts/article_blog');
+
+            the_content();
+
+         endwhile;
+      } else {
+         //   get_template_part('partials/notfound');
+      }
+      ?>
+
+
+      <?php get_template_part('template-parts/components/pagination'); ?>
+
+
+
       <div class="summary">
          <div class="summary__table">
             <h3>Summary</h3>
@@ -96,4 +119,4 @@
 @@include('html/parts/related-products.html',{'background':'background-related-products'})
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>

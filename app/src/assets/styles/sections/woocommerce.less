@@ -1,0 +1,218 @@
+.woocommerce-products-header {
+  .wrapper();
+  //   padding-top: 10px;
+  //   padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.woocommerce-notices-wrapper {
+}
+
+.woocommerce-ordering {
+  margin: 0px 0px 0px 0px;
+
+  .orderby {
+    .adaptive-font(14, 10);
+    font-family: Sintony, FiraSans;
+    color: rgb(54, 61, 67);
+    line-height: 1.857;
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: 400;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #c7d1d6;
+    width: 200px;
+    .adaptive-prop(height, 45, 30);
+    padding: 0px 5px 0px 5px;
+    appearance: none;
+    background-image: url('../img/dropdown.png');
+    background-repeat: no-repeat;
+    background-position: right;
+
+    option:hover {
+      color: red;
+    }
+  }
+}
+
+.woocommerce .woocommerce-result-count {
+  margin: 0px 0px 0px 0px;
+}
+
+.wc-prod-card-grid {
+  padding: 35px 25px 35px 25px !important;
+  position: relative;
+
+  border: 1px solid #e4e4e4;
+
+  height: 470px;
+
+  &:hover {
+    .active {
+      display: block;
+    }
+
+    .add-block::after {
+      color: #fff;
+    }
+
+    a.added_to_cart {
+      border: 1px solid #fff;
+      background-color: transparent;
+      font-weight: normal;
+    }
+  }
+
+  > a {
+    font-size: 17px;
+    font-family: Sintony, FiraSans;
+    color: #14141d;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.063;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 100%;
+
+    .price {
+      font-size: 16px;
+      font-family: Sintony, FiraSans;
+      color: rgb(20, 20, 29);
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.063;
+
+      del {
+        color: #5c6369 !important;
+      }
+
+      ins {
+        color: rgb(20, 20, 29);
+        font-weight: bold;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .add-block {
+    // bottom: -35px;
+    margin: 0px 0px 0px 0px !important;
+  }
+
+  .onsale {
+    background-color: #4bdba7 !important;
+    padding: 10px !important;
+    font-size: 12px !important;
+    transform: rotate(30deg);
+    letter-spacing: 2px;
+  }
+}
+
+.woocommerce a.added_to_cart {
+  display: block;
+  position: absolute;
+  width: max-content;
+  height: max-content !important;
+  left: 50%;
+  bottom: 16%;
+  transform: translate(-50%, -70%);
+
+  font-family: Sintony, FiraSans;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+
+  padding: 10px 7px 10px 7px;
+  border-radius: 4px;
+  color: #fff !important;
+
+  border: 1px solid #fea100;
+  background-color: #fea100;
+}
+
+.woocommerce nav.woocommerce-pagination {
+  font-size: 14px;
+  font-family: Sintony, FiraSans;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 2.143;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  width: max-content;
+  margin: 0 auto;
+
+  ul {
+    width: max-content;
+    border: none;
+
+    li {
+      border: none;
+      margin-right: 10px;
+
+      :last-child {
+        margin-right: 0px;
+      }
+
+      span,
+      a {
+        background-color: #fff;
+        border: 1px solid #d4dade;
+        width: 110px;
+        height: 44px;
+        border-radius: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #14141d;
+      }
+
+      .current {
+        background-color: #fea100 !important;
+        border: 1px solid #d98a03 !important;
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+.prev.page-numbers,
+.next.page-numbers {
+  color: #d38a0c !important;
+  background-color: #ffeac5 !important;
+  border: 1px solid #ffeac5 !important;
+  font-weight: bold !important;
+  justify-content: space-between;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: #d38a0c;
+    fill: #d38a0c;
+  }
+
+  &:hover {
+    background-color: #fea100 !important;
+    border: 1px solid rgb(254, 161, 0) !important;
+    color: #fff !important;
+
+    svg {
+      stroke: #fff;
+      fill: #fff;
+    }
+  }
+}

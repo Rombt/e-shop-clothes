@@ -26,7 +26,7 @@
 			<a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
 
 				<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['logo_site']['url'])) { ?>
-					<img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
+					<img src="<?php echo esc_url(get_template_directory_uri() . $restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
 				<?php } else { ?>
 					<h1 class='redux_font-title_site'>
 						<?php esc_attr(bloginfo('title')) ?>

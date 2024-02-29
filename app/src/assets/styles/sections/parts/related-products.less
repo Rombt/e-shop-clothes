@@ -1,39 +1,37 @@
 .background-related-products {
-   background-color: #edf1f3;
+  background-color: #edf1f3;
 }
-
 
 .related-products {
-   padding-top: 90px;
-   padding-bottom: 90px;
+  padding-top: 90px;
+  padding-bottom: 90px;
 
-   h2 {
-      font-family: "PlayfairDisplay";
-      color: rgb(20, 20, 29);
-      font-weight: bold;
-      line-height: 0.629;
-      margin-bottom: 40px;
-      .adaptiv-font(36, 26);
-   }
+  h2 {
+    font-family: 'PlayfairDisplay';
+    color: rgb(20, 20, 29);
+    font-weight: bold;
+    line-height: 0.629;
+    margin-bottom: 40px;
+    .adaptive-font(36, 26);
+  }
 
-   &__row {
-      .row-flex();
-   }
+  &__row {
+    .row-flex();
+  }
 
-   &__col {
-      .col();
-      .size(12);
-      min-height: 200px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      column-gap: @offset;
-      row-gap: @offset;
+  &__col {
+    .col();
+    .size(12);
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: @offset;
+    row-gap: @offset;
 
-      .to(1230px, {
+    .to(1230px, {
 
          justify-content: center;
-      })
-}
-
+      });
+  }
 }

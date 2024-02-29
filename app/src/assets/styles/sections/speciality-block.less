@@ -1,55 +1,50 @@
 .speciality-block {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: left;
-   min-height: 572px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  min-height: 572px;
 
+  &__img {
+    .adaptive-prop(width, 930, 300);
+    max-width: 930px;
+    .adaptive-prop(height, 572, 300);
+    max-height: 572px;
+  }
 
+  &__text-wrap {
+    height: 572px;
+    background-color: #ecf1f4;
+    padding-left: 75px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
 
-   &__img {
-      .adaptiv-prop(width, 930, 300);
-      max-width: 930px;
-      .adaptiv-prop(height, 572, 300);
-      max-height: 572px;
-   }
-
-   &__text-wrap {
-      height: 572px;
-      background-color: #ecf1f4;
-      padding-left: 75px;
-      padding-top: 100px;
-      padding-bottom: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      flex-grow: 1;
-
-      .sm-block({
+    .sm-block({
          padding: 0px 0px 0px 0px;
          align-items: center;
          justify-content: space-around;
       });
+  }
 
-}
+  h2 {
+    font-size: 35px;
+    font-family: 'PlayfairDisplay';
+    color: #14141d;
+    font-weight: bold;
+    line-height: 0.629;
 
-h2 {
-   font-size: 35px;
-   font-family: "PlayfairDisplay";
-   color: #14141d;
-   font-weight: bold;
-   line-height: 0.629;
-
-   .sm-block({
+    .sm-block({
       font-size: 50px;
    });
+  }
 
-}
+  &__text {
+    width: 80%;
 
-&__text {
-
-   width: 80%;
-
-   h3 {
+    h3 {
       font-size: 15px;
       font-family: Sintony, FiraSans;
       color: #14141d;
@@ -60,24 +55,22 @@ h2 {
       .sm-block({
          font-size: 20px;
       });
-}
+    }
 
-p {
-   font-size: 14px;
-   font-family: Sintony, FiraSans;
-   color: #5c6369;
-   line-height: 1.857;
-   text-align: left;
+    p {
+      font-size: 14px;
+      font-family: Sintony, FiraSans;
+      color: #5c6369;
+      line-height: 1.857;
+      text-align: left;
 
-   .sm-block({
+      .sm-block({
       font-size: 18px;
    });
-}
-}
-
+    }
+  }
 }
 
 .speciality-block-cooks-page {
-
-   background-color: #fff;
+  background-color: #fff;
 }
