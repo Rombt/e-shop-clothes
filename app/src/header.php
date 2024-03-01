@@ -19,14 +19,30 @@
 
 	<?php global $restaurant_site_options; ?>
 
+	<div class="test-block">
+		<?php
+		$url = rstr_get_pic_url(
+			'logo_site',
+			'',
+			'<h1 class="redux_font-title_site">' . esc_attr(get_bloginfo('title')) . '</h1>'
+		);
+
+		echo $url;
+
+		// echo '<hr>';
+		// echo site_url() . '<br>';
+
+
+		?>
+	</div>
+
+
 
 	<div class="conteiner">
 		<header class="header ">
-
 			<a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
-
 				<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['logo_site']['url'])) { ?>
-					<img src="<?php echo esc_url(get_template_directory_uri() . $restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
+					<img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
 				<?php } else { ?>
 					<h1 class='redux_font-title_site'>
 						<?php esc_attr(bloginfo('title')) ?>

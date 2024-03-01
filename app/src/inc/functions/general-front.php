@@ -22,7 +22,6 @@ function rstr_custom_WPquery($rst_post_type, $rst_posts_per_page, $rst_current =
 
 	return new WP_Query($params);
 }
-
 // Breadcrumbs Custom Function
 function rstr_get_breadcrumbs()
 {
@@ -319,4 +318,31 @@ function rstr_trim_excerpt($length, $text = '')
 		$text = apply_filters('the_excerpt', $text);
 	}
 	return $text;
+}
+
+
+
+/**
+ *	gets 
+ * 	id of picture field 
+ * 	custom's default(!) url  
+ * 	$custom_html = ''
+ *	checks 
+ * 	is exist
+ * 		Redux
+ * 		url default picture in Redux's field
+ * 		
+ */
+function rstr_get_pic_url($id_field_pic, $custom_default_url = '', $custom_html = '')
+{
+	global $restaurant_site_options;
+
+	if (!class_exists('Redux')) {
+		return $custom_default_url !== '' ? $custom_default_url : $custom_html;
+	}
+
+	if (isset($restaurant_site_options[$id_field_pic]['url'])) {
+		$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $restaurant_site_options[$id_field_pic]['url']);
+		return get_template_directory_uri() . $clear_url;
+	}
 }

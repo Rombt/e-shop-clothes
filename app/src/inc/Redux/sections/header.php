@@ -32,7 +32,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/background-title-page-block.jpg'
+					'url' => '/assets/img/background-title-page-block.jpg'
 				),
 			),
 			array(
@@ -59,7 +59,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_plate.png'
+					'url' => '/assets/img/icon_plate.png'
 				),
 			),
 			array(

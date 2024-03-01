@@ -1,25 +1,25 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-if ( ! class_exists( 'Redux' ) ) {
+if (!class_exists('Redux')) {
 	return;
 }
 
 $opt_name = 'restaurant_site_options';
-$dir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR;
+$dir = dirname(__FILE__) . DIRECTORY_SEPARATOR;
 $sample_patterns_path = Redux_Core::$dir . '../sample/patterns/';
 $sample_patterns_url = Redux_Core::$url . '../sample/patterns/';
 $sample_patterns = array();
 
-if ( is_dir( $sample_patterns_path ) ) {
-	$sample_patterns_dir = opendir( $sample_patterns_path );
+if (is_dir($sample_patterns_path)) {
+	$sample_patterns_dir = opendir($sample_patterns_path);
 
-	if ( $sample_patterns_dir ) {
-		while ( false !== ( $sample_patterns_file = readdir( $sample_patterns_dir ) ) ) {
-			if ( stristr( $sample_patterns_file, '.png' ) !== false || stristr( $sample_patterns_file, '.jpg' ) !== false ) {
-				$name = explode( '.', $sample_patterns_file );
-				$name = str_replace( '.' . end( $name ), '', $sample_patterns_file );
+	if ($sample_patterns_dir) {
+		while (false !== ($sample_patterns_file = readdir($sample_patterns_dir))) {
+			if (stristr($sample_patterns_file, '.png') !== false || stristr($sample_patterns_file, '.jpg') !== false) {
+				$name = explode('.', $sample_patterns_file);
+				$name = str_replace('.' . end($name), '', $sample_patterns_file);
 				$sample_patterns[] = array(
 					'alt' => $name,
 					'img' => $sample_patterns_url . $sample_patterns_file,
@@ -46,17 +46,17 @@ $theme = wp_get_theme();
 
 $args = array(
 	'opt_name' => $opt_name,
-	'display_name' => $theme->get( 'Name' ),
-	'display_version' => $theme->get( 'Version' ),
+	'display_name' => $theme->get('Name'),
+	'display_version' => $theme->get('Version'),
 
 	// Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only).
 	'menu_type' => 'submenu',
 	// Show the sections below the admin menu item or not.
 	'allow_sub_menu' => false,
 	// The text to appear in the admin menu.
-	'menu_title' => esc_html__( 'Опции темы', 'restaurant-site' ),
+	'menu_title' => esc_html__('Опции темы', 'restaurant-site'),
 	// The text to appear on the page title.
-	'page_title' => esc_html__( 'Опции темы', 'restaurant-site' ),
+	'page_title' => esc_html__('Опции темы', 'restaurant-site'),
 	// Disable to create your own Google fonts loader.
 	'disable_google_fonts_link' => false,
 	// Show the panel pages on the admin bar.
@@ -179,7 +179,7 @@ $args = array(
 // );
 
 
-Redux::set_args( $opt_name, $args );
+Redux::set_args($opt_name, $args);
 
 /*
  * <--- END HELP TABS
@@ -194,59 +194,59 @@ Redux::set_args( $opt_name, $args );
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__( 'Pages settings', 'restaurant-site' ),
+		'title' => esc_html__('Pages settings', 'restaurant-site'),
 		'id' => 'section_of_pages',
-		'desc' => esc_html__( 'Settings header site', 'restaurant-site' ),
+		'desc' => esc_html__('Settings header site', 'restaurant-site'),
 		'customizer_width' => '450',
 		// 'icon'             => 'el el-home',
 	)
 );
-require_once dirname( __FILE__ ) . '/sections/home_page.php';
-require_once dirname( __FILE__ ) . '/sections/menu_page.php';
-require_once dirname( __FILE__ ) . '/sections/blog_page.php';
-require_once dirname( __FILE__ ) . '/sections/recipes_page.php';
-require_once dirname( __FILE__ ) . '/sections/recipes-single_page.php';
-require_once dirname( __FILE__ ) . '/sections/about_us_page.php';
-require_once dirname( __FILE__ ) . '/sections/contact_us_page.php';
-require_once dirname( __FILE__ ) . '/sections/search_page.php';
-require_once dirname( __FILE__ ) . '/sections/404_page.php';
+require_once dirname(__FILE__) . '/sections/home_page.php';
+require_once dirname(__FILE__) . '/sections/menu_page.php';
+require_once dirname(__FILE__) . '/sections/blog_page.php';
+require_once dirname(__FILE__) . '/sections/recipes_page.php';
+require_once dirname(__FILE__) . '/sections/recipes-single_page.php';
+require_once dirname(__FILE__) . '/sections/about_us_page.php';
+require_once dirname(__FILE__) . '/sections/contact_us_page.php';
+require_once dirname(__FILE__) . '/sections/search_page.php';
+require_once dirname(__FILE__) . '/sections/404_page.php';
 
 
-require_once dirname( __FILE__ ) . '/sections/header.php';
-require_once dirname( __FILE__ ) . '/sections/footer.php';
-require_once dirname( __FILE__ ) . '/sections/speciality.php';
-require_once dirname( __FILE__ ) . '/sections/copyright.php';
-require_once dirname( __FILE__ ) . '/sections/phone_numbers.php';
-require_once dirname( __FILE__ ) . '/sections/app_buttons.php';
-require_once dirname( __FILE__ ) . '/sections/opening_hours.php';
+require_once dirname(__FILE__) . '/sections/header.php';
+require_once dirname(__FILE__) . '/sections/footer.php';
+require_once dirname(__FILE__) . '/sections/speciality.php';
+require_once dirname(__FILE__) . '/sections/copyright.php';
+require_once dirname(__FILE__) . '/sections/phone_numbers.php';
+require_once dirname(__FILE__) . '/sections/app_buttons.php';
+require_once dirname(__FILE__) . '/sections/opening_hours.php';
 
 // require_once dirname( __FILE__ ) . '/sections/article_blog.php';
 
 Redux::set_section(
 	$opt_name,
 	array(
-		'title' => esc_html__( 'Typography', 'restaurant-site' ),
+		'title' => esc_html__('Typography', 'restaurant-site'),
 		'id' => 'typography',
-		'desc' => esc_html__( 'Typography settings', 'restaurant-site' ),
+		'desc' => esc_html__('Typography settings', 'restaurant-site'),
 		'icon' => 'el el-font',
 		'customizer_width' => '450',
 	)
 );
 
-require_once dirname( __FILE__ ) . '/sections/typography/home_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/menu_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/recipe_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/blog_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/about-us_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/header_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/footer_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/restaurant_menu_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/app_buttons_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/speciality_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/opening_hours_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/our_cooks_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/contact_us_page_typography.php';
-require_once dirname( __FILE__ ) . '/sections/typography/copyright_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/home_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/menu_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/recipe_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/blog_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/about-us_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/header_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/footer_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/restaurant_menu_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/app_buttons_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/speciality_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/opening_hours_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/our_cooks_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/contact_us_page_typography.php';
+require_once dirname(__FILE__) . '/sections/typography/copyright_typography.php';
 
 
 
@@ -273,7 +273,7 @@ Redux::set_section(
 //===============================================================================
 //===============================================================================
 
-if ( ! function_exists( 'change_defaults' ) ) {
+if (!function_exists('change_defaults')) {
 	/**
 	 * Filter hook for filtering the default value of any given field. Very useful in development mode.
 	 *
@@ -281,8 +281,9 @@ if ( ! function_exists( 'change_defaults' ) ) {
 	 *
 	 * @return array
 	 */
-	function change_defaults( array $defaults ): array {
-		$defaults['str_replace'] = esc_html__( 'Testing filter hook!', 'your-textdomain-here' );
+	function change_defaults(array $defaults): array
+	{
+		$defaults['str_replace'] = esc_html__('Testing filter hook!', 'your-textdomain-here');
 
 		return $defaults;
 	}
@@ -704,7 +705,7 @@ if ( ! function_exists( 'change_defaults' ) ) {
 
 
 
-if ( ! function_exists( 'redux_custom_sanitize' ) ) {
+if (!function_exists('redux_custom_sanitize')) {
 	/**
 	 * Function to be used if the field sanitize argument.
 	 * Return value MUST be the formatted or cleaned text to display.
@@ -713,13 +714,14 @@ if ( ! function_exists( 'redux_custom_sanitize' ) ) {
 	 *
 	 * @return string
 	 */
-	function redux_custom_sanitize( string $value ): string {
+	function redux_custom_sanitize(string $value): string
+	{
 		$return = '';
 
-		foreach ( explode( ' ', $value ) as $w ) {
-			foreach ( str_split( $w ) as $k => $v ) {
-				if ( ( $k + 1 ) % 2 !== 0 && ctype_alpha( $v ) ) {
-					$return .= mb_strtoupper( $v );
+		foreach (explode(' ', $value) as $w) {
+			foreach (str_split($w) as $k => $v) {
+				if (($k + 1) % 2 !== 0 && ctype_alpha($v)) {
+					$return .= mb_strtoupper($v);
 				} else {
 					$return .= $v;
 				}
