@@ -19,35 +19,15 @@
 
 	<?php global $restaurant_site_options; ?>
 
-	<div class="test-block">
-		<?php
-		$url = rstr_get_pic_url(
-			'logo_site',
-			'',
-			'<h1 class="redux_font-title_site">' . esc_attr(get_bloginfo('title')) . '</h1>'
-		);
-
-		echo $url;
-
-		// echo '<hr>';
-		// echo site_url() . '<br>';
-
-
-		?>
-	</div>
-
-
-
 	<div class="conteiner">
 		<header class="header ">
 			<a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
-				<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['logo_site']['url'])) { ?>
-					<img src="<?php echo esc_url($restaurant_site_options['logo_site']['url']) ?>" alt="Site logo">
-				<?php } else { ?>
-					<h1 class='redux_font-title_site'>
-						<?php esc_attr(bloginfo('title')) ?>
-					</h1>
-				<?php } ?>
+				<?php if (rstr_get_pic_url('logo_site')) { ?>
+					<img src="<?php echo rstr_get_pic_url('logo_site'); ?>" alt="Site logo">
+
+				<?php  } else { ?>
+					<h1 class='redux_font-title_site'> <?php esc_attr(bloginfo('title')) ?> </h1>
+				<?php  } ?>
 			</a>
 			<?php if (has_nav_menu('header_nav')) { ?>
 				<div class="heder-menu__burger">
@@ -66,8 +46,8 @@
 
 			<div class="cart-book">
 				<a href="#" class="wrap-img search-icon" data-da=".header, 767">
-					<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['search_icon']['url']) && $restaurant_site_options['search_icon']['url'] !== "") { ?>
-						<img class="wrap-img" src="<?php echo esc_url($restaurant_site_options['search_icon']['url']) ?>" alt="">
+					<?php if (rstr_get_pic_url('search_icon')) { ?>
+						<img class="wrap-img" src="<?php echo rstr_get_pic_url('search_icon') ?>" alt="">
 					<?php } else { ?>
 						<svg>
 							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#search_6">
@@ -77,8 +57,8 @@
 				</a>
 				<a href="shopping-cart.html" class="cart wrap-img" data-da=".header, 767">
 					<div class="cart__cercle">3</div>
-					<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['search_icon']['url']) && $restaurant_site_options['search_icon']['url'] !== "") { ?>
-						<img src="<?php echo esc_url($restaurant_site_options['icon_cart']['url']) ?>" alt="icon cart">
+					<?php if (rstr_get_pic_url('icon_cart')) { ?>
+						<img src="<?php echo rstr_get_pic_url('icon_cart'); ?>" alt="icon cart">
 					<?php } else { ?>
 						<svg>
 							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#cart_2">

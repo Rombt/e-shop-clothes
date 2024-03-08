@@ -34,7 +34,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-share.png'
+					'url' => '/assets/img/article-blog-share.png'
 				),
 			),
 
@@ -52,7 +52,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-instagram.png'
+					'url' => '/assets/img/article-blog-instagram.png'
 				),
 			),
 
@@ -70,7 +70,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-facebook.png'
+					'url' => '/assets/img/article-blog-facebook.png'
 				),
 			),
 
@@ -88,7 +88,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-twitter.png'
+					'url' => '/assets/img/article-blog-twitter.png'
 				),
 			),
 
@@ -114,7 +114,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/no-thumbnail.jpg'
+					'url' => '/assets/img/no-thumbnail.jpg'
 				),
 			),
 
@@ -132,7 +132,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-heart-new.png'
+					'url' => '/assets/img/article-blog-heart-new.png'
 				),
 			),
 			array(
@@ -143,7 +143,7 @@ Redux::set_section(
 				'compiler' => 'true',
 				'preview_size' => 'full',
 				'default' => array(
-					'url' => esc_url(get_template_directory_uri()) . '/assets/img/article-blog-heart-new-active.png'
+					'url' => '/assets/img/article-blog-heart-new-active.png'
 				),
 			),
 		),

@@ -26,62 +26,59 @@ if (is_single()) {
 		<?php if ('' != get_the_post_thumbnail()) : ?>
 			<?php echo get_the_post_thumbnail($post->ID, 'rstr_post-img'); ?>
 		<?php else : ?>
-			<?php if (class_exists('ReduxFramework') && $restaurant_site_options['no-thumbnail']['url']) { ?>
-				<img class="no-thumbnail" src="<?php echo esc_url(esc_url(get_template_directory_uri()) . $restaurant_site_options['no-thumbnail']['url']) ?>" alt="" ">
-						<?php } ?>
+			<img class="no-thumbnail" src="<?php echo rstr_get_pic_url('no-thumbnail') ?>" alt="" ">
 		<?php endif ?>
 	</figure>
 
 	<div class=" <?php echo $class_article_body ?>">
-				<?php if ('our-clients' !== get_post_type()) {
-					get_template_part('template-parts/components/date', 'square');
+			<?php if ('our-clients' !== get_post_type()) {
+				get_template_part('template-parts/components/date', 'square');
+			} ?>
+
+			<div class="<?php echo $class_text ?>">
+				<h2>
+					<?php the_title() ?>
+				</h2>
+				<?php if ('our-clients' === get_post_type()) {
+					get_template_part('template-parts/components/date', 'line');
+				} ?>
+				<?php if (!is_single()) { ?>
+					<span>
+						<?php echo rstr_trim_excerpt(40) ?>
+					</span>
+				<?php } ?>
+			</div>
+
+			<?php if (is_single()) { ?>
+				<div class="article-blog__content">
+					<?php the_content(); ?>
+				</div>
+
+			<?php } ?>
+			</div>
+
+			<footer class="<?php echo $article_blog_footer ?>">
+
+				<?php if (is_single()) {
+					get_template_part('template-parts/components/pagination');
+				} else {
+
+					get_template_part(
+						'template-parts/components/button',
+						'orange',
+						[
+							'href' => get_permalink(),
+							'title' => class_exists('ReduxFramework') ? esc_html($restaurant_site_options['article-blog_button-title']) : "",
+						]
+					);
 				} ?>
 
-				<div class="<?php echo $class_text ?>">
-					<h2>
-						<?php the_title() ?>
-					</h2>
-					<?php if ('our-clients' === get_post_type()) {
-						get_template_part('template-parts/components/date', 'line');
-					} ?>
-					<?php if (!is_single()) { ?>
-						<span>
-							<?php echo rstr_trim_excerpt(40) ?>
-						</span>
-					<?php } ?>
-				</div>
-
-				<?php if (is_single()) { ?>
-					<div class="article-blog__content">
-						<?php the_content(); ?>
-					</div>
-
-				<?php } ?>
-				</div>
-
-				<!-- <footer class="article-blog-footer"> -->
-				<footer class="<?php echo $article_blog_footer ?>">
-
-					<?php if (is_single()) {
-						get_template_part('template-parts/components/pagination');
-					} else {
-
-						get_template_part(
-							'template-parts/components/button',
-							'orange',
-							[
-								'href' => get_permalink(),
-								'title' => class_exists('ReduxFramework') ? esc_html($restaurant_site_options['article-blog_button-title']) : "",
-							]
-						);
-					} ?>
-
-					<?php
-					get_template_part('template-parts/components/article_icons_block')
-					?>
+				<?php
+				get_template_part('template-parts/components/article_icons_block')
+				?>
 
 
-				</footer>
+			</footer>
 </article>
 
 

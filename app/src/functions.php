@@ -214,7 +214,7 @@ function rstr_widgets_init()
 		)
 	);
 
-	register_widget('rstr_recent_posts_widget');
+	// register_widget('rstr_recent_posts_widget');		// при развёртывании на хосте приводит к ошибке
 }
 add_action('widgets_init', 'rstr_widgets_init');
 

@@ -1,5 +1,5 @@
-<?php 
-defined( 'ABSPATH' ) || exit;
+<?php
+defined('ABSPATH') || exit;
 
 
 // APP buttons sections start
@@ -21,15 +21,15 @@ Redux::set_section(
             'compiler'     => 'true',
             'preview_size' => 'full',
             'default' =>   array(
-               'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_apple.png'
-               ),            
+               'url' => '/assets/img/icon_apple.png'
             ),
+         ),
          array(
             'id'       => 'linck-app-apple',
             'type'     => 'text',
             'title'    => esc_html__('Linck APP Apple', 'restaurant-site'),
             'default'  => esc_url('#'),
-         ), 
+         ),
 
          array(
             'id'           => 'icon-app-google',
@@ -39,15 +39,15 @@ Redux::set_section(
             'compiler'     => 'true',
             'preview_size' => 'full',
             'default' =>   array(
-               'url' => esc_url(get_template_directory_uri()) . '/assets/img/icon_google-play.png'
-            ),            
+               'url' => '/assets/img/icon_google-play.png'
+            ),
          ),
          array(
             'id'       => 'linck-app-google',
             'type'     => 'text',
             'title'    => esc_html__('Linck APP Google', 'restaurant-site'),
             'default'  => esc_url('#'),
-         ), 
+         ),
 
       ),
    )
