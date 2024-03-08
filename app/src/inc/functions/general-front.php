@@ -323,6 +323,7 @@ function rstr_trim_excerpt($length, $text = '')
 
 
 /**
+ * Sometimes Redux provides an incorrect URL. I haven't figured out why yet
  *	gets 
  * 	id of picture field 
  * 	custom's default(!) url  
@@ -336,14 +337,16 @@ function rstr_get_pic_url($id_field_pic, $custom_default_url = '')
 {
 	global $restaurant_site_options;
 
-
-
-	if (!class_exists('Redux') || $restaurant_site_options[$id_field_pic]['url'] === '') {
+	if (!class_exists('Redux') || !isset($restaurant_site_options[$id_field_pic]['url']) || $restaurant_site_options[$id_field_pic]['url'] === '') {
 		return esc_url($custom_default_url !== '' ? $custom_default_url : false);
 	}
 
 	if (isset($restaurant_site_options[$id_field_pic]['url'])) {
-		$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $restaurant_site_options[$id_field_pic]['url']);
-		return esc_url(get_template_directory_uri() . $clear_url);
+		if (stripos($restaurant_site_options[$id_field_pic]['url'], get_site_url()) === 0) {
+			return $restaurant_site_options[$id_field_pic]['url'];
+		} else {
+			$clear_url = str_replace($_SERVER['SERVER_NAME'] . '/', '', $restaurant_site_options[$id_field_pic]['url']);
+			return esc_url(get_template_directory_uri() . $clear_url);
+		}
 	}
 }
