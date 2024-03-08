@@ -96,24 +96,30 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
       e.preventDefault();
       $modalWindow.show(500);
       $iconOn.hide(500);
-      $(document).on('keyup', function (e) {
-        if (e.keyCode == 27 || e.keyCode == 13) {
-          $modalWindow.hide(500);
-          $iconOn.show(500);
-        }
-      });
-      $(document).on('click', function (e) {
-        let target = $(e.target);
-        if (
-          !target.is('.' + iconOnClass) &&
-          !target.is('.' + modalWindowClass + ' *:not([class="' + closeWindow + '"])') &&
-          !target.is('.' + modalWindowClass)
-        ) {
-          $modalWindow.hide(500);
-          $('.' + iconOnClass).show(500);
-        }
-      });
     });
+
+    $(document).on('keyup', function (e) {
+      if (e.keyCode == 27 || e.keyCode == 13) {
+        $modalWindow.hide(500);
+        $iconOn.show(500);
+      }
+    });
+
+    $(document).on('click', function (e) {
+      let target = $(e.target);
+      let parentTarget = target.parent()[0];
+
+      if (
+        !target.hasClass(iconOnClass) &&
+        !parentTarget.closest('.' + iconOnClass) &&
+        !target.is('.' + modalWindowClass + ' *:not([class="' + closeWindow + '"])') &&
+        !target.is('.' + modalWindowClass)
+      ) {
+        $modalWindow.hide(500);
+        $('.' + iconOnClass).show(500);
+      }
+    });
+
     return $modalWindow;
   }
 
