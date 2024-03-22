@@ -1,6 +1,6 @@
 <?php global $restaurant_site_options; ?>
 
-<div class="conteiner" id="reserve">
+<div class="rstr-container" id="reserve">
 	<h2>
 		<?php class_exists('ReduxFramework') ? _e($restaurant_site_options['reserve-section_title']) : "" ?>
 	</h2>

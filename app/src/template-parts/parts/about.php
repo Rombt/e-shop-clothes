@@ -1,4 +1,4 @@
-<div class="conteiner about">
+<div class="rstr-container about">
 	<?php global $restaurant_site_options; ?>
 
 	<nav class="about-menu">

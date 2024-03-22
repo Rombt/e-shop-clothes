@@ -5,7 +5,7 @@
 <?php get_template_part('template-parts/parts/head_pages'); ?>
 
 <main id="primary" class="site-main background e404-page-background">
-	<div class="conteiner e404-page">
+	<div class="rstr-container e404-page">
 
 
 
@@ -18,7 +18,7 @@
 
 				<?php if (class_exists('ReduxFramework') &&  $restaurant_site_options['404_img']['url']) { ?>
 					<img src="<?php echo esc_url($restaurant_site_options['404_img']['url']) ?>" alt="404 img">
-				<?php }?>
+				<?php } ?>
 
 			</div>
 			<span>

@@ -16,10 +16,13 @@
 		session_start();
 	} ?>
 
-
 	<?php global $restaurant_site_options; ?>
+	<?php // get_template_part('template-parts/components/debug-grid');
+	?>
 
-	<div class="conteiner">
+	<?php get_template_part('template-parts/components/access_to_admin_panel'); ?>
+
+	<div class="rstr-container">
 		<header class="header ">
 			<a href="<?php echo esc_url(get_home_url()); ?>" class="logo">
 				<?php if (rstr_get_pic_url('logo_site')) { ?>
@@ -55,7 +58,7 @@
 						</svg>
 					<?php } ?>
 				</a>
-				<a href="shopping-cart.html" class="cart wrap-img" data-da=".header, 767">
+				<a href="<?php echo wc_get_cart_url(); ?>" class="cart wrap-img" data-da=".header, 767">
 					<div class="cart__cercle">3</div>
 					<?php if (rstr_get_pic_url('icon_cart')) { ?>
 						<img src="<?php echo rstr_get_pic_url('icon_cart'); ?>" alt="icon cart">

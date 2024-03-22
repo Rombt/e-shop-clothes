@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 
 ?>
 
-<div class="conteiner shop-listing-conteiner">
+<div class="rstr-container shop-listing-container">
 	<div class="shop-listing-row">
 		<!-- @@include('html/parts/shop-sidebar.html',{}) -->
 		<main class="shop-listing">

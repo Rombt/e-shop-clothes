@@ -74,7 +74,7 @@
 						возможность менять порядок блоков простым перетаскиванием
 						дозможность изменять количество однотипных блоков 
 			настраивать сетку на страницах
-			изменять ширину main-wraper и conteiner		https://www.youtube.com/live/zQy837KHnvk 3.41
+			изменять ширину main-wraper и container		https://www.youtube.com/live/zQy837KHnvk 3.41
 			SEO
 				НЕ все ссылки должны передавать вес поисковикам
 				переназначать  заголовки блоков 		https://youtu.be/kgXbasUHnqY?si=mFATHVFf4TEIOJ9T	12:44
@@ -279,7 +279,7 @@
 					ширины дочерних элемнтов расчитываются не корректно в результате бургер проваливается на следующую строку
 						использовать это
 								TempBlock.html(response);
-								$('.menu-page-conteiner__row').append(TempBlock);
+								$('.menu-page-container__row').append(TempBlock);
 								heightMainBlock = TempBlock.height();
 								TempBlock.remove();
 			для каждой таксономии в.ч. и метки должна быть страница в соответствии с иерархией файлов на пример taxonomy-$taxonomy.php
@@ -297,7 +297,7 @@
 					}}	
 				Адаптивные шрифты на маленьктх экранах стр menu
 			доработать адаптив блока dish-widget.php
-			доработать адаптив блока select-vie-block-conteiner !!!!
+			доработать адаптив блока select-vie-block-container !!!!
 
 
 

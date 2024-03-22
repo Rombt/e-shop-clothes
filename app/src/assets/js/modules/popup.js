@@ -8,7 +8,6 @@ const lockPadding = document.querySelectorAll(".lockPadding")
 
 let unLock = true;
 
-
 if (popupLinks.length > 0) {
     for (let i = 0; i < popupLinks.length; i++) {
         const popupLink = popupLinks[i];

@@ -10,10 +10,11 @@ import './modules/_isWebp.js';
 import './modules/mobile.js';
 import './modules/dynamic_adapt.js';
 import './modules/popup.js';
+import './modules/arrowsInputNumberStyle.js';
 
 window.onload = function () {
   let params_headerMenuBurger = {
-    conteiner: 'heder-menu',
+    container: 'heder-menu',
     // menuList: 'menu__list',
     classActive: 'menu__sm',
     burgerOpen: 'heder-menu__burger',
@@ -23,7 +24,7 @@ window.onload = function () {
   headerMenuBurger.init();
 
   let params_foodMenuBurger = {
-    conteiner: 'food-menu',
+    container: 'food-menu',
     // menuList: 'food-menu__list',
     classActive: 'food-menu__active',
     burgerOpen: 'food-menu__burger',

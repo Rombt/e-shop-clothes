@@ -1,6 +1,6 @@
-<div class="conteiner previe-block">
-	<div class="breadcrumbs-conteiner">
-		<div class="breadcrumbs-conteiner__row">
+<div class="rstr-container previe-block">
+	<div class="breadcrumbs-container">
+		<div class="breadcrumbs-container__row">
 
 			<?php if (is_woocommerce()) : ?>
 				<?php woocommerce_breadcrumb(); ?>

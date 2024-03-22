@@ -130,14 +130,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration,
-input[type=search]::-webkit-search-results-button,
-input[type=search]::-webkit-search-results-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-input[type=search] {
+input[type='search'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
@@ -293,9 +293,9 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -316,8 +316,8 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -332,7 +332,7 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
@@ -344,8 +344,8 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 /**
@@ -576,18 +576,18 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 /**
  * Remove the inner border and padding in Firefox.
  */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -595,9 +595,9 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 /**
@@ -642,8 +642,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -652,15 +652,15 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 /**
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -669,7 +669,7 @@ textarea {
 /**
  * Remove the inner padding in Chrome and Safari on macOS.
  */
-[type="search"]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 /**
@@ -802,9 +802,9 @@ a img.aligncenter {
   /* Above WP toolbar. */
 }
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
   cursor: pointer;
   min-height: 35px;
   -webkit-appearance: button;
@@ -813,11 +813,11 @@ input[type="submit"] {
   border: 1px;
   text-transform: uppercase;
 }
-input[type=text],
-input[type=email],
-input[type=url],
-input[type=search],
-input[type=password],
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='search'],
+input[type='password'],
 textarea {
   border: 1px solid #c4c5c7;
   height: 25px;
@@ -848,7 +848,7 @@ textarea {
 }
 .cf:before,
 .cf:after {
-  content: "";
+  content: '';
   display: table;
 }
 .cf:after {
@@ -929,268 +929,305 @@ blockquote blockquote {
   }
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Black.woff2") format("woff2"), url("../fonts/FiraSans-Black.woff") format("woff");
+  src: url('../fonts/FiraSans-Black.woff2') format('woff2'),
+    url('../fonts/FiraSans-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-BlackItalic.woff2") format("woff2"), url("../fonts/FiraSans-BlackItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-BlackItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-BlackItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Bold.woff2") format("woff2"), url("../fonts/FiraSans-Bold.woff") format("woff");
+  src: url('../fonts/FiraSans-Bold.woff2') format('woff2'),
+    url('../fonts/FiraSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-ExtraBold.woff2") format("woff2"), url("../fonts/FiraSans-ExtraBold.woff") format("woff");
+  src: url('../fonts/FiraSans-ExtraBold.woff2') format('woff2'),
+    url('../fonts/FiraSans-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-ExtraBoldItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-ExtraBoldItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-ExtraBoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-BoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-BoldItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-BoldItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-BoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Light.woff2") format("woff2"), url("../fonts/FiraSans-Light.woff") format("woff");
+  src: url('../fonts/FiraSans-Light.woff2') format('woff2'),
+    url('../fonts/FiraSans-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-ExtraLightItalic.woff2") format("woff2"), url("../fonts/FiraSans-ExtraLightItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-ExtraLightItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-ExtraLightItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-ExtraLight.woff2") format("woff2"), url("../fonts/FiraSans-ExtraLight.woff") format("woff");
+  src: url('../fonts/FiraSans-ExtraLight.woff2') format('woff2'),
+    url('../fonts/FiraSans-ExtraLight.woff') format('woff');
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Medium.woff2") format("woff2"), url("../fonts/FiraSans-Medium.woff") format("woff");
+  src: url('../fonts/FiraSans-Medium.woff2') format('woff2'),
+    url('../fonts/FiraSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-LightItalic.woff2") format("woff2"), url("../fonts/FiraSans-LightItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-LightItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-LightItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Regular.woff2") format("woff2"), url("../fonts/FiraSans-Regular.woff") format("woff");
+  src: url('../fonts/FiraSans-Regular.woff2') format('woff2'),
+    url('../fonts/FiraSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-MediumItalic.woff2") format("woff2"), url("../fonts/FiraSans-MediumItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-MediumItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-MediumItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-SemiBold.woff2") format("woff2"), url("../fonts/FiraSans-SemiBold.woff") format("woff");
+  src: url('../fonts/FiraSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/FiraSans-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-SemiBoldItalic.woff2") format("woff2"), url("../fonts/FiraSans-SemiBoldItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-SemiBoldItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-SemiBoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Fira_Sans";
+  font-family: 'Fira_Sans';
   font-display: swap;
-  src: url("../fonts/Fira_Sans.woff2") format("woff2"), url("../fonts/Fira_Sans.woff") format("woff");
+  src: url('../fonts/Fira_Sans.woff2') format('woff2'),
+    url('../fonts/Fira_Sans.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-ThinItalic.woff2") format("woff2"), url("../fonts/FiraSans-ThinItalic.woff") format("woff");
+  src: url('../fonts/FiraSans-ThinItalic.woff2') format('woff2'),
+    url('../fonts/FiraSans-ThinItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Thin.woff2") format("woff2"), url("../fonts/FiraSans-Thin.woff") format("woff");
+  src: url('../fonts/FiraSans-Thin.woff2') format('woff2'),
+    url('../fonts/FiraSans-Thin.woff') format('woff');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: "OFL";
+  font-family: 'OFL';
   font-display: swap;
-  src: url("../fonts/OFL.woff2") format("woff2"), url("../fonts/OFL.woff") format("woff");
+  src: url('../fonts/OFL.woff2') format('woff2'), url('../fonts/OFL.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Black.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Black.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Black.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Bold.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-BoldItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-BoldItalic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-BoldItalic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-BoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-ExtraBold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-ExtraBold.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-ExtraBold.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-ExtraBoldItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-ExtraBoldItalic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-ExtraBoldItalic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-ExtraBoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Italic-VariableFont_wght.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Italic-VariableFont_wght.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Italic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Italic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Medium.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Medium.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Medium.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-BlackItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-BlackItalic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-BlackItalic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-BlackItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-MediumItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-MediumItalic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-MediumItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"), url("../fonts/PlayfairDisplay-Regular.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-SemiBold.woff2") format("woff2"), url("../fonts/PlayfairDisplay-SemiBold.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-SemiBold.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-SemiBold.woff') format('woff');
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-SemiBoldItalic.woff2") format("woff2"), url("../fonts/PlayfairDisplay-SemiBoldItalic.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-SemiBoldItalic.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-SemiBoldItalic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Playfair_Display";
+  font-family: 'Playfair_Display';
   font-display: swap;
-  src: url("../fonts/Playfair_Display.woff2") format("woff2"), url("../fonts/Playfair_Display.woff") format("woff");
+  src: url('../fonts/Playfair_Display.woff2') format('woff2'),
+    url('../fonts/Playfair_Display.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Sintony, FiraSans;
   font-display: swap;
-  src: url("../fonts/Sintony-Bold.woff2") format("woff2"), url("../fonts/Sintony-Bold.woff") format("woff");
+  src: url('../fonts/Sintony-Bold.woff2') format('woff2'),
+    url('../fonts/Sintony-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: Sintony, FiraSans;
   font-display: swap;
-  src: url("../fonts/Sintony-Regular.woff2") format("woff2"), url("../fonts/Sintony-Regular.woff") format("woff");
+  src: url('../fonts/Sintony-Regular.woff2') format('woff2'),
+    url('../fonts/Sintony-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: Sintony, FiraSans;
   font-display: swap;
-  src: url("../fonts/Sintony.woff2") format("woff2"), url("../fonts/Sintony.woff") format("woff");
+  src: url('../fonts/Sintony.woff2') format('woff2'),
+    url('../fonts/Sintony.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-display: swap;
-  src: url("../fonts/PlayfairDisplay-VariableFont_wght.woff2") format("woff2"), url("../fonts/PlayfairDisplay-VariableFont_wght.woff") format("woff");
+  src: url('../fonts/PlayfairDisplay-VariableFont_wght.woff2') format('woff2'),
+    url('../fonts/PlayfairDisplay-VariableFont_wght.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "FiraSans";
+  font-family: 'FiraSans';
   font-display: swap;
-  src: url("../fonts/FiraSans-Italic.woff2") format("woff2"), url("../fonts/FiraSans-Italic.woff") format("woff");
+  src: url('../fonts/FiraSans-Italic.woff2') format('woff2'),
+    url('../fonts/FiraSans-Italic.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -1337,8 +1374,8 @@ a {
   z-index: 100;
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #EEEEEE;
-  border: 2px solid #F0F0F0;
+  background-color: #eeeeee;
+  border: 2px solid #f0f0f0;
   box-shadow: 0px 24px 38px 0px #00000017;
   display: none;
 }
@@ -1365,17 +1402,17 @@ a {
   top: 50%;
   transform: translate(0, -50%);
 }
-.searc-modal input[type="text"] {
+.searc-modal input[type='text'] {
   font-size: 18px;
   height: 40px;
 }
-.searc-modal input[type="submit"] {
+.searc-modal input[type='submit'] {
   font-size: 20px;
   font-weight: 800;
   color: #647786;
   border-radius: 5px;
 }
-.searc-modal input[type="submit"]:hover {
+.searc-modal input[type='submit']:hover {
   transform: scale(1.2);
   transition: all 0.2s;
 }
@@ -1551,7 +1588,7 @@ a {
 }
 .price {
   font-size: 25px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fea100;
   font-weight: bold;
   text-transform: uppercase;
@@ -1581,7 +1618,7 @@ a {
 }
 .top-menu-wrap h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -1706,7 +1743,7 @@ a {
 }
 .food-menu__link {
   font-size: 15px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   text-transform: capitalize;
   color: #14141d;
   font-weight: bold;
@@ -1762,16 +1799,16 @@ a {
     display: none;
   }
 }
-.breadcrumbs-conteiner {
+.breadcrumbs-container {
   width: max-content;
 }
-.breadcrumbs-conteiner__row {
+.breadcrumbs-container__row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
 }
-.breadcrumbs-conteiner .breadcrumbs {
+.breadcrumbs-container .breadcrumbs {
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
@@ -1781,12 +1818,12 @@ a {
   color: #5c6369;
   line-height: 1.857;
 }
-.breadcrumbs-conteiner .breadcrumbs a {
+.breadcrumbs-container .breadcrumbs a {
   color: inherit;
   display: inline-block;
   transition: 0.3s;
 }
-.breadcrumbs-conteiner .breadcrumbs a:hover {
+.breadcrumbs-container .breadcrumbs a:hover {
   color: #fea100;
   transform: scale(1.03);
   transition: 0.3s;
@@ -1797,7 +1834,7 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.select-vie-block-conteiner {
+.select-vie-block-container {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
@@ -1806,7 +1843,7 @@ a {
   width: max-content;
 }
 @media screen and (max-width: 940px) {
-  .select-vie-block-conteiner {
+  .select-vie-block-container {
     z-index: 50;
   }
 }
@@ -2020,7 +2057,7 @@ a {
 }
 .prod-card-grid__footer p {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fea100;
   font-weight: bold;
   text-transform: uppercase;
@@ -2083,7 +2120,7 @@ a {
 }
 .prod-card-list__footer p {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fea100;
   font-weight: bold;
   text-transform: uppercase;
@@ -2113,7 +2150,7 @@ a {
 }
 .recipe-card-2col__title {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.846;
@@ -2166,7 +2203,7 @@ a {
 }
 .recipe-card-3col__title {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.846;
@@ -2210,7 +2247,7 @@ a {
   flex-direction: column;
   align-items: center;
   max-width: 845px;
-  width: calc(300px + (845 - 300) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(300px + (845 - 300) * ((100vw - 320px) / (1230 - 320)));
 }
 .article-blog__img {
   width: 100%;
@@ -2236,7 +2273,7 @@ a {
   word-break: break-word;
 }
 .article-blog__text h2 {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.1;
@@ -2262,8 +2299,8 @@ a {
   padding-top: 15px;
   background-color: #fea100;
   position: relative;
-  width: calc(55px + (85 - 55) * ((100vw - 320px)/(1230 - 320)));
-  height: calc(45px + (65 - 45) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(55px + (85 - 55) * ((100vw - 320px) / (1230 - 320)));
+  height: calc(45px + (65 - 45) * ((100vw - 320px) / (1230 - 320)));
 }
 .square-date p {
   margin-bottom: 0;
@@ -2368,7 +2405,7 @@ a {
 }
 .blog-details-footer__text {
   font-size: 18px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.444;
@@ -2501,11 +2538,11 @@ a {
   left: 25%;
   transform: rotate(-45deg);
 }
-.opening-hours-conteiner {
+.opening-hours-container {
   position: relative;
-  /* .opening-hours-conteiner__wrap-img */
+  /* .opening-hours-container__wrap-img */
 }
-.opening-hours-conteiner__row {
+.opening-hours-container__row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
@@ -2516,14 +2553,14 @@ a {
   justify-content: start;
 }
 @media screen and (max-width: 992px) {
-  .opening-hours-conteiner__row {
+  .opening-hours-container__row {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     height: 600px;
   }
 }
-.opening-hours-conteiner p {
+.opening-hours-container p {
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
@@ -2531,30 +2568,30 @@ a {
   width: calc(100% / 12 * 2 - 30px);
   min-width: 175px;
   font-size: 18px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #373844;
   font-style: italic;
   line-height: 1.2;
   text-align: left;
 }
-.opening-hours-conteiner p span {
+.opening-hours-container p span {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fea100;
   font-weight: bold;
   font-style: normal;
 }
-.opening-hours-conteiner p:nth-of-type(1) {
+.opening-hours-container p:nth-of-type(1) {
   margin-left: calc(100% / 12 * 1 + 15px);
   margin-right: calc(100% / 12 * 1 + 15px);
   margin-right: 15px;
 }
 @media screen and (max-width: 992px) {
-  .opening-hours-conteiner p:nth-of-type(1) {
+  .opening-hours-container p:nth-of-type(1) {
     margin: 0;
   }
 }
-.opening-hours-conteiner__title {
+.opening-hours-container__title {
   box-sizing: border-box;
   word-wrap: break-word;
   margin-left: 15px;
@@ -2562,15 +2599,15 @@ a {
   width: calc(100% / 12 * 3 - 30px);
   min-width: 255px;
 }
-.opening-hours-conteiner__title h2 {
+.opening-hours-container__title h2 {
   display: block;
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
 }
-.opening-hours-conteiner__wrap-img {
+.opening-hours-container__wrap-img {
   height: 210px;
   width: 210px;
   position: absolute;
@@ -2578,7 +2615,7 @@ a {
   right: 0px;
 }
 @media screen and (max-width: 992px) {
-  .opening-hours-conteiner__wrap-img {
+  .opening-hours-container__wrap-img {
     position: relative;
     top: 0;
   }
@@ -2704,7 +2741,7 @@ a {
 }
 .rstr-category h2 {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.846;
@@ -2743,7 +2780,7 @@ a {
 }
 .recent-post__body span {
   font-size: 16px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.222;
@@ -2760,7 +2797,7 @@ a {
 }
 .recent-post h2 {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.846;
@@ -2784,7 +2821,7 @@ a {
 }
 .archive-sidebar h2 {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   line-height: 0.846;
   margin-bottom: 30px;
 }
@@ -2805,7 +2842,7 @@ a {
 }
 .tag-block h2 {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.846;
@@ -2859,7 +2896,7 @@ a {
 }
 .comments__row h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -2949,7 +2986,7 @@ a {
 }
 .leave-comment-form h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.629;
@@ -3004,8 +3041,8 @@ a {
   flex-grow: 1;
   border: 1px solid #dde7ec;
 }
-.leave-comment-form__input:nth-last-child(-n+2) input,
-.leave-comment-form__textarea:nth-last-child(-n+2) input {
+.leave-comment-form__input:nth-last-child(-n + 2) input,
+.leave-comment-form__textarea:nth-last-child(-n + 2) input {
   width: 30px;
 }
 .leave-comment-form__textarea {
@@ -3032,7 +3069,7 @@ a {
   padding-bottom: 90px;
 }
 .related-products h2 {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -3132,7 +3169,7 @@ a {
 }
 .widget-food-category h2 {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.917;
@@ -3171,7 +3208,7 @@ a {
 }
 .widget-filter-by-price h2 {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.917;
@@ -3250,7 +3287,7 @@ a {
 }
 .widget-newsletter h2 {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.917;
@@ -3875,7 +3912,7 @@ a {
 }
 .background-title-page-block {
   position: relative;
-  height: calc(100px + (245 - 100) * ((100vw - 320px)/(1230 - 320)));
+  height: calc(100px + (245 - 100) * ((100vw - 320px) / (1230 - 320)));
   max-height: 245px;
 }
 .background-title-page-block .wrap-img {
@@ -3887,7 +3924,7 @@ a {
 }
 .background-title-page-block h1 {
   font-size: calc(20px + 36 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.536;
@@ -3905,11 +3942,11 @@ a {
   top: -7px;
 }
 .background-title-page-block h1::before {
-  content: url("../img/title-page-block__left_left.png");
+  content: url('../img/title-page-block__left_left.png');
   margin-left: 9px;
 }
 .background-title-page-block h1::after {
-  content: url("../img/title-page-block__left_right.png");
+  content: url('../img/title-page-block__left_right.png');
   margin-right: 9px;
 }
 .speciality-block {
@@ -3919,9 +3956,9 @@ a {
   min-height: 572px;
 }
 .speciality-block__img {
-  width: calc(300px + (930 - 300) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(300px + (930 - 300) * ((100vw - 320px) / (1230 - 320)));
   max-width: 930px;
-  height: calc(300px + (572 - 300) * ((100vw - 320px)/(1230 - 320)));
+  height: calc(300px + (572 - 300) * ((100vw - 320px) / (1230 - 320)));
   max-height: 572px;
 }
 .speciality-block__text-wrap {
@@ -3944,7 +3981,7 @@ a {
 }
 .speciality-block h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -4056,11 +4093,11 @@ a {
 }
 .dish-title__title {
   font-size: 56px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   margin: 0px 0 -5px 0;
 }
 .dish-title__subtitle-title {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-size: 40px;
   margin: 0px;
 }
@@ -4075,7 +4112,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("../img/exlore-food-menu-block.png") 0 0 no-repeat;
+  background: url('../img/exlore-food-menu-block.png') 0 0 no-repeat;
   position: absolute;
   bottom: -80px;
   z-index: 5;
@@ -4197,7 +4234,7 @@ a {
   margin: 0px;
 }
 .about-row__top-menu .phone-number {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-weight: 700;
   font-size: 32px;
   text-align: right;
@@ -4238,7 +4275,7 @@ a {
   }
 }
 .about-row__text h2 {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-size: 33px;
   margin: 0;
 }
@@ -4373,13 +4410,19 @@ a {
   opacity: 0.8;
   background-color: #7d8587;
 }
-.background__today .swiper-pagination-today .swiper-pagination-bullet .swiper-pagination__center {
+.background__today
+  .swiper-pagination-today
+  .swiper-pagination-bullet
+  .swiper-pagination__center {
   display: none;
 }
 .background__today .swiper-pagination-today .swiper-pagination-bullet-active {
   border-color: #fea100;
 }
-.background__today .swiper-pagination-today .swiper-pagination-bullet-active .swiper-pagination__center {
+.background__today
+  .swiper-pagination-today
+  .swiper-pagination-bullet-active
+  .swiper-pagination__center {
   display: block;
   background-color: #fea100;
   border-color: #fea100;
@@ -4455,7 +4498,7 @@ a {
 .food-card__food-name h3 {
   margin: 0;
   margin-top: 50px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-size: 26px;
   color: #14141d;
   font-weight: 700;
@@ -4511,7 +4554,7 @@ a {
 }
 .food-card__phone-namber {
   font-size: 26px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -4752,7 +4795,7 @@ a {
 }
 .slide-body__title {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.629;
@@ -4828,7 +4871,7 @@ a {
 }
 #reserve h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -4932,7 +4975,7 @@ a {
   flex-grow: 1;
   border: none;
 }
-.reserve-form__input:nth-last-child(-n+2) input {
+.reserve-form__input:nth-last-child(-n + 2) input {
   width: 30px;
 }
 .reserve-call-us {
@@ -4954,7 +4997,7 @@ a {
 }
 .reserve-call-us__tel {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -5007,7 +5050,7 @@ a {
 }
 .footer h2 {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.917;
@@ -5176,7 +5219,7 @@ a {
   word-wrap: break-word;
   margin-left: 15px;
   margin-right: 15px;
-  width: calc(180px + (400 - 180) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(180px + (400 - 180) * ((100vw - 320px) / (1230 - 320)));
   font-size: calc(10px + 3 * ((100vw - 320px) / 910));
   font-family: Sintony, FiraSans;
   color: #adb2b7;
@@ -5260,7 +5303,7 @@ a {
 }
 .contact-us__touch h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -5294,7 +5337,7 @@ a {
 }
 .contact-us__address h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.629;
@@ -5302,7 +5345,7 @@ a {
 }
 .contact-us__address div {
   font-size: 14px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
@@ -5374,10 +5417,10 @@ a {
   border: none;
   margin-bottom: 1px;
 }
-.menu-page-conteiner {
+.menu-page-container {
   padding-bottom: 80px;
 }
-.menu-page-conteiner__row {
+.menu-page-container__row {
   display: flex;
   margin-left: -15px;
   margin-right: -15px;
@@ -5386,25 +5429,25 @@ a {
   flex-wrap: wrap;
 }
 @media screen and (max-width: 1170px) {
-  .menu-page-conteiner__row {
+  .menu-page-container__row {
     justify-content: center;
   }
 }
 @media screen and (max-width: 576px) {
-  .menu-page-conteiner .top-menu-wrap h2 {
+  .menu-page-container .top-menu-wrap h2 {
     display: block;
     width: 60%;
     line-height: 1.15;
   }
 }
-.menu-page-conteiner .button-orange {
+.menu-page-container .button-orange {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
-.recipes-page-conteiner__row {
+.recipes-page-container__row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
@@ -5413,12 +5456,12 @@ a {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 1140px) {
-  .recipes-page-conteiner__row {
+  .recipes-page-container__row {
     justify-content: center;
   }
 }
 @media screen and (max-width: 740px) {
-  .recipes-page-conteiner__row {
+  .recipes-page-container__row {
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -5432,7 +5475,7 @@ a {
 }
 .recipes-title h1 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.4;
@@ -5474,7 +5517,7 @@ a {
 }
 .recipe-details-title__row h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -5572,7 +5615,7 @@ a {
 }
 .recipe-details__blocks .ingredients h3 {
   font-size: calc(20px + 4 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.917;
@@ -5618,7 +5661,7 @@ a {
 }
 .recipe-details__blocks .nutrition h3 {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.917;
@@ -5649,7 +5692,7 @@ a {
 }
 .recipe-details__blocks .nutrition thead {
   font-size: 18px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fe4c8d;
   font-weight: bold;
   line-height: 1.222;
@@ -5704,7 +5747,7 @@ a {
 .white-box__items {
   width: calc(100% / 12 * 6 - 30px);
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   text-transform: uppercase;
@@ -5742,7 +5785,7 @@ a {
 }
 .white-box__download a {
   font-size: 24px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.917;
@@ -5800,7 +5843,7 @@ a {
 }
 .food-step h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.629;
@@ -5846,7 +5889,7 @@ a {
   color: #ffffff;
   line-height: 1.857;
   text-align: left;
-  margin-left: calc(30/800 * 100%);
+  margin-left: calc(30 / 800 * 100%);
   min-height: 90px;
   overflow: hidden;
   word-wrap: break-word;
@@ -5879,7 +5922,7 @@ a {
   font-size: 30px;
   margin-top: -6px;
   font-weight: 700;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   margin-bottom: 2px;
 }
 .step-square p {
@@ -5904,7 +5947,7 @@ a {
 }
 .featured-recipes__title {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -5944,7 +5987,7 @@ a {
 }
 .e404-page__title span {
   font-size: calc(100px + 300 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #fe8300;
   font-weight: bold;
   position: relative;
@@ -5959,12 +6002,12 @@ a {
   z-index: 5;
 }
 .e404-page__wrap-img {
-  width: calc(150px + (300 - 150) * ((100vw - 320px)/(1230 - 320)));
-  height: calc(150px + (300 - 150) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1230 - 320)));
+  height: calc(150px + (300 - 150) * ((100vw - 320px) / (1230 - 320)));
 }
 .e404-page__body {
   font-size: calc(20px + 10 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #2c465a;
   font-weight: bold;
   line-height: 0.5;
@@ -5999,7 +6042,7 @@ a {
 }
 .history-blok__title {
   font-size: calc(25px + 10 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.2;
@@ -6052,7 +6095,7 @@ a {
 .wrap-video {
   width: 100%;
   max-height: 446px;
-  height: calc(200px + (446 - 200) * ((100vw - 320px)/(1230 - 320)));
+  height: calc(200px + (446 - 200) * ((100vw - 320px) / (1230 - 320)));
 }
 .wrap-video iframe {
   width: 100%;
@@ -6085,7 +6128,7 @@ a {
 }
 .cooks__title {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -6154,13 +6197,13 @@ a {
   height: 7px;
   border-radius: 50%;
 }
-.articles-conteiner {
+.articles-container {
   display: flex;
   justify-content: space-between;
   margin-bottom: 100px;
 }
 @media screen and (max-width: 1180px) {
-  .articles-conteiner {
+  .articles-container {
     justify-content: center;
   }
 }
@@ -6201,7 +6244,7 @@ a {
     width: calc(100% / 12 * 10 - 30px);
   }
 }
-.blog-details-conteiner {
+.blog-details-container {
   display: flex;
   justify-content: space-between;
   margin-top: 100px;
@@ -6210,7 +6253,7 @@ a {
   overflow: hidden;
 }
 @media screen and (max-width: 1180px) {
-  .blog-details-conteiner {
+  .blog-details-container {
     justify-content: center;
   }
 }
@@ -6239,11 +6282,11 @@ a {
 .blog-details-block__img {
   max-width: 412px;
   height: 270px;
-  width: calc(300px + (412 - 300) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(300px + (412 - 300) * ((100vw - 320px) / (1230 - 320)));
 }
 .blog-details-block__text {
   font-size: 18px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.444;
@@ -6333,7 +6376,7 @@ a {
 }
 @media screen and (max-width: 770px) {
   .shop-listing {
-    column-gap: calc(20px + (100 - 20) * ((100vw - 320px)/(1230 - 320)));
+    column-gap: calc(20px + (100 - 20) * ((100vw - 320px) / (1230 - 320)));
   }
 }
 .shop-listing__title-row {
@@ -6342,7 +6385,7 @@ a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: calc(20px + (30 - 20) * ((100vw - 320px)/(1230 - 320)));
+  gap: calc(20px + (30 - 20) * ((100vw - 320px) / (1230 - 320)));
 }
 @media screen and (max-width: 920px) {
   .shop-listing__title-row {
@@ -6357,7 +6400,7 @@ a {
 }
 .shop-listing__title-row h2 {
   font-size: calc(25px + 10 * ((100vw - 320px) / 910));
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -6380,7 +6423,7 @@ a {
   border: none;
   border-bottom: 1px solid #c7d1d6;
   width: 200px;
-  height: calc(30px + (45 - 30) * ((100vw - 320px)/(1230 - 320)));
+  height: calc(30px + (45 - 30) * ((100vw - 320px) / (1230 - 320)));
   padding: 0px 5px 0px 5px;
   appearance: none;
   background-image: url('../img/dropdown.png');
@@ -6413,7 +6456,7 @@ a {
   line-height: 1.857;
   text-align: left;
 }
-.shop-details-conteiner {
+.shop-details-container {
   min-height: 610px;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -6527,7 +6570,7 @@ a {
 }
 .shop-details__header h2 {
   font-size: 35px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 1.2;
@@ -6658,7 +6701,7 @@ a {
   }
 }
 .description__title {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   font-weight: bold;
   line-height: 0.917;
   font-size: calc(20px + 4 * ((100vw - 320px) / 910));
@@ -6684,12 +6727,12 @@ a {
   font-weight: bold;
   line-height: 2.357;
 }
-.shopping-cart-conteiner {
+.shopping-cart-container {
   padding-top: 90px;
   padding-bottom: 90px;
 }
-.shopping-cart-conteiner h2 {
-  font-family: "PlayfairDisplay";
+.shopping-cart-container h2 {
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.629;
@@ -6697,7 +6740,7 @@ a {
   font-size: calc(26px + 9 * ((100vw - 320px) / 910));
 }
 @media screen and (max-width: 850px) {
-  .shopping-cart-conteiner h2 {
+  .shopping-cart-container h2 {
     text-align: center;
   }
 }
@@ -6735,7 +6778,7 @@ a {
   font-size: calc(12px + 3 * ((100vw - 320px) / 910));
 }
 .product-cart table th {
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #14141d;
   font-weight: bold;
   line-height: 0.773;
@@ -6778,13 +6821,13 @@ a {
   row-gap: 20px;
   column-gap: 30px;
   max-width: 490px;
-  width: calc(120px + (490 - 120) * ((100vw - 320px)/(1230 - 320)));
+  width: calc(120px + (490 - 120) * ((100vw - 320px) / (1230 - 320)));
   font-size: calc(14px + 3 * ((100vw - 320px) / 910));
 }
 @media screen and (max-width: 850px) {
   .product-cart table td:first-of-type {
     max-width: 690px;
-    width: calc(120px + (690 - 120) * ((100vw - 320px)/(1230 - 320)));
+    width: calc(120px + (690 - 120) * ((100vw - 320px) / (1230 - 320)));
     flex-direction: column;
     align-items: center;
   }
@@ -6825,7 +6868,7 @@ a {
 }
 .summary h3 {
   font-size: 22px;
-  font-family: "PlayfairDisplay";
+  font-family: 'PlayfairDisplay';
   color: #ffffff;
   font-weight: bold;
   line-height: 0.773;

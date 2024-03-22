@@ -24,7 +24,7 @@ $html_req = ($req ? " required='required'" : '');
 
 
 <div class="background comments-background">
-	<div class="conteiner comments" id="comments">
+	<div class="rstr-container comments" id="comments">
 		<?php // if ( have_comments() ) : 
 		?>
 		<div class="comments__row">
@@ -71,7 +71,7 @@ $html_req = ($req ? " required='required'" : '');
 </div>
 
 <div class="background background-comment-form">
-	<div class="conteiner leave-comment">
+	<div class="rstr-container leave-comment">
 		<div class="leave-comment__row">
 			<?php
 			$rstr_args_form_comment = array(

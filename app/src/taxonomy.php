@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'template-parts/parts/head_pages' ); ?>
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 
 
-<main id="primary" class="site-main conteiner-for-wp-blocs menu-page-conteiner">
+<main id="primary" class="site-main container-for-wp-blocs menu-page-container">
 
-	<?php if ( have_posts() ) : ?>
-
-
+	<?php if (have_posts()) : ?>
 
 
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-		<?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+
+
+		<?php the_archive_title('<h1 class="page-title">', '</h1>'); ?>
+		<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
 
 
 		<?php
@@ -32,9 +32,9 @@
 		<hr>
 		<hr>
 		<br>
-		<?php
+	<?php
 		/* Start the Loop */
-		while ( have_posts() ) :
+		while (have_posts()) :
 
 			the_post();
 			echo '<h1>';
@@ -48,12 +48,12 @@
 
 	else :
 
-		get_template_part( 'template-parts/content', 'none' );
+		get_template_part('template-parts/content', 'none');
 
 	endif;
 	?>
 
-	<?php get_template_part( 'template-parts/components/pagination' ); ?>
+	<?php get_template_part('template-parts/components/pagination'); ?>
 
 
 

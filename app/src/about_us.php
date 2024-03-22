@@ -4,30 +4,30 @@
 
 
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/parts/head_pages' ); ?>
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
 <main>
-	<section class="conteiner history-blok">
+	<section class="rstr-container history-blok">
 		<div class="history-blok__row">
 			<div class="history-blok__title">
 				<h2>
-					<?php echo class_exists( 'ReduxFramework' ) ? esc_html( $restaurant_site_options['about_us_title'] ) : ""; ?>
+					<?php echo class_exists('ReduxFramework') ? esc_html($restaurant_site_options['about_us_title']) : ""; ?>
 				</h2>
 			</div>
 			<div class="history-blok__text">
-				<?php echo class_exists( 'ReduxFramework' ) ? wp_kses( $restaurant_site_options['about_us_subtitle'], 'post' ) : ""; ?>
+				<?php echo class_exists('ReduxFramework') ? wp_kses($restaurant_site_options['about_us_subtitle'], 'post') : ""; ?>
 			</div>
 			<div class="video-blok-history">
-				<?php if ( class_exists( 'ReduxFramework' ) && isset( $restaurant_site_options['home_page_slogan_label']['url'] ) ) { ?>
+				<?php if (class_exists('ReduxFramework') && isset($restaurant_site_options['home_page_slogan_label']['url'])) { ?>
 					<figure class="wrap-video wrap-img">
-						<?php echo wp_oembed_get( $restaurant_site_options['about_us_video'] ) ?>
+						<?php echo wp_oembed_get($restaurant_site_options['about_us_video']) ?>
 					</figure>
 				<?php } ?>
 				<div class="video-blok-history__description">
-					<?php echo class_exists( 'ReduxFramework' ) ? wp_kses( $restaurant_site_options['description-about_us_video'], 'post' ) : ""; ?>
+					<?php echo class_exists('ReduxFramework') ? wp_kses($restaurant_site_options['description-about_us_video'], 'post') : ""; ?>
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 		<div class="wrap-img background-cooks__img">
 			<img src="@img/background-cooks.jpg" alt="background cooks">
 		</div>
-		<section class="conteiner cooks">
+		<section class="rstr-container cooks">
 			<h2 class="cooks__title"> Our Cooks </h2>
 			<div class="swiper swiper-cooks">
 				<!-- Slider main container -->
@@ -91,7 +91,7 @@
 	</div>
 </main>
 
-<?php get_template_part( 'template-parts/parts/speciality_block', 'white' ); ?>
-<?php get_template_part( 'template-parts/components/opening_hours' ); ?>
+<?php get_template_part('template-parts/parts/speciality_block', 'white'); ?>
+<?php get_template_part('template-parts/components/opening_hours'); ?>
 
 <?php get_footer(); ?>

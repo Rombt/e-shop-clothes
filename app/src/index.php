@@ -5,7 +5,7 @@
 
 <?php get_template_part('template-parts/parts/head_pages'); ?>
 
-<div class="conteiner articles-conteiner">
+<div class="rstr-container articles-container">
 	<div class="articles-page-row">
 		<main class="article-row">
 

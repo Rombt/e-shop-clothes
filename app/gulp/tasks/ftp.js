@@ -45,4 +45,3 @@ export const ftpPL = () => {
         .pipe(ftpConnect.dest(app.path.ftp.plug))
 
 }
-

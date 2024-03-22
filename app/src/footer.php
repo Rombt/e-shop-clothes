@@ -1,6 +1,6 @@
 <div class="background background__footer">
 	<?php global $restaurant_site_options; ?>
-	<div class="footer conteiner">
+	<div class="footer rstr-container">
 		<section class="footer__row">
 			<div class="footer__navigation">
 				<?php echo '<h2>' . (class_exists('ReduxFramework') ? esc_html($restaurant_site_options['title_one']) : "") . '</h2>' ?>

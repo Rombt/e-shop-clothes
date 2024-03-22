@@ -30,13 +30,13 @@ if (empty($product) || !$product->is_visible()) {
 
 	<div class="active">
 		<div class="active__icon-block">
-			<a href="shopping-cart.html">
+			<a href="#">
 				<svg>
 					<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#heart-white">
 					</use>
 				</svg>
 			</a>
-			<a href="#">
+			<a href="<?php echo get_permalink($product_id); ?>">
 				<svg>
 					<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/img/icons/sprite.svg#more-horizontal-white">
 					</use>

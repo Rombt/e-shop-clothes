@@ -9,6 +9,10 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
 
   modalWindow('search-icon', 'searc-modal', 'close-window');
 
+  $('.admin-panel-access').on('click', function (event) {
+    document.cookie = 'admin-panel-access' + '=' + true;
+  });
+
   //---------------------- funktions ---------------------
 
   function paginationAdaptive() {

@@ -35,7 +35,7 @@ $query_Our_clients = new WP_Query($params);
 		<img src="<?php echo rstr_get_pic_url('clients-section_background_img') ?>" alt="">
 	</div>
 
-	<section class="conteiner" id="clients">
+	<section class="rstr-container" id="clients">
 		<h2 class="slide-body__title">
 			<?php class_exists('ReduxFramework') ? _e($restaurant_site_options['clients-section_title'], 'restaurant-site') : '' ?>
 		</h2>

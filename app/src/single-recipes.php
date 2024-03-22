@@ -6,7 +6,7 @@
 
 
 
-<div class="conteiner recipe-details-title">
+<div class="rstr-container recipe-details-title">
 	<div class="recipe-details-title__row">
 		<?php if ($wp_query->have_posts()) :
 			$wp_query->the_post(); ?>
@@ -16,7 +16,7 @@
 			<?php get_template_part('template-parts/components/rating_block') ?>
 	</div>
 </div>
-<main class="conteiner recipe-details">
+<main class="rstr-container recipe-details">
 	<div class="recipe-details__row">
 		<figure class="wrap-img recipe-details__wrap-img">
 			<img src="<?php the_post_thumbnail_url() ?>" alt="">
@@ -121,7 +121,7 @@
 	<div class="wrap-img food-step-background__img">
 		<img src="<?php echo rstr_get_pic_url('background_food_step_img') ?>" alt="">
 	</div>
-	<div class="conteiner food-step">
+	<div class="rstr-container food-step">
 		<?php
 		$arr_food_step = array_filter($arr_all_filds, function ($key) {
 			if (preg_match("/^food-step_d*/i", $key)) {
@@ -160,7 +160,7 @@
 	</div>
 </div>
 
-<div class="conteiner featured-recipes">
+<div class="rstr-container featured-recipes">
 	<div class="featured-recipes__title">Featured Recipes</div>
 	<div class="featured-recipes__row">
 		<?php

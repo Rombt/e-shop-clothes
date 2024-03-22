@@ -46,7 +46,7 @@ do_action('woocommerce_before_main_content');
 
 
 
-<div class="conteiner shop-listing-conteiner">
+<div class="rstr-container shop-listing-container">
 	<div class="shop-listing-row">
 		<!-- @@include('html/parts/shop-sidebar.html',{}) -->
 		<div class="shop-listing">

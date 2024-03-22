@@ -4,11 +4,11 @@
 
 
 <?php get_header(); ?>
-<?php get_template_part( 'template-parts/parts/head_pages'); ?>
+<?php get_template_part('template-parts/parts/head_pages'); ?>
 
 <!-- @@if(isProd == false){ @@include('html/debug-grid.html',{})} -->
 
-<main class="conteiner shop-details-conteiner">
+<main class="rstr-container shop-details-container">
    <div class="shop-details-row">
       <div class="shop-details-img">
          <div class="shop-details-img__details-img wrap-img">
@@ -47,7 +47,7 @@
    </div>
 </main>
 <div class="background description-background">
-   <div class="description conteiner">
+   <div class="description container">
       <div class="description__row">
          <div class="description__title">
             <span>Description</span> <span>Reviews (03)</span>
@@ -74,4 +74,4 @@
 @@include('html/parts/related-products.html',{'@@background':''})
 
 
-<?php get_footer();?>
+<?php get_footer(); ?>

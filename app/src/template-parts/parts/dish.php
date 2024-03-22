@@ -28,7 +28,7 @@ if (isset($restaurant_site_options['dish-gallery'])) {
 		</div>
 		<div class="swiper-pagination-dish swiper-pagination"></div>
 	</div>
-	<div class="conteiner" id="dish">
+	<div class="rstr-container" id="dish">
 		<div class="dish-title redux_font-dish_title">
 			<p class="dish-title__title">
 				<?php class_exists('ReduxFramework') ? _e($restaurant_site_options['home_page_title'], 'restaurant-site') : '' ?>

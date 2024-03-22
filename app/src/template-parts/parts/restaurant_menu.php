@@ -33,7 +33,7 @@ $query_Menu_items = new WP_Query($params);
 
 ?>
 
-<div class="conteiner" id="restaurant-menu">
+<div class="rstr-container" id="restaurant-menu">
 	<?php get_template_part('template-parts/components/food_menu', null, ['title' => class_exists('ReduxFramework') ? esc_html($restaurant_site_options['restaurant_menu-section_title']) : ""]); ?>
 	<section class="row-dish-menu dish-menu__row">
 		<?php if ($query_Menu_items->have_posts()) {
