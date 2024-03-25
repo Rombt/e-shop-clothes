@@ -34,6 +34,10 @@ function restaurant_site_scripts()
 	global $restaurant_site_options;
 	global $rstr_taxonomy;
 
+	wp_localize_script('restaurant_site-app', 'rstrAppData', [
+		'rstrAjaxURL' => admin_url('admin-ajax.php'),
+	]);
+
 	if (
 		class_exists('ReduxFramework')
 		&& $restaurant_site_options['modal_menu_location']
@@ -56,7 +60,7 @@ function restaurant_site_scripts()
 				'rstrLikeIconImgActive' => esc_url($restaurant_site_options['icon-heart-active']['url']),
 				'rstrLikeIconImgPasive' => esc_url($restaurant_site_options['icon-heart-pasive']['url']),
 				'rstrAjaxNonceLike' => wp_create_nonce('rstr-ajax-nonce-like'),
-				'rstrAjaxURL' => admin_url('admin-ajax.php'),
+				// 'rstrAjaxURL' => admin_url('admin-ajax.php'),
 				'rstrModalMenuLocation' => esc_url($restaurant_site_options['modal_menu_location']),
 				'rstrModalMenuSide' => esc_url($restaurant_site_options['modal_menu_side']),
 			]);
@@ -65,7 +69,7 @@ function restaurant_site_scripts()
 
 	if (is_post_type_archive('recipes') || is_post_type_archive('food_menu_items') || is_tax('food_categories')) {
 		wp_localize_script('restaurant_site-app', 'rstrAppData', [
-			'rstrAjaxURL' => admin_url('admin-ajax.php'),
+			// 'rstrAjaxURL' => admin_url('admin-ajax.php'),
 			'rstrAjaxNonceView' => wp_create_nonce('rstr-ajax-nonce-view'),
 			'rstrTaxonomy' => $rstr_taxonomy,
 		]);

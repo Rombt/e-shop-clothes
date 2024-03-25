@@ -59,7 +59,7 @@
 					<?php } ?>
 				</a>
 				<a href="<?php echo wc_get_cart_url(); ?>" class="cart wrap-img" data-da=".header, 767">
-					<div class="cart__cercle">3</div>
+					<div class="cart__cercle"><?php echo WC()->cart->get_cart_contents_count(); ?></div>
 					<?php if (rstr_get_pic_url('icon_cart')) { ?>
 						<img src="<?php echo rstr_get_pic_url('icon_cart'); ?>" alt="icon cart">
 					<?php } else { ?>

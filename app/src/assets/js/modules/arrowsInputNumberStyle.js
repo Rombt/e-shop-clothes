@@ -15,8 +15,6 @@ function quantityProducts() {
   const QuantityBlocks = document.querySelectorAll(`.quantity`); // class of blocks quantity
   const changeEvent = new Event('change', { bubbles: true });
 
-  console.log('***');
-
   QuantityBlocks.forEach(element => {
     const quantityArrowMinus = element.querySelector('.quantity-arrow-minus');
     const quantityArrowPlus = element.querySelector('.quantity-arrow-plus');

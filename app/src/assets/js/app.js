@@ -5,6 +5,7 @@ import * as sliders from './modules/sliders.js';
 import { jQuery_scripts } from './modules/jQuery_scripts.js';
 import { ajax_selectView } from './modules/ajax_select-view.js';
 import { ajax_likes } from './modules/ajax_likes.js';
+import { ajax_cartCountUpdate } from './modules/ajax_cartCountUpdate.js';
 
 import './modules/_isWebp.js';
 import './modules/mobile.js';

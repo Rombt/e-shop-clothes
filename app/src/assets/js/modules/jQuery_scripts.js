@@ -19,7 +19,7 @@ export const jQuery_scripts = jQuery(document).ready(function ($) {
     let PaginationBlock = $('.rstr-pagination');
     const pageNumberCurrent = $('.page-numbers.current');
 
-    if (pageNumberCurrent.length == 0) {
+    if (pageNumberCurrent.length == 0 || PaginationBlock.length == 0) {
       return false;
     }
 
