@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Related Products
+ * Cross-sells
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/single-product/related.php.
+ * This template can be overridden by copying it to yourtheme/woocommerce/cart/cross-sells.php.
  *
  * HOWEVER, on occasion WooCommerce will need to update template files and you
  * (the theme developer) will need to copy the new files to your theme to
@@ -11,38 +11,32 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see         https://woo.com/document/template-structure/
- * @package     WooCommerce\Templates
- * @version     3.9.0
+ * @see https://woo.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 4.4.0
  */
 
-if (!defined('ABSPATH')) {
-	exit;
-}
+defined('ABSPATH') || exit;
 
-if ($related_products) : ?>
+if ($cross_sells) : ?>
 
-
-	<section class="related products rstr-container related-products">
-
+	<section class="cross-sells rstr-container">
 		<?php
-		$heading = apply_filters('woocommerce_product_related_products_heading', __('Related products', 'woocommerce'));
+		$heading = apply_filters('woocommerce_product_cross_sells_products_heading', __('You may be interested in&hellip;', 'woocommerce'));
 
 		if ($heading) :
 		?>
 			<h2><?php echo esc_html($heading); ?></h2>
 		<?php endif; ?>
 
-		<?php // woocommerce_product_loop_start();
+		<?php // woocommerce_product_loop_start(); 
 		?>
-
 		<div class="related-products__row">
 			<div class="related-products__col">
-
-				<?php foreach ($related_products as $related_product) : ?>
+				<?php foreach ($cross_sells as $cross_sell) : ?>
 
 					<?php
-					$post_object = get_post($related_product->get_id());
+					$post_object = get_post($cross_sell->get_id());
 
 					setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
@@ -52,11 +46,16 @@ if ($related_products) : ?>
 				<?php endforeach; ?>
 			</div>
 		</div>
+
+
+
 		<?php woocommerce_product_loop_end(); ?>
 
 	</section>
-
 <?php
 endif;
 
 wp_reset_postdata();
+
+
+(20%*!v&415%j98VC8hYIn6D
